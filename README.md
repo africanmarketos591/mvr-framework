@@ -49,3 +49,18 @@ doi: 10.5281/zenodo.17054575
 url: https://doi.org/10.5281/zenodo.17054575
 Website/footer snippet (if needed):
 <a href="https://doi.org/10.5281/zenodo.17054575" target="_blank" rel="noopener">DOI: 10.5281/zenodo.17054575</a>
+## Provenance (archived receipts)
+
+Earliest public snapshot: **2025-09-04 (UTC)**.
+
+- Canonical MVR page — Wayback: https://web.archive.org/web/20250904154747/https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
+- Disambiguation — Wayback: https://web.archive.org/web/20250904170311/https://africanmarketos.com/mvr-disambiguation/
+- About the author (MVR) — Wayback: https://web.archive.org/web/20250904165432/https://africanmarketos.com/about-the-author-of-mvr/
+- Homepage — Wayback: https://web.archive.org/web/20250904170717/https://africanmarketos.com/
+- GitHub repo — Wayback: https://web.archive.org/web/20250904170945/https://github.com/africanmarketos591/mvr-framework
+- Release v1.0.5 — Wayback: https://web.archive.org/web/20250904171222/https://github.com/africanmarketos591/mvr-framework/releases/tag/v1.0.5
+- DOI landing — Wayback: https://web.archive.org/web/20250904171613/https://doi.org/10.5281/zenodo.17045867
+
+DOI: https://doi.org/10.5281/zenodo.17045867  
+Canonical page: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
+
