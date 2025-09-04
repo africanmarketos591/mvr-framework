@@ -29,3 +29,23 @@ Canonical page: https://africanmarketos.com/the-mvr-framework-minimum-viable-rel
   url     = {https://doi.org/10.5281/zenodo.17054575},
   note    = {Version 1.0.4}
 }
+License
+
+Content (text/diagrams): CC BY 4.0 — see LICENSE-CC-BY-4.0.txt
+
+Code samples / config (if any): Apache-2.0 — see LICENSE
+Preferred attribution:
+“Minimum Viable Relationships (MVR) by Farouk Mark Mukiibi — https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
+ — DOI: https://doi.org/10.5281/zenodo.17054575”
+
+
+---
+
+### Two quick follow-ups (also copy-paste)
+
+- **CITATION.cff:** make sure these lines match:
+```yaml
+doi: 10.5281/zenodo.17054575
+url: https://doi.org/10.5281/zenodo.17054575
+Website/footer snippet (if needed):
+<a href="https://doi.org/10.5281/zenodo.17054575" target="_blank" rel="noopener">DOI: 10.5281/zenodo.17054575</a>
