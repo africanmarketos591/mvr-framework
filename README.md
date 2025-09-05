@@ -63,4 +63,6 @@ Earliest public snapshot: **2025-09-04 (UTC)**.
 
 DOI: https://doi.org/10.5281/zenodo.17045867  
 Canonical page: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
+**Author links:**  
+ORCID: https://orcid.org/0009-0009-8191-2098 • LinkedIn: https://www.linkedin.com/in/farouk-mark-mukiibi-1ab53b184 • Wikidata: https://www.wikidata.org/wiki/Q136100349
 
