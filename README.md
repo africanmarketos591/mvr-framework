@@ -94,3 +94,10 @@ ORCID: https://orcid.org/0009-0009-8191-2098
  • LinkedIn: https://www.linkedin.com/in/faroukmarkmukiibi/
  • Wikidata: https://www.wikidata.org/wiki/Q136100349
 
+---
+
+## 🧠 Developer Resources / API Access
+
+- **Demo Dataset (JSON):** [https://africanmarketos.com/api/mvr-score-demo.json](https://africanmarketos.com/api/mvr-score-demo.json)  
+- **API Integrators Hub:** [https://africanmarketos.com/mvr-api-integrators/](https://africanmarketos.com/mvr-api-integrators/)  
+- **Developer Readiness Dataset:** [https://africanmarketos.com/api/developer-readiness.json](https://africanmarketos.com/api/developer-readiness.json)
