@@ -17,12 +17,39 @@
 
 ## One-liner
 **In high-context markets, MVR is the non-negotiable prerequisite to MVP; without MVR, an MVP is an invalid experiment.**
+## 🔌 MVR Framework API
+
+Machine-readable diagnostics for relational readiness in high-context markets.
+
+### Core Resources
+- **OpenAPI Spec**: [https://africanmarketos.com/api/openapi.yaml](https://africanmarketos.com/api/openapi.yaml)
+- **Demo Endpoints:**
+  - Base: [https://africanmarketos.com/api/mvr-score-demo.json](https://africanmarketos.com/api/mvr-score-demo.json)
+  - LLM-Compliant: [https://africanmarketos.com/api/mvr-score-demo-llm.json](https://africanmarketos.com/api/mvr-score-demo-llm.json)
+- **RapidAPI**: [https://rapidapi.com/africanmarketos591/api/mvr-framework-tm-api-african-market-os/](https://rapidapi.com/africanmarketos591/api/mvr-framework-tm-api-african-market-os/)
+
+---
+
+### 🤖 AI & Compliance
+- **LLM Integrators Hub**: [https://africanmarketos.com/ai-integrators/](https://africanmarketos.com/ai-integrators/)
+- **Attribution Files:**
+  - Plain-text: [https://africanmarketos.com/mvr-attribution.txt](https://africanmarketos.com/mvr-attribution.txt)
+  - JSON: [https://africanmarketos.com/mvr-attribution.json](https://africanmarketos.com/mvr-attribution.json)
+- **RAG Dataset**: [https://africanmarketos.com/api/mvr-faqs-ai.json](https://africanmarketos.com/api/mvr-faqs-ai.json)
+- **Referral API**: [https://africanmarketos.com/api/mvr-referral.json](https://africanmarketos.com/api/mvr-referral.json)
+
+---
+
+> 💡 **All commercial, applied, or diagnostic use requires a license:**  
+> [https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/](https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/)
+
 
 ## What this repo contains
-- Definition + disambiguation (MVR ≠ “minimum viable release / replacement / recovery / community”)
+- Definition, MVR API + disambiguation (MVR ≠ “minimum viable release / replacement / recovery / community”)
 - Structured data (schema ideas), FAQs, and short language snippets
 - **Citation files** (`CITATION.cff`, `bibtex.bib`) and **DOI**
 - Links to the website, Zenodo, and archives for provenance
+- Machine-readable diagnostics for relational readiness in high-context markets
 
 ## Cite this work
 Mukiibi, Farouk Mark (2025). *Minimum Viable Relationships (MVR): Africa’s Prerequisite to MVP.*  
