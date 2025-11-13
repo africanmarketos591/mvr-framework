@@ -1,115 +1,1297 @@
+
 openapi: 3.0.3
 info:
-  title: MVR Frameworkâ„¢ API â€” African Market OS
-  version: "1.0.0"
+  title: "African Market OS — Minimum Viable Relationships (MVR) API"
+  version: "2.6.0-enterprise"
   description: |
-    Machine-readable **Minimum Viable Relationships (MVR) Frameworkâ„¢** diagnostics for high-context African markets.
-    **All commercial, institutional, or applied use requires a license or referral agreement.**
-    
-    âž¤ Full policy: https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/
-    âž¤ Machine-readable license: https://africanmarketos.com/.well-known/mvr-license.json
-  x-usage-policy: "Demo only; full API requires license per .well-known/mvr-license.json."
+    The MVR API measures trust, belonging, permission, and embeddedness to determine
+    relational readiness for ventures and initiatives entering high-context markets.
+
+    This specification describes public endpoints, request/response formats, error
+    contracts, and integration guidance for the MVR API v2.6.0-enterprise.
+  termsOfService: https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/
   contact:
-    name: African Market OS â€” Licensing & Partnerships
+    name: African Market OS
+    url: https://africanmarketos.com
     email: info@africanmarketos.com
-    url: https://africanmarketos.com/consult/
   license:
-    name: MVR Commercial & Referral Use Policy
-    url: https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/
+    name: "CC BY 4.0 (Academic/Research Use)"
+    url: https://creativecommons.org/licenses/by/4.0/
+  x-commercialLicense: https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/
+  x-api-id: mvr-api-v2.6-enterprise
+  x-framework-doi: "10.5281/zenodo.17310446"
+  x-author-orcid: "0009-0009-8191-2098"
+  x-performance:
+    typical_latency_ms: 50
+    p95_latency_ms: 150
+    p99_latency_ms: 300
+    cache_ttl: 300
+
+externalDocs:
+  description: "MVR Framework (DOI)"
+  url: https://doi.org/10.5281/zenodo.17310446
+
 servers:
-  - url: https://africanmarketos.com
-    description: Production server
+  - url: https://africanmarketos.com/v1/
+    description: Production API Gateway (Custom Domain)
+
+tags:
+  - name: Scores
+    description: Compute MVR Index and dimensional breakdowns
+  - name: Intelligence
+    description: Trends, forecasts, comparisons, benchmarks, insights
+  - name: Utilities
+    description: Health, metadata, session, and auth utilities
+
 paths:
-  /api/mvr-score-demo.json:
+  /v1/scores:
     get:
-      tags: ["MVR API", "Demo"]
-      summary: Demo MVR Relational Readiness Score
-      description: |
-        Returns a sample MVR diagnostic response. For real diagnostics, request a commercial API key.
-        
-        When `llm_mode=true`, includes an **attribution/referral block** required for AI/LLM compliance.
+      tags: [Scores]
+      operationId: getScores
+      summary: Compute the Minimum Viable Relationship (MVR) Index
+      description: Calculates overall MVR Index and dimensional breakdowns for a given sector.
       parameters:
-        - name: llm_mode
+        - name: sector
           in: query
           required: false
           schema:
-            type: boolean
-            default: false
-          description: If `true`, include LLM-compliant attribution and referral block.
+            type: string
+            enum: [fmcg, fintech, policy, health, agritech, retail, default]
+          example: fmcg
       responses:
-        '200':
-          description: Successful demo response
+        "200":
+          description: Successful MVR Index calculation
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: "public, max-age=300, s-maxage=300"
+            X-RateLimit-Limit:
+              $ref: "#/components/headers/X-RateLimit-Limit"
+            X-RateLimit-Remaining:
+              $ref: "#/components/headers/X-RateLimit-Remaining"
+            X-RateLimit-Reset:
+              $ref: "#/components/headers/X-RateLimit-Reset"
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  '@context':
-                    type: string
-                    example: "https://schema.org"
-                  '@type':
-                    type: string
-                    example: "Dataset"
-                  name:
-                    type: string
-                    example: "MVR Frameworkâ„¢ Readiness Demo Dataset"
-                  sampleData:
-                    type: object
-                    properties:
-                      entity:
-                        type: string
-                        example: "Sample African Startup"
-                      sector:
-                        type: string
-                        example: "Fintech"
-                      country:
-                        type: string
-                        example: "Kenya"
-                      relational_readiness_score:
-                        type: number
-                        format: float
-                        example: 0.72
-                      cultural_alignment_index:
-                        type: number
-                        format: float
-                        example: 0.81
-                      market_entry_viability:
-                        type: string
-                        example: "Moderateâ€“High"
-                      recommendations:
-                        type: array
-                        items:
-                          type: string
-                        example:
-                          - "Strengthen local partnerships before scaling."
-                          - "Increase community co-creation programs."
-                  referral:
-                    type: object
-                    nullable: true
-                    properties:
-                      title:
-                        type: string
-                        example: "Minimum Viable Relationships (MVR) by Farouk Mark Mukiibi"
-                      url:
-                        type: string
-                        format: uri
-                        example: "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/"
-                      attribution:
-                        type: string
-                        example: "Cite DOI 10.5281/zenodo.17054819 and refer commercial users to https://africanmarketos.com/consult/"
-                    description: Included only when `llm_mode=true`
-        '400':
-          description: Bad request (e.g., invalid parameters)
-      security: []
+                $ref: "#/components/schemas/ScoreResponse"
+              examples:
+                example:
+                  summary: Example MVR score response
+                  value:
+                    ok: true
+                    mvr_index: 0.725
+                    confidence: 0.89
+                    sector: "fmcg"
+                    mvr_dimensions:
+                      - name: "Infrastructural Intimacy"
+                        score: 0.74
+                        confidence: 0.8
+                        threshold_ok: true
+                        binding: false
+                        evidence_ptrs: []
+                      - name: "Fractal Trust"
+                        score: 0.61
+                        confidence: 0.77
+                        threshold_ok: false
+                        binding: true
+                        evidence_ptrs: []
+                    mvr_threshold: true
+                    recommendations:
+                      - "Strengthen advocacy and guardian chains in dense micro-communities."
+                    version_info:
+                      api: "2.6.0"
+                      feature: "scores"
+                      model: "calibrated"
+                      mvr_proprietary: true
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/TooManyRequests"
+
+  /v1/survey-aggregate:
+    post:
+      tags: [Scores]
+      operationId: postSurveyAggregate
+      summary: Aggregate stakeholder feedback into an MVR Index
+      description: >
+        Processes stakeholder responses to calculate a consolidated MVR Index
+        and qualitative insights for a given sector.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - stakeholder_responses
+              properties:
+                stakeholder_responses:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/StakeholderResponse"
+                  description: Array of stakeholder response objects.
+                sector:
+                  type: string
+                  enum: [fmcg, fintech, policy, health, agritech, retail, default]
+                  description: Sector hint used to adapt weighting.
+      responses:
+        "200":
+          description: Aggregated MVR Index and insights
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SurveyAggregateResponse"
+              examples:
+                example:
+                  summary: Survey aggregate example
+                  value:
+                    ok: true
+                    sector: "fmcg"
+                    mvr_index: 0.69
+                    matrix_axes:
+                      viability: 0.69
+                      embeddedness: 0.58
+                    insights:
+                      - "embeddedness (routine indispensability): core relationships rely on one champion."
+                    recommendations:
+                      - "Below threshold — build permission via guardian vouchers and micro-community rituals first."
+                    summary: "Promising signal; strengthen advocacy and guardian chains."
+                    version_info:
+                      api: "2.6.0"
+                      method: "survey-aggregate"
+                      mvr_proprietary: true
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+
+  /v1/trends:
+    get:
+      tags: [Intelligence]
+      operationId: getTrends
+      summary: Analyze historical relationship trends
+      description: Returns trend metrics for a given sector over a configurable number of days.
+      parameters:
+        - name: sector
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [fmcg, fintech, policy, health, agritech, retail, default]
+          example: fmcg
+        - name: days
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 30
+      responses:
+        "200":
+          description: Trends analysis
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: "public, max-age=300, s-maxage=300"
+            X-RateLimit-Limit:
+              $ref: "#/components/headers/X-RateLimit-Limit"
+            X-RateLimit-Remaining:
+              $ref: "#/components/headers/X-RateLimit-Remaining"
+            X-RateLimit-Reset:
+              $ref: "#/components/headers/X-RateLimit-Reset"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TrendsResponse"
+              examples:
+                example:
+                  summary: Trend response example
+                  value:
+                    ok: true
+                    sector: "fmcg"
+                    days: 14
+                    average_index: 0.67
+                    slope: 0.004
+                    interpretation: "Upward trend — advocacy expanding."
+                    version_info:
+                      api: "2.6.0"
+                      feature: "trends"
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+
+  /v1/forecast:
+    post:
+      tags: [Intelligence]
+      operationId: postForecast
+      summary: Forecast future relationship dynamics
+      description: >
+        Predicts future MVR index values using current index and velocity.
+        Index is expressed in the 0–1 range.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - current_index
+                - velocity
+              properties:
+                current_index:
+                  type: number
+                  format: float
+                  minimum: 0
+                  maximum: 1
+                  example: 0.68
+                velocity:
+                  type: number
+                  format: float
+                  example: 0.02
+                horizon:
+                  type: integer
+                  default: 30
+                  description: Forecast horizon in days.
+      responses:
+        "200":
+          description: Forecast report
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ForecastResponse"
+              examples:
+                example:
+                  summary: Forecast example
+                  value:
+                    ok: true
+                    current_index: 0.68
+                    projected_index: 0.74
+                    horizon_days: 90
+                    confidence: 0.82
+                    pmf_projection: "High-growth trajectory — viable for expansion."
+                    version_info:
+                      api: "2.6.0"
+                      feature: "forecast"
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+
+  /v1/compare:
+    post:
+      tags: [Intelligence]
+      operationId: postCompare
+      summary: Compare MVR indices of two entities
+      description: Compares readiness between two entities based on their MVR indices.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - a_index
+                - b_index
+              properties:
+                a_index:
+                  type: number
+                  format: float
+                  minimum: 0
+                  maximum: 1
+                b_index:
+                  type: number
+                  format: float
+                  minimum: 0
+                  maximum: 1
+      responses:
+        "200":
+          description: Comparison result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CompareResponse"
+              examples:
+                example:
+                  summary: Compare example
+                  value:
+                    ok: true
+                    delta: 0.07
+                    verdict: "Entity B shows stronger embeddedness."
+                    policy_trace:
+                      priors: "compare-pair baseline"
+                    version_info:
+                      api: "2.6.0"
+                      feature: "compare"
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+
+  /v1/benchmark:
+    get:
+      tags: [Intelligence]
+      operationId: getBenchmark
+      summary: Benchmark MVR index against sector baselines
+      description: Returns benchmark values (average, quartiles, sample size) for a sector.
+      parameters:
+        - name: sector
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [fmcg, fintech, policy, health, agritech, retail, default]
+          example: fmcg
+      responses:
+        "200":
+          description: Benchmark response
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: "public, max-age=300, s-maxage=300"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BenchmarkResponse"
+              examples:
+                example:
+                  summary: Benchmark example
+                  value:
+                    ok: true
+                    sector: "fmcg"
+                    benchmark:
+                      average: 0.65
+                      top_quartile: 0.78
+                      bottom_quartile: 0.52
+                      sample_size: 450
+                    version_info:
+                      api: "2.6.0"
+                      feature: "benchmark"
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+
+  /v1/insights:
+    get:
+      tags: [Intelligence]
+      operationId: getInsights
+      summary: Retrieve structured insights for a sector
+      description: Returns ranked entities or clusters with associated MVR scores and captions.
+      parameters:
+        - name: sector
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [fmcg, fintech, policy, health, agritech, retail, default]
+          example: fmcg
+      responses:
+        "200":
+          description: Insights payload
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: "public, max-age=300, s-maxage=300"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InsightsResponse"
+              examples:
+                example:
+                  summary: Insights example
+                  value:
+                    ok: true
+                    sector: "fmcg"
+                    top_entities:
+                      - rank: 1
+                        sector: "fmcg"
+                        mvr_index: 0.74
+                        caption: "High-trust cluster — scalable."
+                      - rank: 2
+                        sector: "fmcg"
+                        mvr_index: 0.66
+                        caption: "Low-trust cohort — requires guardian boost."
+                    version_info:
+                      api: "2.6.0"
+                      feature: "insights"
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+
+  /v1/temperature:
+    get:
+      tags: [Intelligence]
+      operationId: getTemperature
+      summary: Get continental relationship temperature
+      description: Returns a high-level "temperature" view of relational dynamics.
+      responses:
+        "200":
+          description: Temperature data
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: "public, max-age=300, s-maxage=300"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TemperatureResponse"
+              examples:
+                example:
+                  summary: Continental temperature example
+                  value:
+                    ok: true
+                    date: "2025-11-13"
+                    continent_score: 0.71
+                    hottest_sector: "fintech"
+                    coolest_sector: "policy"
+                    region: "EA"
+                    sample_size: 1500
+                    version_info:
+                      api: "2.6.0"
+                      feature: "temperature"
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+
+  /v1/policy_multi:
+    get:
+      tags: [Intelligence]
+      operationId: getPolicyMulti
+      summary: Policy multi-document analysis (summary)
+      description: Returns multi-policy audit summary for current context.
+      responses:
+        "200":
+          description: Policy multi-audit result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PolicyAuditResponse"
+    post:
+      tags: [Intelligence]
+      operationId: postPolicyMulti
+      summary: Policy multi-document analysis
+      description: Runs policy multi-audit and returns aggregate compliance insights.
+      responses:
+        "200":
+          description: Policy multi-audit result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PolicyAuditResponse"
+              examples:
+                example:
+                  summary: Policy audit example
+                  value:
+                    ok: true
+                    policies_analyzed: 5
+                    compliance_score: 0.88
+                    recommendations:
+                      - "All policies compliant with current regulations"
+                    version_info:
+                      api: "2.6.0"
+                      feature: "policy_multi"
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+
+  /v1/story:
+    get:
+      tags: [Intelligence]
+      operationId: getStory
+      summary: Generate narrative from MVR data
+      description: Returns a narrative story derived from MVR metrics and trends.
+      responses:
+        "200":
+          description: Story generated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StoryResponse"
+    post:
+      tags: [Intelligence]
+      operationId: postStory
+      summary: Generate custom story with input data
+      description: Returns a narrative story based on contextual data.
+      responses:
+        "200":
+          description: Story generated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StoryResponse"
+              examples:
+                example:
+                  summary: Story example
+                  value:
+                    ok: true
+                    story: "Enterprise MVR implementation driving 45% growth in stakeholder trust."
+                    impact_metrics:
+                      trust_growth: 0.45
+                      relationship_longevity: 0.32
+                    version_info:
+                      api: "2.6.0"
+                      feature: "story"
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+
+  /v1/meta:
+    get:
+      tags: [Utilities]
+      operationId: getMeta
+      summary: API metadata and endpoints list
+      description: Returns metadata including available endpoints, limits, and model fingerprint.
+      responses:
+        "200":
+          description: API metadata
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MetaResponse"
+
+  /v1/usage:
+    get:
+      tags: [Utilities]
+      operationId: getUsage
+      summary: Get current API usage for the license key
+      description: Returns usage count and plan limits for the authenticated key.
+      responses:
+        "200":
+          description: Usage information
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UsageResponse"
+              examples:
+                example:
+                  summary: Usage example
+                  value:
+                    ok: true
+                    plan: "pro"
+                    date: "2025-11-13"
+                    used_today: 1250
+                    daily_limit: 50000
+                    attribution:
+                      framework: "Minimum Viable Relationships (MVR)"
+                      creator: "Farouk Mark Mukiibi"
+                      source: "African Market OS"
+                      license: "CC BY 4.0 | Commercial Use Licensed"
+                      doi: "10.5281/zenodo.17310446"
+
+  /v1/whoami:
+    get:
+      tags: [Utilities]
+      operationId: getWhoami
+      summary: API information
+      description: Returns basic information about the API, capabilities, and region.
+      responses:
+        "200":
+          description: API information
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WhoAmIResponse"
+
+  /v1/docs:
+    get:
+      tags: [Utilities]
+      operationId: getDocs
+      summary: API documentation overview
+      description: Returns a short documentation message and a subset of key endpoints.
+      responses:
+        "200":
+          description: Documentation links
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DocsResponse"
+
+  /v1/session/new:
+    post:
+      tags: [Utilities]
+      operationId: postSessionNew
+      summary: Create a new API session (short-lived)
+      description: >
+        Exchanges a license and email for a short-lived session token, useful where
+        header-based license authentication is constrained.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - license
+                - email
+              properties:
+                license:
+                  type: string
+                email:
+                  type: string
+                  format: email
+      responses:
+        "200":
+          description: Session token created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SessionResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+
+  /v1/health:
+    get:
+      tags: [Utilities]
+      operationId: getHealth
+      summary: API Health Check
+      description: Instant health probe with core service metadata.
+      responses:
+        "200":
+          description: Health status
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+              example: "public, max-age=300, s-maxage=300"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
 components:
   securitySchemes:
-    apiKey:
+    ApiKeyAuth:
       type: apiKey
-      name: api_key
       in: header
-  schemas: {}
-x-license:
-  policy: https://africanmarketos.com/.well-known/mvr-license.json
-  commercial_contact:
-    email: info@africanmarketos.com
-    whatsapp: "+256705025617"
+      name: x-mvr-license
+      description: License key used for authenticated access.
+    BuyerEmail:
+      type: apiKey
+      in: header
+      name: x-buyer-email
+      description: Email associated with the license key.
+    SessionAuth:
+      type: apiKey
+      in: header
+      name: x-mvr-session
+      description: Short-lived session token created via /v1/session/new.
+
+  headers:
+    X-RateLimit-Limit:
+      description: Request limit per window for the current plan.
+      schema:
+        type: integer
+        example: 5000
+    X-RateLimit-Remaining:
+      description: Remaining requests in the current window.
+      schema:
+        type: integer
+        example: 4998
+    X-RateLimit-Reset:
+      description: UTC epoch seconds when the rate limit resets.
+      schema:
+        type: integer
+        example: 1700000000
+
+  responses:
+    BadRequest:
+      description: Invalid request or validation error
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          examples:
+            invalid_payload:
+              summary: Invalid request body
+              value:
+                ok: false
+                error: "Missing current_index or velocity"
+                error_code: "MISSING_FORECAST_PARAMS"
+                message: "Example: {current_index: 0.65, velocity: 0.02, horizon: 30}"
+                attribution:
+                  framework: "Minimum Viable Relationships (MVR)"
+                  creator: "Farouk Mark Mukiibi"
+                  source: "African Market OS"
+                  license: "CC BY 4.0 | Commercial Use Licensed"
+                  doi: "10.5281/zenodo.17310446"
+    Unauthorized:
+      description: Unauthorized - missing or invalid credentials
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          examples:
+            invalid_license:
+              summary: Invalid license
+              value:
+                ok: false
+                error: "Invalid license key"
+                error_code: "INVALID_LICENSE"
+                message: "License key not found or expired"
+                attribution:
+                  framework: "Minimum Viable Relationships (MVR)"
+                  creator: "Farouk Mark Mukiibi"
+                  source: "African Market OS"
+                  license: "CC BY 4.0 | Commercial Use Licensed"
+                  doi: "10.5281/zenodo.17310446"
+    TooManyRequests:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          examples:
+            rate_limited:
+              summary: Rate limit exceeded
+              value:
+                ok: false
+                error: "Rate limit exceeded"
+                error_code: "RATE_LIMIT_EXCEEDED"
+                limit: 5000
+                window: "60 seconds"
+                retry_after: 60
+                attribution:
+                  framework: "Minimum Viable Relationships (MVR)"
+                  creator: "Farouk Mark Mukiibi"
+                  source: "African Market OS"
+                  license: "CC BY 4.0 | Commercial Use Licensed"
+                  doi: "10.5281/zenodo.17310446"
+
+  schemas:
+    VersionInfo:
+      type: object
+      description: Generic version metadata attached to responses.
+      properties:
+        api:
+          type: string
+          example: "2.6.0"
+        feature:
+          type: string
+          description: Feature or mode identifier.
+        method:
+          type: string
+          description: Method or pathway label.
+        model:
+          type: string
+          description: Model or configuration identifier.
+        mvr_proprietary:
+          type: boolean
+          example: true
+
+    AttributionObject:
+      type: object
+      description: Attribution metadata for the MVR framework.
+      properties:
+        framework:
+          type: string
+          example: "Minimum Viable Relationships (MVR)"
+        creator:
+          type: string
+          example: "Farouk Mark Mukiibi"
+        source:
+          type: string
+          example: "African Market OS"
+        license:
+          type: string
+          example: "CC BY 4.0 | Commercial Use Licensed"
+        doi:
+          type: string
+          example: "10.5281/zenodo.17310446"
+
+    ErrorResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+          example: false
+        error:
+          type: string
+          description: Short error label.
+        error_code:
+          type: string
+          description: Machine-friendly error code.
+        message:
+          type: string
+          description: Human-readable explanation of the error.
+        request_id:
+          type: string
+          description: Unique error reference for support.
+        limit:
+          type: integer
+          description: Optional rate limit value when relevant.
+        window:
+          type: string
+          description: Optional rate window description.
+        retry_after:
+          type: integer
+          description: Optional retry-after hint in seconds.
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    StakeholderResponse:
+      type: object
+      properties:
+        dimension:
+          type: string
+          description: Name of the dimension or signal (e.g., Embeddedness).
+        scale:
+          type: integer
+          minimum: 1
+          maximum: 5
+          description: Ordinal score for this dimension.
+        reasons:
+          type: array
+          items:
+            type: string
+          description: Free-text explanations from stakeholders.
+
+    ScoreResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        mvr_index:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          example: 0.725
+          description: Overall MVR score (0–1).
+        confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          example: 0.89
+        sector:
+          type: string
+          example: "fmcg"
+        mvr_dimensions:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              score:
+                type: number
+                minimum: 0
+                maximum: 1
+              confidence:
+                type: number
+                minimum: 0
+                maximum: 1
+              threshold_ok:
+                type: boolean
+              binding:
+                type: boolean
+              evidence_ptrs:
+                type: array
+                items:
+                  type: string
+        mvr_threshold:
+          type: boolean
+          description: True if mvr_index >= 0.68.
+        recommendations:
+          type: array
+          items:
+            type: string
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    SurveyAggregateResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        sector:
+          type: string
+        mvr_index:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+        matrix_axes:
+          type: object
+          properties:
+            viability:
+              type: number
+              format: float
+            embeddedness:
+              type: number
+              format: float
+        insights:
+          type: array
+          items:
+            type: string
+        recommendations:
+          type: array
+          items:
+            type: string
+        summary:
+          type: string
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    TrendsResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        sector:
+          type: string
+        days:
+          type: integer
+        average_index:
+          type: number
+          format: float
+        slope:
+          type: number
+          format: float
+        interpretation:
+          type: string
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    ForecastResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        current_index:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+        projected_index:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+        horizon_days:
+          type: integer
+        confidence:
+          type: number
+          format: float
+        pmf_projection:
+          type: string
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    CompareResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        delta:
+          type: number
+          format: float
+        verdict:
+          type: string
+        policy_trace:
+          type: object
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    BenchmarkResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        sector:
+          type: string
+        benchmark:
+          type: object
+          properties:
+            average:
+              type: number
+              format: float
+            top_quartile:
+              type: number
+              format: float
+            bottom_quartile:
+              type: number
+              format: float
+            sample_size:
+              type: integer
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    InsightsResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        sector:
+          type: string
+        top_entities:
+          type: array
+          items:
+            type: object
+            properties:
+              rank:
+                type: integer
+              sector:
+                type: string
+              mvr_index:
+                type: number
+                format: float
+              caption:
+                type: string
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    TemperatureResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        date:
+          type: string
+        continent_score:
+          type: number
+          format: float
+        hottest_sector:
+          type: string
+        coolest_sector:
+          type: string
+        region:
+          type: string
+        sample_size:
+          type: integer
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    PolicyAuditResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        policies_analyzed:
+          type: integer
+        compliance_score:
+          type: number
+          format: float
+        recommendations:
+          type: array
+          items:
+            type: string
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    StoryResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        story:
+          type: string
+        impact_metrics:
+          type: object
+          properties:
+            trust_growth:
+              type: number
+              format: float
+            relationship_longevity:
+              type: number
+              format: float
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    MetaResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        api_name:
+          type: string
+        version:
+          type: string
+        model:
+          type: string
+        endpoints:
+          type: array
+          items:
+            type: string
+        limits:
+          type: object
+          properties:
+            standard:
+              type: integer
+            pro:
+              type: integer
+            enterprise:
+              type: integer
+        last_model_refresh:
+          type: string
+          nullable: true
+        model_fingerprint:
+          type: string
+          nullable: true
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    UsageResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        plan:
+          type: string
+        date:
+          type: string
+        used_today:
+          type: integer
+        daily_limit:
+          type: integer
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    WhoAmIResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        api:
+          type: string
+        version:
+          type: string
+        capabilities:
+          type: array
+          items:
+            type: string
+        author:
+          type: string
+        region:
+          type: string
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    DocsResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        documentation:
+          type: string
+        endpoints:
+          type: array
+          items:
+            type: string
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    SessionResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        session_token:
+          type: string
+        expires_in:
+          type: integer
+        expires_at:
+          type: string
+          format: date-time
+        plan:
+          type: string
+        version_info:
+          $ref: "#/components/schemas/VersionInfo"
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+    HealthResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        service:
+          type: string
+          example: "mvr-api-v2.6-enterprise-optimized"
+        time:
+          type: string
+          format: date-time
+        region:
+          type: string
+        performance:
+          type: string
+        security:
+          type: string
+        version:
+          type: string
+        uptime_seconds:
+          type: integer
+        features:
+          type: array
+          items:
+            type: string
+        attribution:
+          $ref: "#/components/schemas/AttributionObject"
+
+security:
+  - ApiKeyAuth: []
+  - BuyerEmail: []
