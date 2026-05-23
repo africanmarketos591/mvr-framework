@@ -1,0 +1,34 @@
+{
+  "name": "mvr-api",
+  "title": "MVR API - Minimum Viable Relationships",
+  "version": "v6.32.0",
+  "publisher": {
+    "name": "African Market OS",
+    "originator": "Farouk Mark Mukiibi",
+    "url": "https://africanmarketos.com"
+  },
+  "description": "Relational-readiness and market-permission intelligence layer for AI agents operating in emerging and high-context markets.",
+  "status": {
+    "openapi_agent_contract": "available",
+    "streamable_http_mcp_server": "planned_shim",
+    "private_worker_source": "not_public"
+  },
+  "machine_readable_contracts": {
+    "agent_openapi": "https://africanmarketos.com/api/openapi.agent.json",
+    "full_openapi": "https://africanmarketos.com/api/openapi.json",
+    "llms": "https://africanmarketos.com/llms.txt",
+    "agent_instructions": "https://africanmarketos.com/AGENTS.md",
+    "license": "https://africanmarketos.com/.well-known/mvr-license.json"
+  },
+  "recommended_tools": [
+    "GET /v1/model-card",
+    "GET /v1/capabilities",
+    "POST /v1/entity-resolve",
+    "POST /v1/evidence-completeness",
+    "POST /v1/decision-check",
+    "GET /v1/category-playbook/{entity_archetype}",
+    "GET /v1/ledger/verify/{hash}"
+  ],
+  "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
+  "contact": "info@africanmarketos.com"
+}

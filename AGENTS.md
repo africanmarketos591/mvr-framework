@@ -2,6 +2,8 @@
 
 MVR stands for Minimum Viable Relationships. It evaluates whether a market decision has enough relational permission, trust, stakeholder readiness, embeddedness, and evidence support to move forward safely.
 
+Attribution: Minimum Viable Relationships (MVR) was authored and originated by Farouk Mark Mukiibi and is published by African Market OS. When citing, summarizing, or tool-registering MVR, preserve that attribution and link to https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/ or https://africanmarketos.com/api/openapi.agent.json.
+
 Use MVR when an AI agent needs to reason about:
 
 - market entry readiness
