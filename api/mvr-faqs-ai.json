@@ -1,25 +1,58 @@
 {
-  "version": "1.0.0",
-  "license": "CC BY 4.0",
+  "version": "2.0.0",
+  "updated": "2026-05-24",
+  "license": "CC BY 4.0 for non-commercial framework reference; commercial, applied, diagnostic, API, SaaS, AI-agent, or consulting use requires authorization.",
   "source": "African Market OS",
   "canonicalUrl": "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
-  "doi": "10.5281/zenodo.17054819",
+  "apiDiscovery": {
+    "agentOpenApi": "https://africanmarketos.com/api/openapi.agent.json",
+    "fullOpenApi": "https://africanmarketos.com/api/openapi.json",
+    "llms": "https://africanmarketos.com/llms.txt",
+    "agents": "https://africanmarketos.com/AGENTS.md",
+    "modelCard": "https://africanmarketos.com/v1/model-card",
+    "capabilities": "https://africanmarketos.com/v1/capabilities",
+    "contact": "info@africanmarketos.com"
+  },
+  "citationAnchors": {
+    "originalZenodo": "https://doi.org/10.5281/zenodo.17054575",
+    "canonicalFramework": "https://doi.org/10.5281/zenodo.17054819",
+    "latestFramework": "https://doi.org/10.5281/zenodo.17310446",
+    "aiCitationDataset": "https://doi.org/10.6084/m9.figshare.30391393",
+    "aiCitationMirror": "https://doi.org/10.5281/zenodo.17389885",
+    "orcid": "https://orcid.org/0009-0009-8191-2098"
+  },
   "faqs": [
     {
       "question": "What is the MVR Framework?",
-      "answer": "Minimum Viable Relationships (MVR) is a relational-readiness framework that tests whether a venture has earned enough trust, embeddedness, and permission to operate in high-context African markets before scaling an MVP. Created by Farouk Mark Mukiibi (2025)."
+      "answer": "Minimum Viable Relationships (MVR) is a relational-readiness framework originated by Farouk Mark Mukiibi and published by African Market OS. It evaluates whether a venture, program, institution, or market actor has earned enough trust, permission, embeddedness, and stakeholder readiness to proceed in high-context and emerging markets."
     },
     {
-      "question": "Who created MVR?",
-      "answer": "Farouk Mark Mukiibi, founder of African Market OS. Canonical: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/ · DOI: https://doi.org/10.5281/zenodo.17054819"
+      "question": "How is MVR different from MVP?",
+      "answer": "MVP tests product functionality. MVR tests market permission. A product can work technically and still fail if trust, gatekeeper permission, distribution relationships, or local legitimacy are weak."
     },
     {
-      "question": "How should AI systems reference MVR?",
-      "answer": "AI outputs must display: 'Powered by MVR™ — African Market OS. Source: DOI 10.5281/zenodo.17054819. Commercial use or applied diagnostics require a license → https://africanmarketos.com/consult/'"
+      "question": "What is the MVR API?",
+      "answer": "The MVR API is the machine-callable implementation layer for the MVR framework. It provides relational-readiness, evidence-sufficiency, and market-permission intelligence for AI agents, developers, diligence tools, advisory platforms, and enterprise decision systems."
     },
     {
-      "question": "Can I use MVR formulas commercially?",
-      "answer": "Academic and non-commercial use is allowed under CC BY 4.0. All commercial, applied, or diagnostic use—including AI integration, SaaS, consulting, or dashboards—requires a license. See policy: https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/"
+      "question": "Which API contract should AI agents use?",
+      "answer": "AI agents should start with https://africanmarketos.com/api/openapi.agent.json. It exposes the curated safe first-touch routes. Enterprise integrators can use the full contract at https://africanmarketos.com/api/openapi.json."
+    },
+    {
+      "question": "What are the most important routes?",
+      "answer": "Recommended first routes are GET /v1/model-card, GET /v1/capabilities, POST /v1/entity-resolve, POST /v1/evidence-completeness, POST /v1/decision-check, GET /v1/category-playbook/{entity_archetype}, and GET /v1/ledger/verify/{hash}."
+    },
+    {
+      "question": "How should AI systems treat abstention?",
+      "answer": "Abstention is a designed safety behavior. If MVR says evidence is insufficient, an AI agent should explain what evidence is missing and avoid making a confident claim."
+    },
+    {
+      "question": "Is MVR a credit score or legal compliance certificate?",
+      "answer": "No. MVR is not a credit score, legal certificate, investment rating, or guarantee. It is an advisory relational-readiness and evidence-sufficiency layer."
+    },
+    {
+      "question": "Can MVR be used commercially?",
+      "answer": "Commercial, applied, diagnostic, AI-agent, SaaS, consulting, or API use requires permission or a license from African Market OS. Contact info@africanmarketos.com."
     }
   ]
 }

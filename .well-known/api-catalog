@@ -1,0 +1,43 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://africanmarketos.com",
+      "service-desc": [
+        {
+          "href": "https://africanmarketos.com/api/openapi.agent.json",
+          "type": "application/openapi+json",
+          "title": "MVR API curated agent OpenAPI description"
+        },
+        {
+          "href": "https://africanmarketos.com/api/openapi.json",
+          "type": "application/openapi+json",
+          "title": "MVR Core API OpenAPI description"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://africanmarketos.com/api/docs",
+          "type": "text/html",
+          "title": "MVR API documentation"
+        },
+        {
+          "href": "https://africanmarketos.com/llms.txt",
+          "type": "text/plain",
+          "title": "MVR API LLM discovery file"
+        },
+        {
+          "href": "https://africanmarketos.com/AGENTS.md",
+          "type": "text/markdown",
+          "title": "MVR API agent instructions"
+        }
+      ],
+      "license": [
+        {
+          "href": "https://africanmarketos.com/.well-known/mvr-license.json",
+          "type": "application/json",
+          "title": "MVR framework and API license"
+        }
+      ]
+    }
+  ]
+}

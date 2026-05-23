@@ -1,0 +1,26 @@
+{
+  "service": "MVR API",
+  "currency": "USD",
+  "contact": "info@africanmarketos.com",
+  "tiers": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "price_monthly": 20,
+      "description": "Developer testing and light agent integration."
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "price_monthly_range": [100, 200],
+      "description": "Higher-volume integrations and broader route access."
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "price": "custom",
+      "description": "Tenant-scoped deployment, private limits, governance support, and enterprise integrations."
+    }
+  ]
+}
+

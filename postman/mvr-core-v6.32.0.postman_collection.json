@@ -1,0 +1,52 @@
+{
+  "info": {
+    "name": "MVR Core API v6.32.0",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Starter collection for MVR Core API. Set MVR_API_KEY and MVR_BASE_URL in Postman environment."
+  },
+  "variable": [
+    { "key": "MVR_BASE_URL", "value": "https://africanmarketos.com" },
+    { "key": "MVR_API_KEY", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Model Card",
+      "request": {
+        "method": "GET",
+        "url": "{{MVR_BASE_URL}}/v1/model-card"
+      }
+    },
+    {
+      "name": "Entity Resolve",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-API-Key", "value": "{{MVR_API_KEY}}" }
+        ],
+        "url": "{{MVR_BASE_URL}}/v1/entity-resolve",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"MTN Nigeria\",\n  \"country\": \"NG\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Evidence Completeness",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-API-Key", "value": "{{MVR_API_KEY}}" },
+          { "key": "X-Response-Profile", "value": "full_advisory" }
+        ],
+        "url": "{{MVR_BASE_URL}}/v1/evidence-completeness",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"entity_archetype\": \"retail_chain\",\n  \"country\": \"UG\",\n  \"evidence_pack\": []\n}"
+        }
+      }
+    }
+  ]
+}
+

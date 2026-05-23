@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "MVR API",
+  "name_for_model": "mvr_api",
+  "description_for_human": "Relational-readiness and market-permission intelligence for emerging and high-context markets.",
+  "description_for_model": "Use MVR API to evaluate trust, permission, embeddedness, stakeholder readiness, evidence sufficiency, and market adoption risk. Do not treat outputs as credit scores, legal certificates, or outcome guarantees.",
+  "auth": {
+    "type": "service_http",
+    "authorization_type": "bearer"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://africanmarketos.com/api/openapi.agent.json"
+  },
+  "logo_url": "https://africanmarketos.com/favicon.ico",
+  "contact_email": "info@africanmarketos.com",
+  "legal_info_url": "https://africanmarketos.com/api/terms"
+}

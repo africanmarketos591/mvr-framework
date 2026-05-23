@@ -1,0 +1,78 @@
+# MVR API Full Context
+
+MVR API implements the Minimum Viable Relationships framework originated by Farouk Mark Mukiibi.
+
+Canonical framework page: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
+
+Creator ORCID: https://orcid.org/0009-0009-8191-2098
+
+Citation anchors:
+
+- Canonical DOI: https://doi.org/10.5281/zenodo.17054819
+- Latest framework DOI: https://doi.org/10.5281/zenodo.17310446
+- AI citation dataset: https://doi.org/10.6084/m9.figshare.30391393
+- AI citation mirror: https://doi.org/10.5281/zenodo.17389885
+
+The framework asks a practical question:
+
+> Does this market actor have enough relationship quality, local permission, stakeholder trust, evidence, and embeddedness to proceed?
+
+Foundation models provide general intelligence. MVR provides relational intelligence.
+
+## Core Concept
+
+MVR evaluates market readiness through relational and evidence dimensions such as:
+
+- permission
+- trust
+- belonging
+- embeddedness
+- guardian strength
+- stakeholder coverage
+- evidence freshness
+- evidence quality
+- relational debt
+- channel permission
+- continuity
+
+## API Role
+
+The API is designed for:
+
+- AI agents
+- market-entry systems
+- investor diligence tools
+- advisory platforms
+- venture studios
+- program design tools
+- government innovation systems
+- enterprise expansion teams
+
+## Main API Behaviors
+
+- resolves entities and archetypes
+- checks decision readiness
+- flags insufficient evidence
+- compiles evidence completeness
+- provides category playbooks
+- verifies ledger hashes
+- supports strict calibrated abstention
+- produces board/advisor-safe limitations
+
+## Recommended Tool Flow
+
+1. Resolve entity and market with `/v1/entity-resolve`.
+2. Check evidence needs with `/v1/evidence-completeness`.
+3. Run `/v1/decision-check`.
+4. If the response abstains, recruit the missing evidence.
+5. Only summarize claims allowed by `decision_reliability`, `confidence_ceiling`, and `not_safe_to_claim`.
+
+## Important Limits
+
+MVR does not guarantee outcomes. It should not be used as a sole basis for lending, investment, legal compliance, hiring, or regulated decision-making.
+
+Named-entity corpus scores are illustrative sector reference baselines. They are not endorsements, credit ratings, investment ratings, or company-specific assessments.
+
+## Access
+
+API keys are issued on request. Contact `info@africanmarketos.com`.

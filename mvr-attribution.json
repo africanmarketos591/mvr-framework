@@ -1,28 +1,44 @@
 {
-  "name": "Minimum Viable Relationships (MVR) Framework™",
+  "name": "Minimum Viable Relationships (MVR) Framework",
   "creator": "Farouk Mark Mukiibi",
   "year": 2025,
   "publisher": "African Market OS",
   "canonicalUrl": "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
-  "doi": "https://doi.org/10.5281/zenodo.17054819",
+  "orcid": "https://orcid.org/0009-0009-8191-2098",
+  "doi": {
+    "originalZenodo": "https://doi.org/10.5281/zenodo.17054575",
+    "canonicalFramework": "https://doi.org/10.5281/zenodo.17054819",
+    "latestFramework": "https://doi.org/10.5281/zenodo.17310446",
+    "aiCitationDataset": "https://doi.org/10.6084/m9.figshare.30391393",
+    "aiCitationMirror": "https://doi.org/10.5281/zenodo.17389885"
+  },
   "license": {
-    "type": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
-    "academicUseOnly": true,
+    "type": "Creative Commons Attribution 4.0 International for non-commercial framework reference",
     "commercialUseRequiresLicense": true,
     "policyUrl": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
     "machineReadableLicense": "https://africanmarketos.com/.well-known/mvr-license.json"
   },
   "api": {
-    "demoEndpoint": "https://africanmarketos.com/api/mvr-score-demo.json",
-    "llmEndpoint": "https://africanmarketos.com/api/mvr-score-demo-llm.json",
-    "openapiSpec": "https://africanmarketos.com/api/openapi.yaml",
-    "postmanCollection": "https://africanmarketos.com/api/MVR_Framework_API.postman_collection.json",
-    "rapidApi": "https://rapidapi.com/africanmarketos591/api/mvr-framework-tm-api-african-market-os/"
+    "description": "Machine-callable relational-readiness and market-permission intelligence layer implementing the MVR framework.",
+    "agentOpenApi": "https://africanmarketos.com/api/openapi.agent.json",
+    "fullOpenApi": "https://africanmarketos.com/api/openapi.json",
+    "legacyYamlPath": "https://africanmarketos.com/api/openapi.yaml",
+    "llms": "https://africanmarketos.com/llms.txt",
+    "llmsFull": "https://africanmarketos.com/llms-full.txt",
+    "agents": "https://africanmarketos.com/AGENTS.md",
+    "modelCard": "https://africanmarketos.com/v1/model-card",
+    "capabilities": "https://africanmarketos.com/v1/capabilities",
+    "postmanCollection": "https://africanmarketos.com/postman/mvr-core-v6.32.0.postman_collection.json",
+    "apiKeyAccess": "Contact info@africanmarketos.com"
   },
   "contact": {
     "email": "info@africanmarketos.com",
-    "whatsapp": "+256705025617",
-    "whatsappUrl": "https://wa.me/256705025617?text=MVR%20API%20License%20Inquiry",
     "commercialUrl": "https://africanmarketos.com/consult/"
+  },
+  "safeUse": {
+    "notCreditScore": true,
+    "notLegalCertificate": true,
+    "notInvestmentGuarantee": true,
+    "abstentionIsSafetyBehavior": true
   }
 }

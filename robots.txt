@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /api/
+Allow: /docs/
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /AGENTS.md
+Allow: /.well-known/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://africanmarketos.com/sitemap.xml
+
