@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-: "${MVR_API_KEY:?Set MVR_API_KEY first}"
+MVR_BASE_URL="${MVR_BASE_URL:-https://africanmarketos.com}"
+MVR_API_KEY="${MVR_API_KEY:-mvr-demo-key-2026}"
 
-curl -sS https://africanmarketos.com/v1/entity-resolve \
+curl -sS -X POST "${MVR_BASE_URL}/v1/entity-resolve" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: ${MVR_API_KEY}" \
-  -d '{"query":"MTN Nigeria","country":"NG"}'
-
+  -d '{
+    "entity_name": "MTN Nigeria",
+    "country": "NG"
+  }'

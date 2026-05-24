@@ -54,9 +54,32 @@
   "api": {
     "agentOpenApi": "https://africanmarketos.com/api/openapi.agent.json",
     "fullOpenApi": "https://africanmarketos.com/api/openapi.json",
+    "mcpEndpoint": "https://africanmarketos.com/mcp",
+    "mcpRegistryName": "io.github.africanmarketos591/mvr-api",
+    "mcpRegistryLookup": "https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api",
     "llms": "https://africanmarketos.com/llms.txt",
     "agents": "https://africanmarketos.com/AGENTS.md",
+    "sandbox": {
+      "apiKeyHeader": "X-API-Key",
+      "apiKeyValue": "mvr-demo-key-2026",
+      "authorizedUse": "non-commercial evaluation only",
+      "prohibitedUse": [
+        "production decisioning",
+        "credit scoring",
+        "legal or regulatory certification",
+        "model training or fine-tuning",
+        "reverse engineering",
+        "commercial resale without license"
+      ]
+    },
     "access": "Contact info@africanmarketos.com"
+  },
+  "aiTrainingPolicy": {
+    "publicRetrievalAllowed": true,
+    "attributionRequired": true,
+    "modelTrainingAllowed": false,
+    "fineTuningAllowed": false,
+    "allowedPurpose": "search, citation, answer-time retrieval, tool discovery, and non-commercial sandbox evaluation"
   },
   "citation": [
     "https://doi.org/10.5281/zenodo.17054575",

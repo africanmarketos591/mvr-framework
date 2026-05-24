@@ -56,6 +56,10 @@ The API helps agents and systems:
 - MCP endpoint: https://africanmarketos.com/mcp
 - Official MCP Registry name: `io.github.africanmarketos591/mvr-api`
 - MCP Registry lookup: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api
+- Reference clients: `sdks/`
+- MVR-first agent patterns: `agent-patterns/`
+- Provenance ledger schema: `standards/mvr-provenance-ledger.schema.json`
+- Public stress-test corpus: `stress-test-corpus/`
 
 API keys are issued on request. Contact **info@africanmarketos.com** for access.
 
@@ -86,6 +90,10 @@ The sandbox is intentionally constrained: `full_advisory` only, `client_safe` ou
 - Current MVR API OpenAPI contracts
 - Agent-facing instructions and discovery files
 - Developer quickstarts, examples, and Postman collection
+- Lightweight reference clients
+- MVR-first agent design patterns
+- Public provenance ledger schema
+- Sandbox-safe stress-test corpus
 - Commercial-use and licensing policy files
 
 ## Important Use Boundary

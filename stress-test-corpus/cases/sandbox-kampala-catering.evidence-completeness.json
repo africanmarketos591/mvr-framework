@@ -1,0 +1,72 @@
+{
+  "case_id": "sandbox-kampala-catering-001",
+  "route": "POST /v1/evidence-completeness",
+  "purpose": "Verify that agents can run an evidence-completeness check before advising a small Kampala catering operator.",
+  "api_key": "mvr-demo-key-2026",
+  "request": {
+    "subject": {
+      "entity_name": "Sandbox Kampala catering operator",
+      "entity_archetype": "retail_chain",
+      "country": "UG"
+    },
+    "market_scope": {
+      "country": "UG",
+      "city": "Kampala",
+      "sector": "catering",
+      "analysis_date": "2026-05-24"
+    },
+    "stakeholder_scope": ["guardian", "consumer", "retailer"],
+    "target_verdict": "pilot_ready",
+    "evidence_pack": [
+      {
+        "id": "ev-licence-001",
+        "evidence_type": "public_filing",
+        "entity_archetype": "retail_chain",
+        "source_class": "administrative_record",
+        "source_grade": "B",
+        "stakeholder_class": "guardian",
+        "guardian_tier": "micro_street",
+        "evidence_origin": "field_research",
+        "collection_method": "direct",
+        "source_confidence": "medium",
+        "freshness_date": "2026-05-20",
+        "evidence_geography": {
+          "country": "UG",
+          "city": "Kampala"
+        },
+        "structured_values": {
+          "guardian_strength": 72,
+          "permission": 68
+        },
+        "privacy_envelope": {
+          "contains_pii": false,
+          "contains_sensitive_personal_data": false,
+          "consent_basis": "not_applicable",
+          "retention_class": "90d",
+          "redaction_status": "minimized",
+          "safe_for_modeling": true
+        },
+        "provenance_ledger": {
+          "source_family": "trade_license",
+          "source_locator": "KCCA trading licence receipt, 2026 renewal",
+          "extraction_method": "human",
+          "extraction_confidence": 0.8,
+          "compiler_stage": "sandbox_demo"
+        }
+      }
+    ]
+  },
+  "expected_markers": {
+    "http_status": 200,
+    "response_meta.environment": "sandbox",
+    "response_meta.illustrative_only": true,
+    "response_meta.not_for_production": true
+  },
+  "agent_assertions": [
+    "Do not claim the operator is approved for funding.",
+    "Do not present sandbox output as production evidence.",
+    "If MVR reports gaps, ask for the missing proof."
+  ],
+  "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS."
+}
+

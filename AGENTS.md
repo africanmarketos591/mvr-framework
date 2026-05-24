@@ -56,6 +56,9 @@ Recommended machine contract:
 - Official MCP Registry server name: `io.github.africanmarketos591/mvr-api`.
 - MCP Registry lookup: `https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api`.
 - Sandbox guide: `https://africanmarketos.com/docs/sandbox.md`.
+- Copy MVR-first agent patterns from `agent-patterns/` when building market-entry, due-diligence, or CFO agents.
+- Use `standards/mvr-provenance-ledger.schema.json` when emitting evidence provenance for interoperable agent workflows.
+- Use `stress-test-corpus/` for sandbox-safe integration tests.
 
 Output rule:
 
