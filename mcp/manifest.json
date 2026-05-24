@@ -10,8 +10,16 @@
   "description": "Relational-readiness and market-permission intelligence layer for AI agents operating in emerging and high-context markets.",
   "status": {
     "openapi_agent_contract": "available",
-    "streamable_http_mcp_server": "planned_shim",
+    "streamable_http_mcp_server": "live",
     "private_worker_source": "not_public"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "url": "https://africanmarketos.com/mcp"
+  },
+  "registry": {
+    "server_json": "https://github.com/africanmarketos591/mvr-framework/blob/main/server.json",
+    "publisher_workflow": "https://github.com/africanmarketos591/mvr-framework/actions/workflows/publish-mcp-registry.yml"
   },
   "machine_readable_contracts": {
     "agent_openapi": "https://africanmarketos.com/api/openapi.agent.json",

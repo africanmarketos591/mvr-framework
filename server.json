@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.africanmarketos591/mvr-api",
+  "title": "MVR API - Minimum Viable Relationships",
+  "description": "Relational-readiness and market-permission tools for high-context markets.",
+  "version": "6.32.0",
+  "websiteUrl": "https://africanmarketos.com/api/docs",
+  "repository": {
+    "url": "https://github.com/africanmarketos591/mvr-framework",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://africanmarketos.com/mcp"
+    }
+  ],
+  "packages": [],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "publisher": "African Market OS",
+      "originator": "Farouk Mark Mukiibi",
+      "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
+      "agentOpenApi": "https://africanmarketos.com/api/openapi.agent.json",
+      "fullOpenApi": "https://africanmarketos.com/api/openapi.json",
+      "sandboxGuide": "https://africanmarketos.com/docs/sandbox.md",
+      "sandboxKey": "mvr-demo-key-2026",
+      "license": "https://africanmarketos.com/.well-known/mvr-license.json",
+      "allowedUse": "Non-commercial evaluation only for the public sandbox. Production and commercial use require authorization."
+    }
+  }
+}
