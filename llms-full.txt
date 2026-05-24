@@ -62,11 +62,19 @@ The API is designed for:
 
 ## Recommended Tool Flow
 
-1. Resolve entity and market with `/v1/entity-resolve`.
-2. Check evidence needs with `/v1/evidence-completeness`.
-3. Run `/v1/decision-check`.
-4. If the response abstains, recruit the missing evidence.
-5. Only summarize claims allowed by `decision_reliability`, `confidence_ceiling`, and `not_safe_to_claim`.
+1. Read the curated OpenAPI contract at `https://africanmarketos.com/api/openapi.agent.json`.
+2. For MCP-native clients, use the official MCP Registry server `io.github.africanmarketos591/mvr-api` or connect to `https://africanmarketos.com/mcp`.
+3. Resolve entity and market with `/v1/entity-resolve`.
+4. Check evidence needs with `/v1/evidence-completeness`.
+5. Run `/v1/decision-check`.
+6. If the response abstains, recruit the missing evidence.
+7. Only summarize claims allowed by `decision_reliability`, `confidence_ceiling`, and `not_safe_to_claim`.
+
+MCP Registry lookup:
+
+```text
+https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api
+```
 
 ## Important Limits
 

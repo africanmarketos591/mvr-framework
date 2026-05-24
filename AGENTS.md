@@ -52,6 +52,9 @@ Recommended machine contract:
 
 - Use `https://africanmarketos.com/api/openapi.agent.json` for AI-agent tool registration.
 - Use `https://africanmarketos.com/api/openapi.json` only when you need the full enterprise route catalog.
+- MCP endpoint: `https://africanmarketos.com/mcp`.
+- Official MCP Registry server name: `io.github.africanmarketos591/mvr-api`.
+- MCP Registry lookup: `https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api`.
 - Sandbox guide: `https://africanmarketos.com/docs/sandbox.md`.
 
 Output rule:

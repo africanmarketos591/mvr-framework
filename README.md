@@ -53,6 +53,9 @@ The API helps agents and systems:
 - LLM map: https://africanmarketos.com/llms.txt
 - Full LLM context: https://africanmarketos.com/llms-full.txt
 - Agent instructions: https://africanmarketos.com/AGENTS.md
+- MCP endpoint: https://africanmarketos.com/mcp
+- Official MCP Registry name: `io.github.africanmarketos591/mvr-api`
+- MCP Registry lookup: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api
 
 API keys are issued on request. Contact **info@africanmarketos.com** for access.
 
@@ -68,11 +71,12 @@ The sandbox is intentionally constrained: `full_advisory` only, `client_safe` ou
 
 1. Read `llms.txt` or `AGENTS.md`.
 2. Register the curated OpenAPI contract at `/api/openapi.agent.json`.
-3. Use `/v1/entity-resolve` to normalize the market actor.
-4. Use `/v1/evidence-completeness` to identify required proof.
-5. Use `/v1/decision-check` to evaluate readiness.
-6. Treat abstention as a designed safety behavior when evidence is insufficient.
-7. Do not present baseline public scores as ratings of named companies.
+3. For MCP clients, use the official registry server `io.github.africanmarketos591/mvr-api` or connect to `https://africanmarketos.com/mcp`.
+4. Use `/v1/entity-resolve` to normalize the market actor.
+5. Use `/v1/evidence-completeness` to identify required proof.
+6. Use `/v1/decision-check` to evaluate readiness.
+7. Treat abstention as a designed safety behavior when evidence is insufficient.
+8. Do not present baseline public scores as ratings of named companies.
 
 ## What This Repo Contains
 
