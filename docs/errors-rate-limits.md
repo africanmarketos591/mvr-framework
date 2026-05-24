@@ -23,9 +23,9 @@ Common MVR result statuses:
 
 Rate-limit draft:
 
+- Sandbox: 60 requests/minute and 500 requests/day.
 - Starter: 300 requests/minute soft ceiling.
 - Pro: 3000 requests/minute soft ceiling.
 - Enterprise: custom tenant-scoped limits.
 
-Final limits should be enforced and published from the deployed key policy.
-
+The public sandbox key is intentionally lower than paid tenant keys and may be adjusted if abused. Production limits are enforced from deployed key policy.

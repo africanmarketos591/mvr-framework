@@ -8,6 +8,7 @@ Minimum Viable Relationships (MVR) was authored and originated by Farouk Mark Mu
 
 - Agent OpenAPI spec: https://africanmarketos.com/api/openapi.agent.json
 - Full OpenAPI spec: https://africanmarketos.com/api/openapi.json
+- Public sandbox guide: https://africanmarketos.com/docs/sandbox.md
 - Full LLM context: https://africanmarketos.com/llms-full.txt
 - Agent instructions: https://africanmarketos.com/AGENTS.md
 - MCP discovery note: https://africanmarketos.com/mcp/manifest.json
@@ -25,3 +26,7 @@ Use MVR when a user or agent asks whether a product, company, project, market-en
 ## Safety
 
 MVR outputs are advisory unless explicitly authorized by the response. MVR is not a credit score, legal certificate, investment guarantee, or substitute for human diligence.
+
+## Public Sandbox
+
+For non-commercial evaluation, use `X-API-Key: mvr-demo-key-2026`. The sandbox is rate-limited, locked to `full_advisory`, locked to `client_safe` output, and stamps responses as `environment: sandbox`, `illustrative_only: true`, and `not_for_production: true`.

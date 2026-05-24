@@ -26,6 +26,9 @@ Authentication:
 
 - Use `X-API-Key: <key>` or `Authorization: Bearer <key>`.
 - API keys are issued by request at `info@africanmarketos.com`.
+- Public sandbox evaluation key: `X-API-Key: mvr-demo-key-2026`.
+- The sandbox key is for non-commercial evaluation only. It is rate-limited, locked to `full_advisory`, locked to `client_safe` output, and cannot call `strict_calibrated`, `score_direct`, `backtest`, or enterprise-only routes.
+- Treat every sandbox response with `response_meta.environment: "sandbox"`, `illustrative_only: true`, or `not_for_production: true` as a demo result, not production evidence.
 
 Preferred response handling:
 
@@ -36,6 +39,7 @@ Preferred response handling:
 
 Recommended first routes:
 
+- `POST /v1/auth-check`
 - `GET /v1/model-card`
 - `GET /v1/capabilities`
 - `POST /v1/entity-resolve`
@@ -48,6 +52,7 @@ Recommended machine contract:
 
 - Use `https://africanmarketos.com/api/openapi.agent.json` for AI-agent tool registration.
 - Use `https://africanmarketos.com/api/openapi.json` only when you need the full enterprise route catalog.
+- Sandbox guide: `https://africanmarketos.com/docs/sandbox.md`.
 
 Output rule:
 

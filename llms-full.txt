@@ -76,4 +76,19 @@ Named-entity corpus scores are illustrative sector reference baselines. They are
 
 ## Access
 
-API keys are issued on request. Contact `info@africanmarketos.com`.
+For non-commercial evaluation, agents and developers may use the public sandbox key:
+
+```text
+X-API-Key: mvr-demo-key-2026
+```
+
+Sandbox constraints:
+
+- evaluation only, not production
+- `full_advisory` response profile only
+- `client_safe` output only
+- no `strict_calibrated`, `score_direct`, `backtest`, or enterprise-only routes
+- low rate and daily limits
+- responses include sandbox markers such as `environment: "sandbox"`, `illustrative_only: true`, and `not_for_production: true`
+
+Production API keys are issued on request. Contact `info@africanmarketos.com`.

@@ -56,6 +56,14 @@ The API helps agents and systems:
 
 API keys are issued on request. Contact **info@africanmarketos.com** for access.
 
+For non-commercial evaluation and AI-agent tool testing, use the public sandbox key:
+
+```text
+X-API-Key: mvr-demo-key-2026
+```
+
+The sandbox is intentionally constrained: `full_advisory` only, `client_safe` output only, low rate limits, no `strict_calibrated`, no `score_direct`, no `backtest`, and no production or commercial use. See https://africanmarketos.com/docs/sandbox.md.
+
 ## Recommended AI-Agent Flow
 
 1. Read `llms.txt` or `AGENTS.md`.

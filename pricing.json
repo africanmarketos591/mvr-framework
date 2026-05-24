@@ -4,6 +4,12 @@
   "contact": "info@africanmarketos.com",
   "tiers": [
     {
+      "id": "sandbox",
+      "name": "Public Sandbox",
+      "price_monthly": 0,
+      "description": "Non-commercial evaluation only. Uses X-API-Key: mvr-demo-key-2026 with full_advisory/client_safe limits, low caps, and no production rights."
+    },
+    {
       "id": "starter",
       "name": "Starter",
       "price_monthly": 20,
@@ -23,4 +29,3 @@
     }
   ]
 }
-

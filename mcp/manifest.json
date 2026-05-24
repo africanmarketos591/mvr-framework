@@ -16,11 +16,13 @@
   "machine_readable_contracts": {
     "agent_openapi": "https://africanmarketos.com/api/openapi.agent.json",
     "full_openapi": "https://africanmarketos.com/api/openapi.json",
+    "sandbox": "https://africanmarketos.com/docs/sandbox.md",
     "llms": "https://africanmarketos.com/llms.txt",
     "agent_instructions": "https://africanmarketos.com/AGENTS.md",
     "license": "https://africanmarketos.com/.well-known/mvr-license.json"
   },
   "recommended_tools": [
+    "POST /v1/auth-check",
     "GET /v1/model-card",
     "GET /v1/capabilities",
     "POST /v1/entity-resolve",
@@ -29,6 +31,15 @@
     "GET /v1/category-playbook/{entity_archetype}",
     "GET /v1/ledger/verify/{hash}"
   ],
+  "sandbox": {
+    "api_key_header": "X-API-Key",
+    "api_key_value": "mvr-demo-key-2026",
+    "authorized_use": "evaluation_only_non_commercial",
+    "response_profile": "full_advisory_only",
+    "output_mode": "client_safe_only",
+    "rate_limit": "60 requests/minute; 500 requests/day",
+    "blocked": ["strict_calibrated", "score_direct", "backtest", "enterprise_only_routes"]
+  },
   "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
   "contact": "info@africanmarketos.com"
 }

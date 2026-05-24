@@ -3,7 +3,7 @@
   "info": {
     "title": "MVR API Agent Surface",
     "version": "v6.32.0",
-    "description": "Curated MVR API surface for AI agents and developer quickstarts. The full enterprise OpenAPI contract is available separately; this file intentionally exposes the safest common routes for entity resolution, evidence completeness, decision checks, playbooks, model transparency, and ledger verification."
+    "description": "Curated MVR API surface for AI agents and developer quickstarts. The full enterprise OpenAPI contract is available separately; this file intentionally exposes the safest common routes for entity resolution, evidence completeness, decision checks, playbooks, model transparency, and ledger verification. Public sandbox: send X-API-Key: mvr-demo-key-2026 for non-commercial evaluation. Sandbox responses are full_advisory, client_safe, rate-limited, illustrative_only, and not_for_production."
   },
   "x-compatibility-policy": {
     "principle": "No output may claim a decision level, confidence level, category fit, or scope stronger than verified evidence permits.",
@@ -601,6 +601,33 @@
           },
           "429": {
             "description": "Rate or compute limit exceeded"
+          }
+        }
+      }
+    },
+    "/v1/auth-check": {
+      "post": {
+        "tags": [
+          "Sandbox"
+        ],
+        "summary": "Verify API key, active plan, sandbox status, and response-profile boundary.",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Key valid"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Profile or policy forbidden"
           }
         }
       }
@@ -1650,5 +1677,72 @@
     }
   },
   "response_contract_version": "2026-05-01.v1",
-  "x-mvr-publication-note": "Use this curated spec for AI-agent tool registration. Do not expose private runtime source code in public repositories."
+  "x-mvr-publication-note": "Use this curated spec for AI-agent tool registration. Do not expose private runtime source code in public repositories.",
+  "x-mvr-sandbox": {
+    "api_key_header": "X-API-Key",
+    "api_key_value": "mvr-demo-key-2026",
+    "authorized_use": "evaluation_only_non_commercial",
+    "response_profile": "full_advisory_only",
+    "output_mode": "client_safe_only",
+    "rate_limit": {
+      "requests_per_minute": 60,
+      "requests_per_day": 500
+    },
+    "blocked": [
+      "strict_calibrated",
+      "score_direct",
+      "backtest",
+      "enterprise_only_routes"
+    ],
+    "docs": "https://africanmarketos.com/docs/sandbox.md"
+  },
+  "servers": [
+    {
+      "url": "https://africanmarketos.com",
+      "description": "MVR API production host"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Sandbox",
+      "description": "Public evaluation key: X-API-Key mvr-demo-key-2026. Evaluation only; not for production."
+    }
+  ],
+  "x-mvr-examples": {
+    "sandbox_auth_check": {
+      "curl": "curl -X POST https://africanmarketos.com/v1/auth-check -H \"Content-Type: application/json\" -H \"X-API-Key: mvr-demo-key-2026\" -d \"{}\""
+    },
+    "sandbox_evidence_completeness": {
+      "request": {
+        "subject": {
+          "entity_name": "Kampala Retailer",
+          "entity_archetype": "retail_chain"
+        },
+        "market_scope": {
+          "country": "UG"
+        },
+        "evidence_pack": [
+          {
+            "id": "EV-1",
+            "evidence_origin": "field_research",
+            "evidence_type": "observation",
+            "source_class": "structured_field_research",
+            "stakeholder_class": "guardian",
+            "source_grade": "C",
+            "collection_method": "field_observation",
+            "evidence_geography": {
+              "country": "UG",
+              "region": "Kampala"
+            },
+            "freshness_date": "2026-05-01",
+            "structured_values": {
+              "guardian_strength": 58,
+              "permission": 55
+            },
+            "claim": "Local authority licence receipt was observed for the current year."
+          }
+        ]
+      }
+    }
+  }
 }
