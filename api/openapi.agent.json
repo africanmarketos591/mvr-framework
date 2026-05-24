@@ -31,7 +31,19 @@
   "paths": {
     "/v1/model-card": {
       "get": {
-        "summary": "Model transparency, calibration docs, preflight endpoints, and validation metadata."
+        "summary": "Model transparency, calibration docs, preflight endpoints, and validation metadata.",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/v1/capabilities": {
@@ -81,12 +93,36 @@
     },
     "/v1/schema": {
       "get": {
-        "summary": "Full profile documentation including strict_calibrated requirements, frontend enums, and terminal_templates (see JSON body key terminal_templates)."
+        "summary": "Full profile documentation including strict_calibrated requirements, frontend enums, and terminal_templates (see JSON body key terminal_templates).",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/v1/evidence-guide": {
       "get": {
-        "summary": "Per-tier evidence standards, informal_logistics, bifurcated decay."
+        "summary": "Per-tier evidence standards, informal_logistics, bifurcated decay.",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/v1/entity-resolve": {
@@ -1676,7 +1712,6 @@
       }
     }
   },
-  "response_contract_version": "2026-05-01.v1",
   "x-mvr-publication-note": "Use this curated spec for AI-agent tool registration. Do not expose private runtime source code in public repositories.",
   "x-mvr-sandbox": {
     "api_key_header": "X-API-Key",
@@ -1744,5 +1779,6 @@
         ]
       }
     }
-  }
+  },
+  "x-response-contract-version": "2026-05-01.v1"
 }
