@@ -14,7 +14,10 @@ to the current MVR API discovery surface.
 
 ## Owner-Only Updates To Make In Zenodo
 
-For editable Zenodo records or new versions, add these related identifiers:
+For editable Zenodo records or new versions, add these related identifiers.
+Keep the existing DOI concept DOI/version DOI alive; do not delete the old
+records. If Zenodo does not allow editing a published field, create a new
+version and put this text in the description/change notes.
 
 - `https://africanmarketos.com/api/openapi.agent.json`
 - `https://africanmarketos.com/api/openapi.json`
@@ -42,6 +45,31 @@ MVR API; Minimum Viable Relationships; relational readiness; market permission;
 AI agents; MCP; Model Context Protocol; OpenAPI; evidence completeness; emerging markets
 ```
 
+Recommended version note:
+
+```text
+Metadata refresh for AI-agent and developer discoverability. This version does
+not publish private Worker source code or private calibration assets. It links
+the already-indexed MVR Framework DOI record to the current MVR API v6.32.x
+OpenAPI, MCP, sandbox, and agent-instruction discovery surface.
+```
+
+Recommended related-identifier relationship types:
+
+- `IsSupplementedBy`: `https://africanmarketos.com/api/openapi.agent.json`
+- `IsSupplementedBy`: `https://africanmarketos.com/AGENTS.md`
+- `IsSupplementedBy`: `https://africanmarketos.com/llms.txt`
+- `IsSupplementedBy`: `https://africanmarketos.com/mcp`
+- `IsSupplementedBy`: `https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api`
+- `IsSupplementedBy`: `https://github.com/africanmarketos591/mvr-api-ts-client`
+- `IsSupplementedBy`: `https://github.com/africanmarketos591/mvr-api-py-client`
+
+Verified public Zenodo records that should be linked forward:
+
+- `10.5281/zenodo.17054819` currently links the canonical framework page and GitHub repo.
+- `10.5281/zenodo.17310446` has strong MVR keywords but should add current API/MCP links.
+- `10.5281/zenodo.17389885` is the AI citation/provenance mirror and should add current API/MCP links.
+
 ## Owner-Only Updates To Make In Figshare
 
 For the Figshare AI citation dataset, add current API/MCP links to the item
@@ -56,6 +84,34 @@ https://africanmarketos.com/api/openapi.agent.json, and the MCP server
 io.github.africanmarketos591/mvr-api at https://africanmarketos.com/mcp.
 ```
 
+Recommended Figshare title suffix if a new version is created:
+
+```text
+Metadata refresh: MVR API v6.32.x discovery links, MCP registry, and public sandbox
+```
+
+Recommended Figshare keywords to add:
+
+```text
+MVR API; Minimum Viable Relationships; AI agents; MCP; OpenAPI; llms.txt;
+AGENTS.md; relational readiness; evidence completeness; market permission;
+African Market OS; Farouk Mark Mukiibi
+```
+
+Recommended Figshare link block:
+
+```text
+Current implementation links:
+- Agent OpenAPI: https://africanmarketos.com/api/openapi.agent.json
+- Full OpenAPI: https://africanmarketos.com/api/openapi.json
+- Sandbox guide: https://africanmarketos.com/docs/sandbox.md
+- AI-agent instructions: https://africanmarketos.com/AGENTS.md
+- LLM discovery file: https://africanmarketos.com/llms.txt
+- MCP endpoint: https://africanmarketos.com/mcp
+- MCP registry: io.github.africanmarketos591/mvr-api
+- Canonical GitHub repo: https://github.com/africanmarketos591/mvr-framework
+```
+
 ## Do Not Do
 
 - Do not delete older DOI records.
@@ -63,4 +119,3 @@ io.github.africanmarketos591/mvr-api at https://africanmarketos.com/mcp.
 - Do not publish private Worker source.
 - Do not publish private calibration weights, scoring formulas, or production
   tenant data.
-
