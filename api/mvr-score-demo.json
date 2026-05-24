@@ -1,0 +1,152 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://africanmarketos.com/api/mvr-score-demo.json",
+  "name": "MVR API Sandbox Evidence-Completeness Demo",
+  "description": "Current, sandbox-aligned demo for the MVR Core API v6.32.0. It shows how an AI agent or developer can test relational-readiness evidence completeness without a production key.",
+  "version": "v6.32.0",
+  "creator": {
+    "@type": "Person",
+    "name": "Farouk Mark Mukiibi",
+    "url": "https://africanmarketos.com/who-is-farouk-mark-mukiibi/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "African Market OS",
+    "url": "https://africanmarketos.com/"
+  },
+  "license": "https://africanmarketos.com/.well-known/mvr-license.json",
+  "attribution_required": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
+  "sandbox": {
+    "endpoint": "https://africanmarketos.com/v1/evidence-completeness",
+    "method": "POST",
+    "demo_header": "X-API-Key: mvr-demo-key-2026",
+    "authorized_use": "evaluation_only_non_commercial",
+    "response_profile": "full_advisory_only",
+    "output_mode": "client_safe_only",
+    "not_for_production": true,
+    "prohibited_uses": [
+      "production_decisioning",
+      "credit_scoring",
+      "legal_or_regulatory_certification",
+      "model_training_or_fine_tuning",
+      "reverse_engineering",
+      "commercial_resale_without_license"
+    ],
+    "upgrade_contact": "info@africanmarketos.com"
+  },
+  "sample_request": {
+    "subject": {
+      "entity_name": "Sandbox Kampala catering operator",
+      "entity_archetype": "retail_chain",
+      "country": "UG"
+    },
+    "market_scope": {
+      "country": "UG",
+      "city": "Kampala",
+      "sector": "catering",
+      "analysis_date": "2026-05-24"
+    },
+    "stakeholder_scope": [
+      "guardian",
+      "consumer",
+      "retailer"
+    ],
+    "target_verdict": "pilot_ready",
+    "evidence_pack": [
+      {
+        "id": "ev-licence-001",
+        "evidence_type": "public_filing",
+        "entity_archetype": "retail_chain",
+        "source_class": "administrative_record",
+        "source_grade": "B",
+        "stakeholder_class": "guardian",
+        "guardian_tier": "micro_street",
+        "evidence_origin": "field_research",
+        "collection_method": "direct",
+        "source_confidence": "medium",
+        "freshness_date": "2026-05-20",
+        "evidence_geography": {
+          "country": "UG",
+          "city": "Kampala"
+        },
+        "structured_values": {
+          "guardian_strength": 72,
+          "permission": 68
+        },
+        "privacy_envelope": {
+          "contains_pii": false,
+          "contains_sensitive_personal_data": false,
+          "consent_basis": "not_applicable",
+          "retention_class": "90d",
+          "redaction_status": "minimized",
+          "safe_for_modeling": true
+        },
+        "provenance_ledger": {
+          "source_family": "trade_license",
+          "source_locator": "KCCA trading licence receipt, 2026 renewal",
+          "extraction_method": "human",
+          "extraction_confidence": 0.8,
+          "compiler_stage": "sandbox_demo"
+        }
+      },
+      {
+        "id": "ev-telemetry-001",
+        "evidence_type": "telemetry",
+        "entity_archetype": "retail_chain",
+        "source_class": "telemetry_internal",
+        "source_grade": "C",
+        "stakeholder_class": "consumer",
+        "evidence_origin": "platform_telemetry",
+        "collection_method": "corporate_telemetry",
+        "source_confidence": "medium",
+        "freshness_date": "2026-05-21",
+        "evidence_geography": {
+          "country": "UG",
+          "city": "Kampala"
+        },
+        "structured_values": {
+          "trust": 63,
+          "continuity": 61,
+          "repeat_purchase_rate_90d": 58
+        },
+        "privacy_envelope": {
+          "contains_pii": false,
+          "contains_sensitive_personal_data": false,
+          "consent_basis": "legitimate_interest",
+          "retention_class": "90d",
+          "redaction_status": "aggregated",
+          "safe_for_modeling": true
+        },
+        "provenance_ledger": {
+          "source_family": "mobile_money_statement",
+          "source_locator": "30-day mobile money sales summary, aggregated",
+          "extraction_method": "deterministic_parser",
+          "extraction_confidence": 0.72,
+          "compiler_stage": "sandbox_demo"
+        }
+      }
+    ]
+  },
+  "expected_response_shape": {
+    "status": "partial",
+    "evidence_modality": "mixed",
+    "blockers": [
+      "insufficient_stakeholder_diversity",
+      "field_sample_size_unknown"
+    ],
+    "response_meta": {
+      "environment": "sandbox",
+      "illustrative_only": true,
+      "not_for_production": true
+    },
+    "evidence_recruitment_plan": "returned when the pack is not decision-grade yet"
+  },
+  "canonical_docs": [
+    "https://africanmarketos.com/llms.txt",
+    "https://africanmarketos.com/AGENTS.md",
+    "https://africanmarketos.com/docs/sandbox.md",
+    "https://africanmarketos.com/v1/openapi.json"
+  ],
+  "updated_at": "2026-05-24"
+}

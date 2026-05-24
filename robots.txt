@@ -1,27 +1,41 @@
+# African Market OS crawler policy
+# Public docs, API contracts, and discovery files may be fetched for search,
+# citation, attribution, and answer-time retrieval. They may not be used for
+# model training, fine-tuning, dataset resale, reverse engineering, or removal
+# of attribution to Minimum Viable Relationships (MVR), Farouk Mark Mukiibi,
+# or African Market OS.
+#
+# Content-Signal:
+# search=yes: indexing and short snippets are allowed.
+# ai-input=yes: retrieval/grounding at answer time is allowed with attribution.
+# ai-train=no: training and fine-tuning are not authorized.
+
 User-agent: *
-Allow: /api/
-Allow: /docs/
-Allow: /llms.txt
-Allow: /llms-full.txt
-Allow: /AGENTS.md
-Allow: /.well-known/
+Content-Signal: search=yes,ai-input=yes,ai-train=no
+Allow: /
 
 User-agent: GPTBot
+Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
 User-agent: ClaudeBot
+Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
 User-agent: PerplexityBot
+Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
 User-agent: CCBot
+Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
 User-agent: Google-Extended
+Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
 User-agent: Bingbot
+Content-Signal: search=yes,ai-input=yes,ai-train=no
 Allow: /
 
 Sitemap: https://africanmarketos.com/sitemap.xml
