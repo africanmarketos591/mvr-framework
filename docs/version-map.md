@@ -7,7 +7,7 @@ This page is the canonical version guide for MVR API public integration.
 | Surface | Current version | Status | Notes |
 |---|---:|---|---|
 | MVR Core API runtime | `v6.32.x` | Current | Private runtime source. Use public OpenAPI, MCP, and docs for integration. |
-| MCP registry server | `6.32.1` | Current metadata patch | Same `v6.32.x` contract family. The patch updates registry and discovery metadata. |
+| MCP registry server | `6.32.2` | Current metadata patch | Same `v6.32.x` contract family. The patch updates registry and discovery metadata. |
 | OpenAPI contract | `v6.32.0` / `v6.32.x` | Current | Canonical source: `https://africanmarketos.com/api/openapi.json`; agent-curated source: `https://africanmarketos.com/api/openapi.agent.json`. |
 | TypeScript SDK | `6.32.0` | Current | Package: `@africanmarketos/mvr-api-client`. |
 | Python SDK | `6.32.0` | Current | Package: `mvr-api-client`. |
