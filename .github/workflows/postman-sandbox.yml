@@ -1,0 +1,41 @@
+name: Postman Sandbox Smoke Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "postman/**"
+      - "api/**"
+      - "openapi.*"
+      - ".github/workflows/postman-sandbox.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "postman/**"
+      - "api/**"
+      - "openapi.*"
+      - ".github/workflows/postman-sandbox.yml"
+
+jobs:
+  newman:
+    name: Run public sandbox collection
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Newman against MVR sandbox
+        run: |
+          npx --yes newman run postman/mvr-core-v6.32.0.postman_collection.json \
+            --env-var MVR_BASE_URL=https://africanmarketos.com \
+            --env-var MVR_API_KEY=mvr-demo-key-2026 \
+            --timeout-request 90000 \
+            --bail

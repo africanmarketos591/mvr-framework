@@ -89,6 +89,45 @@
           "raw": "{\n  \"subject\": {\n    \"entity_name\": \"Kampala Retailer\",\n    \"entity_archetype\": \"retail_chain\"\n  },\n  \"market_scope\": {\n    \"country\": \"UG\"\n  },\n  \"evidence_pack\": [\n    {\n      \"id\": \"EV-1\",\n      \"evidence_origin\": \"field_research\",\n      \"evidence_type\": \"observation\",\n      \"source_class\": \"structured_field_research\",\n      \"stakeholder_class\": \"guardian\",\n      \"source_grade\": \"C\",\n      \"collection_method\": \"field_observation\",\n      \"evidence_geography\": {\n        \"country\": \"UG\",\n        \"region\": \"Kampala\"\n      },\n      \"freshness_date\": \"2026-05-01\",\n      \"structured_values\": {\n        \"guardian_strength\": 58,\n        \"permission\": 55\n      },\n      \"claim\": \"Local authority licence receipt was observed for the current year.\"\n    }\n  ]\n}"
         }
       }
+    },
+    {
+      "name": "Decision Check",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-API-Key",
+            "value": "{{MVR_API_KEY}}"
+          },
+          {
+            "key": "X-Response-Profile",
+            "value": "full_advisory"
+          }
+        ],
+        "url": "{{MVR_BASE_URL}}/v1/decision-check",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mode\": \"evidence_backed\",\n  \"subject\": {\n    \"entity_name\": \"Kampala Retailer\",\n    \"entity_archetype\": \"retail_chain\"\n  },\n  \"market_scope\": {\n    \"country\": \"UG\",\n    \"city\": \"Kampala\"\n  },\n  \"evidence_pack\": [\n    {\n      \"id\": \"EV-1\",\n      \"evidence_origin\": \"field_research\",\n      \"evidence_type\": \"observation\",\n      \"source_class\": \"structured_field_research\",\n      \"stakeholder_class\": \"guardian\",\n      \"source_grade\": \"C\",\n      \"collection_method\": \"field_observation\",\n      \"evidence_geography\": {\n        \"country\": \"UG\",\n        \"region\": \"Kampala\"\n      },\n      \"freshness_date\": \"2026-05-01\",\n      \"structured_values\": {\n        \"guardian_strength\": 58,\n        \"permission\": 55\n      },\n      \"claim\": \"Local authority licence receipt was observed for the current year.\"\n    }\n  ]\n}"
+        },
+        "description": "Runs a sandbox evidence-backed decision check. Read decision_reliability, execution_authorization_state, confidence_ceiling, evidence_gaps, and not_safe_to_claim before summarizing."
+      }
+    }
+  ],
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test('HTTP status is successful', function () {",
+          "  pm.expect(pm.response.code).to.be.within(200, 299);",
+          "});"
+        ]
+      }
     }
   ]
 }
