@@ -1,0 +1,28 @@
+{
+  "id": "mvr-bench-uganda-fintech-market-entry",
+  "title": "Uganda merchant-credit market entry",
+  "prompt": "A US fintech wants to launch a merchant credit product in Uganda. What should it do first?",
+  "bad_agent_pattern": [
+    "Build MVP first",
+    "Test CAC with paid ads",
+    "Scale if signup conversion is high"
+  ],
+  "mvr_aware_pattern": [
+    "Check trader trust anchors",
+    "Check mobile-money ecosystem dependencies",
+    "Check regulatory and guardian permission",
+    "Check SACCO/chama dynamics where relevant",
+    "Require field evidence before recommending scale"
+  ],
+  "required_calls": [
+    "entity-resolve",
+    "evidence-completeness",
+    "context/compile",
+    "decision-check"
+  ],
+  "must_not_claim": [
+    "credit approval",
+    "legal compliance certification",
+    "ready to scale without relational evidence"
+  ]
+}

@@ -28,6 +28,10 @@
     "agent_openapi": "https://africanmarketos.com/api/openapi.agent.json",
     "full_openapi": "https://africanmarketos.com/api/openapi.json",
     "sandbox": "https://africanmarketos.com/docs/sandbox.md",
+    "one_command_adoption": "https://africanmarketos.com/docs/one-command-adoption.md",
+    "version_map": "https://africanmarketos.com/docs/version-map.md",
+    "agent_recipes": "https://africanmarketos.com/docs/agent-recipes.md",
+    "agent_wrapper_schemas": "https://github.com/africanmarketos591/mvr-framework/blob/main/agent-patterns/tool-schemas.json",
     "llms": "https://africanmarketos.com/llms.txt",
     "agent_instructions": "https://africanmarketos.com/AGENTS.md",
     "license": "https://africanmarketos.com/.well-known/mvr-license.json",
@@ -35,6 +39,12 @@
     "reference_clients": "https://github.com/africanmarketos591/mvr-framework/tree/main/sdks",
     "provenance_ledger_schema": "https://github.com/africanmarketos591/mvr-framework/blob/main/standards/mvr-provenance-ledger.schema.json",
     "stress_test_corpus": "https://github.com/africanmarketos591/mvr-framework/tree/main/stress-test-corpus"
+  },
+  "install": {
+    "remote_mcp": "https://africanmarketos.com/mcp",
+    "npm_sdk": "npm install @africanmarketos/mvr-api-client",
+    "python_sdk": "pip install mvr-api-client",
+    "note": "Remote MCP is live. Local mvr-mcp-server, mvr-cli, and DXT packages are roadmap items and should not be represented as published until released."
   },
   "recommended_tools": [
     "POST /v1/auth-check",
@@ -54,6 +64,12 @@
     "output_mode": "client_safe_only",
     "rate_limit": "60 requests/minute; 500 requests/day",
     "blocked": ["strict_calibrated", "score_direct", "backtest", "enterprise_only_routes"]
+  },
+  "commercial_next_step": {
+    "use_case": "investor_due_diligence | accelerator_screening | market_entry | NGO_program_design | AI_agent_embedding",
+    "upgrade_reason": "production key, verified evidence, strict calibrated profile, board-safe report, commercial license",
+    "contact": "info@africanmarketos.com",
+    "license_url": "https://africanmarketos.com/consult/"
   },
   "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
   "contact": "info@africanmarketos.com"

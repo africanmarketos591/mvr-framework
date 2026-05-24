@@ -1,0 +1,50 @@
+{
+  "name": "mvr-agent-wrapper-tools",
+  "version": "6.32.x",
+  "description": "Host-side narrow tool schemas that agents can map to the MVR API core routes. These wrappers do not expose private runtime logic.",
+  "canonical_mcp_server": "io.github.africanmarketos591/mvr-api",
+  "canonical_openapi": "https://africanmarketos.com/api/openapi.agent.json",
+  "shared_input_schema": {
+    "type": "object",
+    "required": ["company_name", "country", "sector", "stage", "target_users"],
+    "properties": {
+      "company_name": {"type": "string"},
+      "country": {"type": "string"},
+      "sector": {
+        "type": "string",
+        "enum": ["fintech", "fmcg", "health", "agritech", "education", "retail", "ngo", "logistics", "energy", "other"]
+      },
+      "stage": {
+        "type": "string",
+        "enum": ["idea", "pilot", "seed", "scaling", "enterprise"]
+      },
+      "target_users": {"type": "string"},
+      "known_partners": {
+        "type": "array",
+        "items": {"type": "string"}
+      },
+      "evidence_available": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["interviews", "surveys", "field_observation", "sales_data", "licence", "transaction_logs", "customer_chats", "supplier_receipts", "registry_record"]
+        }
+      }
+    }
+  },
+  "tools": [
+    {"name": "mvr_preflight_market_entry", "maps_to": ["entity-resolve", "evidence-completeness", "context/compile", "decision-check"]},
+    {"name": "mvr_preflight_mvp", "maps_to": ["evidence-completeness", "decision-check"]},
+    {"name": "mvr_investor_due_diligence", "maps_to": ["entity-resolve", "evidence-completeness", "decision-check"]},
+    {"name": "mvr_accelerator_screen", "maps_to": ["evidence-completeness", "decision-check"]},
+    {"name": "mvr_partner_readiness", "maps_to": ["entity-resolve", "context/compile", "decision-check"]},
+    {"name": "mvr_guardian_risk_scan", "maps_to": ["context/compile", "decision-check"]},
+    {"name": "mvr_evidence_gap_plan", "maps_to": ["evidence-completeness"]},
+    {"name": "mvr_abstention_check", "maps_to": ["decision-check"]},
+    {"name": "mvr_market_permission_memo", "maps_to": ["context/compile", "decision-check"]}
+  ],
+  "commercial_next_step": {
+    "contact": "info@africanmarketos.com",
+    "license_url": "https://africanmarketos.com/consult/"
+  }
+}

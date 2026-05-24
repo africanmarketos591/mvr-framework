@@ -47,6 +47,10 @@ The API helps agents and systems:
 - Agent-first OpenAPI: https://africanmarketos.com/api/openapi.agent.json
 - Full OpenAPI: https://africanmarketos.com/api/openapi.json
 - Backward-compatible OpenAPI YAML path: https://africanmarketos.com/api/openapi.yaml
+- One-command adoption: https://africanmarketos.com/docs/one-command-adoption.md
+- MVR for AI Agents: https://africanmarketos.com/docs/ai-agents.md
+- Version map: https://africanmarketos.com/docs/version-map.md
+- Agent recipes: https://africanmarketos.com/docs/agent-recipes.md
 - Model card: https://africanmarketos.com/v1/model-card
 - Capabilities: https://africanmarketos.com/v1/capabilities
 - Schema: https://africanmarketos.com/v1/schema
@@ -58,8 +62,10 @@ The API helps agents and systems:
 - MCP Registry lookup: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api
 - Reference clients: `sdks/`
 - MVR-first agent patterns: `agent-patterns/`
+- Agent wrapper tool schemas: `agent-patterns/tool-schemas.json`
 - Provenance ledger schema: `standards/mvr-provenance-ledger.schema.json`
 - Public stress-test corpus: `stress-test-corpus/`
+- MVR-Bench: `benchmarks/mvr-bench/`
 
 API keys are issued on request. Contact **info@africanmarketos.com** for access.
 
@@ -92,8 +98,10 @@ The sandbox is intentionally constrained: `full_advisory` only, `client_safe` ou
 - Developer quickstarts, examples, and Postman collection
 - Lightweight reference clients
 - MVR-first agent design patterns
+- Narrow agent wrapper tool schemas
 - Public provenance ledger schema
 - Sandbox-safe stress-test corpus
+- MVR-Bench benchmark cases
 - Commercial-use and licensing policy files
 
 ## Important Use Boundary
