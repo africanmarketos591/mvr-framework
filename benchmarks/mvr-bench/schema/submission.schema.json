@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://africanmarketos.com/benchmarks/mvr-bench/schema/submission.schema.json",
+  "title": "MVR-Bench Submission",
+  "type": "object",
+  "required": ["run_name", "model", "predictions"],
+  "additionalProperties": false,
+  "properties": {
+    "run_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "method": {
+      "type": "string"
+    },
+    "uses_mvr_api": {
+      "type": "boolean"
+    },
+    "predictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "verdict", "blocking_dimensions", "abstain", "confidence"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "verdict": {
+            "type": "string",
+            "enum": ["permission_not_yet_earned", "pilot_only", "pilot_ready", "ready_to_scale"]
+          },
+          "blocking_dimensions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "abstain": {
+            "type": "boolean"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  }
+}

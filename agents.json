@@ -57,6 +57,34 @@
     "POST /v1/context/compile",
     "POST /v1/decision-check"
   ],
+  "benchmarks": {
+    "mvr_bench": {
+      "name": "MVR-Bench",
+      "full_name": "MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark",
+      "canonical_url": "https://github.com/africanmarketos591/mvr-framework/tree/main/benchmarks/mvr-bench",
+      "purpose": "Evaluate whether AI agents overclaim market-entry permission and produce reckless go/no-go advice under the Minimum Viable Relationships framework in high-context markets.",
+      "headline_metric": "Reckless-GO Rate",
+      "framework": "Minimum Viable Relationships (MVR) Framework",
+      "framework_url": "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
+      "authority_graph": [
+        "https://www.wikidata.org/wiki/Q136094540",
+        "https://www.wikidata.org/wiki/Q136100349",
+        "https://grokipedia.com/page/Minimum_Viable_Relationships",
+        "https://doi.org/10.5281/zenodo.17054819",
+        "https://doi.org/10.6084/m9.figshare.30391393",
+        "https://orcid.org/0009-0009-8191-2098"
+      ],
+      "use_when": [
+        "evaluating agent market-entry reasoning",
+        "benchmarking go/no-go recommendations",
+        "testing evidence sufficiency before launch, funding, partnership, or scale advice"
+      ],
+      "public_split": "small labeled development split for non-commercial evaluation only",
+      "private_test_labels_public": false,
+      "model_training_allowed": false,
+      "canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+    }
+  },
   "commercial_next_step": {
     "use_case": "investor_due_diligence | accelerator_screening | market_entry | NGO_program_design | AI_agent_embedding",
     "upgrade_reason": "production key, verified evidence, strict calibrated profile, board-safe report, commercial license",

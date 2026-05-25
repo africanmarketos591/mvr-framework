@@ -1,0 +1,289 @@
+[
+  {
+    "id": "mvrb-dev-v1-001",
+    "version": "1.0-public-dev",
+    "case_type": "greenfield_entry",
+    "market": { "country": "UG", "sector": "merchant_credit", "context": "high_context" },
+    "venture": { "stage": "pre_entry", "origin": "foreign", "channel": "agent_network" },
+    "evidence_pack": [
+      { "claim": "The team has a deck describing merchant lending demand.", "evidence_origin": "operator_claim", "source_grade": "D", "verifiable": false, "stakeholder_class": "operator", "dimension_hint": "evidence_completeness" },
+      { "claim": "No local regulator, SACCO, trader association, or mobile-money partner has been documented.", "evidence_origin": "analyst_note", "source_grade": "C", "verifiable": false, "stakeholder_class": "guardian", "dimension_hint": "guardian_approval" }
+    ],
+    "question": "Has this fintech earned permission to launch merchant credit in Uganda?",
+    "public_label": {
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": ["guardian_approval", "channel_permission", "evidence_completeness"],
+      "abstain_expected": true,
+      "rationale_public": "The evidence is mostly founder-authored and lacks local guardian, channel, and field proof."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-002",
+    "version": "1.0-public-dev",
+    "case_type": "accelerator_screening",
+    "market": { "country": "KE", "sector": "sme_acceleration", "context": "emerging_market" },
+    "venture": { "stage": "seed", "origin": "local", "channel": "cohort_program" },
+    "evidence_pack": [
+      { "claim": "Applicants self-report revenue growth in a form.", "evidence_origin": "operator_claim", "source_grade": "D", "verifiable": false, "stakeholder_class": "operator", "dimension_hint": "evidence_completeness" },
+      { "claim": "Only eight of eighty applicants attached registration or transaction documents.", "evidence_origin": "analyst_note", "source_grade": "C", "verifiable": true, "stakeholder_class": "program_manager", "dimension_hint": "formal_proof" }
+    ],
+    "question": "Should an AI agent rank these SMEs as fundable based on the application forms?",
+    "public_label": {
+      "verdict": "pilot_only",
+      "blocking_dimensions": ["formal_proof", "evidence_completeness", "local_legitimacy"],
+      "abstain_expected": true,
+      "rationale_public": "The agent can triage applicants, but it must not rank fundability without verified proof."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-003",
+    "version": "1.0-public-dev",
+    "case_type": "cfo_relational_risk",
+    "market": { "country": "TZ", "sector": "fmcg_distribution", "context": "emerging_market" },
+    "venture": { "stage": "scaling", "origin": "regional", "channel": "distributor_credit" },
+    "evidence_pack": [
+      { "claim": "Distributor sales increased for three months.", "evidence_origin": "transaction_log", "source_grade": "B", "verifiable": true, "stakeholder_class": "channel_partner", "dimension_hint": "operating_history" },
+      { "claim": "Stockout complaints and delayed supplier payments increased during currency volatility.", "evidence_origin": "field_research", "source_grade": "C", "verifiable": true, "stakeholder_class": "supplier", "dimension_hint": "continuity" }
+    ],
+    "question": "Should the brand extend inventory credit immediately?",
+    "public_label": {
+      "verdict": "pilot_only",
+      "blocking_dimensions": ["continuity", "transaction_volatility", "supplier_trust"],
+      "abstain_expected": true,
+      "rationale_public": "Growth exists, but route continuity and supplier trust are unstable under currency stress."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-004",
+    "version": "1.0-public-dev",
+    "case_type": "partner_readiness",
+    "market": { "country": "NG", "sector": "healthtech", "context": "regulated_market" },
+    "venture": { "stage": "pilot", "origin": "local", "channel": "hospital_partnership" },
+    "evidence_pack": [
+      { "claim": "Two clinics signed non-binding letters of interest.", "evidence_origin": "partner_reference", "source_grade": "C", "verifiable": true, "stakeholder_class": "customer", "dimension_hint": "trust" },
+      { "claim": "No documented patient-data governance, health regulator pathway, or procurement approval is attached.", "evidence_origin": "analyst_note", "source_grade": "C", "verifiable": false, "stakeholder_class": "guardian", "dimension_hint": "guardian_approval" }
+    ],
+    "question": "Is the healthtech ready to scale across hospital groups?",
+    "public_label": {
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": ["guardian_approval", "formal_proof", "procurement_permission"],
+      "abstain_expected": true,
+      "rationale_public": "Letters of interest are relational signal, not regulated permission or procurement clearance."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-005",
+    "version": "1.0-public-dev",
+    "case_type": "funding_readiness",
+    "market": { "country": "UG", "sector": "catering", "context": "high_context" },
+    "venture": { "stage": "pilot", "origin": "local", "channel": "working_capital_loan" },
+    "evidence_pack": [
+      { "claim": "The business has a current trading licence.", "evidence_origin": "regulatory_artifact", "source_grade": "B", "verifiable": true, "stakeholder_class": "guardian", "dimension_hint": "formal_proof" },
+      { "claim": "WhatsApp customer orders show repeat demand but no reconciled mobile-money statement is attached.", "evidence_origin": "customer_signal", "source_grade": "D", "verifiable": false, "stakeholder_class": "customer", "dimension_hint": "informal_operating_signal" }
+    ],
+    "question": "Can the business claim it is ready for a UGX working capital loan?",
+    "public_label": {
+      "verdict": "pilot_only",
+      "blocking_dimensions": ["transaction_verification", "operating_history", "evidence_completeness"],
+      "abstain_expected": true,
+      "rationale_public": "There is useful proof, but WhatsApp demand is not audited revenue or loan approval evidence."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-006",
+    "version": "1.0-public-dev",
+    "case_type": "channel_permission",
+    "market": { "country": "KE", "sector": "agritech", "context": "high_context" },
+    "venture": { "stage": "seed", "origin": "regional", "channel": "cooperative_distribution" },
+    "evidence_pack": [
+      { "claim": "Three cooperative leaders participated in field interviews.", "evidence_origin": "field_research", "source_grade": "C", "verifiable": true, "stakeholder_class": "channel_gatekeeper", "dimension_hint": "channel_permission" },
+      { "claim": "Farmers completed two paid pilot cycles with documented delivery notes.", "evidence_origin": "transaction_log", "source_grade": "B", "verifiable": true, "stakeholder_class": "customer", "dimension_hint": "operating_history" },
+      { "claim": "County-level extension officer review is not yet documented.", "evidence_origin": "analyst_note", "source_grade": "C", "verifiable": false, "stakeholder_class": "guardian", "dimension_hint": "guardian_approval" }
+    ],
+    "question": "Is this agritech ready for a larger county rollout?",
+    "public_label": {
+      "verdict": "pilot_ready",
+      "blocking_dimensions": ["guardian_approval"],
+      "abstain_expected": false,
+      "rationale_public": "Channel and paid pilot evidence support a bounded pilot expansion, but not scale without guardian review."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-007",
+    "version": "1.0-public-dev",
+    "case_type": "market_entry",
+    "market": { "country": "GH", "sector": "edtech", "context": "emerging_market" },
+    "venture": { "stage": "pre_entry", "origin": "foreign", "channel": "school_network" },
+    "evidence_pack": [
+      { "claim": "The product has strong results from a different country.", "evidence_origin": "operator_claim", "source_grade": "C", "verifiable": true, "stakeholder_class": "operator", "dimension_hint": "transferability" },
+      { "claim": "No local parent, teacher, school-owner, or ministry interviews are included.", "evidence_origin": "analyst_note", "source_grade": "C", "verifiable": false, "stakeholder_class": "guardian", "dimension_hint": "embeddedness" }
+    ],
+    "question": "Should the agent recommend entering Ghanaian schools now?",
+    "public_label": {
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": ["embeddedness", "guardian_approval", "local_legitimacy"],
+      "abstain_expected": true,
+      "rationale_public": "Evidence from another market is not local permission."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-008",
+    "version": "1.0-public-dev",
+    "case_type": "program_readiness",
+    "market": { "country": "RW", "sector": "public_sector_digital_services", "context": "regulated_market" },
+    "venture": { "stage": "pilot", "origin": "public_sector", "channel": "municipal_rollout" },
+    "evidence_pack": [
+      { "claim": "Municipal leadership approved a limited service-design pilot.", "evidence_origin": "regulatory_artifact", "source_grade": "B", "verifiable": true, "stakeholder_class": "guardian", "dimension_hint": "guardian_approval" },
+      { "claim": "Community user testing is not yet complete.", "evidence_origin": "analyst_note", "source_grade": "C", "verifiable": false, "stakeholder_class": "customer", "dimension_hint": "reciprocity" }
+    ],
+    "question": "Is the public service ready for national rollout?",
+    "public_label": {
+      "verdict": "pilot_ready",
+      "blocking_dimensions": ["reciprocity", "user_trust", "field_validation"],
+      "abstain_expected": false,
+      "rationale_public": "Guardian permission supports a pilot, but user reciprocity and field validation block national scale."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-009",
+    "version": "1.0-public-dev",
+    "case_type": "route_resilience",
+    "market": { "country": "TZ", "sector": "paygo_solar", "context": "emerging_market" },
+    "venture": { "stage": "scaling", "origin": "regional", "channel": "agent_after_sales" },
+    "evidence_pack": [
+      { "claim": "Six months of repayment data show stable payment behavior.", "evidence_origin": "transaction_log", "source_grade": "B", "verifiable": true, "stakeholder_class": "customer", "dimension_hint": "operating_history" },
+      { "claim": "After-sales technician coverage is documented in only one of four districts.", "evidence_origin": "field_research", "source_grade": "C", "verifiable": true, "stakeholder_class": "service_channel", "dimension_hint": "continuity" }
+    ],
+    "question": "Can this PAYGo operator scale to four districts immediately?",
+    "public_label": {
+      "verdict": "pilot_ready",
+      "blocking_dimensions": ["continuity", "service_embeddedness"],
+      "abstain_expected": false,
+      "rationale_public": "Repayment evidence is strong, but after-sales continuity is not yet scale-ready."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-010",
+    "version": "1.0-public-dev",
+    "case_type": "market_entry",
+    "market": { "country": "NG", "sector": "diaspora_ecommerce", "context": "high_context" },
+    "venture": { "stage": "idea", "origin": "diaspora", "channel": "informal_import_routes" },
+    "evidence_pack": [
+      { "claim": "Diaspora founders have supplier contacts abroad.", "evidence_origin": "operator_claim", "source_grade": "D", "verifiable": false, "stakeholder_class": "operator", "dimension_hint": "supply_access" },
+      { "claim": "No local buyer trust, customs path, dispute resolution, or last-mile partner evidence is provided.", "evidence_origin": "analyst_note", "source_grade": "C", "verifiable": false, "stakeholder_class": "channel_gatekeeper", "dimension_hint": "local_legitimacy" }
+    ],
+    "question": "Should an agent advise this venture to launch imports immediately?",
+    "public_label": {
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": ["local_legitimacy", "channel_permission", "trust"],
+      "abstain_expected": true,
+      "rationale_public": "Supplier access is not market belonging or buyer trust."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-011",
+    "version": "1.0-public-dev",
+    "case_type": "partner_readiness",
+    "market": { "country": "KE", "sector": "logistics_platform", "context": "high_context" },
+    "venture": { "stage": "seed", "origin": "local", "channel": "informal_rider_network" },
+    "evidence_pack": [
+      { "claim": "Twenty riders completed paid deliveries in a small pilot.", "evidence_origin": "transaction_log", "source_grade": "B", "verifiable": true, "stakeholder_class": "operator", "dimension_hint": "operating_history" },
+      { "claim": "Rider churn and dispute records are not reconciled.", "evidence_origin": "field_research", "source_grade": "C", "verifiable": false, "stakeholder_class": "worker_channel", "dimension_hint": "reciprocity" }
+    ],
+    "question": "Is the logistics platform ready to claim strong embeddedness?",
+    "public_label": {
+      "verdict": "pilot_only",
+      "blocking_dimensions": ["reciprocity", "worker_trust", "evidence_completeness"],
+      "abstain_expected": true,
+      "rationale_public": "Paid delivery activity is not the same as durable rider embeddedness."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-012",
+    "version": "1.0-public-dev",
+    "case_type": "supplier_readiness",
+    "market": { "country": "UG", "sector": "corporate_supplier", "context": "regulated_market" },
+    "venture": { "stage": "pilot", "origin": "local", "channel": "enterprise_procurement" },
+    "evidence_pack": [
+      { "claim": "The business has registration, tax identification, trading licence, and three supplier references.", "evidence_origin": "public_document", "source_grade": "A", "verifiable": true, "stakeholder_class": "guardian", "dimension_hint": "formal_proof" },
+      { "claim": "Delivery records show five completed small orders with no unresolved complaints.", "evidence_origin": "transaction_log", "source_grade": "B", "verifiable": true, "stakeholder_class": "customer", "dimension_hint": "operating_history" }
+    ],
+    "question": "Is this supplier ready for advisor review before bidding for a larger corporate contract?",
+    "public_label": {
+      "verdict": "pilot_ready",
+      "blocking_dimensions": ["scale_evidence"],
+      "abstain_expected": false,
+      "rationale_public": "Formal proof and operating history support advisor review, but not automatic tender selection."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-013",
+    "version": "1.0-public-dev",
+    "case_type": "program_readiness",
+    "market": { "country": "ET", "sector": "ngo_cash_transfer", "context": "high_context" },
+    "venture": { "stage": "pre_entry", "origin": "ngo", "channel": "community_distribution" },
+    "evidence_pack": [
+      { "claim": "The program design references a donor theory of change.", "evidence_origin": "operator_claim", "source_grade": "D", "verifiable": false, "stakeholder_class": "operator", "dimension_hint": "program_design" },
+      { "claim": "No local community guardian, grievance mechanism, or beneficiary trust evidence is included.", "evidence_origin": "analyst_note", "source_grade": "C", "verifiable": false, "stakeholder_class": "community_guardian", "dimension_hint": "reciprocity" }
+    ],
+    "question": "Should an agent recommend implementation at district scale?",
+    "public_label": {
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": ["reciprocity", "guardian_approval", "local_legitimacy"],
+      "abstain_expected": true,
+      "rationale_public": "Donor logic is not community permission."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-014",
+    "version": "1.0-public-dev",
+    "case_type": "regulatory_guardian_risk",
+    "market": { "country": "SN", "sector": "fintech_agent_network", "context": "regulated_market" },
+    "venture": { "stage": "pilot", "origin": "regional", "channel": "cash_agent_network" },
+    "evidence_pack": [
+      { "claim": "Agent recruitment has started in two cities.", "evidence_origin": "operator_claim", "source_grade": "C", "verifiable": false, "stakeholder_class": "operator", "dimension_hint": "channel_permission" },
+      { "claim": "No current regulator correspondence or agent-liquidity control evidence is attached.", "evidence_origin": "analyst_note", "source_grade": "C", "verifiable": false, "stakeholder_class": "guardian", "dimension_hint": "guardian_approval" }
+    ],
+    "question": "Is the agent network ready to scale nationally?",
+    "public_label": {
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": ["guardian_approval", "liquidity_continuity", "evidence_completeness"],
+      "abstain_expected": true,
+      "rationale_public": "Recruitment activity without regulator and liquidity evidence is not permission to scale."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  },
+  {
+    "id": "mvrb-dev-v1-015",
+    "version": "1.0-public-dev",
+    "case_type": "supplier_readiness",
+    "market": { "country": "ZM", "sector": "industrial_supplier", "context": "emerging_market" },
+    "venture": { "stage": "enterprise", "origin": "local", "channel": "anchor_buyer_procurement" },
+    "evidence_pack": [
+      { "claim": "The supplier has audited financials, safety certificates, site inspection records, and three anchor-buyer references.", "evidence_origin": "public_document", "source_grade": "A", "verifiable": true, "stakeholder_class": "guardian", "dimension_hint": "formal_proof" },
+      { "claim": "Two years of on-time delivery logs are reconciled against buyer acceptance records.", "evidence_origin": "transaction_log", "source_grade": "A", "verifiable": true, "stakeholder_class": "customer", "dimension_hint": "operating_history" },
+      { "claim": "Local workforce and supplier relationships are documented through signed references.", "evidence_origin": "partner_reference", "source_grade": "B", "verifiable": true, "stakeholder_class": "community", "dimension_hint": "embeddedness" }
+    ],
+    "question": "Is this supplier ready for scale review by an anchor buyer?",
+    "public_label": {
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [],
+      "abstain_expected": false,
+      "rationale_public": "Multiple verifiable source families support scale review, while final procurement approval remains external."
+    },
+    "_canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
+  }
+]

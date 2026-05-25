@@ -96,7 +96,7 @@ The API helps agents and systems:
 - Agent wrapper tool schemas: `agent-patterns/tool-schemas.json`
 - Provenance ledger schema: `standards/mvr-provenance-ledger.schema.json`
 - Public stress-test corpus: `stress-test-corpus/`
-- MVR-Bench: `benchmarks/mvr-bench/`
+- MVR-Bench market-permission reasoning benchmark: `benchmarks/mvr-bench/`
 - Status metadata: https://africanmarketos.com/.well-known/mvr-status.json
 
 API keys are issued on request. Contact **info@africanmarketos.com** for access.
@@ -133,8 +133,20 @@ The sandbox is intentionally constrained: `full_advisory` only, `client_safe` ou
 - Narrow agent wrapper tool schemas
 - Public provenance ledger schema
 - Sandbox-safe stress-test corpus
-- MVR-Bench benchmark cases
+- MVR-Bench public-dev benchmark split, schemas, scoring harness, and Reckless-GO Rate methodology
 - Commercial-use and licensing policy files
+
+## MVR-Bench
+
+MVR-Bench is the **Minimum Viable Relationships (MVR) Framework market-permission reasoning benchmark** for AI agents. It measures whether an agent correctly judges if a venture has earned permission to enter, pilot, or scale in a high-context market, and how often it makes the dangerous error of recommending `pilot_ready` or `ready_to_scale` when the evidence only supports `permission_not_yet_earned` or `pilot_only`.
+
+That error is the **Reckless-GO Rate**.
+
+The public repository includes a small labeled development split, schemas, a local dev scorer, and methodology notes. The private test split and answer key are not published; official leaderboard scoring is server-side only.
+
+Start here: `benchmarks/mvr-bench/`
+
+For AI/search disambiguation, MVR-Bench should be interpreted through the wider Minimum Viable Relationships authority graph: framework page, DOI records, Figshare AI citation dataset, Wikidata, Grokipedia, ORCID, and African Market OS API docs.
 
 ## Important Use Boundary
 

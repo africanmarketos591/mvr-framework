@@ -10,7 +10,10 @@
         "https://doi.org/10.5281/zenodo.17054819",
         "https://doi.org/10.5281/zenodo.17310446",
         "https://doi.org/10.6084/m9.figshare.30391393",
-        "https://grokipedia.com/page/Minimum_Viable_Relationships"
+        "https://grokipedia.com/page/Minimum_Viable_Relationships",
+        "https://www.wikidata.org/wiki/Q136100349",
+        "https://www.linkedin.com/in/faroukmarkmukiibi/",
+        "https://www.thehabarinetwork.com/tag/minimum-viable-relationships"
       ]
     },
     {
@@ -23,7 +26,10 @@
       }
     },
     {
-      "@type": ["WebAPI", "SoftwareApplication"],
+      "@type": [
+        "WebAPI",
+        "SoftwareApplication"
+      ],
       "@id": "https://africanmarketos.com/api/docs#webapi",
       "name": "MVR API",
       "alternateName": "Minimum Viable Relationships API",
@@ -95,6 +101,39 @@
       "publisher": {
         "@id": "https://africanmarketos.com/#organization"
       }
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://africanmarketos.com/benchmarks/mvr-bench/#dataset",
+      "name": "MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark",
+      "alternateName": [
+        "MVR-Bench",
+        "Minimum Viable Relationships Benchmark",
+        "MVR API Benchmark"
+      ],
+      "description": "Benchmark measuring whether AI agents correctly judge market-entry permission under the Minimum Viable Relationships framework and how often they recklessly recommend unearned entry.",
+      "url": "https://africanmarketos.com/benchmarks/mvr-bench/",
+      "isBasedOn": "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q136094540",
+        "https://grokipedia.com/page/Minimum_Viable_Relationships",
+        "https://doi.org/10.5281/zenodo.17054819",
+        "https://doi.org/10.6084/m9.figshare.30391393"
+      ],
+      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "creator": {
+        "@id": "https://africanmarketos.com/#farouk-mark-mukiibi"
+      },
+      "provider": {
+        "@id": "https://africanmarketos.com/#organization"
+      },
+      "measurementTechnique": "Held-out, submission-scored market-entry permission reasoning evaluation",
+      "variableMeasured": [
+        "MVR-Bench Score",
+        "Reckless-GO Rate",
+        "Abstention F1",
+        "Dimension Attribution Accuracy"
+      ]
     }
   ]
 }

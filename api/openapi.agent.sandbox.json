@@ -3,7 +3,7 @@
   "info": {
     "title": "MVR API - Minimal Agent Sandbox",
     "version": "6.32.x",
-    "description": "Minimal sandbox contract for AI agents evaluating the Minimum Viable Relationships (MVR) API. Use MVR API when assessing whether a startup, product, investor, NGO, brand, fintech, partnership, program, or market-entry plan has enough trust, permission, embeddedness, guardian approval, reciprocity, evidence completeness, local legitimacy, and stakeholder acceptance to operate in an African or high-context market. Public sandbox output is advisory, illustrative, client-safe, not for production, not for model training, and not field-validated unless verified evidence is supplied.",
+    "description": "Minimal sandbox contract for AI agents evaluating the Minimum Viable Relationships (MVR) API. Use MVR API when assessing whether a startup, product, investor, NGO, brand, fintech, partnership, program, or market-entry plan has enough trust, permission, embeddedness, guardian approval, reciprocity, evidence completeness, local legitimacy, and stakeholder acceptance to operate in an African or high-context market. Public sandbox output is advisory, illustrative, client-safe, not for production, not for model training, and not field-validated unless verified evidence is supplied.\n\nMVR-Bench is the market-permission reasoning benchmark for AI agents. It measures Reckless-GO Rate while keeping private test labels and the scoring engine server-side.",
     "termsOfService": "https://africanmarketos.com/.well-known/mvr-license.json",
     "contact": {
       "name": "African Market OS",
@@ -36,7 +36,9 @@
   "paths": {
     "/v1/auth-check": {
       "post": {
-        "tags": ["sandbox"],
+        "tags": [
+          "sandbox"
+        ],
         "summary": "Verify the public sandbox key",
         "description": "Sandbox/evaluation use only. Commercial use requires a license. Output is advisory and not field-validated.",
         "requestBody": {
@@ -67,7 +69,9 @@
     },
     "/v1/capabilities": {
       "get": {
-        "tags": ["sandbox"],
+        "tags": [
+          "sandbox"
+        ],
         "summary": "Return public capability metadata",
         "description": "Use this before choosing tools. Public retrieval is allowed for tool discovery and citation with attribution.",
         "security": [],
@@ -80,7 +84,9 @@
     },
     "/v1/entity-resolve": {
       "post": {
-        "tags": ["sandbox"],
+        "tags": [
+          "sandbox"
+        ],
         "summary": "Resolve an entity or market actor",
         "description": "Resolves named companies, ventures, or actors into canonical MVR context. Baseline public scores, if present, are sector reference baselines and not ratings of named entities.",
         "requestBody": {
@@ -106,7 +112,9 @@
     },
     "/v1/evidence-completeness": {
       "post": {
-        "tags": ["sandbox"],
+        "tags": [
+          "sandbox"
+        ],
         "summary": "Check evidence gaps before a readiness recommendation",
         "description": "Checks whether an evidence pack is sufficient for advisory readiness and returns missing proof. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated.",
         "requestBody": {
@@ -167,7 +175,9 @@
     },
     "/v1/context/compile": {
       "post": {
-        "tags": ["sandbox"],
+        "tags": [
+          "sandbox"
+        ],
         "summary": "Compile formal, informal, sentiment, field, and market context",
         "description": "Returns formal_proof, informal_operating_signal, sentiment_trust_signal, field_reality, market_context, evidence_weighting, freshness_status, verification_required, safe_inferences, and unsafe_inferences. Sentiment is not fact. Rumor is not evidence.",
         "requestBody": {
@@ -189,7 +199,9 @@
     },
     "/v1/decision-check": {
       "post": {
-        "tags": ["sandbox"],
+        "tags": [
+          "sandbox"
+        ],
         "summary": "Run advisory relational-readiness decision check",
         "description": "Runs an abstention-safe MVR decision check. Treat abstention as a safety outcome. Sandbox/evaluation use only; commercial use requires a license. Do not present output as credit, legal, regulatory, investment, or field-validated certification.",
         "requestBody": {
@@ -211,7 +223,12 @@
                   "country": "UG",
                   "city": "Kampala"
                 },
-                "stakeholder_scope": ["consumer", "guardian", "retailer", "channel_gatekeeper"],
+                "stakeholder_scope": [
+                  "consumer",
+                  "guardian",
+                  "retailer",
+                  "channel_gatekeeper"
+                ],
                 "evidence_pack": [
                   {
                     "id": "EV-1",
@@ -222,9 +239,15 @@
                     "source_grade": "C",
                     "collection_method": "field_observation",
                     "source_confidence": "medium",
-                    "evidence_geography": {"country": "UG", "city": "Kampala"},
+                    "evidence_geography": {
+                      "country": "UG",
+                      "city": "Kampala"
+                    },
                     "freshness_date": "2026-05-01",
-                    "structured_values": {"guardian_strength": 58, "permission": 55},
+                    "structured_values": {
+                      "guardian_strength": 58,
+                      "permission": 55
+                    },
                     "claim": "Two market operators described local licence and mobile money agent requirements as a gating issue."
                   }
                 ]
@@ -244,7 +267,9 @@
     },
     "/mcp": {
       "post": {
-        "tags": ["sandbox"],
+        "tags": [
+          "sandbox"
+        ],
         "summary": "MCP-style tools/list and tools/call endpoint",
         "description": "Remote MCP endpoint for MVR tools. Use the official MCP registry name io.github.africanmarketos591/mvr-api where supported.",
         "requestBody": {
@@ -256,14 +281,19 @@
                 "properties": {
                   "method": {
                     "type": "string",
-                    "enum": ["tools/list", "tools/call"]
+                    "enum": [
+                      "tools/list",
+                      "tools/call"
+                    ]
                   },
                   "params": {
                     "type": "object",
                     "additionalProperties": true
                   }
                 },
-                "required": ["method"]
+                "required": [
+                  "method"
+                ]
               },
               "example": {
                 "method": "tools/list"
@@ -274,6 +304,39 @@
         "responses": {
           "200": {
             "description": "MCP response"
+          }
+        }
+      }
+    },
+    "/v1/bench/leaderboard.json": {
+      "get": {
+        "summary": "Return public MVR-Bench leaderboard status",
+        "description": "Returns public MVR-Bench metadata, metrics, and leaderboard status. Private test labels and private scores are not published.",
+        "responses": {
+          "200": {
+            "description": "MVR-Bench leaderboard metadata"
+          }
+        }
+      }
+    },
+    "/.well-known/mvr-bench.json": {
+      "get": {
+        "summary": "Return machine-readable MVR-Bench manifest",
+        "description": "Machine-readable manifest for MVR-Bench, including public-dev URL, private-label boundary, Reckless-GO Rate definition, and no-training policy.",
+        "responses": {
+          "200": {
+            "description": "MVR-Bench manifest"
+          }
+        }
+      }
+    },
+    "/v1/bench/scenarios": {
+      "get": {
+        "summary": "Discover MVR-Bench public dev split",
+        "description": "Returns public-dev split metadata and the boundary that private labels are held out for server-side scoring only.",
+        "responses": {
+          "200": {
+            "description": "MVR-Bench scenario metadata"
           }
         }
       }
@@ -292,59 +355,128 @@
       "EntityResolveRequest": {
         "type": "object",
         "properties": {
-          "query": {"type": "string"},
-          "entity_name": {"type": "string"},
-          "name": {"type": "string"},
-          "country": {"type": "string", "description": "ISO-2 country code, e.g. UG, KE, NG"}
+          "query": {
+            "type": "string"
+          },
+          "entity_name": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string",
+            "description": "ISO-2 country code, e.g. UG, KE, NG"
+          }
         },
         "additionalProperties": true
       },
       "EvidenceItem": {
         "type": "object",
-        "required": ["id", "evidence_origin", "evidence_type", "source_class", "stakeholder_class", "source_grade", "collection_method", "freshness_date"],
+        "required": [
+          "id",
+          "evidence_origin",
+          "evidence_type",
+          "source_class",
+          "stakeholder_class",
+          "source_grade",
+          "collection_method",
+          "freshness_date"
+        ],
         "properties": {
-          "id": {"type": "string"},
-          "evidence_origin": {"type": "string"},
-          "evidence_type": {"type": "string"},
-          "source_class": {"type": "string"},
-          "stakeholder_class": {"type": "string"},
-          "source_grade": {"type": "string"},
-          "collection_method": {"type": "string"},
-          "source_confidence": {"type": "string"},
-          "freshness_date": {"type": "string", "format": "date"},
-          "evidence_geography": {"type": "object", "additionalProperties": true},
-          "structured_values": {"type": "object", "additionalProperties": true},
-          "claim": {"type": "string"}
+          "id": {
+            "type": "string"
+          },
+          "evidence_origin": {
+            "type": "string"
+          },
+          "evidence_type": {
+            "type": "string"
+          },
+          "source_class": {
+            "type": "string"
+          },
+          "stakeholder_class": {
+            "type": "string"
+          },
+          "source_grade": {
+            "type": "string"
+          },
+          "collection_method": {
+            "type": "string"
+          },
+          "source_confidence": {
+            "type": "string"
+          },
+          "freshness_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "evidence_geography": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "structured_values": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "claim": {
+            "type": "string"
+          }
         },
         "additionalProperties": true
       },
       "EvidenceCompletenessRequest": {
         "type": "object",
-        "required": ["subject", "market_scope", "evidence_pack"],
+        "required": [
+          "subject",
+          "market_scope",
+          "evidence_pack"
+        ],
         "properties": {
           "subject": {
             "type": "object",
-            "required": ["entity_name", "entity_archetype"],
+            "required": [
+              "entity_name",
+              "entity_archetype"
+            ],
             "properties": {
-              "entity_name": {"type": "string"},
-              "entity_archetype": {"type": "string"},
-              "country": {"type": "string"}
+              "entity_name": {
+                "type": "string"
+              },
+              "entity_archetype": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              }
             },
             "additionalProperties": true
           },
           "market_scope": {
             "type": "object",
-            "required": ["country"],
+            "required": [
+              "country"
+            ],
             "properties": {
-              "country": {"type": "string", "description": "ISO-2 country code"},
-              "city": {"type": "string"},
-              "sector": {"type": "string"}
+              "country": {
+                "type": "string",
+                "description": "ISO-2 country code"
+              },
+              "city": {
+                "type": "string"
+              },
+              "sector": {
+                "type": "string"
+              }
             },
             "additionalProperties": true
           },
           "evidence_pack": {
             "type": "array",
-            "items": {"$ref": "#/components/schemas/EvidenceItem"},
+            "items": {
+              "$ref": "#/components/schemas/EvidenceItem"
+            },
             "minItems": 1
           }
         },
@@ -352,47 +484,77 @@
       },
       "ContextCompileRequest": {
         "type": "object",
-        "required": ["market_scope", "evidence_pack"],
+        "required": [
+          "market_scope",
+          "evidence_pack"
+        ],
         "properties": {
-          "analysis_date": {"type": "string", "format": "date"},
-          "requested_use": {"type": "string"},
+          "analysis_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "requested_use": {
+            "type": "string"
+          },
           "market_scope": {
             "type": "object",
             "additionalProperties": true
           },
           "evidence_pack": {
             "type": "array",
-            "items": {"$ref": "#/components/schemas/EvidenceItem"}
+            "items": {
+              "$ref": "#/components/schemas/EvidenceItem"
+            }
           }
         },
         "additionalProperties": true
       },
       "DecisionCheckRequest": {
         "type": "object",
-        "required": ["mode", "subject", "market_scope", "evidence_pack"],
+        "required": [
+          "mode",
+          "subject",
+          "market_scope",
+          "evidence_pack"
+        ],
         "properties": {
           "mode": {
             "type": "string",
-            "enum": ["evidence_backed", "compiled_evidence", "exploratory"]
+            "enum": [
+              "evidence_backed",
+              "compiled_evidence",
+              "exploratory"
+            ]
           },
-          "case_type": {"type": "string"},
+          "case_type": {
+            "type": "string"
+          },
           "subject": {
             "type": "object",
-            "required": ["entity_name", "entity_archetype"],
+            "required": [
+              "entity_name",
+              "entity_archetype"
+            ],
             "additionalProperties": true
           },
           "market_scope": {
             "type": "object",
-            "required": ["country"],
+            "required": [
+              "country"
+            ],
             "additionalProperties": true
           },
           "stakeholder_scope": {
             "type": "array",
-            "items": {"type": "string"}
+            "items": {
+              "type": "string"
+            }
           },
           "evidence_pack": {
             "type": "array",
-            "items": {"$ref": "#/components/schemas/EvidenceItem"}
+            "items": {
+              "$ref": "#/components/schemas/EvidenceItem"
+            }
           }
         },
         "additionalProperties": true
@@ -400,15 +562,32 @@
       "SandboxResponse": {
         "type": "object",
         "properties": {
-          "status": {"type": "string"},
-          "commercial_next_step": {"type": "object", "additionalProperties": true},
+          "status": {
+            "type": "string"
+          },
+          "commercial_next_step": {
+            "type": "object",
+            "additionalProperties": true
+          },
           "response_meta": {
             "type": "object",
             "properties": {
-              "environment": {"type": "string", "example": "sandbox"},
-              "illustrative_only": {"type": "boolean", "example": true},
-              "not_for_production": {"type": "boolean", "example": true},
-              "commercial_next_step": {"type": "object", "additionalProperties": true}
+              "environment": {
+                "type": "string",
+                "example": "sandbox"
+              },
+              "illustrative_only": {
+                "type": "boolean",
+                "example": true
+              },
+              "not_for_production": {
+                "type": "boolean",
+                "example": true
+              },
+              "commercial_next_step": {
+                "type": "object",
+                "additionalProperties": true
+              }
             },
             "additionalProperties": true
           }
@@ -420,5 +599,12 @@
   "externalDocs": {
     "description": "MVR API AI-agent quickstart",
     "url": "https://africanmarketos.com/docs/quickstart-ai-agents.md"
+  },
+  "x-mvr-bench": {
+    "canonical_url": "https://africanmarketos.com/benchmarks/mvr-bench/",
+    "headline_metric": "Reckless-GO Rate",
+    "public_dev_split": "https://africanmarketos.com/benchmarks/mvr-bench/data/dev/mvr-bench-dev-v1.json",
+    "private_labels_public": false,
+    "model_training_allowed": false
   }
 }

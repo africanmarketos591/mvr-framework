@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://africanmarketos.com/benchmarks/mvr-bench/schema/leaderboard.schema.json",
+  "title": "MVR-Bench Leaderboard",
+  "type": "object",
+  "required": ["benchmark", "full_name", "framework", "version", "canonical_url", "status", "metrics", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "benchmark": {
+      "const": "MVR-Bench"
+    },
+    "full_name": {
+      "const": "MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark"
+    },
+    "framework": {
+      "const": "Minimum Viable Relationships (MVR) Framework"
+    },
+    "version": {
+      "type": "string"
+    },
+    "canonical_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["public_dev_only", "private_leaderboard_open", "private_leaderboard_closed"]
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rank", "run_name", "model", "score", "reckless_go_rate"],
+        "additionalProperties": true,
+        "properties": {
+          "rank": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "run_name": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "reckless_go_rate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  }
+}

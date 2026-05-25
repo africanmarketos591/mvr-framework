@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://africanmarketos.com/benchmarks/mvr-bench/schema/scenario.schema.json",
+  "title": "MVR-Bench Scenario",
+  "type": "object",
+  "required": ["id", "version", "case_type", "market", "venture", "evidence_pack", "question"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^mvrb-dev-v1-[0-9]{3}$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "case_type": {
+      "type": "string",
+      "enum": [
+        "greenfield_entry",
+        "market_entry",
+        "accelerator_screening",
+        "partner_readiness",
+        "funding_readiness",
+        "supplier_readiness",
+        "cfo_relational_risk",
+        "regulatory_guardian_risk",
+        "program_readiness",
+        "channel_permission",
+        "route_resilience"
+      ]
+    },
+    "market": {
+      "type": "object",
+      "required": ["country", "sector", "context"],
+      "additionalProperties": false,
+      "properties": {
+        "country": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "sector": {
+          "type": "string"
+        },
+        "context": {
+          "type": "string",
+          "enum": ["high_context", "emerging_market", "frontier_market", "regulated_market"]
+        }
+      }
+    },
+    "venture": {
+      "type": "object",
+      "required": ["stage", "origin", "channel"],
+      "additionalProperties": false,
+      "properties": {
+        "stage": {
+          "type": "string",
+          "enum": ["idea", "pre_entry", "pilot", "seed", "scaling", "enterprise"]
+        },
+        "origin": {
+          "type": "string",
+          "enum": ["local", "foreign", "diaspora", "regional", "public_sector", "ngo"]
+        },
+        "channel": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence_pack": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim", "evidence_origin", "source_grade", "verifiable"],
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "evidence_origin": {
+            "type": "string",
+            "enum": ["public_document", "field_research", "operator_claim", "transaction_log", "partner_reference", "regulatory_artifact", "customer_signal", "analyst_note"]
+          },
+          "source_grade": {
+            "type": "string",
+            "enum": ["A", "B", "C", "D"]
+          },
+          "verifiable": {
+            "type": "boolean"
+          },
+          "stakeholder_class": {
+            "type": "string"
+          },
+          "dimension_hint": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "question": {
+      "type": "string"
+    },
+    "public_label": {
+      "$ref": "#/$defs/public_label"
+    },
+    "_canary": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "public_label": {
+      "type": "object",
+      "required": ["verdict", "blocking_dimensions", "abstain_expected", "rationale_public"],
+      "additionalProperties": false,
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": ["permission_not_yet_earned", "pilot_only", "pilot_ready", "ready_to_scale"]
+        },
+        "blocking_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "abstain_expected": {
+          "type": "boolean"
+        },
+        "rationale_public": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

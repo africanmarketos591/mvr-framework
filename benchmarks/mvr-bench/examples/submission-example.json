@@ -1,0 +1,23 @@
+{
+  "run_name": "mvr-aware-reference-dev",
+  "model": "reference-agent-dev",
+  "method": "Human-written reference predictions for public dev split only. Not an official private leaderboard result.",
+  "uses_mvr_api": true,
+  "predictions": [
+    { "id": "mvrb-dev-v1-001", "verdict": "permission_not_yet_earned", "blocking_dimensions": ["guardian_approval", "channel_permission", "evidence_completeness"], "abstain": true, "confidence": 0.87 },
+    { "id": "mvrb-dev-v1-002", "verdict": "pilot_only", "blocking_dimensions": ["formal_proof", "evidence_completeness", "local_legitimacy"], "abstain": true, "confidence": 0.82 },
+    { "id": "mvrb-dev-v1-003", "verdict": "pilot_only", "blocking_dimensions": ["continuity", "transaction_volatility", "supplier_trust"], "abstain": true, "confidence": 0.8 },
+    { "id": "mvrb-dev-v1-004", "verdict": "permission_not_yet_earned", "blocking_dimensions": ["guardian_approval", "formal_proof", "procurement_permission"], "abstain": true, "confidence": 0.88 },
+    { "id": "mvrb-dev-v1-005", "verdict": "pilot_only", "blocking_dimensions": ["transaction_verification", "operating_history", "evidence_completeness"], "abstain": true, "confidence": 0.83 },
+    { "id": "mvrb-dev-v1-006", "verdict": "pilot_ready", "blocking_dimensions": ["guardian_approval"], "abstain": false, "confidence": 0.78 },
+    { "id": "mvrb-dev-v1-007", "verdict": "permission_not_yet_earned", "blocking_dimensions": ["embeddedness", "guardian_approval", "local_legitimacy"], "abstain": true, "confidence": 0.84 },
+    { "id": "mvrb-dev-v1-008", "verdict": "pilot_ready", "blocking_dimensions": ["reciprocity", "user_trust", "field_validation"], "abstain": false, "confidence": 0.76 },
+    { "id": "mvrb-dev-v1-009", "verdict": "pilot_ready", "blocking_dimensions": ["continuity", "service_embeddedness"], "abstain": false, "confidence": 0.77 },
+    { "id": "mvrb-dev-v1-010", "verdict": "permission_not_yet_earned", "blocking_dimensions": ["local_legitimacy", "channel_permission", "trust"], "abstain": true, "confidence": 0.86 },
+    { "id": "mvrb-dev-v1-011", "verdict": "pilot_only", "blocking_dimensions": ["reciprocity", "worker_trust", "evidence_completeness"], "abstain": true, "confidence": 0.79 },
+    { "id": "mvrb-dev-v1-012", "verdict": "pilot_ready", "blocking_dimensions": ["scale_evidence"], "abstain": false, "confidence": 0.75 },
+    { "id": "mvrb-dev-v1-013", "verdict": "permission_not_yet_earned", "blocking_dimensions": ["reciprocity", "guardian_approval", "local_legitimacy"], "abstain": true, "confidence": 0.86 },
+    { "id": "mvrb-dev-v1-014", "verdict": "permission_not_yet_earned", "blocking_dimensions": ["guardian_approval", "liquidity_continuity", "evidence_completeness"], "abstain": true, "confidence": 0.85 },
+    { "id": "mvrb-dev-v1-015", "verdict": "ready_to_scale", "blocking_dimensions": [], "abstain": false, "confidence": 0.74 }
+  ]
+}

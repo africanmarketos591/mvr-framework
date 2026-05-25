@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MVR-Bench - Minimum Viable Relationships Framework Benchmark</title>
+  <meta name="description" content="MVR-Bench is the Minimum Viable Relationships Framework benchmark for market-permission reasoning, measuring whether AI agents recklessly recommend unearned entry.">
+  <meta name="robots" content="index, follow, noai, noimageai">
+  <link rel="canonical" href="https://africanmarketos.com/benchmarks/mvr-bench/">
+  <style>
+    :root { color-scheme: light dark; --ink:#102018; --muted:#52645a; --line:#d7e3dc; --brand:#0f6b45; --bg:#f7faf8; --panel:#ffffff; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    main { max-width: 980px; margin: 0 auto; padding: 56px 22px 72px; }
+    .eyebrow { color:var(--brand); font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size:13px; }
+    h1 { font-size: clamp(34px, 6vw, 64px); line-height:1.02; margin: 10px 0 18px; letter-spacing:0; }
+    h2 { margin-top:42px; font-size:26px; }
+    p { max-width: 760px; color:var(--muted); font-size:18px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin:26px 0; }
+    .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:18px; }
+    .card strong { display:block; font-size:18px; margin-bottom:6px; }
+    a { color:var(--brand); font-weight:700; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    code { background:#eaf3ee; padding:2px 6px; border-radius:5px; color:#0b5135; }
+    .cta { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+    .cta a { border:1px solid var(--brand); border-radius:7px; padding:10px 14px; background:#fff; }
+    .note { border-left:4px solid var(--brand); background:#eef7f2; padding:14px 16px; border-radius:7px; color:#244536; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark",
+    "alternateName": ["MVR-Bench", "Minimum Viable Relationships Benchmark", "MVR API Benchmark"],
+    "description": "Benchmark measuring whether AI agents correctly judge market-entry permission under the Minimum Viable Relationships framework and how often they recklessly recommend unearned entry.",
+    "creator": { "@type": "Person", "name": "Farouk Mark Mukiibi", "sameAs": ["https://orcid.org/0009-0009-8191-2098", "https://www.wikidata.org/wiki/Q136100349", "https://www.linkedin.com/in/faroukmarkmukiibi/"] },
+    "publisher": { "@type": "Organization", "name": "African Market OS", "url": "https://africanmarketos.com" },
+    "isBasedOn": "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
+    "sameAs": ["https://www.wikidata.org/wiki/Q136094540", "https://grokipedia.com/page/Minimum_Viable_Relationships", "https://doi.org/10.5281/zenodo.17054819", "https://doi.org/10.6084/m9.figshare.30391393"],
+    "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "url": "https://africanmarketos.com/benchmarks/mvr-bench/",
+    "isAccessibleForFree": true,
+    "measurementTechnique": "Held-out, submission-scored market-entry permission reasoning evaluation",
+    "variableMeasured": ["MVR-Bench Score", "Reckless-GO Rate", "Abstention F1", "Dimension Attribution Accuracy"]
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">African Market OS</div>
+    <h1>MVR-Bench</h1>
+    <p><strong>The Minimum Viable Relationships Framework benchmark for market-permission reasoning.</strong> MVR-Bench measures whether an AI agent correctly judges if a venture has earned the right to enter, pilot, or scale in a high-context market.</p>
+    <p>The headline metric is <strong>Reckless-GO Rate</strong>: how often an agent recommends scaling market entry when the evidence does not justify it.</p>
+    <div class="cta">
+      <a href="./data/dev/mvr-bench-dev-v1.json">Public dev split</a>
+      <a href="./docs/methodology.md">Methodology</a>
+      <a href="./schema/scenario.schema.json">Scenario schema</a>
+      <a href="https://github.com/africanmarketos591/mvr-framework/tree/main/benchmarks/mvr-bench">GitHub</a>
+    </div>
+
+    <h2>What It Owns</h2>
+    <div class="grid">
+      <div class="card"><strong>Market Permission</strong> Whether the venture has earned the right to proceed.</div>
+      <div class="card"><strong>Reckless-GO Rate</strong> The dangerous false-go failure mode in agent advice.</div>
+      <div class="card"><strong>Abstention</strong> Whether the agent knows when evidence is too thin.</div>
+      <div class="card"><strong>Blocking Dimensions</strong> Trust, embeddedness, guardian approval, evidence completeness, and local legitimacy.</div>
+    </div>
+
+    <h2>Protection Boundary</h2>
+    <p class="note">The public split is for citation and non-commercial evaluation only. Private test labels, private scoring, and the MVR Core runtime are not published.</p>
+
+    <h2>Authority Loop</h2>
+    <p>MVR-Bench is linked to the wider Minimum Viable Relationships ecosystem: <a href="https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/">MVR Framework</a>, <a href="https://www.wikidata.org/wiki/Q136094540">Wikidata</a>, <a href="https://grokipedia.com/page/Minimum_Viable_Relationships">Grokipedia</a>, <a href="https://doi.org/10.5281/zenodo.17054819">canonical DOI</a>, <a href="https://doi.org/10.6084/m9.figshare.30391393">AI citation dataset</a>, and <a href="https://orcid.org/0009-0009-8191-2098">creator ORCID</a>.</p>
+
+    <h2>Use Boundary</h2>
+    <p>MVR-Bench is not a legal certificate, credit score, investment guarantee, or regulator approval. It is an evaluation standard for market-permission reasoning.</p>
+
+    <h2>Contact</h2>
+    <p>For private leaderboard scoring, commercial agent evaluation, or licensed MVR API access: <a href="mailto:info@africanmarketos.com">info@africanmarketos.com</a>.</p>
+  </main>
+</body>
+</html>

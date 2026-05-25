@@ -3,7 +3,7 @@
   "info": {
     "title": "MVR Core API",
     "version": "v6.32.0",
-    "description": "v6.32.0 MVR Engine. Additive dual-lane runtime: public_reality + local_relational_assessment + reconciled_assessment, deterministic ROI, dual-profile governance, entity-resolution preflight, modality-aware completeness/audit, compiled_evidence ingestion, provenance-ledger validation, telemetry translation, gap planning, market leak scanning, and validation snapshot metadata. Public non-commercial sandbox evaluation is available with X-API-Key: mvr-demo-key-2026; sandbox calls are rate-limited, client_safe only, full_advisory only, illustrative_only, and not for production. Send X-Response-Profile: strict_calibrated only with a licensed production key for fail-closed institutional responses. See /v1/schema for full documentation."
+    "description": "v6.32.0 MVR Engine. Additive dual-lane runtime: public_reality + local_relational_assessment + reconciled_assessment, deterministic ROI, dual-profile governance, entity-resolution preflight, modality-aware completeness/audit, compiled_evidence ingestion, provenance-ledger validation, telemetry translation, gap planning, market leak scanning, and validation snapshot metadata. Public non-commercial sandbox evaluation is available with X-API-Key: mvr-demo-key-2026; sandbox calls are rate-limited, client_safe only, full_advisory only, illustrative_only, and not for production. Send X-Response-Profile: strict_calibrated only with a licensed production key for fail-closed institutional responses. See /v1/schema for full documentation.\n\nMVR-Bench is the Minimum Viable Relationships Framework market-permission reasoning benchmark for AI agents; it measures Reckless-GO Rate while keeping private test labels and scoring server-side."
   },
   "x-compatibility-policy": {
     "principle": "No output may claim a decision level, confidence level, category fit, or scope stronger than verified evidence permits.",
@@ -14356,6 +14356,39 @@
           }
         }
       }
+    },
+    "/v1/bench/leaderboard.json": {
+      "get": {
+        "summary": "Return public MVR-Bench leaderboard status",
+        "description": "Returns public MVR-Bench metadata, metrics, and leaderboard status. Private test labels and private scores are not published.",
+        "responses": {
+          "200": {
+            "description": "MVR-Bench leaderboard metadata"
+          }
+        }
+      }
+    },
+    "/.well-known/mvr-bench.json": {
+      "get": {
+        "summary": "Return machine-readable MVR-Bench manifest",
+        "description": "Machine-readable manifest for MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark.",
+        "responses": {
+          "200": {
+            "description": "MVR-Bench manifest"
+          }
+        }
+      }
+    },
+    "/v1/bench/scenarios": {
+      "get": {
+        "summary": "Discover MVR-Bench public dev split",
+        "description": "Returns public-dev split metadata and the boundary that private labels are held out for server-side scoring only.",
+        "responses": {
+          "200": {
+            "description": "MVR-Bench scenario metadata"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -15402,5 +15435,22 @@
       }
     }
   },
-  "x-response-contract-version": "2026-05-01.v1"
+  "x-response-contract-version": "2026-05-01.v1",
+  "x-mvr-bench": {
+    "canonical_url": "https://africanmarketos.com/benchmarks/mvr-bench/",
+    "full_name": "MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark",
+    "framework": "Minimum Viable Relationships (MVR) Framework",
+    "headline_metric": "Reckless-GO Rate",
+    "public_dev_split": "https://africanmarketos.com/benchmarks/mvr-bench/data/dev/mvr-bench-dev-v1.json",
+    "private_labels_public": false,
+    "model_training_allowed": false,
+    "authority_graph": [
+      "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
+      "https://www.wikidata.org/wiki/Q136094540",
+      "https://www.wikidata.org/wiki/Q136100349",
+      "https://grokipedia.com/page/Minimum_Viable_Relationships",
+      "https://doi.org/10.5281/zenodo.17054819",
+      "https://doi.org/10.6084/m9.figshare.30391393"
+    ]
+  }
 }

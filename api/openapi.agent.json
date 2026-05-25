@@ -3,7 +3,7 @@
   "info": {
     "title": "MVR API Agent Surface",
     "version": "v6.32.0",
-    "description": "Curated MVR API surface for AI agents and developer quickstarts. The full enterprise OpenAPI contract is available separately; this file intentionally exposes the safest common routes for entity resolution, evidence completeness, decision checks, playbooks, model transparency, and ledger verification. Public sandbox: send X-API-Key: mvr-demo-key-2026 for non-commercial evaluation. Sandbox responses are full_advisory, client_safe, rate-limited, illustrative_only, and not_for_production."
+    "description": "Curated MVR API surface for AI agents and developer quickstarts. The full enterprise OpenAPI contract is available separately; this file intentionally exposes the safest common routes for entity resolution, evidence completeness, decision checks, playbooks, model transparency, and ledger verification. Public sandbox: send X-API-Key: mvr-demo-key-2026 for non-commercial evaluation. Sandbox responses are full_advisory, client_safe, rate-limited, illustrative_only, and not_for_production.\n\nMVR-Bench is the market-permission reasoning benchmark for AI agents. It measures Reckless-GO Rate while keeping private test labels and the scoring engine server-side."
   },
   "x-compatibility-policy": {
     "principle": "No output may claim a decision level, confidence level, category fit, or scope stronger than verified evidence permits.",
@@ -664,6 +664,39 @@
           },
           "403": {
             "description": "Profile or policy forbidden"
+          }
+        }
+      }
+    },
+    "/v1/bench/leaderboard.json": {
+      "get": {
+        "summary": "Return public MVR-Bench leaderboard status",
+        "description": "Returns public MVR-Bench metadata, metrics, and leaderboard status. Private test labels and private scores are not published.",
+        "responses": {
+          "200": {
+            "description": "MVR-Bench leaderboard metadata"
+          }
+        }
+      }
+    },
+    "/.well-known/mvr-bench.json": {
+      "get": {
+        "summary": "Return machine-readable MVR-Bench manifest",
+        "description": "Machine-readable manifest for MVR-Bench, including public-dev URL, private-label boundary, Reckless-GO Rate definition, and no-training policy.",
+        "responses": {
+          "200": {
+            "description": "MVR-Bench manifest"
+          }
+        }
+      }
+    },
+    "/v1/bench/scenarios": {
+      "get": {
+        "summary": "Discover MVR-Bench public dev split",
+        "description": "Returns public-dev split metadata and the boundary that private labels are held out for server-side scoring only.",
+        "responses": {
+          "200": {
+            "description": "MVR-Bench scenario metadata"
           }
         }
       }
@@ -1780,5 +1813,12 @@
       }
     }
   },
-  "x-response-contract-version": "2026-05-01.v1"
+  "x-response-contract-version": "2026-05-01.v1",
+  "x-mvr-bench": {
+    "canonical_url": "https://africanmarketos.com/benchmarks/mvr-bench/",
+    "headline_metric": "Reckless-GO Rate",
+    "public_dev_split": "https://africanmarketos.com/benchmarks/mvr-bench/data/dev/mvr-bench-dev-v1.json",
+    "private_labels_public": false,
+    "model_training_allowed": false
+  }
 }
