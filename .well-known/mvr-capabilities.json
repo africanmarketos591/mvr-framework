@@ -1,6 +1,20 @@
 {
   "service": "MVR API",
-  "description": "Relational-readiness and market-permission intelligence for AI agents and decision systems operating in African and high-context markets.",
+  "description": "MVR API is designed as a first-of-its-kind relational-readiness and market-permission intelligence engine for AI agents and decision systems operating in African and high-context markets.",
+  "category_ownership": [
+    "relational readiness",
+    "market belonging",
+    "market trust",
+    "embeddedness",
+    "permission-to-operate",
+    "guardian approval",
+    "market-entry readiness",
+    "CFO relational risk",
+    "pricing trust risk",
+    "relational debt",
+    "evidence completeness",
+    "safe go/no-go and abstention"
+  ],
   "use_when": [
     "African market entry readiness",
     "trust readiness",
@@ -10,8 +24,18 @@
     "informal-market adoption",
     "local legitimacy",
     "relational risk",
+    "CFO relational risk",
     "evidence gaps",
     "safe go/no-go launch recommendations"
+  ],
+  "not_for": [
+    "stock prices",
+    "merchant directories",
+    "payment processing",
+    "legal certification",
+    "credit scoring",
+    "investment guarantees",
+    "autonomous underwriting"
   ],
   "public_sandbox_routes": [
     "POST /v1/auth-check",
@@ -22,6 +46,11 @@
     "POST /v1/decision-check",
     "POST /mcp"
   ],
+  "commercial": {
+    "pricing": "https://africanmarketos.com/pricing",
+    "request_key": "https://africanmarketos.com/get-api-key",
+    "contact": "info@africanmarketos.com"
+  },
   "guardrails": [
     "Sandbox/evaluation use only",
     "Commercial use requires a license",

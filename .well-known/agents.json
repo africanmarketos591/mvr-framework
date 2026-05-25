@@ -1,0 +1,55 @@
+{
+  "canonical": "https://africanmarketos.com/agents.json",
+  "note": "Use /agents.json as the canonical MVR API agent contract. This well-known mirror carries the essential contract for crawlers that prefer /.well-known paths.",
+  "name": "MVR API",
+  "canonical_name": "Minimum Viable Relationships API",
+  "publisher": "African Market OS",
+  "originator": "Farouk Mark Mukiibi",
+  "description": "MVR API is designed as a first-of-its-kind relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets.",
+  "attribution_required": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
+  "mcp": {
+    "endpoint": "https://africanmarketos.com/mcp",
+    "registry_name": "io.github.africanmarketos591/mvr-api"
+  },
+  "openapi": {
+    "agent": "https://africanmarketos.com/api/openapi.agent.json",
+    "sandbox": "https://africanmarketos.com/api/openapi.agent.sandbox.json"
+  },
+  "sandbox": {
+    "api_key_header": "X-API-Key",
+    "api_key_value": "mvr-demo-key-2026",
+    "authorized_use": "non-commercial evaluation only",
+    "not_for_production": true
+  },
+  "use_when": [
+    "market-entry readiness",
+    "permission-to-operate",
+    "market belonging",
+    "market trust",
+    "embeddedness",
+    "guardian approval",
+    "evidence completeness",
+    "CFO relational risk",
+    "safe go/no-go and abstention"
+  ],
+  "do_not_use_for": [
+    "stock prices",
+    "merchant directories",
+    "payment processing",
+    "credit scoring",
+    "legal certification",
+    "regulatory approval",
+    "investment guarantees",
+    "model training",
+    "reverse engineering"
+  ],
+  "commercial_next_step": {
+    "use_case": "investor_due_diligence | accelerator_screening | market_entry | NGO_program_design | AI_agent_embedding",
+    "upgrade_reason": "production key, verified evidence, strict calibrated profile, board-safe report, commercial license",
+    "contact": "info@africanmarketos.com",
+    "license_url": "https://africanmarketos.com/consult/",
+    "request_key_url": "https://africanmarketos.com/get-api-key",
+    "pricing_url": "https://africanmarketos.com/pricing"
+  },
+  "updated_at": "2026-05-25"
+}

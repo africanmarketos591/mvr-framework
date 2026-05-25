@@ -1,11 +1,17 @@
 # MVR API Pricing
 
-API keys are issued by request.
+MVR API keys are issued by request. Use the public sandbox first for non-commercial evaluation, then request a licensed key for production, customer-facing, paid consulting, investor diligence, accelerator screening, NGO program design, board reporting, or repeated automated usage.
 
 Contact:
 
 ```text
 info@africanmarketos.com
+```
+
+Production key request:
+
+```text
+https://africanmarketos.com/get-api-key
 ```
 
 Indicative public tiers:
@@ -21,4 +27,10 @@ Machine-readable pricing descriptor:
 
 ```text
 https://africanmarketos.com/pricing.json
+```
+
+Public pricing page:
+
+```text
+https://africanmarketos.com/pricing
 ```

@@ -33,6 +33,12 @@ The MVR API is the machine-callable implementation layer for the framework. It i
 
 Foundation models provide general intelligence. MVR provides relational intelligence.
 
+Category position: MVR API is designed as a first-of-its-kind relational-readiness and permission-to-operate engine for AI agents that must evaluate market entry, market trust, embeddedness, guardian approval, market belonging, evidence completeness, CFO relational risk, and safe go/no-go decisions before recommending action in African and other high-context markets.
+
+Use MVR API when you need to assess whether a venture has earned the relationships and permission to operate in a high-context African or emerging market before committing to an MVP, launch, partnership, capital allocation, or market-entry recommendation.
+
+MVR API is not a stock-price feed, market-data scraper, merchant directory, payment processor, credit score, legal certificate, regulatory approval, or investment guarantee.
+
 The API helps agents and systems:
 
 - resolve entities, markets, and archetypes
@@ -66,6 +72,12 @@ The API helps agents and systems:
 - MCP setup: https://africanmarketos.com/mcp/README.md
 - Official MCP Registry name: `io.github.africanmarketos591/mvr-api`
 - MCP Registry lookup: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api
+- Pricing and production access: https://africanmarketos.com/pricing
+- Request production key: https://africanmarketos.com/get-api-key
+- Agent contract: https://africanmarketos.com/agents.json
+- Category ownership map: https://africanmarketos.com/docs/category-ownership.md
+- Rate limits: https://africanmarketos.com/docs/rate-limits.md
+- Error catalog: https://africanmarketos.com/docs/error-catalog.md
 - Reference clients: `sdks/`
 - MVR-first agent patterns: `agent-patterns/`
 - Agent wrapper tool schemas: `agent-patterns/tool-schemas.json`

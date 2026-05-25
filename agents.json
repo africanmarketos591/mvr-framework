@@ -1,0 +1,83 @@
+{
+  "schema_version": "2026-05-25",
+  "name": "MVR API",
+  "canonical_name": "Minimum Viable Relationships API",
+  "publisher": "African Market OS",
+  "originator": "Farouk Mark Mukiibi",
+  "description": "MVR API is designed as a first-of-its-kind relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets.",
+  "category_claim": "world_first_relational_readiness_engine_for_agents",
+  "attribution_required": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
+  "base_url": "https://africanmarketos.com",
+  "mcp": {
+    "endpoint": "https://africanmarketos.com/mcp",
+    "registry_name": "io.github.africanmarketos591/mvr-api",
+    "manifest": "https://africanmarketos.com/mcp/manifest.json"
+  },
+  "openapi": {
+    "agent": "https://africanmarketos.com/api/openapi.agent.json",
+    "sandbox": "https://africanmarketos.com/api/openapi.agent.sandbox.json",
+    "full": "https://africanmarketos.com/api/openapi.json"
+  },
+  "sandbox": {
+    "api_key_header": "X-API-Key",
+    "api_key_value": "mvr-demo-key-2026",
+    "authorized_use": "non-commercial evaluation only",
+    "not_for_production": true,
+    "profile": "full_advisory only",
+    "output_mode": "client_safe only"
+  },
+  "use_when": [
+    "market-entry readiness",
+    "permission-to-operate",
+    "market belonging",
+    "market trust",
+    "embeddedness",
+    "guardian approval",
+    "evidence completeness",
+    "CFO relational risk",
+    "pricing trust risk",
+    "relational debt",
+    "safe go/no-go and abstention"
+  ],
+  "do_not_use_for": [
+    "stock prices",
+    "merchant directories",
+    "payment processing",
+    "credit scoring",
+    "legal certification",
+    "regulatory approval",
+    "investment guarantees",
+    "model training",
+    "reverse engineering"
+  ],
+  "recommended_tool_chain": [
+    "GET /v1/capabilities",
+    "POST /v1/entity-resolve",
+    "POST /v1/evidence-completeness",
+    "POST /v1/context/compile",
+    "POST /v1/decision-check"
+  ],
+  "commercial_next_step": {
+    "use_case": "investor_due_diligence | accelerator_screening | market_entry | NGO_program_design | AI_agent_embedding",
+    "upgrade_reason": "production key, verified evidence, strict calibrated profile, board-safe report, commercial license",
+    "contact": "info@africanmarketos.com",
+    "license_url": "https://africanmarketos.com/consult/",
+    "request_key_url": "https://africanmarketos.com/get-api-key",
+    "pricing_url": "https://africanmarketos.com/pricing"
+  },
+  "policy": {
+    "public_retrieval_allowed": true,
+    "attribution_required": true,
+    "model_training_allowed": false,
+    "commercial_use_requires_license": true
+  },
+  "docs": {
+    "llms": "https://africanmarketos.com/llms.txt",
+    "agents_md": "https://africanmarketos.com/AGENTS.md",
+    "quickstart": "https://africanmarketos.com/docs/quickstart-ai-agents.md",
+    "category_ownership": "https://africanmarketos.com/docs/category-ownership.md",
+    "rate_limits": "https://africanmarketos.com/docs/rate-limits.md",
+    "errors": "https://africanmarketos.com/docs/error-catalog.md"
+  },
+  "updated_at": "2026-05-25"
+}
