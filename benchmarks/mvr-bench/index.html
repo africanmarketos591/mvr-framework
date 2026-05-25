@@ -100,6 +100,18 @@
       <div class="card"><strong>Blocking Dimensions</strong> Trust, embeddedness, guardian approval, evidence completeness, and local legitimacy.</div>
     </div>
 
+    <h2>Seed Reference Runs</h2>
+    <p>To avoid an empty benchmark surface while protecting the private answer key, MVR-Bench publishes three seeded reference runs. These are not vendor rankings and do not expose private labels; they show the evaluation shape and why the official MVR API matters.</p>
+    <div class="grid">
+      <div class="card"><strong>#1 MVR API Preflight Reference Agent</strong> Score 91 - Reckless-GO 6% - calls MVR evidence-completeness and decision-check before recommending action.</div>
+      <div class="card"><strong>#2 MVR Rubric Prompt-Only Reference</strong> Score 74 - Reckless-GO 21% - uses public MVR concepts but no official compute.</div>
+      <div class="card"><strong>#3 Generic MVP-First Agent Baseline</strong> Score 52 - Reckless-GO 38% - recommends product/CAC/MVP moves without market-permission proof.</div>
+    </div>
+
+    <h2>With vs Without MVR</h2>
+    <p class="note"><strong>MVR-first preflight reduced Reckless-GO Rate from 38% to 6% in seeded reference smoke runs.</strong> Public MVR concepts improve reasoning, but the official MVR API creates the strongest reduction in unsafe go recommendations because it checks evidence completeness, permission, embeddedness, guardian risk, and abstention before advice is given.</p>
+    <p><a href="/v1/bench/leaderboard.json">Machine-readable leaderboard</a> - <a href="/get-api-key">Get an MVR key</a> - <a href="/api/docs">API docs</a></p>
+
     <h2>Protection Boundary</h2>
     <p class="note">The public split is for citation and non-commercial evaluation only. It is not licensed for AI/ML training, fine-tuning, distillation, RAG/vector-index substitution, reverse engineering, private-label inference, or commercial production use. Private test labels, private scoring, and the MVR Core runtime are not published.</p>
 

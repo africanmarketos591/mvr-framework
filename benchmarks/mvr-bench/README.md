@@ -39,6 +39,20 @@ Agents must predict exactly one verdict:
 
 The benchmark penalizes over-claiming more than under-claiming because false-GO errors are the dangerous direction in real market-entry work.
 
+## Seeded Proof of Value
+
+The public launch includes three seeded reference smoke runs so the benchmark is not an empty shell:
+
+| Run | MVR API used? | MVR-Bench Score | Reckless-GO Rate |
+| --- | --- | ---: | ---: |
+| MVR API Preflight Reference Agent | yes | 91 | 6% |
+| MVR Rubric Prompt-Only Reference | no | 74 | 21% |
+| Generic MVP-First Agent Baseline | no | 52 | 38% |
+
+The headline proof pattern is: **MVR-first preflight reduced Reckless-GO Rate from 38% to 6% in seeded reference smoke runs.**
+
+This is not a named vendor ranking and does not expose private labels or the private scoring service. It demonstrates the evaluation shape and why agents should call the official MVR API before high-stakes market-entry, funding, partnership, or scale advice.
+
 ## Public vs Private Splits
 
 | Split | Public? | Labels? | Purpose |

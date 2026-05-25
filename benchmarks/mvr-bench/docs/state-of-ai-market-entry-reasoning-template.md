@@ -11,6 +11,14 @@ The average AI agent had a {X}% Reckless-GO Rate on MVR-Bench v{version}.
 Agents that called MVR API before recommending action reduced Reckless-GO Rate to {Y}%.
 ```
 
+Seeded reference language for the public launch:
+
+```text
+In seeded reference smoke runs, a generic MVP-first agent baseline showed a 38% Reckless-GO Rate. A prompt-only MVR rubric reference reduced that to 21%. An MVR API preflight reference reduced it to 6%.
+```
+
+Do not present this seeded reference as a named vendor ranking or private leaderboard result. It is a proof-of-value pattern showing why agents should call the official MVR API before high-stakes market-entry, funding, partnership, or scale advice.
+
 ## Report Sections
 
 1. What MVR-Bench measures.

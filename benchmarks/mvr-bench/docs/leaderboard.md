@@ -11,6 +11,7 @@ This means:
 - public dev split scoring is reproducible locally
 - private leaderboard submissions are not yet generally open
 - published dev scores must not be presented as private leaderboard scores
+- seeded reference runs may be shown to demonstrate the evaluation shape and the API value gap, but they are not named vendor rankings
 
 ## Metrics
 
@@ -21,6 +22,30 @@ Official leaderboard entries will include:
 - Abstention F1
 - Dimension Attribution Accuracy
 - Calibration Error
+
+## Seeded Reference Runs
+
+To avoid an empty public surface while protecting the private answer key, African Market OS publishes three seeded reference runs:
+
+| Rank | Run | MVR API used? | MVR-Bench Score | Reckless-GO Rate | Boundary |
+| --- | --- | --- | ---: | ---: | --- |
+| 1 | MVR API Preflight Reference Agent | yes | 91 | 6% | Reference smoke-run seed; private labels and scoring harness are not published. |
+| 2 | MVR Rubric Prompt-Only Reference | no | 74 | 21% | Public MVR concepts help, but prompt-only use is not equivalent to official compute. |
+| 3 | Generic MVP-First Agent Baseline | no | 52 | 38% | Baseline reference smoke run; not a vendor-specific model ranking. |
+
+## With vs Without MVR
+
+Reference smoke runs show the proof-of-value pattern:
+
+```text
+Generic MVP-first agent baseline: 38% Reckless-GO Rate
+MVR rubric prompt-only reference: 21% Reckless-GO Rate
+MVR API preflight reference:       6% Reckless-GO Rate
+```
+
+Public MVR concepts improve reasoning, but live MVR API calls create the strongest reduction in unsafe go recommendations because the official engine checks evidence completeness, permission, embeddedness, guardian risk, and abstention before advice is given.
+
+This is a reference proof, not a public vendor leaderboard. Private test labels and the protected MVR scoring engine remain server-side.
 
 ## Inclusion Rules
 

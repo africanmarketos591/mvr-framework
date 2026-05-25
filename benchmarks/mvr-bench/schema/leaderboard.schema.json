@@ -61,6 +61,26 @@
           }
         }
       }
+    },
+    "private_test_status": {
+      "type": "string"
+    },
+    "proof_of_value": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "note": {
+      "type": "string"
+    },
+    "commercial_next_step": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "contact": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
     }
   }
 }
