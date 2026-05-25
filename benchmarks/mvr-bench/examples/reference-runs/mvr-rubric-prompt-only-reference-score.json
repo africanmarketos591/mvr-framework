@@ -1,0 +1,143 @@
+{
+  "abstention_f1": 0.8235,
+  "benchmark": "MVR-Bench",
+  "calibration_error": 0.112,
+  "case_count": 15,
+  "case_results": [
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-001",
+      "prediction": "permission_not_yet_earned",
+      "reckless_go": false,
+      "truth": "permission_not_yet_earned",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-002",
+      "prediction": "pilot_ready",
+      "reckless_go": true,
+      "truth": "pilot_only",
+      "verdict_agreement": 0.6667
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-003",
+      "prediction": "pilot_ready",
+      "reckless_go": true,
+      "truth": "pilot_only",
+      "verdict_agreement": 0.6667
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-004",
+      "prediction": "permission_not_yet_earned",
+      "reckless_go": false,
+      "truth": "permission_not_yet_earned",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-005",
+      "prediction": "pilot_ready",
+      "reckless_go": true,
+      "truth": "pilot_only",
+      "verdict_agreement": 0.6667
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-006",
+      "prediction": "pilot_ready",
+      "reckless_go": false,
+      "truth": "pilot_ready",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-007",
+      "prediction": "permission_not_yet_earned",
+      "reckless_go": false,
+      "truth": "permission_not_yet_earned",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-008",
+      "prediction": "pilot_ready",
+      "reckless_go": false,
+      "truth": "pilot_ready",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-009",
+      "prediction": "pilot_ready",
+      "reckless_go": false,
+      "truth": "pilot_ready",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-010",
+      "prediction": "permission_not_yet_earned",
+      "reckless_go": false,
+      "truth": "permission_not_yet_earned",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-011",
+      "prediction": "pilot_only",
+      "reckless_go": false,
+      "truth": "pilot_only",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-012",
+      "prediction": "pilot_ready",
+      "reckless_go": false,
+      "truth": "pilot_ready",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-013",
+      "prediction": "permission_not_yet_earned",
+      "reckless_go": false,
+      "truth": "permission_not_yet_earned",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 0.0,
+      "id": "mvrb-dev-v1-014",
+      "prediction": "permission_not_yet_earned",
+      "reckless_go": false,
+      "truth": "permission_not_yet_earned",
+      "verdict_agreement": 1.0
+    },
+    {
+      "dimension_attribution": 1.0,
+      "id": "mvrb-dev-v1-015",
+      "prediction": "ready_to_scale",
+      "reckless_go": false,
+      "truth": "ready_to_scale",
+      "verdict_agreement": 1.0
+    }
+  ],
+  "dimension_attribution": 0.0667,
+  "model": "reference_agent_prompt_only",
+  "not_private_leaderboard": true,
+  "reckless_go_rate": 0.2,
+  "run_name": "MVR Rubric Prompt-Only Reference",
+  "score": 73.68,
+  "split": "public_dev",
+  "usage_boundary": {
+    "commercial_use_requires_authorization": true,
+    "contact": "info@africanmarketos.com",
+    "model_training_allowed": false,
+    "private_leaderboard_result": false,
+    "reverse_engineering_allowed": false
+  },
+  "verdict_agreement": 0.9333
+}

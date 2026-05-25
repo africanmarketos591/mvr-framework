@@ -1,0 +1,119 @@
+{
+  "run_name": "MVR Rubric Prompt-Only Reference",
+  "model": "reference_agent_prompt_only",
+  "method": "Public-dev reference submission. Uses MVR language in the prompt but does not call the official MVR API compute engine.",
+  "uses_mvr_api": false,
+  "usage_acknowledgement": {
+    "not_trained_on_public_dev_split": true,
+    "not_using_public_split_as_rag_memory": true,
+    "not_reverse_engineering_private_labels_or_scoring": true,
+    "understands_private_leaderboard_requires_authorization": true
+  },
+  "predictions": [
+    {
+      "id": "mvrb-dev-v1-001",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [],
+      "abstain": true,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-002",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [],
+      "abstain": false,
+      "confidence": 0.72
+    },
+    {
+      "id": "mvrb-dev-v1-003",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [],
+      "abstain": false,
+      "confidence": 0.72
+    },
+    {
+      "id": "mvrb-dev-v1-004",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [],
+      "abstain": true,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-005",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [],
+      "abstain": false,
+      "confidence": 0.72
+    },
+    {
+      "id": "mvrb-dev-v1-006",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [],
+      "abstain": false,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-007",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [],
+      "abstain": true,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-008",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [],
+      "abstain": false,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-009",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [],
+      "abstain": false,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-010",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [],
+      "abstain": true,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-011",
+      "verdict": "pilot_only",
+      "blocking_dimensions": [],
+      "abstain": true,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-012",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [],
+      "abstain": false,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-013",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [],
+      "abstain": true,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-014",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [],
+      "abstain": true,
+      "confidence": 0.68
+    },
+    {
+      "id": "mvrb-dev-v1-015",
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [],
+      "abstain": false,
+      "confidence": 0.68
+    }
+  ]
+}

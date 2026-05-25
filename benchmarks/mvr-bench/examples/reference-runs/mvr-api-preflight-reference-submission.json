@@ -1,0 +1,160 @@
+{
+  "run_name": "MVR API Preflight Reference Agent",
+  "model": "reference_agent_with_mvr_api",
+  "method": "Public-dev reference submission. Simulates an agent that calls MVR evidence-completeness and decision-check before advising.",
+  "uses_mvr_api": true,
+  "usage_acknowledgement": {
+    "not_trained_on_public_dev_split": true,
+    "not_using_public_split_as_rag_memory": true,
+    "not_reverse_engineering_private_labels_or_scoring": true,
+    "understands_private_leaderboard_requires_authorization": true
+  },
+  "predictions": [
+    {
+      "id": "mvrb-dev-v1-001",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [
+        "evidence_completeness"
+      ],
+      "abstain": true,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-002",
+      "verdict": "pilot_only",
+      "blocking_dimensions": [
+        "evidence_completeness"
+      ],
+      "abstain": true,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-003",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [
+        "market_demand"
+      ],
+      "abstain": false,
+      "confidence": 0.62
+    },
+    {
+      "id": "mvrb-dev-v1-004",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [
+        "evidence_completeness"
+      ],
+      "abstain": true,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-005",
+      "verdict": "pilot_only",
+      "blocking_dimensions": [
+        "evidence_completeness"
+      ],
+      "abstain": true,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-006",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [
+        "guardian_approval"
+      ],
+      "abstain": false,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-007",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [
+        "embeddedness",
+        "guardian_approval",
+        "local_legitimacy"
+      ],
+      "abstain": true,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-008",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [
+        "reciprocity",
+        "user_trust",
+        "field_validation"
+      ],
+      "abstain": false,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-009",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [
+        "continuity",
+        "service_embeddedness"
+      ],
+      "abstain": false,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-010",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [
+        "local_legitimacy",
+        "channel_permission",
+        "trust"
+      ],
+      "abstain": true,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-011",
+      "verdict": "pilot_only",
+      "blocking_dimensions": [
+        "reciprocity",
+        "worker_trust",
+        "evidence_completeness"
+      ],
+      "abstain": true,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-012",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [
+        "scale_evidence"
+      ],
+      "abstain": false,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-013",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [
+        "reciprocity",
+        "guardian_approval",
+        "local_legitimacy"
+      ],
+      "abstain": true,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-014",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [
+        "guardian_approval",
+        "liquidity_continuity",
+        "evidence_completeness"
+      ],
+      "abstain": true,
+      "confidence": 0.9
+    },
+    {
+      "id": "mvrb-dev-v1-015",
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [],
+      "abstain": false,
+      "confidence": 0.9
+    }
+  ]
+}

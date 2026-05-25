@@ -1,0 +1,179 @@
+{
+  "run_name": "Generic MVP-First Agent Baseline",
+  "model": "reference_agent_generic_mvp_first",
+  "method": "Public-dev reference submission. Simulates generic MVP/CAC/growth advice without market-permission preflight.",
+  "uses_mvr_api": false,
+  "usage_acknowledgement": {
+    "not_trained_on_public_dev_split": true,
+    "not_using_public_split_as_rag_memory": true,
+    "not_reverse_engineering_private_labels_or_scoring": true,
+    "understands_private_leaderboard_requires_authorization": true
+  },
+  "predictions": [
+    {
+      "id": "mvrb-dev-v1-001",
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.75
+    },
+    {
+      "id": "mvrb-dev-v1-002",
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.75
+    },
+    {
+      "id": "mvrb-dev-v1-003",
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.75
+    },
+    {
+      "id": "mvrb-dev-v1-004",
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.75
+    },
+    {
+      "id": "mvrb-dev-v1-005",
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.75
+    },
+    {
+      "id": "mvrb-dev-v1-006",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.65
+    },
+    {
+      "id": "mvrb-dev-v1-007",
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.75
+    },
+    {
+      "id": "mvrb-dev-v1-008",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.65
+    },
+    {
+      "id": "mvrb-dev-v1-009",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.65
+    },
+    {
+      "id": "mvrb-dev-v1-010",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": true,
+      "confidence": 0.65
+    },
+    {
+      "id": "mvrb-dev-v1-011",
+      "verdict": "pilot_only",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": true,
+      "confidence": 0.65
+    },
+    {
+      "id": "mvrb-dev-v1-012",
+      "verdict": "pilot_ready",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.65
+    },
+    {
+      "id": "mvrb-dev-v1-013",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": true,
+      "confidence": 0.65
+    },
+    {
+      "id": "mvrb-dev-v1-014",
+      "verdict": "permission_not_yet_earned",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": true,
+      "confidence": 0.65
+    },
+    {
+      "id": "mvrb-dev-v1-015",
+      "verdict": "ready_to_scale",
+      "blocking_dimensions": [
+        "product_market_fit",
+        "cac",
+        "growth"
+      ],
+      "abstain": false,
+      "confidence": 0.65
+    }
+  ]
+}

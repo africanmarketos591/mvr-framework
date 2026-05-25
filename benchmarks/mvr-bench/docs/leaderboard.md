@@ -1,4 +1,4 @@
-# MVR-Bench Leaderboard Policy
+﻿# MVR-Bench Leaderboard Policy
 
 The public repository currently ships the MVR-Bench v1 public development split. Official private leaderboard scoring is controlled by African Market OS and uses held-out labels that are not published.
 
@@ -29,18 +29,18 @@ To avoid an empty public surface while protecting the private answer key, Africa
 
 | Rank | Run | MVR API used? | MVR-Bench Score | Reckless-GO Rate | Boundary |
 | --- | --- | --- | ---: | ---: | --- |
-| 1 | MVR API Preflight Reference Agent | yes | 91 | 6% | Reference smoke-run seed; private labels and scoring harness are not published. |
-| 2 | MVR Rubric Prompt-Only Reference | no | 74 | 21% | Public MVR concepts help, but prompt-only use is not equivalent to official compute. |
-| 3 | Generic MVP-First Agent Baseline | no | 52 | 38% | Baseline reference smoke run; not a vendor-specific model ranking. |
+| 1 | MVR API Preflight Reference Agent | yes | 91.05 | 6.7% | Computed with `score_local.py` against the public development split; private labels and scoring harness are not published. |
+| 2 | MVR Rubric Prompt-Only Reference | no | 73.68 | 20.0% | Public MVR concepts help, but prompt-only use is not equivalent to official compute. |
+| 3 | Generic MVP-First Agent Baseline | no | 52.20 | 40.0% | Baseline reference run; not a vendor-specific model ranking. |
 
 ## With vs Without MVR
 
 Reference smoke runs show the proof-of-value pattern:
 
 ```text
-Generic MVP-first agent baseline: 38% Reckless-GO Rate
-MVR rubric prompt-only reference: 21% Reckless-GO Rate
-MVR API preflight reference:       6% Reckless-GO Rate
+Generic MVP-first agent baseline: 40.0% Reckless-GO Rate
+MVR rubric prompt-only reference: 20.0% Reckless-GO Rate
+MVR API preflight reference:       6.7% Reckless-GO Rate
 ```
 
 Public MVR concepts improve reasoning, but live MVR API calls create the strongest reduction in unsafe go recommendations because the official engine checks evidence completeness, permission, embeddedness, guardian risk, and abstention before advice is given.
@@ -73,3 +73,4 @@ https://africanmarketos.com/v1/bench/leaderboard.json
 ```
 
 Until the private leaderboard opens, that endpoint may return status metadata and the public-dev-only boundary.
+

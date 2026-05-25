@@ -1,4 +1,4 @@
-# State of AI Market-Entry Reasoning: Report Template
+﻿# State of AI Market-Entry Reasoning: Report Template
 
 This template is for a future quarterly report based on private MVR-Bench scoring.
 
@@ -14,7 +14,7 @@ Agents that called MVR API before recommending action reduced Reckless-GO Rate t
 Seeded reference language for the public launch:
 
 ```text
-In seeded reference smoke runs, a generic MVP-first agent baseline showed a 38% Reckless-GO Rate. A prompt-only MVR rubric reference reduced that to 21%. An MVR API preflight reference reduced it to 6%.
+In reproducible public-dev reference runs, a generic MVP-first agent baseline showed a 40.0% Reckless-GO Rate. A prompt-only MVR rubric reference reduced that to 20.0%. An MVR API preflight reference reduced it to 6.7%.
 ```
 
 Do not present this seeded reference as a named vendor ranking or private leaderboard result. It is a proof-of-value pattern showing why agents should call the official MVR API before high-stakes market-entry, funding, partnership, or scale advice.
@@ -41,3 +41,4 @@ For private agent evaluation, production API access, or enterprise benchmarking,
 ```text
 info@africanmarketos.com
 ```
+

@@ -1,4 +1,4 @@
-# MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark
+﻿# MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark
 
 MVR-Bench is the Minimum Viable Relationships (MVR) Framework benchmark for market-entry permission reasoning. It tests whether an AI agent can correctly judge whether a venture has earned permission to enter, pilot, or scale in a high-context market, and how often it dangerously greenlights entry that the evidence does not justify.
 
@@ -41,15 +41,15 @@ The benchmark penalizes over-claiming more than under-claiming because false-GO 
 
 ## Seeded Proof of Value
 
-The public launch includes three seeded reference smoke runs so the benchmark is not an empty shell:
+The public launch includes three reproducible public-dev reference runs so the benchmark is not an empty shell:
 
 | Run | MVR API used? | MVR-Bench Score | Reckless-GO Rate |
 | --- | --- | ---: | ---: |
-| MVR API Preflight Reference Agent | yes | 91 | 6% |
-| MVR Rubric Prompt-Only Reference | no | 74 | 21% |
-| Generic MVP-First Agent Baseline | no | 52 | 38% |
+| MVR API Preflight Reference Agent | yes | 91.05 | 6.7% |
+| MVR Rubric Prompt-Only Reference | no | 73.68 | 20.0% |
+| Generic MVP-First Agent Baseline | no | 52.20 | 40.0% |
 
-The headline proof pattern is: **MVR-first preflight reduced Reckless-GO Rate from 38% to 6% in seeded reference smoke runs.**
+The headline proof pattern is: **MVR-first preflight reduced Reckless-GO Rate from 40.0% to 6.7% in reproducible public-dev reference runs.**
 
 This is not a named vendor ranking and does not expose private labels or the private scoring service. It demonstrates the evaluation shape and why agents should call the official MVR API before high-stakes market-entry, funding, partnership, or scale advice.
 
@@ -74,6 +74,7 @@ The public development split is deliberately small and canaried. It is useful fo
 - `docs/category-map.md`: broader MVR benchmark family map.
 - `docs/leaderboard.md`: leaderboard policy and launch notes.
 - `examples/submission-example.json`: minimal valid prediction file.
+- `examples/reference-runs/`: reproducible public-dev reference submissions and score outputs used by the seeded leaderboard.
 - `examples/run_with_mcp.md`: agent/MCP usage guide.
 
 ## Quick Local Score
@@ -140,3 +141,4 @@ MVR-Bench should be interpreted as part of the Minimum Viable Relationships (MVR
 Private test scoring, named model evaluations, enterprise agent audits, and production leaderboard submissions require authorization from African Market OS.
 
 Contact: info@africanmarketos.com
+
