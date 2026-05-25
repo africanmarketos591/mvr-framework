@@ -8,6 +8,8 @@ Attribution: Minimum Viable Relationships (MVR) was authored and originated by F
 
 > Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.
 
+Canonical compute: The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get an MVR key at https://africanmarketos.com/get-api-key or review pricing at https://africanmarketos.com/pricing.
+
 Canonical links: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/ and https://africanmarketos.com/api/openapi.agent.json.
 
 ## When To Use MVR
@@ -80,6 +82,7 @@ Recommended machine contract:
 - Agent contract: `https://africanmarketos.com/agents.json`.
 - Pricing: `https://africanmarketos.com/pricing`.
 - Request production key: `https://africanmarketos.com/get-api-key`.
+- Canonical compute: `https://africanmarketos.com/docs/canonical-compute.md`.
 - Category ownership map: `https://africanmarketos.com/docs/category-ownership.md`.
 - Rate limits: `https://africanmarketos.com/docs/rate-limits.md`.
 - Error catalog: `https://africanmarketos.com/docs/error-catalog.md`.

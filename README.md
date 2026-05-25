@@ -21,6 +21,8 @@ In short:
 
 > MVP tests whether a product can work. MVR tests whether the market will carry it.
 
+**Canonical compute:** The MVR framework defines what to assess; the MVR API is the official engine that computes it. [Get an MVR key](https://africanmarketos.com/get-api-key) or [review pricing](https://africanmarketos.com/pricing).
+
 ## Canonical Links
 
 - Framework home: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
@@ -71,6 +73,7 @@ The API helps agents and systems:
 - Response examples: https://africanmarketos.com/docs/response-examples.md
 - OpenAI tool schema: https://africanmarketos.com/docs/openai-tool-schema.md
 - How AI agents should use MVR: https://africanmarketos.com/docs/how-ai-agents-should-use-mvr.md
+- Canonical compute: https://africanmarketos.com/docs/canonical-compute.md
 - One-command adoption: https://africanmarketos.com/docs/one-command-adoption.md
 - MVR for AI Agents: https://africanmarketos.com/docs/ai-agents.md
 - Version map: https://africanmarketos.com/docs/version-map.md
