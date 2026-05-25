@@ -36,7 +36,8 @@ Typical response:
     "not_for_production": true,
     "commercial_next_step": {
       "contact": "info@africanmarketos.com",
-      "license_url": "https://africanmarketos.com/consult/"
+      "license_url": "https://africanmarketos.com/get-api-key",
+      "consult_url": "https://africanmarketos.com/consult/"
     }
   }
 }

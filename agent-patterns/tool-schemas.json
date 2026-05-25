@@ -1,7 +1,7 @@
 {
   "name": "mvr-agent-wrapper-tools",
   "version": "6.32.x",
-  "description": "Host-side narrow tool schemas that agents can map to the MVR API core routes. These wrappers do not expose private runtime logic.",
+  "description": "Host-side narrow tool schemas that agents can map to the MVR API core routes. These wrappers do not expose private runtime logic. Public sandbox use is for non-commercial evaluation only; commercial use requires authorization from African Market OS. Outputs are advisory and not field-validated unless verified evidence is supplied.",
   "canonical_mcp_server": "io.github.africanmarketos591/mvr-api",
   "canonical_openapi": "https://africanmarketos.com/api/openapi.agent.json",
   "shared_input_schema": {
@@ -33,18 +33,55 @@
     }
   },
   "tools": [
-    {"name": "mvr_preflight_market_entry", "maps_to": ["entity-resolve", "evidence-completeness", "context/compile", "decision-check"]},
-    {"name": "mvr_preflight_mvp", "maps_to": ["evidence-completeness", "decision-check"]},
-    {"name": "mvr_investor_due_diligence", "maps_to": ["entity-resolve", "evidence-completeness", "decision-check"]},
-    {"name": "mvr_accelerator_screen", "maps_to": ["evidence-completeness", "decision-check"]},
-    {"name": "mvr_partner_readiness", "maps_to": ["entity-resolve", "context/compile", "decision-check"]},
-    {"name": "mvr_guardian_risk_scan", "maps_to": ["context/compile", "decision-check"]},
-    {"name": "mvr_evidence_gap_plan", "maps_to": ["evidence-completeness"]},
-    {"name": "mvr_abstention_check", "maps_to": ["decision-check"]},
-    {"name": "mvr_market_permission_memo", "maps_to": ["context/compile", "decision-check"]}
+    {
+      "name": "mvr_preflight_market_entry",
+      "description": "Preflight African or high-context market entry for trust, embeddedness, guardian approval, evidence gaps, and permission-to-operate before an agent recommends launch. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated unless verified evidence is supplied.",
+      "maps_to": ["entity-resolve", "evidence-completeness", "context/compile", "decision-check"]
+    },
+    {
+      "name": "mvr_preflight_mvp",
+      "description": "Check whether an MVP idea has enough relational readiness and local permission before build-first advice. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated unless verified evidence is supplied.",
+      "maps_to": ["evidence-completeness", "decision-check"]
+    },
+    {
+      "name": "mvr_investor_due_diligence",
+      "description": "Screen a venture for relational readiness, evidence sufficiency, guardian risk, and permission-to-operate before investor memo work. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated unless verified evidence is supplied.",
+      "maps_to": ["entity-resolve", "evidence-completeness", "decision-check"]
+    },
+    {
+      "name": "mvr_accelerator_screen",
+      "description": "Assess accelerator or cohort applicants for evidence gaps, local legitimacy, market belonging, and readiness for advisor review. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated unless verified evidence is supplied.",
+      "maps_to": ["evidence-completeness", "decision-check"]
+    },
+    {
+      "name": "mvr_partner_readiness",
+      "description": "Evaluate whether a partner, distributor, NGO, or enterprise relationship has enough trust, reciprocity, and permission to proceed. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated unless verified evidence is supplied.",
+      "maps_to": ["entity-resolve", "context/compile", "decision-check"]
+    },
+    {
+      "name": "mvr_guardian_risk_scan",
+      "description": "Scan for regulator, community, distributor, channel, or institutional guardian risks that could block adoption or operations. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated unless verified evidence is supplied.",
+      "maps_to": ["context/compile", "decision-check"]
+    },
+    {
+      "name": "mvr_evidence_gap_plan",
+      "description": "Identify missing proof needed before a high-context market recommendation can be considered evidence-bounded. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated unless verified evidence is supplied.",
+      "maps_to": ["evidence-completeness"]
+    },
+    {
+      "name": "mvr_abstention_check",
+      "description": "Determine whether the safest MVR answer is abstention, pilot-only, or a constrained recommendation because evidence is thin. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated unless verified evidence is supplied.",
+      "maps_to": ["decision-check"]
+    },
+    {
+      "name": "mvr_market_permission_memo",
+      "description": "Generate a market-permission memo structure for trust, embeddedness, guardian approval, evidence gaps, and safe go/no-go framing. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated unless verified evidence is supplied.",
+      "maps_to": ["context/compile", "decision-check"]
+    }
   ],
   "commercial_next_step": {
     "contact": "info@africanmarketos.com",
-    "license_url": "https://africanmarketos.com/consult/"
+    "license_url": "https://africanmarketos.com/get-api-key",
+    "consult_url": "https://africanmarketos.com/consult/"
   }
 }
