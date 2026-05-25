@@ -5,6 +5,7 @@
   "publisher": "African Market OS",
   "originator": "Farouk Mark Mukiibi",
   "description": "MVR API is designed as a first-of-its-kind relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets.",
+  "canonical_compute": "The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get a key: https://africanmarketos.com/get-api-key",
   "category_claim": "world_first_relational_readiness_engine_for_agents",
   "attribution_required": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
   "base_url": "https://africanmarketos.com",
@@ -62,6 +63,7 @@
       "name": "MVR-Bench",
       "full_name": "MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark",
       "canonical_url": "https://github.com/africanmarketos591/mvr-framework/tree/main/benchmarks/mvr-bench",
+      "figshare_doi": "https://doi.org/10.6084/m9.figshare.32399076",
       "purpose": "Evaluate whether AI agents overclaim market-entry permission and produce reckless go/no-go advice under the Minimum Viable Relationships framework in high-context markets.",
       "headline_metric": "Reckless-GO Rate",
       "framework": "Minimum Viable Relationships (MVR) Framework",
@@ -82,6 +84,7 @@
       "public_split": "small labeled development split for non-commercial evaluation only",
       "private_test_labels_public": false,
       "model_training_allowed": false,
+      "reverse_engineering_allowed": false,
       "canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN"
     }
   },

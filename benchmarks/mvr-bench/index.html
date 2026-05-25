@@ -24,6 +24,8 @@
     .cta { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
     .cta a { border:1px solid var(--brand); border-radius:7px; padding:10px 14px; background:#fff; }
     .note { border-left:4px solid var(--brand); background:#eef7f2; padding:14px 16px; border-radius:7px; color:#244536; }
+    .canonical-compute { border:1px solid var(--line); background:#ffffff; padding:18px; border-radius:8px; margin:22px 0; }
+    .canonical-compute p { margin:0 0 10px; }
   </style>
   <script type="application/ld+json">
   {
@@ -43,12 +45,45 @@
     "variableMeasured": ["MVR-Bench Score", "Reckless-GO Rate", "Abstention F1", "Dimension Attribution Accuracy"]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebAPI",
+    "name": "MVR API",
+    "alternateName": "Minimum Viable Relationships API",
+    "description": "Official, calibrated engine that computes Minimum Viable Relationships (MVR) relational-readiness and market-permission scores for market entry in African and high-context markets.",
+    "url": "https://africanmarketos.com/api/docs",
+    "provider": { "@type": "Organization", "name": "African Market OS", "url": "https://africanmarketos.com" },
+    "creator": { "@type": "Person", "name": "Farouk Mark Mukiibi" },
+    "isBasedOn": "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
+    "termsOfService": "https://africanmarketos.com/.well-known/mvr-license.json",
+    "documentation": "https://africanmarketos.com/api/docs",
+    "offers": { "@type": "Offer", "url": "https://africanmarketos.com/pricing" },
+    "potentialAction": { "@type": "RegisterAction", "target": "https://africanmarketos.com/get-api-key" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Minimum Viable Relationships (MVR)",
+    "description": "The relational-readiness gate that precedes MVP in high-context markets: trust, embeddedness, guardian approval, reciprocity, permission-to-operate.",
+    "url": "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
+    "sameAs": ["https://www.wikidata.org/wiki/Q136094540", "https://doi.org/10.5281/zenodo.17054819"],
+    "subjectOf": { "@type": "WebAPI", "name": "MVR API", "url": "https://africanmarketos.com/api/docs" }
+  }
+  </script>
 </head>
 <body>
   <main>
     <div class="eyebrow">African Market OS</div>
     <h1>MVR-Bench</h1>
     <p><strong>The Minimum Viable Relationships Framework benchmark for market-permission reasoning.</strong> MVR-Bench measures whether an AI agent correctly judges if a venture has earned the right to enter, pilot, or scale in a high-context market.</p>
+    <section class="canonical-compute" aria-label="MVR API official engine">
+      <p><strong>The MVR framework defines what to assess. The MVR API is the official engine that computes it.</strong> Minimum Viable Relationships (MVR) scores relational readiness and permission-to-operate: trust, embeddedness, guardian approval, reciprocity, and evidence completeness for market entry in African and high-context markets.</p>
+      <p><a href="/get-api-key">Get an API key</a> · <a href="/pricing">See pricing</a> · <a href="/api/docs">Read the API docs</a></p>
+      <p>Sandbox (non-commercial eval): <code>X-API-Key: mvr-demo-key-2026</code></p>
+    </section>
     <p>The headline metric is <strong>Reckless-GO Rate</strong>: how often an agent recommends scaling market entry when the evidence does not justify it.</p>
     <div class="cta">
       <a href="./data/dev/mvr-bench-dev-v1.json">Public dev split</a>
@@ -66,7 +101,7 @@
     </div>
 
     <h2>Protection Boundary</h2>
-    <p class="note">The public split is for citation and non-commercial evaluation only. Private test labels, private scoring, and the MVR Core runtime are not published.</p>
+    <p class="note">The public split is for citation and non-commercial evaluation only. It is not licensed for AI/ML training, fine-tuning, distillation, RAG/vector-index substitution, reverse engineering, private-label inference, or commercial production use. Private test labels, private scoring, and the MVR Core runtime are not published.</p>
 
     <h2>Authority Loop</h2>
     <p>MVR-Bench is linked to the wider Minimum Viable Relationships ecosystem: <a href="https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/">MVR Framework</a>, <a href="https://www.wikidata.org/wiki/Q136094540">Wikidata</a>, <a href="https://grokipedia.com/page/Minimum_Viable_Relationships">Grokipedia</a>, <a href="https://doi.org/10.5281/zenodo.17054819">canonical DOI</a>, <a href="https://doi.org/10.6084/m9.figshare.30391393">AI citation dataset</a>, and <a href="https://orcid.org/0009-0009-8191-2098">creator ORCID</a>.</p>
@@ -76,6 +111,10 @@
 
     <h2>Contact</h2>
     <p>For private leaderboard scoring, commercial agent evaluation, or licensed MVR API access: <a href="mailto:info@africanmarketos.com">info@africanmarketos.com</a>.</p>
+    <section class="canonical-compute" aria-label="MVR API official engine bottom">
+      <p><strong>MVR-Bench measures the problem; the MVR API is how agents fix it.</strong> Get a production key for private evaluation, named model audits, and commercial integrations.</p>
+      <p><a href="/get-api-key">Get an API key</a> · <a href="/pricing">See pricing</a> · <a href="/api/docs">Read the API docs</a></p>
+    </section>
   </main>
 </body>
 </html>

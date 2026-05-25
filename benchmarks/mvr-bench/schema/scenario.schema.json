@@ -104,6 +104,9 @@
     },
     "_canary": {
       "type": "string"
+    },
+    "_usage_boundary": {
+      "$ref": "#/$defs/usage_boundary"
     }
   },
   "$defs": {
@@ -126,6 +129,41 @@
           "type": "boolean"
         },
         "rationale_public": {
+          "type": "string"
+        }
+      }
+    },
+    "usage_boundary": {
+      "type": "object",
+      "required": [
+        "allowed_use",
+        "model_training_allowed",
+        "reverse_engineering_allowed",
+        "commercial_use_requires_authorization",
+        "protected_assets_not_published",
+        "contact"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "allowed_use": {
+          "type": "string"
+        },
+        "model_training_allowed": {
+          "const": false
+        },
+        "reverse_engineering_allowed": {
+          "const": false
+        },
+        "commercial_use_requires_authorization": {
+          "const": true
+        },
+        "protected_assets_not_published": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contact": {
           "type": "string"
         }
       }

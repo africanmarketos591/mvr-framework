@@ -70,9 +70,13 @@ MVR-Bench separates the public evaluation standard from the protected scoring as
 
 This lets the framework spread while keeping the engine and live answer key protected.
 
+The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get a key: https://africanmarketos.com/get-api-key
+
 ## Anti-Training Boundary
 
 The public split is licensed for citation and non-commercial evaluation only. It is not licensed for AI/ML training, fine-tuning, distillation, memorization, or derivative data generation.
+
+This restriction applies inside the files themselves and follows downloaded copies, mirrors, prompts, notebook forks, vector stores, RAG corpora, and other machine-ingested copies. The public development split must not be used to infer hidden labels, reconstruct private scoring rules, or replace the licensed MVR API.
 
 Canary:
 

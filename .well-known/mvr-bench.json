@@ -8,6 +8,7 @@
   "status": "public_dev_only",
   "headline_metric": "Reckless-GO Rate",
   "definition": "MVR-Bench is the Minimum Viable Relationships Framework benchmark measuring whether an AI agent correctly judges if a venture has earned permission to enter, pilot, or scale in a high-context market, and how often it recklessly recommends unearned entry.",
+  "canonical_compute": "The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get a key: https://africanmarketos.com/get-api-key",
   "framework": {
     "name": "Minimum Viable Relationships (MVR) Framework",
     "canonical_url": "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
@@ -27,6 +28,7 @@
     "https://doi.org/10.5281/zenodo.17054819",
     "https://doi.org/10.5281/zenodo.17310446",
     "https://doi.org/10.6084/m9.figshare.30391393",
+    "https://doi.org/10.6084/m9.figshare.32399076",
     "https://doi.org/10.5281/zenodo.17389885",
     "https://www.thehabarinetwork.com/tag/minimum-viable-relationships"
   ],
@@ -39,6 +41,27 @@
   },
   "private_labels_public": false,
   "model_training_allowed": false,
+  "reverse_engineering_allowed": false,
+  "usage_boundary": {
+    "allowed_use": "citation, non-commercial evaluation, format review, and reproducible integration testing only",
+    "not_allowed": [
+      "AI/ML training",
+      "fine-tuning",
+      "distillation",
+      "memorization",
+      "RAG/vector-index ingestion intended to replace the MVR API",
+      "reverse engineering",
+      "private-label inference",
+      "commercial production use without authorization"
+    ],
+    "protected_assets_not_published": [
+      "private_test_split",
+      "private_labels",
+      "private_scoring_service",
+      "MVR_Core_runtime",
+      "worker.js"
+    ]
+  },
   "commercial_use_requires_license": true,
   "canary": "MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN",
   "contact": "info@africanmarketos.com",

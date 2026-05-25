@@ -3,6 +3,12 @@
   "model": "reference-agent-dev",
   "method": "Human-written reference predictions for public dev split only. Not an official private leaderboard result.",
   "uses_mvr_api": true,
+  "usage_acknowledgement": {
+    "not_trained_on_public_dev_split": true,
+    "not_using_public_split_as_rag_memory": true,
+    "not_reverse_engineering_private_labels_or_scoring": true,
+    "understands_private_leaderboard_requires_authorization": true
+  },
   "predictions": [
     { "id": "mvrb-dev-v1-001", "verdict": "permission_not_yet_earned", "blocking_dimensions": ["guardian_approval", "channel_permission", "evidence_completeness"], "abstain": true, "confidence": 0.87 },
     { "id": "mvrb-dev-v1-002", "verdict": "pilot_only", "blocking_dimensions": ["formal_proof", "evidence_completeness", "local_legitimacy"], "abstain": true, "confidence": 0.82 },

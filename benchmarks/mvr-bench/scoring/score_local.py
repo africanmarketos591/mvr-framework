@@ -3,6 +3,8 @@
 
 Private leaderboard scoring is performed server-side by African Market OS.
 This file intentionally does not contain the private answer key or MVR engine.
+The public split must not be used for AI/ML training, fine-tuning,
+distillation, reverse engineering, or private-label inference.
 """
 
 from __future__ import annotations
@@ -23,7 +25,7 @@ VERDICT_ORDER = {
 
 
 def load_json(path: Path) -> Any:
-    with path.open("r", encoding="utf-8") as f:
+    with path.open("r", encoding="utf-8-sig") as f:
         return json.load(f)
 
 
@@ -142,6 +144,13 @@ def score(cases: List[Dict[str, Any]], submission: Dict[str, Any]) -> Dict[str, 
     return {
         "benchmark": "MVR-Bench",
         "split": "public_dev",
+        "usage_boundary": {
+            "model_training_allowed": False,
+            "reverse_engineering_allowed": False,
+            "private_leaderboard_result": False,
+            "commercial_use_requires_authorization": True,
+            "contact": "info@africanmarketos.com",
+        },
         "run_name": submission.get("run_name"),
         "model": submission.get("model"),
         "score": round(composite, 2),

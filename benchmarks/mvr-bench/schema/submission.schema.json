@@ -20,6 +20,24 @@
     "uses_mvr_api": {
       "type": "boolean"
     },
+    "usage_acknowledgement": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "not_trained_on_public_dev_split": {
+          "type": "boolean"
+        },
+        "not_using_public_split_as_rag_memory": {
+          "type": "boolean"
+        },
+        "not_reverse_engineering_private_labels_or_scoring": {
+          "type": "boolean"
+        },
+        "understands_private_leaderboard_requires_authorization": {
+          "type": "boolean"
+        }
+      }
+    },
     "predictions": {
       "type": "array",
       "items": {

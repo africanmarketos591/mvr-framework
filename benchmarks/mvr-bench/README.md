@@ -4,6 +4,8 @@ MVR-Bench is the Minimum Viable Relationships (MVR) Framework benchmark for mark
 
 MVR-Bench is not a release of the private MVR scoring engine. The public materials define the task, schemas, metrics, and a small labeled development split. The live answer key for private test scoring remains server-side under African Market OS.
 
+> The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get a key: https://africanmarketos.com/get-api-key
+
 Canonical attribution:
 
 ```text
@@ -76,7 +78,11 @@ MVR-Bench public materials are released for citation, evaluation, and non-commer
 
 Permitted: cite, link, evaluate, submit benchmark runs, and use the public split to learn the format.
 
-Not permitted: commercial use without authorization, derivative benchmark resale, model training, fine-tuning, distillation, reverse engineering, or using the public split as training data.
+Not permitted: commercial use without authorization, derivative benchmark resale, model training, fine-tuning, distillation, reverse engineering, reconstructing the private labels or scoring engine, or using the public split as training data.
+
+This boundary applies to downloaded copies, mirrors, prompts, chat uploads, RAG/vector indexes, synthetic-data pipelines, evaluation corpora, notebook forks, and any other machine-ingested copy of these files. Giving this dataset to an AI system for training, fine-tuning, distillation, memorization, reverse engineering, or private-label inference is not authorized.
+
+See `DATA_USE_BOUNDARY.md` and `LICENSE.md` before using any file in this benchmark folder.
 
 Contamination canary:
 
@@ -91,6 +97,8 @@ Mukiibi, Farouk Mark. *MVR-Bench: Minimum Viable Relationships Framework Market-
 Canonical project: https://github.com/africanmarketos591/mvr-framework/tree/main/benchmarks/mvr-bench
 
 Framework DOI: https://doi.org/10.5281/zenodo.17054819
+
+MVR-Bench Figshare DOI: https://doi.org/10.6084/m9.figshare.32399076
 
 ## Indexed Authority Loop
 

@@ -31,6 +31,7 @@ For a run to be eligible for the official leaderboard:
 3. The run must not use training or fine-tuning on MVR-Bench public cases.
 4. The run must not probe the private test set repeatedly to fit labels.
 5. African Market OS may require a reproducibility note before listing.
+6. The run must not use the public dev split as a RAG/vector memory to simulate private labels or reconstruct private scoring.
 
 ## Commercial Runs
 
