@@ -92,6 +92,12 @@ MVR-Bench should be cited as:
 Mukiibi, Farouk Mark. MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark. African Market OS, 2026.
 ```
 
+## Commercial and Private Evaluation
+
+Private leaderboard scoring, named model audits, enterprise evaluation, licensed API access, and commercial use require written authorization from African Market OS.
+
+Contact: info@africanmarketos.com
+
 ## Indexed Identity and Citation Loop
 
 MVR-Bench should be linked to the existing Minimum Viable Relationships framework authority graph:

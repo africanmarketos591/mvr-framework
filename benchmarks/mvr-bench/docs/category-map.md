@@ -47,3 +47,9 @@ Recommended sequence:
 5. BelongingBench: market belonging and local legitimacy.
 
 This sequence starts with the most talkable public metric, then expands toward enterprise diligence categories.
+
+## Commercial or Private Evaluation
+
+Private benchmark scoring, named model audits, enterprise category evaluation, licensed API access, and commercial use require authorization from African Market OS.
+
+Contact: info@africanmarketos.com
