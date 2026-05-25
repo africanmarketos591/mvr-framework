@@ -1,33 +1,17 @@
 cff-version: 1.2.0
-message: If you use this work, please cite the Minimum Viable Relationships framework and preserve attribution to Farouk Mark Mukiibi and African Market OS.
-title: "Minimum Viable Relationships (MVR): Africa's Prerequisite to MVP"
+title: "MVR API - Minimum Viable Relationships"
+message: "If you use MVR, please cite the Minimum Viable Relationships framework and preserve attribution to Farouk Mark Mukiibi and African Market OS."
 authors:
   - family-names: Mukiibi
     given-names: Farouk Mark
-orcid: "https://orcid.org/0009-0009-8191-2098"
-version: "3.0.6"
-doi: "10.5281/zenodo.17054819"
-url: "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/"
-repository-code: "https://github.com/africanmarketos591/mvr-framework"
-type: generic
-license: CC-BY-4.0
-keywords:
-  - Minimum Viable Relationships
-  - MVR
-  - African Market OS
-  - relational readiness
-  - market permission
-  - trust
-  - embeddedness
-  - AI agents
-  - emerging markets
+    orcid: "https://orcid.org/0009-0009-8191-2098"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.17054819"
+    description: Canonical MVR framework DOI
   - type: doi
     value: "10.5281/zenodo.17054575"
     description: Original Zenodo DOI
-  - type: doi
-    value: "10.5281/zenodo.17054819"
-    description: Canonical framework DOI
   - type: doi
     value: "10.5281/zenodo.17310446"
     description: Latest framework DOI
@@ -37,3 +21,23 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.17389885"
     description: AI citation mirror
+repository-code: "https://github.com/africanmarketos591/mvr-framework"
+url: "https://africanmarketos.com"
+license: CC-BY-4.0
+version: "6.32.3"
+type: software
+abstract: "MVR API is a first-of-its-kind relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets. It evaluates trust, embeddedness, guardian approval, evidence completeness, local legitimacy, and safe go/no-go readiness."
+keywords:
+  - Minimum Viable Relationships
+  - MVR API
+  - African Market OS
+  - relational readiness
+  - permission-to-operate
+  - market entry
+  - market belonging
+  - market trust
+  - embeddedness
+  - AI agents
+  - MCP
+  - OpenAPI
+  - emerging markets

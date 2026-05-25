@@ -3,7 +3,7 @@
   "info": {
     "title": "MVR Core API",
     "version": "v6.32.0",
-    "description": "v6.32.0 MVR Engine. Additive dual-lane runtime: public_reality + local_relational_assessment + reconciled_assessment, deterministic ROI, dual-profile governance, entity-resolution preflight, modality-aware completeness/audit, compiled_evidence ingestion, provenance-ledger validation, telemetry translation, gap planning, market leak scanning, and validation snapshot metadata. Send X-Response-Profile: strict_calibrated for fail-closed institutional responses. See /v1/schema for full documentation."
+    "description": "v6.32.0 MVR Engine. Additive dual-lane runtime: public_reality + local_relational_assessment + reconciled_assessment, deterministic ROI, dual-profile governance, entity-resolution preflight, modality-aware completeness/audit, compiled_evidence ingestion, provenance-ledger validation, telemetry translation, gap planning, market leak scanning, and validation snapshot metadata. Public non-commercial sandbox evaluation is available with X-API-Key: mvr-demo-key-2026; sandbox calls are rate-limited, client_safe only, full_advisory only, illustrative_only, and not for production. Send X-Response-Profile: strict_calibrated only with a licensed production key for fail-closed institutional responses. See /v1/schema for full documentation."
   },
   "x-compatibility-policy": {
     "principle": "No output may claim a decision level, confidence level, category fit, or scope stronger than verified evidence permits.",
@@ -19,12 +19,46 @@
     },
     "score_direct": "non_decisive_operator_review"
   },
+  "x-public-sandbox": {
+    "enabled_by_default": true,
+    "api_key_header": "X-API-Key",
+    "demo_key": "mvr-demo-key-2026",
+    "environment": "sandbox",
+    "authorized_use": "evaluation_only_non_commercial",
+    "response_profile": "full_advisory_only",
+    "output_mode": "client_safe_only",
+    "rate_limit_per_minute": 60,
+    "daily_limit": 500,
+    "allowed_endpoints": [
+      "/v1/auth-check",
+      "/v1/capabilities",
+      "/v1/entity-resolve",
+      "/v1/evidence-completeness",
+      "/v1/context/compile",
+      "/v1/decision-check"
+    ],
+    "allowed_modes": [
+      "exploratory",
+      "evidence_backed",
+      "compiled_evidence"
+    ],
+    "blocked_modes": [
+      "strict_calibrated",
+      "score_direct",
+      "backtest"
+    ],
+    "required_response_markers": [
+      "environment:sandbox",
+      "illustrative_only:true",
+      "not_for_production:true"
+    ]
+  },
   "x-public-metrics-schema-version": "v6.32.0",
   "x-modality-examples": {
     "public_osint": "Use public_metrics with evidence_origin:'public_osint'. Read reconciled_assessment first, then public_reality for entity-scale interpretation.",
     "field_research": "Use structured_values on field items. Read reconciled_assessment first, then local_relational_assessment for zone-level interpretation.",
     "corporate_telemetry": "Use evidence_origin:'corporate_telemetry' or collection_method:'corporate_telemetry' for proxy-derived internal data. The engine routes it into the local lane with capped confidence and explicit proxy transparency.",
-    "compiled_evidence": "Use mode:'compiled_evidence' with compiled_pack lanes from compiled_pack_registry. You may nest legacy evidence_pack[] inside compiled_pack; the runtime maps it into localized_observed_pack (or public lane when pack_type indicates public). Items with full provenance_ledger use compiled_evidence validation; others use evidence_backed rules.",
+    "compiled_evidence": "Use mode:'compiled_evidence' with compiled_pack lanes from compiled_pack_registry. You may nest legacy evidence_pack[] inside compiled_pack; the worker maps it into localized_observed_pack (or public lane when pack_type indicates public). Items with full provenance_ledger use compiled_evidence validation; others use evidence_backed rules.",
     "mixed": "Mixed packs reconcile both lanes. Public facts do not impersonate local truth; local friction does not erase entity-scale reality.",
     "abstention": "Scope-limited abstentions are returned when localized claims are unsupported by direct field evidence."
   },
@@ -3075,7 +3109,7 @@
     "/v1/watchlist": {
       "post": {
         "summary": "Create, list, update, delete, or evaluate market watch rules.",
-        "description": "Deterministic watch rules only. Notifications require a delivery service, signing, retries, and delivery logs.",
+        "description": "Deterministic watch rules only. Notifications require a delivery worker, signing, retries, and delivery logs.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/watchlist",
         "x-mvr-maturity": "release_candidate",
@@ -3146,7 +3180,7 @@
       },
       "get": {
         "summary": "Create, list, update, delete, or evaluate market watch rules.",
-        "description": "Deterministic watch rules only. Notifications require a delivery service, signing, retries, and delivery logs.",
+        "description": "Deterministic watch rules only. Notifications require a delivery worker, signing, retries, and delivery logs.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/watchlist",
         "x-mvr-maturity": "release_candidate",
@@ -3192,7 +3226,7 @@
     },
     "/v1/schema-diff": {
       "post": {
-        "summary": "Compare previous schema manifest against current runtime manifest.",
+        "summary": "Compare previous schema manifest against current Worker manifest.",
         "description": "Schema/manifest comparison route for contract drift and breaking-change review.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/schema-diff",
@@ -4545,7 +4579,7 @@
     },
     "/v1/outcome-feedback": {
       "post": {
-        "summary": "Submit labeled outcomes for calibration review. Idempotency-Key is recommended for deduplication; when omitted the runtime derives a deterministic key from the JSON body (response may include X-Idempotency-Key-Autogenerated: true).",
+        "summary": "Submit labeled outcomes for calibration review. Idempotency-Key is recommended for deduplication; when omitted the worker derives a deterministic key from the JSON body (response may include X-Idempotency-Key-Autogenerated: true).",
         "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/outcome-feedback",
@@ -8505,7 +8539,7 @@
     "/v1/entry-sequencer": {
       "post": {
         "summary": "Ranks markets by readiness distance, crisis elasticity bonus, relational contagion index. Returns calculation_trace and per-candidate score_breakdown.",
-        "description": "Deterministic rank from ready_to_scale distance, crisis elasticity bonus, and contagion index; exposes calculation_trace and per-market score_breakdown. Not a market-outcome predictor — validate crisis_elasticity grades with evidence.",
+        "description": "Deterministic rank from ready_to_scale distance, crisis elasticity bonus, and contagion index; exposes calculation_trace and per-market score_breakdown. Not a market-outcome predictor â validate crisis_elasticity grades with evidence.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/entry-sequencer",
         "x-mvr-maturity": "provisional",
@@ -9032,7 +9066,7 @@
     "/v1/entry-timing": {
       "post": {
         "summary": "NOW/WAIT/AVOID market entry timing. Emits calculation_trace with adjustment_trace (every score delta), seasonal formula, permission gate, and signal thresholds. Optional include_trust_velocity enriches with trust-velocity readout.",
-        "description": "NOW/WAIT/AVOID from executive average, events, permission gate, seasonal impact; full adjustment_trace in calculation_trace. Permission is subjective input — cross-check with decision-check when material. strict_calibrated requires SEASONAL_KV.",
+        "description": "NOW/WAIT/AVOID from executive average, events, permission gate, seasonal impact; full adjustment_trace in calculation_trace. Permission is subjective input â cross-check with decision-check when material. strict_calibrated requires SEASONAL_KV.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/entry-timing",
         "x-mvr-maturity": "provisional",
@@ -11426,7 +11460,7 @@
     "/v1/field-signal/request": {
       "post": {
         "summary": "Create a consented field-signal request with privacy rules and external payout approval requirements.",
-        "description": "Creates consented field-signal request records; payouts require external approval and are never executed by the runtime.",
+        "description": "Creates consented field-signal request records; payouts require external approval and are never executed by the Worker.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/field-signal/request",
         "x-mvr-maturity": "provisional",
@@ -12392,8 +12426,8 @@
     },
     "/v1/webhooks/register": {
       "post": {
-        "summary": "Register signed webhook subscriptions for Evidence OS alert events and delivery-service dispatch.",
-        "description": "Canonical webhook registration route. Registers signed subscriptions and dispatches matching Evidence OS events on a best-effort delivery path when MVR_WEBHOOKS is configured; production-grade retries and dead-lettering still require delivery infrastructure.",
+        "summary": "Register signed webhook subscriptions for Evidence OS alert events and delivery-worker dispatch.",
+        "description": "Canonical webhook registration route. Registers signed subscriptions and dispatches matching Evidence OS events on a best-effort worker path when MVR_WEBHOOKS is configured; production-grade retries and dead-lettering still require delivery infrastructure.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/webhooks/register",
         "x-mvr-maturity": "provisional",
@@ -14193,7 +14227,7 @@
     },
     "/v1/auth-check": {
       "post": {
-        "summary": "Verify API key, operational plan (STANDARD/ENTERPRISE), and active response profile.",
+        "summary": "Verify API key, operational plan (STANDARD/ENTERPRISE), active response profile, and public sandbox policy when X-API-Key is the demo key.",
         "security": [
           {
             "ApiKeyAuth": []
@@ -14329,7 +14363,8 @@
       "ApiKeyAuth": {
         "type": "apiKey",
         "in": "header",
-        "name": "X-API-Key"
+        "name": "X-API-Key",
+        "description": "Use a licensed tenant key for production. For public non-commercial evaluation only, agents may use mvr-demo-key-2026; sandbox responses are illustrative, client_safe, full_advisory only, and not for production."
       },
       "BearerAuth": {
         "type": "http",
@@ -14822,7 +14857,7 @@
           },
           "unit_economics": {
             "type": "object",
-            "description": "Enterprise blueprint: LTV÷CAC, runway, margin - gates scaling verdict when structurally unprofitable."
+            "description": "Enterprise blueprint: LTVÃ·CAC, runway, margin - gates scaling verdict when structurally unprofitable."
           },
           "financial_context": {
             "type": "object",
@@ -15338,15 +15373,15 @@
           },
           "model_scale_signal": {
             "type": "object",
-            "description": "velocity, capital_deployment_cap_percent, interpretation — mirrors scale_recommendation signal, not permission to execute."
+            "description": "velocity, capital_deployment_cap_percent, interpretation â mirrors scale_recommendation signal, not permission to execute."
           },
           "formal_authorization": {
             "type": "object",
-            "description": "status, blocking_gates, authorized_use, not_authorized_use — same semantics as decision_authorization."
+            "description": "status, blocking_gates, authorized_use, not_authorized_use â same semantics as decision_authorization."
           },
           "reliability_constraints": {
             "type": "object",
-            "description": "level, authorized_for_decision, not_authorized_for — same semantics as decision_reliability ceilings."
+            "description": "level, authorized_for_decision, not_authorized_for â same semantics as decision_reliability ceilings."
           },
           "human_review": {
             "type": "object",

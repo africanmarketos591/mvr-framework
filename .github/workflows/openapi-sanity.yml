@@ -1,0 +1,67 @@
+name: OpenAPI Sanity
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "openapi.json"
+      - "openapi.yaml"
+      - "openapi.agent.json"
+      - "openapi.agent.sandbox.json"
+      - "api/openapi.json"
+      - "api/openapi.yaml"
+      - "api/openapi.agent.json"
+      - "api/openapi.agent.sandbox.json"
+      - ".github/workflows/openapi-sanity.yml"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "openapi.json"
+      - "openapi.yaml"
+      - "openapi.agent.json"
+      - "openapi.agent.sandbox.json"
+      - "api/openapi.json"
+      - "api/openapi.yaml"
+      - "api/openapi.agent.json"
+      - "api/openapi.agent.sandbox.json"
+      - ".github/workflows/openapi-sanity.yml"
+
+jobs:
+  validate:
+    name: Validate public OpenAPI JSON contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate OpenAPI metadata
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const specs = [
+            'openapi.json',
+            'openapi.yaml',
+            'openapi.agent.json',
+            'openapi.agent.sandbox.json',
+            'api/openapi.json',
+            'api/openapi.yaml',
+            'api/openapi.agent.json',
+            'api/openapi.agent.sandbox.json'
+          ];
+          for (const specPath of specs) {
+            const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'));
+            if (!String(spec.openapi || '').startsWith('3.')) {
+              throw new Error(`${specPath} is missing an OpenAPI 3.x version`);
+            }
+            if (!spec.info || !spec.info.title || !spec.info.version) {
+              throw new Error(`${specPath} is missing info.title or info.version`);
+            }
+            if (!spec.paths || Object.keys(spec.paths).length === 0) {
+              throw new Error(`${specPath} has no paths`);
+            }
+            console.log(`${specPath}: ${spec.info.title} ${spec.info.version} (${Object.keys(spec.paths).length} paths)`);
+          }
+          NODE

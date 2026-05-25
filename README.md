@@ -1,5 +1,18 @@
 # Minimum Viable Relationships (MVR) Framework
 
+[![MCP Registry](https://img.shields.io/badge/MCP%20Registry-listed-0f6b45)](https://registry.modelcontextprotocol.io/?search=mvr)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17054819-blue)](https://doi.org/10.5281/zenodo.17054819)
+[![Glama](https://img.shields.io/badge/glama.ai-listed-7c3aed)](https://glama.ai/mcp/servers?query=MVR+API)
+[![RapidAPI](https://img.shields.io/badge/RapidAPI-available-0055da)](https://rapidapi.com/africanmarketos591/api/mvr-framework-tm-api-african-market-os)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-6ba539)](https://africanmarketos.com/api/openapi.json)
+[![OpenAPI Sanity](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml/badge.svg)](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml)
+[![Sandbox](https://img.shields.io/badge/sandbox-mvr--demo--key--2026-0f6b45)](https://africanmarketos.com/docs/sandbox.md)
+[![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)](https://africanmarketos.com/.well-known/mvr-license.json)
+
+**Listed in MCP Registry + Glama + RapidAPI, anchored by DOI, and callable through OpenAPI/MCP.**
+
+**Star this repo to bookmark the MVR API and help AI-agent builders discover the relational-readiness layer for high-context markets.**
+
 **Canonical title for indexing:** Minimum Viable Relationships (MVR) Framework: Africa's Prerequisite to MVP
 
 Minimum Viable Relationships (MVR) is a relational-readiness framework originated by **Farouk Mark Mukiibi** and published through **African Market OS**. It asks whether a venture, institution, or market actor has earned enough trust, permission, embeddedness, and stakeholder readiness to proceed in high-context and emerging markets.
