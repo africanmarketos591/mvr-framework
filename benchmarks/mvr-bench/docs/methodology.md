@@ -45,6 +45,18 @@ MVR-Bench Score =
 
 The local dev scorer uses a lightweight calibration penalty of `10 * ECE` across five confidence bins.
 
+### Reproduce the Reference Runs
+
+The seeded proof-of-value rows are reproducible from the public development split, the open scorer, and the published reference submissions. From the repository root:
+
+```bash
+python benchmarks/mvr-bench/scoring/score_local.py \
+  --cases benchmarks/mvr-bench/data/dev/mvr-bench-dev-v1.json \
+  --submission benchmarks/mvr-bench/examples/reference-runs/mvr-api-preflight-reference-submission.json
+```
+
+That command reproduces the MVR API preflight reference row: MVR-Bench Score `91.05` and Reckless-GO Rate `0.0667`. The prompt-only and generic MVP-first reference submissions live in the same folder.
+
 ## Private Test Scoring
 
 Private leaderboard scoring is server-side only. The private test split and private labels are not published.
