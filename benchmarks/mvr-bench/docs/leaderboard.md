@@ -1,4 +1,4 @@
-﻿# MVR-Bench Leaderboard Policy
+# MVR-Bench Leaderboard Policy
 
 The public repository currently ships the MVR-Bench v1 public development split. Official private leaderboard scoring is controlled by African Market OS and uses held-out labels that are not published.
 

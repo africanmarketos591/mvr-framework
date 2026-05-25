@@ -1,4 +1,4 @@
-﻿# MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark
+# MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark
 
 MVR-Bench is the Minimum Viable Relationships (MVR) Framework benchmark for market-entry permission reasoning. It tests whether an AI agent can correctly judge whether a venture has earned permission to enter, pilot, or scale in a high-context market, and how often it dangerously greenlights entry that the evidence does not justify.
 

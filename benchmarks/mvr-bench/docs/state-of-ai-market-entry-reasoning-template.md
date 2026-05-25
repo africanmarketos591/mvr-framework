@@ -1,4 +1,4 @@
-﻿# State of AI Market-Entry Reasoning: Report Template
+# State of AI Market-Entry Reasoning: Report Template
 
 This template is for a future quarterly report based on private MVR-Bench scoring.
 
