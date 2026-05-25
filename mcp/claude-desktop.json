@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "mvr-api": {
+      "type": "streamable-http",
+      "url": "https://africanmarketos.com/mcp",
+      "headers": {
+        "X-API-Key": "mvr-demo-key-2026"
+      }
+    }
+  },
+  "note": "If your Claude Desktop build requires stdio-only servers, use the official registry name io.github.africanmarketos591/mvr-api or a local HTTP bridge. Do not treat the sandbox key as production access."
+}

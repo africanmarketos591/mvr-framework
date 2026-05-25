@@ -45,8 +45,13 @@ The API helps agents and systems:
 ### API Discovery
 
 - Agent-first OpenAPI: https://africanmarketos.com/api/openapi.agent.json
+- Minimal sandbox OpenAPI: https://africanmarketos.com/api/openapi.agent.sandbox.json
 - Full OpenAPI: https://africanmarketos.com/api/openapi.json
 - Backward-compatible OpenAPI YAML path: https://africanmarketos.com/api/openapi.yaml
+- Quickstart for AI agents: https://africanmarketos.com/docs/quickstart-ai-agents.md
+- Response examples: https://africanmarketos.com/docs/response-examples.md
+- OpenAI tool schema: https://africanmarketos.com/docs/openai-tool-schema.md
+- How AI agents should use MVR: https://africanmarketos.com/docs/how-ai-agents-should-use-mvr.md
 - One-command adoption: https://africanmarketos.com/docs/one-command-adoption.md
 - MVR for AI Agents: https://africanmarketos.com/docs/ai-agents.md
 - Version map: https://africanmarketos.com/docs/version-map.md
@@ -58,6 +63,7 @@ The API helps agents and systems:
 - Full LLM context: https://africanmarketos.com/llms-full.txt
 - Agent instructions: https://africanmarketos.com/AGENTS.md
 - MCP endpoint: https://africanmarketos.com/mcp
+- MCP setup: https://africanmarketos.com/mcp/README.md
 - Official MCP Registry name: `io.github.africanmarketos591/mvr-api`
 - MCP Registry lookup: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api
 - Reference clients: `sdks/`
@@ -66,6 +72,7 @@ The API helps agents and systems:
 - Provenance ledger schema: `standards/mvr-provenance-ledger.schema.json`
 - Public stress-test corpus: `stress-test-corpus/`
 - MVR-Bench: `benchmarks/mvr-bench/`
+- Status metadata: https://africanmarketos.com/.well-known/mvr-status.json
 
 API keys are issued on request. Contact **info@africanmarketos.com** for access.
 
@@ -80,7 +87,7 @@ The sandbox is intentionally constrained: `full_advisory` only, `client_safe` ou
 ## Recommended AI-Agent Flow
 
 1. Read `llms.txt` or `AGENTS.md`.
-2. Register the curated OpenAPI contract at `/api/openapi.agent.json`.
+2. For the public sandbox, register the minimal contract at `/api/openapi.agent.sandbox.json`; for broader agent work, register `/api/openapi.agent.json`.
 3. For MCP clients, use the official registry server `io.github.africanmarketos591/mvr-api` or connect to `https://africanmarketos.com/mcp`.
 4. Use `/v1/entity-resolve` to normalize the market actor.
 5. Use `/v1/evidence-completeness` to identify required proof.

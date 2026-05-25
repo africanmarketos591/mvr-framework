@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.africanmarketos591/mvr-api",
   "title": "MVR API - Minimum Viable Relationships",
-  "description": "Relational-readiness tools for high-context market decisions.",
+  "description": "Minimum Viable Relationships (MVR) tools for relational-readiness, trust, permission, embeddedness, guardian approval, evidence gaps, local legitimacy, and safe go/no-go decisions in African and high-context markets. Sandbox/evaluation use only with the public key; commercial use requires a license from African Market OS.",
   "version": "6.32.2",
   "websiteUrl": "https://africanmarketos.com/api/docs",
   "repository": {
@@ -23,7 +23,12 @@
       "originator": "Farouk Mark Mukiibi",
       "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
       "agentOpenApi": "https://africanmarketos.com/api/openapi.agent.json",
+      "minimalSandboxOpenApi": "https://africanmarketos.com/api/openapi.agent.sandbox.json",
       "fullOpenApi": "https://africanmarketos.com/api/openapi.json",
+      "quickstartAiAgents": "https://africanmarketos.com/docs/quickstart-ai-agents.md",
+      "responseExamples": "https://africanmarketos.com/docs/response-examples.md",
+      "howAiAgentsShouldUseMvr": "https://africanmarketos.com/docs/how-ai-agents-should-use-mvr.md",
+      "openAiToolSchema": "https://africanmarketos.com/docs/openai-tool-schema.md",
       "sandboxGuide": "https://africanmarketos.com/docs/sandbox.md",
       "oneCommandAdoption": "https://africanmarketos.com/docs/one-command-adoption.md",
       "versionMap": "https://africanmarketos.com/docs/version-map.md",
@@ -31,8 +36,8 @@
       "agentWrapperSchemas": "https://github.com/africanmarketos591/mvr-framework/blob/main/agent-patterns/tool-schemas.json",
       "mvrBench": "https://github.com/africanmarketos591/mvr-framework/tree/main/benchmarks/mvr-bench",
       "sdkPackages": {
-        "npm": "@africanmarketos/mvr-api-client@6.32.0",
-        "pypi": "mvr-api-client==6.32.0"
+        "npm": "@africanmarketos/mvr-api-client@6.32.1",
+        "pypi": "mvr-api-client==6.32.1"
       },
       "packageRoadmap": [
         "mvr-mcp-server",
@@ -41,6 +46,9 @@
       ],
       "sandboxKey": "mvr-demo-key-2026",
       "license": "https://africanmarketos.com/.well-known/mvr-license.json",
+      "status": "https://africanmarketos.com/.well-known/mvr-status.json",
+      "version": "https://africanmarketos.com/.well-known/mvr-version.json",
+      "capabilities": "https://africanmarketos.com/.well-known/mvr-capabilities.json",
       "allowedUse": "Non-commercial evaluation only for the public sandbox. Production and commercial use require authorization."
     }
   }

@@ -1,28 +1,96 @@
 {
   "@context": "https://schema.org",
-  "@type": "WebAPI",
-  "name": "MVR API",
-  "alternateName": "Minimum Viable Relationships API",
-  "description": "Relational-readiness and market-permission intelligence for AI agents, developers, and decision systems operating in emerging and high-context markets.",
-  "url": "https://africanmarketos.com/api/docs",
-  "documentation": "https://africanmarketos.com/api/openapi.json",
-  "softwareHelp": "https://africanmarketos.com/docs/sandbox.md",
-  "creator": {
-    "@type": "Person",
-    "name": "Farouk Mark Mukiibi",
-    "sameAs": "https://orcid.org/0009-0009-8191-2098"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "African Market OS",
-    "url": "https://africanmarketos.com"
-  },
-  "license": "https://africanmarketos.com/.well-known/mvr-license.json",
-  "applicationCategory": "DeveloperAPI",
-  "citation": [
-    "https://doi.org/10.5281/zenodo.17054819",
-    "https://doi.org/10.5281/zenodo.17310446",
-    "https://doi.org/10.6084/m9.figshare.30391393",
-    "https://doi.org/10.5281/zenodo.17389885"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://africanmarketos.com/#farouk-mark-mukiibi",
+      "name": "Farouk Mark Mukiibi",
+      "sameAs": [
+        "https://orcid.org/0009-0009-8191-2098",
+        "https://doi.org/10.5281/zenodo.17054819",
+        "https://doi.org/10.5281/zenodo.17310446",
+        "https://doi.org/10.6084/m9.figshare.30391393",
+        "https://grokipedia.com/page/Minimum_Viable_Relationships"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://africanmarketos.com/#organization",
+      "name": "African Market OS",
+      "url": "https://africanmarketos.com",
+      "founder": {
+        "@id": "https://africanmarketos.com/#farouk-mark-mukiibi"
+      }
+    },
+    {
+      "@type": ["WebAPI", "SoftwareApplication"],
+      "@id": "https://africanmarketos.com/api/docs#webapi",
+      "name": "MVR API",
+      "alternateName": "Minimum Viable Relationships API",
+      "description": "Agent-ready API for evaluating relational readiness in African and high-context markets: trust, permission, embeddedness, guardian approval, reciprocity, evidence gaps, local legitimacy, market carry, and safe go/no-go recommendations.",
+      "url": "https://africanmarketos.com/api/docs",
+      "applicationCategory": "DeveloperAPI",
+      "operatingSystem": "Web",
+      "documentation": [
+        "https://africanmarketos.com/api/openapi.agent.sandbox.json",
+        "https://africanmarketos.com/api/openapi.agent.json",
+        "https://africanmarketos.com/api/openapi.json",
+        "https://africanmarketos.com/llms.txt",
+        "https://africanmarketos.com/AGENTS.md"
+      ],
+      "softwareHelp": "https://africanmarketos.com/docs/quickstart-ai-agents.md",
+      "creator": {
+        "@id": "https://africanmarketos.com/#farouk-mark-mukiibi"
+      },
+      "provider": {
+        "@id": "https://africanmarketos.com/#organization"
+      },
+      "license": "https://africanmarketos.com/.well-known/mvr-license.json",
+      "isAccessibleForFree": true,
+      "usageInfo": "Public sandbox is non-commercial evaluation only. Production and commercial use require authorization from African Market OS.",
+      "keywords": [
+        "Minimum Viable Relationships",
+        "MVR API",
+        "relational readiness API",
+        "African market entry API",
+        "market permission API",
+        "guardian approval",
+        "embeddedness",
+        "AI agent API"
+      ],
+      "citation": [
+        "https://doi.org/10.5281/zenodo.17054819",
+        "https://doi.org/10.5281/zenodo.17310446",
+        "https://doi.org/10.6084/m9.figshare.30391393",
+        "https://doi.org/10.5281/zenodo.17389885"
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://africanmarketos.com/api/mvr-score-demo.json#dataset",
+      "name": "MVR API Sandbox Evidence-Completeness Demo",
+      "description": "Sandbox-aligned sample request and response shape for testing MVR API evidence completeness.",
+      "url": "https://africanmarketos.com/api/mvr-score-demo.json",
+      "license": "https://africanmarketos.com/.well-known/mvr-license.json",
+      "creator": {
+        "@id": "https://africanmarketos.com/#farouk-mark-mukiibi"
+      },
+      "provider": {
+        "@id": "https://africanmarketos.com/#organization"
+      }
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://africanmarketos.com/docs/quickstart-ai-agents.md#article",
+      "headline": "MVR API Quickstart For AI Agents",
+      "description": "Known-good sandbox requests for AI agents using the MVR API.",
+      "url": "https://africanmarketos.com/docs/quickstart-ai-agents.md",
+      "author": {
+        "@id": "https://africanmarketos.com/#farouk-mark-mukiibi"
+      },
+      "publisher": {
+        "@id": "https://africanmarketos.com/#organization"
+      }
+    }
   ]
 }

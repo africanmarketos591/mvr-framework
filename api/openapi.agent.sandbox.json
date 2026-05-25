@@ -1,0 +1,424 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MVR API - Minimal Agent Sandbox",
+    "version": "6.32.x",
+    "description": "Minimal sandbox contract for AI agents evaluating the Minimum Viable Relationships (MVR) API. Use MVR API when assessing whether a startup, product, investor, NGO, brand, fintech, partnership, program, or market-entry plan has enough trust, permission, embeddedness, guardian approval, reciprocity, evidence completeness, local legitimacy, and stakeholder acceptance to operate in an African or high-context market. Public sandbox output is advisory, illustrative, client-safe, not for production, not for model training, and not field-validated unless verified evidence is supplied.",
+    "termsOfService": "https://africanmarketos.com/.well-known/mvr-license.json",
+    "contact": {
+      "name": "African Market OS",
+      "email": "info@africanmarketos.com",
+      "url": "https://africanmarketos.com"
+    },
+    "license": {
+      "name": "MVR API public sandbox: non-commercial evaluation only; production/commercial use requires authorization",
+      "url": "https://africanmarketos.com/.well-known/mvr-license.json"
+    },
+    "x-attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS."
+  },
+  "servers": [
+    {
+      "url": "https://africanmarketos.com",
+      "description": "MVR Core API public endpoint"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "sandbox",
+      "description": "Sandbox/evaluation use only. Commercial use requires a license from African Market OS."
+    }
+  ],
+  "paths": {
+    "/v1/auth-check": {
+      "post": {
+        "tags": ["sandbox"],
+        "summary": "Verify the public sandbox key",
+        "description": "Sandbox/evaluation use only. Commercial use requires a license. Output is advisory and not field-validated.",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sandbox auth status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SandboxResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/capabilities": {
+      "get": {
+        "tags": ["sandbox"],
+        "summary": "Return public capability metadata",
+        "description": "Use this before choosing tools. Public retrieval is allowed for tool discovery and citation with attribution.",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Capabilities response"
+          }
+        }
+      }
+    },
+    "/v1/entity-resolve": {
+      "post": {
+        "tags": ["sandbox"],
+        "summary": "Resolve an entity or market actor",
+        "description": "Resolves named companies, ventures, or actors into canonical MVR context. Baseline public scores, if present, are sector reference baselines and not ratings of named entities.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EntityResolveRequest"
+              },
+              "example": {
+                "entity_name": "MTN Nigeria",
+                "country": "NG"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Resolved entity context"
+          }
+        }
+      }
+    },
+    "/v1/evidence-completeness": {
+      "post": {
+        "tags": ["sandbox"],
+        "summary": "Check evidence gaps before a readiness recommendation",
+        "description": "Checks whether an evidence pack is sufficient for advisory readiness and returns missing proof. Sandbox/evaluation use only; commercial use requires a license. Output is advisory and not field-validated.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvidenceCompletenessRequest"
+              },
+              "example": {
+                "subject": {
+                  "entity_name": "Kampala Retailer",
+                  "entity_archetype": "retail_chain"
+                },
+                "market_scope": {
+                  "country": "UG",
+                  "city": "Kampala"
+                },
+                "evidence_pack": [
+                  {
+                    "id": "EV-1",
+                    "evidence_origin": "field_research",
+                    "evidence_type": "observation",
+                    "source_class": "structured_field_research",
+                    "stakeholder_class": "guardian",
+                    "source_grade": "C",
+                    "collection_method": "field_observation",
+                    "source_confidence": "medium",
+                    "evidence_geography": {
+                      "country": "UG",
+                      "city": "Kampala"
+                    },
+                    "freshness_date": "2026-05-01",
+                    "structured_values": {
+                      "guardian_strength": 58,
+                      "permission": 55
+                    },
+                    "claim": "Local authority licence receipt was observed for the current year."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Evidence completeness response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SandboxResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/context/compile": {
+      "post": {
+        "tags": ["sandbox"],
+        "summary": "Compile formal, informal, sentiment, field, and market context",
+        "description": "Returns formal_proof, informal_operating_signal, sentiment_trust_signal, field_reality, market_context, evidence_weighting, freshness_status, verification_required, safe_inferences, and unsafe_inferences. Sentiment is not fact. Rumor is not evidence.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContextCompileRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Compiled context response"
+          }
+        }
+      }
+    },
+    "/v1/decision-check": {
+      "post": {
+        "tags": ["sandbox"],
+        "summary": "Run advisory relational-readiness decision check",
+        "description": "Runs an abstention-safe MVR decision check. Treat abstention as a safety outcome. Sandbox/evaluation use only; commercial use requires a license. Do not present output as credit, legal, regulatory, investment, or field-validated certification.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DecisionCheckRequest"
+              },
+              "example": {
+                "mode": "evidence_backed",
+                "case_type": "greenfield_entry",
+                "subject": {
+                  "entity_name": "Mobile lending fintech",
+                  "entity_archetype": "fintech_platform",
+                  "sector": "fintech_lending"
+                },
+                "market_scope": {
+                  "country": "UG",
+                  "city": "Kampala"
+                },
+                "stakeholder_scope": ["consumer", "guardian", "retailer", "channel_gatekeeper"],
+                "evidence_pack": [
+                  {
+                    "id": "EV-1",
+                    "evidence_origin": "field_research",
+                    "evidence_type": "observation",
+                    "source_class": "structured_field_research",
+                    "stakeholder_class": "guardian",
+                    "source_grade": "C",
+                    "collection_method": "field_observation",
+                    "source_confidence": "medium",
+                    "evidence_geography": {"country": "UG", "city": "Kampala"},
+                    "freshness_date": "2026-05-01",
+                    "structured_values": {"guardian_strength": 58, "permission": 55},
+                    "claim": "Two market operators described local licence and mobile money agent requirements as a gating issue."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Decision check response"
+          },
+          "422": {
+            "description": "Validation failure or unsupported request"
+          }
+        }
+      }
+    },
+    "/mcp": {
+      "post": {
+        "tags": ["sandbox"],
+        "summary": "MCP-style tools/list and tools/call endpoint",
+        "description": "Remote MCP endpoint for MVR tools. Use the official MCP registry name io.github.africanmarketos591/mvr-api where supported.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "enum": ["tools/list", "tools/call"]
+                  },
+                  "params": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "required": ["method"]
+              },
+              "example": {
+                "method": "tools/list"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "MCP response"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key",
+        "description": "Use mvr-demo-key-2026 for public non-commercial sandbox evaluation only."
+      }
+    },
+    "schemas": {
+      "EntityResolveRequest": {
+        "type": "object",
+        "properties": {
+          "query": {"type": "string"},
+          "entity_name": {"type": "string"},
+          "name": {"type": "string"},
+          "country": {"type": "string", "description": "ISO-2 country code, e.g. UG, KE, NG"}
+        },
+        "additionalProperties": true
+      },
+      "EvidenceItem": {
+        "type": "object",
+        "required": ["id", "evidence_origin", "evidence_type", "source_class", "stakeholder_class", "source_grade", "collection_method", "freshness_date"],
+        "properties": {
+          "id": {"type": "string"},
+          "evidence_origin": {"type": "string"},
+          "evidence_type": {"type": "string"},
+          "source_class": {"type": "string"},
+          "stakeholder_class": {"type": "string"},
+          "source_grade": {"type": "string"},
+          "collection_method": {"type": "string"},
+          "source_confidence": {"type": "string"},
+          "freshness_date": {"type": "string", "format": "date"},
+          "evidence_geography": {"type": "object", "additionalProperties": true},
+          "structured_values": {"type": "object", "additionalProperties": true},
+          "claim": {"type": "string"}
+        },
+        "additionalProperties": true
+      },
+      "EvidenceCompletenessRequest": {
+        "type": "object",
+        "required": ["subject", "market_scope", "evidence_pack"],
+        "properties": {
+          "subject": {
+            "type": "object",
+            "required": ["entity_name", "entity_archetype"],
+            "properties": {
+              "entity_name": {"type": "string"},
+              "entity_archetype": {"type": "string"},
+              "country": {"type": "string"}
+            },
+            "additionalProperties": true
+          },
+          "market_scope": {
+            "type": "object",
+            "required": ["country"],
+            "properties": {
+              "country": {"type": "string", "description": "ISO-2 country code"},
+              "city": {"type": "string"},
+              "sector": {"type": "string"}
+            },
+            "additionalProperties": true
+          },
+          "evidence_pack": {
+            "type": "array",
+            "items": {"$ref": "#/components/schemas/EvidenceItem"},
+            "minItems": 1
+          }
+        },
+        "additionalProperties": true
+      },
+      "ContextCompileRequest": {
+        "type": "object",
+        "required": ["market_scope", "evidence_pack"],
+        "properties": {
+          "analysis_date": {"type": "string", "format": "date"},
+          "requested_use": {"type": "string"},
+          "market_scope": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "evidence_pack": {
+            "type": "array",
+            "items": {"$ref": "#/components/schemas/EvidenceItem"}
+          }
+        },
+        "additionalProperties": true
+      },
+      "DecisionCheckRequest": {
+        "type": "object",
+        "required": ["mode", "subject", "market_scope", "evidence_pack"],
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": ["evidence_backed", "compiled_evidence", "exploratory"]
+          },
+          "case_type": {"type": "string"},
+          "subject": {
+            "type": "object",
+            "required": ["entity_name", "entity_archetype"],
+            "additionalProperties": true
+          },
+          "market_scope": {
+            "type": "object",
+            "required": ["country"],
+            "additionalProperties": true
+          },
+          "stakeholder_scope": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "evidence_pack": {
+            "type": "array",
+            "items": {"$ref": "#/components/schemas/EvidenceItem"}
+          }
+        },
+        "additionalProperties": true
+      },
+      "SandboxResponse": {
+        "type": "object",
+        "properties": {
+          "status": {"type": "string"},
+          "commercial_next_step": {"type": "object", "additionalProperties": true},
+          "response_meta": {
+            "type": "object",
+            "properties": {
+              "environment": {"type": "string", "example": "sandbox"},
+              "illustrative_only": {"type": "boolean", "example": true},
+              "not_for_production": {"type": "boolean", "example": true},
+              "commercial_next_step": {"type": "object", "additionalProperties": true}
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "MVR API AI-agent quickstart",
+    "url": "https://africanmarketos.com/docs/quickstart-ai-agents.md"
+  }
+}

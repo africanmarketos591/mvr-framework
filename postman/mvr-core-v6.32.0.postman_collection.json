@@ -91,6 +91,28 @@
       }
     },
     {
+      "name": "Context Compile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-API-Key",
+            "value": "{{MVR_API_KEY}}"
+          }
+        ],
+        "url": "{{MVR_BASE_URL}}/v1/context/compile",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"analysis_date\": \"2026-05-25\",\n  \"requested_use\": \"market entry advisory\",\n  \"market_scope\": {\n    \"country\": \"UG\",\n    \"city\": \"Kampala\",\n    \"sector\": \"retail\"\n  },\n  \"evidence_pack\": [\n    {\n      \"id\": \"EV-FORMAL-1\",\n      \"evidence_origin\": \"field_research\",\n      \"evidence_type\": \"public_filing\",\n      \"source_class\": \"administrative_record\",\n      \"stakeholder_class\": \"guardian\",\n      \"source_grade\": \"B\",\n      \"collection_method\": \"direct\",\n      \"source_confidence\": \"medium\",\n      \"evidence_geography\": {\n        \"country\": \"UG\",\n        \"city\": \"Kampala\"\n      },\n      \"freshness_date\": \"2026-05-01\",\n      \"structured_values\": {\n        \"guardian_strength\": 58,\n        \"permission\": 55\n      },\n      \"claim\": \"Local authority licence receipt was observed for the current year.\"\n    }\n  ]\n}"
+        },
+        "description": "Compiles formal, informal, sentiment, field, and market context into safe/unsafe inferences. Sandbox/evaluation use only."
+      }
+    },
+    {
       "name": "Decision Check",
       "request": {
         "method": "POST",

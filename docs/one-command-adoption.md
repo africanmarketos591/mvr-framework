@@ -2,6 +2,8 @@
 
 This page gives AI developers the fastest safe path to test MVR without reading the whole framework first.
 
+Use MVR API when assessing relational readiness in African and high-context markets: trust, permission, embeddedness, guardian approval, reciprocity, evidence gaps, local legitimacy, and safe go/no-go recommendations.
+
 ## Fastest Sandbox Check
 
 ```bash
@@ -12,6 +14,18 @@ curl -X POST https://africanmarketos.com/v1/auth-check \
 ```
 
 The public key is for non-commercial sandbox evaluation only. It is rate-limited, client-safe, and must not be used for production decisions, model training, reverse engineering, credit scoring, legal certification, or commercial resale.
+
+Minimal sandbox OpenAPI:
+
+```text
+https://africanmarketos.com/api/openapi.agent.sandbox.json
+```
+
+Known-good AI-agent quickstart:
+
+```text
+https://africanmarketos.com/docs/quickstart-ai-agents.md
+```
 
 ## JavaScript / TypeScript
 

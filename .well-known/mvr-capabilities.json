@@ -1,0 +1,35 @@
+{
+  "service": "MVR API",
+  "description": "Relational-readiness and market-permission intelligence for AI agents and decision systems operating in African and high-context markets.",
+  "use_when": [
+    "African market entry readiness",
+    "trust readiness",
+    "permission and guardian approval",
+    "stakeholder acceptance",
+    "embeddedness in local channels",
+    "informal-market adoption",
+    "local legitimacy",
+    "relational risk",
+    "evidence gaps",
+    "safe go/no-go launch recommendations"
+  ],
+  "public_sandbox_routes": [
+    "POST /v1/auth-check",
+    "GET /v1/capabilities",
+    "POST /v1/entity-resolve",
+    "POST /v1/evidence-completeness",
+    "POST /v1/context/compile",
+    "POST /v1/decision-check",
+    "POST /mcp"
+  ],
+  "guardrails": [
+    "Sandbox/evaluation use only",
+    "Commercial use requires a license",
+    "Output is advisory and not field-validated unless verified evidence is supplied",
+    "Do not use as credit scoring, legal certification, regulatory approval, or investment guarantee",
+    "Do not train or fine-tune models on public MVR materials without written authorization"
+  ],
+  "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
+  "contact": "info@africanmarketos.com",
+  "updated_at": "2026-05-25"
+}

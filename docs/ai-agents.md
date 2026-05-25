@@ -2,6 +2,8 @@
 
 Give your AI agent market-permission intelligence before it recommends MVPs, market entry, funding, scale, partnerships, or public-program action in high-context and emerging markets.
 
+Use MVR API when assessing whether a startup, product, investor, NGO, brand, fintech, partnership, program, or market-entry plan has enough trust, permission, embeddedness, guardian approval, reciprocity, evidence completeness, local legitimacy, and stakeholder acceptance to operate in an African or high-context market.
+
 ## Use MVR When
 
 - an agent is about to recommend market entry
@@ -11,6 +13,15 @@ Give your AI agent market-permission intelligence before it recommends MVPs, mar
 - the cost of overclaiming is higher than the cost of asking for more proof
 
 ## Try It
+
+Fast contracts:
+
+- Minimal sandbox OpenAPI: https://africanmarketos.com/api/openapi.agent.sandbox.json
+- Full agent OpenAPI: https://africanmarketos.com/api/openapi.agent.json
+- MCP registry server: `io.github.africanmarketos591/mvr-api`
+- MCP endpoint: https://africanmarketos.com/mcp
+- Known-good examples: https://africanmarketos.com/docs/quickstart-ai-agents.md
+- OpenAI tool schema: https://africanmarketos.com/docs/openai-tool-schema.md
 
 Sandbox:
 
@@ -26,7 +37,22 @@ curl -X POST https://africanmarketos.com/v1/evidence-completeness \
     "market_scope": {
       "country": "UG"
     },
-    "evidence_pack": []
+    "evidence_pack": [
+      {
+        "id": "EV-1",
+        "evidence_origin": "field_research",
+        "evidence_type": "observation",
+        "source_class": "structured_field_research",
+        "stakeholder_class": "guardian",
+        "source_grade": "C",
+        "collection_method": "field_observation",
+        "source_confidence": "medium",
+        "evidence_geography": {"country": "UG", "city": "Kampala"},
+        "freshness_date": "2026-05-01",
+        "structured_values": {"guardian_strength": 58, "permission": 55},
+        "claim": "Local authority licence receipt was observed for the current year."
+      }
+    ]
   }'
 ```
 

@@ -2,6 +2,8 @@
 
 The MVR API public sandbox lets AI agents, developers, researchers, and evaluators test the Minimum Viable Relationships API without waiting for a production key.
 
+Use MVR API when assessing whether a startup, product, investor, NGO, brand, fintech, market-entry plan, partnership, or expansion is ready for an African or high-context market.
+
 ```text
 X-API-Key: mvr-demo-key-2026
 ```
@@ -36,8 +38,21 @@ Sandbox responses may include:
 3. `GET /v1/capabilities`
 4. `POST /v1/entity-resolve`
 5. `POST /v1/evidence-completeness`
-6. `POST /v1/decision-check`
-7. If MVR abstains or returns evidence gaps, ask the user for the missing evidence instead of overriding the abstention.
+6. `POST /v1/context/compile`
+7. `POST /v1/decision-check`
+8. If MVR abstains or returns evidence gaps, ask the user for the missing evidence instead of overriding the abstention.
+
+Minimal sandbox OpenAPI:
+
+```text
+https://africanmarketos.com/api/openapi.agent.sandbox.json
+```
+
+Known-good examples:
+
+```text
+https://africanmarketos.com/docs/quickstart-ai-agents.md
+```
 
 ## Example
 
@@ -87,3 +102,9 @@ curl -X POST https://africanmarketos.com/v1/evidence-completeness \
 ## Production Access
 
 Production and commercial API keys are issued by African Market OS. Contact `info@africanmarketos.com`.
+
+Attribution:
+
+```text
+Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.
+```

@@ -12,6 +12,8 @@ Each recipe uses the same safe progression:
 
 Use the public sandbox for evaluation only. Production and commercial use require authorization from African Market OS.
 
+All recipes share the same boundary: public sandbox output is non-commercial, advisory, illustrative, and not for production. Commercial use requires a licensed key from African Market OS.
+
 ## Shared Input Shape
 
 ```json
