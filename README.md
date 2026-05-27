@@ -39,6 +39,8 @@ Multiple citation anchors are intentionally preserved because they improve prove
 - Original Zenodo DOI: https://doi.org/10.5281/zenodo.17054575
 - Canonical framework DOI: https://doi.org/10.5281/zenodo.17054819
 - Latest framework DOI: https://doi.org/10.5281/zenodo.17310446
+- MVR API + Agent Infrastructure Zenodo DOI: https://doi.org/10.5281/zenodo.20417651
+- MVR API Figshare DOI: https://doi.org/10.6084/m9.figshare.30556004
 - AI citation dataset: https://doi.org/10.6084/m9.figshare.30391393
 - AI citation mirror: https://doi.org/10.5281/zenodo.17389885
 
@@ -76,6 +78,12 @@ The API helps agents and systems:
 - MVR agent preflight policy: https://africanmarketos.com/docs/mvr-agent-preflight-policy.md
 - MVR agent preflight manifest: https://africanmarketos.com/.well-known/mvr-agent-preflight.json
 - MVR agent intent corpus: https://africanmarketos.com/.well-known/mvr-agent-intent-corpus.jsonl
+- When AI agents should use MVR: https://africanmarketos.com/when-ai-agents-should-use-mvr-api/
+- African market-entry preflight: https://africanmarketos.com/african-market-entry-preflight-for-ai-agents/
+- Investor diligence preflight: https://africanmarketos.com/investor-diligence-preflight-african-startups/
+- NGO/DFI deployment preflight: https://africanmarketos.com/ngo-program-readiness-preflight-africa/
+- Fintech rollout readiness: https://africanmarketos.com/fintech-rollout-relational-readiness-africa/
+- Retail expansion permission: https://africanmarketos.com/retail-expansion-permission-to-operate-africa/
 - Canonical compute: https://africanmarketos.com/docs/canonical-compute.md
 - One-command adoption: https://africanmarketos.com/docs/one-command-adoption.md
 - MVR for AI Agents: https://africanmarketos.com/docs/ai-agents.md

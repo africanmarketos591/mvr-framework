@@ -1,9 +1,14 @@
 {
   "service": "MVR API",
-  "current_runtime": "MVR Core API v6.32.x",
-  "current_mcp_server": "6.32.2 metadata line",
-  "current_openapi_contract": "6.32.x",
-  "current_sdk_generation_line": "6.32.x",
+  "runtime_version": "MVR Core API v6.32.0",
+  "registry_manifest_revision": "6.32.3",
+  "sdk_family": "6.32.1 current clients; 2.6.x archived compatibility",
+  "openapi_contract_family": "v1",
+  "note": "Registry/package/documentation revisions may change without changing the protected Worker/API runtime.",
+  "current_runtime": "MVR Core API v6.32.0",
+  "current_mcp_server": "6.32.3 metadata/registry manifest revision",
+  "current_openapi_contract": "v1 contract family aligned to v6.32.0 runtime",
+  "current_sdk_generation_line": "6.32.1",
   "npm": "@africanmarketos/mvr-api-client@6.32.1",
   "pypi": "mvr-api-client==6.32.1",
   "archived_lines": {
@@ -16,5 +21,5 @@
     "agent_openapi": "https://africanmarketos.com/api/openapi.agent.json",
     "version_map": "https://africanmarketos.com/docs/version-map.md"
   },
-  "updated_at": "2026-05-25"
+  "updated_at": "2026-05-27"
 }
