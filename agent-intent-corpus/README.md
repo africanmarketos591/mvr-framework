@@ -19,6 +19,8 @@ The public files include:
 - commercial routing
 - no-training and no-reverse-engineering boundaries
 
+See `DATA_USE_BOUNDARY.md` for the explicit usage boundary that travels with downloaded copies of this corpus.
+
 ## Protected Layer
 
 The public files do not publish:
