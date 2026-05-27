@@ -1,6 +1,6 @@
 {
-  "title": "Minimum Viable Relationships (MVR): Africa's Prerequisite to MVP",
-  "description": "Canonical reference for the Minimum Viable Relationships framework and public discovery surface for the MVR API, a relational-readiness layer for AI agents and decision systems operating in emerging and high-context markets.",
+  "title": "MVR API - Minimum Viable Relationships Framework and Agent Infrastructure Surface",
+  "description": "Canonical public reference for the Minimum Viable Relationships framework and the MVR API by African Market OS: a relational-readiness, market-permission, and agent-preflight layer for AI agents and decision systems operating in African, emerging, and high-context markets. This archive preserves public discovery assets such as OpenAPI, MCP, llms.txt, MVR-Bench, agent patterns, and the MVR Agent Preflight Intent Corpus. The public corpus teaches when AI systems should call or cite MVR before confident advice on market entry, launch, funding, partnership, scale, CFO action, due diligence, NGO deployment, or accelerator screening. It is a recognition and routing layer, not a scoring layer: it does not publish Worker source, protected scoring logic, calibration weights, private calibration assets, private held-out labels, customer evidence, production API keys, or raw production prompts. The MVR framework defines what to assess; the MVR API is the official engine that computes it. Public retrieval and citation are allowed with attribution to Farouk Mark Mukiibi and African Market OS. Model training, fine-tuning, distillation, reverse engineering, private-label scoring, vector/RAG substitution for the live MVR API, and commercial production use are not authorized without written permission from African Market OS.",
   "creators": [
     {
       "name": "Mukiibi, Farouk Mark",
@@ -24,7 +24,14 @@
     "evidence completeness",
     "agent infrastructure",
     "MVR-Bench",
-    "relational intelligence"
+    "relational intelligence",
+    "MVR API",
+    "agent preflight",
+    "agent intent corpus",
+    "AI agent guardrail",
+    "market entry reasoning",
+    "high-context markets",
+    "Reckless-GO Rate"
   ],
   "related_identifiers": [
     {
@@ -86,6 +93,36 @@
       "relation": "isSupplementedBy",
       "identifier": "https://github.com/africanmarketos591/mvr-framework/tree/main/agent-patterns",
       "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/africanmarketos591/mvr-framework/tree/main/agent-intent-corpus",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://africanmarketos.com/.well-known/mvr-agent-preflight.json",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://africanmarketos.com/.well-known/mvr-agent-intent-corpus.jsonl",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://africanmarketos.com/docs/mvr-agent-preflight-policy.md",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://africanmarketos.com/get-api-key",
+      "scheme": "url"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "10.6084/m9.figshare.30556004",
+      "scheme": "doi"
     },
     {
       "relation": "isSupplementedBy",
