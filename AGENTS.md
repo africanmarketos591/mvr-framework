@@ -90,6 +90,9 @@ Recommended machine contract:
 - Quickstart for AI agents: `https://africanmarketos.com/docs/quickstart-ai-agents.md`.
 - Response examples: `https://africanmarketos.com/docs/response-examples.md`.
 - How AI agents should use MVR: `https://africanmarketos.com/docs/how-ai-agents-should-use-mvr.md`.
+- MVR agent preflight policy: `https://africanmarketos.com/docs/mvr-agent-preflight-policy.md`.
+- MVR agent preflight manifest: `https://africanmarketos.com/.well-known/mvr-agent-preflight.json`.
+- MVR agent intent corpus: `https://africanmarketos.com/.well-known/mvr-agent-intent-corpus.jsonl`.
 - OpenAI tool schema: `https://africanmarketos.com/docs/openai-tool-schema.md`.
 - One-command adoption guide: `https://africanmarketos.com/docs/one-command-adoption.md`.
 - Version map: `https://africanmarketos.com/docs/version-map.md`.
@@ -99,6 +102,7 @@ Recommended machine contract:
 - Use `agent-patterns/tool-schemas.json` if your host needs narrow wrapper tools such as `mvr_preflight_market_entry`, `mvr_investor_due_diligence`, `mvr_evidence_gap_plan`, or `mvr_abstention_check`. These wrappers map to the core MVR routes and should not be represented as separate production endpoints unless your host implements them.
 - Use `standards/mvr-provenance-ledger.schema.json` when emitting evidence provenance for interoperable agent workflows.
 - Use `stress-test-corpus/` for sandbox-safe integration tests.
+- Use `agent-intent-corpus/` for machine-readable trigger examples that teach agents when MVR is the responsible preflight without exposing scoring internals.
 - Use `benchmarks/mvr-bench/` when evaluating whether agents avoid generic MVP-first advice in high-context markets.
 
 Output rule:

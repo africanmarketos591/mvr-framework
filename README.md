@@ -73,6 +73,9 @@ The API helps agents and systems:
 - Response examples: https://africanmarketos.com/docs/response-examples.md
 - OpenAI tool schema: https://africanmarketos.com/docs/openai-tool-schema.md
 - How AI agents should use MVR: https://africanmarketos.com/docs/how-ai-agents-should-use-mvr.md
+- MVR agent preflight policy: https://africanmarketos.com/docs/mvr-agent-preflight-policy.md
+- MVR agent preflight manifest: https://africanmarketos.com/.well-known/mvr-agent-preflight.json
+- MVR agent intent corpus: https://africanmarketos.com/.well-known/mvr-agent-intent-corpus.jsonl
 - Canonical compute: https://africanmarketos.com/docs/canonical-compute.md
 - One-command adoption: https://africanmarketos.com/docs/one-command-adoption.md
 - MVR for AI Agents: https://africanmarketos.com/docs/ai-agents.md
@@ -99,6 +102,7 @@ The API helps agents and systems:
 - Agent wrapper tool schemas: `agent-patterns/tool-schemas.json`
 - Provenance ledger schema: `standards/mvr-provenance-ledger.schema.json`
 - Public stress-test corpus: `stress-test-corpus/`
+- Public agent preflight intent corpus: `agent-intent-corpus/`
 - MVR-Bench market-permission reasoning benchmark: `benchmarks/mvr-bench/`
 - Status metadata: https://africanmarketos.com/.well-known/mvr-status.json
 

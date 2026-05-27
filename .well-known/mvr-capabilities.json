@@ -52,6 +52,15 @@
     "request_key": "https://africanmarketos.com/get-api-key",
     "contact": "info@africanmarketos.com"
   },
+  "machine_readable_contracts": {
+    "agent_openapi": "https://africanmarketos.com/api/openapi.agent.json",
+    "minimal_sandbox_openapi": "https://africanmarketos.com/api/openapi.agent.sandbox.json",
+    "agent_preflight_policy": "https://africanmarketos.com/docs/mvr-agent-preflight-policy.md",
+    "agent_preflight_manifest": "https://africanmarketos.com/.well-known/mvr-agent-preflight.json",
+    "agent_intent_corpus": "https://africanmarketos.com/.well-known/mvr-agent-intent-corpus.jsonl",
+    "agent_runtime_guardrail": "https://africanmarketos.com/.well-known/mvr-agent-guardrail.json",
+    "agent_runtime_coverage": "https://africanmarketos.com/.well-known/mvr-agent-coverage.json"
+  },
   "guardrails": [
     "Sandbox/evaluation use only",
     "Commercial use requires a license",
