@@ -71,7 +71,7 @@ function mvr_report_analytics_serve_public_report() {
         return;
     }
 
-    $file = trailingslashit(ABSPATH) . 'reports/' . MVR_REPORT_ANALYTICS_SLUG . '/' . $relative;
+    $file = mvr_report_analytics_find_report_file($relative);
     if (!is_readable($file)) {
         return;
     }
@@ -96,6 +96,23 @@ function mvr_report_analytics_serve_public_report() {
 
     readfile($file);
     exit;
+}
+
+function mvr_report_analytics_find_report_file($relative) {
+    $relative = ltrim($relative, '/\\');
+    $candidates = [
+        trailingslashit(ABSPATH) . 'reports/' . MVR_REPORT_ANALYTICS_SLUG . '/' . $relative,
+        trailingslashit(WP_CONTENT_DIR) . 'uploads/mvr-reports/' . MVR_REPORT_ANALYTICS_SLUG . '/' . $relative,
+        trailingslashit(__DIR__) . 'mvr-report-assets/' . MVR_REPORT_ANALYTICS_SLUG . '/' . $relative,
+    ];
+
+    foreach ($candidates as $candidate) {
+        if (is_readable($candidate)) {
+            return $candidate;
+        }
+    }
+
+    return '';
 }
 
 function mvr_report_analytics_event(WP_REST_Request $request) {
@@ -142,6 +159,17 @@ function mvr_report_analytics_download(WP_REST_Request $request) {
         'href' => home_url($target),
         'target' => $target,
     ]);
+
+    $file = mvr_report_analytics_find_report_file('Kenya_Retail_Relational_Readiness_Report_2026_v1.pdf');
+    if (is_readable($file)) {
+        status_header(200);
+        header('Content-Type: application/pdf');
+        header('Cache-Control: private, max-age=0, no-store');
+        header('Content-Length: ' . filesize($file));
+        header('Content-Disposition: attachment; filename="Kenya_Retail_Relational_Readiness_Report_2026_v1.pdf"');
+        readfile($file);
+        exit;
+    }
 
     wp_safe_redirect(home_url($target), 302);
     exit;
