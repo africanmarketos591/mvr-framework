@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mvr-agent-sdk"
+version = "0.1.0"
+description = "Public-safe MVR API preflight wrapper for AI agents."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "African Market OS", email = "info@africanmarketos.com" }]
+keywords = ["mvr", "minimum viable relationships", "african market os", "ai agents", "market entry", "relational readiness"]
+license = "LicenseRef-MVR-Agent-SDK"
+license-files = ["LICENSE.md"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.urls]
+Homepage = "https://africanmarketos.com/agent-sdk"
+Repository = "https://github.com/africanmarketos591/mvr-framework"
+Documentation = "https://africanmarketos.com/docs/agent-sdk.md"
+
+[tool.setuptools.packages.find]
+where = ["."]

@@ -78,6 +78,9 @@ The API helps agents and systems:
 - MVR agent preflight policy: https://africanmarketos.com/docs/mvr-agent-preflight-policy.md
 - MVR agent preflight manifest: https://africanmarketos.com/.well-known/mvr-agent-preflight.json
 - MVR agent intent corpus: https://africanmarketos.com/.well-known/mvr-agent-intent-corpus.jsonl
+- MVR Agent SDK manifest: https://africanmarketos.com/.well-known/mvr-agent-sdk.json
+- MVR Agent SDK docs: https://africanmarketos.com/agent-sdk
+- MVR Agent SDK package source: `packages/mvr-agent-sdk/`
 - When AI agents should use MVR: https://africanmarketos.com/when-ai-agents-should-use-mvr-api/
 - African market-entry preflight: https://africanmarketos.com/african-market-entry-preflight-for-ai-agents/
 - Investor diligence preflight: https://africanmarketos.com/investor-diligence-preflight-african-startups/

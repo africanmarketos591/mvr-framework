@@ -1,0 +1,42 @@
+{
+  "name": "mvr-agent-sdk",
+  "version": "0.1.0",
+  "description": "Public-safe MVR API preflight wrapper for AI agents.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mvr",
+    "minimum-viable-relationships",
+    "african-market-os",
+    "ai-agents",
+    "market-entry",
+    "relational-readiness",
+    "agentic-ai",
+    "permission-to-operate"
+  ],
+  "homepage": "https://africanmarketos.com/agent-sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/africanmarketos591/mvr-framework.git",
+    "directory": "packages/mvr-agent-sdk/npm"
+  },
+  "bugs": {
+    "url": "https://github.com/africanmarketos591/mvr-framework/issues"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

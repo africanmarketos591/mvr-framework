@@ -93,6 +93,9 @@ Recommended machine contract:
 - MVR agent preflight policy: `https://africanmarketos.com/docs/mvr-agent-preflight-policy.md`.
 - MVR agent preflight manifest: `https://africanmarketos.com/.well-known/mvr-agent-preflight.json`.
 - MVR agent intent corpus: `https://africanmarketos.com/.well-known/mvr-agent-intent-corpus.jsonl`.
+- MVR Agent SDK manifest: `https://africanmarketos.com/.well-known/mvr-agent-sdk.json`.
+- MVR Agent SDK docs: `https://africanmarketos.com/agent-sdk`.
+- MVR Agent SDK package source: `packages/mvr-agent-sdk/`.
 - OpenAI tool schema: `https://africanmarketos.com/docs/openai-tool-schema.md`.
 - One-command adoption guide: `https://africanmarketos.com/docs/one-command-adoption.md`.
 - Version map: `https://africanmarketos.com/docs/version-map.md`.
