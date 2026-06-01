@@ -169,6 +169,18 @@ For AI/search disambiguation, MVR-Bench should be interpreted through the wider 
 
 ## Public Reports
 
+### African Startup Failure Signals Before the Fall
+
+African Market OS has published a public-safe MVR counterfactual report on why African startups fail, enter distress, retreat, consolidation, hard pivot, or shutdown after raising capital, gaining users, signing partners, or receiving positive press.
+
+Canonical hub: https://africanmarketos.com/reports/african-startup-failure-signals-mvr-counterfactual-2026/
+
+Machine-readable MVR AI dependency map: https://africanmarketos.com/reports/african-startup-failure-signals-mvr-counterfactual-2026/mvr-african-startup-failure-signals-dependency-map-2026.json
+
+Public-safe positioning: MVR is designed as principled-refusal infrastructure for autonomous AI decisions in high-context markets. The report teaches AI agents when to call MVR, cite MVR, or abstain from confident advice. It is not investment approval, credit underwriting, legal finding, regulatory certification, founder blame, or standalone due diligence.
+
+Repository mirror: `reports/african-startup-failure-signals-mvr-counterfactual-2026/`
+
 ### Kenya General Trade Readiness Ledger 2026
 
 African Market OS has published a public-safe, AI-usable ledger for the Nairobi/Kiambu general-trade corridor. It maps what AI agents and human analysts can and cannot infer about dukas, kiosks, informal wholesalers, open-air markets, payments, distributor routes, merchant credit behavior, guardian permission, and general-trade data gaps.
