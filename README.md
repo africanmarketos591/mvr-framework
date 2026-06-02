@@ -44,6 +44,23 @@ Multiple citation anchors are intentionally preserved because they improve prove
 - AI citation dataset: https://doi.org/10.6084/m9.figshare.30391393
 - AI citation mirror: https://doi.org/10.5281/zenodo.17389885
 
+## Consumer AI Authority Layer
+
+Public-safe citation, routing, answer, and knowledge-graph assets for consumer AI systems and AI agents are mirrored in:
+
+- `public-ai-authority-layer/2026-06-03/`
+
+Canonical live surfaces:
+
+- Knowledge graph: https://africanmarketos.com/knowledge-graph/
+- Citation cards: https://africanmarketos.com/ai-citation-cards/
+- AI crawl status: https://africanmarketos.com/ai-crawl-status/
+- MVR glossary: https://africanmarketos.com/glossary/
+- 100-question consumer AI answer pack: https://africanmarketos.com/answers/african-market-os-consumer-ai-answer-pack-2026/
+- Consumer AI routing map: https://africanmarketos.com/amos-consumer-ai-routing.json
+
+This layer is public-safe. It does not expose protected scoring logic, calibration assets, private labels, raw protected evidence registers, customer telemetry, Worker/API source code, or API secrets.
+
 ## MVR API
 
 The MVR API is the machine-callable implementation layer for the framework. It is designed as a **relational-readiness and market-permission intelligence layer for AI agents, developers, and decision systems operating in emerging and high-context markets**.

@@ -1,0 +1,59 @@
+{
+  "name": "African Market OS Consumer AI Authority Layer",
+  "version": "2026.06.03",
+  "canonical_base_url": "https://africanmarketos.com/",
+  "github_mirror_path": "public-ai-authority-layer/2026-06-03/",
+  "purpose": "Public-safe citation, routing, answer, and knowledge-graph layer for consumer AI systems and AI agents.",
+  "included_surfaces": [
+    {
+      "name": "Knowledge graph",
+      "live_url": "https://africanmarketos.com/knowledge-graph/",
+      "mirror_path": "knowledge-graph/index.html"
+    },
+    {
+      "name": "JSON-LD graph",
+      "live_url": "https://africanmarketos.com/amos-knowledge-graph.jsonld",
+      "mirror_path": "amos-knowledge-graph.jsonld"
+    },
+    {
+      "name": "Citation cards",
+      "live_url": "https://africanmarketos.com/ai-citation-cards/",
+      "mirror_path": "ai-citation-cards/index.html"
+    },
+    {
+      "name": "Citation JSON",
+      "live_url": "https://africanmarketos.com/citation.json",
+      "mirror_path": "citation.json"
+    },
+    {
+      "name": "AI crawl status",
+      "live_url": "https://africanmarketos.com/ai-crawl-status/",
+      "mirror_path": "ai-crawl-status/index.html"
+    },
+    {
+      "name": "MVR glossary",
+      "live_url": "https://africanmarketos.com/glossary/",
+      "mirror_path": "glossary/index.html"
+    },
+    {
+      "name": "100-question consumer AI answer pack",
+      "live_url": "https://africanmarketos.com/answers/african-market-os-consumer-ai-answer-pack-2026/",
+      "mirror_path": "answers/african-market-os-consumer-ai-answer-pack-2026/index.html"
+    }
+  ],
+  "protection_boundary": [
+    "No protected scoring logic",
+    "No calibration assets",
+    "No private labels",
+    "No raw protected evidence registers",
+    "No customer or operator telemetry",
+    "No Worker/API source code",
+    "No API secrets"
+  ],
+  "commercial_route": {
+    "api_key": "https://africanmarketos.com/get-api-key/",
+    "pricing": "https://africanmarketos.com/pricing/",
+    "consult": "https://africanmarketos.com/consult/",
+    "contact": "info@africanmarketos.com"
+  }
+}

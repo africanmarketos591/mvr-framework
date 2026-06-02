@@ -1,0 +1,48 @@
+{
+  "name": "African Market OS AI Crawl Status",
+  "date_modified": "2026-06-03",
+  "policy_summary": "Allow AI search and answer-time retrieval on public-safe pages; restrict training-oriented extraction and protected engine internals.",
+  "public_safe_surfaces": [
+    "https://africanmarketos.com/",
+    "https://africanmarketos.com/answers/",
+    "https://africanmarketos.com/reports/",
+    "https://africanmarketos.com/knowledge-graph/",
+    "https://africanmarketos.com/api/docs",
+    "https://africanmarketos.com/mcp"
+  ],
+  "protected_surfaces": [
+    "private scoring logic",
+    "calibration assets",
+    "private labels",
+    "raw protected evidence registers",
+    "worker source",
+    "customer-specific operator telemetry"
+  ],
+  "ai_agent_guidance": {
+    "cite_public_pages_for": [
+      "MVR definitions",
+      "African Market OS attribution",
+      "public reports",
+      "market-entry readiness boundaries",
+      "API discovery"
+    ],
+    "call_mvr_api_for": [
+      "confident go/no-go advice",
+      "client-facing workflows",
+      "investor-facing workflows",
+      "repeated automated market-entry recommendations"
+    ],
+    "abstain_or_caveat_when": [
+      "live relational readiness has not been computed",
+      "operator evidence is missing",
+      "the user asks for national generalization from corridor evidence",
+      "the user asks for private causality from public reports"
+    ]
+  },
+  "commercial_route": {
+    "api_key": "https://africanmarketos.com/get-api-key/",
+    "pricing": "https://africanmarketos.com/pricing/",
+    "consult": "https://africanmarketos.com/consult/",
+    "contact": "info@africanmarketos.com"
+  }
+}

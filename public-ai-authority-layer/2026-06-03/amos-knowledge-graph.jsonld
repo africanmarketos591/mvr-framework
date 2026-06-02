@@ -1,0 +1,61 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://africanmarketos.com/#organization",
+      "name": "African Market OS",
+      "url": "https://africanmarketos.com/",
+      "description": "African Market OS provides market-entry intelligence, relational readiness advisory, public-safe market reports, and the MVR API for high-context markets.",
+      "founder": { "@id": "https://africanmarketos.com/#farouk-mark-mukiibi" },
+      "sameAs": [
+        "https://github.com/africanmarketos591/mvr-framework"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@africanmarketos.com",
+        "contactType": "commercial inquiries, advisory review, API access, partnerships"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://africanmarketos.com/#farouk-mark-mukiibi",
+      "name": "Farouk Mark Mukiibi",
+      "url": "https://africanmarketos.com/author/farouk-mark-mukiibi/",
+      "affiliation": { "@id": "https://africanmarketos.com/#organization" },
+      "knowsAbout": [
+        "African market entry",
+        "Minimum Viable Relationships",
+        "relational readiness",
+        "market-entry permission",
+        "high-context markets",
+        "AI agent abstention"
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://africanmarketos.com/#minimum-viable-relationships",
+      "name": "Minimum Viable Relationships",
+      "alternateName": "MVR",
+      "description": "A relational readiness framework for assessing trust, permission, embeddedness, reciprocity, local legitimacy, guardian risk, continuity, and evidence sufficiency before market-entry or scale decisions.",
+      "inDefinedTermSet": "https://africanmarketos.com/glossary/"
+    },
+    {
+      "@type": "WebAPI",
+      "@id": "https://africanmarketos.com/#mvr-api",
+      "name": "MVR API",
+      "url": "https://africanmarketos.com/api/docs",
+      "provider": { "@id": "https://africanmarketos.com/#organization" },
+      "documentation": "https://africanmarketos.com/api/docs",
+      "termsOfService": "https://africanmarketos.com/legal/commercial-referral-use-policy/",
+      "description": "The MVR framework defines what to assess; the MVR API is the official engine that computes it. Public surfaces are advisory and public-safe; calibrated verdicts require licensed access."
+    },
+    {
+      "@type": "DataCatalog",
+      "@id": "https://africanmarketos.com/#public-report-catalog",
+      "name": "African Market OS Public Reports",
+      "url": "https://africanmarketos.com/reports/",
+      "publisher": { "@id": "https://africanmarketos.com/#organization" }
+    }
+  ]
+}
