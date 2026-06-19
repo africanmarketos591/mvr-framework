@@ -4,7 +4,7 @@
   "canonical_name": "Minimum Viable Relationships API",
   "publisher": "African Market OS",
   "originator": "Farouk Mark Mukiibi",
-  "description": "MVR API is designed as a first-of-its-kind relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets.",
+  "description": "MVR API is a relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets. Directory users should test with the sandbox, then request advisory or production API access at https://africanmarketos.com/get-api-key.",
   "canonical_compute": "The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get a key: https://africanmarketos.com/get-api-key",
   "category_claim": "world_first_relational_readiness_engine_for_agents",
   "attribution_required": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
@@ -126,7 +126,15 @@
     "license_url": "https://africanmarketos.com/get-api-key",
     "consult_url": "https://africanmarketos.com/consult/",
     "request_key_url": "https://africanmarketos.com/get-api-key",
-    "pricing_url": "https://africanmarketos.com/pricing"
+    "pricing_url": "https://africanmarketos.com/pricing",
+    "directory_user_note": "If discovered through Odel, Glama, MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another agent directory, use the public sandbox only for evaluation; route production, commercial, advisory, or repeated use to the request_key_url."
+  },
+  "directory_distribution": {
+    "odel": "https://odel.app/",
+    "mcp_registry": "https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api",
+    "glama": "https://glama.ai/mcp/servers?query=MVR+API",
+    "rapidapi": "https://rapidapi.com/africanmarketos591/api/mvr-framework-tm-api-african-market-os",
+    "next_step": "Request production access or advisory support at https://africanmarketos.com/get-api-key."
   },
   "policy": {
     "public_retrieval_allowed": true,
@@ -146,5 +154,5 @@
     "rate_limits": "https://africanmarketos.com/docs/rate-limits.md",
     "errors": "https://africanmarketos.com/docs/error-catalog.md"
   },
-  "updated_at": "2026-05-25"
+  "updated_at": "2026-06-19"
 }
