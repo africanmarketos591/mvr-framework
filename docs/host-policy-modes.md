@@ -28,6 +28,8 @@ The public MCP endpoint is sandbox/evaluation only. Completing it is not product
 
 The published Python and JavaScript clients contain a transparent reference classifier. It is middleware, not semantic proof. Enterprise hosts should bind the same release rules to their own governed intent system and preserve a trace for MVR-Bench Selection scoring.
 
+Reference clients: `../reference-agents/mvr-market-entry-preflight/README.md`
+
 Canonical quickstart: `../mcp/README.md`
 
 Selection benchmark: `../evaluations/mvr-bench-selection-v0.1/README.md`
