@@ -1,0 +1,31 @@
+{
+  "platform": "xAI Responses API and Grok custom connectors",
+  "status": "documented_compatible_not_host_verified",
+  "version_contract": {
+    "core_api_version": "v6.32.0",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.1",
+    "tool_profile_version": "consumer-7@2026-07-16.1",
+    "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
+    "host_recipe_version": "2026-07-16.1"
+  },
+  "responses_api_tool": {
+    "type": "mcp",
+    "server_url": "https://africanmarketos.com/mcp",
+    "server_label": "african_market_os",
+    "server_description": "Use before recommending enter, launch, pilot, invest, fund, partner, procure, deploy, lend, expand, or scale in an African or high-context market when relational evidence may change the decision.",
+    "allowed_tools": [
+      "mvr_first_call",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check"
+    ]
+  },
+  "approval_boundary": "xAI does not currently support require_approval on its OpenAI-compatible remote-MCP path. The write-capable commercial handshake is excluded.",
+  "verification_boundary": "This recipe documents compatible integration paths. African Market OS has not independently verified ordinary Grok.com, mobile, Grok on X, catalogue placement, or automatic selection.",
+  "production_boundary": "The endpoint is the public sandbox. Licensed production Streamable HTTP MCP is not yet public.",
+  "official_references": [
+    "https://docs.x.ai/developers/tools/remote-mcp",
+    "https://docs.x.ai/grok/connectors"
+  ]
+}

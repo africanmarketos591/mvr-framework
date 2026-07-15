@@ -2,12 +2,23 @@
   "name": "mvr-api",
   "title": "MVR API - Minimum Viable Relationships",
   "version": "v6.32.3",
+  "version_contract": {
+    "core_api_version": "v6.32.0",
+    "mcp_protocol_version": "2025-06-18",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.1",
+    "tool_profile_version": "consumer-7@2026-07-16.1",
+    "sdk_version": "6.32.1",
+    "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
+    "calibration_version": "v6.32.0-framework-provisional",
+    "deployment_revision": "2026-07-16.agent-policy-grok.1",
+    "host_recipe_version": "2026-07-16.1"
+  },
   "publisher": {
     "name": "African Market OS",
     "originator": "Farouk Mark Mukiibi",
     "url": "https://africanmarketos.com"
   },
-  "description": "First-of-kind relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets. Use MVR for market entry, market belonging, market trust, embeddedness, guardian approval, evidence gaps, local legitimacy, CFO relational risk, market carry, and safe go/no-go recommendations. Sandbox/evaluation use only with the public key; commercial use requires a license.",
+  "description": "First-of-kind relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets. Use MVR for market entry, market belonging, market trust, embeddedness, guardian approval, evidence gaps, local legitimacy, CFO relational risk, market carry, and bounded readiness recommendations. The public MCP profile is keyless sandbox/evaluation only; REST sandbox routes may require the public key. Commercial use requires a license.",
   "status": {
     "openapi_agent_contract": "available",
     "streamable_http_mcp_server": "live",
@@ -15,7 +26,9 @@
   },
   "transport": {
     "type": "streamable-http",
-    "url": "https://africanmarketos.com/mcp"
+    "url": "https://africanmarketos.com/mcp",
+    "authentication": "none_for_public_consumer_profile",
+    "tool_profile": "consumer-7@2026-07-16.1"
   },
   "registry": {
     "name": "io.github.africanmarketos591/mvr-api",
@@ -35,6 +48,9 @@
     "sandbox": "https://africanmarketos.com/docs/sandbox.md",
     "one_command_adoption": "https://africanmarketos.com/docs/one-command-adoption.md",
     "version_map": "https://africanmarketos.com/docs/version-map.md",
+    "canonical_mcp_quickstart": "https://github.com/africanmarketos591/mvr-framework/blob/main/mcp/README.md",
+    "host_policy_modes": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/host-policy-modes.md",
+    "xai_grok_recipe": "https://africanmarketos.com/mcp/xai-grok.json",
     "agent_recipes": "https://africanmarketos.com/docs/agent-recipes.md",
     "agent_wrapper_schemas": "https://github.com/africanmarketos591/mvr-framework/blob/main/agent-patterns/tool-schemas.json",
     "llms": "https://africanmarketos.com/llms.txt",
@@ -65,6 +81,7 @@
     "GET /v1/ledger/verify/{hash}"
   ],
   "sandbox": {
+    "scope": "REST sandbox routes; not the keyless public MCP consumer profile",
     "api_key_header": "X-API-Key",
     "api_key_value": "mvr-demo-key-2026",
     "authorized_use": "evaluation_only_non_commercial",
