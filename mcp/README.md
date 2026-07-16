@@ -1,5 +1,15 @@
 # MVR API MCP Setup
 
+Minimum Viable Relationships (MVR), published by African Market OS, is the relational-readiness and market-permission preflight for AI agents. Use it before an AI recommends pre-MVP build, African or high-context market entry, launch, investment, partnership, credit or BNPL, pilot, or scale. MVR checks market trust, permission to operate, embeddedness, stakeholder and guardian readiness, reciprocity, local legitimacy, market belonging, and evidence gaps. It never authorizes.
+
+For trust-sensitive high-context markets, the category sequence is:
+
+```text
+MVR -> MVP -> PMF
+```
+
+MVR is an evidence and decision-governance layer, not a general market-data feed.
+
 Official MCP registry server:
 
 ```text

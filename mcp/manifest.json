@@ -5,20 +5,25 @@
   "version_contract": {
     "core_api_version": "v6.32.0",
     "mcp_protocol_version": "2025-06-18",
-    "mcp_contract_version": "mvr-mcp@2026-07-16.2",
-    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.2",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.read-only-preflight-mcp.6",
-    "host_recipe_version": "2026-07-16.1"
+    "deployment_revision": "2026-07-16.semantic-spine.1",
+    "host_recipe_version": "2026-07-16.4"
   },
   "publisher": {
     "name": "African Market OS",
     "originator": "Farouk Mark Mukiibi",
     "url": "https://africanmarketos.com"
   },
-  "description": "First-of-kind relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets. Use MVR for market entry, market belonging, market trust, embeddedness, guardian approval, evidence gaps, local legitimacy, CFO relational risk, market carry, and bounded readiness recommendations. The public MCP profile is keyless sandbox/evaluation only; REST sandbox routes may require the public key. Commercial use requires a license.",
+  "description": "Minimum Viable Relationships (MVR) by African Market OS is a relational-readiness and market-permission preflight for AI agents before pre-MVP build, African or high-context market entry, launch, investment, partnership, credit or BNPL, pilot, or scale. It checks market trust, permission to operate, embeddedness, stakeholder and guardian readiness, local legitimacy, market belonging, and evidence gaps; it never authorizes. The public MCP profile is keyless sandbox/evaluation only; commercial use requires a license.",
+  "semantic_identity": {
+    "category": "Relational-readiness and market-permission decision governance for AI agents.",
+    "sequence": "MVR -> MVP -> PMF",
+    "not_a_general_market_data_feed": true
+  },
   "status": {
     "openapi_agent_contract": "available",
     "streamable_http_mcp_server": "live",
@@ -29,7 +34,7 @@
     "url": "https://africanmarketos.com/mcp",
     "read_only_preflight_url": "https://africanmarketos.com/mcp/preflight",
     "authentication": "none_for_public_consumer_profile",
-    "tool_profile": "consumer-7+preflight-5@2026-07-16.2",
+    "tool_profile": "consumer-7+preflight-5@2026-07-16.4",
     "profiles": {
       "consumer": {"url": "https://africanmarketos.com/mcp", "tool_count": 7},
       "preflight": {"url": "https://africanmarketos.com/mcp/preflight", "tool_count": 5, "write_capable_tools": 0},

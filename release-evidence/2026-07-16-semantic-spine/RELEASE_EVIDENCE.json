@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "checked_at_utc": "2026-07-16T16:16:27.5613118Z",
+  "release_scope": "Compact semantic identity, per-tool selection metadata, portable routing boundaries, version-contract synchronization, and executable public-contract validation",
+  "version_contract": {
+    "core_api_version": "v6.32.0",
+    "mcp_protocol_version": "2025-06-18",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
+    "sdk_version": "6.32.1",
+    "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
+    "calibration_version": "v6.32.0-framework-provisional",
+    "deployment_revision": "2026-07-16.semantic-spine.1",
+    "host_recipe_version": "2026-07-16.4",
+    "mcp_registry_manifest_version": "6.32.3"
+  },
+  "deployment": {
+    "cloudflare_version_id": "6d41817a-cc41-42ba-92ae-75c92e9aa139",
+    "worker_startup_ms": 30,
+    "private_worker_sha256": "8ece05edff6006e7b89990cb0d00a6154a992400bebae8f880065eff82ead54c",
+    "private_worker_test_runner_sha256": "fb98bfd0c42a6bf30fc9aa221d604f6c9e1fc422acef57cde9a65432e7ecbe4f"
+  },
+  "public_repository": {
+    "repository": "africanmarketos591/mvr-framework",
+    "branch": "agent/mcp-contract-policy-grok",
+    "source_commit_before_release": "1469c4c",
+    "draft_pull_request": "https://github.com/africanmarketos591/mvr-framework/pull/1"
+  },
+  "test_chain": {
+    "worker_syntax": "PASS",
+    "worker_regression_suites": "110/110 PASS",
+    "wrangler_dry_run": "PASS",
+    "repository_contract_validator_local_and_live": "PASS",
+    "python_reference_client_self_test": "PASS",
+    "javascript_reference_client_self_test": "PASS",
+    "xai_remote_mcp_validator_self_test": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "live_canaries": {
+    "preflight_tool_count": 5,
+    "preflight_tools": [
+      "mvr_first_call",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check"
+    ],
+    "semantic_identity_surfaces": [
+      "/.well-known/ai-tool-access.json",
+      "/.well-known/mcp/server-card.json",
+      "/api/openapi.agent.json",
+      "/mcp/preflight initialize",
+      "/mcp/README.md",
+      "/mcp/xai-grok.json"
+    ],
+    "uganda_bnpl_decision_domain": "credit_adjacent_permission",
+    "uganda_bnpl_not_a_verdict": true,
+    "uganda_bnpl_max_safe_action": "bounded discovery and evidence recruitment only",
+    "grok_custom_connector": "operator_verified_install_and_explicit_execution_2026-07-16",
+    "grok_automatic_selection": "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16",
+    "grok_selection_rate": null
+  },
+  "public_file_sha256": {
+    "server.json": "476a8f0f16a08a5ee43c62df6b36286c9efeb57097ca34b6ddafe28582a83c41",
+    "mcp/README.md": "ecb668e706ddac376d559dbec45b662693b1a53bd886545bdae486e92b418dcf",
+    "mcp/manifest.json": "32edcfa2235ee99ad0d779827a0392674f672dadf7327b7fafcf7ffecc042667",
+    "mcp/xai-grok.json": "0733b978d848e9302076171fb06660b6a9e7bdcb1bd8013f8fcddce0f0b70ecc",
+    "docs/version-map.md": "4a3e51a67726cea75aafeb9b2bee431ca7d26dd6e3aeb34810e353d00e97f1c4",
+    "scripts/validate_mcp_public_contract.py": "070cb9ce6c7e341367f121f6c6e1e736f17801c6ff2ffd71c5ccf352fafe9c3d"
+  },
+  "truth_boundaries": [
+    "MVR evaluates whether evidence supports relational readiness dimensions; it does not directly observe or objectively measure social trust.",
+    "The claim that every major consumer AI already knows MVR or African Market OS was not tested and is not asserted.",
+    "A single Grok automatic-selection observation is evidence of feasibility, not a benchmark score or general selection rate.",
+    "Metadata improves routing only where a host can access, install, or index the tool; it does not create catalogue placement.",
+    "The public core remains v6.32.0; contract, profile, SDK, policy, calibration, deployment, and registry versions remain separately labeled.",
+    "Public sandbox output is not production scoring, approval, certification, underwriting, legal advice, or autonomous execution authority."
+  ]
+}

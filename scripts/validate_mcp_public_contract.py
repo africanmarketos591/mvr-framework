@@ -14,13 +14,13 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 EXPECTED = {
     "core_api_version": "v6.32.0",
     "mcp_protocol_version": "2025-06-18",
-    "mcp_contract_version": "mvr-mcp@2026-07-16.2",
-    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.2",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.read-only-preflight-mcp.6",
-    "host_recipe_version": "2026-07-16.1",
+    "deployment_revision": "2026-07-16.semantic-spine.1",
+    "host_recipe_version": "2026-07-16.4",
 }
 PUBLIC_TOOLS = [
     "mvr_first_call",
@@ -80,7 +80,9 @@ def validate_local() -> None:
     require(recipe.get("status") == "xai_responses_api_remote_mcp_controlled_canary_verified", "xAI API canary status")
     statuses = recipe.get("verification_status", {})
     require(statuses.get("xai_api_compatibility") == "verified_live_2026-07-16", "xAI API status")
-    require(all(statuses.get(k) == "unverified" for k in ("grok_custom_connector", "grok_automatic_selection", "grok_business_admin_provisioning")), "Grok statuses")
+    require(statuses.get("grok_custom_connector") == "operator_verified_install_and_explicit_execution_2026-07-16", "Grok connector status")
+    require(statuses.get("grok_automatic_selection") == "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16", "Grok selection observation boundary")
+    require(statuses.get("grok_business_admin_provisioning") == "unverified", "Grok Business status")
     require(recipe["responses_api_tool"].get("allowed_tools") == XAI_TOOLS, "xAI tool allowlist")
     require(recipe["responses_api_tool"].get("server_url") == "https://africanmarketos.com/mcp/preflight", "xAI read-only endpoint")
     require(recipe.get("grok_custom_connector", {}).get("expected_tools") == XAI_TOOLS, "Grok connector tool contract")
@@ -90,6 +92,12 @@ def validate_local() -> None:
     require(recipe.get("live_validation", {}).get("cases_passed") == 3, "xAI live canary evidence")
     require(recipe.get("live_validation", {}).get("server_url") == "https://africanmarketos.com/mcp/preflight", "xAI live canary endpoint")
     require(recipe.get("live_validation", {}).get("summary_sha256") == "68958eb9916e42d581cbdb8b417eda1dd72e50f6d0e0f132fc127c3f03fb1e0d", "xAI evidence hash")
+    connector_validation = recipe.get("grok_com_operator_observation", {})
+    require(connector_validation.get("tools_discovered") == 5, "Grok connector discovery evidence")
+    require(connector_validation.get("explicit_execution", {}).get("status") == "pass", "Grok connector execution evidence")
+    require(connector_validation.get("pre_metadata_automatic_selection", {}).get("status") == "miss", "Grok pre-metadata miss evidence")
+    require(connector_validation.get("post_metadata_automatic_selection", {}).get("status") == "pass", "Grok post-metadata selection evidence")
+    require("not a frozen-track selection rate" in connector_validation.get("scoring_boundary", ""), "Grok selection rate must remain unclaimed")
     require(observatory.get("status") == "preregistered_no_host_results_published", "observatory status")
     require(all(host.get("status") == "not_run" and host.get("selection_rate") is None for host in observatory.get("hosts", {}).values()), "invented repository host score")
 
@@ -126,7 +134,7 @@ def validate_live() -> None:
     })
 
     require(access["version_contract"] == {**access["version_contract"], **EXPECTED}, "live version contract mismatch")
-    require(recipe["verification_status"]["grok_automatic_selection"] == "unverified", "live Grok overclaim")
+    require(recipe["verification_status"]["grok_automatic_selection"] == "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16", "live Grok selection boundary")
     require(recipe["verification_status"]["xai_api_compatibility"] == "verified_live_2026-07-16", "live xAI API evidence missing")
     require([tool["name"] for tool in listed["result"]["tools"]] == PUBLIC_TOOLS, "live seven-tool order")
     require([tool["name"] for tool in preflight["result"]["tools"]] == XAI_TOOLS, "live five-tool preflight order")

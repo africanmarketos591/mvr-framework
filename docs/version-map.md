@@ -10,14 +10,14 @@ Every integration should preserve these fields separately:
 |---|---|---|
 | `core_api_version` | `v6.32.0` | Protected Worker/API runtime. |
 | `mcp_protocol_version` | `2025-06-18` | Streamable HTTP MCP protocol negotiated by the public server. |
-| `mcp_contract_version` | `mvr-mcp@2026-07-16.2` | Public MCP schemas and transport contract. |
-| `tool_profile_version` | `consumer-7+preflight-5@2026-07-16.2` | Ordered seven-tool consumer profile plus five-tool read-only preflight profile. |
+| `mcp_contract_version` | `mvr-mcp@2026-07-16.4` | Public MCP schemas, discovery metadata, and transport contract. |
+| `tool_profile_version` | `consumer-7+preflight-5@2026-07-16.4` | Ordered seven-tool consumer profile plus five-tool read-only preflight profile. |
 | `sdk_version` | `6.32.1` | Current published TypeScript/Python SDK generation line. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-07-16.1` | Host-policy middleware and selection boundary. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-07-16.read-only-preflight-mcp.6` | Stable application build revision. |
+| `deployment_revision` | `2026-07-16.semantic-spine.1` | Stable application build revision. |
 | `deployment_provider_revision` | release evidence | Provider-generated revision recorded after deployment, not self-embedded. |
-| `host_recipe_version` | `2026-07-16.1` | Microsoft, Google, OpenAI, Anthropic, and xAI recipe family. |
+| `host_recipe_version` | `2026-07-16.4` | Microsoft, Google, OpenAI, Anthropic, and xAI recipe family. |
 
 Machine-readable source: `https://africanmarketos.com/.well-known/mvr-version.json`.
 
@@ -32,7 +32,7 @@ Machine-readable source: `https://africanmarketos.com/.well-known/mvr-version.js
 | TypeScript SDK generation line | `6.32.1` | Current | Package: `@africanmarketos/mvr-api-client`; older `2.6.x` is archived compatibility. |
 | Python SDK generation line | `6.32.1` | Current | Package: `mvr-api-client`; older `2.6.x` is archived compatibility. |
 | REST sandbox | `v6.32.0` runtime | Current, limited | Uses `X-API-Key: mvr-demo-key-2026` where the route contract requires it; non-commercial evaluation only. |
-| Public MCP sandbox | `consumer-7+preflight-5@2026-07-16.2` | Current, limited | Keyless seven-tool default plus a five-tool read-only profile at `/mcp/preflight`; non-commercial evaluation only. |
+| Public MCP sandbox | `consumer-7+preflight-5@2026-07-16.4` | Current, limited | Keyless seven-tool default plus a five-tool read-only profile at `/mcp/preflight`; non-commercial evaluation only. |
 
 ## Historical / Archived Lines
 

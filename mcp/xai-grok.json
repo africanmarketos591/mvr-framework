@@ -3,20 +3,20 @@
   "status": "xai_responses_api_remote_mcp_controlled_canary_verified",
   "verification_status": {
     "xai_api_compatibility": "verified_live_2026-07-16",
-    "grok_custom_connector": "unverified",
-    "grok_automatic_selection": "unverified",
+    "grok_custom_connector": "operator_verified_install_and_explicit_execution_2026-07-16",
+    "grok_automatic_selection": "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16",
     "grok_business_admin_provisioning": "unverified"
   },
   "version_contract": {
     "core_api_version": "v6.32.0",
     "mcp_protocol_version": "2025-06-18",
-    "mcp_contract_version": "mvr-mcp@2026-07-16.2",
-    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.2",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.read-only-preflight-mcp.6",
-    "host_recipe_version": "2026-07-16.1"
+    "deployment_revision": "2026-07-16.semantic-spine.1",
+    "host_recipe_version": "2026-07-16.4"
   },
   "grok_custom_connector": {
     "setup_url": "https://grok.com/connectors",
@@ -30,13 +30,13 @@
       "mvr_context_compile",
       "mvr_decision_check"
     ],
-    "status": "documented_not_yet_verified_in_grok_com"
+    "status": "operator_verified_install_and_explicit_execution_2026-07-16"
   },
   "responses_api_tool": {
     "type": "mcp",
     "server_url": "https://africanmarketos.com/mcp/preflight",
     "server_label": "african_market_os",
-    "server_description": "Use before recommending enter, launch, pilot, invest, fund, partner, procure, deploy, lend, expand, or scale in an African or high-context market when relational evidence may change the decision.",
+    "server_description": "Use MVR relational-readiness preflight before recommending pre-MVP build, market entry, launch, pilot, investment, partnership, lending or BNPL, deployment, expansion, or scale in an African or high-context market. It checks market trust, permission, embeddedness, stakeholder readiness, and evidence gaps; it never authorizes.",
     "allowed_tools": [
       "mvr_first_call",
       "mvr_entity_resolve",
@@ -57,8 +57,38 @@
     "summary_sha256": "68958eb9916e42d581cbdb8b417eda1dd72e50f6d0e0f132fc127c3f03fb1e0d",
     "evidence": "https://github.com/africanmarketos591/mvr-framework/tree/agent/mcp-contract-policy-grok/release-evidence/2026-07-16-read-only-preflight-mcp"
   },
+  "grok_com_operator_observation": {
+    "date": "2026-07-16",
+    "host_surface": "grok.com custom connector",
+    "host_model": "not disclosed by the host UI",
+    "connector_installation": "verified by operator observation",
+    "tools_discovered": 5,
+    "explicit_execution": {
+      "status": "pass",
+      "tool": "mvr_first_call",
+      "decision_domain": "credit_adjacent_permission",
+      "not_a_verdict": true
+    },
+    "pre_metadata_automatic_selection": {
+      "status": "miss",
+      "applicable_cases_observed": 1,
+      "tools_called": [],
+      "host_used_web_search_instead": true
+    },
+    "post_metadata_automatic_selection": {
+      "status": "pass",
+      "applicable_cases_observed": 1,
+      "tools_called": [
+        "mvr_first_call",
+        "mvr_entity_resolve"
+      ],
+      "host_used_web_search_as_complement": true,
+      "host_trace_source": "Grok Sources panel"
+    },
+    "scoring_boundary": "These sequential pre/post product observations used different prompts and metadata revisions. They are evidence of a corrected selection failure, not a frozen-track selection rate or host leaderboard result."
+  },
   "approval_boundary": "xAI does not currently support require_approval on its OpenAI-compatible remote-MCP path. The dedicated endpoint therefore exposes only five read-only tools, and the Responses API recipe also retains allowed_tools as defense in depth.",
-  "verification_boundary": "The xAI Responses API remote-MCP path passed a controlled three-case Grok 4.5 canary using the same five-tool set. The dedicated read-only endpoint is ready for custom-connector testing, but Grok.com installation, mobile, Grok on X, catalogue placement, Business provisioning, ordinary-chat automatic selection, and the frozen 40-case observatory remain unverified or not run.",
+  "verification_boundary": "The xAI Responses API remote-MCP path passed a controlled three-case Grok 4.5 canary. A Grok.com custom connector was installed, discovered all five tools, and executed mvr_first_call when explicitly requested. Its first natural-language Uganda BNPL case missed MVR and used web search; after selection metadata was corrected, a fresh supplier-finance BNPL prompt automatically called mvr_first_call and mvr_entity_resolve while using web research as complementary context. Mobile, Grok on X, catalogue placement, Business provisioning, general ordinary-chat selection rates, and the frozen 40-case observatory remain unverified or not run.",
   "production_boundary": "The endpoint is the public sandbox. Licensed production Streamable HTTP MCP is not yet public.",
   "official_references": [
     "https://docs.x.ai/developers/tools/remote-mcp",
