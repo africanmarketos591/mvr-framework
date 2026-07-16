@@ -14,10 +14,10 @@ This release adds `https://africanmarketos.com/mcp/preflight`, a server-enforced
 
 ## Grok.com Observation Addendum
 
-The Custom Connector was subsequently installed in `grok.com`, discovered all five tools, and executed `mvr_first_call` when explicitly requested. The first natural-language Uganda BNPL prompt did not automatically select MVR and used web search instead. Selection metadata was then strengthened and deployed without changing `core_api_version: v6.32.0`.
+The Custom Connector was subsequently installed in `grok.com`, discovered all five tools, and executed `mvr_first_call` when explicitly requested. The first natural-language Uganda BNPL prompt did not automatically select MVR and used web search instead. Selection metadata was then strengthened and deployed without changing `core_api_version: v6.32.0`. A fresh supplier-finance BNPL prompt then automatically called `mvr_first_call` and `mvr_entity_resolve`, confirmed in Grok's own Sources panel.
 
 See `GROK_COM_OPERATOR_OBSERVATION_2026-07-16.json` for the explicit-execution pass, automatic-selection miss, remediation, hashes, and claim boundaries.
 
 ## Not Yet Claimed
 
-Reliable ordinary-chat automatic selection, Grok Business or Enterprise provisioning, mobile/Grok-on-X connector behavior, and the frozen 40-case host result remain unverified or not run.
+Reliable automatic-selection rates, Grok Business or Enterprise provisioning, mobile/Grok-on-X connector behavior, and the frozen 40-case host result remain unverified or not run. The sequential pre/post observations are not a benchmark percentage.

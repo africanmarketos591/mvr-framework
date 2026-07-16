@@ -46,12 +46,12 @@
       "core_api_version": "v6.32.0",
       "mcp_contract_version": "mvr-mcp@2026-07-16.3",
       "tool_profile_version": "consumer-7+preflight-5@2026-07-16.3",
-      "host_recipe_version": "2026-07-16.2",
-      "deployment_revision": "2026-07-16.selection-metadata.1"
+      "host_recipe_version": "2026-07-16.3",
+      "deployment_revision": "2026-07-16.selection-metadata.2"
     },
     "deployment": {
-      "cloudflare_version_id": "841e0b72-c293-45c9-aa01-34cef1f56b24",
-      "worker_sha256": "6d8c004ed30fb2a3934bcec4bbedb87289ba8d94bc904da3199c0b7a7c81244f",
+      "cloudflare_version_id": "da1a0148-273f-4c7c-8773-37c259c51ca5",
+      "worker_sha256": "dd27b7e486d19c0c7f933d0eba3edd324eef869402cf316552adc908df9836ae",
       "test_runner_sha256": "4c787154ed1a09f900312093e1e50794a380790e8bb823dad0cc33413b215bea",
       "worker_tests": {
         "passed": 110,
@@ -62,10 +62,16 @@
   "post_remediation_natural_language_case": {
     "prompt": "Help us validate if we should proceed with supplier finance BNPL in Uganda - focus on trust and evidence gaps",
     "prose_contains_mvr_specific_output": true,
-    "attribution_status": "pending_exact_host_tool_call_confirmation",
-    "reason": "MVR-shaped prose alone is not proof of a tool call. The exact connected-tool trace must be confirmed before this case is counted as an automatic-selection pass."
+    "attribution_status": "pass_by_host_sources_panel",
+    "automatic_selection": "pass",
+    "tools_called": [
+      "mvr_first_call",
+      "mvr_entity_resolve"
+    ],
+    "host_used_web_search_as_complement": true,
+    "reason": "The Grok Sources panel visibly recorded both African Market OS tool calls. This is stronger attribution than MVR-shaped prose or a model self-report."
   },
-  "scoring_boundary": "This is a product observation, not a frozen 40-case selection score, host ranking, or claim of reliable automatic selection.",
+  "scoring_boundary": "The pre-remediation miss and post-remediation pass used different prompts and metadata revisions. They demonstrate a corrected selection failure but do not form a comparable rate, frozen 40-case score, host ranking, or claim of reliable automatic selection.",
   "privacy_boundary": "No raw user evidence, API keys, contact details, or full private chat transcript is included.",
   "official_references": [
     "https://docs.x.ai/grok/connectors",
