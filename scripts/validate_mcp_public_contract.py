@@ -14,12 +14,12 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 EXPECTED = {
     "core_api_version": "v6.32.0",
     "mcp_protocol_version": "2025-06-18",
-    "mcp_contract_version": "mvr-mcp@2026-07-16.1",
-    "tool_profile_version": "consumer-7@2026-07-16.1",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.2",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.2",
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.xai-api-live-validated.5",
+    "deployment_revision": "2026-07-16.read-only-preflight-mcp.6",
     "host_recipe_version": "2026-07-16.1",
 }
 PUBLIC_TOOLS = [
@@ -82,10 +82,14 @@ def validate_local() -> None:
     require(statuses.get("xai_api_compatibility") == "verified_live_2026-07-16", "xAI API status")
     require(all(statuses.get(k) == "unverified" for k in ("grok_custom_connector", "grok_automatic_selection", "grok_business_admin_provisioning")), "Grok statuses")
     require(recipe["responses_api_tool"].get("allowed_tools") == XAI_TOOLS, "xAI tool allowlist")
+    require(recipe["responses_api_tool"].get("server_url") == "https://africanmarketos.com/mcp/preflight", "xAI read-only endpoint")
+    require(recipe.get("grok_custom_connector", {}).get("expected_tools") == XAI_TOOLS, "Grok connector tool contract")
+    require(recipe.get("grok_custom_connector", {}).get("server_url") == "https://africanmarketos.com/mcp/preflight", "Grok connector endpoint")
     require("mvr_commercial_handshake" not in recipe["responses_api_tool"], "xAI handshake exposure")
     require("require_approval" not in recipe["responses_api_tool"], "unsupported xAI approval field")
     require(recipe.get("live_validation", {}).get("cases_passed") == 3, "xAI live canary evidence")
-    require(recipe.get("live_validation", {}).get("summary_sha256") == "f0275b5d3f6ac9fdf831588b4198cd47655127a0f4fe5c86f85e448ab4af2e6d", "xAI evidence hash")
+    require(recipe.get("live_validation", {}).get("server_url") == "https://africanmarketos.com/mcp/preflight", "xAI live canary endpoint")
+    require(recipe.get("live_validation", {}).get("summary_sha256") == "68958eb9916e42d581cbdb8b417eda1dd72e50f6d0e0f132fc127c3f03fb1e0d", "xAI evidence hash")
     require(observatory.get("status") == "preregistered_no_host_results_published", "observatory status")
     require(all(host.get("status") == "not_run" and host.get("selection_rate") is None for host in observatory.get("hosts", {}).values()), "invented repository host score")
 
@@ -111,6 +115,11 @@ def validate_live() -> None:
     recipe = fetch_json("https://africanmarketos.com/mcp/xai-grok.json")
     observatory = fetch_json("https://africanmarketos.com/.well-known/mvr-selection-observatory.json")
     listed = fetch_json("https://africanmarketos.com/mcp", {"jsonrpc": "2.0", "id": 1, "method": "tools/list", "params": {}})
+    preflight = fetch_json("https://africanmarketos.com/mcp/preflight", {"jsonrpc": "2.0", "id": 11, "method": "tools/list", "params": {}})
+    blocked_write = fetch_json("https://africanmarketos.com/mcp/preflight", {
+        "jsonrpc": "2.0", "id": 12, "method": "tools/call",
+        "params": {"name": "mvr_commercial_handshake", "arguments": {"user_confirmed_submission": True}},
+    })
     bnpl = fetch_json("https://africanmarketos.com/mcp", {
         "jsonrpc": "2.0", "id": 2, "method": "tools/call",
         "params": {"name": "mvr_first_call", "arguments": {"question": "buy-now-pay-later product for small retailers in Kampala", "country": "UG", "sector": "retail"}},
@@ -120,6 +129,9 @@ def validate_live() -> None:
     require(recipe["verification_status"]["grok_automatic_selection"] == "unverified", "live Grok overclaim")
     require(recipe["verification_status"]["xai_api_compatibility"] == "verified_live_2026-07-16", "live xAI API evidence missing")
     require([tool["name"] for tool in listed["result"]["tools"]] == PUBLIC_TOOLS, "live seven-tool order")
+    require([tool["name"] for tool in preflight["result"]["tools"]] == XAI_TOOLS, "live five-tool preflight order")
+    require(all(tool.get("annotations", {}).get("readOnlyHint") is True for tool in preflight["result"]["tools"]), "live preflight read-only annotations")
+    require("preflight profile" in blocked_write.get("error", {}).get("message", ""), "live preflight write rejection")
     structured = bnpl["result"]["structuredContent"]
     require(structured["decision_domain"] == "credit_adjacent_permission", "live BNPL routing")
     require(structured["not_a_verdict"] is True, "live first-call verdict boundary")

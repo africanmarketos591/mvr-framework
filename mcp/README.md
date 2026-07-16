@@ -14,6 +14,14 @@ https://africanmarketos.com/mcp
 
 The public seven-tool profile is keyless and limited to non-commercial sandbox evaluation. Do not add a private REST key to this endpoint.
 
+Hosts that discover every tool exposed by a connector URL and do not offer a per-tool allowlist should use the read-only profile:
+
+```text
+https://africanmarketos.com/mcp/preflight
+```
+
+It exposes exactly the five canonical preflight tools and has no write-capable action. The xAI/Grok recipe uses this endpoint.
+
 ## Canonical Quickstart
 
 This file is the source quickstart for generated MCP documentation.
@@ -87,9 +95,9 @@ Wrapper names such as `mvr_preflight_market_entry` are host-side expert mappings
 - Google Agent Registry / ADK: `https://africanmarketos.com/mcp/google-adk.json`
 - OpenAI Responses API: `https://africanmarketos.com/mcp/openai-responses.json`
 - Anthropic Messages API: `https://africanmarketos.com/mcp/anthropic-messages.json`
-- xAI Responses API / Grok custom connectors: `https://africanmarketos.com/mcp/xai-grok.json`
+- xAI Responses API / Grok custom connectors: `https://africanmarketos.com/mcp/xai-grok.json` (server URL: `https://africanmarketos.com/mcp/preflight`)
 
-The xAI recipe documents compatible integration paths. It is not evidence that an ordinary unconfigured Grok conversation automatically discovers or selects MVR.
+The xAI API path has passed a controlled Grok 4.5 canary. The Grok custom-connector setup is documented but remains unverified until installed in Grok.com. Neither result is evidence that an ordinary unconfigured Grok conversation automatically discovers or selects MVR.
 
 ## Verification and Outcomes
 

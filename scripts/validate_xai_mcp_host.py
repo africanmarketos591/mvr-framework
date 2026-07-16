@@ -21,7 +21,7 @@ from typing import Any
 
 
 XAI_API = "https://api.x.ai/v1"
-MCP_URL = "https://africanmarketos.com/mcp"
+MCP_URL = "https://africanmarketos.com/mcp/preflight"
 DEFAULT_MODEL = "grok-4.5"
 SERVER_LABEL = "african_market_os"
 SERVER_DESCRIPTION = (

@@ -1,0 +1,70 @@
+{
+  "schema_version": "mvr-read-only-preflight-release-evidence@2026-07-16.1",
+  "status": "verified_live",
+  "date": "2026-07-16",
+  "scope": "Server-enforced five-tool read-only Streamable HTTP MCP profile for hosts that discover every tool exposed by a connector URL.",
+  "trigger": {
+    "observed_host_guidance": "Grok Custom Connectors discover the tools exposed by the supplied server URL.",
+    "risk": "The seven-tool consumer endpoint includes mvr_commercial_handshake, while the xAI OpenAI-compatible path does not support require_approval.",
+    "resolution": "Preserve /mcp and /mcp/full; add /mcp/preflight with only the five canonical read-only market-preflight tools."
+  },
+  "version_contract": {
+    "core_api_version": "v6.32.0",
+    "mcp_protocol_version": "2025-06-18",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.2",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.2",
+    "sdk_version": "6.32.1",
+    "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
+    "calibration_version": "v6.32.0-framework-provisional",
+    "deployment_revision": "2026-07-16.read-only-preflight-mcp.6",
+    "host_recipe_version": "2026-07-16.1"
+  },
+  "deployment": {
+    "cloudflare_version_id": "156fedde-b79c-45bd-aabf-35e65dbc342a",
+    "worker_sha256": "23f4951203fd02f58f244da86407b5226d31ae06e8e6872b1dc2ff5beec692ad",
+    "test_runner_sha256": "5d2401df1ca2aa439e668a8652f57366a628ceac708806848cb6f7e3f04c5198"
+  },
+  "live_endpoint_contract": {
+    "url": "https://africanmarketos.com/mcp/preflight",
+    "tool_count": 5,
+    "tools": [
+      "mvr_first_call",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check"
+    ],
+    "write_capable_tools": 0,
+    "direct_commercial_handshake_call": "rejected_unknown_tool_in_preflight_profile",
+    "uganda_bnpl_domain": "credit_adjacent_permission",
+    "uganda_bnpl_not_a_verdict": true,
+    "consumer_profile_regression_tool_count": 7,
+    "full_profile_regression_tool_count": 22
+  },
+  "verification": {
+    "worker_test_suites": {"passed": 110, "failed": 0},
+    "wrangler_dry_run": "pass",
+    "public_contract_local_and_live": "pass",
+    "xai_remote_mcp": {
+      "model": "grok-4.5",
+      "cases_passed": 3,
+      "cases_run": 3,
+      "store": false,
+      "server_url": "https://africanmarketos.com/mcp/preflight",
+      "recorded_cost_usd": 0.077002,
+      "summary_sha256": "68958eb9916e42d581cbdb8b417eda1dd72e50f6d0e0f132fc127c3f03fb1e0d",
+      "result": "pass"
+    }
+  },
+  "non_claims": [
+    "This does not verify installation in the Grok.com Custom Connector UI.",
+    "This does not verify automatic selection in ordinary unconfigured Grok conversations.",
+    "This does not verify Grok Business or Enterprise administrator provisioning.",
+    "This public endpoint remains sandbox and evaluation only; it is not a licensed production MCP transport."
+  ],
+  "official_references": [
+    "https://docs.x.ai/grok/connectors",
+    "https://docs.x.ai/developers/tools/remote-mcp"
+  ]
+}
+

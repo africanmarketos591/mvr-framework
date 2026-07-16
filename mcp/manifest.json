@@ -5,12 +5,12 @@
   "version_contract": {
     "core_api_version": "v6.32.0",
     "mcp_protocol_version": "2025-06-18",
-    "mcp_contract_version": "mvr-mcp@2026-07-16.1",
-    "tool_profile_version": "consumer-7@2026-07-16.1",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.2",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.2",
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.xai-api-live-validated.5",
+    "deployment_revision": "2026-07-16.read-only-preflight-mcp.6",
     "host_recipe_version": "2026-07-16.1"
   },
   "publisher": {
@@ -27,8 +27,14 @@
   "transport": {
     "type": "streamable-http",
     "url": "https://africanmarketos.com/mcp",
+    "read_only_preflight_url": "https://africanmarketos.com/mcp/preflight",
     "authentication": "none_for_public_consumer_profile",
-    "tool_profile": "consumer-7@2026-07-16.1"
+    "tool_profile": "consumer-7+preflight-5@2026-07-16.2",
+    "profiles": {
+      "consumer": {"url": "https://africanmarketos.com/mcp", "tool_count": 7},
+      "preflight": {"url": "https://africanmarketos.com/mcp/preflight", "tool_count": 5, "write_capable_tools": 0},
+      "full": {"url": "https://africanmarketos.com/mcp/full", "tool_count": 22}
+    }
   },
   "registry": {
     "name": "io.github.africanmarketos591/mvr-api",
