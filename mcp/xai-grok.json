@@ -1,8 +1,8 @@
 {
   "platform": "xAI Responses API and Grok custom connectors",
-  "status": "documented_compatible_not_host_verified",
+  "status": "xai_responses_api_remote_mcp_controlled_canary_verified",
   "verification_status": {
-    "xai_api_compatibility": "documented_not_live_host_verified",
+    "xai_api_compatibility": "verified_live_2026-07-16",
     "grok_custom_connector": "unverified",
     "grok_automatic_selection": "unverified",
     "grok_business_admin_provisioning": "unverified"
@@ -15,7 +15,7 @@
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.reference-client-hardening.4",
+    "deployment_revision": "2026-07-16.xai-api-live-validated.5",
     "host_recipe_version": "2026-07-16.1"
   },
   "responses_api_tool": {
@@ -31,8 +31,19 @@
       "mvr_decision_check"
     ]
   },
+  "live_validation": {
+    "model": "grok-4.5",
+    "date": "2026-07-16",
+    "cases_passed": 3,
+    "cases_run": 3,
+    "production_recipe_fetched_before_run": true,
+    "store": false,
+    "total_cost_usd": 0.077514,
+    "summary_sha256": "f0275b5d3f6ac9fdf831588b4198cd47655127a0f4fe5c86f85e448ab4af2e6d",
+    "evidence": "https://github.com/africanmarketos591/mvr-framework/tree/agent/mcp-contract-policy-grok/release-evidence/2026-07-16-xai-remote-mcp-validation"
+  },
   "approval_boundary": "xAI does not currently support require_approval on its OpenAI-compatible remote-MCP path. The write-capable commercial handshake is excluded.",
-  "verification_boundary": "This recipe documents compatible integration paths. African Market OS has not independently verified ordinary Grok.com, mobile, Grok on X, catalogue placement, or automatic selection.",
+  "verification_boundary": "The xAI Responses API remote-MCP path passed a controlled three-case Grok 4.5 canary using this production recipe. Grok.com custom connectors, mobile, Grok on X, catalogue placement, Business provisioning, ordinary-chat automatic selection, and the frozen 40-case observatory remain unverified or not run.",
   "production_boundary": "The endpoint is the public sandbox. Licensed production Streamable HTTP MCP is not yet public.",
   "official_references": [
     "https://docs.x.ai/developers/tools/remote-mcp",

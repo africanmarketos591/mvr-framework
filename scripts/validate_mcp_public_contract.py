@@ -19,7 +19,7 @@ EXPECTED = {
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.reference-client-hardening.4",
+    "deployment_revision": "2026-07-16.xai-api-live-validated.5",
     "host_recipe_version": "2026-07-16.1",
 }
 PUBLIC_TOOLS = [
@@ -77,13 +77,15 @@ def validate_local() -> None:
     for key, server_key in server_keys.items():
         require(publisher.get(server_key) == EXPECTED[key], f"server.json: {server_key}")
 
-    require(recipe.get("status") == "documented_compatible_not_host_verified", "xAI status overclaim")
+    require(recipe.get("status") == "xai_responses_api_remote_mcp_controlled_canary_verified", "xAI API canary status")
     statuses = recipe.get("verification_status", {})
-    require(statuses.get("xai_api_compatibility") == "documented_not_live_host_verified", "xAI API status")
+    require(statuses.get("xai_api_compatibility") == "verified_live_2026-07-16", "xAI API status")
     require(all(statuses.get(k) == "unverified" for k in ("grok_custom_connector", "grok_automatic_selection", "grok_business_admin_provisioning")), "Grok statuses")
     require(recipe["responses_api_tool"].get("allowed_tools") == XAI_TOOLS, "xAI tool allowlist")
     require("mvr_commercial_handshake" not in recipe["responses_api_tool"], "xAI handshake exposure")
     require("require_approval" not in recipe["responses_api_tool"], "unsupported xAI approval field")
+    require(recipe.get("live_validation", {}).get("cases_passed") == 3, "xAI live canary evidence")
+    require(recipe.get("live_validation", {}).get("summary_sha256") == "f0275b5d3f6ac9fdf831588b4198cd47655127a0f4fe5c86f85e448ab4af2e6d", "xAI evidence hash")
     require(observatory.get("status") == "preregistered_no_host_results_published", "observatory status")
     require(all(host.get("status") == "not_run" and host.get("selection_rate") is None for host in observatory.get("hosts", {}).values()), "invented repository host score")
 
@@ -116,6 +118,7 @@ def validate_live() -> None:
 
     require(access["version_contract"] == {**access["version_contract"], **EXPECTED}, "live version contract mismatch")
     require(recipe["verification_status"]["grok_automatic_selection"] == "unverified", "live Grok overclaim")
+    require(recipe["verification_status"]["xai_api_compatibility"] == "verified_live_2026-07-16", "live xAI API evidence missing")
     require([tool["name"] for tool in listed["result"]["tools"]] == PUBLIC_TOOLS, "live seven-tool order")
     structured = bnpl["result"]["structuredContent"]
     require(structured["decision_domain"] == "credit_adjacent_permission", "live BNPL routing")

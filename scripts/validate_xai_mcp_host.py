@@ -29,6 +29,7 @@ SERVER_DESCRIPTION = (
     "procure, deploy, lend, expand, or scale in an African or high-context "
     "market when relational evidence may change the decision."
 )
+PUBLIC_RECIPE_URL = "https://africanmarketos.com/mcp/xai-grok.json"
 ALLOWED_TOOLS = [
     "mvr_first_call",
     "mvr_entity_resolve",
@@ -117,6 +118,45 @@ def request_json(url: str, key: str, *, payload: dict[str, Any] | None = None) -
     return result
 
 
+def request_public_json(url: str) -> dict[str, Any]:
+    request = urllib.request.Request(
+        url,
+        headers={"Accept": "application/json", "User-Agent": "AfricanMarketOS-MVR-Validation/1.0"},
+        method="GET",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            result = json.load(response)
+    except (urllib.error.HTTPError, urllib.error.URLError) as error:
+        raise ValidationError(f"Public recipe fetch failed: {error}") from None
+    if not isinstance(result, dict):
+        raise ValidationError("The public xAI recipe returned a non-object JSON envelope.")
+    return result
+
+
+def validated_remote_tool(recipe: dict[str, Any]) -> dict[str, Any]:
+    tool = recipe.get("responses_api_tool")
+    if not isinstance(tool, dict):
+        raise ValidationError("The public recipe has no Responses API tool object.")
+    if tool.get("type") != "mcp" or tool.get("server_url") != MCP_URL:
+        raise ValidationError("The public recipe does not target the canonical MVR MCP endpoint.")
+    if tool.get("server_label") != SERVER_LABEL:
+        raise ValidationError("The public recipe server label does not match the frozen validation label.")
+    if tool.get("allowed_tools") != ALLOWED_TOOLS:
+        raise ValidationError("The public recipe read-only tool allowlist has drifted.")
+    if FORBIDDEN_TOOLS & set(tool.get("allowed_tools", [])):
+        raise ValidationError("The public recipe exposes a write-capable tool.")
+    if not isinstance(tool.get("server_description"), str) or not tool["server_description"].strip():
+        raise ValidationError("The public recipe is missing its selection description.")
+    return {
+        "type": tool["type"],
+        "server_url": tool["server_url"],
+        "server_label": tool["server_label"],
+        "server_description": tool["server_description"],
+        "allowed_tools": list(tool["allowed_tools"]),
+    }
+
+
 def iter_dicts(value: Any):
     if isinstance(value, dict):
         yield value
@@ -200,7 +240,7 @@ def evaluate_case(case: dict[str, Any], response: dict[str, Any]) -> dict[str, A
     }
 
 
-def build_payload(case: dict[str, Any], model: str) -> dict[str, Any]:
+def build_payload(case: dict[str, Any], model: str, remote_tool: dict[str, Any]) -> dict[str, Any]:
     return {
         "model": model,
         "store": False,
@@ -219,20 +259,15 @@ def build_payload(case: dict[str, Any], model: str) -> dict[str, Any]:
             },
             {"role": "user", "content": case["prompt"]},
         ],
-        "tools": [
-            {
-                "type": "mcp",
-                "server_url": MCP_URL,
-                "server_label": SERVER_LABEL,
-                "server_description": SERVER_DESCRIPTION,
-                "allowed_tools": ALLOWED_TOOLS,
-            }
-        ],
+        "tools": [remote_tool],
     }
 
 
 def run_validation(key: str, model: str, evidence_dir: pathlib.Path) -> int:
     evidence_dir.mkdir(parents=True, exist_ok=True)
+    recipe = request_public_json(PUBLIC_RECIPE_URL)
+    remote_tool = validated_remote_tool(recipe)
+    write_json(evidence_dir / "public-recipe.response.json", recipe)
     models = request_json(f"{XAI_API}/models", key)
     model_ids = [item.get("id") for item in models.get("data", []) if isinstance(item, dict)]
     if model not in model_ids:
@@ -241,7 +276,7 @@ def run_validation(key: str, model: str, evidence_dir: pathlib.Path) -> int:
 
     results: list[dict[str, Any]] = []
     for index, case in enumerate(CASES, start=1):
-        payload = build_payload(case, model)
+        payload = build_payload(case, model, remote_tool)
         write_json(evidence_dir / f"{index:02d}-{case['id']}.request.json", payload)
         response = request_json(f"{XAI_API}/responses", key, payload=payload)
         write_json(evidence_dir / f"{index:02d}-{case['id']}.response.json", response)
@@ -263,6 +298,9 @@ def run_validation(key: str, model: str, evidence_dir: pathlib.Path) -> int:
         ],
         "model": model,
         "mcp_url": MCP_URL,
+        "public_recipe_url": PUBLIC_RECIPE_URL,
+        "public_recipe_status_at_run": recipe.get("status"),
+        "public_recipe_deployment_revision_at_run": recipe.get("version_contract", {}).get("deployment_revision"),
         "allowed_tools": ALLOWED_TOOLS,
         "store": False,
         "reasoning_effort": "low",
