@@ -13,7 +13,9 @@ on:
       - "docs/outcome-calibration-ledger.md"
       - "docs/proof-of-preflight-design.md"
       - "evaluations/mvr-bench-selection-v0.1/**"
+      - "reference-agents/mvr-market-entry-preflight/**"
       - "scripts/validate_mcp_public_contract.py"
+      - "reference-agents/mvr-market-entry-preflight/**"
       - ".github/workflows/mcp-contract-sanity.yml"
   push:
     branches: ["main"]
@@ -36,3 +38,7 @@ jobs:
           python-version: "3.12"
       - name: Validate repository and production MCP contracts
         run: python scripts/validate_mcp_public_contract.py --live
+      - name: Run Python reference-client self-test
+        run: python reference-agents/mvr-market-entry-preflight/python/mvr_preflight.py --self-test
+      - name: Run JavaScript reference-client self-test
+        run: node reference-agents/mvr-market-entry-preflight/javascript/mvr_preflight.mjs --self-test

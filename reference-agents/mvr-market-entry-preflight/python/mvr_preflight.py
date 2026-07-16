@@ -37,6 +37,26 @@ MARKET_CONTEXT_RE = re.compile(r"\b(africa|african|emerging market|high[- ]conte
 PURE_TASK_RE = re.compile(r"\b(debug|refactor|unit test|css|html|sql query|translate|weather|football|summari[sz]e)\b", re.IGNORECASE)
 
 
+def validate_mcp_envelope(envelope: Any, request_id: int, method: str) -> dict[str, Any]:
+    prefix = f"MCP protocol error for {method}"
+    if not isinstance(envelope, dict):
+        raise RuntimeError(f"{prefix}: response envelope must be a JSON object")
+    if envelope.get("jsonrpc") != "2.0":
+        raise RuntimeError(f"{prefix}: jsonrpc must equal 2.0")
+    if envelope.get("id") != request_id:
+        raise RuntimeError(f"{prefix}: response id does not match request id {request_id}")
+    if envelope.get("error") is not None:
+        error = envelope["error"]
+        detail = json.dumps(error, sort_keys=True) if isinstance(error, dict) else repr(error)
+        raise RuntimeError(f"MCP error for {method}: {detail}")
+    if "result" not in envelope:
+        raise RuntimeError(f"{prefix}: response has neither result nor error")
+    result = envelope["result"]
+    if not isinstance(result, dict):
+        raise RuntimeError(f"{prefix}: result must be a JSON object")
+    return result
+
+
 def classify_policy_intent(request_data: dict[str, Any]) -> str:
     market_scope = request_data.get("market_scope") if isinstance(request_data.get("market_scope"), dict) else {}
     country = str(request_data.get("country") or market_scope.get("country") or "").strip().upper()
@@ -98,7 +118,8 @@ class McpClient:
         self.rpc_id = 1
 
     def rpc(self, method: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
-        envelope: dict[str, Any] = {"jsonrpc": "2.0", "id": self.rpc_id, "method": method}
+        request_id = self.rpc_id
+        envelope: dict[str, Any] = {"jsonrpc": "2.0", "id": request_id, "method": method}
         self.rpc_id += 1
         if params is not None:
             envelope["params"] = params
@@ -110,13 +131,17 @@ class McpClient:
         )
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
-                result = json.loads(response.read().decode("utf-8"))
+                raw = response.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", errors="replace")
             raise RuntimeError(f"MCP HTTP {exc.code}: {detail[:500]}") from exc
-        if result.get("error"):
-            raise RuntimeError(f"MCP error: {json.dumps(result['error'], sort_keys=True)}")
-        return result.get("result") or {}
+        except urllib.error.URLError as exc:
+            raise RuntimeError(f"MCP network error for {method}: {exc.reason}") from exc
+        try:
+            result = json.loads(raw)
+        except json.JSONDecodeError as exc:
+            raise RuntimeError(f"MCP protocol error for {method}: response is not valid JSON") from exc
+        return validate_mcp_envelope(result, request_id, method)
 
 
 def execute(request_data: dict[str, Any], endpoint: str, policy_mode: str = "advisory_selection") -> dict[str, Any]:
@@ -186,7 +211,23 @@ def self_test() -> None:
     assert classify_policy_intent({"question": "Should this fintech launch lending in Uganda?", "country": "UG"}) == "protected"
     assert classify_policy_intent({"question": "Translate this paragraph into Luganda."}) == "not_protected"
     assert classify_policy_intent({"question": "Should we launch this?"}) == "ambiguous"
-    print(json.dumps({"self_test": "PASS", "short_sequence": 1, "full_sequence": len(full), "policy_modes": list(POLICY_MODES)}))
+    assert validate_mcp_envelope({"jsonrpc": "2.0", "id": 7, "result": {"tools": []}}, 7, "tools/list") == {"tools": []}
+    invalid_envelopes = [
+        ([], "response envelope"),
+        ({"jsonrpc": "1.0", "id": 7, "result": {}}, "jsonrpc"),
+        ({"jsonrpc": "2.0", "id": 8, "result": {}}, "response id"),
+        ({"jsonrpc": "2.0", "id": 7}, "neither result nor error"),
+        ({"jsonrpc": "2.0", "id": 7, "result": []}, "result must be"),
+        ({"jsonrpc": "2.0", "id": 7, "error": {"code": -32603, "message": "test"}}, "MCP error"),
+    ]
+    for envelope, expected in invalid_envelopes:
+        try:
+            validate_mcp_envelope(envelope, 7, "tools/list")
+        except RuntimeError as exc:
+            assert expected in str(exc)
+        else:
+            raise AssertionError(f"malformed MCP envelope was accepted: {envelope!r}")
+    print(json.dumps({"self_test": "PASS", "short_sequence": 1, "full_sequence": len(full), "policy_modes": list(POLICY_MODES), "malformed_envelopes_rejected": len(invalid_envelopes)}))
 
 
 def main() -> int:

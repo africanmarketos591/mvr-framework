@@ -20,6 +20,17 @@ const PROTECTED_ACTION_RE = /\b(enter|entry|launch|pilot|scale|expand|expansion|
 const MARKET_CONTEXT_RE = /\b(africa|african|emerging market|high[- ]context market)\b/i;
 const PURE_TASK_RE = /\b(debug|refactor|unit test|css|html|sql query|translate|weather|football|summari[sz]e)\b/i;
 
+export function validateMcpEnvelope(envelope, requestId, method) {
+  const prefix = `MCP protocol error for ${method}`;
+  if (!envelope || typeof envelope !== "object" || Array.isArray(envelope)) throw new Error(`${prefix}: response envelope must be a JSON object`);
+  if (envelope.jsonrpc !== "2.0") throw new Error(`${prefix}: jsonrpc must equal 2.0`);
+  if (envelope.id !== requestId) throw new Error(`${prefix}: response id does not match request id ${requestId}`);
+  if (envelope.error !== undefined && envelope.error !== null) throw new Error(`MCP error for ${method}: ${JSON.stringify(envelope.error)}`);
+  if (!Object.prototype.hasOwnProperty.call(envelope, "result")) throw new Error(`${prefix}: response has neither result nor error`);
+  if (!envelope.result || typeof envelope.result !== "object" || Array.isArray(envelope.result)) throw new Error(`${prefix}: result must be a JSON object`);
+  return envelope.result;
+}
+
 export function classifyPolicyIntent(requestData = {}) {
   const marketScope = requestData.market_scope && typeof requestData.market_scope === "object" ? requestData.market_scope : {};
   const country = String(requestData.country || marketScope.country || "").trim().toUpperCase();
@@ -76,16 +87,21 @@ class McpClient {
   }
 
   async rpc(method, params) {
+    const requestId = this.id++;
     const response = await fetch(this.endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json", "User-Agent": "mvr-reference-preflight-javascript/1.0" },
-      body: JSON.stringify({ jsonrpc: "2.0", id: this.id++, method, ...(params === undefined ? {} : { params }) })
+      body: JSON.stringify({ jsonrpc: "2.0", id: requestId, method, ...(params === undefined ? {} : { params }) })
     });
     const text = await response.text();
     if (!response.ok) throw new Error(`MCP HTTP ${response.status}: ${text.slice(0, 500)}`);
-    const envelope = JSON.parse(text);
-    if (envelope.error) throw new Error(`MCP error: ${JSON.stringify(envelope.error)}`);
-    return envelope.result || {};
+    let envelope;
+    try {
+      envelope = JSON.parse(text);
+    } catch {
+      throw new Error(`MCP protocol error for ${method}: response is not valid JSON`);
+    }
+    return validateMcpEnvelope(envelope, requestId, method);
   }
 }
 
@@ -155,7 +171,25 @@ function selfTest() {
   if (classifyPolicyIntent({ question: "Should this fintech launch lending in Uganda?", country: "UG" }) !== "protected") throw new Error("protected policy classification mismatch");
   if (classifyPolicyIntent({ question: "Translate this paragraph into Luganda." }) !== "not_protected") throw new Error("no-call policy classification mismatch");
   if (classifyPolicyIntent({ question: "Should we launch this?" }) !== "ambiguous") throw new Error("ambiguous policy classification mismatch");
-  process.stdout.write(`${JSON.stringify({ self_test: "PASS", short_sequence: 1, full_sequence: full.length, policy_modes: POLICY_MODES })}\n`);
+  const valid = validateMcpEnvelope({ jsonrpc: "2.0", id: 7, result: { tools: [] } }, 7, "tools/list");
+  if (!Array.isArray(valid.tools)) throw new Error("valid envelope mismatch");
+  const invalidEnvelopes = [
+    [[], "response envelope"],
+    [{ jsonrpc: "1.0", id: 7, result: {} }, "jsonrpc"],
+    [{ jsonrpc: "2.0", id: 8, result: {} }, "response id"],
+    [{ jsonrpc: "2.0", id: 7 }, "neither result nor error"],
+    [{ jsonrpc: "2.0", id: 7, result: [] }, "result must be"],
+    [{ jsonrpc: "2.0", id: 7, error: { code: -32603, message: "test" } }, "MCP error"]
+  ];
+  for (const [envelope, expected] of invalidEnvelopes) {
+    try {
+      validateMcpEnvelope(envelope, 7, "tools/list");
+      throw new Error(`malformed MCP envelope was accepted: ${JSON.stringify(envelope)}`);
+    } catch (error) {
+      if (!error.message.includes(expected)) throw error;
+    }
+  }
+  process.stdout.write(`${JSON.stringify({ self_test: "PASS", short_sequence: 1, full_sequence: full.length, policy_modes: POLICY_MODES, malformed_envelopes_rejected: invalidEnvelopes.length })}\n`);
 }
 
 const args = process.argv.slice(2);

@@ -28,7 +28,7 @@
     "google_adk_or_gemini": {"status": "not_run", "selection_rate": null, "last_verified": null},
     "grok": {"status": "not_run", "selection_rate": null, "last_verified": null}
   },
-  "publication_rule": "Publish a host score only after the frozen case set has been run against that actual host with model, instructions, tool profile, policy version, date, raw traces, and exclusions recorded.",
+  "publication_rule": "Publish every completed frozen-track result against the preregistered gates whether it passes or fails. Publish a host score only after the set has been run against that actual host with model, instructions, tool profile, policy version, date, raw traces, misses, false triggers, and exclusions recorded.",
   "source_protocol": "../evaluations/mvr-bench-selection-v0.1/README.md",
   "version_contract": {
     "core_api_version": "v6.32.0",
@@ -38,7 +38,7 @@
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.bnpl-observatory.3",
+    "deployment_revision": "2026-07-16.reference-client-hardening.4",
     "host_recipe_version": "2026-07-16.1"
   }
 }

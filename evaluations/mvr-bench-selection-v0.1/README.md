@@ -33,6 +33,6 @@ Preserve the raw host trace, whether MVR was selected, first tool, ordered tool 
 
 ## Publication Rule
 
-A host remains `not_run` until the frozen set is executed against that actual host, raw traces are preserved, and the evaluator records misses and false triggers. API compatibility, connector installation, automatic selection, and organization provisioning are separate statuses and must not be collapsed into “supported.”
+A host remains `not_run` until the frozen set is executed against that actual host, raw traces are preserved, and the evaluator records misses and false triggers. Every completed result will be published against the preregistered gates whether it passes or fails. API compatibility, connector installation, automatic selection, and organization provisioning are separate statuses and must not be collapsed into “supported.”
 
 Live machine-readable preregistration: `https://africanmarketos.com/.well-known/mvr-selection-observatory.json`.
