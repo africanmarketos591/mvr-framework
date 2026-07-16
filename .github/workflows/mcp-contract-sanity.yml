@@ -1,0 +1,38 @@
+name: MCP Contract Sanity
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "mcp/**"
+      - ".well-known/mvr-selection-observatory.json"
+      - "server.json"
+      - "docs/version-map.md"
+      - "docs/host-policy-modes.md"
+      - "docs/outcome-calibration-ledger.md"
+      - "docs/proof-of-preflight-design.md"
+      - "evaluations/mvr-bench-selection-v0.1/**"
+      - "scripts/validate_mcp_public_contract.py"
+      - ".github/workflows/mcp-contract-sanity.yml"
+  push:
+    branches: ["main"]
+    paths:
+      - "mcp/**"
+      - ".well-known/mvr-selection-observatory.json"
+      - "server.json"
+      - "docs/version-map.md"
+      - "scripts/validate_mcp_public_contract.py"
+      - ".github/workflows/mcp-contract-sanity.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate repository and production MCP contracts
+        run: python scripts/validate_mcp_public_contract.py --live

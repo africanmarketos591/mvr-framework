@@ -15,7 +15,7 @@ Every integration should preserve these fields separately:
 | `sdk_version` | `6.32.1` | Current published TypeScript/Python SDK generation line. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-07-16.1` | Host-policy middleware and selection boundary. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-07-16.agent-policy-grok.1` | Stable application build revision. |
+| `deployment_revision` | `2026-07-16.bnpl-observatory.3` | Stable application build revision. |
 | `deployment_provider_revision` | release evidence | Provider-generated revision recorded after deployment, not self-embedded. |
 | `host_recipe_version` | `2026-07-16.1` | Microsoft, Google, OpenAI, Anthropic, and xAI recipe family. |
 

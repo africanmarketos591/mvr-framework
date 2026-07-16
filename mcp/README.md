@@ -91,6 +91,14 @@ Wrapper names such as `mvr_preflight_market_entry` are host-side expert mappings
 
 The xAI recipe documents compatible integration paths. It is not evidence that an ordinary unconfigured Grok conversation automatically discovers or selects MVR.
 
+## Verification and Outcomes
+
+- Selection preregistration: `https://africanmarketos.com/.well-known/mvr-selection-observatory.json`
+- Outcome-calibration runbook: `../docs/outcome-calibration-ledger.md`
+- Proof-of-preflight design and non-claims: `../docs/proof-of-preflight-design.md`
+
+The observatory publishes no host score until the frozen track has been run inside that actual host with preserved traces. Outcome feedback enters governed calibration review and never mutates the live engine automatically. Proof-of-preflight remains a design contract, not a shipped cryptographic host-control claim.
+
 ## Versions and Safety
 
 Canonical version contract: `https://africanmarketos.com/.well-known/mvr-version.json`

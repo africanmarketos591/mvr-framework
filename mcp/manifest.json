@@ -10,7 +10,7 @@
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.agent-policy-grok.1",
+    "deployment_revision": "2026-07-16.bnpl-observatory.3",
     "host_recipe_version": "2026-07-16.1"
   },
   "publisher": {
@@ -52,6 +52,9 @@
     "host_policy_modes": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/host-policy-modes.md",
     "host_policy_reference_clients": "https://github.com/africanmarketos591/mvr-framework/tree/main/reference-agents/mvr-market-entry-preflight",
     "xai_grok_recipe": "https://africanmarketos.com/mcp/xai-grok.json",
+    "selection_observatory": "https://africanmarketos.com/.well-known/mvr-selection-observatory.json",
+    "outcome_calibration_runbook": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/outcome-calibration-ledger.md",
+    "proof_of_preflight_design": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/proof-of-preflight-design.md",
     "agent_recipes": "https://africanmarketos.com/docs/agent-recipes.md",
     "agent_wrapper_schemas": "https://github.com/africanmarketos591/mvr-framework/blob/main/agent-patterns/tool-schemas.json",
     "llms": "https://africanmarketos.com/llms.txt",

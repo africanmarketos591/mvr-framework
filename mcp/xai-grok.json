@@ -1,11 +1,21 @@
 {
   "platform": "xAI Responses API and Grok custom connectors",
   "status": "documented_compatible_not_host_verified",
+  "verification_status": {
+    "xai_api_compatibility": "documented_not_live_host_verified",
+    "grok_custom_connector": "unverified",
+    "grok_automatic_selection": "unverified",
+    "grok_business_admin_provisioning": "unverified"
+  },
   "version_contract": {
     "core_api_version": "v6.32.0",
+    "mcp_protocol_version": "2025-06-18",
     "mcp_contract_version": "mvr-mcp@2026-07-16.1",
     "tool_profile_version": "consumer-7@2026-07-16.1",
+    "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
+    "calibration_version": "v6.32.0-framework-provisional",
+    "deployment_revision": "2026-07-16.bnpl-observatory.3",
     "host_recipe_version": "2026-07-16.1"
   },
   "responses_api_tool": {
