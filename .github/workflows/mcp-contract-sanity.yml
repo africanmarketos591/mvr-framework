@@ -15,6 +15,7 @@ on:
       - "evaluations/mvr-bench-selection-v0.1/**"
       - "reference-agents/mvr-market-entry-preflight/**"
       - "scripts/validate_mcp_public_contract.py"
+      - "scripts/validate_xai_mcp_host.py"
       - "reference-agents/mvr-market-entry-preflight/**"
       - ".github/workflows/mcp-contract-sanity.yml"
   push:
@@ -25,6 +26,7 @@ on:
       - "server.json"
       - "docs/version-map.md"
       - "scripts/validate_mcp_public_contract.py"
+      - "scripts/validate_xai_mcp_host.py"
       - ".github/workflows/mcp-contract-sanity.yml"
 
 jobs:
@@ -42,3 +44,5 @@ jobs:
         run: python reference-agents/mvr-market-entry-preflight/python/mvr_preflight.py --self-test
       - name: Run JavaScript reference-client self-test
         run: node reference-agents/mvr-market-entry-preflight/javascript/mvr_preflight.mjs --self-test
+      - name: Run xAI Remote MCP validator self-test
+        run: python scripts/validate_xai_mcp_host.py --self-test
