@@ -12,7 +12,12 @@ This release adds `https://africanmarketos.com/mcp/preflight`, a server-enforced
 - Existing profiles unchanged: `/mcp` has seven tools; `/mcp/full` has 22.
 - Grok 4.5 xAI Responses API canary: 3/3 against the new endpoint.
 
+## Grok.com Observation Addendum
+
+The Custom Connector was subsequently installed in `grok.com`, discovered all five tools, and executed `mvr_first_call` when explicitly requested. The first natural-language Uganda BNPL prompt did not automatically select MVR and used web search instead. Selection metadata was then strengthened and deployed without changing `core_api_version: v6.32.0`.
+
+See `GROK_COM_OPERATOR_OBSERVATION_2026-07-16.json` for the explicit-execution pass, automatic-selection miss, remediation, hashes, and claim boundaries.
+
 ## Not Yet Claimed
 
-Grok.com Custom Connector installation, ordinary-chat automatic selection, and Grok Business or Enterprise provisioning remain unverified until tested in those actual host surfaces.
-
+Reliable ordinary-chat automatic selection, Grok Business or Enterprise provisioning, mobile/Grok-on-X connector behavior, and the frozen 40-case host result remain unverified or not run.

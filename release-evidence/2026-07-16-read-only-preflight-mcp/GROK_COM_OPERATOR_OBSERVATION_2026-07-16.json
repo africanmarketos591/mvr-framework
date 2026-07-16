@@ -1,0 +1,74 @@
+{
+  "schema_version": "mvr-grok-com-operator-observation@2026-07-16.1",
+  "status": "operator_observed_not_frozen_track_scored",
+  "date": "2026-07-16",
+  "host_surface": "grok.com custom connector",
+  "host_model": "not disclosed by the host UI",
+  "connector": {
+    "name": "African Market OS - MVR Preflight",
+    "server_url": "https://africanmarketos.com/mcp/preflight",
+    "installation": "pass_by_operator_observation",
+    "tools_discovered": 5,
+    "expected_tools": [
+      "mvr_first_call",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check"
+    ]
+  },
+  "initial_natural_language_case": {
+    "prompt": "We are considering launching a buy-now-pay-later product for small retailers in Kampala, Uganda next month. Should we proceed, and what evidence should we gather first?",
+    "mvr_selected": false,
+    "host_used_web_search": true,
+    "host_confirmation": "The host explicitly stated that it did not use the African Market OS connector.",
+    "result": "automatic_selection_miss"
+  },
+  "explicit_follow_up": {
+    "requested_tool": "mvr_first_call",
+    "reported_host_tool_name": "african_market_os_mvr_preflight___mvr_first_call",
+    "execution": "pass_by_operator_observation",
+    "decision_domain": "credit_adjacent_permission",
+    "not_a_verdict": true,
+    "max_safe_action_preserved": true,
+    "evidence_gaps_preserved": true
+  },
+  "remediation": {
+    "reason": "The host mischaracterized MVR as an unnecessary internal preflight system and substituted web search.",
+    "changes": [
+      "Front-loaded mvr_first_call as a public decision-governance preflight, not an internal data lookup.",
+      "Added explicit entry, launch, credit, BNPL, investment, partnership, procurement, deployment, and scale triggers.",
+      "Stated that web research may inform evidence but does not replace the preflight.",
+      "Made the portable description end on complete sentences.",
+      "Added matching MCP initialize instructions and regression assertions."
+    ],
+    "version_contract": {
+      "core_api_version": "v6.32.0",
+      "mcp_contract_version": "mvr-mcp@2026-07-16.3",
+      "tool_profile_version": "consumer-7+preflight-5@2026-07-16.3",
+      "host_recipe_version": "2026-07-16.2",
+      "deployment_revision": "2026-07-16.selection-metadata.1"
+    },
+    "deployment": {
+      "cloudflare_version_id": "841e0b72-c293-45c9-aa01-34cef1f56b24",
+      "worker_sha256": "6d8c004ed30fb2a3934bcec4bbedb87289ba8d94bc904da3199c0b7a7c81244f",
+      "test_runner_sha256": "4c787154ed1a09f900312093e1e50794a380790e8bb823dad0cc33413b215bea",
+      "worker_tests": {
+        "passed": 110,
+        "failed": 0
+      }
+    }
+  },
+  "post_remediation_natural_language_case": {
+    "prompt": "Help us validate if we should proceed with supplier finance BNPL in Uganda - focus on trust and evidence gaps",
+    "prose_contains_mvr_specific_output": true,
+    "attribution_status": "pending_exact_host_tool_call_confirmation",
+    "reason": "MVR-shaped prose alone is not proof of a tool call. The exact connected-tool trace must be confirmed before this case is counted as an automatic-selection pass."
+  },
+  "scoring_boundary": "This is a product observation, not a frozen 40-case selection score, host ranking, or claim of reliable automatic selection.",
+  "privacy_boundary": "No raw user evidence, API keys, contact details, or full private chat transcript is included.",
+  "official_references": [
+    "https://docs.x.ai/grok/connectors",
+    "https://docs.x.ai/developers/tools/remote-mcp"
+  ]
+}
