@@ -1,7 +1,7 @@
 {
   "name": "mvr-api",
   "title": "MVR API - Minimum Viable Relationships",
-  "version": "v6.32.3",
+  "version": "v6.32.4",
   "publisher": {
     "name": "African Market OS",
     "originator": "Farouk Mark Mukiibi",
@@ -15,7 +15,7 @@
   },
   "transport": {
     "type": "streamable-http",
-    "url": "https://africanmarketos.com/mcp"
+    "url": "https://africanmarketos.com/mcp/preflight"
   },
   "registry": {
     "name": "io.github.africanmarketos591/mvr-api",
@@ -49,10 +49,18 @@
     "capabilities": "https://africanmarketos.com/.well-known/mvr-capabilities.json"
   },
   "install": {
-    "remote_mcp": "https://africanmarketos.com/mcp",
+    "remote_mcp": "https://africanmarketos.com/mcp/preflight",
     "npm_sdk": "npm install @africanmarketos/mvr-api-client",
     "python_sdk": "pip install mvr-api-client",
-    "note": "Remote MCP is live. Local mvr-mcp-server, mvr-cli, and DXT packages are roadmap items and should not be represented as published until released."
+    "note": "The registry endpoint is the live keyless five-tool read-only preflight. The broader expert endpoint remains separate. Local mvr-mcp-server, mvr-cli, and DXT packages are roadmap items and should not be represented as published until released."
+  },
+  "tool_profile": {
+    "id": "public-preflight-read-only-v1",
+    "tool_count": 5,
+    "authentication": "none",
+    "tools": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"],
+    "write_tools_exposed": false,
+    "broader_expert_endpoint": "https://africanmarketos.com/mcp"
   },
   "recommended_tools": [
     "POST /v1/auth-check",

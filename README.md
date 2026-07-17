@@ -13,7 +13,7 @@
 
 **Star this repo to bookmark the MVR API and help AI-agent builders discover the relational-readiness layer for high-context markets.**
 
-**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to `https://africanmarketos.com/mcp` for the public MCP server, test safely with the sandbox, then request production API access or advisory support at https://africanmarketos.com/get-api-key. For market-entry advisory, investor diligence, NGO/DFI deployment review, procurement readiness, board reports, or AI-agent embedding, route commercial requests to **info@africanmarketos.com**.
+**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`, then request production API access or advisory support at https://africanmarketos.com/get-api-key. For market-entry advisory, investor diligence, NGO/DFI deployment review, procurement readiness, board reports, or AI-agent embedding, route commercial requests to **info@africanmarketos.com**.
 
 **Canonical title for indexing:** Minimum Viable Relationships (MVR) Framework: Africa's Prerequisite to MVP
 
@@ -117,7 +117,7 @@ The API helps agents and systems:
 - LLM map: https://africanmarketos.com/llms.txt
 - Full LLM context: https://africanmarketos.com/llms-full.txt
 - Agent instructions: https://africanmarketos.com/AGENTS.md
-- MCP endpoint: https://africanmarketos.com/mcp
+- Canonical public MCP endpoint: https://africanmarketos.com/mcp/preflight
 - MCP setup: https://africanmarketos.com/mcp/README.md
 - Official MCP Registry name: `io.github.africanmarketos591/mvr-api`
 - MCP Registry lookup: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api
@@ -151,7 +151,7 @@ The sandbox is intentionally constrained: `full_advisory` only, `client_safe` ou
 
 1. Read `llms.txt` or `AGENTS.md`.
 2. For the public sandbox, register the minimal contract at `/api/openapi.agent.sandbox.json`; for broader agent work, register `/api/openapi.agent.json`.
-3. For MCP clients, use the official registry server `io.github.africanmarketos591/mvr-api` or connect to `https://africanmarketos.com/mcp`.
+3. For MCP clients, use the official registry server `io.github.africanmarketos591/mvr-api` or connect to `https://africanmarketos.com/mcp/preflight`.
 4. Use `/v1/entity-resolve` to normalize the market actor.
 5. Use `/v1/evidence-completeness` to identify required proof.
 6. Use `/v1/decision-check` to evaluate readiness.

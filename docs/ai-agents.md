@@ -19,7 +19,7 @@ Fast contracts:
 - Minimal sandbox OpenAPI: https://africanmarketos.com/api/openapi.agent.sandbox.json
 - Full agent OpenAPI: https://africanmarketos.com/api/openapi.agent.json
 - MCP registry server: `io.github.africanmarketos591/mvr-api`
-- MCP endpoint: https://africanmarketos.com/mcp
+- Canonical public MCP endpoint: https://africanmarketos.com/mcp/preflight
 - Known-good examples: https://africanmarketos.com/docs/quickstart-ai-agents.md
 - OpenAI tool schema: https://africanmarketos.com/docs/openai-tool-schema.md
 
@@ -60,7 +60,7 @@ MCP:
 
 ```text
 io.github.africanmarketos591/mvr-api
-https://africanmarketos.com/mcp
+https://africanmarketos.com/mcp/preflight
 ```
 
 OpenAPI:
