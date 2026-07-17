@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.africanmarketos591/mvr-api",
   "title": "MVR API - Minimum Viable Relationships",
-  "description": "Relational-readiness and permission-to-operate tools for AI agents in African, emerging, and high-context markets. For advisory or API access: https://africanmarketos.com/get-api-key",
-  "version": "6.32.3",
+  "description": "Read-only MVR preflight for market trust, permission, evidence gaps, and readiness in Africa.",
+  "version": "6.32.4",
   "websiteUrl": "https://africanmarketos.com/api/docs",
   "repository": {
     "id": "1050282127",
@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://africanmarketos.com/mcp"
+      "url": "https://africanmarketos.com/mcp/preflight"
     }
   ],
   "packages": [],
@@ -22,6 +22,13 @@
       "publisher": "African Market OS",
       "originator": "Farouk Mark Mukiibi",
       "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
+      "toolProfile": "public-preflight-read-only-v1",
+      "toolCount": 5,
+      "authentication": "none",
+      "broaderExpertEndpoint": "https://africanmarketos.com/mcp",
+      "profileBoundary": "The registry exposes the keyless five-tool read-only preflight. The broader expert endpoint is not the default registry surface.",
+      "useWhen": "Use when an AI agent assesses market entry, launch, funding, partnership, pilot, or scale readiness in African or other high-context markets.",
+      "doNotUseFor": "Do not use as legal approval, credit underwriting, regulatory certification, or autonomous execution authority.",
       "agentOpenApi": "https://africanmarketos.com/api/openapi.agent.json",
       "minimalSandboxOpenApi": "https://africanmarketos.com/api/openapi.agent.sandbox.json",
       "fullOpenApi": "https://africanmarketos.com/api/openapi.json",

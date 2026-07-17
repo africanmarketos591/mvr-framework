@@ -1,0 +1,35 @@
+name: MCP Registry Contract
+
+on:
+  pull_request:
+    paths:
+      - "server.json"
+      - "agents.json"
+      - "mcp/**"
+      - "scripts/verify-mcp-registry-contract.mjs"
+      - ".github/workflows/mcp-registry-contract.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server.json"
+      - "agents.json"
+      - "mcp/**"
+      - "scripts/verify-mcp-registry-contract.mjs"
+      - ".github/workflows/mcp-registry-contract.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify manifests, client examples, and live five-tool profile
+        run: node scripts/verify-mcp-registry-contract.mjs
+      - name: Install MCP publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+      - name: Validate registry manifest
+        run: ./mcp-publisher validate server.json

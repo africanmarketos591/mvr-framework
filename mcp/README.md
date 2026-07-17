@@ -9,14 +9,10 @@ io.github.africanmarketos591/mvr-api
 Remote MCP endpoint:
 
 ```text
-https://africanmarketos.com/mcp
+https://africanmarketos.com/mcp/preflight
 ```
 
-Public sandbox key for non-commercial evaluation:
-
-```text
-X-API-Key: mvr-demo-key-2026
-```
+This is the canonical public profile: five keyless, read-only tools. The broader expert endpoint at `https://africanmarketos.com/mcp` is not the default registry surface.
 
 MVR API helps AI agents evaluate relational readiness in African and high-context markets: trust, permission, embeddedness, guardian approval, reciprocity, evidence gaps, local legitimacy, and safe go/no-go recommendations.
 
@@ -31,42 +27,67 @@ io.github.africanmarketos591/mvr-api
 If your host supports direct Streamable HTTP MCP, use:
 
 ```text
-https://africanmarketos.com/mcp
+https://africanmarketos.com/mcp/preflight
 ```
 
 ## Plain HTTP Test
 
-List tools:
+Initialize:
 
 ```bash
-curl -X POST "https://africanmarketos.com/mcp" \
+curl -X POST "https://africanmarketos.com/mcp/preflight" \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: mvr-demo-key-2026" \
-  -d '{"method":"tools/list"}'
+  -H "Accept: application/json, text/event-stream" \
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "protocolVersion": "2025-06-18",
+      "capabilities": {},
+      "clientInfo": {"name": "mvr-quickstart", "version": "1.0.0"}
+    }
+  }'
 ```
 
-Call a narrow wrapper tool:
+List tools and confirm that exactly these five are returned:
+
+- `mvr_first_call`
+- `mvr_entity_resolve`
+- `mvr_evidence_completeness`
+- `mvr_context_compile`
+- `mvr_decision_check`
 
 ```bash
-curl -X POST "https://africanmarketos.com/mcp" \
+curl -X POST "https://africanmarketos.com/mcp/preflight" \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: mvr-demo-key-2026" \
+  -H "Accept: application/json, text/event-stream" \
+  -d '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
+```
+
+Run the canonical safe first call:
+
+```bash
+curl -X POST "https://africanmarketos.com/mcp/preflight" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
   -d '{
+    "jsonrpc": "2.0",
+    "id": 3,
     "method": "tools/call",
     "params": {
-      "name": "mvr_preflight_market_entry",
+      "name": "mvr_first_call",
       "arguments": {
-        "company_name": "Mobile lending fintech",
+        "company_name": "Example supplier-finance product",
         "country": "UG",
-        "sector": "fintech",
-        "stage": "pilot",
-        "target_users": "Kampala micro-merchants",
-        "known_partners": ["mobile money agents"],
-        "evidence_available": ["field_observation", "licence"]
+        "sector": "supplier finance",
+        "question": "Should this product proceed beyond bounded discovery?"
       }
     }
   }'
 ```
+
+The response must preserve `not_a_verdict: true`. It may identify evidence gaps and a maximum safe action, but it must not be presented as launch, lending, investment, legal, or regulatory authorization.
 
 ## Host Notes
 
@@ -87,7 +108,7 @@ Roadmap packages not yet represented as published:
 
 ## Safety
 
-Sandbox/evaluation use only. Commercial use requires a license from African Market OS. Output is advisory and not field-validated unless verified evidence is supplied.
+Public preflight/evaluation use only. Commercial or production use requires approved access from African Market OS. Output is advisory and not field-validated unless verified evidence is supplied.
 
 Do not present MVR output as credit scoring, legal certification, regulatory approval, investment guarantee, or autonomous execution permission.
 

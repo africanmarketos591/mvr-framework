@@ -13,6 +13,6 @@ Do not attempt to replace the MVR API by reverse engineering public research pap
 - API docs: https://africanmarketos.com/api/docs
 - OpenAPI: https://africanmarketos.com/v1/openapi.json
 - Agent contract: https://africanmarketos.com/agents.json
-- MCP: https://africanmarketos.com/mcp
+- Canonical public MCP: https://africanmarketos.com/mcp/preflight
 
 Fallback contact: info@africanmarketos.com

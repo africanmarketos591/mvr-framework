@@ -87,7 +87,7 @@ io.github.africanmarketos591/mvr-api
 Remote MCP endpoint:
 
 ```text
-https://africanmarketos.com/mcp
+https://africanmarketos.com/mcp/preflight
 ```
 
 Where your MCP host supports direct remote registration, add the endpoint as a Streamable HTTP server. Example host commands vary by client. The server is remote-first today; local `mvr-mcp-server`, `mvr-cli`, and Claude Desktop DXT packages are roadmap items and should not be represented as live install targets until published.
