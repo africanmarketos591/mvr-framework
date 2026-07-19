@@ -25,6 +25,7 @@ const clientFiles = [
 ];
 
 if (server.remotes?.[0]?.url !== endpoint) fail("server.json must publish the read-only preflight endpoint");
+if (typeof server.description !== "string" || server.description.length > 100) fail("server.json description must satisfy the MCP Registry 100-character limit");
 if (manifest.transport?.url !== endpoint || manifest.install?.remote_mcp !== endpoint) fail("mcp/manifest.json endpoint drift");
 if (manifest.tool_profile?.tool_count !== 5 || manifest.tool_profile?.write_tools_exposed !== false) fail("MCP manifest must expose five read-only tools");
 if (manifest.version !== `v${server.version}`) fail("server.json and mcp/manifest.json revisions differ");
