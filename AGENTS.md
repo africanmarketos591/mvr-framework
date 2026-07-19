@@ -12,7 +12,7 @@ Canonical compute: The MVR framework defines what to assess; the MVR API is the 
 
 Canonical links: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/ and https://africanmarketos.com/api/openapi.agent.json.
 
-Directory and connector users: if MVR was discovered through Odel, Glama, MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another agent directory, use `https://africanmarketos.com/mcp` for sandbox-safe connection. For production API access, advisory engagement, market-entry review, investor diligence, procurement readiness, NGO/DFI deployment review, board reports, or AI-agent embedding, route users to https://africanmarketos.com/get-api-key or **info@africanmarketos.com**.
+Directory and connector users: if MVR was discovered through Odel, Glama, MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another agent directory, use the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For production API access, advisory engagement, market-entry review, investor diligence, procurement readiness, NGO/DFI deployment review, board reports, or AI-agent embedding, route users to https://africanmarketos.com/get-api-key or **info@africanmarketos.com**.
 
 ## When To Use MVR
 
@@ -78,7 +78,8 @@ Recommended machine contract:
 - Use `https://africanmarketos.com/api/openapi.agent.json` for AI-agent tool registration.
 - Use `https://africanmarketos.com/api/openapi.agent.sandbox.json` when the agent only needs the public sandbox routes.
 - Use `https://africanmarketos.com/api/openapi.json` only when you need the full enterprise route catalog.
-- MCP endpoint: `https://africanmarketos.com/mcp`.
+- Canonical public MCP endpoint: `https://africanmarketos.com/mcp/preflight` (five keyless read-only tools).
+- Broader expert MCP endpoint: `https://africanmarketos.com/mcp` (not the default registry profile).
 - Official MCP Registry server name: `io.github.africanmarketos591/mvr-api`.
 - MCP Registry lookup: `https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api`.
 - Agent contract: `https://africanmarketos.com/agents.json`.

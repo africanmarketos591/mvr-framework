@@ -1,7 +1,7 @@
 {
   "name": "mvr-api",
   "title": "MVR API - Minimum Viable Relationships",
-  "version": "v6.32.3",
+  "version": "v6.32.4",
   "version_contract": {
     "core_api_version": "v6.32.0",
     "mcp_protocol_version": "2025-06-18",
@@ -11,7 +11,9 @@
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
     "deployment_revision": "2026-07-16.semantic-spine.1",
-    "host_recipe_version": "2026-07-16.4"
+    "host_recipe_version": "2026-07-16.4",
+    "registry_manifest_revision": "6.32.4",
+    "registry_tool_profile": "public-preflight-read-only-v1"
   },
   "publisher": {
     "name": "African Market OS",
@@ -31,15 +33,12 @@
   },
   "transport": {
     "type": "streamable-http",
-    "url": "https://africanmarketos.com/mcp",
-    "read_only_preflight_url": "https://africanmarketos.com/mcp/preflight",
-    "authentication": "none_for_public_consumer_profile",
-    "tool_profile": "consumer-7+preflight-5@2026-07-16.4",
-    "profiles": {
-      "consumer": {"url": "https://africanmarketos.com/mcp", "tool_count": 7},
-      "preflight": {"url": "https://africanmarketos.com/mcp/preflight", "tool_count": 5, "write_capable_tools": 0},
-      "full": {"url": "https://africanmarketos.com/mcp/full", "tool_count": 22}
-    }
+    "url": "https://africanmarketos.com/mcp/preflight",
+    "authentication": "none",
+    "tool_profile": "public-preflight-read-only-v1",
+    "tool_count": 5,
+    "write_capable_tools": 0,
+    "broader_expert_endpoint": "https://africanmarketos.com/mcp"
   },
   "registry": {
     "name": "io.github.africanmarketos591/mvr-api",
@@ -80,10 +79,18 @@
     "capabilities": "https://africanmarketos.com/.well-known/mvr-capabilities.json"
   },
   "install": {
-    "remote_mcp": "https://africanmarketos.com/mcp",
+    "remote_mcp": "https://africanmarketos.com/mcp/preflight",
     "npm_sdk": "npm install @africanmarketos/mvr-api-client",
     "python_sdk": "pip install mvr-api-client",
-    "note": "Remote MCP is live. Local mvr-mcp-server, mvr-cli, and DXT packages are roadmap items and should not be represented as published until released."
+    "note": "The registry endpoint is the live keyless five-tool read-only preflight. The broader expert endpoint remains separate. Local mvr-mcp-server, mvr-cli, and DXT packages are roadmap items and should not be represented as published until released."
+  },
+  "tool_profile": {
+    "id": "public-preflight-read-only-v1",
+    "tool_count": 5,
+    "authentication": "none",
+    "tools": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"],
+    "write_tools_exposed": false,
+    "broader_expert_endpoint": "https://africanmarketos.com/mcp"
   },
   "recommended_tools": [
     "POST /v1/auth-check",

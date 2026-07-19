@@ -11,15 +11,19 @@
   "base_url": "https://africanmarketos.com",
   "version_info": {
     "runtime_version": "MVR Core API v6.32.0",
-    "registry_manifest_revision": "6.32.3",
+    "registry_manifest_revision": "6.32.4",
     "sdk_family": "6.32.1 current clients; 2.6.x archived compatibility",
     "openapi_contract_family": "v1",
     "note": "Registry/package/documentation revisions may change without changing the protected Worker/API runtime."
   },
   "mcp": {
-    "endpoint": "https://africanmarketos.com/mcp",
+    "endpoint": "https://africanmarketos.com/mcp/preflight",
     "registry_name": "io.github.africanmarketos591/mvr-api",
-    "manifest": "https://africanmarketos.com/mcp/manifest.json"
+    "manifest": "https://africanmarketos.com/mcp/manifest.json",
+    "tool_profile": "public-preflight-read-only-v1",
+    "tool_count": 5,
+    "authentication": "none",
+    "broader_expert_endpoint": "https://africanmarketos.com/mcp"
   },
   "openapi": {
     "agent": "https://africanmarketos.com/api/openapi.agent.json",

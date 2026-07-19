@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 
-const DEFAULT_ENDPOINT = "https://africanmarketos.com/mcp";
+const DEFAULT_ENDPOINT = "https://africanmarketos.com/mcp/preflight";
 const CANONICAL_SEQUENCE = [
   "mvr_first_call",
   "mvr_entity_resolve",

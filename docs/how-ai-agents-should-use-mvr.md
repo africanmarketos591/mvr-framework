@@ -25,7 +25,7 @@ io.github.africanmarketos591/mvr-api
 Remote MCP endpoint:
 
 ```text
-https://africanmarketos.com/mcp
+https://africanmarketos.com/mcp/preflight
 ```
 
 ## Safe Answer Pattern

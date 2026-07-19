@@ -53,14 +53,13 @@ python python\mvr_preflight.py --self-test
 node javascript\mvr_preflight.mjs --self-test
 ```
 
-The default endpoint is `https://africanmarketos.com/mcp`. Override it only with `MVR_MCP_URL`. The public endpoint is sandbox/evaluation only; it never authorizes launch, scale, lending, investment, certification, or legal reliance. Do not send confidential evidence, personal records, credentials, or regulated data.
+The default endpoint is the registry's five-tool read-only profile at `https://africanmarketos.com/mcp/preflight`. Override it only with `MVR_MCP_URL`. The public endpoint is sandbox/evaluation only; it never authorizes launch, scale, lending, investment, certification, or legal reliance. Do not send confidential evidence, personal records, credentials, or regulated data.
 
 Host recipes:
 
 - Microsoft: https://africanmarketos.com/mcp/copilot-studio.json
 - Google: https://africanmarketos.com/mcp/google-adk.json
 - OpenAI API: https://africanmarketos.com/mcp/openai-responses.json
-- Anthropic API: https://africanmarketos.com/mcp/anthropic-messages.json
 - xAI Responses API / Grok custom connector: https://africanmarketos.com/mcp/xai-grok.json
 
 The xAI recipe documents compatible integration paths. It does not claim that unconfigured Grok conversations automatically discover or select MVR.

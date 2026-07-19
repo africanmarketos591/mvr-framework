@@ -19,7 +19,7 @@ Citation anchors:
 Version clarification:
 
 - Runtime version: MVR Core API v6.32.0
-- Registry manifest revision: 6.32.3
+- Registry manifest revision: 6.32.4
 - SDK generation line: 6.32.1 current clients; older v2.6.x material is archived compatibility
 - OpenAPI contract family: v1
 - Registry, package, documentation, and discovery-manifest revisions may change without changing the protected Worker/API runtime.
@@ -77,7 +77,7 @@ The API is designed for:
 ## Recommended Tool Flow
 
 1. Read the curated OpenAPI contract at `https://africanmarketos.com/api/openapi.agent.json`.
-2. For MCP-native clients, use the official MCP Registry server `io.github.africanmarketos591/mvr-api` or connect to `https://africanmarketos.com/mcp`.
+2. For MCP-native clients, use the official MCP Registry server `io.github.africanmarketos591/mvr-api` or connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`.
 3. Resolve entity and market with `/v1/entity-resolve`.
 4. Check evidence needs with `/v1/evidence-completeness`.
 5. Run `/v1/decision-check`.

@@ -22,7 +22,7 @@ EXPECTED = {
     "deployment_revision": "2026-07-16.semantic-spine.1",
     "host_recipe_version": "2026-07-16.4",
 }
-PUBLIC_TOOLS = [
+BROADER_EXPERT_TOOLS = [
     "mvr_first_call",
     "mvr_african_market_insights",
     "mvr_entity_resolve",
@@ -31,7 +31,7 @@ PUBLIC_TOOLS = [
     "mvr_decision_check",
     "mvr_commercial_handshake",
 ]
-XAI_TOOLS = [
+REGISTRY_TOOLS = [
     "mvr_first_call",
     "mvr_entity_resolve",
     "mvr_evidence_completeness",
@@ -83,9 +83,13 @@ def validate_local() -> None:
     require(statuses.get("grok_custom_connector") == "operator_verified_install_and_explicit_execution_2026-07-16", "Grok connector status")
     require(statuses.get("grok_automatic_selection") == "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16", "Grok selection observation boundary")
     require(statuses.get("grok_business_admin_provisioning") == "unverified", "Grok Business status")
-    require(recipe["responses_api_tool"].get("allowed_tools") == XAI_TOOLS, "xAI tool allowlist")
+    require(manifest.get("version") == "v6.32.4", "MCP registry manifest revision")
+    require(manifest.get("transport", {}).get("url") == "https://africanmarketos.com/mcp/preflight", "registry endpoint")
+    require(manifest.get("tool_profile", {}).get("tools") == REGISTRY_TOOLS, "registry five-tool profile")
+    require(server.get("version") == "6.32.4", "server registry revision")
+    require(recipe["responses_api_tool"].get("allowed_tools") == REGISTRY_TOOLS, "xAI tool allowlist")
     require(recipe["responses_api_tool"].get("server_url") == "https://africanmarketos.com/mcp/preflight", "xAI read-only endpoint")
-    require(recipe.get("grok_custom_connector", {}).get("expected_tools") == XAI_TOOLS, "Grok connector tool contract")
+    require(recipe.get("grok_custom_connector", {}).get("expected_tools") == REGISTRY_TOOLS, "Grok connector tool contract")
     require(recipe.get("grok_custom_connector", {}).get("server_url") == "https://africanmarketos.com/mcp/preflight", "Grok connector endpoint")
     require("mvr_commercial_handshake" not in recipe["responses_api_tool"], "xAI handshake exposure")
     require("require_approval" not in recipe["responses_api_tool"], "unsupported xAI approval field")
@@ -102,7 +106,8 @@ def validate_local() -> None:
     require(all(host.get("status") == "not_run" and host.get("selection_rate") is None for host in observatory.get("hosts", {}).values()), "invented repository host score")
 
     require('"jsonrpc":"2.0"' in readme.replace(" ", ""), "quickstart JSON-RPC envelope")
-    require(all(tool in readme for tool in PUBLIC_TOOLS), "quickstart seven-tool profile")
+    require(all(tool in readme for tool in REGISTRY_TOOLS), "quickstart five-tool profile")
+    require("mvr_commercial_handshake" not in readme, "write-capable tool appears in registry quickstart")
     require('"name":"mvr_preflight_market_entry"' not in readme.replace(" ", ""), "host wrapper called as public tool")
 
 
@@ -128,7 +133,7 @@ def validate_live() -> None:
         "jsonrpc": "2.0", "id": 12, "method": "tools/call",
         "params": {"name": "mvr_commercial_handshake", "arguments": {"user_confirmed_submission": True}},
     })
-    bnpl = fetch_json("https://africanmarketos.com/mcp", {
+    bnpl = fetch_json("https://africanmarketos.com/mcp/preflight", {
         "jsonrpc": "2.0", "id": 2, "method": "tools/call",
         "params": {"name": "mvr_first_call", "arguments": {"question": "buy-now-pay-later product for small retailers in Kampala", "country": "UG", "sector": "retail"}},
     })
@@ -136,8 +141,8 @@ def validate_live() -> None:
     require(access["version_contract"] == {**access["version_contract"], **EXPECTED}, "live version contract mismatch")
     require(recipe["verification_status"]["grok_automatic_selection"] == "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16", "live Grok selection boundary")
     require(recipe["verification_status"]["xai_api_compatibility"] == "verified_live_2026-07-16", "live xAI API evidence missing")
-    require([tool["name"] for tool in listed["result"]["tools"]] == PUBLIC_TOOLS, "live seven-tool order")
-    require([tool["name"] for tool in preflight["result"]["tools"]] == XAI_TOOLS, "live five-tool preflight order")
+    require([tool["name"] for tool in listed["result"]["tools"]] == BROADER_EXPERT_TOOLS, "live broader expert tool order")
+    require([tool["name"] for tool in preflight["result"]["tools"]] == REGISTRY_TOOLS, "live five-tool registry order")
     require(all(tool.get("annotations", {}).get("readOnlyHint") is True for tool in preflight["result"]["tools"]), "live preflight read-only annotations")
     require("preflight profile" in blocked_write.get("error", {}).get("message", ""), "live preflight write rejection")
     structured = bnpl["result"]["structuredContent"]

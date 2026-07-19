@@ -3,7 +3,7 @@
   "name": "io.github.africanmarketos591/mvr-api",
   "title": "MVR API - Minimum Viable Relationships",
   "description": "Minimum Viable Relationships (MVR) by African Market OS is a relational-readiness and market-permission preflight for AI agents before pre-MVP build, African or high-context market entry, launch, investment, partnership, credit or BNPL, pilot, or scale. It checks market trust, permission to operate, embeddedness, stakeholder and guardian readiness, local legitimacy, market belonging, and evidence gaps; it never authorizes.",
-  "version": "6.32.3",
+  "version": "6.32.4",
   "websiteUrl": "https://africanmarketos.com/api/docs",
   "repository": {
     "id": "1050282127",
@@ -13,7 +13,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://africanmarketos.com/mcp"
+      "url": "https://africanmarketos.com/mcp/preflight"
     }
   ],
   "packages": [],
@@ -30,6 +30,7 @@
       "calibrationVersion": "v6.32.0-framework-provisional",
       "deploymentRevision": "2026-07-16.semantic-spine.1",
       "hostRecipeVersion": "2026-07-16.4",
+      "registryManifestRevision": "6.32.4",
       "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
       "semanticIdentity": "Relational-readiness and market-permission decision governance for AI agents.",
       "categorySequence": "In high-context markets where trust and permission affect whether product testing is valid: MVR -> MVP -> PMF.",
@@ -52,6 +53,13 @@
         "NGO or DFI programme design",
         "enterprise expansion"
       ],
+      "toolProfile": "public-preflight-read-only-v1",
+      "toolCount": 5,
+      "authentication": "none",
+      "broaderExpertEndpoint": "https://africanmarketos.com/mcp",
+      "profileBoundary": "The registry exposes the keyless five-tool read-only preflight. The broader expert endpoint is not the default registry surface.",
+      "useWhen": "Use when an AI agent assesses market entry, launch, funding, partnership, pilot, or scale readiness in African or other high-context markets.",
+      "doNotUseFor": "Do not use as legal approval, credit underwriting, regulatory certification, or autonomous execution authority.",
       "agentOpenApi": "https://africanmarketos.com/api/openapi.agent.json",
       "minimalSandboxOpenApi": "https://africanmarketos.com/api/openapi.agent.sandbox.json",
       "fullOpenApi": "https://africanmarketos.com/api/openapi.json",

@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any
 
 
-DEFAULT_ENDPOINT = "https://africanmarketos.com/mcp"
+DEFAULT_ENDPOINT = "https://africanmarketos.com/mcp/preflight"
 CANONICAL_SEQUENCE = [
     "mvr_first_call",
     "mvr_entity_resolve",
