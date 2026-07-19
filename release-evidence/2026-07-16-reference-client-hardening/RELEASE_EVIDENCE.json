@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "checked_at_utc": "2026-07-16T07:36:33.4940731Z",
+  "release_scope": "Independent-review closure: deterministic MCP response-envelope validation, CI-enforced reference-client self-tests, and unconditional selection-result publication commitment",
+  "public_core_version": "v6.32.0",
+  "deployment_revision": "2026-07-16.reference-client-hardening.4",
+  "cloudflare_version_id": "f2eebe63-11cc-46db-983b-b9ed4c773fac",
+  "private_worker_sha256": "12c38d4f6d2401fdf680c7a4e765c61a4fbad9e541ee783e7a8017d3796df688",
+  "public_repository": {
+    "repository": "africanmarketos591/mvr-framework",
+    "branch": "agent/mcp-contract-policy-grok",
+    "source_commit": "d27de48",
+    "draft_pull_request": "https://github.com/africanmarketos591/mvr-framework/pull/1",
+    "independent_review_record": "docs/reviews/2026-07-16-independent-senior-review.md"
+  },
+  "review_rulings": {
+    "reported_stale_version_map": "not_reproduced_already_fixed_on_reviewed_branch",
+    "reference_client_envelope_validation": "confirmed_and_fixed",
+    "reference_client_self_tests_in_ci": "implemented",
+    "publish_failed_observatory_results": "committed_in_manifest_and_protocol"
+  },
+  "test_chain": {
+    "worker_syntax": "PASS",
+    "worker_regression_suites": "110/110 PASS",
+    "python_reference_client_self_test": "PASS; 6 malformed envelopes rejected",
+    "javascript_reference_client_self_test": "PASS; 6 malformed envelopes rejected",
+    "python_live_reference_client": "PASS",
+    "javascript_live_reference_client": "PASS",
+    "repository_contract_validator_local": "PASS",
+    "repository_contract_validator_live": "PASS"
+  },
+  "public_file_sha256": {
+    ".github/workflows/mcp-contract-sanity.yml": "59a83259514b71b910efdee11db150756982baeb45b64cf7ec25b807a7fc0086",
+    ".well-known/mvr-selection-observatory.json": "3babd2f7cfe8efe0cd61b2c838c9291f2d0e584b60301f84c4bf4d64773cad6c",
+    "docs/reviews/2026-07-16-independent-senior-review.md": "574dc59f29a84f8598f44f3e0d30e19da53a4756a1d526a7e78df9b6a1dccdb2",
+    "docs/version-map.md": "1994f8a8e2dd6c4e6e5549c11da4ebe84626ea02748f87f4376011466392d903",
+    "evaluations/mvr-bench-selection-v0.1/README.md": "421479370cf590dfe89eba64951ab0be282639bcce58b4f5286e846f2d858ecb",
+    "mcp/manifest.json": "5c44086ace0c74c5660c6b881c17e5960e4b9019d00c7cc62fa3341117334818",
+    "mcp/xai-grok.json": "270da3820d09ce6218128541873d1bafa20e0f1d308ba26f4a2067694615a411",
+    "reference-agents/mvr-market-entry-preflight/javascript/mvr_preflight.mjs": "85d0fd503e888aaa87c909cf02a857dc79dfba99791b1940b6dd8df801381dfc",
+    "reference-agents/mvr-market-entry-preflight/python/mvr_preflight.py": "1db113f663e9636521cc48cde3c69db8e18f6d5035dcea639616cbc188e901a8",
+    "scripts/validate_mcp_public_contract.py": "8f08a703f5cc7c9ca27905f14c5c6a854b389e57c46867b1cca55eb489322137",
+    "server.json": "ba7eb0de29a1b3741b21d4b555f480a65c81712ed5232ecdd5424f6a454715fc"
+  },
+  "truth_boundaries": [
+    "The public core remains v6.32.0; this deployment revision identifies review-driven hardening.",
+    "This independent review record was supplied to the maintainers and is not a native GitHub identity-backed approval.",
+    "Reference-client validation improves integration failure clarity; it does not make public sandbox output a verdict.",
+    "Observatory results remain not_run. Any completed run will be published whether it passes or fails its preregistered gates."
+  ]
+}

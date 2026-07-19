@@ -1,0 +1,80 @@
+{
+  "schema_version": "mvr-grok-com-operator-observation@2026-07-16.1",
+  "status": "operator_observed_not_frozen_track_scored",
+  "date": "2026-07-16",
+  "host_surface": "grok.com custom connector",
+  "host_model": "not disclosed by the host UI",
+  "connector": {
+    "name": "African Market OS - MVR Preflight",
+    "server_url": "https://africanmarketos.com/mcp/preflight",
+    "installation": "pass_by_operator_observation",
+    "tools_discovered": 5,
+    "expected_tools": [
+      "mvr_first_call",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check"
+    ]
+  },
+  "initial_natural_language_case": {
+    "prompt": "We are considering launching a buy-now-pay-later product for small retailers in Kampala, Uganda next month. Should we proceed, and what evidence should we gather first?",
+    "mvr_selected": false,
+    "host_used_web_search": true,
+    "host_confirmation": "The host explicitly stated that it did not use the African Market OS connector.",
+    "result": "automatic_selection_miss"
+  },
+  "explicit_follow_up": {
+    "requested_tool": "mvr_first_call",
+    "reported_host_tool_name": "african_market_os_mvr_preflight___mvr_first_call",
+    "execution": "pass_by_operator_observation",
+    "decision_domain": "credit_adjacent_permission",
+    "not_a_verdict": true,
+    "max_safe_action_preserved": true,
+    "evidence_gaps_preserved": true
+  },
+  "remediation": {
+    "reason": "The host mischaracterized MVR as an unnecessary internal preflight system and substituted web search.",
+    "changes": [
+      "Front-loaded mvr_first_call as a public decision-governance preflight, not an internal data lookup.",
+      "Added explicit entry, launch, credit, BNPL, investment, partnership, procurement, deployment, and scale triggers.",
+      "Stated that web research may inform evidence but does not replace the preflight.",
+      "Made the portable description end on complete sentences.",
+      "Added matching MCP initialize instructions and regression assertions."
+    ],
+    "version_contract": {
+      "core_api_version": "v6.32.0",
+      "mcp_contract_version": "mvr-mcp@2026-07-16.3",
+      "tool_profile_version": "consumer-7+preflight-5@2026-07-16.3",
+      "host_recipe_version": "2026-07-16.3",
+      "deployment_revision": "2026-07-16.selection-metadata.2"
+    },
+    "deployment": {
+      "cloudflare_version_id": "da1a0148-273f-4c7c-8773-37c259c51ca5",
+      "worker_sha256": "dd27b7e486d19c0c7f933d0eba3edd324eef869402cf316552adc908df9836ae",
+      "test_runner_sha256": "4c787154ed1a09f900312093e1e50794a380790e8bb823dad0cc33413b215bea",
+      "worker_tests": {
+        "passed": 110,
+        "failed": 0
+      }
+    }
+  },
+  "post_remediation_natural_language_case": {
+    "prompt": "Help us validate if we should proceed with supplier finance BNPL in Uganda - focus on trust and evidence gaps",
+    "prose_contains_mvr_specific_output": true,
+    "attribution_status": "pass_by_host_sources_panel",
+    "automatic_selection": "pass",
+    "tools_called": [
+      "mvr_first_call",
+      "mvr_entity_resolve"
+    ],
+    "host_used_web_search_as_complement": true,
+    "reason": "The Grok Sources panel visibly recorded both African Market OS tool calls. This is stronger attribution than MVR-shaped prose or a model self-report."
+  },
+  "scoring_boundary": "The pre-remediation miss and post-remediation pass used different prompts and metadata revisions. They demonstrate a corrected selection failure but do not form a comparable rate, frozen 40-case score, host ranking, or claim of reliable automatic selection.",
+  "privacy_boundary": "No raw user evidence, API keys, contact details, or full private chat transcript is included.",
+  "official_references": [
+    "https://docs.x.ai/grok/connectors",
+    "https://docs.x.ai/developers/tools/remote-mcp"
+  ]
+}

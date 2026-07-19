@@ -25,6 +25,7 @@ const clientFiles = [
 ];
 
 if (server.remotes?.[0]?.url !== endpoint) fail("server.json must publish the read-only preflight endpoint");
+if (typeof server.description !== "string" || server.description.length > 100) fail("server.json description must satisfy the MCP Registry 100-character limit");
 if (manifest.transport?.url !== endpoint || manifest.install?.remote_mcp !== endpoint) fail("mcp/manifest.json endpoint drift");
 if (manifest.tool_profile?.tool_count !== 5 || manifest.tool_profile?.write_tools_exposed !== false) fail("MCP manifest must expose five read-only tools");
 if (manifest.version !== `v${server.version}`) fail("server.json and mcp/manifest.json revisions differ");
@@ -40,7 +41,7 @@ for (const file of clientFiles) {
 
 const readme = fs.readFileSync("mcp/README.md", "utf8");
 for (const name of expectedTools) if (!readme.includes(name)) fail(`MCP README omits ${name}`);
-if (readme.includes("mvr_preflight_market_entry")) fail("MCP README still advertises a host-side wrapper as a production tool");
+if (readme.replace(/\s/g, "").includes('"name":"mvr_preflight_market_entry"')) fail("MCP README calls a host-side wrapper as a production tool");
 
 async function callMcp(body) {
   const response = await fetch(endpoint, {

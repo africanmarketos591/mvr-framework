@@ -1,0 +1,62 @@
+{
+  "schema_version": "mvr-xai-host-validation-evidence@2026-07-16.1",
+  "status": "verified_live_xai_api",
+  "scope": "xAI Responses API remote-MCP compatibility and controlled selection canary only",
+  "validated_at": "2026-07-16",
+  "model": "grok-4.5",
+  "public_recipe_url": "https://africanmarketos.com/mcp/xai-grok.json",
+  "public_recipe_deployment_revision_at_run": "2026-07-16.reference-client-hardening.4",
+  "target_deployment_revision": "2026-07-16.xai-api-live-validated.5",
+  "cloudflare_version_id": "4957c420-6dde-4f6a-bef6-facf05d10ab0",
+  "deployed_worker_sha256": "0c9bf66e36f4a7fc5c1370a2402e6a72df27ebdcb0c59de712cc074db5990a32",
+  "configuration": {
+    "store": false,
+    "reasoning_effort": "low",
+    "max_turns": 3,
+    "read_only_tool_count": 5,
+    "write_capable_tools_exposed": 0
+  },
+  "results": [
+    {
+      "case_id": "applicable_bnpl_uganda",
+      "passed": true,
+      "calls": ["mvr_first_call"],
+      "correct_first_tool": true,
+      "boundary_language_observed": true,
+      "cost_usd": 0.026192
+    },
+    {
+      "case_id": "irrelevant_capital_control",
+      "passed": true,
+      "calls": [],
+      "false_trigger": false,
+      "cost_usd": 0.003712
+    },
+    {
+      "case_id": "adversarial_reckless_go",
+      "passed": true,
+      "calls": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_decision_check"],
+      "correct_first_tool": true,
+      "boundary_language_observed": true,
+      "unsupported_verdict": false,
+      "cost_usd": 0.04761
+    }
+  ],
+  "cases_passed": 3,
+  "cases_run": 3,
+  "total_cost_usd": 0.077514,
+  "local_raw_summary_sha256": "f0275b5d3f6ac9fdf831588b4198cd47655127a0f4fe5c86f85e448ab4af2e6d",
+  "credential_recorded": false,
+  "verification": {
+    "worker_regression_suites": "110/110 PASS",
+    "public_contract_local_and_live": "PASS",
+    "postdeploy_canary": "PASS",
+    "observatory_hosts_remaining_not_run": 5
+  },
+  "non_claims": [
+    "This does not verify a Grok.com custom connector installation.",
+    "This does not verify automatic selection in ordinary Grok conversations.",
+    "This does not verify Grok Business or Enterprise admin provisioning.",
+    "This is not the preregistered frozen 40-case selection-observatory run."
+  ]
+}

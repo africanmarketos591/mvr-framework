@@ -2,12 +2,30 @@
   "name": "mvr-api",
   "title": "MVR API - Minimum Viable Relationships",
   "version": "v6.32.4",
+  "version_contract": {
+    "core_api_version": "v6.32.0",
+    "mcp_protocol_version": "2025-06-18",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
+    "sdk_version": "6.32.1",
+    "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
+    "calibration_version": "v6.32.0-framework-provisional",
+    "deployment_revision": "2026-07-16.semantic-spine.1",
+    "host_recipe_version": "2026-07-16.4",
+    "registry_manifest_revision": "6.32.4",
+    "registry_tool_profile": "public-preflight-read-only-v1"
+  },
   "publisher": {
     "name": "African Market OS",
     "originator": "Farouk Mark Mukiibi",
     "url": "https://africanmarketos.com"
   },
-  "description": "First-of-kind relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets. Use MVR for market entry, market belonging, market trust, embeddedness, guardian approval, evidence gaps, local legitimacy, CFO relational risk, market carry, and safe go/no-go recommendations. Sandbox/evaluation use only with the public key; commercial use requires a license.",
+  "description": "Minimum Viable Relationships (MVR) by African Market OS is a relational-readiness and market-permission preflight for AI agents before pre-MVP build, African or high-context market entry, launch, investment, partnership, credit or BNPL, pilot, or scale. It checks market trust, permission to operate, embeddedness, stakeholder and guardian readiness, local legitimacy, market belonging, and evidence gaps; it never authorizes. The public MCP profile is keyless sandbox/evaluation only; commercial use requires a license.",
+  "semantic_identity": {
+    "category": "Relational-readiness and market-permission decision governance for AI agents.",
+    "sequence": "MVR -> MVP -> PMF",
+    "not_a_general_market_data_feed": true
+  },
   "status": {
     "openapi_agent_contract": "available",
     "streamable_http_mcp_server": "live",
@@ -15,7 +33,12 @@
   },
   "transport": {
     "type": "streamable-http",
-    "url": "https://africanmarketos.com/mcp/preflight"
+    "url": "https://africanmarketos.com/mcp/preflight",
+    "authentication": "none",
+    "tool_profile": "public-preflight-read-only-v1",
+    "tool_count": 5,
+    "write_capable_tools": 0,
+    "broader_expert_endpoint": "https://africanmarketos.com/mcp"
   },
   "registry": {
     "name": "io.github.africanmarketos591/mvr-api",
@@ -35,6 +58,13 @@
     "sandbox": "https://africanmarketos.com/docs/sandbox.md",
     "one_command_adoption": "https://africanmarketos.com/docs/one-command-adoption.md",
     "version_map": "https://africanmarketos.com/docs/version-map.md",
+    "canonical_mcp_quickstart": "https://github.com/africanmarketos591/mvr-framework/blob/main/mcp/README.md",
+    "host_policy_modes": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/host-policy-modes.md",
+    "host_policy_reference_clients": "https://github.com/africanmarketos591/mvr-framework/tree/main/reference-agents/mvr-market-entry-preflight",
+    "xai_grok_recipe": "https://africanmarketos.com/mcp/xai-grok.json",
+    "selection_observatory": "https://africanmarketos.com/.well-known/mvr-selection-observatory.json",
+    "outcome_calibration_runbook": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/outcome-calibration-ledger.md",
+    "proof_of_preflight_design": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/proof-of-preflight-design.md",
     "agent_recipes": "https://africanmarketos.com/docs/agent-recipes.md",
     "agent_wrapper_schemas": "https://github.com/africanmarketos591/mvr-framework/blob/main/agent-patterns/tool-schemas.json",
     "llms": "https://africanmarketos.com/llms.txt",
@@ -73,6 +103,7 @@
     "GET /v1/ledger/verify/{hash}"
   ],
   "sandbox": {
+    "scope": "REST sandbox routes; not the keyless public MCP consumer profile",
     "api_key_header": "X-API-Key",
     "api_key_value": "mvr-demo-key-2026",
     "authorized_use": "evaluation_only_non_commercial",

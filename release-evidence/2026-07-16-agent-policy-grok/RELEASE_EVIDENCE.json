@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "checked_at_utc": "2026-07-16T06:12:03.1360289Z",
+  "release_scope": "MCP contract integrity, bounded xAI/Grok status, productive first-call abstention, BNPL routing, outcome-calibration operating boundary, proof-of-preflight design, and selection-observatory preregistration",
+  "public_core_version": "v6.32.0",
+  "deployment_revision": "2026-07-16.bnpl-observatory.3",
+  "cloudflare_version_id": "e3f1bf2e-b5f2-43ee-93eb-1eae4d6a99ac",
+  "private_worker_sha256": "a15195dc34fd17c370aff518fd905de19ebc27d5caa99c65bb9aa85de03665e6",
+  "public_repository": {
+    "repository": "africanmarketos591/mvr-framework",
+    "branch": "agent/mcp-contract-policy-grok",
+    "source_commit": "521870c",
+    "draft_pull_request": "https://github.com/africanmarketos591/mvr-framework/pull/1",
+    "review_status": "awaiting_independent_review_before_merge"
+  },
+  "test_chain": {
+    "worker_syntax": "PASS",
+    "worker_regression_suites": "110/110 PASS",
+    "repository_contract_validator_local": "PASS",
+    "repository_contract_validator_live": "PASS",
+    "ci_workflow": ".github/workflows/mcp-contract-sanity.yml"
+  },
+  "live_canaries": {
+    "public_tool_count": 7,
+    "xai_allowed_tool_count": 5,
+    "xai_write_tools_exposed": 0,
+    "xai_api_compatibility": "documented_not_live_host_verified",
+    "grok_custom_connector": "unverified",
+    "grok_automatic_selection": "unverified",
+    "grok_business_admin_provisioning": "unverified",
+    "bnpl_variants_checked": ["buy-now-pay-later", "buy now pay later", "buy–now–pay–later", "BNPL"],
+    "bnpl_decision_domain": "credit_adjacent_permission",
+    "bnpl_not_a_verdict": true,
+    "selection_observatory_status": "preregistered_no_host_results_published",
+    "selection_observatory_hosts_scored": 0
+  },
+  "public_file_sha256": {
+    "mcp/README.md": "3534ab0fe15accd67b18e5d0297699610e19c19815a4e7b338e40636ab6394b1",
+    "mcp/manifest.json": "3ef70597318cb82f1ad9d9d3f468082646591a689cf3fd01d6a6afd782cbb1a5",
+    "mcp/xai-grok.json": "dc0172ff7ad6dbac51830942d4a1fcb0948fa560fa71705ad830a2ff4ca594b2",
+    "server.json": "1daae89b39fd0c6d788eece2988f971d2a18c5038d2549f1be15dcba07d5221b",
+    ".well-known/mvr-selection-observatory.json": "3fe0dcea94552a1dfc77d552dccc793d40369db67ffecbef592cce8d3fd6c7a4",
+    "docs/version-map.md": "64aa1ab4651491e2d7cf607e0033caae35ecc1ba34de356b7c598ece751a357c",
+    "docs/outcome-calibration-ledger.md": "d34d213a245c9b724c7ba0d66fe559f174d6ecde9353bf43a28e700751ebbfa8",
+    "docs/proof-of-preflight-design.md": "44d2219fe3c37dbe68fc32effa79c716768a344a1c51d20c3606d9267fd9d3b2",
+    "evaluations/mvr-bench-selection-v0.1/README.md": "6782c149b5f12bdca73a1004a76644b864d93a2e91b9a7d1d49ff9c9409cca45",
+    "scripts/validate_mcp_public_contract.py": "e3257355911b4d7b46154502fcf40cec0133ff1828c0bb89478bb3da8202ff70"
+  },
+  "truth_boundaries": [
+    "The public core version remains v6.32.0; the deployment revision identifies this bounded fix and evidence publication.",
+    "No xAI-hosted or Grok-product execution has been performed, so no Grok surface is marked verified.",
+    "The selection observatory contains a frozen protocol and zero host scores until actual host traces are preserved.",
+    "Outcome feedback enters governed review and never mutates the live engine automatically.",
+    "Proof-of-preflight is a published design and acceptance contract, not a shipped cryptographic host-control claim.",
+    "The protected Worker source remains private. Its hash is published for release-chain continuity, not reproducible source review."
+  ]
+}
