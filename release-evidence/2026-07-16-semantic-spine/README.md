@@ -43,4 +43,3 @@ The broad semantic identity belongs at the server and API level. Individual tool
 - Metadata can improve selection only after a host has access to, installed, or indexed the tool. Metadata does not create catalogue placement by itself.
 - The public sandbox is not licensed production scoring.
 - The protected Worker source remains private; its SHA-256 is published for release-chain continuity.
-
