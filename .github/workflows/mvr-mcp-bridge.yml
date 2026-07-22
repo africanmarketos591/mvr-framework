@@ -1,0 +1,37 @@
+name: MVR MCP Bridge
+
+on:
+  push:
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "packages/mvr-mcp-bridge/**"
+      - ".github/workflows/mvr-mcp-bridge.yml"
+  pull_request:
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "packages/mvr-mcp-bridge/**"
+      - ".github/workflows/mvr-mcp-bridge.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: packages/mvr-mcp-bridge/package-lock.json
+      - name: Install bridge dependencies
+        run: npm ci
+        working-directory: packages/mvr-mcp-bridge
+      - name: Run bridge tests
+        run: npm test
+        working-directory: packages/mvr-mcp-bridge
+      - name: Build the Glama-compatible image
+        run: docker build -t mvr-mcp-bridge:test .

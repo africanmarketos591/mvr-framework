@@ -1,0 +1,21 @@
+{
+  "name": "@africanmarketos/mvr-mcp-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-source stdio bridge to the keyless five-tool African Market OS MVR remote MCP preflight.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/index.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0"
+  },
+  "overrides": {
+    "@hono/node-server": "2.0.11"
+  }
+}

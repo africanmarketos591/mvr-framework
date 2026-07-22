@@ -26,6 +26,8 @@ https://africanmarketos.com/mcp/preflight
 
 This is the canonical registry profile: exactly five keyless, read-only tools. It has no write-capable action. The broader expert endpoint at `https://africanmarketos.com/mcp` is not the default registry surface.
 
+For hosts and directory evaluators that require a local stdio process, the repository also contains `packages/mvr-mcp-bridge/` and a root Dockerfile. The bridge forwards this same public profile and does not contain or reproduce protected MVR scoring or calibration logic.
+
 ## Canonical Quickstart
 
 This file is the source quickstart for generated MCP documentation.

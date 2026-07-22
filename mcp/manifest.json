@@ -10,7 +10,7 @@
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.semantic-spine.1",
+    "deployment_revision": "2026-07-21.lead-truth.1",
     "host_recipe_version": "2026-07-16.4",
     "registry_manifest_revision": "6.32.4",
     "registry_tool_profile": "public-preflight-read-only-v1"
@@ -29,6 +29,8 @@
   "status": {
     "openapi_agent_contract": "available",
     "streamable_http_mcp_server": "live",
+    "stdio_to_remote_bridge": "source_available",
+    "stdio_bridge_version": "0.1.0",
     "private_worker_source": "not_public"
   },
   "transport": {
@@ -38,7 +40,8 @@
     "tool_profile": "public-preflight-read-only-v1",
     "tool_count": 5,
     "write_capable_tools": 0,
-    "broader_expert_endpoint": "https://africanmarketos.com/mcp"
+    "broader_expert_endpoint": "https://africanmarketos.com/mcp",
+    "stdio_bridge_source": "https://github.com/africanmarketos591/mvr-framework/tree/main/packages/mvr-mcp-bridge"
   },
   "registry": {
     "name": "io.github.africanmarketos591/mvr-api",
@@ -82,7 +85,7 @@
     "remote_mcp": "https://africanmarketos.com/mcp/preflight",
     "npm_sdk": "npm install @africanmarketos/mvr-api-client",
     "python_sdk": "pip install mvr-api-client",
-    "note": "The registry endpoint is the live keyless five-tool read-only preflight. The broader expert endpoint remains separate. Local mvr-mcp-server, mvr-cli, and DXT packages are roadmap items and should not be represented as published until released."
+    "note": "The registry endpoint is the live keyless five-tool read-only preflight. The broader expert endpoint remains separate. A source-available stdio bridge and Dockerfile support local-only hosts and directory evaluation; no npm MCP-server package or DXT package should be represented as published."
   },
   "tool_profile": {
     "id": "public-preflight-read-only-v1",

@@ -90,7 +90,7 @@ Remote MCP endpoint:
 https://africanmarketos.com/mcp/preflight
 ```
 
-Where your MCP host supports direct remote registration, add the endpoint as a Streamable HTTP server. Example host commands vary by client. The server is remote-first today; local `mvr-mcp-server`, `mvr-cli`, and Claude Desktop DXT packages are roadmap items and should not be represented as live install targets until published.
+Where your MCP host supports direct remote registration, add the endpoint as a Streamable HTTP server. Example host commands vary by client. For hosts that require stdio, the repository's `packages/mvr-mcp-bridge/` and root Dockerfile provide a source-available transport bridge to the same five-tool public profile. No npm `mvr-mcp-server`, CLI, or Claude Desktop DXT package should be represented as published until it is actually released.
 
 ## Correct First Tool Chain
 

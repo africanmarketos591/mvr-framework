@@ -2,7 +2,7 @@
 
 [![MCP Registry](https://img.shields.io/badge/MCP%20Registry-listed-0f6b45)](https://registry.modelcontextprotocol.io/?search=mvr)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17054819-blue)](https://doi.org/10.5281/zenodo.17054819)
-[![Glama](https://img.shields.io/badge/glama.ai-listed-7c3aed)](https://glama.ai/mcp/servers?query=MVR+API)
+[![Glama Connector](https://img.shields.io/badge/Glama-remote%20connector-7c3aed)](https://glama.ai/mcp/connectors/io.github.africanmarketos591/mvr-api)
 [![RapidAPI](https://img.shields.io/badge/RapidAPI-available-0055da)](https://rapidapi.com/africanmarketos591/api/mvr-framework-tm-api-african-market-os)
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-6ba539)](https://africanmarketos.com/api/openapi.json)
 [![OpenAPI Sanity](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml/badge.svg)](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml)
@@ -118,6 +118,8 @@ The API helps agents and systems:
 - Full LLM context: https://africanmarketos.com/llms-full.txt
 - Agent instructions: https://africanmarketos.com/AGENTS.md
 - Canonical public MCP endpoint: https://africanmarketos.com/mcp/preflight
+- Glama remote connector: https://glama.ai/mcp/connectors/io.github.africanmarketos591/mvr-api
+- Open-source stdio bridge for local hosts and directory evaluation: `packages/mvr-mcp-bridge/`
 - MCP setup: https://africanmarketos.com/mcp/README.md
 - Official MCP Registry name: `io.github.africanmarketos591/mvr-api`
 - MCP Registry lookup: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api
@@ -164,6 +166,7 @@ The sandbox is intentionally constrained: `full_advisory` only, `client_safe` ou
 - Citation and provenance metadata
 - Machine-readable attribution files
 - Current MVR API OpenAPI contracts
+- A runnable stdio-to-remote MCP bridge for hosts that cannot connect to Streamable HTTP directly
 - Agent-facing instructions and discovery files
 - Developer quickstarts, examples, and Postman collection
 - Lightweight reference clients

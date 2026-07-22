@@ -5,5 +5,5 @@
       "url": "https://africanmarketos.com/mcp/preflight"
     }
   },
-  "note": "This connects the keyless five-tool read-only preflight. If your Claude Desktop build requires stdio-only servers, use the official registry name io.github.africanmarketos591/mvr-api or a local HTTP bridge."
+  "note": "This connects the keyless five-tool read-only preflight. If your Claude Desktop build requires a stdio process, use packages/mvr-mcp-bridge from the official repository; it forwards the same public profile and contains no protected scoring logic."
 }

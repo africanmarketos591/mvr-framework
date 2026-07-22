@@ -15,7 +15,7 @@ Every integration should preserve these fields separately:
 | `sdk_version` | `6.32.1` | Current published TypeScript/Python SDK generation line. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-07-16.1` | Host-policy middleware and selection boundary. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-07-16.semantic-spine.1` | Stable application build revision. |
+| `deployment_revision` | `2026-07-21.lead-truth.1` | Stable application build revision. |
 | `deployment_provider_revision` | release evidence | Provider-generated revision recorded after deployment, not self-embedded. |
 | `host_recipe_version` | `2026-07-16.4` | Microsoft, Google, OpenAI, and xAI recipe family. |
 
@@ -33,6 +33,7 @@ Machine-readable source: `https://africanmarketos.com/.well-known/mvr-version.js
 | Python SDK generation line | `6.32.1` | Current | Package: `mvr-api-client`; older `2.6.x` is archived compatibility. |
 | REST sandbox | `v6.32.0` runtime | Current, limited | Uses `X-API-Key: mvr-demo-key-2026` where the route contract requires it; non-commercial evaluation only. |
 | MCP Registry public profile | `public-preflight-read-only-v1` | Current, limited | Exactly five keyless read-only tools at `/mcp/preflight`; non-commercial evaluation only. The broader expert endpoint is separate and is not the registry default. |
+| MCP stdio bridge | `0.1.0` | Source available | Local transport adapter for stdio-only hosts and directory evaluation; the protected MVR engine remains remote and server-side. |
 
 ## Historical / Archived Lines
 
