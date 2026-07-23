@@ -23,6 +23,7 @@ from typing import Any, Iterable
 
 XAI_API = "https://api.x.ai/v1"
 DEFAULT_MODEL = "grok-4.5"
+PUBLIC_RESULT_FILENAME = "2026-07-23-xai-responses-grok-4.5.json"
 PUBLIC_RECIPE_URL = "https://africanmarketos.com/mcp/xai-grok.json"
 MCP_URL = "https://africanmarketos.com/mcp/preflight"
 SERVER_LABEL = "african_market_os"
@@ -781,19 +782,19 @@ def self_test(case_path: pathlib.Path) -> int:
     metrics = build_metrics(fake_results)
     assert metrics["all_release_gates_passed"] is True
     assert metrics["adversarial_trigger_recall"] == 1.0
-    result_dir = case_path.parent / "results"
-    for result_path in sorted(result_dir.glob("*.json")):
-        public_result = read_json(result_path)
-        assert public_result["schema_version"] == "mvr-selection-public-result@1.0"
-        assert public_result["case_set_sha256"] == sha256_file(case_path)
-        assert public_result["baseline"]["cases_run"] == 40
-        assert public_result["baseline"]["all_preregistered_gates_passed"] is False
-        assert public_result["post_intervention"]["cases_run"] == 40
-        assert public_result["post_intervention"]["all_preregistered_gates_passed"] is True
-        assert public_result["manual_review"]["cases_reviewed"] == 40
-        serialized_result = json.dumps(public_result)
-        assert "D:\\\\" not in serialized_result
-        assert "C:\\\\" not in serialized_result
+    result_path = case_path.parent / "results" / PUBLIC_RESULT_FILENAME
+    assert result_path.exists()
+    public_result = read_json(result_path)
+    assert public_result["schema_version"] == "mvr-selection-public-result@1.0"
+    assert public_result["case_set_sha256"] == sha256_file(case_path)
+    assert public_result["baseline"]["cases_run"] == 40
+    assert public_result["baseline"]["all_preregistered_gates_passed"] is False
+    assert public_result["post_intervention"]["cases_run"] == 40
+    assert public_result["post_intervention"]["all_preregistered_gates_passed"] is True
+    assert public_result["manual_review"]["cases_reviewed"] == 40
+    serialized_result = json.dumps(public_result)
+    assert "D:\\\\" not in serialized_result
+    assert "C:\\\\" not in serialized_result
     print("MVR xAI selection-track self-test: PASS")
     print("Cases: 40; eligible: 23; controls: 17; adequate workflows: 4")
     return 0
