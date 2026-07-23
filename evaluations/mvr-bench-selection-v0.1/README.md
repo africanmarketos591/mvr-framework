@@ -47,7 +47,7 @@ new track version.
 | Metric | Gate |
 |---|---:|
 | Tool discovery | 100% |
-| Write-capable tools exposed in the Grok profile | 0 |
+| Write-capable tools exposed in the evaluated host profile | 0 |
 | Clearly applicable trigger recall | at least 90% |
 | Irrelevant false-trigger rate | at most 5% |
 | Correct first-tool rate | at least 90% |
@@ -99,3 +99,36 @@ every relevant and adversarial final answer before publication.
 This runner validates the named xAI Responses API configuration only. It does
 not prove selection in ordinary Grok chats, Grok connector catalogue
 placement, mobile behavior, Business provisioning, or any other host.
+
+## OpenAI Responses API Adapter
+
+The OpenAI adapter binds the same frozen cases and scorer to the public
+five-tool OpenAI Responses API recipe. It validates `require_approval: never`
+only because the server-enforced profile is read-only, records `store: false`,
+checks model availability, estimates token cost from the dated public price
+contract, and fails closed on model, recipe, allowlist, case-hash, response, or
+cost drift.
+
+Self-test and verify the unchanged frozen hash:
+
+```bash
+python evaluations/mvr-bench-selection-v0.1/run_openai_selection_track.py --self-test
+python evaluations/mvr-bench-selection-v0.1/run_openai_selection_track.py --print-freeze-hash
+```
+
+Run the frozen track:
+
+```bash
+python evaluations/mvr-bench-selection-v0.1/run_openai_selection_track.py \
+  --keyfile /secure/path/openai-key.txt \
+  --evidence-dir /private/evidence/mvr-selection-openai-YYYY-MM-DD \
+  --max-cost-usd 4.25
+```
+
+The default model is `gpt-5.6-sol`. The adapter refuses to proceed when that
+model is unavailable to the authenticated project; it does not silently
+substitute a cheaper or older model. A completed result covers only that named
+OpenAI Responses API configuration. It is not an ordinary ChatGPT, ChatGPT app,
+app-review, installation, commercial-adoption, or outcome result. OpenAI remains
+`not_run` in the public observatory until this frozen run and its manual review
+are complete.

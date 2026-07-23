@@ -29,6 +29,12 @@ jobs:
           evaluations/mvr-bench-selection-v0.1/run_xai_selection_track.py
           --self-test
 
+      - name: Run OpenAI adapter self-test
+        run: >-
+          python
+          evaluations/mvr-bench-selection-v0.1/run_openai_selection_track.py
+          --self-test
+
       - name: Verify frozen case-set hash
         shell: bash
         run: |
