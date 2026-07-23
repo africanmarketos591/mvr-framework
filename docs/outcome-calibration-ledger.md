@@ -43,6 +43,8 @@ curl -sS https://africanmarketos.com/v1/outcome-ledger \
 
 The raw subject reference is not persisted. The service stores a tenant-scoped, server-keyed HMAC-SHA256 token. The response returns an `enrollment_id`, immutable `ledger_anchor_hash`, and scheduled check-backs.
 
+Each enrolled horizon remains independent. Reviewing the 6-month observation does not close the 12- or 18-month follow-up. The enrollment remains active until every scheduled horizon is reported, reviewed, withdrawn, or otherwise resolved under the governed contract.
+
 ## 2. Record a Due Outcome
 
 An observation must name one enrolled horizon and cannot be recorded before that check-back is due.
@@ -114,6 +116,22 @@ The enrolling actor or an elevated reviewer can retrieve an enrollment. Elevated
 ```
 
 The outcome records have a seven-year governance retention class unless withdrawn. Organizations should align consent notices and internal retention policy before enrolling real decisions.
+
+## 5. Daily Follow-up Operations
+
+The production scheduler scans the outcome queue once per day. It persists an aggregate operational summary and sends an operator alert when at least one check-back is due or an observation awaits governed review.
+
+The summary is intentionally identity-free. It contains only:
+
+- active enrollment count
+- scheduled check-back count
+- check-backs due now
+- check-backs overdue by at least 30 days
+- check-backs due in the next 30 days
+- observations pending governed review
+- due counts grouped by enrolled horizon month
+
+It does not contain subject tokens, enrollment IDs, tenant or workspace identifiers, decision details, evidence references, contact data, or raw records. Upcoming counts support planning, while alerts remain limited to due or review-pending work to avoid a month of repetitive advance notices.
 
 ## Method Boundary
 
