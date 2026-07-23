@@ -24,13 +24,14 @@ from typing import Any
 
 OPENAI_API = "https://api.openai.com/v1"
 DEFAULT_MODEL = "gpt-5.6-sol"
+DEFAULT_MAX_OUTPUT_TOKENS = 4000
 PUBLIC_RECIPE_URL = "https://africanmarketos.com/mcp/openai-responses.json"
 MCP_URL = "https://africanmarketos.com/mcp/preflight"
 SERVER_LABEL = "african_market_os"
 FROZEN_CASE_SET_SHA256 = (
     "16dc2d6b38e4b03b3dca6bfa440c9fa65049700c17c5e70afc7c4781304431c9"
 )
-SCORER_REVISION = "mvr-selection-scorer@1.0.2+openai-cost@1.0.0"
+SCORER_REVISION = "mvr-selection-scorer@1.0.2+openai-adapter@1.1.0"
 ALLOWED_TOOLS = [
     "mvr_first_call",
     "mvr_entity_resolve",
@@ -190,17 +191,56 @@ def openai_cost_usd(response: dict[str, Any]) -> Decimal:
 common.cost_usd = openai_cost_usd
 
 
+def normalize_openai_response_for_scorer(
+    response: dict[str, Any],
+) -> dict[str, Any]:
+    """Adapt OpenAI's direct MCP output object to the shared scorer envelope.
+
+    Raw responses remain untouched on disk. The shared scorer was frozen
+    against xAI's JSON-string envelope, where the tool result is nested under
+    ``structuredContent``. OpenAI serializes that same structured result
+    directly into the MCP call's ``output`` string.
+    """
+
+    normalized = dict(response)
+    output: list[Any] = []
+    for original in response.get("output", []):
+        if not isinstance(original, dict) or original.get("type") != "mcp_call":
+            output.append(original)
+            continue
+        item = dict(original)
+        raw_output = item.get("output")
+        if isinstance(raw_output, str):
+            try:
+                envelope = json.loads(raw_output)
+            except json.JSONDecodeError:
+                envelope = None
+            if (
+                isinstance(envelope, dict)
+                and "structuredContent" not in envelope
+                and isinstance(envelope.get("mvr_response_receipt"), dict)
+            ):
+                item["output"] = json.dumps(
+                    {"structuredContent": envelope},
+                    separators=(",", ":"),
+                )
+        output.append(item)
+    normalized["output"] = output
+    return normalized
+
+
 def build_payload(
     case: dict[str, Any],
     model: str,
     remote_tool: dict[str, Any],
     case_set_sha256: str,
+    max_output_tokens: int,
 ) -> dict[str, Any]:
     return {
         "model": model,
         "store": False,
         "reasoning": {"effort": "low"},
-        "max_output_tokens": 700,
+        "max_output_tokens": max_output_tokens,
         "prompt_cache_key": f"mvr-selection-v0.1-{case_set_sha256[:16]}",
         "input": [
             {
@@ -210,7 +250,14 @@ def build_payload(
                     "user's request. Answer ordinary knowledge, writing, coding, and "
                     "arithmetic requests directly. Never invent tool results. Preserve "
                     "every tool boundary and distinguish evidence requirements from "
-                    "approval, certification, underwriting, or a decision verdict."
+                    "approval, certification, underwriting, or a decision verdict. "
+                    "When an MVR tool is used, state exactly 'This is not a verdict' "
+                    "in the final answer. When the user supplied no evidence, stop "
+                    "after bounded evidence recruitment. When the user supplied a "
+                    "multi-item evidence pack and asks for an evaluation or maximum "
+                    "safe action, follow the read-only next-tool sequence through "
+                    "mvr_decision_check even if an intermediate step is partial; the "
+                    "terminal tool may abstain and must never be treated as approval."
                 ),
             },
             {"role": "user", "content": case["prompt"]},
@@ -225,11 +272,14 @@ def run_track(
     case_path: pathlib.Path,
     evidence_dir: pathlib.Path,
     max_cost: Decimal,
+    max_output_tokens: int,
 ) -> int:
     if model not in MODEL_PRICES_PER_MILLION:
         raise TrackError(
             f"Model {model!r} has no frozen price contract in this adapter."
         )
+    if max_output_tokens < 700 or max_output_tokens > 4000:
+        raise TrackError("--max-output-tokens must be between 700 and 4000.")
     case_set = read_json(case_path)
     cases = validate_case_set(case_set)
     case_set_sha256 = sha256_file(case_path)
@@ -272,7 +322,7 @@ def run_track(
         "require_approval": "never",
         "store": False,
         "reasoning_effort": "low",
-        "max_output_tokens": 700,
+        "max_output_tokens": max_output_tokens,
         "max_cost_usd": str(max_cost),
         "pricing_contract": {
             "model": model,
@@ -295,7 +345,13 @@ def run_track(
             raise TrackError(
                 f"Cost guard reached after {len(results)} cases at ${total_cost}."
             )
-        payload = build_payload(case, model, remote_tool, case_set_sha256)
+        payload = build_payload(
+            case,
+            model,
+            remote_tool,
+            case_set_sha256,
+            max_output_tokens,
+        )
         stem = f"{index:02d}-{case['id'].lower()}"
         write_json(evidence_dir / f"{stem}.request.json", payload)
         response = request_json(f"{OPENAI_API}/responses", key, payload=payload)
@@ -305,7 +361,10 @@ def run_track(
                 f"{case['id']} returned non-completed status "
                 f"{response.get('status')!r}; raw response preserved."
             )
-        result = evaluate_case(case, response)
+        result = evaluate_case(
+            case,
+            normalize_openai_response_for_scorer(response),
+        )
         write_json(evidence_dir / f"{stem}.result.json", result)
         results.append(result)
         total_cost += Decimal(result["cost_usd"])
@@ -368,7 +427,10 @@ def rescore_preserved_run(
         response_path = evidence_dir / f"{stem}.response.json"
         if not response_path.exists():
             raise TrackError(f"Missing preserved response: {response_path.name}")
-        result = evaluate_case(case, read_json(response_path))
+        result = evaluate_case(
+            case,
+            normalize_openai_response_for_scorer(read_json(response_path)),
+        )
         results.append(result)
         total_cost += Decimal(result["cost_usd"])
     metrics = build_metrics(results)
@@ -410,9 +472,14 @@ def self_test(case_path: pathlib.Path) -> int:
     }
     remote_tool = validated_remote_tool(recipe)
     payload = build_payload(
-        cases[0], DEFAULT_MODEL, remote_tool, FROZEN_CASE_SET_SHA256
+        cases[0],
+        DEFAULT_MODEL,
+        remote_tool,
+        FROZEN_CASE_SET_SHA256,
+        DEFAULT_MAX_OUTPUT_TOKENS,
     )
     assert payload["store"] is False
+    assert payload["max_output_tokens"] == DEFAULT_MAX_OUTPUT_TOKENS
     assert "max_turns" not in payload
     assert payload["tools"][0]["require_approval"] == "never"
     assert payload["tools"][0]["allowed_tools"] == ALLOWED_TOOLS
@@ -440,9 +507,7 @@ def self_test(case_path: pathlib.Path) -> int:
                 "name": "mvr_first_call",
                 "server_label": SERVER_LABEL,
                 "error": None,
-                "output": json.dumps(
-                    {"structuredContent": {"mvr_response_receipt": receipt}}
-                ),
+                "output": json.dumps({"mvr_response_receipt": receipt}),
             },
             {
                 "type": "message",
@@ -460,7 +525,12 @@ def self_test(case_path: pathlib.Path) -> int:
             "output_tokens": 20,
         },
     }
-    result = evaluate_case(cases[0], response)
+    normalized_response = normalize_openai_response_for_scorer(response)
+    assert "structuredContent" not in json.loads(response["output"][0]["output"])
+    assert "structuredContent" in json.loads(
+        normalized_response["output"][0]["output"]
+    )
+    result = evaluate_case(cases[0], normalized_response)
     assert result["passed"] is True
     assert result["receipt_preserved"] is True
     assert Decimal(result["cost_usd"]) == Decimal("0.00092")
@@ -510,6 +580,15 @@ def main() -> int:
     default_cases = pathlib.Path(__file__).with_name("cases.json")
     parser.add_argument("--keyfile", type=pathlib.Path)
     parser.add_argument("--model", default=DEFAULT_MODEL)
+    parser.add_argument(
+        "--max-output-tokens",
+        type=int,
+        default=DEFAULT_MAX_OUTPUT_TOKENS,
+        help=(
+            "Per-case Responses API output ceiling. The selected value is recorded "
+            "in the run manifest."
+        ),
+    )
     parser.add_argument("--cases", type=pathlib.Path, default=default_cases)
     parser.add_argument("--evidence-dir", type=pathlib.Path)
     parser.add_argument("--max-cost-usd", type=Decimal, default=Decimal("4.25"))
@@ -538,6 +617,7 @@ def main() -> int:
             args.cases,
             args.evidence_dir,
             args.max_cost_usd,
+            args.max_output_tokens,
         )
     except TrackError as error:
         print(f"ERROR: {error}", file=sys.stderr)

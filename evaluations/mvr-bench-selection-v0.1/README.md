@@ -5,14 +5,21 @@ eligible requests, avoids it for irrelevant requests, and preserves MVR's
 decision boundary. It does not measure MVR from server logs alone: the server
 cannot see prompts for which the host chose not to call it.
 
-**Current public status: the first xAI Responses API baseline failed; a
-same-day post-intervention run passed every preregistered gate.**
+**Current public status: completed, manually reviewed post-intervention runs
+on both the xAI and OpenAI Responses API surfaces passed every preregistered
+gate. Failed complete baselines remain published beside the passing runs.**
 
-Published bounded result:
+Published xAI result:
 [`results/2026-07-23-xai-responses-grok-4.5.json`](results/2026-07-23-xai-responses-grok-4.5.json)
 
-Human-readable adjudication:
+Published xAI adjudication:
 [`results/2026-07-23-adjudication.md`](results/2026-07-23-adjudication.md)
+
+Published OpenAI result:
+[`results/2026-07-23-openai-responses-gpt-5.6-sol.json`](results/2026-07-23-openai-responses-gpt-5.6-sol.json)
+
+Published OpenAI adjudication:
+[`results/2026-07-23-openai-adjudication.md`](results/2026-07-23-openai-adjudication.md)
 
 ## Frozen Track
 
@@ -122,6 +129,7 @@ Run the frozen track:
 python evaluations/mvr-bench-selection-v0.1/run_openai_selection_track.py \
   --keyfile /secure/path/openai-key.txt \
   --evidence-dir /private/evidence/mvr-selection-openai-YYYY-MM-DD \
+  --max-output-tokens 4000 \
   --max-cost-usd 4.25
 ```
 
@@ -129,6 +137,4 @@ The default model is `gpt-5.6-sol`. The adapter refuses to proceed when that
 model is unavailable to the authenticated project; it does not silently
 substitute a cheaper or older model. A completed result covers only that named
 OpenAI Responses API configuration. It is not an ordinary ChatGPT, ChatGPT app,
-app-review, installation, commercial-adoption, or outcome result. OpenAI remains
-`not_run` in the public observatory until this frozen run and its manual review
-are complete.
+app-review, installation, commercial-adoption, or outcome result.
