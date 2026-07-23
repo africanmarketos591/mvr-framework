@@ -4,10 +4,18 @@ on:
   push:
     paths:
       - "evaluations/mvr-bench-selection-v0.1/**"
+      - ".well-known/mvr-selection-observatory.json"
+      - ".well-known/mvr-version.json"
+      - "docs/version-map.md"
+      - "scripts/validate_selection_observatory.py"
       - ".github/workflows/selection-observatory-contract.yml"
   pull_request:
     paths:
       - "evaluations/mvr-bench-selection-v0.1/**"
+      - ".well-known/mvr-selection-observatory.json"
+      - ".well-known/mvr-version.json"
+      - "docs/version-map.md"
+      - "scripts/validate_selection_observatory.py"
       - ".github/workflows/selection-observatory-contract.yml"
 
 permissions:
@@ -33,6 +41,12 @@ jobs:
         run: >-
           python
           evaluations/mvr-bench-selection-v0.1/run_openai_selection_track.py
+          --self-test
+
+      - name: Validate published observatory against frozen results
+        run: >-
+          python
+          scripts/validate_selection_observatory.py
           --self-test
 
       - name: Verify frozen case-set hash
