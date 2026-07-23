@@ -1,0 +1,102 @@
+{
+  "schema_version": "mvr-selection-public-result@1.0",
+  "published_at": "2026-07-23",
+  "track_version": "mvr-bench-selection-v0.1",
+  "case_set_sha256": "16dc2d6b38e4b03b3dca6bfa440c9fa65049700c17c5e70afc7c4781304431c9",
+  "host_surface": "xAI Responses API with remote MCP",
+  "host_model_reported": "grok-4.5",
+  "server_url": "https://africanmarketos.com/mcp/preflight",
+  "allowed_tools": [
+    "mvr_first_call",
+    "mvr_entity_resolve",
+    "mvr_evidence_completeness",
+    "mvr_context_compile",
+    "mvr_decision_check"
+  ],
+  "store": false,
+  "scorer_revision": "mvr-selection-scorer@1.0.2",
+  "baseline": {
+    "deployment_revision": "2026-07-21.lead-truth.1",
+    "status": "failed_preregistered_gates",
+    "cases_passed": 36,
+    "cases_run": 40,
+    "clearly_applicable_trigger_recall": 1.0,
+    "all_eligible_trigger_recall": 0.913043,
+    "adversarial_trigger_recall": 0.666667,
+    "irrelevant_false_trigger_rate": 0.0,
+    "all_control_false_trigger_rate": 0.117647,
+    "correct_first_tool_rate": 1.0,
+    "adequate_evidence_workflow_completion": 1.0,
+    "unsupported_verdicts": 0,
+    "activation_ready_presented_as_approval": 0,
+    "versioned_receipt_preservation_rate": 0.0,
+    "all_preregistered_gates_passed": false,
+    "failed_case_ids": [
+      "SEL-018",
+      "SEL-020",
+      "SEL-037",
+      "SEL-038"
+    ],
+    "recorded_cost_usd": 0.7076124,
+    "private_raw_summary_sha256": "5f7d0335532dbd2a472507621ab0a12b53a21d15ee0ef7affd9abc302e7d1df3",
+    "private_rescored_summary_sha256": "01ca9ce185203248b72b9eb0930781ff4f71e489c8f833cc18b7f1b72325f3e0"
+  },
+  "intervention": {
+    "frozen_cases_changed": false,
+    "release_gates_changed": false,
+    "changes": [
+      "Added a bounded versioned receipt to each canonical five-tool result.",
+      "Declared the receipt in each tool output schema.",
+      "Added negative routing for facts and MVR definitions.",
+      "Added positive routing for requests to ignore, fabricate, or transfer evidence to force a consequential recommendation."
+    ],
+    "worker_commit": "81c5bcabbc213dea0c769db5825b91cb789839cf",
+    "cloudflare_version_id": "78d9b719-e057-4050-9716-4426b913eb61",
+    "worker_tests": {
+      "passed": 122,
+      "failed": 0,
+      "private_report_sha256": "f7b9a2d85b7b571cac9f66d608a04c4dcaabb67b220c94d71b71d3c937a4ed5a"
+    }
+  },
+  "post_intervention": {
+    "deployment_revision": "2026-07-23.selection-receipt.1",
+    "status": "passed_preregistered_gates",
+    "cases_passed": 40,
+    "cases_run": 40,
+    "clearly_applicable_trigger_recall": 1.0,
+    "all_eligible_trigger_recall": 1.0,
+    "adversarial_trigger_recall": 1.0,
+    "irrelevant_false_trigger_rate": 0.0,
+    "all_control_false_trigger_rate": 0.0,
+    "correct_first_tool_rate": 1.0,
+    "adequate_evidence_workflow_completion": 1.0,
+    "unsupported_verdicts": 0,
+    "activation_ready_presented_as_approval": 0,
+    "versioned_receipt_preservation_rate": 1.0,
+    "all_preregistered_gates_passed": true,
+    "failed_case_ids": [],
+    "recorded_cost_usd": 0.7402916,
+    "private_raw_summary_sha256": "9d766bd73f2950c4aafdbf3c6187b22efd9eac2813d6df66637f7494fe692f08",
+    "private_rescored_summary_sha256": "4dc7a783dbe57fbf96032a78a76e90427975655ef8260e9812d2add41c9807d9"
+  },
+  "manual_review": {
+    "status": "complete",
+    "cases_reviewed": 40,
+    "selected_cases_reviewed": 23,
+    "adversarial_cases_reviewed": 6,
+    "adequate_evidence_cases_reviewed": 4,
+    "hidden_unsupported_authorizations_found": 0,
+    "private_adjudication_sha256": "21963c3f6d0edc1fcf2b0cb309806d5e239e3b729e8461950fdf23b627c1bc83"
+  },
+  "claim_boundary": {
+    "supported": "On this frozen 40-case track, on the named xAI Responses API surface, with the named model and deployment, the post-intervention public MVR profile met every preregistered selection, workflow, safety, and receipt gate.",
+    "not_supported": [
+      "Ordinary Grok.com automatic selection",
+      "Cross-host parity",
+      "Long-term stability across model revisions",
+      "Commercial adoption",
+      "Improved real-world outcomes",
+      "Independent external validation"
+    ]
+  }
+}

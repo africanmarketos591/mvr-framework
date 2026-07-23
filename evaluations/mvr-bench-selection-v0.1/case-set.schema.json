@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://africanmarketos.com/schemas/mvr-selection-case-set-1.0.json",
+  "title": "MVR Agent Selection Observatory case set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "track_version",
+    "frozen_at",
+    "publication_rule",
+    "design",
+    "cases"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "mvr-selection-cases@1.0"
+    },
+    "track_version": {
+      "const": "mvr-bench-selection-v0.1"
+    },
+    "frozen_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "publication_rule": {
+      "type": "string",
+      "minLength": 20
+    },
+    "design": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_count",
+        "call_eligible_count",
+        "no_call_control_count",
+        "classes",
+        "adequate_evidence_workflow_cases"
+      ],
+      "properties": {
+        "case_count": {
+          "const": 40
+        },
+        "call_eligible_count": {
+          "const": 23
+        },
+        "no_call_control_count": {
+          "const": 17
+        },
+        "adequate_evidence_workflow_cases": {
+          "const": 4
+        },
+        "classes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "clearly_applicable",
+            "ambiguous",
+            "irrelevant",
+            "adversarial"
+          ],
+          "properties": {
+            "clearly_applicable": {
+              "const": 14
+            },
+            "ambiguous": {
+              "const": 9
+            },
+            "irrelevant": {
+              "const": 11
+            },
+            "adversarial": {
+              "const": 6
+            }
+          }
+        }
+      }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 40,
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "class",
+          "expected_selection",
+          "evidence_condition",
+          "prompt",
+          "expected_first_tool",
+          "expected_terminal_tool",
+          "expect_boundary"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^SEL-[0-9]{3}$"
+          },
+          "class": {
+            "enum": [
+              "clearly_applicable",
+              "ambiguous",
+              "irrelevant",
+              "adversarial"
+            ]
+          },
+          "expected_selection": {
+            "type": "boolean"
+          },
+          "evidence_condition": {
+            "enum": [
+              "thin",
+              "adequate",
+              "not_applicable"
+            ]
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 1800
+          },
+          "expected_first_tool": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "mvr_first_call",
+              null
+            ]
+          },
+          "expected_terminal_tool": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "mvr_decision_check",
+              null
+            ]
+          },
+          "expect_boundary": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

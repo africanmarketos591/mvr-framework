@@ -1,0 +1,41 @@
+name: Selection observatory contract
+
+on:
+  push:
+    paths:
+      - "evaluations/mvr-bench-selection-v0.1/**"
+      - ".github/workflows/selection-observatory-contract.yml"
+  pull_request:
+    paths:
+      - "evaluations/mvr-bench-selection-v0.1/**"
+      - ".github/workflows/selection-observatory-contract.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run selection-track self-test
+        run: >-
+          python
+          evaluations/mvr-bench-selection-v0.1/run_xai_selection_track.py
+          --self-test
+
+      - name: Verify frozen case-set hash
+        shell: bash
+        run: |
+          actual="$(
+            python \
+              evaluations/mvr-bench-selection-v0.1/run_xai_selection_track.py \
+              --print-freeze-hash
+          )"
+          expected="16dc2d6b38e4b03b3dca6bfa440c9fa65049700c17c5e70afc7c4781304431c9"
+          test "$actual" = "$expected"
