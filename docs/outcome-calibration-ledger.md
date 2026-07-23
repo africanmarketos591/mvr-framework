@@ -1,39 +1,132 @@
-# Outcome Calibration Ledger Runbook
+# Outcome Calibration Ledger
 
-MVR already exposes the governed receiving path for real-world outcomes:
+The MVR outcome calibration ledger is an active prospective collection system. It links a real MVR decision receipt to later observed outcomes without treating self-reported results as model truth.
 
-- `POST /v1/outcome-feedback`
+Public status:
+
+- `GET https://africanmarketos.com/.well-known/mvr-outcome-calibration.json`
+
+Licensed tenant routes:
+
+- `POST /v1/outcome-ledger`
+- `POST /v1/outcome-feedback` (compatibility route for enrolled observations)
 - `POST /v1/calibration-review`
-- `POST /v1/backtest-case/submit`
 
-This runbook operationalizes those routes. It does not create a second outcome database, and an outcome submission never changes the live engine automatically.
+## What Activation Means
 
-## Enrolment at Decision Time
+Activation means MVR can now enroll receipt-bound decisions and schedule governed check-backs. It does **not** mean that MVR has published predictive accuracy, causal impact, or an outcome-validated performance rate.
 
-Record the decision reference, immutable receipt hashes, predicted verdict, confidence, authorization boundary, target geography, archetype, decision date, expected observation horizon, and named owner. Schedule check-backs appropriate to the case, normally at 6, 12, and 18 months. A shorter pilot may use an earlier check-back, but it must not silently replace the preregistered horizon.
+Public performance remains withheld until there are at least:
 
-## Outcome Submission
+- 50 unique prospectively enrolled decisions with an independently reviewed, included observation
+- 3 represented geographies
 
-Submit only an observed outcome with its date, source class, evidence reference, and the operator's relationship to the case. Preserve unknowns and contradictory evidence. Never convert silence into success; use the doctrine-governed presumed-dead rule only where its conditions are satisfied.
+Any later release must lock the cohort, denominator, horizons, exclusions, uncertainty, misses, and abstentions. Observed association is not proof that MVR caused an outcome.
 
-Do not place raw personal data, confidential contracts, account records, or complete interview transcripts in the calibration queue. Store governed references or redacted evidence packages instead.
+## 1. Enroll at Decision Time
 
-## Review Boundary
+Enrollment requires an existing MVR decision receipt whose tenant-scoped decision snapshot binds the verdict, country, archetype, and decision timestamp. Caller-authored replacements for those fields are rejected.
 
-`/v1/outcome-feedback` queues an observation for governed review. It is not a calibration write. Incorporation requires an authorized calibration review, documented inclusion or exclusion reasons, conflict checks, and a named reviewer or countersignature. The live model must not learn directly from a founder's self-reported result.
+```bash
+curl -sS https://africanmarketos.com/v1/outcome-ledger \
+  -H "X-API-Key: $MVR_API_KEY" \
+  -H "Idempotency-Key: outcome-enroll-0123456789abcdef" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "action": "enroll",
+    "consent_to_outcome_followup": true,
+    "subject_reference": "internal-case-reference-042",
+    "decision_reference_hash": "REPLACE_WITH_64_HEX_MVR_RECEIPT",
+    "horizon_months": [6, 12, 18]
+  }'
+```
 
-## Publication
+The raw subject reference is not persisted. The service stores a tenant-scoped, server-keyed HMAC-SHA256 token. The response returns an `enrollment_id`, immutable `ledger_anchor_hash`, and scheduled check-backs.
 
-Publish aggregate calibration only after the cohort definition, denominator, horizon, exclusions, and settlement status are locked. Report misses and abstentions alongside successful calls. Never describe synthetic backtests or unresolved outcomes as realized predictive accuracy.
+## 2. Record a Due Outcome
 
-Minimum public fields:
+An observation must name one enrolled horizon and cannot be recorded before that check-back is due.
 
-- cohort and geography
-- decision and outcome horizons
-- number enrolled, due, settled, lost, and excluded
-- verdict distribution
-- outcome distribution
-- calibration error or survival delta with uncertainty
-- policy, calibration, and deployment versions
+```bash
+curl -sS https://africanmarketos.com/v1/outcome-feedback \
+  -H "X-API-Key: $MVR_API_KEY" \
+  -H "Idempotency-Key: outcome-observe-0123456789abcdef" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "enrollment_id": "OCL-REPLACE",
+    "consent_to_outcome_processing": true,
+    "horizon_months": 6,
+    "outcome_class": "mixed",
+    "decision_execution_status": "within_authorized_boundary",
+    "verification_status": "document_supported",
+    "outcome_date": "2027-01-23T08:00:00Z",
+    "source_references": [
+      {
+        "reference_id": "governed-redacted-review-001",
+        "source_class": "governed_internal_record",
+        "source_hash": "REPLACE_WITH_64_HEX_SOURCE_HASH"
+      }
+    ],
+    "outcome_summary": "The bounded pilot proceeded; one permission condition remained open."
+  }'
+```
 
-The asset is the settled, review-governed history. The route already exists; disciplined enrolment beginning now is the time-sensitive work.
+Bounded values:
+
+- `outcome_class`: `favorable`, `mixed`, `unfavorable`, `indeterminate`
+- `decision_execution_status`: `within_authorized_boundary`, `beyond_authorized_boundary`, `not_executed`, `unknown`
+- `verification_status`: `self_reported`, `document_supported`, `independently_verified`, `disputed`
+
+Do not send names, email addresses, phone numbers, account data, raw documents, interview transcripts, credentials, or attachments. Submit governed references and hashes only. A self-reported observation cannot enter the calibration corpus.
+
+## 3. Independent Review
+
+Bulk incorporation is disabled. Each observation requires an elevated reviewer who is different from the submitting actor.
+
+```bash
+curl -sS https://africanmarketos.com/v1/calibration-review \
+  -H "X-API-Key: $MVR_REVIEWER_API_KEY" \
+  -H "Idempotency-Key: outcome-review-0123456789abcdef" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "action": "review_outcome",
+    "enrollment_id": "OCL-REPLACE",
+    "observation_id": "OCO-REPLACE",
+    "disposition": "include",
+    "reason_code": "source_verified",
+    "reviewer_attestation": true,
+    "review_note": "The governed source reference supports the bounded outcome classification."
+  }'
+```
+
+Only `source_verified` or `independent_confirmation` can support inclusion. Exclusion, deferral, and dispute dispositions have their own bounded reason codes and fail closed when the reason contradicts the disposition.
+
+## 4. Inspect or Withdraw
+
+The enrolling actor or an elevated reviewer can retrieve an enrollment. Elevated reviewers can list tenant enrollments and view metrics. Withdrawal deletes the enrollment and all observations; only a non-identifying tombstone remains for 90 days.
+
+```json
+{
+  "action": "withdraw",
+  "enrollment_id": "OCL-REPLACE",
+  "confirm_withdrawal": true
+}
+```
+
+The outcome records have a seven-year governance retention class unless withdrawn. Organizations should align consent notices and internal retention policy before enrolling real decisions.
+
+## Method Boundary
+
+- Prospective outcomes and retrospective backtests are separate cohorts.
+- Selection, usage, lead, and crawler telemetry are not outcome evidence.
+- An abstention is recorded as a prediction behavior, not silently converted into a failure or success.
+- Multiple horizon observations from one enrollment do not create multiple decisions in the 50-decision publication floor.
+- Repeated or replacement observations cannot bypass review.
+- The live engine does not automatically learn from a submitted outcome.
+
+Run the public contract validator:
+
+```bash
+python scripts/validate_outcome_calibration_contract.py
+python scripts/validate_outcome_calibration_contract.py --live
+```
