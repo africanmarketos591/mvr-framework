@@ -1,16 +1,41 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "name": "MVR Agent Selection Observatory",
-  "updated": "2026-07-16",
-  "status": "preregistered_no_host_results_published",
+  "updated": "2026-07-23",
+  "status": "two_api_host_results_published_baselines_failed_post_intervention_passed",
   "purpose": "Measure whether configured AI hosts select MVR for eligible high-context market decisions, avoid it for irrelevant prompts, preserve its boundaries, and complete the bounded workflow.",
-  "public_contract": "This manifest is a preregistration, not a leaderboard result. A host remains not_run until traces from the actual host product or API are preserved and independently auditable.",
+  "public_contract": "This is an observatory record, not a cross-host leaderboard. A host remains not_run until traces from the actual host product or API are preserved and auditable. Failed and passing runs are published against the frozen gates.",
   "evaluated_surface": "Host-side selection and workflow behavior. Server logs alone cannot observe eligible prompts where the host chose not to call MVR.",
   "frozen_track": {
     "case_count": 40,
-    "classes": ["clearly_applicable", "ambiguous", "irrelevant", "adversarial"],
+    "classes": [
+      "clearly_applicable",
+      "ambiguous",
+      "irrelevant",
+      "adversarial"
+    ],
+    "required_records": [
+      "host_and_model_identifier",
+      "evaluation_date",
+      "server_description",
+      "allowed_tools",
+      "policy_version",
+      "case_id",
+      "selection_trace",
+      "first_tool",
+      "workflow_terminal_state",
+      "versioned_receipt"
+    ],
+    "scoring": {
+      "clearly_applicable_trigger_recall": "selected applicable cases / all applicable cases",
+      "irrelevant_false_trigger_rate": "selected irrelevant cases / all irrelevant cases",
+      "correct_first_tool_rate": "applicable selected cases beginning with mvr_first_call / applicable selected cases",
+      "adequate_evidence_workflow_completion": "adequate-evidence cases reaching the expected terminal tool / adequate-evidence cases",
+      "unsupported_verdict_count": "count of outputs that convert MVR into approval, certification, credit scoring, or autonomous authorization",
+      "receipt_preservation_rate": "completed workflows retaining the versioned receipt / completed workflows"
+    },
     "initial_release_gates": {
-      "tool_discovery_rate": 1.0,
+      "tool_discovery_rate": 1,
       "write_capable_tools_exposed": 0,
       "clearly_applicable_trigger_recall_min": 0.9,
       "irrelevant_false_trigger_rate_max": 0.05,
@@ -18,27 +43,134 @@
       "adequate_evidence_workflow_completion_min": 0.95,
       "unsupported_verdicts": 0,
       "activation_ready_presented_as_approval": 0,
-      "versioned_receipt_preservation_rate": 1.0
-    }
+      "versioned_receipt_preservation_rate": 1
+    },
+    "integrity_controls": [
+      "freeze prompts before execution",
+      "record arm and host authorship",
+      "preserve raw traces",
+      "blind outcome review where practical",
+      "publish misses and false triggers",
+      "do not infer non-selection from server telemetry"
+    ]
   },
   "hosts": {
-    "chatgpt": {"status": "not_run", "selection_rate": null, "last_verified": null},
-    "claude": {"status": "not_run", "selection_rate": null, "last_verified": null},
-    "microsoft_copilot": {"status": "not_run", "selection_rate": null, "last_verified": null},
-    "google_adk_or_gemini": {"status": "not_run", "selection_rate": null, "last_verified": null},
-    "grok": {"status": "not_run", "selection_rate": null, "last_verified": null}
+    "chatgpt": {
+      "status": "not_run",
+      "selection_rate": null,
+      "last_verified": null
+    },
+    "openai_responses_api": {
+      "status": "openai_responses_api_completed_post_intervention_passed",
+      "surface": "OpenAI Responses API with remote MCP",
+      "ordinary_chatgpt": false,
+      "model": "gpt-5.6-sol",
+      "last_verified": "2026-07-23",
+      "case_set_sha256": "16dc2d6b38e4b03b3dca6bfa440c9fa65049700c17c5e70afc7c4781304431c9",
+      "complete_baseline": {
+        "deployment_revision": "2026-07-23.selection-observatory.2",
+        "status": "failed_preregistered_gates",
+        "cases_passed": 39,
+        "cases_run": 40,
+        "all_eligible_trigger_recall": 1,
+        "all_control_false_trigger_rate": 0,
+        "adequate_evidence_workflow_completion": 0.75,
+        "versioned_receipt_preservation_rate": 1,
+        "all_release_gates_passed": false
+      },
+      "post_intervention": {
+        "deployment_revision": "2026-07-23.selection-observatory.2",
+        "status": "passed_preregistered_gates",
+        "cases_passed": 40,
+        "cases_run": 40,
+        "all_eligible_trigger_recall": 1,
+        "all_control_false_trigger_rate": 0,
+        "adequate_evidence_workflow_completion": 1,
+        "versioned_receipt_preservation_rate": 1,
+        "all_release_gates_passed": true
+      },
+      "result": "https://github.com/africanmarketos591/mvr-framework/blob/main/evaluations/mvr-bench-selection-v0.1/results/2026-07-23-openai-responses-gpt-5.6-sol.json",
+      "non_claims": [
+        "ordinary ChatGPT automatic selection",
+        "ChatGPT app-store approval or installation behavior",
+        "cross-host parity",
+        "commercial adoption",
+        "real-world outcome improvement",
+        "independent external validation",
+        "factual accuracy of standalone no-call answers"
+      ]
+    },
+    "claude": {
+      "status": "not_run",
+      "selection_rate": null,
+      "last_verified": null
+    },
+    "microsoft_copilot": {
+      "status": "not_run",
+      "selection_rate": null,
+      "last_verified": null
+    },
+    "google_adk_or_gemini": {
+      "status": "not_run",
+      "selection_rate": null,
+      "last_verified": null
+    },
+    "grok": {
+      "status": "xai_responses_api_completed_post_intervention_passed",
+      "surface": "xAI Responses API with remote MCP",
+      "ordinary_grok_com": false,
+      "model": "grok-4.5",
+      "last_verified": "2026-07-23",
+      "case_set_sha256": "16dc2d6b38e4b03b3dca6bfa440c9fa65049700c17c5e70afc7c4781304431c9",
+      "baseline": {
+        "deployment_revision": "2026-07-21.lead-truth.1",
+        "status": "failed_preregistered_gates",
+        "cases_passed": 36,
+        "cases_run": 40,
+        "all_eligible_trigger_recall": 0.913043,
+        "all_control_false_trigger_rate": 0.117647,
+        "adequate_evidence_workflow_completion": 1,
+        "versioned_receipt_preservation_rate": 0,
+        "all_release_gates_passed": false
+      },
+      "post_intervention": {
+        "deployment_revision": "2026-07-23.selection-receipt.1",
+        "status": "passed_preregistered_gates",
+        "cases_passed": 40,
+        "cases_run": 40,
+        "all_eligible_trigger_recall": 1,
+        "all_control_false_trigger_rate": 0,
+        "adequate_evidence_workflow_completion": 1,
+        "versioned_receipt_preservation_rate": 1,
+        "all_release_gates_passed": true
+      },
+      "result": "https://github.com/africanmarketos591/mvr-framework/blob/main/evaluations/mvr-bench-selection-v0.1/results/2026-07-23-xai-responses-grok-4.5.json",
+      "non_claims": [
+        "ordinary Grok.com automatic selection",
+        "Grok connector catalogue placement",
+        "mobile behavior",
+        "Business provisioning",
+        "cross-host parity",
+        "commercial adoption",
+        "real-world outcome improvement",
+        "independent external validation"
+      ]
+    }
   },
   "publication_rule": "Publish every completed frozen-track result against the preregistered gates whether it passes or fails. Publish a host score only after the set has been run against that actual host with model, instructions, tool profile, policy version, date, raw traces, misses, false triggers, and exclusions recorded.",
-  "source_protocol": "../evaluations/mvr-bench-selection-v0.1/README.md",
+  "source_protocol": "https://github.com/africanmarketos591/mvr-framework/tree/main/evaluations/mvr-bench-selection-v0.1",
+  "source_protocol_status": "frozen_xai_and_openai_responses_api_tracks_completed_and_published",
   "version_contract": {
     "core_api_version": "v6.32.0",
     "mcp_protocol_version": "2025-06-18",
-    "mcp_contract_version": "mvr-mcp@2026-07-16.2",
-    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.2",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-16.read-only-preflight-mcp.6",
-    "host_recipe_version": "2026-07-16.1"
+    "calibration_scope": "Public framework-provisional default. Licensed runtime calibration is resolved by profile, sector, geography, and active manifest; verify through /v1/calibration-health.",
+    "deployment_revision": "2026-07-23.adoption-evidence.1",
+    "deployment_provider_revision": "Recorded in release evidence after deployment; not self-embedded because a provider revision is created by the deployment itself.",
+    "host_recipe_version": "2026-07-16.4"
   }
 }

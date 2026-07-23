@@ -11,17 +11,21 @@ import urllib.request
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-EXPECTED = {
-    "core_api_version": "v6.32.0",
-    "mcp_protocol_version": "2025-06-18",
-    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
-    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
-    "sdk_version": "6.32.1",
-    "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
-    "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-21.lead-truth.1",
-    "host_recipe_version": "2026-07-16.4",
-}
+VERSION_KEYS = (
+    "core_api_version",
+    "mcp_protocol_version",
+    "mcp_contract_version",
+    "tool_profile_version",
+    "sdk_version",
+    "policy_version",
+    "calibration_version",
+    "deployment_revision",
+    "host_recipe_version",
+)
+VERSION_CONTRACT = json.loads(
+    (ROOT / ".well-known" / "mvr-version.json").read_text(encoding="utf-8")
+)
+EXPECTED = {key: VERSION_CONTRACT[key] for key in VERSION_KEYS}
 BROADER_EXPERT_TOOLS = [
     "mvr_first_call",
     "mvr_african_market_insights",
@@ -77,9 +81,10 @@ def validate_local() -> None:
     for key, server_key in server_keys.items():
         require(publisher.get(server_key) == EXPECTED[key], f"server.json: {server_key}")
 
-    require(recipe.get("status") == "xai_responses_api_remote_mcp_controlled_canary_verified", "xAI API canary status")
+    require(recipe.get("status") == "xai_responses_api_remote_mcp_selection_track_verified", "xAI selection-track status")
     statuses = recipe.get("verification_status", {})
     require(statuses.get("xai_api_compatibility") == "verified_live_2026-07-16", "xAI API status")
+    require(statuses.get("xai_selection_observatory") == "frozen_40_case_baseline_failed_then_post_intervention_passed_2026-07-23", "xAI selection observatory status")
     require(statuses.get("grok_custom_connector") == "operator_verified_install_and_explicit_execution_2026-07-16", "Grok connector status")
     require(statuses.get("grok_automatic_selection") == "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16", "Grok selection observation boundary")
     require(statuses.get("grok_business_admin_provisioning") == "unverified", "Grok Business status")
@@ -102,8 +107,12 @@ def validate_local() -> None:
     require(connector_validation.get("pre_metadata_automatic_selection", {}).get("status") == "miss", "Grok pre-metadata miss evidence")
     require(connector_validation.get("post_metadata_automatic_selection", {}).get("status") == "pass", "Grok post-metadata selection evidence")
     require("not a frozen-track selection rate" in connector_validation.get("scoring_boundary", ""), "Grok selection rate must remain unclaimed")
-    require(observatory.get("status") == "preregistered_no_host_results_published", "observatory status")
-    require(all(host.get("status") == "not_run" and host.get("selection_rate") is None for host in observatory.get("hosts", {}).values()), "invented repository host score")
+    require(observatory.get("status") == "two_api_host_results_published_baselines_failed_post_intervention_passed", "observatory status")
+    hosts = observatory.get("hosts", {})
+    require(hosts.get("grok", {}).get("post_intervention", {}).get("all_release_gates_passed") is True, "xAI observatory result")
+    require(hosts.get("openai_responses_api", {}).get("post_intervention", {}).get("all_release_gates_passed") is True, "OpenAI observatory result")
+    untested_hosts = ["chatgpt", "claude", "microsoft_copilot", "google_adk_or_gemini"]
+    require(all(hosts.get(name, {}).get("status") == "not_run" and hosts.get(name, {}).get("selection_rate") is None for name in untested_hosts), "untested repository hosts must remain unscored")
 
     require('"jsonrpc":"2.0"' in readme.replace(" ", ""), "quickstart JSON-RPC envelope")
     require(all(tool in readme for tool in REGISTRY_TOOLS), "quickstart five-tool profile")
@@ -138,9 +147,10 @@ def validate_live() -> None:
         "params": {"name": "mvr_first_call", "arguments": {"question": "buy-now-pay-later product for small retailers in Kampala", "country": "UG", "sector": "retail"}},
     })
 
-    require(access["version_contract"] == {**access["version_contract"], **EXPECTED}, "live version contract mismatch")
+    require(all(access["version_contract"].get(key) == expected for key, expected in EXPECTED.items()), "live version contract mismatch")
     require(recipe["verification_status"]["grok_automatic_selection"] == "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16", "live Grok selection boundary")
     require(recipe["verification_status"]["xai_api_compatibility"] == "verified_live_2026-07-16", "live xAI API evidence missing")
+    require(recipe["verification_status"]["xai_selection_observatory"] == "frozen_40_case_baseline_failed_then_post_intervention_passed_2026-07-23", "live xAI selection result missing")
     require([tool["name"] for tool in listed["result"]["tools"]] == BROADER_EXPERT_TOOLS, "live broader expert tool order")
     require([tool["name"] for tool in preflight["result"]["tools"]] == REGISTRY_TOOLS, "live five-tool registry order")
     require(all(tool.get("annotations", {}).get("readOnlyHint") is True for tool in preflight["result"]["tools"]), "live preflight read-only annotations")
@@ -148,8 +158,11 @@ def validate_live() -> None:
     structured = bnpl["result"]["structuredContent"]
     require(structured["decision_domain"] == "credit_adjacent_permission", "live BNPL routing")
     require(structured["not_a_verdict"] is True, "live first-call verdict boundary")
-    require(observatory["status"] == "preregistered_no_host_results_published", "observatory status")
-    require(all(host["status"] == "not_run" and host["selection_rate"] is None for host in observatory["hosts"].values()), "invented host score")
+    require(observatory["status"] == "two_api_host_results_published_baselines_failed_post_intervention_passed", "observatory status")
+    require(observatory["hosts"]["grok"]["post_intervention"]["all_release_gates_passed"] is True, "live xAI observatory result")
+    require(observatory["hosts"]["openai_responses_api"]["post_intervention"]["all_release_gates_passed"] is True, "live OpenAI observatory result")
+    untested_hosts = ["chatgpt", "claude", "microsoft_copilot", "google_adk_or_gemini"]
+    require(all(observatory["hosts"][name]["status"] == "not_run" and observatory["hosts"][name]["selection_rate"] is None for name in untested_hosts), "untested live hosts must remain unscored")
 
 
 def main() -> int:
