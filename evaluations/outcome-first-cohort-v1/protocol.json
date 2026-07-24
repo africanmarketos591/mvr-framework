@@ -1,0 +1,193 @@
+{
+  "schema_version": "mvr-outcome-first-cohort@2026-07-24.1",
+  "status": "preregistered_operational_cohort",
+  "publisher": "African Market OS",
+  "framework": "Minimum Viable Relationships (MVR)",
+  "purpose": "Certify prospective decision-to-outcome operations within one governed Enterprise tenant/workspace without estimating predictive performance or implying an ecosystem-wide denominator.",
+  "cohort": {
+    "target_unique_decisions": 10,
+    "scope_type": "tenant_workspace",
+    "global_cross_tenant_cohort": false,
+    "selection_rule": "first_10_completed_enrollments_in_server_offer_order_after_every_earlier_consent_window_is_resolved",
+    "ordering_field": "server_recorded_eligible_decision_time",
+    "tie_breaker": "decision_reference_hash",
+    "lock_record_required": true,
+    "lock_record_status": "locked",
+    "late_consent_rule": "A later enrollment cannot change a persisted first-ten lock.",
+    "withdrawal_rule": "A completed enrollment retains its cohort slot after withdrawal and is never replaced.",
+    "performance_cohort": false,
+    "cherry_picking_prohibited": true,
+    "aggregate_screening_log_required": true,
+    "screening_log_source": {
+      "route": "/v1/outcome-ledger",
+      "method": "POST",
+      "action": "metrics",
+      "response_field": "first_cohort_screening",
+      "access": "elevated_calibration_review_role_within_the_same_tenant_workspace"
+    },
+    "screening_counts": [
+      "eligible_offers",
+      "consent_tokens_issued",
+      "enrolled",
+      "consent_declined",
+      "consent_window_expired",
+      "duplicate_attempts",
+      "withdrawals"
+    ]
+  },
+  "eligibility": {
+    "evaluation_mode": "live",
+    "plans": [
+      "ENTERPRISE"
+    ],
+    "decision_modes": [
+      "evidence_backed",
+      "compiled_evidence"
+    ],
+    "decision_states": [
+      "not_ready",
+      "pilot_only",
+      "pilot_ready",
+      "ready_to_scale",
+      "abstained"
+    ],
+    "receipt_persisted": true,
+    "snapshot_persisted": true,
+    "offer_required_on_original_response": true,
+    "enrollment_window_days": 7,
+    "excluded": [
+      "sandbox",
+      "strict_trial",
+      "backtest",
+      "synthetic_fixture",
+      "canary",
+      "retrospective_reconstruction",
+      "score_direct",
+      "exploratory"
+    ]
+  },
+  "consent": {
+    "consent_version": "mvr-outcome-consent@2026-07-24.2",
+    "external_record_required": true,
+    "external_record_hash_algorithm": "SHA-256",
+    "confirmed_by_authorized_human": true,
+    "allowed_followup_owner_roles": [
+      "decision_owner",
+      "authorized_delegate",
+      "organizational_reviewer"
+    ],
+    "token_action": "issue_consent_token",
+    "token_ttl_minutes": 30,
+    "token_single_use": true,
+    "model_may_consent": false,
+    "raw_consent_record_sent_to_mvr": false
+  },
+  "horizons_months": [
+    6,
+    12,
+    18
+  ],
+  "privacy": {
+    "raw_subject_reference_persisted": false,
+    "subject_token_algorithm": "HMAC-SHA256",
+    "prohibited_inputs": [
+      "names",
+      "email_addresses",
+      "phone_numbers",
+      "account_data",
+      "raw_documents",
+      "interview_transcripts",
+      "credentials",
+      "attachments",
+      "outcome_summary",
+      "other_free_text"
+    ],
+    "screening_log_direct_identifiers_persisted": false,
+    "screening_log_free_text_persisted": false,
+    "automated_obvious_personal_data_checks_required": true,
+    "privacy_claim_boundary": "Bounded schemas and automated checks reduce obvious personal-data entry; they do not prove that supplied identifiers are anonymous or that all personal data is impossible.",
+    "withdrawal_deletes_enrollment_and_observations": true,
+    "withdrawal_tombstone_days": 90
+  },
+  "roles": {
+    "decision_owner": "Controls the external consent relationship.",
+    "consent_issuer": "Elevated operator attesting to the external consent-record hash.",
+    "outcome_submitter": "Records a due bounded observation.",
+    "independent_reviewer": "Reviews an observation and must differ from its submitting actor.",
+    "submitter_reviewer_separation_required": true
+  },
+  "observation_contract": {
+    "outcome_classes": [
+      "favorable",
+      "mixed",
+      "unfavorable",
+      "indeterminate"
+    ],
+    "execution_statuses": [
+      "within_authorized_boundary",
+      "beyond_authorized_boundary",
+      "not_executed",
+      "unknown"
+    ],
+    "verification_statuses": [
+      "self_reported",
+      "document_supported",
+      "independently_verified",
+      "disputed"
+    ],
+    "silence_imputation_prohibited": true,
+    "premature_observations_prohibited": true,
+    "self_reported_inclusion_prohibited": true,
+    "bulk_incorporation_enabled": false
+  },
+  "review_contract": {
+    "dispositions": [
+      "include",
+      "exclude",
+      "defer",
+      "disputed"
+    ],
+    "inclusion_reason_codes": [
+      "source_verified",
+      "independent_confirmation"
+    ],
+    "item_level_review_required": true
+  },
+  "operational_acceptance": {
+    "receipt_binding_rate": 1.0,
+    "valid_human_consent_token_binding_rate": 1.0,
+    "scheduled_horizon_completeness_rate": 1.0,
+    "maximum_duplicate_decision_enrollments": 0,
+    "maximum_premature_observations_accepted": 0,
+    "maximum_personal_data_leaks": 0,
+    "maximum_self_reviewed_observations_included": 0,
+    "maximum_withdrawn_active_records": 0,
+    "maximum_abstentions_silently_relabelled": 0
+  },
+  "runtime_acceptance_tests": [
+    "pending_earlier_consent_window_blocks_lock",
+    "first_ten_lock_uses_offer_order_not_consent_arrival",
+    "late_state_change_does_not_rewrite_locked_membership",
+    "withdrawal_retains_locked_cohort_slot",
+    "cross_tenant_metrics_do_not_merge_denominators",
+    "non_standard_horizon_schedule_rejected",
+    "decline_and_enrollment_are_serialized",
+    "valid_token_cannot_reverse_explicit_decline"
+  ],
+  "publication_boundary": {
+    "public_performance_result_from_first_cohort": false,
+    "minimum_reviewed_outcomes": 50,
+    "minimum_geographies": 3,
+    "counting_unit": "unique_prospectively_enrolled_decisions_with_at_least_one_included_observation",
+    "separate_locked_release_required": true,
+    "must_publish": [
+      "cohort",
+      "denominator",
+      "horizons",
+      "exclusions",
+      "uncertainty",
+      "misses",
+      "abstentions"
+    ]
+  }
+}

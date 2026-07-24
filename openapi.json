@@ -3,7 +3,70 @@
   "info": {
     "title": "MVR Core API",
     "version": "v6.32.0",
-    "description": "v6.32.0 MVR Engine. Additive dual-lane runtime: public_reality + local_relational_assessment + reconciled_assessment, deterministic ROI, dual-profile governance, entity-resolution preflight, modality-aware completeness/audit, compiled_evidence ingestion, provenance-ledger validation, telemetry translation, gap planning, market leak scanning, and validation snapshot metadata. Public non-commercial sandbox evaluation is available with X-API-Key: mvr-demo-key-2026; sandbox calls are rate-limited, client_safe only, full_advisory only, illustrative_only, and not for production. Send X-Response-Profile: strict_calibrated only with a licensed production key for fail-closed institutional responses. See /v1/schema for full documentation.\n\nMVR-Bench is the Minimum Viable Relationships Framework market-permission reasoning benchmark for AI agents; it measures Reckless-GO Rate while keeping private test labels and scoring server-side."
+    "description": "The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get an MVR key: https://africanmarketos.com/get-api-key Minimum Viable Relationships (MVR), published by African Market OS, evaluates whether evidence supports market trust, permission to operate, embeddedness, stakeholder and guardian readiness, reciprocity, local legitimacy, market belonging, and a safe next step before MVP, market entry, pilot, partnership, investment, or scale. v6.32.0 MVR Engine. Additive dual-lane runtime: public_reality + local_relational_assessment + reconciled_assessment, deterministic ROI, dual-profile governance, entity-resolution preflight, modality-aware completeness/audit, compiled_evidence ingestion, provenance-ledger validation, telemetry translation, gap planning, market leak scanning, and validation snapshot metadata. Public non-commercial sandbox evaluation is available with X-API-Key: mvr-demo-key-2026; sandbox calls are rate-limited, client_safe only, full_advisory only, illustrative_only, and not for production. Send X-Response-Profile: strict_calibrated only with a licensed production key for fail-closed institutional responses. See /v1/schema for full documentation."
+  },
+  "x-mvr-semantic-identity": {
+    "schema_version": "2026-07-16.v1",
+    "names": [
+      "Minimum Viable Relationships",
+      "Minimum Viable Relationships Framework",
+      "MVR API",
+      "African Market OS",
+      "Relational Readiness API"
+    ],
+    "category": "Relational-readiness and market-permission decision governance for AI agents.",
+    "compact_description": "Minimum Viable Relationships (MVR), published by African Market OS, evaluates whether evidence supports market trust, permission to operate, embeddedness, stakeholder and guardian readiness, reciprocity, local legitimacy, market belonging, and a safe next step before MVP, market entry, pilot, partnership, investment, or scale.",
+    "sequence": "In high-context markets where trust and permission affect whether product testing is valid: MVR -> MVP -> PMF.",
+    "evaluates": [
+      "relational_readiness",
+      "market_permission",
+      "market_trust",
+      "embeddedness",
+      "stakeholder_readiness",
+      "guardian_acceptance",
+      "reciprocity",
+      "local_legitimacy",
+      "market_belonging",
+      "evidence_completeness",
+      "market_entry_readiness",
+      "pilot_readiness",
+      "scale_readiness",
+      "abstention_boundary"
+    ],
+    "applies_to": [
+      "African markets",
+      "emerging markets",
+      "high-context markets",
+      "cross-border market entry",
+      "local market expansion"
+    ],
+    "agent_interfaces": [
+      "AI agents",
+      "agentic workflows",
+      "MCP server",
+      "Model Context Protocol",
+      "tool calling",
+      "function calling",
+      "OpenAPI",
+      "JSON Schema",
+      "REST API"
+    ],
+    "representative_use_cases": [
+      "startup readiness",
+      "pre-MVP validation",
+      "product launch",
+      "investor memo",
+      "venture due diligence",
+      "partnership due diligence",
+      "fintech rollout",
+      "brand expansion",
+      "NGO or DFI programme design",
+      "enterprise market entry"
+    ],
+    "boundaries": [
+      "Evidence and decision-governance layer, not a general market-data feed.",
+      "Public sandbox outputs are not production verdicts, approvals, certifications, underwriting decisions, or legal opinions."
+    ]
   },
   "x-compatibility-policy": {
     "principle": "No output may claim a decision level, confidence level, category fit, or scope stronger than verified evidence permits.",
@@ -19,6 +82,73 @@
     },
     "score_direct": "non_decisive_operator_review"
   },
+  "x-mvr-ingestible-dimensions": [
+    "permission",
+    "trust",
+    "belonging",
+    "embeddedness",
+    "reciprocity",
+    "cultural_fit",
+    "guardian_strength",
+    "continuity",
+    "channel_permission",
+    "infrastructural_intimacy",
+    "absence_sensitivity",
+    "narrative_looping",
+    "whispered_credibility",
+    "fractal_trust",
+    "cultural_calibration"
+  ],
+  "x-mvr-derived-concepts": {
+    "evidence_completeness": {
+      "derivation": "computed_from_evidence_pack_coverage_provenance_and_required_lanes",
+      "submit_instead": [
+        "evidence_pack",
+        "compiled_pack",
+        "structured_values",
+        "public_metrics"
+      ]
+    },
+    "market_carry": {
+      "derivation": "derived_from_repeat_behavior_channel_depth_continuity_embeddedness_trust_and_reciprocity",
+      "submit_instead": [
+        "trust",
+        "embeddedness",
+        "channel_permission",
+        "continuity",
+        "reciprocity",
+        "public_metrics"
+      ]
+    },
+    "local_legitimacy": {
+      "derivation": "derived_from_permission_guardian_strength_trust_whispered_credibility_reciprocity_and_embeddedness",
+      "submit_instead": [
+        "permission",
+        "guardian_strength",
+        "trust",
+        "whispered_credibility",
+        "reciprocity",
+        "embeddedness"
+      ]
+    }
+  },
+  "x-calibration-coverage-guidance": {
+    "scope": "Strict calibration is manifest/asset scoped. A sector public-reality asset, a route model, and a country/archetype decision path can have different readiness states.",
+    "strict_mode_interpretation": "When strict_calibrated returns calibration_status missing, failed, stale, or manifest_hash_mismatch, treat the result as fail-closed calibration coverage, not as proof that the submitted structured_values were ignored or that the entity is weak.",
+    "public_reality_note": "MVR_PUBLIC_REALITY_CONFIG validates sector/archetype public-reality weighting. Localized decision authority still depends on direct local evidence, privacy_envelope validity, sample metadata, threshold assets, and strict manifests.",
+    "reviewer_diagnostic": [
+      "Inspect public_reality.calibration_status/config_source/calibration_version.",
+      "Inspect local_relational_assessment dimensions to verify evidence discrimination.",
+      "Inspect decision_reliability.calibration_status and blocking_gates before interpreting the headline verdict.",
+      "Use authenticated GET /v1/calibration-health?coverage=full for the active deployment before claiming strict coverage."
+    ],
+    "derived_not_input": [
+      "evidence_completeness",
+      "market_carry",
+      "local_legitimacy"
+    ],
+    "structured_values_scale": "Canonical structured_values are 0-100. Unambiguous 0-1 fractional payloads are normalized to 0-100 for agent safety, but production integrations should send 0-100 or set structured_values_scale explicitly."
+  },
   "x-public-sandbox": {
     "enabled_by_default": true,
     "api_key_header": "X-API-Key",
@@ -31,11 +161,14 @@
     "daily_limit": 500,
     "allowed_endpoints": [
       "/v1/auth-check",
+      "/v1/first-call",
       "/v1/capabilities",
       "/v1/entity-resolve",
       "/v1/evidence-completeness",
       "/v1/context/compile",
-      "/v1/decision-check"
+      "/v1/decision-check",
+      "/v1/recommended-inputs",
+      "/v1/remediation-path"
     ],
     "allowed_modes": [
       "exploratory",
@@ -2273,35 +2406,107 @@
                     "items": {
                       "type": "string",
                       "enum": [
+                        "agent",
+                        "anchor_customer",
+                        "bank_lender",
+                        "beneficiary",
+                        "board",
+                        "board_member",
+                        "chama_member",
+                        "channel_gatekeeper",
+                        "chief",
+                        "civil_society_org",
+                        "clinic",
+                        "community_guardian",
+                        "community_leader",
+                        "competitor",
+                        "competitors",
                         "consumer",
-                        "retailer",
-                        "guardian",
-                        "influencer",
-                        "farmer",
+                        "cooperative_member",
+                        "court",
+                        "courts",
+                        "creditor",
+                        "creditors",
+                        "customary_land_authority",
+                        "customer",
+                        "customs",
+                        "customs_authority",
                         "distributor",
+                        "donor",
+                        "donor_guardian",
+                        "enumerator",
+                        "farmer",
+                        "field_agent",
+                        "field_supervisor",
+                        "gatekeeper",
+                        "guarantor",
+                        "guardian",
+                        "guardian_node",
+                        "implementing_partner",
+                        "incumbent",
+                        "incumbent_competitor",
+                        "incumbents",
+                        "influencer",
                         "informal_logistics",
+                        "informal_logistics_partner",
+                        "institutional_guardian",
                         "internal_operations",
                         "internal_operator",
-                        "beneficiary",
-                        "donor",
-                        "implementing_partner",
-                        "service_provider",
-                        "public_official",
-                        "community_leader",
-                        "religious_leader",
-                        "clinic",
-                        "school",
-                        "teacher",
-                        "enumerator",
-                        "field_supervisor",
-                        "research_respondent_group",
-                        "civil_society_org",
-                        "institutional_guardian",
-                        "community_guardian",
+                        "investor",
+                        "investor_board",
+                        "investors",
+                        "journalist",
+                        "journalists",
+                        "judiciary",
+                        "judiciary_court",
+                        "labor_union",
+                        "labour_union",
+                        "land_custodian",
+                        "land_owner",
+                        "landlord",
+                        "landowner",
+                        "lender",
+                        "lender_creditor",
+                        "lenders",
+                        "market_queen",
+                        "media",
+                        "media_press",
+                        "member",
+                        "micro_logistics",
+                        "mobile_money_agent",
+                        "organized_labour",
+                        "platform_partner",
                         "political_guardian",
-                        "donor_guardian",
-                        "channel_gatekeeper",
-                        "member"
+                        "press",
+                        "public_official",
+                        "regulator",
+                        "regulatory_body",
+                        "religious_leader",
+                        "research_respondent_group",
+                        "retail_partner",
+                        "retailer",
+                        "retailer_partner",
+                        "revenue_authority",
+                        "sacco_member",
+                        "school",
+                        "service_provider",
+                        "shareholder",
+                        "shareholders",
+                        "supplier",
+                        "suppliers",
+                        "tax_authority",
+                        "tax_revenue_authority",
+                        "teacher",
+                        "traditional_chief",
+                        "union",
+                        "upstream_supplier",
+                        "upstream_vendor",
+                        "vc",
+                        "vendor",
+                        "vendors",
+                        "venture_capital",
+                        "worker_association",
+                        "works_council"
                       ]
                     }
                   },
@@ -4579,7 +4784,7 @@
     },
     "/v1/outcome-feedback": {
       "post": {
-        "summary": "Submit labeled outcomes for calibration review. Idempotency-Key is recommended for deduplication; when omitted the worker derives a deterministic key from the JSON body (response may include X-Idempotency-Key-Autogenerated: true).",
+        "summary": "Compatibility route for a consented observation tied to an existing prospective enrollment. Direct self-asserted outcome records are rejected.",
         "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/outcome-feedback",
@@ -4631,6 +4836,284 @@
               }
             }
           }
+        }
+      }
+    },
+    "/v1/outcome-ledger": {
+      "post": {
+        "summary": "Prospectively enroll a receipt-bound MVR decision, record a bounded outcome observation, inspect tenant-scoped status, or withdraw and delete the enrollment.",
+        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/outcome-ledger",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "plan_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateOutcomeLedger",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": true,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "issue_consent_token",
+                      "decline_followup",
+                      "enroll",
+                      "record_outcome",
+                      "get",
+                      "list",
+                      "metrics",
+                      "withdraw"
+                    ]
+                  },
+                  "decision_reference_hash": {
+                    "type": "string",
+                    "pattern": "^[A-Fa-f0-9]{64}$"
+                  },
+                  "decision_check_id": {
+                    "type": "string"
+                  },
+                  "subject_reference": {
+                    "type": "string",
+                    "description": "Internal non-contact case reference. It is server-keyed and never persisted raw."
+                  },
+                  "entity_reference": {
+                    "type": "string",
+                    "description": "Alias of subject_reference."
+                  },
+                  "horizon_months": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "enum": [
+                        6,
+                        12,
+                        18
+                      ]
+                    },
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "uniqueItems": true,
+                    "description": "The active first-cohort contract requires exactly [6, 12, 18]."
+                  },
+                  "consent_attestation": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "confirmed_by_authorized_human": {
+                        "type": "boolean",
+                        "const": true
+                      },
+                      "consent_version": {
+                        "type": "string",
+                        "const": "mvr-outcome-consent@2026-07-24.2"
+                      },
+                      "followup_owner_role": {
+                        "type": "string",
+                        "enum": [
+                          "decision_owner",
+                          "authorized_delegate",
+                          "organizational_reviewer"
+                        ]
+                      },
+                      "recorded_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "record_reference_hash": {
+                        "type": "string",
+                        "pattern": "^[A-Fa-f0-9]{64}$"
+                      }
+                    },
+                    "required": [
+                      "confirmed_by_authorized_human",
+                      "consent_version",
+                      "followup_owner_role",
+                      "recorded_at",
+                      "record_reference_hash"
+                    ]
+                  },
+                  "consent_token": {
+                    "type": "string",
+                    "writeOnly": true,
+                    "description": "Short-lived, one-time operator-issued token. Never persist or log it."
+                  },
+                  "decline_reason_code": {
+                    "type": "string",
+                    "enum": [
+                      "not_provided",
+                      "owner_declined",
+                      "owner_unavailable",
+                      "followup_not_feasible"
+                    ]
+                  },
+                  "predicted_verdict": {
+                    "type": "string",
+                    "enum": [
+                      "permission_not_yet_earned",
+                      "pilot_only",
+                      "pilot_ready",
+                      "ready_to_scale"
+                    ]
+                  },
+                  "predicted_decision_state": {
+                    "type": "string",
+                    "enum": [
+                      "permission_not_yet_earned",
+                      "pilot_only",
+                      "pilot_ready",
+                      "ready_to_scale",
+                      "abstained"
+                    ]
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "predicted_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "decision_date": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "enrollment_id": {
+                    "type": "string"
+                  },
+                  "consent_to_outcome_processing": {
+                    "type": "boolean",
+                    "const": true
+                  },
+                  "outcome_class": {
+                    "type": "string",
+                    "enum": [
+                      "favorable",
+                      "mixed",
+                      "unfavorable",
+                      "indeterminate"
+                    ]
+                  },
+                  "decision_execution_status": {
+                    "type": "string",
+                    "enum": [
+                      "within_authorized_boundary",
+                      "beyond_authorized_boundary",
+                      "not_executed",
+                      "unknown"
+                    ]
+                  },
+                  "verification_status": {
+                    "type": "string",
+                    "enum": [
+                      "self_reported",
+                      "document_supported",
+                      "independently_verified",
+                      "disputed"
+                    ]
+                  },
+                  "outcome_date": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "observed_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "source_references": {
+                    "type": "array",
+                    "maxItems": 12,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "reference_id": {
+                          "type": "string",
+                          "description": "Governed reference identifier; persisted only as a server-keyed token."
+                        },
+                        "source_class": {
+                          "type": "string",
+                          "enum": [
+                            "governed_internal_record",
+                            "public_record",
+                            "regulatory_record",
+                            "transactional_record",
+                            "independent_attestation",
+                            "field_observation",
+                            "other_governed_reference"
+                          ]
+                        },
+                        "source_hash": {
+                          "type": "string",
+                          "pattern": "^[A-Fa-f0-9]{64}$"
+                        },
+                        "observed_at": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      }
+                    }
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100
+                  },
+                  "confirm_withdrawal": {
+                    "type": "boolean",
+                    "const": true
+                  }
+                },
+                "required": [
+                  "action"
+                ],
+                "description": "Consent-gated, receipt-bound prospective outcome ledger. issue_consent_token requires elevated operator verification; enroll requires consent_token; record_outcome accepts bounded metadata only; withdraw deletes the enrollment and all observations."
+              }
+            }
+          }
+        },
+        "x-mvr-outcome-publication-gate": {
+          "minimum_reviewed_outcomes": 50,
+          "minimum_geographies": 3,
+          "counting_unit": "unique_prospectively_enrolled_decisions_with_at_least_one_included_observation",
+          "required_review_status": "included_in_calibration_corpus",
+          "rule": "Both floors must be met before any public performance rate is calculated. Cohort, denominator, horizons, exclusions, uncertainty, misses, and abstentions must be published together."
         }
       }
     },
@@ -6306,6 +6789,54 @@
         }
       }
     },
+    "/v1/verdict-contest": {
+      "post": {
+        "summary": "Public-safe subject redress intake for disputing, correcting, or requesting review of an MVR output without mutating locked records.",
+        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/verdict-contest",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "validateVerdictContest",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/decision-snapshot": {
       "post": {
         "summary": "POST: create snapshot (returns snapshot_id). GET: list tenant snapshots (?limit=&cursor=).",
@@ -6683,6 +7214,158 @@
         }
       }
     },
+    "/v1/remediation-path": {
+      "post": {
+        "summary": "Return the evidence repair path for blocked or abstained decisions. Alias of next-best-action with emphasis on non-authorizing remediation.",
+        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/remediation-path",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "board_safe_supported"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateNextBestAction",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "decision_result": {
+                    "type": "object",
+                    "description": "Prior /v1/decision-check response or compatible decision object."
+                  },
+                  "subject": {
+                    "type": "object"
+                  },
+                  "market_scope": {
+                    "type": "object"
+                  },
+                  "evidence_pack": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/EvidenceItem"
+                    }
+                  },
+                  "compiled_pack": {
+                    "type": "object",
+                    "properties": {
+                      "public_reality_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "telemetry_proxy_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "localized_observed_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "survey_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "retail_audit_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "ngo_program_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "evaluation_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "administrative_data_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "partner_network_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "social_listening_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "target_verdict": {
+                    "type": "string",
+                    "enum": [
+                      "permission_not_yet_earned",
+                      "pilot_only",
+                      "pilot_ready",
+                      "ready_to_scale"
+                    ]
+                  },
+                  "audience": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/fixtures": {
       "get": {
         "summary": "Return safe sample payloads for developer testing.",
@@ -6847,14 +7530,7 @@
           "status": "registry_metadata_enforced_by_shared_gateway"
         },
         "x-mvr-idempotency-key-required": false,
-        "security": [
-          {
-            "ApiKeyAuth": []
-          },
-          {
-            "BearerAuth": []
-          }
-        ],
+        "security": [],
         "responses": {
           "200": {
             "description": "Successful response"
@@ -6873,6 +7549,88 @@
           },
           "429": {
             "description": "Rate or compute limit exceeded"
+          }
+        }
+      }
+    },
+    "/v1/first-call": {
+      "get": {
+        "summary": "Public activation bridge for AI agents, developers, and nontechnical users. Returns a non-authorizing first-use answer, missing evidence, exact next calls, and access routing without requiring a private key.",
+        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/first-call",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "validateFirstCallActivation",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        }
+      },
+      "post": {
+        "summary": "Public activation bridge for AI agents, developers, and nontechnical users. Returns a non-authorizing first-use answer, missing evidence, exact next calls, and access routing without requiring a private key.",
+        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/first-call",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "validateFirstCallActivation",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+              }
+            }
           }
         }
       }
@@ -7168,35 +7926,107 @@
                     "items": {
                       "type": "string",
                       "enum": [
+                        "agent",
+                        "anchor_customer",
+                        "bank_lender",
+                        "beneficiary",
+                        "board",
+                        "board_member",
+                        "chama_member",
+                        "channel_gatekeeper",
+                        "chief",
+                        "civil_society_org",
+                        "clinic",
+                        "community_guardian",
+                        "community_leader",
+                        "competitor",
+                        "competitors",
                         "consumer",
-                        "retailer",
-                        "guardian",
-                        "influencer",
-                        "farmer",
+                        "cooperative_member",
+                        "court",
+                        "courts",
+                        "creditor",
+                        "creditors",
+                        "customary_land_authority",
+                        "customer",
+                        "customs",
+                        "customs_authority",
                         "distributor",
+                        "donor",
+                        "donor_guardian",
+                        "enumerator",
+                        "farmer",
+                        "field_agent",
+                        "field_supervisor",
+                        "gatekeeper",
+                        "guarantor",
+                        "guardian",
+                        "guardian_node",
+                        "implementing_partner",
+                        "incumbent",
+                        "incumbent_competitor",
+                        "incumbents",
+                        "influencer",
                         "informal_logistics",
+                        "informal_logistics_partner",
+                        "institutional_guardian",
                         "internal_operations",
                         "internal_operator",
-                        "beneficiary",
-                        "donor",
-                        "implementing_partner",
-                        "service_provider",
-                        "public_official",
-                        "community_leader",
-                        "religious_leader",
-                        "clinic",
-                        "school",
-                        "teacher",
-                        "enumerator",
-                        "field_supervisor",
-                        "research_respondent_group",
-                        "civil_society_org",
-                        "institutional_guardian",
-                        "community_guardian",
+                        "investor",
+                        "investor_board",
+                        "investors",
+                        "journalist",
+                        "journalists",
+                        "judiciary",
+                        "judiciary_court",
+                        "labor_union",
+                        "labour_union",
+                        "land_custodian",
+                        "land_owner",
+                        "landlord",
+                        "landowner",
+                        "lender",
+                        "lender_creditor",
+                        "lenders",
+                        "market_queen",
+                        "media",
+                        "media_press",
+                        "member",
+                        "micro_logistics",
+                        "mobile_money_agent",
+                        "organized_labour",
+                        "platform_partner",
                         "political_guardian",
-                        "donor_guardian",
-                        "channel_gatekeeper",
-                        "member"
+                        "press",
+                        "public_official",
+                        "regulator",
+                        "regulatory_body",
+                        "religious_leader",
+                        "research_respondent_group",
+                        "retail_partner",
+                        "retailer",
+                        "retailer_partner",
+                        "revenue_authority",
+                        "sacco_member",
+                        "school",
+                        "service_provider",
+                        "shareholder",
+                        "shareholders",
+                        "supplier",
+                        "suppliers",
+                        "tax_authority",
+                        "tax_revenue_authority",
+                        "teacher",
+                        "traditional_chief",
+                        "union",
+                        "upstream_supplier",
+                        "upstream_vendor",
+                        "vc",
+                        "vendor",
+                        "vendors",
+                        "venture_capital",
+                        "worker_association",
+                        "works_council"
                       ]
                     }
                   },
@@ -7338,8 +8168,253 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "properties": {
+                  "subject": {
+                    "type": "object"
+                  },
+                  "market_scope": {
+                    "type": "object"
+                  },
+                  "entity_archetype": {
+                    "type": "string",
+                    "enum": [
+                      "telecom_operator",
+                      "mobile_money_operator",
+                      "fintech_platform",
+                      "financial_services_bank",
+                      "fintech_lending",
+                      "logistics_platform",
+                      "energy_utility",
+                      "extractives_operator",
+                      "real_estate_construction",
+                      "education_provider",
+                      "passenger_mobility",
+                      "b2b_saas_platform",
+                      "healthtech_platform",
+                      "insurance_platform",
+                      "fmcg_brand",
+                      "retail_chain",
+                      "ecommerce_platform",
+                      "manufacturer",
+                      "distributor_network",
+                      "ngo",
+                      "development_program",
+                      "public_institution",
+                      "survey_dataset",
+                      "solo_entrepreneur",
+                      "family_business",
+                      "cooperative_sacco",
+                      "cross_border_trader",
+                      "university_spinout",
+                      "diaspora_venture",
+                      "creator_economy_individual",
+                      "agritech_aggregator",
+                      "impact_enterprise",
+                      "religious_institution",
+                      "chama_savings_group"
+                    ]
+                  },
+                  "stakeholder_scope": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "agent",
+                        "anchor_customer",
+                        "bank_lender",
+                        "beneficiary",
+                        "board",
+                        "board_member",
+                        "chama_member",
+                        "channel_gatekeeper",
+                        "chief",
+                        "civil_society_org",
+                        "clinic",
+                        "community_guardian",
+                        "community_leader",
+                        "competitor",
+                        "competitors",
+                        "consumer",
+                        "cooperative_member",
+                        "court",
+                        "courts",
+                        "creditor",
+                        "creditors",
+                        "customary_land_authority",
+                        "customer",
+                        "customs",
+                        "customs_authority",
+                        "distributor",
+                        "donor",
+                        "donor_guardian",
+                        "enumerator",
+                        "farmer",
+                        "field_agent",
+                        "field_supervisor",
+                        "gatekeeper",
+                        "guarantor",
+                        "guardian",
+                        "guardian_node",
+                        "implementing_partner",
+                        "incumbent",
+                        "incumbent_competitor",
+                        "incumbents",
+                        "influencer",
+                        "informal_logistics",
+                        "informal_logistics_partner",
+                        "institutional_guardian",
+                        "internal_operations",
+                        "internal_operator",
+                        "investor",
+                        "investor_board",
+                        "investors",
+                        "journalist",
+                        "journalists",
+                        "judiciary",
+                        "judiciary_court",
+                        "labor_union",
+                        "labour_union",
+                        "land_custodian",
+                        "land_owner",
+                        "landlord",
+                        "landowner",
+                        "lender",
+                        "lender_creditor",
+                        "lenders",
+                        "market_queen",
+                        "media",
+                        "media_press",
+                        "member",
+                        "micro_logistics",
+                        "mobile_money_agent",
+                        "organized_labour",
+                        "platform_partner",
+                        "political_guardian",
+                        "press",
+                        "public_official",
+                        "regulator",
+                        "regulatory_body",
+                        "religious_leader",
+                        "research_respondent_group",
+                        "retail_partner",
+                        "retailer",
+                        "retailer_partner",
+                        "revenue_authority",
+                        "sacco_member",
+                        "school",
+                        "service_provider",
+                        "shareholder",
+                        "shareholders",
+                        "supplier",
+                        "suppliers",
+                        "tax_authority",
+                        "tax_revenue_authority",
+                        "teacher",
+                        "traditional_chief",
+                        "union",
+                        "upstream_supplier",
+                        "upstream_vendor",
+                        "vc",
+                        "vendor",
+                        "vendors",
+                        "venture_capital",
+                        "worker_association",
+                        "works_council"
+                      ]
+                    }
+                  },
+                  "evidence_pack": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/EvidenceItem"
+                    }
+                  },
+                  "compiled_pack": {
+                    "type": "object",
+                    "properties": {
+                      "public_reality_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "telemetry_proxy_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "localized_observed_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "survey_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "retail_audit_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "ngo_program_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "evaluation_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "administrative_data_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "partner_network_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "social_listening_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "target_verdict": {
+                    "type": "string",
+                    "enum": [
+                      "permission_not_yet_earned",
+                      "pilot_only",
+                      "pilot_ready",
+                      "ready_to_scale"
+                    ]
+                  },
+                  "output_mode": {
+                    "type": "string",
+                    "enum": [
+                      "internal_full",
+                      "client_safe",
+                      "board_safe",
+                      "export_safe"
+                    ]
+                  }
+                }
               }
             }
           }
@@ -7576,9 +8651,67 @@
         }
       }
     },
+    "/v1/retailer-credit": {
+      "post": {
+        "summary": "FAIL-CLOSED both profiles - requires MVR_CREDIT_MODEL KV and structured_values.credit_reliability_score, guardian_vouching, shelf_velocity (0-100). Full MVR core-dimension structured_values can be submitted; legacy fields are derived when possible. Advisory/readiness output only; not autonomous credit approval.",
+        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/retailer-credit",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "plan_gated",
+          "board_safe_supported"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateLegacyUtility",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/legacy/retailer-credit": {
       "post": {
-        "summary": "FAIL-CLOSED both profiles - requires MVR_CREDIT_MODEL KV and structured_values.credit_reliability_score, guardian_vouching, shelf_velocity (0-100). Full 14-dimension MVR structured_values can be submitted; legacy fields are derived when possible.",
+        "summary": "Legacy alias for /v1/retailer-credit with the same fail-closed calibration and advisory-only semantics.",
         "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/legacy/retailer-credit",
@@ -8539,7 +9672,7 @@
     "/v1/entry-sequencer": {
       "post": {
         "summary": "Ranks markets by readiness distance, crisis elasticity bonus, relational contagion index. Returns calculation_trace and per-candidate score_breakdown.",
-        "description": "Deterministic rank from ready_to_scale distance, crisis elasticity bonus, and contagion index; exposes calculation_trace and per-market score_breakdown. Not a market-outcome predictor â validate crisis_elasticity grades with evidence.",
+        "description": "Deterministic rank from ready_to_scale distance, crisis elasticity bonus, and contagion index; exposes calculation_trace and per-market score_breakdown. Not a market-outcome predictor - validate crisis_elasticity grades with evidence.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/entry-sequencer",
         "x-mvr-maturity": "provisional",
@@ -9066,7 +10199,7 @@
     "/v1/entry-timing": {
       "post": {
         "summary": "NOW/WAIT/AVOID market entry timing. Emits calculation_trace with adjustment_trace (every score delta), seasonal formula, permission gate, and signal thresholds. Optional include_trust_velocity enriches with trust-velocity readout.",
-        "description": "NOW/WAIT/AVOID from executive average, events, permission gate, seasonal impact; full adjustment_trace in calculation_trace. Permission is subjective input â cross-check with decision-check when material. strict_calibrated requires SEASONAL_KV.",
+        "description": "NOW/WAIT/AVOID from executive average, events, permission gate, seasonal impact; full adjustment_trace in calculation_trace. Permission is subjective input - cross-check with decision-check when material. strict_calibrated requires SEASONAL_KV.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/entry-timing",
         "x-mvr-maturity": "provisional",
@@ -9186,7 +10319,7 @@
     },
     "/v1/ingest-event": {
       "post": {
-        "summary": "Ingest live African market events into MVR_EVENTS KV so subsequent decision-checks can auto-populate liquidity context. Requires event_admin, ops_admin, or policy_admin role and Idempotency-Key. Valid event_type values: school_fees_window, harvest_inflow, harvest_outflow, pre_election_hoarding, post_election_normalisation, religious_fasting, religious_feasting, market_day_cycle, salary_cycle_peak, salary_cycle_trough, flooding_disruption, drought_period, festive_season, fuel_shortage, lab_window. Lightweight payloads may use intensity/signal_date/notes; conservative governance defaults are filled.",
+        "summary": "Ingest live African market events into MVR_EVENTS KV so subsequent decision-checks can auto-populate liquidity context. Requires event_admin, ops_admin, or policy_admin role and Idempotency-Key. Valid event_type values: school_fees_window, harvest_inflow, harvest_outflow, pre_election_hoarding, post_election_normalisation, religious_fasting, religious_feasting, market_day_cycle, salary_cycle_peak, salary_cycle_trough, flooding_disruption, drought_period, festive_season, fuel_shortage, lab_window, formalization_wave. Lightweight payloads may use intensity/signal_date/notes; conservative governance defaults are filled.",
         "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/ingest-event",
@@ -9312,6 +10445,224 @@
         "x-mvr-labels": [
           "plan_gated",
           "rbac_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateAdminObservability",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/leadgen-digest": {
+      "get": {
+        "summary": "Return a privacy-safe daily digest of AI bot fetches, MCP calls, sandbox calls, rate-limit hits, and key-request lead signals.",
+        "description": "Daily operator digest from MVR_USAGE or MVR_LEAD_EVENTS. It aggregates AI bot fetches, MCP tool calls, sandbox calls, rate-limit hits, and key-request events without exposing raw prompts, request bodies, API keys, or private payloads.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/admin/leadgen-digest",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "lead_generation",
+          "ai_bot_measurement",
+          "privacy_safe",
+          "requires_usage_store",
+          "plan_gated",
+          "rbac_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateAdminObservability",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        }
+      },
+      "post": {
+        "summary": "Return a privacy-safe daily digest of AI bot fetches, MCP calls, sandbox calls, rate-limit hits, and key-request lead signals.",
+        "description": "Daily operator digest from MVR_USAGE or MVR_LEAD_EVENTS. It aggregates AI bot fetches, MCP tool calls, sandbox calls, rate-limit hits, and key-request events without exposing raw prompts, request bodies, API keys, or private payloads.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/admin/leadgen-digest",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "lead_generation",
+          "ai_bot_measurement",
+          "privacy_safe",
+          "requires_usage_store",
+          "plan_gated",
+          "rbac_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateAdminObservability",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/lead-inbox": {
+      "get": {
+        "summary": "Return stored lead submissions classified as contactable, anonymous, or internal test, with delivery status and PII redacted by default.",
+        "description": "Stored-submission truth source. It excludes page-derived intent and separates actionable contacts, anonymous handshakes, internal tests, and alert-delivery status.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/admin/lead-inbox",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "lead_generation",
+          "private_lead_store",
+          "pii_redacted_by_default",
+          "rbac_gated",
+          "plan_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateAdminObservability",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        }
+      },
+      "post": {
+        "summary": "Return stored lead submissions classified as contactable, anonymous, or internal test, with delivery status and PII redacted by default.",
+        "description": "Stored-submission truth source. It excludes page-derived intent and separates actionable contacts, anonymous handshakes, internal tests, and alert-delivery status.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/admin/lead-inbox",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "lead_generation",
+          "private_lead_store",
+          "pii_redacted_by_default",
+          "rbac_gated",
+          "plan_gated"
         ],
         "x-mvr-validator-contract": {
           "name": "validateAdminObservability",
@@ -10996,8 +12347,253 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "properties": {
+                  "subject": {
+                    "type": "object"
+                  },
+                  "market_scope": {
+                    "type": "object"
+                  },
+                  "entity_archetype": {
+                    "type": "string",
+                    "enum": [
+                      "telecom_operator",
+                      "mobile_money_operator",
+                      "fintech_platform",
+                      "financial_services_bank",
+                      "fintech_lending",
+                      "logistics_platform",
+                      "energy_utility",
+                      "extractives_operator",
+                      "real_estate_construction",
+                      "education_provider",
+                      "passenger_mobility",
+                      "b2b_saas_platform",
+                      "healthtech_platform",
+                      "insurance_platform",
+                      "fmcg_brand",
+                      "retail_chain",
+                      "ecommerce_platform",
+                      "manufacturer",
+                      "distributor_network",
+                      "ngo",
+                      "development_program",
+                      "public_institution",
+                      "survey_dataset",
+                      "solo_entrepreneur",
+                      "family_business",
+                      "cooperative_sacco",
+                      "cross_border_trader",
+                      "university_spinout",
+                      "diaspora_venture",
+                      "creator_economy_individual",
+                      "agritech_aggregator",
+                      "impact_enterprise",
+                      "religious_institution",
+                      "chama_savings_group"
+                    ]
+                  },
+                  "stakeholder_scope": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "agent",
+                        "anchor_customer",
+                        "bank_lender",
+                        "beneficiary",
+                        "board",
+                        "board_member",
+                        "chama_member",
+                        "channel_gatekeeper",
+                        "chief",
+                        "civil_society_org",
+                        "clinic",
+                        "community_guardian",
+                        "community_leader",
+                        "competitor",
+                        "competitors",
+                        "consumer",
+                        "cooperative_member",
+                        "court",
+                        "courts",
+                        "creditor",
+                        "creditors",
+                        "customary_land_authority",
+                        "customer",
+                        "customs",
+                        "customs_authority",
+                        "distributor",
+                        "donor",
+                        "donor_guardian",
+                        "enumerator",
+                        "farmer",
+                        "field_agent",
+                        "field_supervisor",
+                        "gatekeeper",
+                        "guarantor",
+                        "guardian",
+                        "guardian_node",
+                        "implementing_partner",
+                        "incumbent",
+                        "incumbent_competitor",
+                        "incumbents",
+                        "influencer",
+                        "informal_logistics",
+                        "informal_logistics_partner",
+                        "institutional_guardian",
+                        "internal_operations",
+                        "internal_operator",
+                        "investor",
+                        "investor_board",
+                        "investors",
+                        "journalist",
+                        "journalists",
+                        "judiciary",
+                        "judiciary_court",
+                        "labor_union",
+                        "labour_union",
+                        "land_custodian",
+                        "land_owner",
+                        "landlord",
+                        "landowner",
+                        "lender",
+                        "lender_creditor",
+                        "lenders",
+                        "market_queen",
+                        "media",
+                        "media_press",
+                        "member",
+                        "micro_logistics",
+                        "mobile_money_agent",
+                        "organized_labour",
+                        "platform_partner",
+                        "political_guardian",
+                        "press",
+                        "public_official",
+                        "regulator",
+                        "regulatory_body",
+                        "religious_leader",
+                        "research_respondent_group",
+                        "retail_partner",
+                        "retailer",
+                        "retailer_partner",
+                        "revenue_authority",
+                        "sacco_member",
+                        "school",
+                        "service_provider",
+                        "shareholder",
+                        "shareholders",
+                        "supplier",
+                        "suppliers",
+                        "tax_authority",
+                        "tax_revenue_authority",
+                        "teacher",
+                        "traditional_chief",
+                        "union",
+                        "upstream_supplier",
+                        "upstream_vendor",
+                        "vc",
+                        "vendor",
+                        "vendors",
+                        "venture_capital",
+                        "worker_association",
+                        "works_council"
+                      ]
+                    }
+                  },
+                  "evidence_pack": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/EvidenceItem"
+                    }
+                  },
+                  "compiled_pack": {
+                    "type": "object",
+                    "properties": {
+                      "public_reality_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "telemetry_proxy_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "localized_observed_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "survey_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "retail_audit_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "ngo_program_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "evaluation_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "administrative_data_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "partner_network_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "social_listening_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "target_verdict": {
+                    "type": "string",
+                    "enum": [
+                      "permission_not_yet_earned",
+                      "pilot_only",
+                      "pilot_ready",
+                      "ready_to_scale"
+                    ]
+                  },
+                  "output_mode": {
+                    "type": "string",
+                    "enum": [
+                      "internal_full",
+                      "client_safe",
+                      "board_safe",
+                      "export_safe"
+                    ]
+                  }
+                }
               },
               "example": {
                 "user_tier": "SME",
@@ -14252,6 +15848,155 @@
         }
       }
     },
+    "/v1/commercial-handshake": {
+      "post": {
+        "summary": "Submit a user-approved non-confidential commercial brief to African Market OS.",
+        "description": "Public agent-native commercial intake. Requires explicit user approval, Idempotency-Key, confirmation that the brief is non-confidential, and separate consent before contact details are stored. The returned SHA-256 receipt proves submission integrity only; it is not an MVR verdict, evidence validation, approval, certification, or prediction.",
+        "security": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 12,
+              "maxLength": 120
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "use_case",
+                  "organization_type",
+                  "decision_stage",
+                  "brief",
+                  "user_confirmed_submission",
+                  "non_confidential_brief"
+                ],
+                "properties": {
+                  "use_case": {
+                    "type": "string",
+                    "enum": [
+                      "market_entry_preflight",
+                      "retail_expansion_readiness",
+                      "fintech_corridor_diligence",
+                      "investor_relational_due_diligence",
+                      "partner_due_diligence",
+                      "brand_localization",
+                      "procurement_tender_readiness",
+                      "ngo_dfi_program_readiness",
+                      "embeddedness_audit",
+                      "mvr_api_integration"
+                    ]
+                  },
+                  "organization_type": {
+                    "type": "string",
+                    "enum": [
+                      "founder_or_venture",
+                      "investor_or_fund",
+                      "bank_or_insurer",
+                      "corporate_or_multinational",
+                      "ngo_or_dfi",
+                      "government_or_public_agency",
+                      "advisor_or_consultancy",
+                      "ai_agent_or_platform",
+                      "research_or_academic",
+                      "other"
+                    ]
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "sector": {
+                    "type": "string"
+                  },
+                  "decision_stage": {
+                    "type": "string",
+                    "enum": [
+                      "exploring",
+                      "pre_entry",
+                      "pilot_design",
+                      "pilot_running",
+                      "scale_review",
+                      "diligence",
+                      "procurement",
+                      "integration",
+                      "other"
+                    ]
+                  },
+                  "timeline": {
+                    "type": "string"
+                  },
+                  "brief": {
+                    "type": "string",
+                    "minLength": 20,
+                    "maxLength": 1500
+                  },
+                  "source_agent": {
+                    "type": "string"
+                  },
+                  "user_confirmed_submission": {
+                    "type": "boolean",
+                    "enum": [
+                      true
+                    ]
+                  },
+                  "non_confidential_brief": {
+                    "type": "boolean",
+                    "enum": [
+                      true
+                    ]
+                  },
+                  "consent_to_contact": {
+                    "type": "boolean"
+                  },
+                  "contact": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string",
+                        "format": "email"
+                      },
+                      "phone": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Commercial brief received"
+          },
+          "400": {
+            "description": "Consent or validation error"
+          },
+          "409": {
+            "description": "Idempotency conflict"
+          },
+          "429": {
+            "description": "Rate limited"
+          },
+          "503": {
+            "description": "Private storage unavailable"
+          }
+        }
+      }
+    },
     "/v1/ready": {
       "get": {
         "summary": "Authenticated readiness diagnostics for the active tenant/profile, including strict-calibrated KV, thresholds, logs, and public-reality config validation.",
@@ -14308,86 +16053,17 @@
     },
     "/v1/schema": {
       "get": {
-        "summary": "Full profile documentation including strict_calibrated requirements, frontend enums, and terminal_templates (see JSON body key terminal_templates).",
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
+        "summary": "Full profile documentation including strict_calibrated requirements, frontend enums, and terminal_templates (see JSON body key terminal_templates)."
       }
     },
     "/v1/model-card": {
       "get": {
-        "summary": "Model transparency, calibration docs, preflight endpoints, and validation metadata.",
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
+        "summary": "Model transparency, calibration docs, preflight endpoints, and validation metadata."
       }
     },
     "/v1/evidence-guide": {
       "get": {
-        "summary": "Per-tier evidence standards, informal_logistics, bifurcated decay.",
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/bench/leaderboard.json": {
-      "get": {
-        "summary": "Return public MVR-Bench leaderboard status",
-        "description": "Returns public MVR-Bench metadata, metrics, and leaderboard status. Private test labels and private scores are not published.",
-        "responses": {
-          "200": {
-            "description": "MVR-Bench leaderboard metadata"
-          }
-        }
-      }
-    },
-    "/.well-known/mvr-bench.json": {
-      "get": {
-        "summary": "Return machine-readable MVR-Bench manifest",
-        "description": "Machine-readable manifest for MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark.",
-        "responses": {
-          "200": {
-            "description": "MVR-Bench manifest"
-          }
-        }
-      }
-    },
-    "/v1/bench/scenarios": {
-      "get": {
-        "summary": "Discover MVR-Bench public dev split",
-        "description": "Returns public-dev split metadata and the boundary that private labels are held out for server-side scoring only.",
-        "responses": {
-          "200": {
-            "description": "MVR-Bench scenario metadata"
-          }
-        }
+        "summary": "Per-tier evidence standards, informal_logistics, bifurcated decay."
       }
     }
   },
@@ -14439,6 +16115,12 @@
               "financial_services_bank",
               "fintech_lending",
               "logistics_platform",
+              "energy_utility",
+              "extractives_operator",
+              "real_estate_construction",
+              "education_provider",
+              "passenger_mobility",
+              "b2b_saas_platform",
               "healthtech_platform",
               "insurance_platform",
               "fmcg_brand",
@@ -14492,35 +16174,107 @@
           "stakeholder_class": {
             "type": "string",
             "enum": [
+              "agent",
+              "anchor_customer",
+              "bank_lender",
+              "beneficiary",
+              "board",
+              "board_member",
+              "chama_member",
+              "channel_gatekeeper",
+              "chief",
+              "civil_society_org",
+              "clinic",
+              "community_guardian",
+              "community_leader",
+              "competitor",
+              "competitors",
               "consumer",
-              "retailer",
-              "guardian",
-              "influencer",
-              "farmer",
+              "cooperative_member",
+              "court",
+              "courts",
+              "creditor",
+              "creditors",
+              "customary_land_authority",
+              "customer",
+              "customs",
+              "customs_authority",
               "distributor",
+              "donor",
+              "donor_guardian",
+              "enumerator",
+              "farmer",
+              "field_agent",
+              "field_supervisor",
+              "gatekeeper",
+              "guarantor",
+              "guardian",
+              "guardian_node",
+              "implementing_partner",
+              "incumbent",
+              "incumbent_competitor",
+              "incumbents",
+              "influencer",
               "informal_logistics",
+              "informal_logistics_partner",
+              "institutional_guardian",
               "internal_operations",
               "internal_operator",
-              "beneficiary",
-              "donor",
-              "implementing_partner",
-              "service_provider",
-              "public_official",
-              "community_leader",
-              "religious_leader",
-              "clinic",
-              "school",
-              "teacher",
-              "enumerator",
-              "field_supervisor",
-              "research_respondent_group",
-              "civil_society_org",
-              "institutional_guardian",
-              "community_guardian",
+              "investor",
+              "investor_board",
+              "investors",
+              "journalist",
+              "journalists",
+              "judiciary",
+              "judiciary_court",
+              "labor_union",
+              "labour_union",
+              "land_custodian",
+              "land_owner",
+              "landlord",
+              "landowner",
+              "lender",
+              "lender_creditor",
+              "lenders",
+              "market_queen",
+              "media",
+              "media_press",
+              "member",
+              "micro_logistics",
+              "mobile_money_agent",
+              "organized_labour",
+              "platform_partner",
               "political_guardian",
-              "donor_guardian",
-              "channel_gatekeeper",
-              "member"
+              "press",
+              "public_official",
+              "regulator",
+              "regulatory_body",
+              "religious_leader",
+              "research_respondent_group",
+              "retail_partner",
+              "retailer",
+              "retailer_partner",
+              "revenue_authority",
+              "sacco_member",
+              "school",
+              "service_provider",
+              "shareholder",
+              "shareholders",
+              "supplier",
+              "suppliers",
+              "tax_authority",
+              "tax_revenue_authority",
+              "teacher",
+              "traditional_chief",
+              "union",
+              "upstream_supplier",
+              "upstream_vendor",
+              "vc",
+              "vendor",
+              "vendors",
+              "venture_capital",
+              "worker_association",
+              "works_council"
             ]
           },
           "guardian_tier": {
@@ -14597,7 +16351,41 @@
             "type": "object"
           },
           "structured_values": {
-            "type": "object"
+            "type": "object",
+            "description": "Ingestible field-observed MVR dimension values. Canonical production scale is 0-100. Accepted core keys: permission, trust, belonging, embeddedness, reciprocity, cultural_fit, guardian_strength, continuity, channel_permission, infrastructural_intimacy, absence_sensitivity, narrative_looping, whispered_credibility, fractal_trust, cultural_calibration. Agent-safety note: if at least two valid core dimensions on the same evidence item are all between 0 and 1, the worker normalizes them from fractional 0-1 to 0-100 before scoring; production clients should still send 0-100 to avoid ambiguity. Do not submit derived concepts such as evidence_completeness, market_carry, local_legitimacy; submit the listed underlying dimensions instead.",
+            "additionalProperties": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "x-ingestible-dimensions": [
+              "permission",
+              "trust",
+              "belonging",
+              "embeddedness",
+              "reciprocity",
+              "cultural_fit",
+              "guardian_strength",
+              "continuity",
+              "channel_permission",
+              "infrastructural_intimacy",
+              "absence_sensitivity",
+              "narrative_looping",
+              "whispered_credibility",
+              "fractal_trust",
+              "cultural_calibration"
+            ],
+            "x-derived-concepts": [
+              "evidence_completeness",
+              "market_carry",
+              "local_legitimacy"
+            ],
+            "x-canonical-scale": "0-100",
+            "x-fraction-scale-normalization": "unambiguous 0-1 core-dimension rows are normalized to 0-100"
+          },
+          "structured_values_scale": {
+            "type": "string",
+            "description": "Optional hint for agents. Use '0-1 fraction' only when sending fractional structured_values; otherwise omit and send canonical 0-100 scores."
           },
           "behavioral_values": {
             "type": "object",
@@ -14605,6 +16393,41 @@
           },
           "structured_values_provenance": {
             "type": "object"
+          },
+          "human_reviewed": {
+            "type": "boolean",
+            "description": "Required for AI-extracted material before strict or decisive use."
+          },
+          "review_status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "approved",
+              "accepted",
+              "verified",
+              "reviewed",
+              "rejected"
+            ]
+          },
+          "reviewed_by": {
+            "type": "string",
+            "description": "Named human reviewer for AI-extracted material when human_reviewed=true."
+          },
+          "reviewed_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "human_review": {
+            "type": "object",
+            "description": "Optional structured review record; may include by/reviewer_id, status, and reviewed_at."
+          },
+          "organ_attestation": {
+            "type": "object",
+            "description": "MVR Examiner or other organ-produced evidence attestation. The deterministic kernel treats unreviewed organ evidence as imputed/non-decisive."
+          },
+          "_verifier_attestation": {
+            "type": "object",
+            "description": "Verifier-organ attestation for extraction review. Internal/audit use; unreviewed AI extraction remains non-decisive."
           },
           "privacy_envelope": {
             "type": "object",
@@ -14785,35 +16608,107 @@
             "items": {
               "type": "string",
               "enum": [
+                "agent",
+                "anchor_customer",
+                "bank_lender",
+                "beneficiary",
+                "board",
+                "board_member",
+                "chama_member",
+                "channel_gatekeeper",
+                "chief",
+                "civil_society_org",
+                "clinic",
+                "community_guardian",
+                "community_leader",
+                "competitor",
+                "competitors",
                 "consumer",
-                "retailer",
-                "guardian",
-                "influencer",
-                "farmer",
+                "cooperative_member",
+                "court",
+                "courts",
+                "creditor",
+                "creditors",
+                "customary_land_authority",
+                "customer",
+                "customs",
+                "customs_authority",
                 "distributor",
+                "donor",
+                "donor_guardian",
+                "enumerator",
+                "farmer",
+                "field_agent",
+                "field_supervisor",
+                "gatekeeper",
+                "guarantor",
+                "guardian",
+                "guardian_node",
+                "implementing_partner",
+                "incumbent",
+                "incumbent_competitor",
+                "incumbents",
+                "influencer",
                 "informal_logistics",
+                "informal_logistics_partner",
+                "institutional_guardian",
                 "internal_operations",
                 "internal_operator",
-                "beneficiary",
-                "donor",
-                "implementing_partner",
-                "service_provider",
-                "public_official",
-                "community_leader",
-                "religious_leader",
-                "clinic",
-                "school",
-                "teacher",
-                "enumerator",
-                "field_supervisor",
-                "research_respondent_group",
-                "civil_society_org",
-                "institutional_guardian",
-                "community_guardian",
+                "investor",
+                "investor_board",
+                "investors",
+                "journalist",
+                "journalists",
+                "judiciary",
+                "judiciary_court",
+                "labor_union",
+                "labour_union",
+                "land_custodian",
+                "land_owner",
+                "landlord",
+                "landowner",
+                "lender",
+                "lender_creditor",
+                "lenders",
+                "market_queen",
+                "media",
+                "media_press",
+                "member",
+                "micro_logistics",
+                "mobile_money_agent",
+                "organized_labour",
+                "platform_partner",
                 "political_guardian",
-                "donor_guardian",
-                "channel_gatekeeper",
-                "member"
+                "press",
+                "public_official",
+                "regulator",
+                "regulatory_body",
+                "religious_leader",
+                "research_respondent_group",
+                "retail_partner",
+                "retailer",
+                "retailer_partner",
+                "revenue_authority",
+                "sacco_member",
+                "school",
+                "service_provider",
+                "shareholder",
+                "shareholders",
+                "supplier",
+                "suppliers",
+                "tax_authority",
+                "tax_revenue_authority",
+                "teacher",
+                "traditional_chief",
+                "union",
+                "upstream_supplier",
+                "upstream_vendor",
+                "vc",
+                "vendor",
+                "vendors",
+                "venture_capital",
+                "worker_association",
+                "works_council"
               ]
             }
           },
@@ -14890,7 +16785,7 @@
           },
           "unit_economics": {
             "type": "object",
-            "description": "Enterprise blueprint: LTVÃ·CAC, runway, margin - gates scaling verdict when structurally unprofitable."
+            "description": "Enterprise blueprint: LTV/CAC, runway, margin - gates scaling verdict when structurally unprofitable."
           },
           "financial_context": {
             "type": "object",
@@ -15115,35 +17010,107 @@
             "items": {
               "type": "string",
               "enum": [
+                "agent",
+                "anchor_customer",
+                "bank_lender",
+                "beneficiary",
+                "board",
+                "board_member",
+                "chama_member",
+                "channel_gatekeeper",
+                "chief",
+                "civil_society_org",
+                "clinic",
+                "community_guardian",
+                "community_leader",
+                "competitor",
+                "competitors",
                 "consumer",
-                "retailer",
-                "guardian",
-                "influencer",
-                "farmer",
+                "cooperative_member",
+                "court",
+                "courts",
+                "creditor",
+                "creditors",
+                "customary_land_authority",
+                "customer",
+                "customs",
+                "customs_authority",
                 "distributor",
+                "donor",
+                "donor_guardian",
+                "enumerator",
+                "farmer",
+                "field_agent",
+                "field_supervisor",
+                "gatekeeper",
+                "guarantor",
+                "guardian",
+                "guardian_node",
+                "implementing_partner",
+                "incumbent",
+                "incumbent_competitor",
+                "incumbents",
+                "influencer",
                 "informal_logistics",
+                "informal_logistics_partner",
+                "institutional_guardian",
                 "internal_operations",
                 "internal_operator",
-                "beneficiary",
-                "donor",
-                "implementing_partner",
-                "service_provider",
-                "public_official",
-                "community_leader",
-                "religious_leader",
-                "clinic",
-                "school",
-                "teacher",
-                "enumerator",
-                "field_supervisor",
-                "research_respondent_group",
-                "civil_society_org",
-                "institutional_guardian",
-                "community_guardian",
+                "investor",
+                "investor_board",
+                "investors",
+                "journalist",
+                "journalists",
+                "judiciary",
+                "judiciary_court",
+                "labor_union",
+                "labour_union",
+                "land_custodian",
+                "land_owner",
+                "landlord",
+                "landowner",
+                "lender",
+                "lender_creditor",
+                "lenders",
+                "market_queen",
+                "media",
+                "media_press",
+                "member",
+                "micro_logistics",
+                "mobile_money_agent",
+                "organized_labour",
+                "platform_partner",
                 "political_guardian",
-                "donor_guardian",
-                "channel_gatekeeper",
-                "member"
+                "press",
+                "public_official",
+                "regulator",
+                "regulatory_body",
+                "religious_leader",
+                "research_respondent_group",
+                "retail_partner",
+                "retailer",
+                "retailer_partner",
+                "revenue_authority",
+                "sacco_member",
+                "school",
+                "service_provider",
+                "shareholder",
+                "shareholders",
+                "supplier",
+                "suppliers",
+                "tax_authority",
+                "tax_revenue_authority",
+                "teacher",
+                "traditional_chief",
+                "union",
+                "upstream_supplier",
+                "upstream_vendor",
+                "vc",
+                "vendor",
+                "vendors",
+                "venture_capital",
+                "worker_association",
+                "works_council"
               ]
             }
           },
@@ -15406,15 +17373,15 @@
           },
           "model_scale_signal": {
             "type": "object",
-            "description": "velocity, capital_deployment_cap_percent, interpretation â mirrors scale_recommendation signal, not permission to execute."
+            "description": "velocity, capital_deployment_cap_percent, interpretation - mirrors scale_recommendation signal, not permission to execute."
           },
           "formal_authorization": {
             "type": "object",
-            "description": "status, blocking_gates, authorized_use, not_authorized_use â same semantics as decision_authorization."
+            "description": "status, blocking_gates, authorized_use, not_authorized_use - same semantics as decision_authorization."
           },
           "reliability_constraints": {
             "type": "object",
-            "description": "level, authorized_for_decision, not_authorized_for â same semantics as decision_reliability ceilings."
+            "description": "level, authorized_for_decision, not_authorized_for - same semantics as decision_reliability ceilings."
           },
           "human_review": {
             "type": "object",
@@ -15435,22 +17402,5 @@
       }
     }
   },
-  "x-response-contract-version": "2026-05-01.v1",
-  "x-mvr-bench": {
-    "canonical_url": "https://africanmarketos.com/benchmarks/mvr-bench/",
-    "full_name": "MVR-Bench: Minimum Viable Relationships Framework Market-Permission Reasoning Benchmark",
-    "framework": "Minimum Viable Relationships (MVR) Framework",
-    "headline_metric": "Reckless-GO Rate",
-    "public_dev_split": "https://africanmarketos.com/benchmarks/mvr-bench/data/dev/mvr-bench-dev-v1.json",
-    "private_labels_public": false,
-    "model_training_allowed": false,
-    "authority_graph": [
-      "https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/",
-      "https://www.wikidata.org/wiki/Q136094540",
-      "https://www.wikidata.org/wiki/Q136100349",
-      "https://grokipedia.com/page/Minimum_Viable_Relationships",
-      "https://doi.org/10.5281/zenodo.17054819",
-      "https://doi.org/10.6084/m9.figshare.30391393"
-    ]
-  }
+  "response_contract_version": "2026-05-01.v1"
 }

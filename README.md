@@ -140,6 +140,8 @@ The API helps agents and systems:
 - Status metadata: https://africanmarketos.com/.well-known/mvr-status.json
 - Outcome calibration status: https://africanmarketos.com/.well-known/mvr-outcome-calibration.json
 - Outcome calibration runbook: `docs/outcome-calibration-ledger.md`
+- First-cohort operating contract: `docs/outcome-first-cohort-operating-pack.md`
+- First-cohort machine protocol: `evaluations/outcome-first-cohort-v1/protocol.json`
 
 API keys are issued on request. Directory users connecting through Odel, Glama, MCP Registry, RapidAPI, or another agent platform should test with the sandbox only, then request production access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
 
