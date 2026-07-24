@@ -149,6 +149,7 @@ def main() -> int:
             "late_enrollment_cannot_precede_already_determinable_lock",
             "caller_decision_identifier_cannot_persist",
             "withdrawal_scrubs_case_linkage_but_retains_slot",
+            "interrupted_withdrawal_retry_completes_linkage_scrub",
             "weak_hmac_key_fails_closed",
         },
         "runtime acceptance-test contract drifted",
