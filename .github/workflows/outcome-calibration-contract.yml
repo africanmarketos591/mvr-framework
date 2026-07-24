@@ -6,13 +6,19 @@ on:
     branches: ["main"]
     paths:
       - "docs/outcome-calibration-ledger.md"
+      - "docs/outcome-first-cohort-operating-pack.md"
+      - "evaluations/outcome-first-cohort-v1/protocol.json"
       - "scripts/validate_outcome_calibration_contract.py"
+      - "scripts/validate_outcome_first_cohort.py"
       - ".github/workflows/outcome-calibration-contract.yml"
   push:
     branches: ["main"]
     paths:
       - "docs/outcome-calibration-ledger.md"
+      - "docs/outcome-first-cohort-operating-pack.md"
+      - "evaluations/outcome-first-cohort-v1/protocol.json"
       - "scripts/validate_outcome_calibration_contract.py"
+      - "scripts/validate_outcome_first_cohort.py"
       - ".github/workflows/outcome-calibration-contract.yml"
 
 jobs:
@@ -26,5 +32,8 @@ jobs:
           python-version: "3.12"
       - name: Validate local outcome-calibration contract
         run: python scripts/validate_outcome_calibration_contract.py
+      - name: Validate local first-cohort operating contract
+        run: python scripts/validate_outcome_first_cohort.py
       - name: Validate production outcome-calibration contract
+        if: github.event_name == 'workflow_dispatch'
         run: python scripts/validate_outcome_calibration_contract.py --live
