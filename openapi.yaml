@@ -4907,9 +4907,6 @@
                     "type": "string",
                     "pattern": "^[A-Fa-f0-9]{64}$"
                   },
-                  "decision_check_id": {
-                    "type": "string"
-                  },
                   "subject_reference": {
                     "type": "string",
                     "description": "Internal non-contact case reference. It is server-keyed and never persisted raw."
@@ -5103,7 +5100,7 @@
                 "required": [
                   "action"
                 ],
-                "description": "Consent-gated, receipt-bound prospective outcome ledger. issue_consent_token requires elevated operator verification; enroll requires consent_token; record_outcome accepts bounded metadata only; withdraw deletes the enrollment and all observations."
+                "description": "Consent-gated, receipt-bound prospective outcome ledger. issue_consent_token requires elevated operator verification; enroll requires consent_token; record_outcome accepts bounded metadata only; withdraw deletes case-bearing enrollment and observations while retaining only HMAC-pseudonymized cohort-denominator metadata and a 90-day audit tombstone."
               }
             }
           }

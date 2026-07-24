@@ -107,7 +107,29 @@
     "automated_obvious_personal_data_checks_required": true,
     "privacy_claim_boundary": "Bounded schemas and automated checks reduce obvious personal-data entry; they do not prove that supplied identifiers are anonymous or that all personal data is impossible.",
     "withdrawal_deletes_enrollment_and_observations": true,
-    "withdrawal_tombstone_days": 90
+    "withdrawal_tombstone_days": 90,
+    "withdrawal_unlinking_required": true,
+    "withdrawal_governance_retention": {
+      "retention_class": "7y",
+      "allowed_fields": [
+        "ordinal",
+        "versioned_hmac_cohort_member_token",
+        "offered_at",
+        "enrolled_at",
+        "withdrawn_at",
+        "aggregate_counters"
+      ],
+      "prohibited_fields": [
+        "decision_reference_hash",
+        "enrollment_id",
+        "subject_reference",
+        "contact_fields",
+        "evidence",
+        "narrative"
+      ]
+    },
+    "hmac_minimum_bytes": 32,
+    "pseudonymization_key_id_required": true
   },
   "roles": {
     "decision_owner": "Controls the external consent relationship.",
@@ -172,7 +194,13 @@
     "cross_tenant_metrics_do_not_merge_denominators",
     "non_standard_horizon_schedule_rejected",
     "decline_and_enrollment_are_serialized",
-    "valid_token_cannot_reverse_explicit_decline"
+    "valid_token_cannot_reverse_explicit_decline",
+    "metrics_read_does_not_create_cohort_manifest",
+    "scheduled_expiry_finalizes_determinable_cohort",
+    "late_enrollment_cannot_precede_already_determinable_lock",
+    "caller_decision_identifier_cannot_persist",
+    "withdrawal_scrubs_case_linkage_but_retains_slot",
+    "weak_hmac_key_fails_closed"
   ],
   "publication_boundary": {
     "public_performance_result_from_first_cohort": false,

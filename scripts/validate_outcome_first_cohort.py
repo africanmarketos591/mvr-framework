@@ -104,6 +104,16 @@ def main() -> int:
         "free-text prohibition is incomplete",
     )
     require(privacy.get("withdrawal_deletes_enrollment_and_observations") is True, "withdrawal deletion is required")
+    require(privacy.get("withdrawal_unlinking_required") is True, "withdrawal must scrub case linkage")
+    require(privacy.get("hmac_minimum_bytes") == 32, "outcome HMAC key floor drifted")
+    require(privacy.get("pseudonymization_key_id_required") is True, "pseudonymization key ID is required")
+    retained = privacy.get("withdrawal_governance_retention") or {}
+    require(retained.get("retention_class") == "7y", "withdrawal governance retention drifted")
+    require(
+        {"decision_reference_hash", "enrollment_id", "subject_reference", "contact_fields", "evidence", "narrative"}
+        == set(retained.get("prohibited_fields") or []),
+        "withdrawal linkage prohibition drifted",
+    )
 
     roles = protocol.get("roles") or {}
     require(roles.get("submitter_reviewer_separation_required") is True, "review separation is required")
@@ -134,6 +144,12 @@ def main() -> int:
             "non_standard_horizon_schedule_rejected",
             "decline_and_enrollment_are_serialized",
             "valid_token_cannot_reverse_explicit_decline",
+            "metrics_read_does_not_create_cohort_manifest",
+            "scheduled_expiry_finalizes_determinable_cohort",
+            "late_enrollment_cannot_precede_already_determinable_lock",
+            "caller_decision_identifier_cannot_persist",
+            "withdrawal_scrubs_case_linkage_but_retains_slot",
+            "weak_hmac_key_fails_closed",
         },
         "runtime acceptance-test contract drifted",
     )
@@ -152,6 +168,9 @@ def main() -> int:
         "cannot be skipped",
         "does not lock membership while any earlier offer",
         "Withdrawal does not create a replacement slot",
+        "metrics` read is observational",
+        "at least 32 bytes",
+        "HMAC cohort token",
         "Enterprise plan",
         "first_cohort_screening",
         "one-time token",

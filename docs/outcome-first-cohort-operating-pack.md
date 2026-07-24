@@ -21,9 +21,9 @@ The first cohort is scoped to one governed Enterprise tenant/workspace. It is no
 
 The cohort contains the first 10 eligible live decision receipts within one tenant/workspace that complete operator-verified consent and enrollment within seven days of the original decision.
 
-Selection is consecutive by server-recorded eligible decision time, with the decision-reference hash as a deterministic tie-breaker. The server does not lock membership while any earlier offer still has an unresolved consent window. Once the first ten completed enrollments can be determined without a pending earlier case, it persists a tenant/workspace-scoped cohort manifest. Later state changes cannot rewrite that manifest. A case cannot be skipped because its verdict, geography, organization, later conduct, or expected outcome is inconvenient.
+Selection is consecutive by server-recorded eligible decision time, with the decision-reference hash as a deterministic tie-breaker. The server does not lock membership while any earlier offer still has an unresolved consent window. Once the first ten completed enrollments can be determined without a pending earlier case, enrollment and decline mutations persist a tenant/workspace-scoped cohort manifest under the screening lock; the scheduled follow-up job performs the same finalization when time-window expiry is the resolving event. The `metrics` read is observational and never creates governance state. Later state changes cannot rewrite that manifest. A case cannot be skipped because its verdict, geography, organization, later conduct, or expected outcome is inconvenient.
 
-Withdrawal does not create a replacement slot. A decision that completed enrollment remains one of the locked ten and is marked withdrawn, while its case-bearing enrollment and observations are deleted under the withdrawal contract.
+Withdrawal does not create a replacement slot. A decision that completed enrollment remains one of the locked ten, while its case-bearing enrollment and observations are deleted. The retained seven-year cohort and screening metadata replaces its decision hash and enrollment ID with a versioned server-keyed HMAC cohort token, preserves the ordinal and bounded timestamps/counters, and contains no subject reference, contact field, evidence, or narrative. A separate HMAC-pseudonymized deletion-audit tombstone expires after 90 days.
 
 The authenticated `action=metrics` response exposes the same tenant/workspace's bounded `first_cohort_screening` register with:
 
@@ -35,7 +35,7 @@ The authenticated `action=metrics` response exposes the same tenant/workspace's 
 - duplicate enrollment attempts
 - withdrawn enrollments
 
-The response contains no names, email addresses, raw subject references, evidence, tenant identifiers, or decision narratives. It includes a one-way scope-reference hash and locked decision-reference hashes so membership can be audited inside the governed tenant/workspace.
+The response contains no names, email addresses, raw subject references, evidence, tenant identifiers, or decision narratives. It includes a one-way scope-reference hash and locked decision-reference hashes for active members. After withdrawal, the corresponding member is represented only by its ordinal and versioned HMAC cohort token.
 
 ## Eligibility
 
@@ -85,6 +85,7 @@ One person may hold the first two functions if authorized by the organization. T
 5. The one-time token is used within 30 minutes for `action=enroll`.
 6. The token is never logged, emailed, copied into an AI prompt, or retained after use.
 7. Consent issuance, decline, enrollment, duplicate counting, and screening updates are serialized under one tenant/workspace screening mutation lock.
+8. The dedicated outcome-ledger HMAC key must contain at least 32 bytes. Persisted pseudonyms carry a public key ID so rotation can be governed without recording the secret.
 
 The MVR response does not prove identity. It proves only that an authorized operator attested to an external consent record and used a receipt-bound token.
 
@@ -138,6 +139,8 @@ The first-cohort operation passes only when:
 - scheduled horizons present: 100%
 - withdrawals leave active records: 0
 - withdrawn locked slots replaced: 0
+- withdrawn locked members retaining decision hashes or enrollment IDs: 0
+- caller-supplied decision identifiers persisted: 0
 - abstentions silently relabeled as outcomes: 0
 
 Incomplete follow-up is reported as incomplete follow-up. It is not a model miss or success.

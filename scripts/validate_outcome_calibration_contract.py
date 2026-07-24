@@ -100,7 +100,7 @@ def validate_openapi_operation(openapi: dict, source: str) -> dict:
         f"{source} horizon_months enum drifted",
     )
     properties = schema.get("properties", {})
-    for free_text_field in ("decision_domain", "decision_type", "response_profile"):
+    for free_text_field in ("decision_check_id", "decision_domain", "decision_type", "response_profile"):
         require(
             free_text_field not in properties,
             f"{source} must not accept caller-supplied {free_text_field}",

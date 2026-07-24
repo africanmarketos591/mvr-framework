@@ -151,7 +151,7 @@ Only `source_verified` or `independent_confirmation` can support inclusion. Excl
 
 ## 6. Inspect or Withdraw
 
-The enrolling actor or an elevated reviewer can retrieve an enrollment. Elevated reviewers can list tenant enrollments and view metrics. Withdrawal deletes the enrollment and all observations; only a non-identifying tombstone remains for 90 days.
+The enrolling actor or an elevated reviewer can retrieve an enrollment. Elevated reviewers can list tenant enrollments and view metrics. Withdrawal deletes the case-bearing enrollment and all observations. A 90-day HMAC-pseudonymized audit tombstone remains for deletion accountability.
 
 ```json
 {
@@ -161,9 +161,9 @@ The enrolling actor or an elevated reviewer can retrieve an enrollment. Elevated
 }
 ```
 
-The outcome records have a seven-year governance retention class unless withdrawn. Organizations should align consent notices and internal retention policy before enrolling real decisions.
+To preserve a non-cherry-picked cohort denominator after withdrawal, the seven-year screening register and any locked first-cohort manifest retain only the member ordinal, a versioned server-keyed HMAC cohort token, bounded offer/enrollment/withdrawal timestamps, and aggregate counters. The withdrawal path removes the decision-reference hash and enrollment ID from those retained records. It retains no raw subject reference, contact field, evidence, or narrative. Organizations should disclose this bounded governance retention and align consent notices and internal retention policy before enrolling real decisions.
 
-The `metrics` action also returns an identity-free `first_cohort_screening` block with eligible offers, consent tokens issued, enrollments, explicit declines, expired consent windows, duplicate attempts, and withdrawals. An elevated operator can record an explicit decline with `action: "decline_followup"` and a bounded `decline_reason_code`; silence is counted only as an expired window after seven days and is never treated as an outcome.
+The `metrics` action also returns an identity-free `first_cohort_screening` block with eligible offers, consent tokens issued, enrollments, explicit declines, expired consent windows, duplicate attempts, and withdrawals. It is observational: it does not create or rewrite the first-cohort manifest. Enrollment and decline mutations finalize a determinable manifest under the screening lock, while the scheduled follow-up job resolves expiry-only transitions. An elevated operator can record an explicit decline with `action: "decline_followup"` and a bounded `decline_reason_code`; silence is counted only as an expired window after seven days and is never treated as an outcome.
 
 ## 7. Daily Follow-up Operations
 
