@@ -7,6 +7,7 @@ on:
     paths:
       - "mcp/**"
       - ".well-known/mvr-selection-observatory.json"
+      - ".well-known/agent-card.json"
       - "server.json"
       - "docs/version-map.md"
       - "docs/host-policy-modes.md"
@@ -23,6 +24,7 @@ on:
     paths:
       - "mcp/**"
       - ".well-known/mvr-selection-observatory.json"
+      - ".well-known/agent-card.json"
       - "server.json"
       - "docs/version-map.md"
       - "scripts/validate_mcp_public_contract.py"

@@ -1,0 +1,40 @@
+{
+  "release_id": "2026-07-26.aws-a2a-benchmark-map.1",
+  "released_at": "2026-07-26T09:45:48.9163587Z",
+  "core_api_version": "v6.32.0",
+  "core_version_changed": false,
+  "host_recipe_version": "2026-07-26.1",
+  "canonical_worker_commit": "8de69bb9ed4309d84338c1dbbec505c9f610eb7f",
+  "canonical_worker_sha256": "b2bb18db6c5a424ef25a93fc40d6d33be14237629ffcfc32b7c8634fee7fcde7",
+  "canonical_test_runner_sha256": "c8b11b7c3f9f8deaed3678c2021ea11c81631aa751f19dc833e51f838057f280",
+  "cloudflare_version_id": "b715e938-5cec-4b98-aa32-8866d29f825b",
+  "verification": {
+    "worker_suite": {"passed": 131, "failed": 0, "total": 131},
+    "wrangler_dry_run": "pass",
+    "public_contract_local": "pass",
+    "public_contract_live": "pass",
+    "live_canaries": {
+      "version_document_exact_mirror": true,
+      "aws_agentcore_recipe": true,
+      "a2a_agent_card_exact_mirror": true,
+      "a2a_list_tasks_contract": true,
+      "three_program_benchmark_map": true,
+      "connect_ai_a2a_and_aws_routes": true,
+      "unsupported_mcp_version_rejected": true,
+      "public_mcp_schemas_exclude_api_key": true,
+      "supplied_credentials_do_not_upgrade_public_mcp": true
+    }
+  },
+  "review": {
+    "review_mode": "three_role_split-agent engineering review",
+    "roles": ["public-claims auditor", "AWS architecture reviewer", "security and protocol reviewer"],
+    "status": "approved after remediation and live release conditions",
+    "boundary": "This is independent internal engineering review of the release diff. It is not external institutional validation, an external benchmark replication, or a customer case study."
+  },
+  "truth_boundaries": [
+    "The AWS artifact is an account-scoped public-sandbox MCP registration recipe, not an AWS Marketplace listing or AWS endorsement.",
+    "The live African Market OS A2A 1.0 surface is not represented as compatible with the AWS Agent Registry A2A contract.",
+    "The decision-quality benchmark remains pending blind scoring; completed configured-host selection tracks are reported separately.",
+    "Public MCP endpoints remain sandbox-only even when a credential is supplied; licensed production currently uses tenant-scoped authenticated REST."
+  ]
+}

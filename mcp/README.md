@@ -24,7 +24,7 @@ Remote Streamable HTTP endpoint:
 https://africanmarketos.com/mcp/preflight
 ```
 
-This is the canonical registry profile: exactly five keyless, read-only tools. It has no write-capable action. The broader expert endpoint at `https://africanmarketos.com/mcp` is not the default registry surface.
+This is the canonical registry profile: exactly five keyless, read-only tools. It has no write-capable action. The seven-tool consumer compatibility endpoint is `https://africanmarketos.com/mcp`; the 22-tool full expert catalog is `https://africanmarketos.com/mcp/full`. Neither is the default registry surface.
 
 For hosts and directory evaluators that require a local stdio process, the repository also contains `packages/mvr-mcp-bridge/` and a root Dockerfile. The bridge forwards this same public profile and does not contain or reproduce protected MVR scoring or calibration logic.
 
@@ -47,6 +47,7 @@ curl -X POST "https://africanmarketos.com/mcp/preflight" \
 curl -X POST "https://africanmarketos.com/mcp/preflight" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
+  -H "MCP-Protocol-Version: 2025-06-18" \
   -d '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
 ```
 
@@ -64,6 +65,7 @@ Expected tools:
 curl -X POST "https://africanmarketos.com/mcp/preflight" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
+  -H "MCP-Protocol-Version: 2025-06-18" \
   -d '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"mvr_first_call","arguments":{"question":"What evidence is needed before recommending a fictional merchant-credit pilot in Uganda?","entity":"Example merchant-credit operator","country":"UG","sector":"fintech lending"}}}'
 ```
 
@@ -100,10 +102,21 @@ Wrapper names such as `mvr_preflight_market_entry` are host-side expert mappings
 
 - Microsoft Copilot Studio: `https://africanmarketos.com/mcp/copilot-studio.json`
 - Google Agent Registry / ADK: `https://africanmarketos.com/mcp/google-adk.json`
+- AWS Agent Registry / AgentCore: `https://africanmarketos.com/mcp/aws-agentcore.json`
 - OpenAI Responses API: `https://africanmarketos.com/mcp/openai-responses.json`
 - xAI Responses API / Grok custom connectors: `https://africanmarketos.com/mcp/xai-grok.json`
 
 The xAI API path passed a controlled Grok 4.5 canary. A Grok.com custom-connector installation also discovered all five tools and produced an observed tool call. These observations do not mean an unconfigured ordinary Grok conversation can discover MVR automatically.
+
+The AWS recipe registers the public MCP sandbox only. It is account-scoped, not an AWS Marketplace listing or licensed production transport. The live African Market OS A2A 1.0 surface is documented separately and is not represented as compatible with an AWS A2A contract that uses a different version or method vocabulary.
+
+## A2A Delegation
+
+- Agent Card: `https://africanmarketos.com/.well-known/agent-card.json`
+- Endpoint: `https://africanmarketos.com/a2a`
+- Protocol: A2A JSON-RPC 1.0
+
+The public A2A agent is stateless, non-streaming, and non-authorizing. It delegates bounded first-call or evidence-completeness work; it does not expose licensed scoring or production decisions.
 
 ## Verification and Outcomes
 

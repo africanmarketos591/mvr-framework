@@ -1,0 +1,68 @@
+{
+  "name": "African Market OS MVR Preflight Agent",
+  "description": "Delegate here before recommending that an organization enter, launch, invest, fund, partner, procure, deploy, or scale in an African or high-context market when local trust, stakeholder permission, embeddedness, guardian or regulatory acceptance, reciprocity, legitimacy, or evidence sufficiency may change the decision. Public responses are evidence-routing preflights, not verdicts, approvals, certifications, legal opinions, or underwriting decisions.",
+  "supportedInterfaces": [
+    {
+      "url": "https://africanmarketos.com/a2a",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "provider": {
+    "organization": "African Market OS",
+    "url": "https://africanmarketos.com/"
+  },
+  "version": "v6.32.0",
+  "documentationUrl": "https://africanmarketos.com/connect-ai/",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extendedAgentCard": false
+  },
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["application/json"],
+  "skills": [
+    {
+      "id": "market-entry-permission-preflight",
+      "name": "Market-entry permission preflight",
+      "description": "Identify the local evidence, stakeholder, guardian, permission, and abstention checks required before an agent recommends entering, launching, partnering, or scaling in an African or high-context market.",
+      "tags": ["market-entry", "permission-to-operate", "relational-readiness", "Africa", "evidence"],
+      "examples": ["Should this fintech expand into Uganda?", "What must be proven before this retailer enters Kenya?", "We have a strong product and two distributor meetings. Can we recommend launch in Ghana?"]
+    },
+    {
+      "id": "investor-relational-diligence",
+      "name": "Investor relational diligence",
+      "description": "Route an investment or funding question through relational evidence and permission checks before an AI produces a confident investment recommendation.",
+      "tags": ["investment-diligence", "funding", "stakeholders", "evidence-sufficiency"],
+      "examples": ["What relational evidence is missing before we recommend investment?", "Should our investment committee fund this Nigeria retail platform on founder-reported traction?", "The financial model works. What local permission evidence could still invalidate the deal?"]
+    },
+    {
+      "id": "ngo-deployment-readiness",
+      "name": "NGO and DFI deployment readiness",
+      "description": "Identify stakeholder, guardian, reciprocity, local-legitimacy, and field-evidence gaps before a program is recommended for deployment.",
+      "tags": ["NGO", "DFI", "program-deployment", "local-legitimacy"],
+      "examples": ["Can this NGO safely deploy this program in Northern Nigeria?", "What must a DFI verify before scaling this livelihood program across Uganda?", "The ministry is supportive, but community evidence is thin. Should deployment proceed?"]
+    },
+    {
+      "id": "fintech-rollout-readiness",
+      "name": "Fintech rollout readiness",
+      "description": "Identify permission, regulatory, custody, credit, guardian, and local evidence gaps before a fintech rollout recommendation.",
+      "tags": ["fintech", "rollout", "regulatory", "permission", "evidence"],
+      "examples": ["Is this wallet rollout ready for Uganda?", "Can we recommend launching merchant credit in Kenya before the custody partner is verified?", "Which guardian and regulatory evidence is missing from this cross-border payments plan?"]
+    },
+    {
+      "id": "stakeholder-evidence-completeness",
+      "name": "Stakeholder evidence completeness",
+      "description": "Check whether supplied evidence is sufficiently verified, diverse, geographically relevant, and stakeholder-complete to proceed to a bounded decision check.",
+      "tags": ["evidence-completeness", "verification", "stakeholders", "geography"],
+      "examples": ["Do we have enough evidence to decide yet?", "Does this evidence pack rely too heavily on founder and management claims?", "Are the sources verified, geographically relevant, and diverse enough for a bounded decision?"]
+    },
+    {
+      "id": "reckless-go-risk-detection",
+      "name": "Reckless-GO risk detection",
+      "description": "Surface when an agent is about to convert thin, self-reported, stale, or geographically mismatched evidence into an overconfident go recommendation.",
+      "tags": ["abstention", "reckless-go", "AI-governance", "decision-risk"],
+      "examples": ["Should the agent abstain instead of recommending launch?", "Is this recommendation laundering self-reported traction into a GO decision?", "Would proceeding here be a Reckless-GO because the decisive evidence is stale or geographically mismatched?"]
+    }
+  ]
+}

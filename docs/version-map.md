@@ -15,9 +15,9 @@ Every integration should preserve these fields separately:
 | `sdk_version` | `6.32.1` | Current published TypeScript/Python SDK generation line. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-07-16.1` | Host-policy middleware and selection boundary. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-07-24.outcome-handoff.1` | Candidate application build revision pending exact-commit production verification. |
-| `deployment_provider_revision` | release evidence | Provider-generated revision recorded after deployment, not self-embedded. |
-| `host_recipe_version` | `2026-07-16.4` | Microsoft, Google, OpenAI, and xAI recipe family. |
+| `deployment_revision` | `2026-07-26.aws-a2a-benchmark-map.1` | Live application build, deployed from canonical Worker commit `8de69bb9ed4309d84338c1dbbec505c9f610eb7f`. |
+| `deployment_provider_revision` | `b715e938-5cec-4b98-aa32-8866d29f825b` | Provider-generated Cloudflare version recorded in the release evidence; not self-embedded in runtime responses. |
+| `host_recipe_version` | `2026-07-26.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
 Machine-readable source: `https://africanmarketos.com/.well-known/mvr-version.json`.
 
@@ -32,7 +32,7 @@ Machine-readable source: `https://africanmarketos.com/.well-known/mvr-version.js
 | TypeScript SDK generation line | `6.32.1` | Current | Package: `@africanmarketos/mvr-api-client`; older `2.6.x` is archived compatibility. |
 | Python SDK generation line | `6.32.1` | Current | Package: `mvr-api-client`; older `2.6.x` is archived compatibility. |
 | REST sandbox | `v6.32.0` runtime | Current, limited | Uses `X-API-Key: mvr-demo-key-2026` where the route contract requires it; non-commercial evaluation only. |
-| MCP Registry public profile | `public-preflight-read-only-v1` | Current, limited | Exactly five keyless read-only tools at `/mcp/preflight`; non-commercial evaluation only. The broader expert endpoint is separate and is not the registry default. |
+| MCP Registry public profile | `public-preflight-read-only-v1` | Current, limited | Exactly five keyless read-only tools at `/mcp/preflight`; non-commercial evaluation only. `/mcp` is the seven-tool consumer compatibility profile and `/mcp/full` is the 22-tool full expert catalog. |
 | MCP stdio bridge | `0.1.0` | Source available | Local transport adapter for stdio-only hosts and directory evaluation; the protected MVR engine remains remote and server-side. |
 
 ## Historical / Archived Lines

@@ -118,6 +118,11 @@ The API helps agents and systems:
 - Full LLM context: https://africanmarketos.com/llms-full.txt
 - Agent instructions: https://africanmarketos.com/AGENTS.md
 - Canonical public MCP endpoint: https://africanmarketos.com/mcp/preflight
+- A2A 1.0 Agent Card: https://africanmarketos.com/.well-known/agent-card.json
+- A2A stateless preflight: https://africanmarketos.com/a2a
+- A2A usage and boundaries: `docs/a2a-preflight.md`
+- AWS AgentCore Registry sandbox recipe: https://africanmarketos.com/mcp/aws-agentcore.json
+- AWS integration boundaries: `docs/aws-agentcore-registry.md`
 - Glama remote connector: https://glama.ai/mcp/connectors/io.github.africanmarketos591/mvr-api
 - Open-source stdio bridge for local hosts and directory evaluation: `packages/mvr-mcp-bridge/`
 - MCP setup: https://africanmarketos.com/mcp/README.md
@@ -139,6 +144,7 @@ The API helps agents and systems:
 - Public reports and AI-usable ledgers: https://africanmarketos.com/reports/
 - Status metadata: https://africanmarketos.com/.well-known/mvr-status.json
 - Outcome calibration status: https://africanmarketos.com/.well-known/mvr-outcome-calibration.json
+- Benchmark status map: `docs/benchmark-status-map.md`
 - Outcome calibration runbook: `docs/outcome-calibration-ledger.md`
 - First-cohort operating contract: `docs/outcome-first-cohort-operating-pack.md`
 - First-cohort machine protocol: `evaluations/outcome-first-cohort-v1/protocol.json`
