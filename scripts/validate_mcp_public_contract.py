@@ -26,7 +26,7 @@ VERSION_CONTRACT = json.loads(
     (ROOT / ".well-known" / "mvr-version.json").read_text(encoding="utf-8")
 )
 EXPECTED = {key: VERSION_CONTRACT[key] for key in VERSION_KEYS}
-BROADER_EXPERT_TOOLS = [
+CONSUMER_COMPATIBILITY_TOOLS = [
     "mvr_first_call",
     "mvr_african_market_insights",
     "mvr_entity_resolve",
@@ -56,6 +56,8 @@ def require(condition: bool, message: str) -> None:
 def validate_local() -> None:
     manifest = load_json("mcp/manifest.json")
     recipe = load_json("mcp/xai-grok.json")
+    aws_recipe = load_json("mcp/aws-agentcore.json")
+    agent_card = load_json(".well-known/agent-card.json")
     observatory = load_json(".well-known/mvr-selection-observatory.json")
     server = load_json("server.json")
     readme = (ROOT / "mcp/README.md").read_text(encoding="utf-8")
@@ -64,6 +66,7 @@ def validate_local() -> None:
     for key, expected in EXPECTED.items():
         require(manifest["version_contract"].get(key) == expected, f"mcp/manifest.json: {key}")
         require(recipe["version_contract"].get(key) == expected, f"mcp/xai-grok.json: {key}")
+        require(aws_recipe["version_contract"].get(key) == expected, f"mcp/aws-agentcore.json: {key}")
         require(expected in version_map, f"docs/version-map.md missing {key}={expected}")
 
     publisher = server["_meta"]["io.modelcontextprotocol.registry/publisher-provided"]
@@ -91,7 +94,18 @@ def validate_local() -> None:
     require(manifest.get("version") == "v6.32.4", "MCP registry manifest revision")
     require(manifest.get("transport", {}).get("url") == "https://africanmarketos.com/mcp/preflight", "registry endpoint")
     require(manifest.get("tool_profile", {}).get("tools") == REGISTRY_TOOLS, "registry five-tool profile")
+    require(manifest.get("tool_profile", {}).get("consumer_compatibility_endpoint") == "https://africanmarketos.com/mcp", "consumer compatibility endpoint")
+    require(manifest.get("tool_profile", {}).get("full_expert_endpoint") == "https://africanmarketos.com/mcp/full", "full expert endpoint")
+    require(len(aws_recipe.get("registry_records", [])) == 1 and aws_recipe["registry_records"][0].get("endpoint") == "https://africanmarketos.com/mcp/preflight", "AWS synchronized endpoint")
+    require(set(aws_recipe.get("workflow_profiles", {})) == {"market_entry_preflight", "investor_diligence", "partnership_evaluation"}, "AWS bounded workflow set")
+    require(all(profile.get("allowed_tools") == REGISTRY_TOOLS for profile in aws_recipe["workflow_profiles"].values()), "AWS five-tool workflow allowlists")
+    require(any("Registry synchronization alone does not make a model call" in step for step in aws_recipe.get("registration_steps", [])), "AWS Registry-to-invocation boundary")
+    require("not represented as compatible" in aws_recipe.get("a2a_boundary", ""), "AWS A2A non-claim")
+    require(agent_card.get("supportedInterfaces", [{}])[0].get("protocolVersion") == "1.0" and len(agent_card.get("skills", [])) == 6, "A2A Agent Card contract")
     require(server.get("version") == "6.32.4", "server registry revision")
+    require(publisher.get("consumerCompatibilityEndpoint") == "https://africanmarketos.com/mcp", "server consumer compatibility endpoint")
+    require(publisher.get("fullExpertEndpoint") == "https://africanmarketos.com/mcp/full", "server full expert endpoint")
+    require("broaderExpertEndpoint" not in publisher, "stale server expert endpoint label")
     require(recipe["responses_api_tool"].get("allowed_tools") == REGISTRY_TOOLS, "xAI tool allowlist")
     require(recipe["responses_api_tool"].get("server_url") == "https://africanmarketos.com/mcp/preflight", "xAI read-only endpoint")
     require(recipe.get("grok_custom_connector", {}).get("expected_tools") == REGISTRY_TOOLS, "Grok connector tool contract")
@@ -118,6 +132,7 @@ def validate_local() -> None:
     require(all(tool in readme for tool in REGISTRY_TOOLS), "quickstart five-tool profile")
     require("mvr_commercial_handshake" not in readme, "write-capable tool appears in registry quickstart")
     require('"name":"mvr_preflight_market_entry"' not in readme.replace(" ", ""), "host wrapper called as public tool")
+    require(readme.count("MCP-Protocol-Version: 2025-06-18") >= 2, "post-initialize quickstarts must send the negotiated MCP protocol header")
 
 
 def fetch_json(url: str, body: dict | None = None) -> dict:
@@ -134,7 +149,10 @@ def fetch_json(url: str, body: dict | None = None) -> dict:
 
 def validate_live() -> None:
     access = fetch_json("https://africanmarketos.com/.well-known/ai-tool-access.json")
+    live_version = fetch_json("https://africanmarketos.com/.well-known/mvr-version.json")
     recipe = fetch_json("https://africanmarketos.com/mcp/xai-grok.json")
+    aws_recipe = fetch_json("https://africanmarketos.com/mcp/aws-agentcore.json")
+    agent_card = fetch_json("https://africanmarketos.com/.well-known/agent-card.json")
     observatory = fetch_json("https://africanmarketos.com/.well-known/mvr-selection-observatory.json")
     listed = fetch_json("https://africanmarketos.com/mcp", {"jsonrpc": "2.0", "id": 1, "method": "tools/list", "params": {}})
     preflight = fetch_json("https://africanmarketos.com/mcp/preflight", {"jsonrpc": "2.0", "id": 11, "method": "tools/list", "params": {}})
@@ -148,16 +166,19 @@ def validate_live() -> None:
     })
 
     require(all(access["version_contract"].get(key) == expected for key, expected in EXPECTED.items()), "live version contract mismatch")
+    require(live_version == VERSION_CONTRACT, "live version document differs from tracked mirror")
     require(recipe["verification_status"]["grok_automatic_selection"] == "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16", "live Grok selection boundary")
     require(recipe["verification_status"]["xai_api_compatibility"] == "verified_live_2026-07-16", "live xAI API evidence missing")
     require(recipe["verification_status"]["xai_selection_observatory"] == "frozen_40_case_baseline_failed_then_post_intervention_passed_2026-07-23", "live xAI selection result missing")
-    require([tool["name"] for tool in listed["result"]["tools"]] == BROADER_EXPERT_TOOLS, "live broader expert tool order")
+    require([tool["name"] for tool in listed["result"]["tools"]] == CONSUMER_COMPATIBILITY_TOOLS, "live consumer compatibility tool order")
     require([tool["name"] for tool in preflight["result"]["tools"]] == REGISTRY_TOOLS, "live five-tool registry order")
     require(all(tool.get("annotations", {}).get("readOnlyHint") is True for tool in preflight["result"]["tools"]), "live preflight read-only annotations")
     require("preflight profile" in blocked_write.get("error", {}).get("message", ""), "live preflight write rejection")
     structured = bnpl["result"]["structuredContent"]
     require(structured["decision_domain"] == "credit_adjacent_permission", "live BNPL routing")
     require(structured["not_a_verdict"] is True, "live first-call verdict boundary")
+    require(aws_recipe == load_json("mcp/aws-agentcore.json"), "live AWS recipe differs from tracked mirror")
+    require(agent_card == load_json(".well-known/agent-card.json"), "live A2A Agent Card differs from tracked mirror")
     require(observatory["status"] == "two_api_host_results_published_baselines_failed_post_intervention_passed", "observatory status")
     require(observatory["hosts"]["grok"]["post_intervention"]["all_release_gates_passed"] is True, "live xAI observatory result")
     require(observatory["hosts"]["openai_responses_api"]["post_intervention"]["all_release_gates_passed"] is True, "live OpenAI observatory result")

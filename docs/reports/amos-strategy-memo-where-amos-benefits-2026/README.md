@@ -5,6 +5,12 @@ Date: 2026-06-07
 Publisher: African Market OS  
 Companion artifacts: https://africanmarketos.com/benchmark/v1/, https://africanmarketos.com/.well-known/mvr-benchmark.json, https://africanmarketos.com/.well-known/mcp.json
 
+## Subsequent Progress Note - 26 July 2026
+
+This memo is retained as a dated strategy record, not a current backlog. Since publication, African Market OS has shipped the public five-tool MCP preflight, a separate A2A 1.0 preflight, buyer-query and consumer-AI routing surfaces, host-policy middleware, and frozen 40-case Agent Selection Observatory results for the OpenAI and xAI Responses APIs. Those results include disclosed failed baselines and passing post-intervention runs.
+
+The original AMOS-MVR Decision-Quality Benchmark described below is a different program and still awaits pinned-model execution, qualified blind scoring, and inter-rater reliability. Independent external replication and a consented institutional case study also remain open. See `docs/benchmark-status-map.md` and https://africanmarketos.com/.well-known/mvr-selection-observatory.json.
+
 ## Claim Boundary
 
 This memo is a strategy note, not a benchmark result. It does not claim that MVR outperforms, matches, or underperforms any frontier AI system. Comparative claims require pinned frontier-model versions, same prompts, public-safe output logs, blind scoring by qualified judges, and reported inter-rater reliability.

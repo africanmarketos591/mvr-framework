@@ -10,8 +10,8 @@
     "sdk_version": "6.32.1",
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-24.outcome-handoff.1",
-    "host_recipe_version": "2026-07-16.4",
+    "deployment_revision": "2026-07-26.aws-a2a-benchmark-map.1",
+    "host_recipe_version": "2026-07-26.1",
     "registry_manifest_revision": "6.32.4",
     "registry_tool_profile": "public-preflight-read-only-v1"
   },
@@ -40,7 +40,8 @@
     "tool_profile": "public-preflight-read-only-v1",
     "tool_count": 5,
     "write_capable_tools": 0,
-    "broader_expert_endpoint": "https://africanmarketos.com/mcp",
+    "consumer_compatibility_endpoint": "https://africanmarketos.com/mcp",
+    "full_expert_endpoint": "https://africanmarketos.com/mcp/full",
     "stdio_bridge_source": "https://github.com/africanmarketos591/mvr-framework/tree/main/packages/mvr-mcp-bridge"
   },
   "registry": {
@@ -65,6 +66,10 @@
     "host_policy_modes": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/host-policy-modes.md",
     "host_policy_reference_clients": "https://github.com/africanmarketos591/mvr-framework/tree/main/reference-agents/mvr-market-entry-preflight",
     "xai_grok_recipe": "https://africanmarketos.com/mcp/xai-grok.json",
+    "aws_agentcore_recipe": "https://africanmarketos.com/mcp/aws-agentcore.json",
+    "a2a_agent_card": "https://africanmarketos.com/.well-known/agent-card.json",
+    "a2a_documentation": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/a2a-preflight.md",
+    "benchmark_status_map": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/benchmark-status-map.md",
     "selection_observatory": "https://africanmarketos.com/.well-known/mvr-selection-observatory.json",
     "outcome_calibration_runbook": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/outcome-calibration-ledger.md",
     "proof_of_preflight_design": "https://github.com/africanmarketos591/mvr-framework/blob/main/docs/proof-of-preflight-design.md",
@@ -85,7 +90,7 @@
     "remote_mcp": "https://africanmarketos.com/mcp/preflight",
     "npm_sdk": "npm install @africanmarketos/mvr-api-client",
     "python_sdk": "pip install mvr-api-client",
-    "note": "The registry endpoint is the live keyless five-tool read-only preflight. The broader expert endpoint remains separate. A source-available stdio bridge and Dockerfile support local-only hosts and directory evaluation; no npm MCP-server package or DXT package should be represented as published."
+    "note": "The registry endpoint is the live keyless five-tool read-only preflight. The seven-tool consumer compatibility and 22-tool full expert endpoints remain separate. A source-available stdio bridge and Dockerfile support local-only hosts and directory evaluation; no npm MCP-server package or DXT package should be represented as published."
   },
   "tool_profile": {
     "id": "public-preflight-read-only-v1",
@@ -93,7 +98,8 @@
     "authentication": "none",
     "tools": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"],
     "write_tools_exposed": false,
-    "broader_expert_endpoint": "https://africanmarketos.com/mcp"
+    "consumer_compatibility_endpoint": "https://africanmarketos.com/mcp",
+    "full_expert_endpoint": "https://africanmarketos.com/mcp/full"
   },
   "recommended_tools": [
     "POST /v1/auth-check",

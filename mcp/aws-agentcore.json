@@ -1,0 +1,71 @@
+{
+  "platform": "AWS Agent Registry and Amazon Bedrock AgentCore",
+  "status": "public_sandbox_registration_recipe_not_marketplace_listing",
+  "version_contract": {
+    "core_api_version": "v6.32.0",
+    "mcp_protocol_version": "2025-06-18",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
+    "sdk_version": "6.32.1",
+    "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
+    "calibration_version": "v6.32.0-framework-provisional",
+    "calibration_scope": "Public framework-provisional default. Licensed runtime calibration is resolved by profile, sector, geography, and active manifest; verify through /v1/calibration-health.",
+    "deployment_revision": "2026-07-26.aws-a2a-benchmark-map.1",
+    "deployment_provider_revision": "Recorded in release evidence after deployment; not self-embedded because a provider revision is created by the deployment itself.",
+    "host_recipe_version": "2026-07-26.1"
+  },
+  "policy_modes": {
+    "advisory_selection": {
+      "selection": "The host may select MVR when the request matches the published use conditions.",
+      "release_rule": "MVR output informs the answer but does not independently authorize a launch, scale, funding, partnership, procurement, credit, legal, or regulatory recommendation."
+    },
+    "required_preflight": {
+      "selection": "The host policy must run the five-tool MVR preflight before a protected enter, launch, pilot, invest, fund, partner, procure, deploy, lend, expand, or scale recommendation.",
+      "release_rule": "An incomplete, failed, unavailable, or abstaining preflight must produce a bounded answer or evidence request, never a confident GO. Public sandbox completion is still not production authorization."
+    }
+  },
+  "registry_records": [
+    {
+      "descriptor_type": "MCP",
+      "name": "african-market-os-mvr-preflight",
+      "synchronization_type": "URL",
+      "endpoint": "https://africanmarketos.com/mcp/preflight",
+      "credential_type": "NONE",
+      "expected_tool_count": 5
+    }
+  ],
+  "registration_steps": [
+    "After the announced 6 August 2026 namespace migration, create or select an AWS Agent Registry in the operator account.",
+    "Create one synchronized MCP record from the public five-tool endpoint with no credential.",
+    "Inspect the extracted descriptors, then explicitly attach the approved record through an AgentCore Gateway, Runtime, or client/orchestrator before testing invocation. Registry synchronization alone does not make a model call the tools.",
+    "Preserve MVR abstention, non-verdict, sandbox, and human-review boundaries in the host policy."
+  ],
+  "mcp_endpoint": "https://africanmarketos.com/mcp/preflight",
+  "authentication": "none_for_public_sandbox_preflight",
+  "workflow_profiles": {
+    "market_entry_preflight": {
+      "purpose": "Check market permission, stakeholder evidence, guardian or regulatory gaps, and bounded next-step readiness before recommending entry, launch, deploy, or scale.",
+      "allowed_tools": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"],
+      "sequence": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"]
+    },
+    "investor_diligence": {
+      "purpose": "Test whether an investment recommendation is supported by verified, geographically relevant, stakeholder-diverse evidence rather than founder narrative alone.",
+      "allowed_tools": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"],
+      "sequence": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"]
+    },
+    "partnership_evaluation": {
+      "purpose": "Check counterparty identity, vouching, reciprocity, local permission, and evidence gaps before recommending a partnership or distributor relationship.",
+      "allowed_tools": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"],
+      "sequence": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"]
+    }
+  },
+  "production_boundary": "This recipe registers a public sandbox/evaluation surface. It is not licensed production, an AWS Marketplace listing, AWS endorsement, tenant isolation, payment entitlement, or outcome authorization.",
+  "marketplace_boundary": "AWS Marketplace seller registration and product listing are separate processes with jurisdiction, tax, banking, KYC, support, and production-readiness requirements. No African Market OS AWS Marketplace listing is claimed.",
+  "a2a_boundary": "The live African Market OS A2A surface implements A2A 1.0. It is not represented as compatible with the AWS Agent Registry A2A contract while AWS documentation identifies a different A2A contract version and method vocabulary.",
+  "preview_boundary": "AWS Agent Registry is in public preview and AWS documents a namespace migration beginning 6 August 2026. Re-check the current AWS namespace, IAM actions, CLI command, and region before execution.",
+  "official_references": {
+    "registry_sync": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-sync-records.html",
+    "gateway_mcp_targets": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-MCPservers.html",
+    "seller_eligibility": "https://docs.aws.amazon.com/marketplace/latest/userguide/seller-eligibility.html"
+  }
+}
