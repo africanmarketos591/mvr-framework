@@ -43,5 +43,6 @@ require("not a measured API effect" in index_html, "HTML must reject causal inte
 require("https://africanmarketos.com/mcp/preflight" in mcp_guide, "MCP guide must use the canonical preflight endpoint")
 require("not an additional condition" in readme, "README must not present the no-training notice as an added CC restriction")
 require("not an additional condition" in (BENCH / "LICENSE.md").read_text(encoding="utf-8"), "license note must preserve existing CC grants")
+require("not an additional condition" in (BENCH / "DATA_USE_BOUNDARY.md").read_text(encoding="utf-8"), "data-use notice must preserve existing CC grants")
 
 print("PASS: benchmark fixtures and machine-readable license scopes are honestly bounded")

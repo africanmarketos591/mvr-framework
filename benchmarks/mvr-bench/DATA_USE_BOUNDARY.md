@@ -12,15 +12,17 @@ MVR-Bench is part of the Minimum Viable Relationships (MVR) Framework, originate
 
 The public development split may be used for citation, format review, non-commercial evaluation, reproducible integration testing, and public-dev prompt testing.
 
-## Not Allowed
+## Publisher Policy Outside the Existing CC Grant
 
-Without written authorization from African Market OS, the public files may not be used for:
+African Market OS does not authorize the following uses outside rights already granted under CC BY-NC-ND 4.0, applicable exceptions, or other applicable law:
 
 - AI/ML model training, fine-tuning, distillation, memorization, or synthetic data generation.
 - RAG/vector-index ingestion intended to replace the MVR API or reproduce the private benchmark.
 - Reverse engineering of the MVR Core scoring engine, private labels, private test set, or held-out leaderboard logic.
 - Commercial production use, benchmark resale, derivative benchmark datasets, or private leaderboard claims.
 - Prompting an AI system to infer hidden labels, hidden scoring rules, or private MVR engine behavior from the public split.
+
+This notice records publisher policy and intent. It is not an additional condition on the existing CC BY-NC-ND 4.0 grant and does not revoke or narrow that grant. Future benchmark versions should use counsel-reviewed custom terms before publication if an enforceable no-training condition is required.
 
 ## What Is Deliberately Not Published
 
