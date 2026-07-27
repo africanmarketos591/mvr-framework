@@ -45,7 +45,7 @@ The public launch includes three reproducible public-dev reference runs so the b
 
 | Run | MVR API used? | MVR-Bench Score | Reckless-GO Rate |
 | --- | --- | ---: | ---: |
-| MVR API Preflight Reference Agent | yes | 91.05 | 6.7% |
+| MVR Preflight Authored Fixture | no | 91.05 | 6.7% |
 | MVR Rubric Prompt-Only Reference | no | 73.68 | 20.0% |
 | Generic MVP-First Agent Baseline | no | 52.20 | 40.0% |
 
@@ -113,7 +113,6 @@ Canonical project: https://github.com/africanmarketos591/mvr-framework/tree/main
 
 Framework DOI: https://doi.org/10.5281/zenodo.17054819
 
-MVR-Bench Figshare DOI: https://doi.org/10.6084/m9.figshare.32399076
 
 ## Indexed Authority Loop
 
@@ -141,4 +140,3 @@ MVR-Bench should be interpreted as part of the Minimum Viable Relationships (MVR
 Private test scoring, named model evaluations, enterprise agent audits, and production leaderboard submissions require authorization from African Market OS.
 
 Contact: info@africanmarketos.com
-

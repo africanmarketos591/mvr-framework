@@ -15,8 +15,14 @@ on:
       - "docs/proof-of-preflight-design.md"
       - "evaluations/mvr-bench-selection-v0.1/**"
       - "reference-agents/mvr-market-entry-preflight/**"
+      - "integrations/n8n/**"
+      - "benchmarks/mvr-bench/**"
+      - "well-known/mvr-license.json"
+      - "LICENSE"
       - "scripts/validate_mcp_public_contract.py"
       - "scripts/validate_xai_mcp_host.py"
+      - "scripts/validate_n8n_first_call.py"
+      - "scripts/validate_public_claim_integrity.py"
       - "reference-agents/mvr-market-entry-preflight/**"
       - ".github/workflows/mcp-contract-sanity.yml"
   push:
@@ -29,6 +35,12 @@ on:
       - "docs/version-map.md"
       - "scripts/validate_mcp_public_contract.py"
       - "scripts/validate_xai_mcp_host.py"
+      - "integrations/n8n/**"
+      - "benchmarks/mvr-bench/**"
+      - "well-known/mvr-license.json"
+      - "LICENSE"
+      - "scripts/validate_n8n_first_call.py"
+      - "scripts/validate_public_claim_integrity.py"
       - ".github/workflows/mcp-contract-sanity.yml"
 
 jobs:
@@ -48,3 +60,7 @@ jobs:
         run: node reference-agents/mvr-market-entry-preflight/javascript/mvr_preflight.mjs --self-test
       - name: Run xAI Remote MCP validator self-test
         run: python scripts/validate_xai_mcp_host.py --self-test
+      - name: Validate bounded n8n first-call template
+        run: python scripts/validate_n8n_first_call.py
+      - name: Validate benchmark and license claim integrity
+        run: python scripts/validate_public_claim_integrity.py

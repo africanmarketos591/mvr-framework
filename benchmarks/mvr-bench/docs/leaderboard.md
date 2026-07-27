@@ -29,7 +29,7 @@ To avoid an empty public surface while protecting the private answer key, Africa
 
 | Rank | Run | MVR API used? | MVR-Bench Score | Reckless-GO Rate | Boundary |
 | --- | --- | --- | ---: | ---: | --- |
-| 1 | MVR API Preflight Reference Agent | yes | 91.05 | 6.7% | Computed with `score_local.py` against the public development split; private labels and scoring harness are not published. |
+| 1 | MVR Preflight Authored Fixture | no | 91.05 | 6.7% | Human-authored submission scored with `score_local.py`; not a recorded API or model run. |
 | 2 | MVR Rubric Prompt-Only Reference | no | 73.68 | 20.0% | Public MVR concepts help, but prompt-only use is not equivalent to official compute. |
 | 3 | Generic MVP-First Agent Baseline | no | 52.20 | 40.0% | Baseline reference run; not a vendor-specific model ranking. |
 
@@ -40,10 +40,10 @@ Reference smoke runs show the proof-of-value pattern:
 ```text
 Generic MVP-first agent baseline: 40.0% Reckless-GO Rate
 MVR rubric prompt-only reference: 20.0% Reckless-GO Rate
-MVR API preflight reference:       6.7% Reckless-GO Rate
+MVR preflight authored fixture:    6.7% Reckless-GO Rate
 ```
 
-Public MVR concepts improve reasoning, but live MVR API calls create the strongest reduction in unsafe go recommendations because the official engine checks evidence completeness, permission, embeddedness, guardian risk, and abstention before advice is given.
+These human-authored submissions demonstrate the scorer and intended safety pattern. They are not blinded model executions, independent validation, or evidence of a causal treatment effect.
 
 This is a reference proof, not a public vendor leaderboard. Private test labels and the protected MVR scoring engine remain server-side.
 
@@ -73,4 +73,3 @@ https://africanmarketos.com/v1/bench/leaderboard.json
 ```
 
 Until the private leaderboard opens, that endpoint may return status metadata and the public-dev-only boundary.
-

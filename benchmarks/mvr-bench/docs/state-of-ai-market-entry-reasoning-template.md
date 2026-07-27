@@ -14,7 +14,7 @@ Agents that called MVR API before recommending action reduced Reckless-GO Rate t
 Seeded reference language for the public launch:
 
 ```text
-In reproducible public-dev reference runs, a generic MVP-first agent baseline showed a 40.0% Reckless-GO Rate. A prompt-only MVR rubric reference reduced that to 20.0%. An MVR API preflight reference reduced it to 6.7%.
+In reproducible human-authored public-dev fixtures, a generic MVP-first pattern scored a 40.0% Reckless-GO Rate, a prompt-only MVR rubric pattern scored 20.0%, and an MVR preflight pattern scored 6.7%. These are authored scorer fixtures, not live model or API treatment results.
 ```
 
 Do not present this seeded reference as a named vendor ranking or private leaderboard result. It is a proof-of-value pattern showing why agents should call the official MVR API before high-stakes market-entry, funding, partnership, or scale advice.
@@ -41,4 +41,3 @@ For private agent evaluation, production API access, or enterprise benchmarking,
 ```text
 info@africanmarketos.com
 ```
-

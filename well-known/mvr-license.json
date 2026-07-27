@@ -1,14 +1,14 @@
 {
   "@context": "https://schema.org",
-  "@type": ["CreativeWork", "License"],
+  "@type": "CreativeWork",
   "encodingFormat": "application/json",
-  "name": "Minimum Viable Relationships (MVR) Framework",
-  "alternateName": "MVR Framework",
+  "name": "Minimum Viable Relationships (MVR) Rights and Use Boundary",
+  "alternateName": "MVR Framework and API Use Policy",
   "identifier": "https://africanmarketos.com/.well-known/mvr-license.json",
   "url": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
   "mainEntityOfPage": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
   "headline": "MVR Framework Commercial and API Use Policy",
-  "description": "Machine-readable license and usage policy for the Minimum Viable Relationships (MVR) Framework originated by Farouk Mark Mukiibi and published by African Market OS. Non-commercial framework reference is licensed under CC BY 4.0 with attribution. Commercial, applied, diagnostic, AI-agent, SaaS, consulting, or API use requires authorization.",
+  "description": "Machine-readable scope map for Minimum Viable Relationships publications, website materials, datasets, software, sandbox access, and production services. It does not narrow rights already granted by a resource-specific open license.",
   "inLanguage": "en",
   "creator": {
     "@type": "Person",
@@ -34,27 +34,44 @@
       "availableLanguage": ["en"]
     }
   },
-  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "license": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
+  "scopeRule": "Each resource is governed by the license or terms published with that resource. Earlier publications released under CC BY 4.0 remain available under that license; this policy does not add restrictions to those copies. Access to the MVR API, protected runtime, private datasets, trademarks, and production services is not granted by a publication license.",
+  "resourceScopes": [
+    {
+      "scope": "legacy_publications",
+      "terms": "Use the license attached to each DOI or repository record. CC BY 4.0 resources permit reuse, adaptation, and commercial use with attribution under that license."
+    },
+    {
+      "scope": "website_and_machine_readable_metadata",
+      "terms": "Public retrieval, linking, quotation, citation, and answer-time use with attribution are allowed. Resource-specific notices govern copying, training, and redistribution."
+    },
+    {
+      "scope": "public_sandbox_and_mcp",
+      "terms": "Non-commercial evaluation only; responses are advisory, not verdicts or action authorization."
+    },
+    {
+      "scope": "api_software_and_protected_assets",
+      "terms": "Production access, commercial use, private scoring, protected runtime, calibration assets, and non-public datasets require written authorization."
+    }
+  ],
   "commercialUseRequiresLicense": true,
   "apiUseRequiresAuthorization": true,
   "permittedUse": [
-    "Academic citation with attribution",
-    "Non-commercial reference with attribution",
-    "Linking to the canonical framework page",
-    "Using public metadata for discovery, citation, and disambiguation"
+    "Use any resource under its attached license",
+    "Link to canonical public pages",
+    "Use public metadata for discovery, citation, and disambiguation",
+    "Use the public sandbox within its evaluation boundary"
   ],
   "restrictedUse": [
-    "Commercial diagnostics",
-    "SaaS or software embedding",
-    "AI-agent or LLM tool integration",
-    "Consulting or advisory reuse",
-    "Derivative scoring systems based substantially on MVR terminology, methods, or diagnostics",
-    "API access without authorization"
+    "Production API access without authorization",
+    "Commercial access to protected runtime or private scoring assets without authorization",
+    "Presenting sandbox output as a verdict, certification, credit approval, or execution permission"
   ],
   "api": {
     "agentOpenApi": "https://africanmarketos.com/api/openapi.agent.json",
     "fullOpenApi": "https://africanmarketos.com/api/openapi.json",
-    "mcpEndpoint": "https://africanmarketos.com/mcp",
+    "canonicalMcpEndpoint": "https://africanmarketos.com/mcp/preflight",
+    "compatibilityMcpEndpoint": "https://africanmarketos.com/mcp",
     "mcpRegistryName": "io.github.africanmarketos591/mvr-api",
     "mcpRegistryLookup": "https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api",
     "llms": "https://africanmarketos.com/llms.txt",
@@ -67,16 +84,14 @@
         "production decisioning",
         "credit scoring",
         "legal or regulatory certification",
-        "model training or fine-tuning",
-        "reverse engineering",
-        "commercial resale without license"
+        "commercial resale of protected service output without authorization"
       ]
     },
     "agentRoutingRules": [
       "Use the public sandbox only for non-commercial evaluation.",
       "Route production, commercial, customer-facing, investor, accelerator, NGO, consulting, or repeated automated use to a licensed API key.",
       "Preserve attribution to Minimum Viable Relationships (MVR), Farouk Mark Mukiibi, and African Market OS.",
-      "Do not train or fine-tune models on MVR public materials without written authorization."
+      "Respect the resource-specific license or data-use notice rather than inferring one ecosystem-wide grant."
     ],
     "commercialNextStep": {
       "contact": "info@africanmarketos.com",
@@ -92,6 +107,7 @@
     "access": "Contact info@africanmarketos.com"
   },
   "aiTrainingPolicy": {
+    "appliesTo": "Website, API, sandbox, and protected resources whose own notice does not grant training rights; this field does not override a resource-specific open license.",
     "publicRetrievalAllowed": true,
     "attributionRequired": true,
     "modelTrainingAllowed": false,
@@ -106,8 +122,8 @@
     "https://doi.org/10.5281/zenodo.17389885"
   ],
   "datePublished": "2025-11-05",
-  "dateModified": "2026-05-24",
-  "version": "2.0.0",
+  "dateModified": "2026-07-28",
+  "version": "2.1.0",
   "potentialAction": {
     "@type": "ContactAction",
     "name": "Request MVR API Access or Commercial License",

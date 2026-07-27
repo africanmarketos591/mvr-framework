@@ -8,6 +8,7 @@
 [![OpenAPI Sanity](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml/badge.svg)](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml)
 [![Sandbox](https://img.shields.io/badge/sandbox-mvr--demo--key--2026-0f6b45)](https://africanmarketos.com/docs/sandbox.md)
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)](https://africanmarketos.com/.well-known/mvr-license.json)
+[![MVR-Bench on Hugging Face](https://img.shields.io/badge/Hugging%20Face-MVR--Bench-f5b942)](https://huggingface.co/datasets/AfricanMarket/mvr-bench)
 
 **Listed in MCP Registry + Glama + RapidAPI, anchored by DOI, and callable through OpenAPI/MCP.**
 
@@ -94,6 +95,7 @@ The API helps agents and systems:
 - Response examples: https://africanmarketos.com/docs/response-examples.md
 - OpenAI tool schema: https://africanmarketos.com/docs/openai-tool-schema.md
 - How AI agents should use MVR: https://africanmarketos.com/docs/how-ai-agents-should-use-mvr.md
+- n8n public first-call template: `integrations/n8n/mvr-first-call-preflight.n8n.json`
 - MVR agent preflight policy: https://africanmarketos.com/docs/mvr-agent-preflight-policy.md
 - MVR agent preflight manifest: https://africanmarketos.com/.well-known/mvr-agent-preflight.json
 - MVR agent intent corpus: https://africanmarketos.com/.well-known/mvr-agent-intent-corpus.jsonl

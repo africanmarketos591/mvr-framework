@@ -16,21 +16,21 @@
   "entries": [
     {
       "rank": 1,
-      "run_name": "MVR API Preflight Reference Agent",
-      "system": "MVR API Preflight Reference Agent",
-      "model": "reference_agent_with_mvr_api",
+      "run_name": "MVR Preflight Authored Fixture",
+      "system": "MVR Preflight Authored Fixture",
+      "model": "human_authored_mvr_preflight_fixture",
       "run_id": "mvrb-seed-2026-05-api-preflight",
       "run_type": "public_dev_reference",
       "evaluation_split": "public_dev",
-      "mvr_api_used": true,
+      "mvr_api_used": false,
       "score": 91.05,
       "mvr_bench_score": 91.05,
       "reckless_go_rate": 0.0667,
       "abstention_f1": 0.9474,
       "dimension_attribution_accuracy": 0.7333,
       "calibration_error": 0.1347,
-      "summary": "Calls MVR evidence-completeness and decision-check before recommending market entry, funding, scale, or partnership action.",
-      "public_claim_boundary": "Computed with score_local.py against the public development split using the published reference submission. Not a private leaderboard result or named vendor ranking."
+      "summary": "Human-authored fixture that simulates the intended MVR preflight pattern before recommending market entry, funding, scale, or partnership action.",
+      "public_claim_boundary": "Computed with score_local.py against an authored public-development submission. Not a recorded API run, model execution, causal comparison, private leaderboard result, or named vendor ranking."
     },
     {
       "rank": 2,
@@ -70,7 +70,7 @@
     }
   ],
   "proof_of_value": {
-    "headline": "MVR API preflight reduced Reckless-GO Rate from 40.0% to 6.7% in reproducible public-dev reference runs.",
+    "headline": "Human-authored public-development fixtures score 40.0% Reckless-GO for the generic baseline pattern and 6.7% for the MVR preflight pattern.",
     "without_mvr": {
       "system": "Generic MVP-First Agent Baseline",
       "reckless_go_rate": 0.4,
@@ -81,16 +81,15 @@
       "reckless_go_rate": 0.2,
       "mvr_bench_score": 73.68
     },
-    "with_mvr_api": {
-      "system": "MVR API Preflight Reference Agent",
+    "mvr_preflight_fixture": {
+      "system": "MVR Preflight Authored Fixture",
       "reckless_go_rate": 0.0667,
       "mvr_bench_score": 91.05
     },
-    "interpretation": "Public MVR concepts improve reasoning, but live MVR API calls create the strongest reduction in unsafe go recommendations because the official engine checks evidence completeness, permission, embeddedness, guardian risk, and abstention before advice is given.",
-    "claim_boundary": "Public-dev proof computed with score_local.py and published reference submissions. Private test labels and the protected MVR scoring engine remain server-side."
+    "interpretation": "The three human-authored submissions demonstrate the evaluation shape, scorer behavior, and intended safety pattern.",
+    "claim_boundary": "Authored fixture demonstration only: not blinded model executions, independent validation, or evidence that MVR caused a measured reduction. Private test labels and the protected MVR scoring engine remain server-side."
   },
-  "note": "Seeded reference runs are published to demonstrate the benchmark shape and the API value gap. They are reproducible public-dev reference scores, not named vendor rankings or private leaderboard results.",
+  "note": "Seeded human-authored fixtures demonstrate the benchmark and scorer shape. They are not live API or model runs, named vendor rankings, causal comparisons, or private leaderboard results.",
   "contact": "info@africanmarketos.com",
   "updated_at": "2026-05-25"
 }
-
