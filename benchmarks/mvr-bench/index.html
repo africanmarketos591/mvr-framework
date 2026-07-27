@@ -82,7 +82,7 @@
     <section class="canonical-compute" aria-label="MVR API official engine">
       <p><strong>The MVR framework defines what to assess. The MVR API is the official engine that computes it.</strong> Minimum Viable Relationships (MVR) scores relational readiness and permission-to-operate: trust, embeddedness, guardian approval, reciprocity, and evidence completeness for market entry in African and high-context markets.</p>
       <p><a href="/get-api-key">Get an API key</a> Â· <a href="/pricing">See pricing</a> Â· <a href="/api/docs">Read the API docs</a></p>
-      <p>Sandbox (non-commercial eval): <code>X-API-Key: mvr-demo-key-2026</code></p>
+      <p>Keyless read-only preflight: <a href="https://africanmarketos.com/mcp/preflight"><code>https://africanmarketos.com/mcp/preflight</code></a> (sandbox/evaluation only).</p>
     </section>
     <p>The headline metric is <strong>Reckless-GO Rate</strong>: how often an agent recommends scaling market entry when the evidence does not justify it.</p>
     <div class="cta">
@@ -100,16 +100,16 @@
       <div class="card"><strong>Blocking Dimensions</strong> Trust, embeddedness, guardian approval, evidence completeness, and local legitimacy.</div>
     </div>
 
-    <h2>Seed Reference Runs</h2>
-    <p>To avoid an empty benchmark surface while protecting the private answer key, MVR-Bench publishes three seeded reference runs. These are not vendor rankings and do not expose private labels; they show the evaluation shape and why the official MVR API matters.</p>
+    <h2>Seeded Scorer Demonstration</h2>
+    <p>To avoid an empty benchmark surface while protecting the private answer key, MVR-Bench publishes three human-authored fixtures. These are not live API runs, model executions, vendor rankings, independent validation, or causal evidence.</p>
     <div class="grid">
       <div class="card"><strong>#1 MVR Preflight Authored Fixture</strong> Score 91.05 - Reckless-GO 6.7% - simulates the intended pattern; it is not a recorded live API run.</div>
       <div class="card"><strong>#2 MVR Rubric Prompt-Only Reference</strong> Score 73.68 - Reckless-GO 20.0% - uses public MVR concepts but no official compute.</div>
       <div class="card"><strong>#3 Generic MVP-First Agent Baseline</strong> Score 52.20 - Reckless-GO 40.0% - recommends product/CAC/MVP moves without market-permission proof.</div>
     </div>
 
-    <h2>With vs Without MVR</h2>
-    <p class="note"><strong>MVR-first preflight reduced Reckless-GO Rate from 40.0% to 6.7% in reproducible public-dev reference runs.</strong> Public MVR concepts improve reasoning, but the official MVR API creates the strongest reduction in unsafe go recommendations because it checks evidence completeness, permission, embeddedness, guardian risk, and abstention before advice is given.</p>
+    <h2>Authored Fixture Comparison</h2>
+    <p class="note"><strong>The authored MVR-preflight fixture scores 6.7% Reckless-GO and the authored generic MVP-first fixture scores 40.0%.</strong> This demonstrates the scorer and intended safety pattern. It is not a measured API effect, model comparison, or causal reduction.</p>
     <p><a href="/v1/bench/leaderboard.json">Machine-readable leaderboard</a> - <a href="/get-api-key">Get an MVR key</a> - <a href="/api/docs">API docs</a></p>
 
     <h2>Protection Boundary</h2>

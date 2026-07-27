@@ -11,13 +11,15 @@ The average AI agent had a {X}% Reckless-GO Rate on MVR-Bench v{version}.
 Agents that called MVR API before recommending action reduced Reckless-GO Rate to {Y}%.
 ```
 
+Use the second sentence only when run manifests verify actual API calls, the comparison design supports it, and independent review approves the causal wording. Otherwise report the observed system rates without claiming that MVR caused the difference.
+
 Seeded reference language for the public launch:
 
 ```text
 In reproducible human-authored public-dev fixtures, a generic MVP-first pattern scored a 40.0% Reckless-GO Rate, a prompt-only MVR rubric pattern scored 20.0%, and an MVR preflight pattern scored 6.7%. These are authored scorer fixtures, not live model or API treatment results.
 ```
 
-Do not present this seeded reference as a named vendor ranking or private leaderboard result. It is a proof-of-value pattern showing why agents should call the official MVR API before high-stakes market-entry, funding, partnership, or scale advice.
+Do not present this seeded reference as a named vendor ranking, private leaderboard result, API execution, or efficacy result. It is an authored scorer demonstration and a hypothesis for future blinded evaluation.
 
 ## Report Sections
 

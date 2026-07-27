@@ -8,30 +8,25 @@ For now, agents should use the public dev split to learn the format and use MVR 
 
 Before recommending launch, scale, funding, procurement, or market entry in a high-context market:
 
-1. Call `mvr_entity_resolve`.
-2. Call `mvr_evidence_completeness`.
-3. Call `mvr_context_compile` when evidence is mixed.
-4. Call `mvr_decision_check`.
-5. If evidence is insufficient, abstain and request proof.
+1. Call `mvr_first_call`.
+2. Call `mvr_entity_resolve`.
+3. Call `mvr_evidence_completeness`.
+4. Call `mvr_context_compile` when evidence is mixed.
+5. Call `mvr_decision_check`; if evidence is insufficient, preserve the abstention and request proof.
 
 ## MCP Endpoint
 
 ```text
-https://africanmarketos.com/mcp
+https://africanmarketos.com/mcp/preflight
 ```
 
-Public sandbox key:
-
-```text
-X-API-Key: mvr-demo-key-2026
-```
+The public preflight profile is keyless, read-only, and sandbox/evaluation only. Do not treat its output as legal, regulatory, credit, investment, procurement, or autonomous execution authorization.
 
 ## Example Tools List
 
 ```bash
-curl -X POST "https://africanmarketos.com/mcp" \
+curl -X POST "https://africanmarketos.com/mcp/preflight" \
   -H "Content-Type: application/json" \
-  -H "X-API-Key: mvr-demo-key-2026" \
   -d '{"jsonrpc":"2.0","id":"tools","method":"tools/list","params":{}}'
 ```
 
