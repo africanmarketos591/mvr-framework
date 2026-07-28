@@ -28,7 +28,7 @@ require(submission.get("uses_mvr_api") is False, "authored fixture must not clai
 require(submission_example.get("uses_mvr_api") is False, "human-written submission example must not claim a live API call")
 require("Human-authored" in submission.get("method", ""), "authored fixture disclosure missing")
 require(leaderboard["entries"][0].get("mvr_api_used") is False, "leaderboard fixture claims API use")
-require("authored" in leaderboard["proof_of_value"]["claim_boundary"].lower(), "leaderboard boundary is incomplete")
+require("authored" in leaderboard["fixture_demonstration"]["claim_boundary"].lower(), "leaderboard boundary is incomplete")
 require(license_map.get("scopeRule"), "resource-specific license scope rule missing")
 require(len(license_map.get("resourceScopes", [])) >= 4, "resource scope map is incomplete")
 require(public_license_map == license_map, "duplicate public license maps have drifted")
@@ -63,6 +63,7 @@ for forbidden in (
     "proof-of-value pattern",
     "This is a reference proof",
     "proof-of-value",
+    "proof_of_value",
     "MVR-Bench Figshare DOI: https://doi.org/10.6084/m9.figshare.32399076",
     "10.6084/m9.figshare.32399076",
     "mvr-demo-key",
@@ -120,14 +121,18 @@ for stem in (
     require(generated == published, f"published benchmark score has drifted from scorer output: {stem}")
 
 
-def validate_live_attribution() -> None:
+def fetch_live(url: str) -> str:
+    request = urllib.request.Request(url, headers={"User-Agent": "mvr-public-claim-ci/1.0"})
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return response.read().decode("utf-8")
+
+
+def validate_live_surfaces() -> None:
     for url in (
         "https://africanmarketos.com/mvr-attribution.json",
         "https://africanmarketos.com/mvr-attribution.txt",
     ):
-        request = urllib.request.Request(url, headers={"User-Agent": "mvr-public-claim-ci/1.0"})
-        with urllib.request.urlopen(request, timeout=30) as response:
-            body = response.read().decode("utf-8")
+        body = fetch_live(url)
         lower = body.lower()
         require("non-commercial framework reference" not in lower, f"live attribution is stale: {url}")
         if url.endswith(".json"):
@@ -140,12 +145,29 @@ def validate_live_attribution() -> None:
         else:
             require("commercial use with attribution" in lower, f"live attribution text does not preserve CC BY commercial reuse: {url}")
 
+    benchmark_page = fetch_live("https://africanmarketos.com/benchmarks/mvr-bench/")
+    require("With vs Without MVR" not in benchmark_page, "live benchmark page retains comparison framing")
+    require("proof-of-value" not in benchmark_page.lower(), "live benchmark page retains proof language")
+
+    for url in (
+        "https://africanmarketos.com/.well-known/mvr-bench.json",
+        "https://africanmarketos.com/v1/bench/leaderboard.json",
+    ):
+        live_json = json.loads(fetch_live(url))
+        require("proof_of_value" not in live_json, f"live machine contract retains proof_of_value: {url}")
+        fixture = live_json.get("fixture_demonstration", {})
+        require("authored fixture" in fixture.get("claim_boundary", "").lower(), f"live fixture boundary missing: {url}")
+
+    live_schema = json.loads(fetch_live("https://africanmarketos.com/benchmarks/mvr-bench/schema/leaderboard.schema.json"))
+    properties = live_schema.get("properties", {})
+    require("fixture_demonstration" in properties and "proof_of_value" not in properties, "live leaderboard schema retains stale proof property")
+
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--live", action="store_true", help="Also verify live attribution surfaces")
+parser.add_argument("--live", action="store_true", help="Also verify live attribution and benchmark contract surfaces")
 args = parser.parse_args()
 if args.live:
-    validate_live_attribution()
+    validate_live_surfaces()
 
 print("PASS: benchmark fixtures, recomputed scores, and machine-readable license scopes are honestly bounded" + (" (local + live)" if args.live else " (local)"))
