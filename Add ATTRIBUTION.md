@@ -40,6 +40,6 @@ Full OpenAPI: https://africanmarketos.com/api/openapi.json
 
 ## Use Boundary
 
-MVR is not a credit score, legal certificate, investment rating, or guarantee. Commercial, applied, diagnostic, AI-agent, SaaS, consulting, or API use requires permission from African Market OS.
+MVR is not a credit score, legal certificate, investment rating, or guarantee. Each public resource is governed by its attached license. Resources released under CC BY 4.0 permit reuse, adaptation, and commercial use with attribution. Access to the hosted MVR API, protected scoring runtime, private datasets, labels, calibration assets, trademarks, and production services requires authorization from African Market OS.
 
 Contact: info@africanmarketos.com

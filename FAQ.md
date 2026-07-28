@@ -40,7 +40,7 @@ An abstention is a designed safety behavior. It means the available evidence is 
 
 ## Can MVR be used commercially?
 
-Academic and non-commercial reference use is allowed with attribution under the applicable license terms. Commercial, applied, diagnostic, AI-agent, SaaS, consulting, or API use requires permission or a license from African Market OS.
+Each public resource is governed by its attached license. Resources released under CC BY 4.0 permit reuse, adaptation, and commercial use with attribution. Access to the hosted MVR API, protected scoring runtime, private datasets, labels, calibration assets, trademarks, and production services requires authorization from African Market OS.
 
 Contact: `info@africanmarketos.com`
 

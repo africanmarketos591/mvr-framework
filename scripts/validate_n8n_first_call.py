@@ -37,6 +37,12 @@ require("DISCOVERY_ONLY" in text and "ABSTAIN_TECHNICAL" in text, "bounded state
 require(text.count("action_authorized: false") >= 2, "technical and success branches must both deny authorization")
 require(text.count("human_review_required: true") >= 2, "technical and success branches must both require human review")
 require("not_a_verdict" in text and "live_mvr_scoring_executed" in text, "public boundary checks missing")
+require("result.max_safe_action_available_now" not in text, "normalizer must not relay upstream action prose")
+require(
+    "Continue with bounded discovery and evidence recruitment only. No launch, lending, investment, partnership, scale, legal, or regulatory action is authorized."
+    in text,
+    "fixed bounded safe-action sentence missing",
+)
 require(data.get("active") is False, "export must be inactive")
 settings = data.get("settings", {})
 require(settings.get("saveDataSuccessExecution") == "none", "success execution retention must be disabled")

@@ -23,6 +23,11 @@ on:
       - "agents.json"
       - "llms.txt"
       - "mvr-commercial-use-policy.md"
+      - "mvr-attribution.json"
+      - "mvr-attribution.txt"
+      - "FAQ.md"
+      - "api/mvr-faqs-ai.json"
+      - "Add ATTRIBUTION.md"
       - "LICENSE"
       - "scripts/validate_mcp_public_contract.py"
       - "scripts/validate_xai_mcp_host.py"
@@ -48,6 +53,11 @@ on:
       - "agents.json"
       - "llms.txt"
       - "mvr-commercial-use-policy.md"
+      - "mvr-attribution.json"
+      - "mvr-attribution.txt"
+      - "FAQ.md"
+      - "api/mvr-faqs-ai.json"
+      - "Add ATTRIBUTION.md"
       - "LICENSE"
       - "scripts/validate_n8n_first_call.py"
       - "scripts/validate_public_claim_integrity.py"
@@ -73,4 +83,4 @@ jobs:
       - name: Validate bounded n8n first-call template
         run: python scripts/validate_n8n_first_call.py --live
       - name: Validate benchmark and license claim integrity
-        run: python scripts/validate_public_claim_integrity.py
+        run: python scripts/validate_public_claim_integrity.py --live
