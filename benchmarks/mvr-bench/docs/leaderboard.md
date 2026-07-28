@@ -11,7 +11,7 @@ This means:
 - public dev split scoring is reproducible locally
 - private leaderboard submissions are not yet generally open
 - published dev scores must not be presented as private leaderboard scores
-- seeded reference runs may be shown to demonstrate the evaluation shape and the API value gap, but they are not named vendor rankings
+- human-authored public-development fixtures may be shown to demonstrate the scorer and evaluation shape, but they are not blinded model executions, measured API effects, named vendor rankings, or private leaderboard results
 
 ## Metrics
 
