@@ -14,10 +14,12 @@ def require(condition: bool, message: str) -> None:
 submission = json.loads(
     (BENCH / "examples" / "reference-runs" / "mvr-api-preflight-reference-submission.json").read_text(encoding="utf-8")
 )
+submission_example = json.loads((BENCH / "examples" / "submission-example.json").read_text(encoding="utf-8"))
 leaderboard = json.loads((BENCH / "leaderboard" / "leaderboard.example.json").read_text(encoding="utf-8"))
 license_map = json.loads((ROOT / "well-known" / "mvr-license.json").read_text(encoding="utf-8"))
 
 require(submission.get("uses_mvr_api") is False, "authored fixture must not claim a live API call")
+require(submission_example.get("uses_mvr_api") is False, "human-written submission example must not claim a live API call")
 require("Human-authored" in submission.get("method", ""), "authored fixture disclosure missing")
 require(leaderboard["entries"][0].get("mvr_api_used") is False, "leaderboard fixture claims API use")
 require("authored" in leaderboard["proof_of_value"]["claim_boundary"].lower(), "leaderboard boundary is incomplete")
