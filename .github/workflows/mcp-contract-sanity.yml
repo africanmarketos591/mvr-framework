@@ -17,7 +17,12 @@ on:
       - "reference-agents/mvr-market-entry-preflight/**"
       - "integrations/n8n/**"
       - "benchmarks/mvr-bench/**"
+      - ".well-known/mvr-bench.json"
+      - ".well-known/mvr-license.json"
       - "well-known/mvr-license.json"
+      - "agents.json"
+      - "llms.txt"
+      - "mvr-commercial-use-policy.md"
       - "LICENSE"
       - "scripts/validate_mcp_public_contract.py"
       - "scripts/validate_xai_mcp_host.py"
@@ -37,7 +42,12 @@ on:
       - "scripts/validate_xai_mcp_host.py"
       - "integrations/n8n/**"
       - "benchmarks/mvr-bench/**"
+      - ".well-known/mvr-bench.json"
+      - ".well-known/mvr-license.json"
       - "well-known/mvr-license.json"
+      - "agents.json"
+      - "llms.txt"
+      - "mvr-commercial-use-policy.md"
       - "LICENSE"
       - "scripts/validate_n8n_first_call.py"
       - "scripts/validate_public_claim_integrity.py"
@@ -61,6 +71,6 @@ jobs:
       - name: Run xAI Remote MCP validator self-test
         run: python scripts/validate_xai_mcp_host.py --self-test
       - name: Validate bounded n8n first-call template
-        run: python scripts/validate_n8n_first_call.py
+        run: python scripts/validate_n8n_first_call.py --live
       - name: Validate benchmark and license claim integrity
         run: python scripts/validate_public_claim_integrity.py

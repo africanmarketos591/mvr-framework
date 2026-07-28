@@ -2,20 +2,20 @@
 
 The Minimum Viable Relationships (MVR) Framework is originated by Farouk Mark Mukiibi and published through African Market OS.
 
-The framework materials may be cited, shared, and referenced for academic, educational, and non-commercial use with proper attribution under CC BY 4.0 where applicable.
+Each publication or public resource remains governed by the license attached to that resource. Materials already released under CC BY 4.0 may be reused, adapted, and used commercially with attribution under that license. This policy does not revoke or narrow those grants.
 
-Commercial, applied, diagnostic, AI-agent, SaaS, consulting, API, or derivative scoring use requires written authorization, a license, or a partnership agreement from African Market OS.
+Access to the hosted MVR API, protected scoring runtime, private datasets, private labels, calibration assets, trademarks, and production services is separate from publication rights. Commercial or production access to those protected services requires written authorization, a license, or a partnership agreement from African Market OS.
 
 ## What Requires Permission
 
-Permission is required for:
+Permission is required for access to or reuse of protected service assets, including:
 
 - embedding MVR diagnostics in commercial software or dashboards
 - integrating the MVR API into AI agents, LLM tools, SaaS products, diligence products, or advisory workflows
 - using MVR-derived scores, indices, or readiness labels in paid reports
-- using MVR terminology or methods in commercial consulting or training
-- building derivative scoring systems substantially based on MVR dimensions, terminology, or diagnostic logic
 - reselling, repackaging, or proxying the MVR API
+
+Commercial reuse of an openly licensed publication is governed by that publication's own license, not by this service-access policy.
 
 ## MVR API Access
 
