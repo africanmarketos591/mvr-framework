@@ -44,7 +44,7 @@ The public split includes the following marker:
 MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN
 ```
 
-Presence of this marker in model outputs may be treated as evidence of unauthorized training-set ingestion.
+Presence of this marker in model outputs may indicate dataset contamination or use outside the stated publisher intent. It is not, by itself, proof of a legal breach.
 
 ## Commercial Access
 

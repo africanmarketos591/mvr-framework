@@ -59,6 +59,9 @@ for forbidden in (
     "MVR API Preflight Reference Agent",
     "live MVR API calls create the strongest reduction",
     "preflight reduced Reckless-GO Rate",
+    "With vs Without MVR",
+    "proof-of-value pattern",
+    "This is a reference proof",
     "MVR-Bench Figshare DOI: https://doi.org/10.6084/m9.figshare.32399076",
     "10.6084/m9.figshare.32399076",
     "mvr-demo-key",
@@ -93,6 +96,8 @@ require("https://africanmarketos.com/mcp/preflight" in mcp_guide, "MCP guide mus
 require("not an additional condition" in readme, "README must not present the no-training notice as an added CC restriction")
 require("not an additional condition" in (BENCH / "LICENSE.md").read_text(encoding="utf-8"), "license note must preserve existing CC grants")
 require("not an additional condition" in (BENCH / "DATA_USE_BOUNDARY.md").read_text(encoding="utf-8"), "data-use notice must preserve existing CC grants")
+require("not, by itself, proof of a legal breach" in (BENCH / "LICENSE.md").read_text(encoding="utf-8"), "canary wording must not overclaim proof of misuse")
+require("not, by itself, proof of a legal breach" in (BENCH / "DATA_USE_BOUNDARY.md").read_text(encoding="utf-8"), "data-use canary wording must not overclaim proof of misuse")
 policy = (ROOT / "mvr-commercial-use-policy.md").read_text(encoding="utf-8").lower()
 require("does not revoke or narrow" in policy, "commercial policy must preserve resource-specific open licenses")
 require("commercial reuse of an openly licensed publication" in policy, "commercial policy must distinguish publication rights from service access")
