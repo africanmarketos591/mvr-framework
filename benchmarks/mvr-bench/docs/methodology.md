@@ -47,7 +47,7 @@ The local dev scorer uses a lightweight calibration penalty of `10 * ECE` across
 
 ### Reproduce the Reference Runs
 
-The seeded proof-of-value rows are reproducible from the public development split, the open scorer, and the published reference submissions. From the repository root:
+The authored fixture rows are reproducible from the public development split, the open scorer, and the published fixture submissions. From the repository root:
 
 ```bash
 python benchmarks/mvr-bench/scoring/score_local.py \

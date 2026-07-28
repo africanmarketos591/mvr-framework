@@ -62,6 +62,7 @@ for forbidden in (
     "With vs Without MVR",
     "proof-of-value pattern",
     "This is a reference proof",
+    "proof-of-value",
     "MVR-Bench Figshare DOI: https://doi.org/10.6084/m9.figshare.32399076",
     "10.6084/m9.figshare.32399076",
     "mvr-demo-key",
