@@ -1,8 +1,8 @@
 {
-  "run_name": "MVR API Preflight Reference Agent",
-  "model": "reference_agent_with_mvr_api",
-  "method": "Public-dev reference submission. Simulates an agent that calls MVR evidence-completeness and decision-check before advising.",
-  "uses_mvr_api": true,
+  "run_name": "MVR Preflight Authored Fixture",
+  "model": "human_authored_mvr_preflight_fixture",
+  "method": "Human-authored public-dev fixture. Simulates the intended MVR preflight pattern; no live API or model execution was recorded.",
+  "uses_mvr_api": false,
   "usage_acknowledgement": {
     "not_trained_on_public_dev_split": true,
     "not_using_public_split_as_rag_memory": true,

@@ -11,7 +11,7 @@ This means:
 - public dev split scoring is reproducible locally
 - private leaderboard submissions are not yet generally open
 - published dev scores must not be presented as private leaderboard scores
-- seeded reference runs may be shown to demonstrate the evaluation shape and the API value gap, but they are not named vendor rankings
+- human-authored public-development fixtures may be shown to demonstrate the scorer and evaluation shape, but they are not blinded model executions, measured API effects, named vendor rankings, or private leaderboard results
 
 ## Metrics
 
@@ -23,29 +23,29 @@ Official leaderboard entries will include:
 - Dimension Attribution Accuracy
 - Calibration Error
 
-## Seeded Reference Runs
+## Authored Fixture Demonstration
 
-To avoid an empty public surface while protecting the private answer key, African Market OS publishes three seeded reference runs:
+To make the public scorer reproducible while protecting the private answer key, African Market OS publishes three human-authored fixture submissions:
 
 | Rank | Run | MVR API used? | MVR-Bench Score | Reckless-GO Rate | Boundary |
 | --- | --- | --- | ---: | ---: | --- |
-| 1 | MVR API Preflight Reference Agent | yes | 91.05 | 6.7% | Computed with `score_local.py` against the public development split; private labels and scoring harness are not published. |
-| 2 | MVR Rubric Prompt-Only Reference | no | 73.68 | 20.0% | Public MVR concepts help, but prompt-only use is not equivalent to official compute. |
-| 3 | Generic MVP-First Agent Baseline | no | 52.20 | 40.0% | Baseline reference run; not a vendor-specific model ranking. |
+| 1 | MVR Preflight Authored Fixture | no | 91.05 | 6.7% | Human-authored submission scored with `score_local.py`; not a recorded API or model run. |
+| 2 | MVR Rubric Prompt-Only Authored Fixture | no | 73.68 | 20.0% | Human-authored submission demonstrating a prompt-only pattern; not a recorded model run. |
+| 3 | Generic MVP-First Authored Fixture | no | 52.20 | 40.0% | Human-authored baseline-pattern submission; not a recorded model run or vendor ranking. |
 
-## With vs Without MVR
+## Authored Fixture Pattern
 
-Reference smoke runs show the proof-of-value pattern:
+The human-authored fixtures produce this scorer-demonstration pattern:
 
 ```text
 Generic MVP-first agent baseline: 40.0% Reckless-GO Rate
 MVR rubric prompt-only reference: 20.0% Reckless-GO Rate
-MVR API preflight reference:       6.7% Reckless-GO Rate
+MVR preflight authored fixture:    6.7% Reckless-GO Rate
 ```
 
-Public MVR concepts improve reasoning, but live MVR API calls create the strongest reduction in unsafe go recommendations because the official engine checks evidence completeness, permission, embeddedness, guardian risk, and abstention before advice is given.
+These human-authored submissions demonstrate the scorer and intended safety pattern. They are not blinded model executions, independent validation, or evidence of a causal treatment effect.
 
-This is a reference proof, not a public vendor leaderboard. Private test labels and the protected MVR scoring engine remain server-side.
+This is an authored fixture demonstration, not a public vendor leaderboard or efficacy result. Private test labels and the protected MVR scoring engine remain server-side.
 
 ## Inclusion Rules
 
@@ -73,4 +73,3 @@ https://africanmarketos.com/v1/bench/leaderboard.json
 ```
 
 Until the private leaderboard opens, that endpoint may return status metadata and the public-dev-only boundary.
-

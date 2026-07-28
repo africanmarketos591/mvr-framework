@@ -47,7 +47,7 @@ The local dev scorer uses a lightweight calibration penalty of `10 * ECE` across
 
 ### Reproduce the Reference Runs
 
-The seeded proof-of-value rows are reproducible from the public development split, the open scorer, and the published reference submissions. From the repository root:
+The authored fixture rows are reproducible from the public development split, the open scorer, and the published fixture submissions. From the repository root:
 
 ```bash
 python benchmarks/mvr-bench/scoring/score_local.py \
@@ -55,7 +55,7 @@ python benchmarks/mvr-bench/scoring/score_local.py \
   --submission benchmarks/mvr-bench/examples/reference-runs/mvr-api-preflight-reference-submission.json
 ```
 
-That command reproduces the MVR API preflight reference row: MVR-Bench Score `91.05` and Reckless-GO Rate `0.0667`. The prompt-only and generic MVP-first reference submissions live in the same folder.
+That command reproduces the human-authored MVR preflight fixture row: MVR-Bench Score `91.05` and Reckless-GO Rate `0.0667`. It is not a recorded live API or model run. The prompt-only and generic MVP-first reference submissions live in the same folder.
 
 ## Private Test Scoring
 

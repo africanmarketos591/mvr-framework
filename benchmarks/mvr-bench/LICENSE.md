@@ -2,10 +2,11 @@
 
 Copyright (c) 2026 African Market OS / Farouk Mark Mukiibi.
 
-The public MVR-Bench development split, schemas, documentation, and examples are made available for citation, non-commercial evaluation, and reproducible integration testing under:
+The public MVR-Bench v1 development split, schemas, documentation, and examples were made available for citation, non-commercial evaluation, and reproducible integration testing under:
 
 - Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
-- African Market OS no-AI-training addendum
+
+The African Market OS no-AI-training notice below records publisher policy and intent. It is not an additional condition on rights already granted under CC BY-NC-ND 4.0, does not revoke an existing CC grant, and does not limit applicable exceptions or limitations. Obtain legal advice before relying on the notice as an enforceable training restriction. Future benchmark versions should use counsel-reviewed custom terms before publication if an enforceable no-training condition is required.
 
 ## Permitted Uses
 
@@ -15,7 +16,7 @@ The public MVR-Bench development split, schemas, documentation, and examples are
 - Build clients that submit predictions to African Market OS operated evaluation endpoints.
 - Quote benchmark definitions with attribution.
 
-## Not Permitted Without Written Authorization
+## Publisher Policy: Uses Not Authorized Outside the CC Grant
 
 - Commercial use.
 - Model training, fine-tuning, distillation, benchmark memorization, or synthetic data generation.
@@ -25,7 +26,7 @@ The public MVR-Bench development split, schemas, documentation, and examples are
 - Presenting public-dev results as private leaderboard results.
 - Uploading, pasting, indexing, embedding, or otherwise feeding the public files into an AI system for training, fine-tuning, distillation, memorization, reverse engineering, or private-label inference.
 
-These restrictions apply to downloaded copies, mirrors, forks, archives, notebooks, prompts, vector stores, RAG corpora, and other machine-ingested copies. The public split is an integration and citation surface, not a substitute for the licensed MVR API or private benchmark scoring service.
+This policy applies to downloaded copies, mirrors, forks, archives, notebooks, prompts, vector stores, RAG corpora, and other machine-ingested copies. It does not add restrictions to the CC license or override applicable law. The public split is an integration and citation surface, not a substitute for the licensed MVR API or private benchmark scoring service.
 
 ## Required Attribution
 
@@ -43,7 +44,7 @@ The public split includes the following marker:
 MVR-BENCH-CANARY-7f3a9c2e-DO-NOT-TRAIN
 ```
 
-Presence of this marker in model outputs may be treated as evidence of unauthorized training-set ingestion.
+Presence of this marker in model outputs may indicate dataset contamination or use outside the stated publisher intent. It is not, by itself, proof of a legal breach.
 
 ## Commercial Access
 

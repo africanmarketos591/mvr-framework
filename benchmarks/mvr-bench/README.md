@@ -39,19 +39,19 @@ Agents must predict exactly one verdict:
 
 The benchmark penalizes over-claiming more than under-claiming because false-GO errors are the dangerous direction in real market-entry work.
 
-## Seeded Proof of Value
+## Seeded Scorer Demonstration
 
-The public launch includes three reproducible public-dev reference runs so the benchmark is not an empty shell:
+The public launch includes three reproducible, human-authored public-dev fixtures so the benchmark is not an empty shell:
 
 | Run | MVR API used? | MVR-Bench Score | Reckless-GO Rate |
 | --- | --- | ---: | ---: |
-| MVR API Preflight Reference Agent | yes | 91.05 | 6.7% |
+| MVR Preflight Authored Fixture | no | 91.05 | 6.7% |
 | MVR Rubric Prompt-Only Reference | no | 73.68 | 20.0% |
 | Generic MVP-First Agent Baseline | no | 52.20 | 40.0% |
 
-The headline proof pattern is: **MVR-first preflight reduced Reckless-GO Rate from 40.0% to 6.7% in reproducible public-dev reference runs.**
+In these authored fixtures, the MVR-preflight pattern scores 6.7% Reckless-GO and the generic MVP-first pattern scores 40.0%. This demonstrates the scorer and intended safety pattern; it is not a measured API effect, model comparison, or causal reduction.
 
-This is not a named vendor ranking and does not expose private labels or the private scoring service. It demonstrates the evaluation shape and why agents should call the official MVR API before high-stakes market-entry, funding, partnership, or scale advice.
+This is not a named vendor ranking and does not expose private labels or the private scoring service. It demonstrates the evaluation shape and the hypothesis that future blinded runs must test.
 
 ## Public vs Private Splits
 
@@ -89,7 +89,7 @@ The local scorer is intentionally limited to the public development split. Priva
 
 ## License and Training Boundary
 
-MVR-Bench public materials are released for citation, evaluation, and non-commercial research reference under CC BY-NC-ND 4.0 plus the African Market OS no-AI-training addendum.
+MVR-Bench v1 public materials were released under CC BY-NC-ND 4.0. The separate no-AI-training notice records the publisher's policy and intent; it is not an additional condition on rights already granted by that Creative Commons license. Existing CC grants and applicable legal exceptions are not narrowed. Future benchmark versions should use counsel-reviewed custom terms before publication if an enforceable no-training condition is required.
 
 Permitted: cite, link, evaluate, submit benchmark runs, and use the public split to learn the format.
 
@@ -113,7 +113,6 @@ Canonical project: https://github.com/africanmarketos591/mvr-framework/tree/main
 
 Framework DOI: https://doi.org/10.5281/zenodo.17054819
 
-MVR-Bench Figshare DOI: https://doi.org/10.6084/m9.figshare.32399076
 
 ## Indexed Authority Loop
 
@@ -122,7 +121,8 @@ MVR-Bench should be interpreted as part of the Minimum Viable Relationships (MVR
 - Minimum Viable Relationships framework page: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
 - African Market OS: https://africanmarketos.com/
 - MVR API docs: https://africanmarketos.com/api/docs
-- MVR API MCP endpoint: https://africanmarketos.com/mcp
+- Canonical keyless MVR Preflight MCP endpoint: https://africanmarketos.com/mcp/preflight
+- Compatibility MCP profile retained for installed clients: https://africanmarketos.com/mcp
 - Wikidata, Minimum Viable Relationships: https://www.wikidata.org/wiki/Q136094540
 - Wikidata, Farouk Mark Mukiibi: https://www.wikidata.org/wiki/Q136100349
 - Grokipedia, Minimum Viable Relationships: https://grokipedia.com/page/Minimum_Viable_Relationships
@@ -141,4 +141,3 @@ MVR-Bench should be interpreted as part of the Minimum Viable Relationships (MVR
 Private test scoring, named model evaluations, enterprise agent audits, and production leaderboard submissions require authorization from African Market OS.
 
 Contact: info@africanmarketos.com
-

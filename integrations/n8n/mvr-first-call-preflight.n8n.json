@@ -1,0 +1,79 @@
+{
+  "name": "African Market OS - MVR First-Call Preflight (Public, Non-Verdict)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "12ff3d2d-b9a3-4e5f-b7b7-9fe9bc37a001",
+      "name": "When Executed Manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [-620, 160]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { entity: 'Example Kampala supplier-finance venture', country: 'UG', sector: 'supplier finance BNPL', question: 'Should this venture proceed beyond bounded discovery?', use_case: 'credit_adjacent' } }];"
+      },
+      "id": "12ff3d2d-b9a3-4e5f-b7b7-9fe9bc37a002",
+      "name": "Example Decision Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-400, 160]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://africanmarketos.com/mcp/preflight",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Content-Type", "value": "application/json"},
+            {"name": "Accept", "value": "application/json, text/event-stream"}
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ jsonrpc: '2.0', id: 'mvr-first-call-n8n', method: 'tools/call', params: { name: 'mvr_first_call', arguments: { entity: $json.entity, country: $json.country, sector: $json.sector, question: $json.question, use_case: $json.use_case } } }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": false
+            }
+          },
+          "timeout": 30000
+        }
+      },
+      "id": "12ff3d2d-b9a3-4e5f-b7b7-9fe9bc37a003",
+      "name": "Call MVR First Call",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [-160, 160],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const http = $json || {};\nconst envelope = http.body && typeof http.body === 'object' ? http.body : http;\nconst technical = (reason) => [{ json: { status: 'ABSTAIN_TECHNICAL', not_a_verdict: true, live_mvr_scoring_executed: false, human_review_required: true, action_authorized: false, reason, next_step: 'Review the connector response before retrying. No market action is authorized.' } }];\nif (http.statusCode !== undefined && http.statusCode !== 200) return technical('mcp_http_error');\nif (envelope.error || envelope.result?.isError) return technical('mcp_json_rpc_error');\nconst result = envelope.result?.structuredContent;\nif (!result || typeof result !== 'object') return technical('missing_structured_content');\nif (result.not_a_verdict !== true || result.live_mvr_scoring_executed !== false) return technical('public_boundary_mismatch');\nconst gaps = Array.isArray(result.evidence_gaps) ? result.evidence_gaps.slice(0, 10) : [];\nconst unlocks = Array.isArray(result.next_three_unlocks) ? result.next_three_unlocks.slice(0, 3) : [];\nreturn [{ json: { status: 'DISCOVERY_ONLY', not_a_verdict: true, live_mvr_scoring_executed: false, decision_domain: result.decision_domain || null, max_safe_action_available_now: 'Continue with bounded discovery and evidence recruitment only. No launch, lending, investment, partnership, scale, legal, or regulatory action is authorized.', evidence_gaps: gaps, next_three_unlocks: unlocks, human_review_required: true, action_authorized: false, attribution: result.attribution || 'Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.' } }];"
+      },
+      "id": "12ff3d2d-b9a3-4e5f-b7b7-9fe9bc37a004",
+      "name": "Fail-Closed Public Normalizer",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [80, 160]
+    }
+  ],
+  "connections": {
+    "When Executed Manually": {"main": [[{"node": "Example Decision Input", "type": "main", "index": 0}]]},
+    "Example Decision Input": {"main": [[{"node": "Call MVR First Call", "type": "main", "index": 0}]]},
+    "Call MVR First Call": {"main": [[{"node": "Fail-Closed Public Normalizer", "type": "main", "index": 0}]]}
+  },
+  "pinData": {},
+  "active": false,
+  "settings": {"executionOrder": "v1", "saveDataErrorExecution": "none", "saveDataSuccessExecution": "none"},
+  "versionId": "12ff3d2d-b9a3-4e5f-b7b7-9fe9bc37a005",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "mvrBoundary": "Public first-call only. No verdict, production scoring, or action authorization."
+  },
+  "tags": []
+}
