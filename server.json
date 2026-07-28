@@ -25,10 +25,14 @@
       "mcpProtocolVersion": "2025-06-18",
       "mcpContractVersion": "mvr-mcp@2026-07-16.4",
       "toolProfileVersion": "consumer-7+preflight-5@2026-07-16.4",
-      "sdkVersion": "6.32.1",
+      "sdkVersion": "typescript@6.32.4;python@6.32.3",
+      "sdkVersions": {
+        "typescript": "6.32.4",
+        "python": "6.32.3"
+      },
       "policyVersion": "mvr-agent-preflight-policy@2026-07-16.1",
       "calibrationVersion": "v6.32.0-framework-provisional",
-      "deploymentRevision": "2026-07-26.aws-a2a-benchmark-map.1",
+      "deploymentRevision": "2026-07-28.sdk-provenance.1",
       "hostRecipeVersion": "2026-07-26.1",
       "stdioBridgeVersion": "0.1.0",
       "registryManifestRevision": "6.32.4",
@@ -91,8 +95,8 @@
       "agentWrapperSchemas": "https://github.com/africanmarketos591/mvr-framework/blob/main/agent-patterns/tool-schemas.json",
       "mvrBench": "https://github.com/africanmarketos591/mvr-framework/tree/main/benchmarks/mvr-bench",
       "sdkPackages": {
-        "npm": "@africanmarketos/mvr-api-client@6.32.1",
-        "pypi": "mvr-api-client==6.32.1"
+        "npm": "@africanmarketos/mvr-api-client@6.32.4",
+        "pypi": "mvr-api-client==6.32.3"
       },
       "packageRoadmap": [
         "mvr-mcp-server",
