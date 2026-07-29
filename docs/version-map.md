@@ -15,7 +15,7 @@ Every integration should preserve these fields separately:
 | `sdk_version` | `typescript@6.32.4;python@6.32.3` | Current published SDK lines, kept distinct by language. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-07-16.1` | Host-policy middleware and selection boundary. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-07-29.mcp-dual-era-commerce.1` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
+| `deployment_revision` | `2026-07-29.attribution-integrity.3` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
 | `deployment_provider_revision` | `efe93aa4-dbf9-4c86-b931-aa665119a8ba` | Provider-generated Cloudflare version recorded after the production canaries; not self-embedded in runtime responses. |
 | `host_recipe_version` | `2026-07-26.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
