@@ -16,7 +16,6 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 TRACK = ROOT / "evaluations" / "mvr-bench-selection-v0.1"
 OBSERVATORY = ROOT / ".well-known" / "mvr-selection-observatory.json"
-VERSION = ROOT / ".well-known" / "mvr-version.json"
 CASES = TRACK / "cases.json"
 RESULTS = {
     "openai_responses_api": TRACK
@@ -52,6 +51,32 @@ VERSION_FIELDS = (
     "deployment_provider_revision",
     "host_recipe_version",
 )
+PUBLICATION_VERSION_SCOPE = (
+    "Publication-surface version snapshot last reconciled on 2026-07-28 after "
+    "the frozen runs; retained for reproducibility and not a claim about either "
+    "host's execution environment or the current live integration contract."
+)
+PUBLICATION_VERSION_RECORDED_AT = "2026-07-28"
+PUBLICATION_VERSION_CONTRACT = {
+    "core_api_version": "v6.32.0",
+    "mcp_protocol_version": "2025-06-18",
+    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
+    "sdk_version": "typescript@6.32.4;python@6.32.3",
+    "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
+    "calibration_version": "v6.32.0-framework-provisional",
+    "calibration_scope": (
+        "Public framework-provisional default. Licensed runtime calibration is "
+        "resolved by profile, sector, geography, and active manifest; verify "
+        "through /v1/calibration-health."
+    ),
+    "deployment_revision": "2026-07-28.sdk-provenance.1",
+    "deployment_provider_revision": (
+        "Recorded in release evidence after deployment; not self-embedded because "
+        "a provider revision is created by the deployment itself."
+    ),
+    "host_recipe_version": "2026-07-26.1",
+}
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -106,7 +131,6 @@ def validate_run(
 
 def validate_contract(
     observatory: dict[str, Any],
-    version: dict[str, Any],
     results: dict[str, dict[str, Any]],
     case_hash: str,
     case_count: int,
@@ -175,20 +199,31 @@ def validate_contract(
             result.get("post_intervention", {}),
         )
 
+    add_if_different(
+        errors,
+        "version_contract_scope",
+        observatory.get("version_contract_scope"),
+        PUBLICATION_VERSION_SCOPE,
+    )
+    add_if_different(
+        errors,
+        "version_contract_recorded_at",
+        observatory.get("version_contract_recorded_at"),
+        PUBLICATION_VERSION_RECORDED_AT,
+    )
     version_contract = observatory.get("version_contract", {})
     for field in VERSION_FIELDS:
         add_if_different(
             errors,
             f"version_contract.{field}",
             version_contract.get(field),
-            version.get(field),
+            PUBLICATION_VERSION_CONTRACT[field],
         )
     return errors
 
 
 def run_negative_self_test(
     observatory: dict[str, Any],
-    version: dict[str, Any],
     results: dict[str, dict[str, Any]],
     case_hash: str,
     case_count: int,
@@ -196,11 +231,17 @@ def run_negative_self_test(
     broken = copy.deepcopy(observatory)
     broken["hosts"]["grok"]["baseline"]["selection_rate"] = 0.91
     broken["hosts"]["grok"]["baseline"]["all_eligible_trigger_recall"] = 1
-    failures = validate_contract(broken, version, results, case_hash, case_count)
+    broken["version_contract"]["deployment_revision"] = "current-live-revision"
+    broken["version_contract_recorded_at"] = "2099-01-01"
+    failures = validate_contract(broken, results, case_hash, case_count)
     if not any("ambiguous metric alias" in failure for failure in failures):
         raise AssertionError("negative self-test did not reject an ambiguous metric alias")
     if not any("all_eligible_trigger_recall" in failure for failure in failures):
         raise AssertionError("negative self-test did not reject a result mismatch")
+    if not any("version_contract.deployment_revision" in failure for failure in failures):
+        raise AssertionError("negative self-test did not reject frozen version drift")
+    if not any("version_contract_recorded_at" in failure for failure in failures):
+        raise AssertionError("negative self-test did not reject snapshot-date drift")
 
 
 def fetch_live(url: str) -> dict[str, Any]:
@@ -219,7 +260,6 @@ def main() -> int:
     args = parser.parse_args()
 
     observatory = load_json(OBSERVATORY)
-    version = load_json(VERSION)
     results = {name: load_json(path) for name, path in RESULTS.items()}
     cases = load_json(CASES)
     case_hash = sha256(CASES)
@@ -228,7 +268,6 @@ def main() -> int:
     if args.self_test:
         run_negative_self_test(
             observatory,
-            version,
             results,
             case_hash,
             case_count,
@@ -236,7 +275,6 @@ def main() -> int:
 
     errors = validate_contract(
         observatory,
-        version,
         results,
         case_hash,
         case_count,
