@@ -93,7 +93,7 @@ def validate_local() -> None:
     require(statuses.get("grok_custom_connector") == "operator_verified_install_and_explicit_execution_2026-07-16", "Grok connector status")
     require(statuses.get("grok_automatic_selection") == "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16", "Grok selection observation boundary")
     require(statuses.get("grok_business_admin_provisioning") == "unverified", "Grok Business status")
-    require(manifest.get("version") == "v6.32.5", "MCP registry manifest revision")
+    require(manifest.get("version") == "v6.32.6", "MCP registry manifest revision")
     require(manifest.get("transport", {}).get("url") == "https://africanmarketos.com/mcp/preflight", "registry endpoint")
     require(manifest.get("tool_profile", {}).get("tools") == REGISTRY_TOOLS, "registry five-tool profile")
     require(manifest.get("tool_profile", {}).get("consumer_compatibility_endpoint") == "https://africanmarketos.com/mcp", "consumer compatibility endpoint")
@@ -104,7 +104,7 @@ def validate_local() -> None:
     require(any("Registry synchronization alone does not make a model call" in step for step in aws_recipe.get("registration_steps", [])), "AWS Registry-to-invocation boundary")
     require("not represented as compatible" in aws_recipe.get("a2a_boundary", ""), "AWS A2A non-claim")
     require(agent_card.get("supportedInterfaces", [{}])[0].get("protocolVersion") == "1.0" and len(agent_card.get("skills", [])) == 6, "A2A Agent Card contract")
-    require(server.get("version") == "6.32.5", "server registry revision")
+    require(server.get("version") == "6.32.6", "server registry revision")
     expected_protocols = ["2026-07-28", "2025-11-25", "2025-06-18"]
     require(manifest["version_contract"].get("mcp_protocol_versions") == expected_protocols, "manifest supported MCP protocol versions")
     require(recipe["version_contract"].get("mcp_protocol_versions") == expected_protocols, "xAI recipe supported MCP protocol versions")

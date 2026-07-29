@@ -9,31 +9,31 @@
   ],
   "mcp_modern_protocol_version": "2026-07-28",
   "mcp_compatibility_mode": "dual-era: 2026-07-28 stateless requests plus 2025-11-25 and 2025-06-18 initialize handshakes",
-  "mcp_contract_version": "mvr-mcp@2026-07-29.5",
-  "tool_profile_version": "consumer-7+preflight-5@2026-07-29.5",
-  "sdk_version": "typescript@6.32.4;python@6.32.3",
+  "mcp_contract_version": "mvr-mcp@2026-07-30.6",
+  "tool_profile_version": "consumer-7+preflight-5@2026-07-30.6",
+  "sdk_version": "typescript@6.32.4;python@6.32.4",
   "sdk_versions": {
     "typescript": "6.32.4",
-    "python": "6.32.3"
+    "python": "6.32.4"
   },
   "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
   "calibration_version": "v6.32.0-framework-provisional",
   "calibration_scope": "Public framework-provisional default. Licensed runtime calibration is resolved by profile, sector, geography, and active manifest; verify through /v1/calibration-health.",
-  "deployment_revision": "2026-07-29.attribution-integrity.3",
+  "deployment_revision": "2026-07-30.discovery-integrity.1",
   "deployment_provider_revision": "Recorded in release evidence after deployment; not self-embedded because a provider revision is created by the deployment itself.",
   "host_recipe_version": "2026-07-26.1",
   "checkout_contract_version": "2026-07-29.1",
   "runtime_version": "MVR Core API v6.32.0",
-  "registry_manifest_revision": "6.32.5",
-  "sdk_family": "TypeScript 6.32.4; Python 6.32.3; 2.6.x archived compatibility",
+  "registry_manifest_revision": "6.32.6",
+  "sdk_family": "TypeScript 6.32.4; Python 6.32.4; 2.6.x archived compatibility",
   "openapi_contract_family": "v1",
   "note": "Registry/package/documentation revisions may change without changing the protected Worker/API runtime.",
   "current_runtime": "MVR Core API v6.32.0",
-  "current_mcp_server": "6.32.5 metadata/registry manifest revision",
+  "current_mcp_server": "6.32.6 metadata/registry manifest revision",
   "current_openapi_contract": "v1 contract family aligned to v6.32.0 runtime",
-  "current_sdk_generation_line": "typescript@6.32.4;python@6.32.3",
+  "current_sdk_generation_line": "typescript@6.32.4;python@6.32.4",
   "npm": "@africanmarketos/mvr-api-client@6.32.4",
-  "pypi": "mvr-api-client==6.32.3",
+  "pypi": "mvr-api-client==6.32.4",
   "archived_lines": {
     "api_v1_materials": "historical DOI/indexing continuity; not recommended for new integrations",
     "sdk_v2_6": "deprecated compatibility layer",
@@ -45,5 +45,5 @@
     "version_map": "https://africanmarketos.com/docs/version-map.md"
   },
   "canonical_surface_registry": "https://africanmarketos.com/.well-known/mvr-surface-registry.json",
-  "updated_at": "2026-07-29"
+  "updated_at": "2026-07-30"
 }

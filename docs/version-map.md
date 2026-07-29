@@ -10,12 +10,12 @@ Every integration should preserve these fields separately:
 |---|---|---|
 | `core_api_version` | `v6.32.0` | Protected Worker/API runtime. |
 | `mcp_protocol_versions` | `2026-07-28`; `2025-11-25`; `2025-06-18` | Supported Streamable HTTP MCP contracts: stateless modern requests plus both initialize-based compatibility versions. |
-| `mcp_contract_version` | `mvr-mcp@2026-07-29.5` | Public MCP schemas, discovery metadata, and transport contract. |
-| `tool_profile_version` | `consumer-7+preflight-5@2026-07-29.5` | Underlying public MCP family. The registry publishes only the five-tool read-only preflight profile. |
-| `sdk_version` | `typescript@6.32.4;python@6.32.3` | Current published SDK lines, kept distinct by language. |
+| `mcp_contract_version` | `mvr-mcp@2026-07-30.6` | Public MCP schemas, discovery metadata, and transport contract. |
+| `tool_profile_version` | `consumer-7+preflight-5@2026-07-30.6` | Underlying public MCP family. The registry publishes only the five-tool read-only preflight profile. |
+| `sdk_version` | `typescript@6.32.4;python@6.32.4` | Current published SDK lines, kept distinct by language. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-07-16.1` | Host-policy middleware and selection boundary. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-07-29.attribution-integrity.3` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
+| `deployment_revision` | `2026-07-30.discovery-integrity.1` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
 | `deployment_provider_revision` | `efe93aa4-dbf9-4c86-b931-aa665119a8ba` | Provider-generated Cloudflare version recorded after the production canaries; not self-embedded in runtime responses. |
 | `host_recipe_version` | `2026-07-26.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
@@ -26,11 +26,11 @@ Machine-readable source: `https://africanmarketos.com/.well-known/mvr-version.js
 | Surface | Current version | Status | Notes |
 |---|---:|---|---|
 | MVR Core API runtime | `v6.32.0` | Current | Protected Worker/API runtime. Do not infer a runtime bump from docs, registry, or package metadata updates. |
-| MCP registry/server.json manifest | `6.32.5` | Current metadata patch | Registry and discovery metadata revision; same runtime contract. |
+| MCP registry/server.json manifest | `6.32.6` | Current metadata patch | Registry and discovery metadata revision; same runtime contract. |
 | OpenAPI contract family | `v1` | Current | Canonical source: `https://africanmarketos.com/api/openapi.json`; agent-curated source: `https://africanmarketos.com/api/openapi.agent.json`. |
 | Minimal sandbox OpenAPI | `v1` | Current | Canonical source: `https://africanmarketos.com/api/openapi.agent.sandbox.json`; use this for public sandbox route registration. |
 | TypeScript SDK generation line | `6.32.4` | Current | Package: `@africanmarketos/mvr-api-client`; published from immutable tag `v6.32.4`. |
-| Python SDK generation line | `6.32.3` | Current | Package: `mvr-api-client`; published from immutable tag `v6.32.3`. |
+| Python SDK generation line | `6.32.4` | Current | Package: `mvr-api-client`; published from immutable tag `v6.32.4`. |
 | REST sandbox | `v6.32.0` runtime | Current, limited | Uses `X-API-Key: mvr-demo-key-2026` where the route contract requires it; non-commercial evaluation only. |
 | MCP Registry public profile | `public-preflight-read-only-v1` | Current, limited | Exactly five keyless read-only tools at `/mcp/preflight`; non-commercial evaluation only. `/mcp` is the seven-tool consumer compatibility profile and `/mcp/full` is the 22-tool full expert catalog. |
 | MCP stdio bridge | `0.1.0` | Source available | Local transport adapter for stdio-only hosts and directory evaluation; the protected MVR engine remains remote and server-side. |
