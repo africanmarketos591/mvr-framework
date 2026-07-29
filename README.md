@@ -131,7 +131,8 @@ The API helps agents and systems:
 - Official MCP Registry name: `io.github.africanmarketos591/mvr-api`
 - MCP Registry lookup: https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api
 - Pricing and production access: https://africanmarketos.com/pricing
-- Request production key: https://africanmarketos.com/get-api-key
+- Start self-serve MVR API Starter: https://africanmarketos.com/checkout/starter
+- Request governed higher-scope access: https://africanmarketos.com/get-api-key
 - Agent contract: https://africanmarketos.com/agents.json
 - Category ownership map: https://africanmarketos.com/docs/category-ownership.md
 - Rate limits: https://africanmarketos.com/docs/rate-limits.md

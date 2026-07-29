@@ -11,7 +11,7 @@
   "base_url": "https://africanmarketos.com",
   "version_info": {
     "runtime_version": "MVR Core API v6.32.0",
-    "registry_manifest_revision": "6.32.4",
+    "registry_manifest_revision": "6.32.5",
     "sdk_family": "TypeScript 6.32.4; Python 6.32.3; 2.6.x archived compatibility",
     "openapi_contract_family": "v1",
     "note": "Registry/package/documentation revisions may change without changing the protected Worker/API runtime."
@@ -127,18 +127,20 @@
     "use_case": "investor_due_diligence | accelerator_screening | market_entry | NGO_program_design | AI_agent_embedding",
     "upgrade_reason": "production key, verified evidence, strict calibrated profile, board-safe report, commercial license",
     "contact": "info@africanmarketos.com",
-    "license_url": "https://africanmarketos.com/get-api-key",
+    "license_url": "https://africanmarketos.com/checkout/starter",
+    "starter_checkout_url": "https://africanmarketos.com/checkout/starter",
+    "governed_access_url": "https://africanmarketos.com/get-api-key",
     "consult_url": "https://africanmarketos.com/consult/",
     "request_key_url": "https://africanmarketos.com/get-api-key",
     "pricing_url": "https://africanmarketos.com/pricing",
-    "directory_user_note": "If discovered through Odel, Glama, MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another agent directory, use the public sandbox only for evaluation; route production, commercial, advisory, or repeated use to the request_key_url."
+    "directory_user_note": "If discovered through an agent directory, use the public profile only for evaluation. Route ordinary paid API activation to starter_checkout_url and reserve governed_access_url for higher-scope requests."
   },
   "directory_distribution": {
     "odel": "https://odel.app/",
     "mcp_registry": "https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api",
     "glama": "https://glama.ai/mcp/servers?query=MVR+API",
     "rapidapi": "https://rapidapi.com/africanmarketos591/api/mvr-framework-tm-api-african-market-os",
-    "next_step": "Request production access or advisory support at https://africanmarketos.com/get-api-key."
+    "next_step": "Start MVR API Starter at https://africanmarketos.com/checkout/starter; use https://africanmarketos.com/get-api-key for governed higher-scope access."
   },
   "policy": {
     "public_retrieval_allowed": true,

@@ -29,3 +29,8 @@ jobs:
 
       - name: Publish server manifest
         run: ./mcp-publisher publish server.json
+
+      - name: Verify published Registry record and live MCP contract
+        env:
+          MVR_REQUIRE_REGISTRY_PUBLISHED: "1"
+        run: node scripts/verify-mcp-registry-contract.mjs

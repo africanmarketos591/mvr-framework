@@ -38,7 +38,7 @@ This file is the source quickstart for generated MCP documentation.
 curl -X POST "https://africanmarketos.com/mcp/preflight" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
-  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"mvr-quickstart","version":"1.0.0"}}}'
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"mvr-quickstart","version":"1.0.0"}}}'
 ```
 
 ### 2. Discover exactly five tools
@@ -47,7 +47,7 @@ curl -X POST "https://africanmarketos.com/mcp/preflight" \
 curl -X POST "https://africanmarketos.com/mcp/preflight" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
-  -H "MCP-Protocol-Version: 2025-06-18" \
+  -H "MCP-Protocol-Version: 2025-11-25" \
   -d '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}'
 ```
 
@@ -65,7 +65,7 @@ Expected tools:
 curl -X POST "https://africanmarketos.com/mcp/preflight" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
-  -H "MCP-Protocol-Version: 2025-06-18" \
+  -H "MCP-Protocol-Version: 2025-11-25" \
   -d '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"mvr_first_call","arguments":{"question":"What evidence is needed before recommending a fictional merchant-credit pilot in Uganda?","entity":"Example merchant-credit operator","country":"UG","sector":"fintech lending"}}}'
 ```
 

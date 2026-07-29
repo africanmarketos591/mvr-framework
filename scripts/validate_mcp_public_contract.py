@@ -62,6 +62,8 @@ def validate_local() -> None:
     server = load_json("server.json")
     readme = (ROOT / "mcp/README.md").read_text(encoding="utf-8")
     version_map = (ROOT / "docs/version-map.md").read_text(encoding="utf-8")
+    python_client = (ROOT / "reference-agents/mvr-market-entry-preflight/python/mvr_preflight.py").read_text(encoding="utf-8")
+    javascript_client = (ROOT / "reference-agents/mvr-market-entry-preflight/javascript/mvr_preflight.mjs").read_text(encoding="utf-8")
 
     for key, expected in EXPECTED.items():
         require(manifest["version_contract"].get(key) == expected, f"mcp/manifest.json: {key}")
@@ -91,7 +93,7 @@ def validate_local() -> None:
     require(statuses.get("grok_custom_connector") == "operator_verified_install_and_explicit_execution_2026-07-16", "Grok connector status")
     require(statuses.get("grok_automatic_selection") == "operator_observed_pre_metadata_miss_and_post_metadata_pass_not_a_benchmark_score_2026-07-16", "Grok selection observation boundary")
     require(statuses.get("grok_business_admin_provisioning") == "unverified", "Grok Business status")
-    require(manifest.get("version") == "v6.32.4", "MCP registry manifest revision")
+    require(manifest.get("version") == "v6.32.5", "MCP registry manifest revision")
     require(manifest.get("transport", {}).get("url") == "https://africanmarketos.com/mcp/preflight", "registry endpoint")
     require(manifest.get("tool_profile", {}).get("tools") == REGISTRY_TOOLS, "registry five-tool profile")
     require(manifest.get("tool_profile", {}).get("consumer_compatibility_endpoint") == "https://africanmarketos.com/mcp", "consumer compatibility endpoint")
@@ -102,7 +104,18 @@ def validate_local() -> None:
     require(any("Registry synchronization alone does not make a model call" in step for step in aws_recipe.get("registration_steps", [])), "AWS Registry-to-invocation boundary")
     require("not represented as compatible" in aws_recipe.get("a2a_boundary", ""), "AWS A2A non-claim")
     require(agent_card.get("supportedInterfaces", [{}])[0].get("protocolVersion") == "1.0" and len(agent_card.get("skills", [])) == 6, "A2A Agent Card contract")
-    require(server.get("version") == "6.32.4", "server registry revision")
+    require(server.get("version") == "6.32.5", "server registry revision")
+    expected_protocols = ["2026-07-28", "2025-11-25", "2025-06-18"]
+    require(manifest["version_contract"].get("mcp_protocol_versions") == expected_protocols, "manifest supported MCP protocol versions")
+    require(recipe["version_contract"].get("mcp_protocol_versions") == expected_protocols, "xAI recipe supported MCP protocol versions")
+    require(aws_recipe["version_contract"].get("mcp_protocol_versions") == expected_protocols, "AWS recipe supported MCP protocol versions")
+    require(publisher.get("mcpProtocolVersions") == expected_protocols, "server supported MCP protocol versions")
+    require(manifest.get("commercial_next_step", {}).get("starter_checkout") == "https://africanmarketos.com/checkout/starter", "manifest Starter checkout")
+    require(manifest.get("commercial_next_step", {}).get("governed_access_url") == "https://africanmarketos.com/get-api-key", "manifest governed access route")
+    require(publisher.get("commercialRoute") == "https://africanmarketos.com/checkout/starter", "server self-serve commercial route")
+    require("MCP-Protocol-Version" in python_client and "self.protocol_version" in python_client, "Python reference client must retain and send the negotiated MCP protocol")
+    require("MCP-Protocol-Version" in javascript_client and "this.protocolVersion" in javascript_client, "JavaScript reference client must retain and send the negotiated MCP protocol")
+    require("Historical snapshot" in observatory.get("version_contract_scope", ""), "selection observatory must label its frozen historical version contract")
     require(publisher.get("consumerCompatibilityEndpoint") == "https://africanmarketos.com/mcp", "server consumer compatibility endpoint")
     require(publisher.get("fullExpertEndpoint") == "https://africanmarketos.com/mcp/full", "server full expert endpoint")
     require("broaderExpertEndpoint" not in publisher, "stale server expert endpoint label")
@@ -132,7 +145,7 @@ def validate_local() -> None:
     require(all(tool in readme for tool in REGISTRY_TOOLS), "quickstart five-tool profile")
     require("mvr_commercial_handshake" not in readme, "write-capable tool appears in registry quickstart")
     require('"name":"mvr_preflight_market_entry"' not in readme.replace(" ", ""), "host wrapper called as public tool")
-    require(readme.count("MCP-Protocol-Version: 2025-06-18") >= 2, "post-initialize quickstarts must send the negotiated MCP protocol header")
+    require(readme.count("MCP-Protocol-Version: 2025-11-25") >= 2, "post-initialize quickstarts must send the negotiated current initialize-based MCP protocol header")
 
 
 def fetch_json(url: str, body: dict | None = None) -> dict:

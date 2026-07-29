@@ -1,12 +1,17 @@
 {
   "name": "mvr-api",
   "title": "MVR API - Minimum Viable Relationships",
-  "version": "v6.32.4",
+  "version": "v6.32.5",
   "version_contract": {
     "core_api_version": "v6.32.0",
     "mcp_protocol_version": "2025-06-18",
-    "mcp_contract_version": "mvr-mcp@2026-07-16.4",
-    "tool_profile_version": "consumer-7+preflight-5@2026-07-16.4",
+    "mcp_protocol_versions": [
+      "2026-07-28",
+      "2025-11-25",
+      "2025-06-18"
+    ],
+    "mcp_contract_version": "mvr-mcp@2026-07-29.5",
+    "tool_profile_version": "consumer-7+preflight-5@2026-07-29.5",
     "sdk_version": "typescript@6.32.4;python@6.32.3",
     "sdk_versions": {
       "typescript": "6.32.4",
@@ -14,9 +19,9 @@
     },
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
-    "deployment_revision": "2026-07-28.sdk-provenance.1",
+    "deployment_revision": "2026-07-29.mcp-dual-era-commerce.1",
     "host_recipe_version": "2026-07-26.1",
-    "registry_manifest_revision": "6.32.4",
+    "registry_manifest_revision": "6.32.5",
     "registry_tool_profile": "public-preflight-read-only-v1"
   },
   "publisher": {
@@ -129,7 +134,9 @@
     "use_case": "investor_due_diligence | accelerator_screening | market_entry | NGO_program_design | AI_agent_embedding",
     "upgrade_reason": "production key, verified evidence, strict calibrated profile, board-safe report, commercial license",
     "contact": "info@africanmarketos.com",
-    "license_url": "https://africanmarketos.com/get-api-key",
+    "license_url": "https://africanmarketos.com/checkout/starter",
+    "starter_checkout": "https://africanmarketos.com/checkout/starter",
+    "governed_access_url": "https://africanmarketos.com/get-api-key",
     "consult_url": "https://africanmarketos.com/consult/"
   },
   "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",

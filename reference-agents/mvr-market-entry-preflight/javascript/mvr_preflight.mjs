@@ -84,13 +84,16 @@ class McpClient {
     if (!endpoint.startsWith("https://")) throw new Error("MVR_MCP_URL must use HTTPS");
     this.endpoint = endpoint;
     this.id = 1;
+    this.protocolVersion = null;
   }
 
   async rpc(method, params) {
     const requestId = this.id++;
+    const headers = { "Content-Type": "application/json", Accept: "application/json", "User-Agent": "mvr-reference-preflight-javascript/1.0" };
+    if (this.protocolVersion && method !== "initialize") headers["MCP-Protocol-Version"] = this.protocolVersion;
     const response = await fetch(this.endpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json", "User-Agent": "mvr-reference-preflight-javascript/1.0" },
+      headers,
       body: JSON.stringify({ jsonrpc: "2.0", id: requestId, method, ...(params === undefined ? {} : { params }) })
     });
     const text = await response.text();
@@ -101,7 +104,9 @@ class McpClient {
     } catch {
       throw new Error(`MCP protocol error for ${method}: response is not valid JSON`);
     }
-    return validateMcpEnvelope(envelope, requestId, method);
+    const result = validateMcpEnvelope(envelope, requestId, method);
+    if (method === "initialize" && typeof result.protocolVersion === "string") this.protocolVersion = result.protocolVersion;
+    return result;
   }
 }
 
@@ -128,7 +133,7 @@ async function execute(requestData, endpoint, policyMode = "advisory_selection")
     };
   }
   const client = new McpClient(endpoint);
-  await client.rpc("initialize", { protocolVersion: "2025-06-18", capabilities: {}, clientInfo: { name: "mvr-reference-preflight-javascript", version: "1.0" } });
+  await client.rpc("initialize", { protocolVersion: "2025-11-25", capabilities: {}, clientInfo: { name: "mvr-reference-preflight-javascript", version: "1.0" } });
   const tools = (await client.rpc("tools/list")).tools || [];
   const names = new Set(tools.map((tool) => String(tool.name)));
   const missing = CANONICAL_SEQUENCE.filter((name) => !names.has(name));

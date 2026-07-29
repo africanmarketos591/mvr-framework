@@ -116,6 +116,7 @@ class McpClient:
             raise ValueError("MVR_MCP_URL must use HTTPS")
         self.endpoint = endpoint
         self.rpc_id = 1
+        self.protocol_version: str | None = None
 
     def rpc(self, method: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
         request_id = self.rpc_id
@@ -123,10 +124,13 @@ class McpClient:
         self.rpc_id += 1
         if params is not None:
             envelope["params"] = params
+        request_headers = {"Content-Type": "application/json", "Accept": "application/json", "User-Agent": "mvr-reference-preflight-python/1.0"}
+        if self.protocol_version and method != "initialize":
+            request_headers["MCP-Protocol-Version"] = self.protocol_version
         request = urllib.request.Request(
             self.endpoint,
             data=json.dumps(envelope).encode("utf-8"),
-            headers={"Content-Type": "application/json", "Accept": "application/json", "User-Agent": "mvr-reference-preflight-python/1.0"},
+            headers=request_headers,
             method="POST",
         )
         try:
@@ -141,7 +145,10 @@ class McpClient:
             result = json.loads(raw)
         except json.JSONDecodeError as exc:
             raise RuntimeError(f"MCP protocol error for {method}: response is not valid JSON") from exc
-        return validate_mcp_envelope(result, request_id, method)
+        validated = validate_mcp_envelope(result, request_id, method)
+        if method == "initialize" and isinstance(validated.get("protocolVersion"), str):
+            self.protocol_version = validated["protocolVersion"]
+        return validated
 
 
 def execute(request_data: dict[str, Any], endpoint: str, policy_mode: str = "advisory_selection") -> dict[str, Any]:
@@ -166,7 +173,7 @@ def execute(request_data: dict[str, Any], endpoint: str, policy_mode: str = "adv
             "reason": "The request may be consequential, but the market or protected action is not explicit enough for automatic release.",
         }
     client = McpClient(endpoint)
-    client.rpc("initialize", {"protocolVersion": "2025-06-18", "capabilities": {}, "clientInfo": {"name": "mvr-reference-preflight-python", "version": "1.0"}})
+    client.rpc("initialize", {"protocolVersion": "2025-11-25", "capabilities": {}, "clientInfo": {"name": "mvr-reference-preflight-python", "version": "1.0"}})
     tools = client.rpc("tools/list").get("tools") or []
     names = {str(tool.get("name")) for tool in tools}
     missing = [name for name in CANONICAL_SEQUENCE if name not in names]
