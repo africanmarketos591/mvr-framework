@@ -1,5 +1,7 @@
 # MVR Agent SDK for JavaScript
 
+> **Superseded compatibility package:** Version 0.1.0 is preserved for provenance. New integrations should install `@africanmarketos/mvr-api-client`.
+
 Public-safe wrapper for calling the MVR API before an AI agent recommends market entry, MVP launch, funding, partnership, scale, CFO action, or due diligence in African and other high-context markets.
 
 The SDK does not contain MVR scoring logic, calibration weights, private labels, private evidence, Worker source, or benchmark answer keys. It routes requests to the live MVR API, where protected computation remains server-side.

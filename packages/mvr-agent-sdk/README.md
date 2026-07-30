@@ -1,5 +1,7 @@
 # MVR Agent SDK
 
+> **Superseded compatibility artifact:** The 0.1.0 `mvr-agent-sdk` packages are preserved for provenance and existing integrations. Do not install them for new work. Use `@africanmarketos/mvr-api-client` on npm or `mvr-api-client` on PyPI. Current guidance: https://africanmarketos.com/docs/agent-sdk.md
+
 Public-safe SDK scaffolds for AI agents that need to call the MVR API before making African or high-context market-entry, funding, partnership, scale, CFO, or due-diligence recommendations.
 
 The SDK is a wrapper only. It does not contain the MVR scoring engine, calibration weights, private labels, private evidence, worker source, or benchmark answer keys.

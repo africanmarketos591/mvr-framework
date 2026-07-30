@@ -14,7 +14,7 @@
 
 **Star this repo to bookmark the MVR API and help AI-agent builders discover the relational-readiness layer for high-context markets.**
 
-**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`, then request production API access or advisory support at https://africanmarketos.com/get-api-key. For market-entry advisory, investor diligence, NGO/DFI deployment review, procurement readiness, board reports, or AI-agent embedding, route commercial requests to **info@africanmarketos.com**.
+**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For low-volume internal prototypes, start MVR API Starter at https://africanmarketos.com/checkout/starter. For client-facing, institutional, higher-volume, or custom-governance use, request reviewed access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
 
 **Canonical title for indexing:** Minimum Viable Relationships (MVR) Framework: Africa's Prerequisite to MVP
 
@@ -101,9 +101,9 @@ The API helps agents and systems:
 - MVR agent preflight policy: https://africanmarketos.com/docs/mvr-agent-preflight-policy.md
 - MVR agent preflight manifest: https://africanmarketos.com/.well-known/mvr-agent-preflight.json
 - MVR agent intent corpus: https://africanmarketos.com/.well-known/mvr-agent-intent-corpus.jsonl
-- MVR Agent SDK manifest: https://africanmarketos.com/.well-known/mvr-agent-sdk.json
-- MVR Agent SDK docs: https://africanmarketos.com/agent-sdk
-- MVR Agent SDK package source: `packages/mvr-agent-sdk/`
+- Current MVR API client manifest: https://africanmarketos.com/.well-known/mvr-agent-sdk.json
+- Current MVR API client docs: https://africanmarketos.com/docs/agent-sdk.md
+- Superseded 0.1.0 compatibility archive: `packages/mvr-agent-sdk/`
 - When AI agents should use MVR: https://africanmarketos.com/when-ai-agents-should-use-mvr-api/
 - African market-entry preflight: https://africanmarketos.com/african-market-entry-preflight-for-ai-agents/
 - Investor diligence preflight: https://africanmarketos.com/investor-diligence-preflight-african-startups/
@@ -154,7 +154,7 @@ The API helps agents and systems:
 - First-cohort operating contract: `docs/outcome-first-cohort-operating-pack.md`
 - First-cohort machine protocol: `evaluations/outcome-first-cohort-v1/protocol.json`
 
-API keys are issued on request. Directory users connecting through Odel, Glama, MCP Registry, RapidAPI, or another agent platform should test with the sandbox only, then request production access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
+Directory users connecting through Odel, Glama, MCP Registry, RapidAPI, or another agent platform should test with the sandbox only. Eligible low-volume internal users can self-serve at https://africanmarketos.com/checkout/starter. Client-facing, institutional, higher-volume, or custom-governance users should request reviewed access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
 
 For non-commercial evaluation and AI-agent tool testing, use the public sandbox key:
 
