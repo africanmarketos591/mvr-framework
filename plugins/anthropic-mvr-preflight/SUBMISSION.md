@@ -2,6 +2,16 @@
 
 This file is the copy-ready, public-safe record for two separate Anthropic distribution surfaces. Publication is not claimed until the relevant Anthropic account confirms it.
 
+## Current status
+
+- Submission state: `submitted_for_review`
+- Submitted: `2026-07-30`
+- Submission surface: Anthropic Claude Console Plugin Directory
+- Requested surfaces: Claude Code and Claude Cowork
+- Review contact: `info@africanmarketos.com`
+- Approval boundary: submission receipt observed; acceptance, publication, verification, endorsement, and directory placement are not claimed
+- Connector Directory: not submitted; this is a separate Anthropic review surface
+
 ## Plugin Directory
 
 - Name: African Market OS - MVR Preflight

@@ -34,6 +34,10 @@ After installation, enable the plugin and approve the remote connector. Then try
 
 The first MVR tool for a consequential decision must be `mvr_first_call`.
 
+## Directory status
+
+Submitted to the Anthropic Plugin Directory for review on `2026-07-30` for Claude Code and Claude Cowork. Submission receipt is confirmed; acceptance, publication, verification, endorsement, and directory placement are not claimed. See the [public certification record](./CERTIFICATION_2026-07-30.md).
+
 ## Commercial route
 
 The public connector is for bounded evaluation. An authorized human can start the low-volume internal-use plan at [Starter checkout](https://africanmarketos.com/checkout/starter). Client-facing, institutional, consulting, higher-volume, or custom-governance use should follow the [governed access route](https://africanmarketos.com/get-api-key/).
