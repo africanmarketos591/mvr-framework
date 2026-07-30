@@ -7,7 +7,7 @@
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-6ba539)](https://africanmarketos.com/api/openapi.json)
 [![OpenAPI Sanity](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml/badge.svg)](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml)
 [![Sandbox](https://img.shields.io/badge/sandbox-mvr--demo--key--2026-0f6b45)](https://africanmarketos.com/docs/sandbox.md)
-[![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)](https://africanmarketos.com/.well-known/mvr-license.json)
+[![Rights map](https://img.shields.io/badge/licensing-mixed%20rights-lightgrey)](LICENSE)
 [![MVR-Bench on Hugging Face](https://img.shields.io/badge/Hugging%20Face-MVR--Bench-f5b942)](https://huggingface.co/datasets/AfricanMarket/mvr-bench)
 
 **Listed in MCP Registry + Glama + RapidAPI, anchored by DOI, and callable through OpenAPI/MCP.**
@@ -34,6 +34,8 @@ In short:
 - LinkedIn: https://www.linkedin.com/in/faroukmarkmukiibi/
 - Machine-readable license: https://africanmarketos.com/.well-known/mvr-license.json
 - Commercial policy: https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/
+- Repository rights map: `RIGHTS-MAP.md`
+- Trademark and brand boundary: `TRADEMARKS.md`
 
 ## Citation Anchors
 
@@ -242,7 +244,7 @@ The MVR framework defines what to assess; the MVR API is the official engine tha
 
 MVR outputs are advisory unless explicitly authorized by the response. MVR is not a credit score, legal compliance certificate, investment guarantee, or substitute for human diligence, local counsel, or regulated underwriting.
 
-Commercial, applied, diagnostic, API, SaaS, AI-agent, or consulting use requires a license or written authorization from African Market OS.
+Commercial reuse of a CC BY 4.0 publication remains permitted under that publication's license. Hosted API access, protected scoring, production, repeated automated, customer-facing, SaaS, proxy, resale, certification, or consulting use of the protected service requires the applicable subscription, service terms, written authorization, or agreement from African Market OS.
 
 ## Preferred Citation
 

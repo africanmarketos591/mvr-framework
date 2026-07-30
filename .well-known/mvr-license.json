@@ -8,7 +8,7 @@
   "url": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
   "mainEntityOfPage": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
   "headline": "MVR Framework Commercial and API Use Policy",
-  "description": "Machine-readable scope map for Minimum Viable Relationships publications, website materials, datasets, software, sandbox access, and production services. It does not narrow rights already granted by a resource-specific open license.",
+  "description": "Machine-readable scope map for the mixed-rights Minimum Viable Relationships repository, publications, integration code, datasets, hosted services, protected runtime, and brand assets. It does not narrow rights already granted by a resource-specific license.",
   "inLanguage": "en",
   "creator": {
     "@type": "Person",
@@ -35,11 +35,21 @@
     }
   },
   "license": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
-  "scopeRule": "Each resource is governed by the license or terms published with that resource. Earlier publications released under CC BY 4.0 remain available under that license; this policy does not add restrictions to those copies. Access to the MVR API, protected runtime, private datasets, trademarks, and production services is not granted by a publication license.",
+  "repositoryRightsMap": "https://github.com/africanmarketos591/mvr-framework/blob/main/RIGHTS-MAP.md",
+  "trademarkPolicy": "https://github.com/africanmarketos591/mvr-framework/blob/main/TRADEMARKS.md",
+  "scopeRule": "No single license applies to the whole ecosystem. Each resource is governed by its attached license or the repository rights map. Earlier publications released under CC BY 4.0 remain available under that license; this policy does not add restrictions to those copies. Access to the MVR API, protected runtime, private datasets, trademarks, and production services is not granted by a publication or integration-code license.",
   "resourceScopes": [
     {
       "scope": "legacy_publications",
       "terms": "Use the license attached to each DOI or repository record. CC BY 4.0 resources permit reuse, adaptation, and commercial use with attribution under that license."
+    },
+    {
+      "scope": "public_integration_code",
+      "terms": "Only paths expressly identified in the repository rights map receive the stated software license. Integration-code rights do not include hosted API access, private computation, calibration, service entitlement, or brand rights."
+    },
+    {
+      "scope": "benchmark_and_sdk_packages",
+      "terms": "Use the license attached to the specific benchmark or SDK package. Do not infer an ecosystem-wide grant from a package license."
     },
     {
       "scope": "website_and_machine_readable_metadata",
@@ -51,10 +61,15 @@
     },
     {
       "scope": "api_software_and_protected_assets",
-      "terms": "Production access, commercial use, private scoring, protected runtime, calibration assets, and non-public datasets require written authorization."
+      "terms": "Commercial or production access to the hosted service, private scoring, protected runtime, calibration assets, and non-public datasets requires an applicable subscription, license, or written authorization. Independent reuse of CC BY 4.0 publication text remains governed by CC BY 4.0."
+    },
+    {
+      "scope": "brand_and_certification",
+      "terms": "Content and code licenses do not grant trademark, certification, endorsement, official-fork, logo, badge, or confusing-brand rights."
     }
   ],
-  "commercialUseRequiresLicense": true,
+  "commercialUseOfCcByPublicationsAllowed": true,
+  "protectedServiceCommercialUseRequiresLicense": true,
   "apiUseRequiresAuthorization": true,
   "permittedUse": [
     "Use any resource under its attached license",
@@ -95,6 +110,7 @@
     ],
     "commercialNextStep": {
       "contact": "info@africanmarketos.com",
+      "starterCheckout": "https://africanmarketos.com/checkout/starter",
       "licenseUrl": "https://africanmarketos.com/consult/",
       "upgradeReasons": [
         "production key",
@@ -122,12 +138,13 @@
     "https://doi.org/10.5281/zenodo.17389885"
   ],
   "datePublished": "2025-11-05",
-  "dateModified": "2026-07-28",
-  "version": "2.1.0",
+  "dateModified": "2026-07-30",
+  "version": "2.2.0",
   "potentialAction": {
     "@type": "ContactAction",
-    "name": "Request MVR API Access or Commercial License",
+    "name": "Start MVR API Starter or Request a Commercial License",
     "target": [
+      "https://africanmarketos.com/checkout/starter",
       "mailto:info@africanmarketos.com?subject=MVR%20API%20Access%20or%20Commercial%20License"
     ]
   }

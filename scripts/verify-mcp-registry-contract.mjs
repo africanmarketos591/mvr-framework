@@ -14,6 +14,13 @@ const expectedTools = [
   "mvr_context_compile",
   "mvr_decision_check",
 ];
+const expectedTitles = {
+  mvr_first_call: "Start MVR relational-readiness preflight",
+  mvr_entity_resolve: "Resolve the venture and market",
+  mvr_evidence_completeness: "Check evidence completeness",
+  mvr_context_compile: "Compile evidence context",
+  mvr_decision_check: "Check evidence before MVR scoring",
+};
 
 const server = readJson("server.json");
 const manifest = readJson("mcp/manifest.json");
@@ -82,8 +89,16 @@ const initialized = await callMcp({
 if (initialized.result?.protocolVersion !== "2025-11-25") fail("Live initialize protocol mismatch");
 
 const listed = await callMcp({ jsonrpc: "2.0", id: 2, method: "tools/list", params: {} }, "2025-11-25");
-const liveTools = (listed.result?.tools || []).map((tool) => tool.name);
+const listedTools = listed.result?.tools || [];
+const liveTools = listedTools.map((tool) => tool.name);
 if (JSON.stringify(liveTools) !== JSON.stringify(expectedTools)) fail(`Live tool profile drift: ${liveTools.join(", ")}`);
+for (const tool of listedTools) {
+  if (tool.title !== expectedTitles[tool.name]) fail(`Live tool title drift: ${tool.name}`);
+  if (tool.annotations?.readOnlyHint !== true) fail(`Live tool is not marked read-only: ${tool.name}`);
+  if (tool.annotations?.destructiveHint !== false) fail(`Live tool destructive hint drift: ${tool.name}`);
+  if (tool.annotations?.openWorldHint !== false) fail(`Live tool open-world boundary drift: ${tool.name}`);
+  if (!tool.annotations?.when_to_use || !tool.annotations?.when_not_to_use) fail(`Live tool selection guidance missing: ${tool.name}`);
+}
 
 const firstCall = await callMcp({
   jsonrpc: "2.0",

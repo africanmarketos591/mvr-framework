@@ -1,25 +1,57 @@
-Creative Commons Attribution 4.0 International (CC BY 4.0)
+# African Market OS / Minimum Viable Relationships Rights Map
 
-Copyright (c) 2023-2026 Farouk Mark Mukiibi
+Copyright (c) 2023-2026 Farouk Mark Mukiibi. All rights reserved except where an express license grant below or in a more specific file applies.
 
-This repository's public framework text, citation metadata, and non-code documentation are licensed under the Creative Commons Attribution 4.0 International License, except where a file states otherwise.
+This is a mixed-rights repository. No single license applies to every file, service, publication, dataset, or brand asset.
 
-To view a copy of this license, visit:
+## 1. Public MVR framework publications and documentation
+
+Public framework text, citation metadata, and non-code documentation in this repository are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0), unless a file or directory states otherwise:
 
 https://creativecommons.org/licenses/by/4.0/
 
+Materials already released under CC BY 4.0 remain available under that license. Nothing in this repository revokes or narrows those existing grants.
+
 Required attribution:
 
-Mukiibi, Farouk Mark. Minimum Viable Relationships (MVR): Africa's Prerequisite to MVP. African Market OS.
+> Mukiibi, Farouk Mark. Minimum Viable Relationships (MVR): Africa's Prerequisite to MVP. African Market OS. https://doi.org/10.5281/zenodo.17054819
 
-Canonical source:
+## 2. Public integration code
 
-https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
+The following public-safe integration code is licensed under the Apache License 2.0:
 
-Canonical DOI:
+- `packages/mvr-mcp-bridge/**`
+- `examples/**`
+- `reference-agents/**`
+- `integrations/n8n/**`
+- `integrations/openai/**`
+- `plugins/anthropic-mvr-preflight/**`
 
-https://doi.org/10.5281/zenodo.17054819
+The Apache License 2.0 grant covers only the code in those paths. It does not grant access to or rights in the hosted MVR API, private scoring runtime, calibration assets, private labels, customer data, or production services.
 
-Important API and protected-asset boundary:
+Apache License 2.0: https://www.apache.org/licenses/LICENSE-2.0
 
-CC BY 4.0 permits sharing, adaptation, and commercial reuse of the public framework text, citation metadata, and non-code documentation covered by this file, provided attribution is preserved. It does not grant access to the hosted MVR API, private datasets, private labels, protected scoring runtime, calibration assets, trademarks, or production services. Those resources have separate terms. See `mvr-commercial-use-policy.md` and `well-known/mvr-license.json`.
+## 3. Resource-specific terms
+
+More specific terms control where present:
+
+- `benchmarks/mvr-bench/**` is governed by `benchmarks/mvr-bench/LICENSE.md`.
+- `packages/mvr-agent-sdk/npm/**` is governed by `packages/mvr-agent-sdk/npm/LICENSE.md`.
+- `packages/mvr-agent-sdk/python/**` is governed by `packages/mvr-agent-sdk/python/LICENSE.md`.
+- Third-party dependencies remain governed by their own licenses.
+
+## 4. Protected and non-public assets
+
+No license is granted through this repository to the hosted Worker or API source, scoring algorithms, private calibration manifests or weights, private benchmark labels or answer keys, private datasets, outcome-ledger records, customer evidence, tenant configuration, credentials, signing keys, production infrastructure, or other non-public assets. These assets are not part of this public repository and remain proprietary.
+
+Access to the hosted MVR API and production services is governed separately by the applicable subscription, service terms, order form, or written agreement. A license to repository content does not create API access or authorization to proxy, resell, or impersonate the service.
+
+## 5. Brand and certification
+
+Content and code licenses do not grant trademark, certification, endorsement, or branding rights. See `TRADEMARKS.md`.
+
+## 6. Ambiguity
+
+If a file is not covered by an express grant in this rights map or a more specific license notice, no permission is granted beyond rights provided by applicable law. Contact `info@africanmarketos.com` before relying on an assumed license.
+
+For the detailed path-level map, see `RIGHTS-MAP.md`. For the service boundary, see `mvr-commercial-use-policy.md` and `.well-known/mvr-license.json`.

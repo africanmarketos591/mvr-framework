@@ -1,0 +1,46 @@
+name: Rights map sanity
+
+on:
+  push:
+    paths:
+      - "LICENSE"
+      - "RIGHTS-MAP.md"
+      - "TRADEMARKS.md"
+      - "NOTICE"
+      - "CITATION.cff"
+      - "README.md"
+      - ".well-known/mvr-license.json"
+      - "well-known/mvr-license.json"
+      - "benchmarks/mvr-bench/**"
+      - "packages/mvr-agent-sdk/**"
+      - "packages/mvr-mcp-bridge/package.json"
+      - "scripts/validate_rights_map.py"
+      - ".github/workflows/rights-map-sanity.yml"
+  pull_request:
+    paths:
+      - "LICENSE"
+      - "RIGHTS-MAP.md"
+      - "TRADEMARKS.md"
+      - "NOTICE"
+      - "CITATION.cff"
+      - "README.md"
+      - ".well-known/mvr-license.json"
+      - "well-known/mvr-license.json"
+      - "benchmarks/mvr-bench/**"
+      - "packages/mvr-agent-sdk/**"
+      - "packages/mvr-mcp-bridge/package.json"
+      - "scripts/validate_rights_map.py"
+      - ".github/workflows/rights-map-sanity.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/validate_rights_map.py
