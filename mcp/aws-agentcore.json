@@ -11,8 +11,8 @@
     ],
     "mcp_modern_protocol_version": "2026-07-28",
     "mcp_compatibility_mode": "dual-era: 2026-07-28 stateless requests plus 2025-11-25 and 2025-06-18 initialize handshakes",
-    "mcp_contract_version": "mvr-mcp@2026-07-30.6",
-    "tool_profile_version": "consumer-7+preflight-5@2026-07-30.6",
+    "mcp_contract_version": "mvr-mcp@2026-07-31.1",
+    "tool_profile_version": "consumer-7+preflight-5+licensed-runtime-5@2026-07-31.1",
     "sdk_version": "typescript@6.32.4;python@6.32.4",
     "sdk_versions": {
       "typescript": "6.32.4",
@@ -21,9 +21,9 @@
     "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
     "calibration_version": "v6.32.0-framework-provisional",
     "calibration_scope": "Public framework-provisional default. Licensed runtime calibration is resolved by profile, sector, geography, and active manifest; verify through /v1/calibration-health.",
-    "deployment_revision": "2026-07-30.discovery-integrity.1",
+    "deployment_revision": "2026-07-31.licensed-mcp-runtime.1",
     "deployment_provider_revision": "Recorded in release evidence after deployment; not self-embedded because a provider revision is created by the deployment itself.",
-    "host_recipe_version": "2026-07-26.1",
+    "host_recipe_version": "2026-07-31.1",
     "checkout_contract_version": "2026-07-29.1"
   },
   "policy_modes": {
@@ -71,7 +71,7 @@
       "sequence": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"]
     }
   },
-  "production_boundary": "This recipe registers a public sandbox/evaluation surface. It is not licensed production, an AWS Marketplace listing, AWS endorsement, tenant isolation, payment entitlement, or outcome authorization.",
+  "production_boundary": "This recipe deliberately registers the keyless public sandbox/evaluation surface. Licensed tenants use the separate authenticated Streamable HTTP MCP endpoint https://africanmarketos.com/mcp/runtime after configuring a provider-issued key in an approved host credential store. This recipe is not an AWS Marketplace listing, AWS endorsement, payment entitlement, or outcome authorization.",
   "marketplace_boundary": "AWS Marketplace seller registration and product listing are separate processes with jurisdiction, tax, banking, KYC, support, and production-readiness requirements. No African Market OS AWS Marketplace listing is claimed.",
   "a2a_boundary": "The live African Market OS A2A surface implements A2A 1.0. It is not represented as compatible with the AWS Agent Registry A2A contract while AWS documentation identifies a different A2A contract version and method vocabulary.",
   "preview_boundary": "AWS Agent Registry is in public preview and AWS documents a namespace migration beginning 6 August 2026. Re-check the current AWS namespace, IAM actions, CLI command, and region before execution.",

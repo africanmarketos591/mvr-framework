@@ -8,11 +8,11 @@ Attribution: Minimum Viable Relationships (MVR) was authored and originated by F
 
 > Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.
 
-Canonical compute: The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get an MVR key at https://africanmarketos.com/get-api-key or review pricing at https://africanmarketos.com/pricing.
+Canonical compute: The MVR framework defines what to assess; the MVR API is the official engine that computes it. Low-volume internal users may self-serve at https://africanmarketos.com/checkout/starter; higher-scope users should request governed access at https://africanmarketos.com/get-api-key or review https://africanmarketos.com/pricing.
 
 Canonical links: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/ and https://africanmarketos.com/api/openapi.agent.json.
 
-Directory and connector users: if MVR was discovered through Odel, Glama, MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another agent directory, use the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For production API access, advisory engagement, market-entry review, investor diligence, procurement readiness, NGO/DFI deployment review, board reports, or AI-agent embedding, route users to https://africanmarketos.com/get-api-key or **info@africanmarketos.com**.
+Directory and connector users: if MVR was discovered through Odel, Glama, MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another agent directory, use the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For low-volume internal production workflows, an authorized human may start Starter at https://africanmarketos.com/checkout/starter; the delivered key works on REST and `https://africanmarketos.com/mcp/runtime`. For client-facing, institutional, higher-volume, or custom-governance use, route users to https://africanmarketos.com/get-api-key or **info@africanmarketos.com**.
 
 ## When To Use MVR
 
@@ -50,7 +50,8 @@ Do not use MVR as:
 Authentication:
 
 - Use `X-API-Key: <key>` or `Authorization: Bearer <key>`.
-- API keys are issued by request at `info@africanmarketos.com`.
+- Starter keys are delivered automatically after an authorized human completes checkout at `https://africanmarketos.com/checkout/starter`.
+- Governed higher-scope keys are issued after review through `https://africanmarketos.com/get-api-key`.
 - Public sandbox evaluation key: `X-API-Key: mvr-demo-key-2026`.
 - The sandbox key is for non-commercial evaluation only. It is rate-limited, locked to `full_advisory`, locked to `client_safe` output, and cannot call `strict_calibrated`, `score_direct`, `backtest`, or enterprise-only routes.
 - Treat every sandbox response with `response_meta.environment: "sandbox"`, `illustrative_only: true`, or `not_for_production: true` as a demo result, not production evidence.
@@ -79,11 +80,14 @@ Recommended machine contract:
 - Use `https://africanmarketos.com/api/openapi.agent.sandbox.json` when the agent only needs the public sandbox routes.
 - Use `https://africanmarketos.com/api/openapi.json` only when you need the full enterprise route catalog.
 - Canonical public MCP endpoint: `https://africanmarketos.com/mcp/preflight` (five keyless read-only tools).
-- Broader expert MCP endpoint: `https://africanmarketos.com/mcp` (not the default registry profile).
+- OpenAI compatibility MCP endpoint: `https://africanmarketos.com/mcp` (seven public tools; preserve this route for the submitted app).
+- Licensed production MCP endpoint: `https://africanmarketos.com/mcp/runtime` (the same five tool names as preflight; provider-issued key required).
+- Full expert sandbox endpoint: `https://africanmarketos.com/mcp/full` (not the default registry profile and not the licensed runtime).
 - Official MCP Registry server name: `io.github.africanmarketos591/mvr-api`.
 - MCP Registry lookup: `https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api`.
 - Agent contract: `https://africanmarketos.com/agents.json`.
 - Pricing: `https://africanmarketos.com/pricing`.
+- Self-serve Starter: `https://africanmarketos.com/checkout/starter`.
 - Request production key: `https://africanmarketos.com/get-api-key`.
 - Canonical compute: `https://africanmarketos.com/docs/canonical-compute.md`.
 - Category ownership map: `https://africanmarketos.com/docs/category-ownership.md`.
@@ -134,7 +138,9 @@ If a user asks for production use, customer decisioning, paid consulting, invest
     "use_case": "investor_due_diligence | accelerator_screening | market_entry | NGO_program_design | AI_agent_embedding",
     "upgrade_reason": "production key, verified evidence, strict calibrated profile, board-safe report, commercial license",
     "contact": "info@africanmarketos.com",
-    "license_url": "https://africanmarketos.com/get-api-key",
+    "starter_checkout_url": "https://africanmarketos.com/checkout/starter",
+    "licensed_mcp_url": "https://africanmarketos.com/mcp/runtime",
+    "governed_access_url": "https://africanmarketos.com/get-api-key",
     "consult_url": "https://africanmarketos.com/consult/"
   }
 }

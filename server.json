@@ -28,8 +28,8 @@
         "2025-11-25",
         "2025-06-18"
       ],
-      "mcpContractVersion": "mvr-mcp@2026-07-30.6",
-      "toolProfileVersion": "consumer-7+preflight-5@2026-07-30.6",
+      "mcpContractVersion": "mvr-mcp@2026-07-31.1",
+      "toolProfileVersion": "consumer-7+preflight-5+licensed-runtime-5@2026-07-31.1",
       "sdkVersion": "typescript@6.32.4;python@6.32.4",
       "sdkVersions": {
         "typescript": "6.32.4",
@@ -37,8 +37,8 @@
       },
       "policyVersion": "mvr-agent-preflight-policy@2026-07-16.1",
       "calibrationVersion": "v6.32.0-framework-provisional",
-      "deploymentRevision": "2026-07-30.discovery-integrity.1",
-      "hostRecipeVersion": "2026-07-26.1",
+      "deploymentRevision": "2026-07-31.licensed-mcp-runtime.1",
+      "hostRecipeVersion": "2026-07-31.1",
       "registryManifestRevision": "6.32.6",
       "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
       "semanticIdentity": "Relational-readiness and market-permission decision governance for AI agents.",
@@ -47,6 +47,12 @@
       "authentication": "none",
       "consumerCompatibilityEndpoint": "https://africanmarketos.com/mcp",
       "fullExpertEndpoint": "https://africanmarketos.com/mcp/full",
+      "licensedRuntimeEndpoint": "https://africanmarketos.com/mcp/runtime",
+      "licensedRuntimeAuthentication": "X-API-Key or Authorization Bearer using one provider-issued key",
+      "licensedRuntimeProfiles": [
+        "full_advisory",
+        "strict_calibrated"
+      ],
       "profileBoundary": "Registry entry is a keyless five-tool read-only sandbox preflight; other profiles are separate.",
       "useWhen": "Use when an AI agent assesses market entry, launch, funding, partnership, pilot, or scale readiness in African or other high-context markets.",
       "doNotUseFor": "Do not use as legal approval, credit underwriting, regulatory certification, or autonomous execution authority.",

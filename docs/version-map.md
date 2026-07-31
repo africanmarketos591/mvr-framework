@@ -10,14 +10,14 @@ Every integration should preserve these fields separately:
 |---|---|---|
 | `core_api_version` | `v6.32.0` | Protected Worker/API runtime. |
 | `mcp_protocol_versions` | `2026-07-28`; `2025-11-25`; `2025-06-18` | Supported Streamable HTTP MCP contracts: stateless modern requests plus both initialize-based compatibility versions. |
-| `mcp_contract_version` | `mvr-mcp@2026-07-30.6` | Public MCP schemas, discovery metadata, and transport contract. |
-| `tool_profile_version` | `consumer-7+preflight-5@2026-07-30.6` | Underlying public MCP family. The registry publishes only the five-tool read-only preflight profile. |
+| `mcp_contract_version` | `mvr-mcp@2026-07-31.1` | Public and licensed MCP schemas, discovery metadata, and transport contract. |
+| `tool_profile_version` | `consumer-7+preflight-5+licensed-runtime-5@2026-07-31.1` | MCP family: seven-tool compatibility, five-tool keyless preflight, and five-tool licensed runtime. The registry still publishes only the keyless preflight. |
 | `sdk_version` | `typescript@6.32.4;python@6.32.4` | Current published SDK lines, kept distinct by language. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-07-16.1` | Host-policy middleware and selection boundary. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-07-30.discovery-integrity.1` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
-| `deployment_provider_revision` | `dc7c7091-c6be-4daa-8e4a-1c8bc59ceedd` | Provider-generated Cloudflare version recorded after the production canaries; not self-embedded in runtime responses. |
-| `host_recipe_version` | `2026-07-26.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
+| `deployment_revision` | `2026-07-31.licensed-mcp-runtime.1` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
+| `deployment_provider_revision` | `Recorded in release evidence after deployment` | Provider-generated Cloudflare version; not self-embedded because the provider creates it during deployment. |
+| `host_recipe_version` | `2026-07-31.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
 Machine-readable source: `https://africanmarketos.com/.well-known/mvr-version.json`.
 
@@ -32,7 +32,10 @@ Machine-readable source: `https://africanmarketos.com/.well-known/mvr-version.js
 | TypeScript SDK generation line | `6.32.4` | Current | Package: `@africanmarketos/mvr-api-client`; published from immutable tag `v6.32.4`. |
 | Python SDK generation line | `6.32.4` | Current | Package: `mvr-api-client`; published from immutable tag `v6.32.4`. |
 | REST sandbox | `v6.32.0` runtime | Current, limited | Uses `X-API-Key: mvr-demo-key-2026` where the route contract requires it; non-commercial evaluation only. |
-| MCP Registry public profile | `public-preflight-read-only-v1` | Current, limited | Exactly five keyless read-only tools at `/mcp/preflight`; non-commercial evaluation only. `/mcp` is the seven-tool consumer compatibility profile and `/mcp/full` is the 22-tool full expert catalog. |
+| MCP Registry public profile | `public-preflight-read-only-v1` | Current, limited | Exactly five keyless read-only tools at `/mcp/preflight`; non-commercial evaluation only. |
+| OpenAI compatibility profile | `consumer-compatibility-7` | Current, limited | Seven tools at `/mcp`; retained for the existing OpenAI review submission. |
+| Licensed MCP runtime | `licensed-runtime-5` | Current | The same five bounded tool names at `/mcp/runtime`; tenant key required. One key can select `full_advisory` or `strict_calibrated` per request without widening licensed rights. |
+| Full expert MCP sandbox | `full-expert-22` | Current, limited | Broader expert catalogue at `/mcp/full`; not the default registry profile and not licensed production. |
 | MCP stdio bridge | `0.1.0` | Source available | Local transport adapter for stdio-only hosts and directory evaluation; the protected MVR engine remains remote and server-side. |
 
 ## Historical / Archived Lines
@@ -55,6 +58,8 @@ Sandbox OpenAPI: https://africanmarketos.com/api/openapi.agent.sandbox.json
 MCP: io.github.africanmarketos591/mvr-api
 Public MCP Registry profile: public-preflight-read-only-v1 (five keyless read-only tools)
 MCP endpoint: https://africanmarketos.com/mcp/preflight
+OpenAI compatibility endpoint: https://africanmarketos.com/mcp/
+Licensed MCP runtime: https://africanmarketos.com/mcp/runtime
 REST sandbox: X-API-Key: mvr-demo-key-2026 where the route contract requires it
 ```
 

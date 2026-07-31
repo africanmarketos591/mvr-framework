@@ -24,7 +24,7 @@ Remote Streamable HTTP endpoint:
 https://africanmarketos.com/mcp/preflight
 ```
 
-This is the canonical registry profile: exactly five keyless, read-only tools. It has no write-capable action. The seven-tool consumer compatibility endpoint is `https://africanmarketos.com/mcp`; the 22-tool full expert catalog is `https://africanmarketos.com/mcp/full`. Neither is the default registry surface.
+This is the canonical registry profile: exactly five keyless, read-only tools. It has no write-capable action. The seven-tool consumer compatibility endpoint is `https://africanmarketos.com/mcp`; the 22-tool full expert sandbox is `https://africanmarketos.com/mcp/full`; and licensed tenants use the same five tool names at `https://africanmarketos.com/mcp/runtime`. None of those separate profiles replaces the default registry surface.
 
 For hosts and directory evaluators that require a local stdio process, the repository also contains `packages/mvr-mcp-bridge/` and a root Dockerfile. The bridge forwards this same public profile and does not contain or reproduce protected MVR scoring or calibration logic.
 
@@ -85,9 +85,17 @@ mvr_first_call
 
 Preserve evidence gaps and abstention. Public `mvr_decision_check` is an evidence-routing aid and does not execute licensed MVR scoring. Public preflight use is advisory, non-commercial, and not field-validated unless the supplied evidence has been independently verified.
 
-### 5. Request licensed access
+### 5. Activate licensed access
 
-Request licensed production access at `https://africanmarketos.com/get-api-key` before repeated client-facing, investor-facing, board-facing, regulated, or commercial use.
+Low-volume internal users may start MVR API Starter at `https://africanmarketos.com/checkout/starter`. An authorized human completes checkout and receives one provider-issued key. That key works on authenticated REST and the licensed Streamable HTTP MCP endpoint:
+
+```text
+https://africanmarketos.com/mcp/runtime
+```
+
+Supply the key through `X-API-Key` or `Authorization: Bearer`. Select `full_advisory` or `strict_calibrated` per request with `X-Response-Profile`; a second key is not required. Do not place credentials in prompts, tool arguments, URLs, screenshots, repositories, or telemetry.
+
+Client-facing, investor-facing, board-facing, regulated, institutional, higher-volume, or custom-governance use requires reviewed access at `https://africanmarketos.com/get-api-key`.
 
 ## Host Policy Modes
 
@@ -108,7 +116,7 @@ Wrapper names such as `mvr_preflight_market_entry` are host-side expert mappings
 
 The xAI API path passed a controlled Grok 4.5 canary. A Grok.com custom-connector installation also discovered all five tools and produced an observed tool call. These observations do not mean an unconfigured ordinary Grok conversation can discover MVR automatically.
 
-The AWS recipe registers the public MCP sandbox only. It is account-scoped, not an AWS Marketplace listing or licensed production transport. The live African Market OS A2A 1.0 surface is documented separately and is not represented as compatible with an AWS A2A contract that uses a different version or method vocabulary.
+The AWS recipe registers the public MCP sandbox only. It is account-scoped and is not an AWS Marketplace listing or AWS endorsement. The separately documented licensed runtime is not silently substituted into that recipe because credentials and tenant authorization must be configured by the adopting host. The live African Market OS A2A 1.0 surface is documented separately and is not represented as compatible with an AWS A2A contract that uses a different version or method vocabulary.
 
 ## A2A Delegation
 

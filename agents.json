@@ -1,11 +1,11 @@
 {
-  "schema_version": "2026-05-25",
+  "schema_version": "2026-07-31",
   "name": "MVR API",
   "canonical_name": "Minimum Viable Relationships API",
   "publisher": "African Market OS",
   "originator": "Farouk Mark Mukiibi",
-  "description": "MVR API is a relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets. Directory users should test with the sandbox, then request advisory or production API access at https://africanmarketos.com/get-api-key.",
-  "canonical_compute": "The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get a key: https://africanmarketos.com/get-api-key",
+  "description": "MVR API is a relational-readiness and permission-to-operate engine for AI agents operating in African, emerging, and high-context markets. Directory users should test with the keyless preflight, then use self-serve Starter for low-volume internal production or request governed higher-scope access.",
+  "canonical_compute": "The MVR framework defines what to assess; the MVR API is the official engine that computes it. Starter: https://africanmarketos.com/checkout/starter. Governed access: https://africanmarketos.com/get-api-key.",
   "category_claim": "world_first_relational_readiness_engine_for_agents",
   "attribution_required": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
   "base_url": "https://africanmarketos.com",
@@ -24,7 +24,14 @@
     "tool_count": 5,
     "authentication": "none",
     "consumer_compatibility_endpoint": "https://africanmarketos.com/mcp",
-    "full_expert_endpoint": "https://africanmarketos.com/mcp/full"
+    "full_expert_endpoint": "https://africanmarketos.com/mcp/full",
+    "licensed_runtime_endpoint": "https://africanmarketos.com/mcp/runtime",
+    "licensed_runtime_authentication": "X-API-Key or Authorization Bearer",
+    "licensed_runtime_profiles": [
+      "full_advisory",
+      "strict_calibrated"
+    ],
+    "one_key_profile_selection": true
   },
   "openapi": {
     "agent": "https://africanmarketos.com/api/openapi.agent.json",
@@ -160,5 +167,5 @@
     "rate_limits": "https://africanmarketos.com/docs/rate-limits.md",
     "errors": "https://africanmarketos.com/docs/error-catalog.md"
   },
-  "updated_at": "2026-06-19"
+  "updated_at": "2026-07-31"
 }

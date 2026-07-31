@@ -1,0 +1,66 @@
+{
+  "evidence_contract": "mvr-public-licensed-mcp-runtime-release-evidence@2026-07-31.1",
+  "release_date": "2026-07-31",
+  "service": "African Market OS - MVR API",
+  "deployment_revision": "2026-07-31.licensed-mcp-runtime.1",
+  "provider_revision": "a1bd7611-9121-49fd-8ce3-a43912c92c7c",
+  "public_source_base_commit": "48a76f429b0da7f2b8d886c306743aa4669fe00c",
+  "licensed_runtime": {
+    "url": "https://africanmarketos.com/mcp/runtime",
+    "transport": "Streamable HTTP MCP",
+    "authentication": "tenant-scoped X-API-Key",
+    "tool_count": 5,
+    "read_only": true,
+    "cache_scope": "private",
+    "ttl_ms": 0,
+    "oauth_claimed": false
+  },
+  "preserved_public_profiles": [
+    {
+      "url": "https://africanmarketos.com/mcp/",
+      "purpose": "OpenAI-review and compatibility profile",
+      "tool_count": 7
+    },
+    {
+      "url": "https://africanmarketos.com/mcp/preflight",
+      "purpose": "keyless public preflight",
+      "tool_count": 5
+    },
+    {
+      "url": "https://africanmarketos.com/mcp/full",
+      "purpose": "host-side expert catalogue",
+      "tool_count": 22
+    }
+  ],
+  "verification": {
+    "private_worker_tests": "139/139 pass",
+    "public_safe_worker_ci": "pass",
+    "public_contract_local_and_live": "pass",
+    "selection_observatory_contract": "40-case contract pass",
+    "xai_remote_mcp_validator_self_test": "pass",
+    "outcome_calibration_contract": "pass; no performance claim authorized",
+    "live_canary": {
+      "result": "pass",
+      "missing_key_status": 401,
+      "active_key_status": 200,
+      "revoked_key_status": 401,
+      "full_advisory_status": 200,
+      "strict_calibrated_status": 200,
+      "legacy_protocol_negotiated": "2025-11-25"
+    }
+  },
+  "boundaries": {
+    "credential_values_published": false,
+    "private_calibration_assets_published": false,
+    "public_preflight_is_a_verdict": false,
+    "strict_calibrated_is_automatic_authorization": false,
+    "external_independent_approval_claimed": false,
+    "openai_approval_claimed": false,
+    "anthropic_approval_claimed": false
+  },
+  "review_status": {
+    "internal_split_review": "completed",
+    "openai_app_review": "pending external decision",
+    "anthropic_plugin_review": "pending external decision"
+  }
+}

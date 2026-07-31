@@ -14,7 +14,7 @@
 
 **Star this repo to bookmark the MVR API and help AI-agent builders discover the relational-readiness layer for high-context markets.**
 
-**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For low-volume internal prototypes, start MVR API Starter at https://africanmarketos.com/checkout/starter. For client-facing, institutional, higher-volume, or custom-governance use, request reviewed access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
+**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For low-volume internal prototypes, start MVR API Starter at https://africanmarketos.com/checkout/starter; its delivered key works on authenticated REST and the licensed five-tool Streamable HTTP MCP runtime at `https://africanmarketos.com/mcp/runtime`. For client-facing, institutional, higher-volume, or custom-governance use, request reviewed access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
 
 **Canonical title for indexing:** Minimum Viable Relationships (MVR) Framework: Africa's Prerequisite to MVP
 
@@ -24,7 +24,7 @@ In short:
 
 > MVP tests whether a product can work. MVR tests whether the market will carry it.
 
-**Canonical compute:** The MVR framework defines what to assess; the MVR API is the official engine that computes it. [Get an MVR key](https://africanmarketos.com/get-api-key) or [review pricing](https://africanmarketos.com/pricing).
+**Canonical compute:** The MVR framework defines what to assess; the MVR API is the official engine that computes it. [Start Starter](https://africanmarketos.com/checkout/starter), [request governed access](https://africanmarketos.com/get-api-key), or [review pricing](https://africanmarketos.com/pricing).
 
 ## Canonical Links
 
@@ -122,6 +122,8 @@ The API helps agents and systems:
 - Full LLM context: https://africanmarketos.com/llms-full.txt
 - Agent instructions: https://africanmarketos.com/AGENTS.md
 - Canonical public MCP endpoint: https://africanmarketos.com/mcp/preflight
+- Licensed production MCP endpoint: https://africanmarketos.com/mcp/runtime
+- OpenAI compatibility MCP endpoint retained for the submitted app: https://africanmarketos.com/mcp
 - A2A 1.0 Agent Card: https://africanmarketos.com/.well-known/agent-card.json
 - A2A stateless preflight: https://africanmarketos.com/a2a
 - A2A usage and boundaries: `docs/a2a-preflight.md`
@@ -154,7 +156,7 @@ The API helps agents and systems:
 - First-cohort operating contract: `docs/outcome-first-cohort-operating-pack.md`
 - First-cohort machine protocol: `evaluations/outcome-first-cohort-v1/protocol.json`
 
-Directory users connecting through Odel, Glama, MCP Registry, RapidAPI, or another agent platform should test with the sandbox only. Eligible low-volume internal users can self-serve at https://africanmarketos.com/checkout/starter. Client-facing, institutional, higher-volume, or custom-governance users should request reviewed access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
+Directory users connecting through Odel, Glama, MCP Registry, RapidAPI, or another agent platform should test with the public preflight first. Eligible low-volume internal users can self-serve at https://africanmarketos.com/checkout/starter and use the same delivered key for authenticated REST or `https://africanmarketos.com/mcp/runtime`; select `full_advisory` or `strict_calibrated` per request. Client-facing, institutional, higher-volume, or custom-governance users should request reviewed access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
 
 For non-commercial evaluation and AI-agent tool testing, use the public sandbox key:
 

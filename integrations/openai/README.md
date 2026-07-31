@@ -7,7 +7,13 @@ These public-safe assets help an organization configure African Market OS in Ope
 - Preserve `https://africanmarketos.com/mcp/` for the existing OpenAI review submission.
 - Use `https://africanmarketos.com/mcp/preflight` for the canonical keyless five-tool read-only profile.
 - Begin consequential market decisions with `mvr_first_call`.
-- Public MCP output is a non-verdict evaluation surface; licensed production computation remains separate.
+- Public MCP output is a non-verdict evaluation surface.
+- Licensed tenants may separately use `https://africanmarketos.com/mcp/runtime`
+  with a provider-issued key and either `full_advisory` or
+  `strict_calibrated`.
+
+The licensed runtime is a distinct host integration. Do not replace or redirect
+the submitted `/mcp/` compatibility route while OpenAI review is pending.
 
 ## Workspace Agent templates
 

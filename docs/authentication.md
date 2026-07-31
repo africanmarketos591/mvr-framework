@@ -12,7 +12,14 @@ or:
 Authorization: Bearer your_api_key
 ```
 
-API keys are issued by request at `info@africanmarketos.com`.
+Starter keys are delivered automatically after checkout at:
+
+```text
+https://africanmarketos.com/checkout/starter
+```
+
+Governed, client-facing, institutional, or higher-scope access remains subject to
+review at `https://africanmarketos.com/get-api-key`.
 
 ## Public Sandbox Key
 
@@ -40,7 +47,18 @@ Production keys may be scoped by:
 - allowed output modes
 - response profile
 
-Do not embed API keys in client-side browser code.
+A licensed key can authenticate both tenant-scoped REST routes and the licensed
+Streamable HTTP MCP runtime:
+
+```text
+https://africanmarketos.com/mcp/runtime
+```
+
+The runtime accepts the same `X-API-Key` or `Authorization: Bearer` headers. It
+does not accept credentials in tool arguments, query strings, browser-side
+scripts, screenshots, repositories, prompts, or chat messages. African Market
+OS does not claim an OAuth flow for this endpoint; use only a provider-issued
+key.
 
 ## Response Profiles
 
@@ -57,3 +75,7 @@ X-Response-Profile: strict_calibrated
 ```
 
 `strict_calibrated` may abstain where evidence or calibration is insufficient. Treat abstention as a safety result, not a transport failure.
+
+The same licensed key may select either profile per request. Profile selection
+does not widen the tenant's licensed routes, quotas, output modes, or other
+rights.
