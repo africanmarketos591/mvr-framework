@@ -60,6 +60,11 @@ const readme = fs.readFileSync("mcp/README.md", "utf8");
 for (const name of expectedTools) if (!readme.includes(name)) fail(`MCP README omits ${name}`);
 if (readme.replace(/\s/g, "").includes('"name":"mvr_preflight_market_entry"')) fail("MCP README calls a host-side wrapper as a production tool");
 
+if (process.argv.includes("--local-only")) {
+  console.log(JSON.stringify({ status: "ok", mode: "local_only", local_registry_revision: server.version, endpoint, tool_count: expectedTools.length }));
+  process.exit(0);
+}
+
 async function callMcp(body, protocolVersion = null) {
   const headers = {
     "content-type": "application/json",

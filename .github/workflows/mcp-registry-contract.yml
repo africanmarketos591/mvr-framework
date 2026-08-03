@@ -20,16 +20,24 @@ on:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: 22
-      - name: Verify manifests, client examples, and live five-tool profile
+          node-version: "24.11.0"
+      - name: Verify local manifests and client examples
+        run: node scripts/verify-mcp-registry-contract.mjs --local-only
+      - name: Verify live five-tool profile and Registry alignment
+        if: github.event_name != 'pull_request'
         run: node scripts/verify-mcp-registry-contract.mjs
       - name: Install MCP publisher
         run: |
-          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
+          curl --fail --show-error --location --proto '=https' --tlsv1.2 \
+            --output mcp-publisher.tar.gz \
+            "https://github.com/modelcontextprotocol/registry/releases/download/v1.8.0/mcp-publisher_linux_amd64.tar.gz"
+          echo "1370446bbe74d562608e8005a6ccce02d146a661fbd78674e11cc70b9618d6cf  mcp-publisher.tar.gz" | sha256sum --check --strict
+          tar --extract --gzip --file mcp-publisher.tar.gz mcp-publisher
+          chmod +x mcp-publisher
       - name: Validate registry manifest
         run: ./mcp-publisher validate server.json

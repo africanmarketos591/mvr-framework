@@ -48,6 +48,8 @@ on:
       - "scripts/validate_public_claim_integrity.py"
       - "scripts/validate_outcome_calibration_contract.py"
       - "scripts/validate_outcome_first_cohort.py"
+      - "scripts/validate_workflow_pinning.py"
+      - ".github/workflows/**"
       - "reference-agents/mvr-market-entry-preflight/**"
       - ".github/workflows/mcp-contract-sanity.yml"
   push:
@@ -83,20 +85,22 @@ on:
       - "scripts/validate_public_claim_integrity.py"
       - "scripts/validate_outcome_calibration_contract.py"
       - "scripts/validate_outcome_first_cohort.py"
+      - "scripts/validate_workflow_pinning.py"
+      - ".github/workflows/**"
       - ".github/workflows/mcp-contract-sanity.yml"
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 8
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
         with:
-          node-version: "24"
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+          node-version: "24.11.0"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
-          python-version: "3.12"
+          python-version: "3.12.12"
       - name: Check canonical MCP version synchronization
         run: python scripts/sync_mcp_version_contract.py --check
       - name: Validate repository MCP contracts
@@ -115,17 +119,19 @@ jobs:
         run: python scripts/validate_n8n_first_call.py
       - name: Validate benchmark and license claim integrity
         run: python scripts/validate_public_claim_integrity.py
+      - name: Reject mutable workflow dependencies
+        run: python scripts/validate_workflow_pinning.py
 
   live-canary:
     if: github.event_name == 'workflow_dispatch' && inputs.validate_live
     needs: validate
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 8
     steps:
-      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
-          python-version: "3.12"
+          python-version: "3.12.12"
       - name: Validate deployed MCP contracts
         run: python scripts/validate_mcp_public_contract.py --live
       - name: Validate deployed outcome-calibration contract

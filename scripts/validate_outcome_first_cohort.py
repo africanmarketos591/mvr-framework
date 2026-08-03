@@ -185,9 +185,16 @@ def main() -> int:
         "must remain separate",
         "silence, non-response, missing evidence, or withdrawal",
         "No accuracy, lift, reliability, failure-rate, calibration, or causal-impact number",
+        "unique_prospectively_enrolled_decisions_with_all_enrolled_horizons_independently_reviewed_and_included",
+        "every enrolled 6-, 12-, and 18-month horizon independently reviewed and included",
         "validator alone is not runtime certification",
     ):
         require(phrase in operating_pack, f"operating pack is missing required boundary: {phrase}")
+
+    require(
+        "have an independently reviewed included observation" not in operating_pack,
+        "operating pack still permits a one-observation publication denominator",
+    )
 
     require("issue_consent_token" in runbook, "ledger runbook does not document consent-token issuance")
     require("consent_token_once" in runbook, "ledger runbook does not document the one-time token")

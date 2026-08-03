@@ -149,7 +149,7 @@ Incomplete follow-up is reported as incomplete follow-up. It is not a model miss
 
 The first ten cases are an operating cohort only. No accuracy, lift, reliability, failure-rate, calibration, or causal-impact number may be published from it.
 
-A public performance result remains withheld until at least 50 unique prospectively enrolled decisions have an independently reviewed included observation and at least three geographies are represented. Any release then requires a separately locked protocol, denominator, horizons, exclusions, uncertainty, misses, and abstentions.
+A public performance result remains withheld until at least 50 unique prospectively enrolled decisions have every enrolled 6-, 12-, and 18-month horizon independently reviewed and included, and at least three geographies are represented. The counting unit is `unique_prospectively_enrolled_decisions_with_all_enrolled_horizons_independently_reviewed_and_included`. Any release then requires a separately locked protocol, denominator, horizons, exclusions, uncertainty, misses, and abstentions.
 
 Machine-readable contract:
 
