@@ -2,10 +2,17 @@ name: MCP Contract Sanity
 
 on:
   workflow_dispatch:
+    inputs:
+      validate_live:
+        description: "Also compare tracked contracts with the deployed production surface"
+        required: false
+        default: false
+        type: boolean
   pull_request:
     branches: ["main"]
     paths:
       - "mcp/**"
+      - ".well-known/mvr-version.json"
       - ".well-known/mvr-selection-observatory.json"
       - ".well-known/agent-card.json"
       - "server.json"
@@ -30,6 +37,7 @@ on:
       - "Add ATTRIBUTION.md"
       - "LICENSE"
       - "scripts/validate_mcp_public_contract.py"
+      - "scripts/sync_mcp_version_contract.py"
       - "scripts/validate_xai_mcp_host.py"
       - "scripts/validate_n8n_first_call.py"
       - "scripts/validate_public_claim_integrity.py"
@@ -39,11 +47,13 @@ on:
     branches: ["main"]
     paths:
       - "mcp/**"
+      - ".well-known/mvr-version.json"
       - ".well-known/mvr-selection-observatory.json"
       - ".well-known/agent-card.json"
       - "server.json"
       - "docs/version-map.md"
       - "scripts/validate_mcp_public_contract.py"
+      - "scripts/sync_mcp_version_contract.py"
       - "scripts/validate_xai_mcp_host.py"
       - "integrations/n8n/**"
       - "benchmarks/mvr-bench/**"
@@ -72,7 +82,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate repository and production MCP contracts
+      - name: Check canonical MCP version synchronization
+        run: python scripts/sync_mcp_version_contract.py --check
+      - name: Validate repository MCP contracts
+        run: python scripts/validate_mcp_public_contract.py
+      - name: Validate deployed MCP contracts
+        if: github.event_name == 'workflow_dispatch' && inputs.validate_live
         run: python scripts/validate_mcp_public_contract.py --live
       - name: Run Python reference-client self-test
         run: python reference-agents/mvr-market-entry-preflight/python/mvr_preflight.py --self-test
