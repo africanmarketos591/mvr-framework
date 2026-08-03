@@ -34,6 +34,7 @@ def main() -> int:
 
     for path in sorted(workflow_root.glob("*.yml")) + sorted(workflow_root.glob("*.yaml")):
         body = path.read_text(encoding="utf-8")
+        lines = body.splitlines()
         relative = path.relative_to(root).as_posix()
         for match in ACTION_REF.finditer(body):
             action = match.group(1)
@@ -59,6 +60,38 @@ def main() -> int:
         if "mcp-publisher" in body and "curl" in body:
             if MCP_PUBLISHER_URL not in body or MCP_PUBLISHER_SHA256 not in body:
                 errors.append(f"{relative}:mcp_publisher_checksum_contract")
+
+        top_permissions_index = next((index for index, line in enumerate(lines) if line == "permissions:"), None)
+        top_permissions: list[str] = []
+        if top_permissions_index is not None:
+            for line in lines[top_permissions_index + 1 :]:
+                if line and not line.startswith(" "):
+                    break
+                top_permissions.append(line)
+            if not any(re.fullmatch(r"\s{2}contents:\s*read", line) for line in top_permissions):
+                errors.append(f"{relative}:top_permissions_without_contents_read")
+            if any(re.fullmatch(r"\s{2}id-token:\s*write", line) for line in top_permissions):
+                errors.append(f"{relative}:workflow_wide_oidc_write")
+
+        jobs_index = next((index for index, line in enumerate(lines) if line == "jobs:"), None)
+        job_starts: list[tuple[str, int]] = []
+        if jobs_index is not None:
+            for index in range(jobs_index + 1, len(lines)):
+                match = re.fullmatch(r"\s{2}([A-Za-z0-9_-]+):\s*", lines[index])
+                if match:
+                    job_starts.append((match.group(1), index))
+        for position, (job_name, start) in enumerate(job_starts):
+            end = job_starts[position + 1][1] if position + 1 < len(job_starts) else len(lines)
+            job_lines = lines[start:end]
+            has_job_permissions = any(line == "    permissions:" for line in job_lines)
+            if top_permissions_index is None and not has_job_permissions:
+                errors.append(f"{relative}:job_without_explicit_permissions:{job_name}")
+            has_oidc_write = any(re.fullmatch(r"\s{6}id-token:\s*write", line) for line in job_lines)
+            if has_oidc_write:
+                if not has_job_permissions or not any(re.fullmatch(r"\s{6}contents:\s*read", line) for line in job_lines):
+                    errors.append(f"{relative}:oidc_job_without_contents_read:{job_name}")
+                if re.search(r"(?:validate|test|verify)", job_name, re.IGNORECASE):
+                    errors.append(f"{relative}:validation_job_has_oidc_write:{job_name}")
 
     if errors:
         print("workflow pinning validation failed", file=sys.stderr)

@@ -1,5 +1,8 @@
 name: Agent distribution sanity
 
+permissions:
+  contents: read
+
 on:
   push:
     paths:

@@ -1,5 +1,8 @@
 name: OpenAPI Sanity
 
+permissions:
+  contents: read
+
 on:
   workflow_dispatch:
   push:

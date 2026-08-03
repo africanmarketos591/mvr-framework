@@ -1,5 +1,8 @@
 name: Postman Sandbox Smoke Test
 
+permissions:
+  contents: read
+
 on:
   workflow_dispatch:
   push:
