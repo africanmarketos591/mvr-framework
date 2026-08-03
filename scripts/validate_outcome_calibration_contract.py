@@ -49,7 +49,7 @@ def validate_runbook() -> None:
         "horizon_months",
         "reviewer_attestation",
         "confirm_withdrawal",
-        "50 unique prospectively enrolled decisions",
+        "50 unique prospectively enrolled decisions whose every enrolled horizon is independently reviewed and included",
         "3 represented geographies",
         "does **not** mean that MVR has published predictive accuracy",
         "server-keyed HMAC-SHA256",
@@ -106,6 +106,15 @@ def validate_openapi_operation(openapi: dict, source: str) -> dict:
             f"{source} must not accept caller-supplied {free_text_field}",
         )
     require(schema.get("additionalProperties") is False, f"{source} outcome-ledger request must fail closed")
+    gate = operation.get("x-mvr-outcome-publication-gate") or {}
+    require(gate.get("minimum_settled_outcomes") == 50, f"{source} settled-outcome floor drifted")
+    require(gate.get("minimum_geographies") == 3, f"{source} geography floor drifted")
+    require(gate.get("required_enrollment_status") == "settled", f"{source} settlement status drifted")
+    require(
+        gate.get("counting_unit")
+        == "unique_prospectively_enrolled_decisions_with_all_enrolled_horizons_independently_reviewed_and_included",
+        f"{source} publication counting unit is unsafe or ambiguous",
+    )
     return operation
 
 
@@ -130,11 +139,12 @@ def validate_live() -> None:
         "public result is not explicitly withheld",
     )
     gate = status.get("publication_gate") or {}
-    require(gate.get("minimum_reviewed_outcomes") == 50, "reviewed-outcome floor drifted")
+    require(gate.get("minimum_settled_outcomes") == 50, "settled-outcome floor drifted")
     require(gate.get("minimum_geographies") == 3, "geography floor drifted")
+    require(gate.get("required_enrollment_status") == "settled", "settlement status drifted")
     require(
         gate.get("counting_unit")
-        == "unique_prospectively_enrolled_decisions_with_at_least_one_included_observation",
+        == "unique_prospectively_enrolled_decisions_with_all_enrolled_horizons_independently_reviewed_and_included",
         "publication counting unit is unsafe or ambiguous",
     )
     openapi = fetch_json(OPENAPI_URL)

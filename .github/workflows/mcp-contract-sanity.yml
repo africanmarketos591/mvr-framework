@@ -1,5 +1,8 @@
 name: MCP Contract Sanity
 
+permissions:
+  contents: read
+
 on:
   workflow_dispatch:
     inputs:
@@ -19,6 +22,8 @@ on:
       - "docs/version-map.md"
       - "docs/host-policy-modes.md"
       - "docs/outcome-calibration-ledger.md"
+      - "docs/outcome-first-cohort-operating-pack.md"
+      - "evaluations/outcome-first-cohort-v1/**"
       - "docs/proof-of-preflight-design.md"
       - "evaluations/mvr-bench-selection-v0.1/**"
       - "reference-agents/mvr-market-entry-preflight/**"
@@ -41,6 +46,8 @@ on:
       - "scripts/validate_xai_mcp_host.py"
       - "scripts/validate_n8n_first_call.py"
       - "scripts/validate_public_claim_integrity.py"
+      - "scripts/validate_outcome_calibration_contract.py"
+      - "scripts/validate_outcome_first_cohort.py"
       - "reference-agents/mvr-market-entry-preflight/**"
       - ".github/workflows/mcp-contract-sanity.yml"
   push:
@@ -52,6 +59,9 @@ on:
       - ".well-known/agent-card.json"
       - "server.json"
       - "docs/version-map.md"
+      - "docs/outcome-calibration-ledger.md"
+      - "docs/outcome-first-cohort-operating-pack.md"
+      - "evaluations/outcome-first-cohort-v1/**"
       - "scripts/validate_mcp_public_contract.py"
       - "scripts/sync_mcp_version_contract.py"
       - "scripts/validate_xai_mcp_host.py"
@@ -71,6 +81,8 @@ on:
       - "LICENSE"
       - "scripts/validate_n8n_first_call.py"
       - "scripts/validate_public_claim_integrity.py"
+      - "scripts/validate_outcome_calibration_contract.py"
+      - "scripts/validate_outcome_first_cohort.py"
       - ".github/workflows/mcp-contract-sanity.yml"
 
 jobs:
@@ -78,17 +90,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "24"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"
       - name: Check canonical MCP version synchronization
         run: python scripts/sync_mcp_version_contract.py --check
       - name: Validate repository MCP contracts
         run: python scripts/validate_mcp_public_contract.py
-      - name: Validate deployed MCP contracts
-        if: github.event_name == 'workflow_dispatch' && inputs.validate_live
-        run: python scripts/validate_mcp_public_contract.py --live
+      - name: Validate prospective outcome-calibration contract
+        run: python scripts/validate_outcome_calibration_contract.py
+      - name: Validate first outcome-cohort protocol
+        run: python scripts/validate_outcome_first_cohort.py
       - name: Run Python reference-client self-test
         run: python reference-agents/mvr-market-entry-preflight/python/mvr_preflight.py --self-test
       - name: Run JavaScript reference-client self-test
@@ -96,6 +112,25 @@ jobs:
       - name: Run xAI Remote MCP validator self-test
         run: python scripts/validate_xai_mcp_host.py --self-test
       - name: Validate bounded n8n first-call template
-        run: python scripts/validate_n8n_first_call.py --live
+        run: python scripts/validate_n8n_first_call.py
       - name: Validate benchmark and license claim integrity
+        run: python scripts/validate_public_claim_integrity.py
+
+  live-canary:
+    if: github.event_name == 'workflow_dispatch' && inputs.validate_live
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - name: Validate deployed MCP contracts
+        run: python scripts/validate_mcp_public_contract.py --live
+      - name: Validate deployed outcome-calibration contract
+        run: python scripts/validate_outcome_calibration_contract.py --live
+      - name: Validate deployed n8n first-call contract
+        run: python scripts/validate_n8n_first_call.py --live
+      - name: Validate deployed benchmark and license claims
         run: python scripts/validate_public_claim_integrity.py --live

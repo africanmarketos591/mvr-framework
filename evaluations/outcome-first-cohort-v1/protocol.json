@@ -205,9 +205,11 @@
   ],
   "publication_boundary": {
     "public_performance_result_from_first_cohort": false,
-    "minimum_reviewed_outcomes": 50,
+    "minimum_settled_outcomes": 50,
     "minimum_geographies": 3,
-    "counting_unit": "unique_prospectively_enrolled_decisions_with_at_least_one_included_observation",
+    "counting_unit": "unique_prospectively_enrolled_decisions_with_all_enrolled_horizons_independently_reviewed_and_included",
+    "required_enrollment_status": "settled",
+    "required_review_status": "included_in_calibration_corpus",
     "separate_locked_release_required": true,
     "must_publish": [
       "cohort",

@@ -157,8 +157,14 @@ def main() -> int:
 
     publication = protocol.get("publication_boundary") or {}
     require(publication.get("public_performance_result_from_first_cohort") is False, "first cohort cannot publish performance")
-    require(publication.get("minimum_reviewed_outcomes") == 50, "publication outcome floor drifted")
+    require(publication.get("minimum_settled_outcomes") == 50, "publication settled-outcome floor drifted")
     require(publication.get("minimum_geographies") == 3, "publication geography floor drifted")
+    require(publication.get("required_enrollment_status") == "settled", "publication settlement status drifted")
+    require(
+        publication.get("counting_unit")
+        == "unique_prospectively_enrolled_decisions_with_all_enrolled_horizons_independently_reviewed_and_included",
+        "publication counting unit drifted",
+    )
     require(publication.get("separate_locked_release_required") is True, "performance release must be separately locked")
 
     for phrase in (

@@ -1,9 +1,20 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "MVR Core API",
+    "title": "MVR Core API - Full Expert Catalogue",
     "version": "v6.32.0",
-    "description": "The MVR framework defines what to assess; the MVR API is the official engine that computes it. Get an MVR key: https://africanmarketos.com/get-api-key Minimum Viable Relationships (MVR), published by African Market OS, evaluates whether evidence supports market trust, permission to operate, embeddedness, stakeholder and guardian readiness, reciprocity, local legitimacy, market belonging, and a safe next step before MVP, market entry, pilot, partnership, investment, or scale. v6.32.0 MVR Engine. Additive dual-lane runtime: public_reality + local_relational_assessment + reconciled_assessment, deterministic ROI, dual-profile governance, entity-resolution preflight, modality-aware completeness/audit, compiled_evidence ingestion, provenance-ledger validation, telemetry translation, gap planning, market leak scanning, and validation snapshot metadata. Public non-commercial sandbox evaluation is available with X-API-Key: mvr-demo-key-2026; sandbox calls are rate-limited, client_safe only, full_advisory only, illustrative_only, and not for production. Send X-Response-Profile: strict_calibrated only with a licensed production key for fail-closed institutional responses. See /v1/schema for full documentation."
+    "description": "The MVR framework defines what to assess; the MVR API is the official engine that computes it. Self-serve MVR API Starter checkout: https://africanmarketos.com/checkout/starter. Access guide and governed requests: https://africanmarketos.com/get-api-key Minimum Viable Relationships (MVR), published by African Market OS, evaluates whether evidence supports market trust, permission to operate, embeddedness, stakeholder and guardian readiness, reciprocity, local legitimacy, market belonging, and a safe next step before MVP, market entry, pilot, partnership, investment, or scale. v6.32.0 MVR Engine. Additive dual-lane runtime: public_reality + local_relational_assessment + reconciled_assessment, deterministic ROI, dual-profile governance, entity-resolution preflight, modality-aware completeness/audit, compiled_evidence ingestion, provenance-ledger validation, telemetry translation, gap planning, market leak scanning, and validation snapshot metadata. Public non-commercial sandbox evaluation is available with X-API-Key: mvr-demo-key-2026; sandbox calls are rate-limited, client_safe only, full_advisory only, illustrative_only, and not for production. Send X-Response-Profile: strict_calibrated only with a licensed production key for fail-closed institutional responses. See /v1/schema for full documentation."
+  },
+  "servers": [
+    {
+      "url": "https://africanmarketos.com",
+      "description": "Canonical MVR Core API origin"
+    }
+  ],
+  "x-mvr-catalog-profile": {
+    "id": "full-expert-catalogue",
+    "scope": "All published MVR Core API routes for expert integrations.",
+    "bounded_first_integration": "Use /api/openapi.agent.sandbox.json for the canonical five-route public preflight."
   },
   "x-mvr-semantic-identity": {
     "schema_version": "2026-07-16.v1",
@@ -250,8 +261,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -315,8 +326,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -534,8 +545,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -752,8 +763,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -810,8 +821,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -885,8 +896,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -999,8 +1010,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1094,6 +1105,61 @@
         }
       }
     },
+    "/mcp/runtime": {
+      "post": {
+        "summary": "Authenticated Streamable HTTP MCP adapter over the frozen five-tool MVR preflight. Every tool call is dispatched through the governed REST route with the same tenant, profile, policy, quota, revocation, calibration, and client-safe output controls.",
+        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "parameters": [],
+        "x-mvr-registry-route": "/mcp/runtime",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "validateLicensedMcpRuntime",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/cascade-runs": {
       "post": {
         "summary": "Run cascade impact scans for regulatory shocks, evidence expiry, and market events.",
@@ -1146,8 +1212,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1263,8 +1329,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1324,8 +1390,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1374,8 +1440,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1526,8 +1592,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1583,8 +1649,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1641,8 +1707,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1698,8 +1764,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1756,8 +1822,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1814,8 +1880,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1872,8 +1938,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1930,8 +1996,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -1987,8 +2053,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -2099,8 +2165,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -2277,8 +2343,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "subject": {
@@ -2661,8 +2727,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -2723,8 +2789,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -2849,8 +2915,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -2975,8 +3041,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -3045,8 +3111,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -3116,8 +3182,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -3832,8 +3898,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -3893,8 +3959,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -3953,8 +4019,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4059,8 +4125,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4166,8 +4232,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4226,8 +4292,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "mvr_scores": {
@@ -4302,8 +4368,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4361,8 +4427,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4420,8 +4486,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4479,8 +4545,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4539,8 +4605,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4597,8 +4663,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4655,8 +4721,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4712,8 +4778,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4774,8 +4840,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -4831,8 +4897,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -5106,11 +5172,12 @@
           }
         },
         "x-mvr-outcome-publication-gate": {
-          "minimum_reviewed_outcomes": 50,
+          "minimum_settled_outcomes": 50,
           "minimum_geographies": 3,
-          "counting_unit": "unique_prospectively_enrolled_decisions_with_at_least_one_included_observation",
+          "counting_unit": "unique_prospectively_enrolled_decisions_with_all_enrolled_horizons_independently_reviewed_and_included",
+          "required_enrollment_status": "settled",
           "required_review_status": "included_in_calibration_corpus",
-          "rule": "Both floors must be met before any public performance rate is calculated. Cohort, denominator, horizons, exclusions, uncertainty, misses, and abstentions must be published together."
+          "rule": "An enrollment counts only after every enrolled horizon is independently reviewed and included. Excluded, deferred, disputed, missing, or pending horizons do not count toward the settled-outcome floor and must remain visible in release accounting. Both floors must be met before any public performance rate is calculated."
         }
       }
     },
@@ -5163,8 +5230,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -5220,8 +5287,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -5278,8 +5345,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -5337,8 +5404,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -5396,8 +5463,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -5454,8 +5521,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -5555,8 +5622,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -5707,8 +5774,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "source_type": "crm",
@@ -5782,8 +5849,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6257,8 +6324,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6317,8 +6384,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6376,8 +6443,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6435,8 +6502,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6497,8 +6564,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6559,8 +6626,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6668,8 +6735,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6730,8 +6797,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6826,8 +6893,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -6885,8 +6952,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -7043,11 +7110,13 @@
     "/v1/recommended-inputs": {
       "post": {
         "summary": "Return recommended inputs for an archetype, country, goal, and evidence maturity level.",
-        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "description": "Returns route- and archetype-specific evidence guidance from the published request contract.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/recommended-inputs",
-        "x-mvr-maturity": "release_candidate",
+        "x-mvr-maturity": "stable",
         "x-mvr-labels": [
+          "developer_guidance",
+          "read_only",
           "board_safe_supported"
         ],
         "x-mvr-validator-contract": {
@@ -7090,7 +7159,124 @@
               "schema": {
                 "type": "object",
                 "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "properties": {
+                  "endpoint": {
+                    "type": "string",
+                    "description": "Route the caller is preparing, for example /v1/decision-check."
+                  },
+                  "route": {
+                    "type": "string",
+                    "description": "Alias of endpoint."
+                  },
+                  "path": {
+                    "type": "string",
+                    "description": "Alias of endpoint."
+                  },
+                  "entity_archetype": {
+                    "type": "string",
+                    "enum": [
+                      "telecom_operator",
+                      "mobile_money_operator",
+                      "fintech_platform",
+                      "financial_services_bank",
+                      "fintech_lending",
+                      "logistics_platform",
+                      "energy_utility",
+                      "extractives_operator",
+                      "real_estate_construction",
+                      "education_provider",
+                      "passenger_mobility",
+                      "b2b_saas_platform",
+                      "healthtech_platform",
+                      "insurance_platform",
+                      "fmcg_brand",
+                      "retail_chain",
+                      "ecommerce_platform",
+                      "manufacturer",
+                      "distributor_network",
+                      "ngo",
+                      "development_program",
+                      "public_institution",
+                      "survey_dataset",
+                      "solo_entrepreneur",
+                      "family_business",
+                      "cooperative_sacco",
+                      "cross_border_trader",
+                      "university_spinout",
+                      "diaspora_venture",
+                      "creator_economy_individual",
+                      "agritech_aggregator",
+                      "impact_enterprise",
+                      "religious_institution",
+                      "chama_savings_group"
+                    ]
+                  },
+                  "category": {
+                    "type": "string",
+                    "description": "Alias resolved to a supported entity archetype."
+                  },
+                  "subject": {
+                    "type": "object",
+                    "properties": {
+                      "entity_name": {
+                        "type": "string"
+                      },
+                      "entity_archetype": {
+                        "type": "string",
+                        "enum": [
+                          "telecom_operator",
+                          "mobile_money_operator",
+                          "fintech_platform",
+                          "financial_services_bank",
+                          "fintech_lending",
+                          "logistics_platform",
+                          "energy_utility",
+                          "extractives_operator",
+                          "real_estate_construction",
+                          "education_provider",
+                          "passenger_mobility",
+                          "b2b_saas_platform",
+                          "healthtech_platform",
+                          "insurance_platform",
+                          "fmcg_brand",
+                          "retail_chain",
+                          "ecommerce_platform",
+                          "manufacturer",
+                          "distributor_network",
+                          "ngo",
+                          "development_program",
+                          "public_institution",
+                          "survey_dataset",
+                          "solo_entrepreneur",
+                          "family_business",
+                          "cooperative_sacco",
+                          "cross_border_trader",
+                          "university_spinout",
+                          "diaspora_venture",
+                          "creator_economy_individual",
+                          "agritech_aggregator",
+                          "impact_enterprise",
+                          "religious_institution",
+                          "chama_savings_group"
+                        ]
+                      },
+                      "category": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "goal": {
+                    "type": "string"
+                  },
+                  "evidence_maturity": {
+                    "type": "string"
+                  }
+                },
+                "description": "Supply endpoint plus a supported entity_archetype or category for route-specific evidence guidance."
               }
             }
           }
@@ -7146,8 +7332,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -7203,8 +7389,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -7214,11 +7400,14 @@
     "/v1/remediation-path": {
       "post": {
         "summary": "Return the evidence repair path for blocked or abstained decisions. Alias of next-best-action with emphasis on non-authorizing remediation.",
-        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "description": "Returns a bounded repair path for blocked or abstained decisions. Remediation never forces a verdict upgrade or authorization.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/remediation-path",
-        "x-mvr-maturity": "release_candidate",
+        "x-mvr-maturity": "stable",
         "x-mvr-labels": [
+          "evidence_remediation",
+          "non_authorizing",
+          "read_only",
           "board_safe_supported"
         ],
         "x-mvr-validator-contract": {
@@ -7260,7 +7449,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": true,
+                "additionalProperties": false,
                 "properties": {
                   "decision_result": {
                     "type": "object",
@@ -7354,6 +7543,30 @@
                     ]
                   },
                   "audience": {
+                    "type": "string"
+                  },
+                  "gap_plan": {
+                    "type": "object"
+                  },
+                  "evidence_run": {
+                    "type": "object"
+                  },
+                  "evidence_recruitment_plan": {
+                    "type": "object"
+                  },
+                  "mvr_result": {
+                    "type": "object"
+                  },
+                  "decision_room": {
+                    "type": "object"
+                  },
+                  "red_team": {
+                    "type": "object"
+                  },
+                  "release_check": {
+                    "type": "object"
+                  },
+                  "project_id": {
                     "type": "string"
                   }
                 }
@@ -7458,8 +7671,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -7553,11 +7766,15 @@
     "/v1/first-call": {
       "get": {
         "summary": "Public activation bridge for AI agents, developers, and nontechnical users. Returns a non-authorizing first-use answer, missing evidence, exact next calls, and access routing without requiring a private key.",
-        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "description": "Public, rate-limited activation bridge. It returns evidence gaps and sequencing only; it never returns a verdict or authorization.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/first-call",
-        "x-mvr-maturity": "release_candidate",
-        "x-mvr-labels": [],
+        "x-mvr-maturity": "stable",
+        "x-mvr-labels": [
+          "public_activation",
+          "non_authorizing",
+          "read_only"
+        ],
         "x-mvr-validator-contract": {
           "name": "validateFirstCallActivation",
           "status": "registry_metadata_enforced_by_shared_gateway"
@@ -7587,11 +7804,15 @@
       },
       "post": {
         "summary": "Public activation bridge for AI agents, developers, and nontechnical users. Returns a non-authorizing first-use answer, missing evidence, exact next calls, and access routing without requiring a private key.",
-        "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
+        "description": "Public, rate-limited activation bridge. It returns evidence gaps and sequencing only; it never returns a verdict or authorization.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/first-call",
-        "x-mvr-maturity": "release_candidate",
-        "x-mvr-labels": [],
+        "x-mvr-maturity": "stable",
+        "x-mvr-labels": [
+          "public_activation",
+          "non_authorizing",
+          "read_only"
+        ],
         "x-mvr-validator-contract": {
           "name": "validateFirstCallActivation",
           "status": "registry_metadata_enforced_by_shared_gateway"
@@ -7619,13 +7840,206 @@
           }
         },
         "requestBody": {
-          "required": true,
+          "required": false,
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
                 "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "properties": {
+                  "subject": {
+                    "type": "object",
+                    "properties": {
+                      "entity_name": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "country": {
+                        "type": "string"
+                      },
+                      "entity_archetype": {
+                        "type": "string"
+                      },
+                      "category": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "market_scope": {
+                    "type": "object",
+                    "properties": {
+                      "country": {
+                        "type": "string"
+                      },
+                      "sector": {
+                        "type": "string"
+                      },
+                      "city": {
+                        "type": "string"
+                      },
+                      "town_or_zone": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "entity": {
+                    "type": "string"
+                  },
+                  "entity_name": {
+                    "type": "string"
+                  },
+                  "company_name": {
+                    "type": "string"
+                  },
+                  "company": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "query": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "sector": {
+                    "type": "string"
+                  },
+                  "industry": {
+                    "type": "string"
+                  },
+                  "entity_archetype": {
+                    "type": "string"
+                  },
+                  "use_case": {
+                    "type": "string"
+                  },
+                  "question": {
+                    "type": "string"
+                  },
+                  "intent": {
+                    "type": "string"
+                  },
+                  "decision": {
+                    "type": "string"
+                  },
+                  "intended_action": {
+                    "type": "string"
+                  },
+                  "decision_context": {
+                    "type": "string"
+                  },
+                  "stage": {
+                    "type": "string"
+                  },
+                  "target_users": {
+                    "type": "string"
+                  },
+                  "evidence_available": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  },
+                  "evidence_types": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  },
+                  "sources": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  },
+                  "known_partners": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  },
+                  "partners": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  },
+                  "channels": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  },
+                  "evidence_pack": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  },
+                  "evidence_items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  },
+                  "city": {
+                    "type": "string"
+                  },
+                  "town_or_zone": {
+                    "type": "string"
+                  }
+                },
+                "description": "Keyless, non-authorizing activation input. Supply the context available; unknown top-level fields fail closed so agent integrations detect contract drift."
               }
             }
           }
@@ -7853,8 +8267,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8468,8 +8882,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8525,8 +8939,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8582,8 +8996,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8640,8 +9054,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8698,8 +9112,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8756,8 +9170,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8814,8 +9228,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8872,8 +9286,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8930,8 +9344,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -8988,8 +9402,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9046,8 +9460,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9104,8 +9518,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9162,8 +9576,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9220,8 +9634,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9278,8 +9692,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9336,8 +9750,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9500,8 +9914,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9557,8 +9971,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9658,8 +10072,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9721,8 +10135,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9779,8 +10193,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9837,8 +10251,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9895,8 +10309,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -9953,8 +10367,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10011,8 +10425,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10069,8 +10483,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10127,8 +10541,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10185,8 +10599,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10248,8 +10662,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10306,8 +10720,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10364,8 +10778,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "event_type": "fuel_shortage",
@@ -10482,8 +10896,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10592,8 +11006,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10700,8 +11114,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10802,8 +11216,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -10904,8 +11318,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11006,8 +11420,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11112,8 +11526,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11308,8 +11722,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11410,8 +11824,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11467,8 +11881,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11527,8 +11941,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11586,8 +12000,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11643,8 +12057,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11700,8 +12114,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11803,8 +12217,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11862,8 +12276,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -11922,8 +12336,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -12136,8 +12550,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -12196,8 +12610,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "subject": {
@@ -12272,8 +12686,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "business_type": "SME",
@@ -12656,8 +13070,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -12716,8 +13130,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "entity_name": "Airtel Uganda",
@@ -12790,8 +13204,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "project_id": "project-001",
@@ -12915,8 +13329,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "project_id": "project-001",
@@ -13028,8 +13442,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "project_id": "project-001",
@@ -13104,8 +13518,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "prerequisite": "Create the tenant-scoped project first with POST /v1/project-memory/upsert using project_id=\"project-001\".",
@@ -13177,8 +13591,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "field_signal_request_id": "FSR-example",
@@ -13252,8 +13666,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "project_id": "project-001",
@@ -13327,8 +13741,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "project_id": "project-001",
@@ -13424,8 +13838,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "project_id": "project-001",
@@ -13504,8 +13918,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "market_scope": {
@@ -13583,8 +13997,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "market_scope": {
@@ -13660,8 +14074,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "market_scope": {
@@ -13755,8 +14169,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "applicant": {
@@ -13858,8 +14272,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "market_scope": {
@@ -13959,8 +14373,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "market_scope": {
@@ -14071,8 +14485,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "endpoint_url": "https://example.com/mvr/webhook",
@@ -14138,8 +14552,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "project_id": "project-001",
@@ -14253,8 +14667,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "project_id": "project-001",
@@ -14329,8 +14743,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -14433,8 +14847,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -14492,8 +14906,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "project_id": "project-001",
@@ -14629,8 +15043,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "source_type": "crm",
@@ -14709,8 +15123,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               },
               "example": {
                 "evidence_id": "EV-123",
@@ -14959,8 +15373,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -15250,8 +15664,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -15310,8 +15724,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -15369,8 +15783,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -15428,8 +15842,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -15531,8 +15945,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -15636,8 +16050,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -15693,8 +16107,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -15752,8 +16166,8 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "additionalProperties": false,
-                "description": "This route has a constrained runtime contract. Use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
               }
             }
           }
@@ -15880,6 +16294,7 @@
                   "use_case": {
                     "type": "string",
                     "enum": [
+                      "institutional_shadow_review",
                       "market_entry_preflight",
                       "retail_expansion_readiness",
                       "fintech_corridor_diligence",

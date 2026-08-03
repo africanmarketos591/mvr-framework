@@ -18,10 +18,12 @@ Activation means MVR can offer governed follow-up for eligible decisions, bind i
 
 Public performance remains withheld until there are at least:
 
-- 50 unique prospectively enrolled decisions with an independently reviewed, included observation
+- 50 unique prospectively enrolled decisions whose every enrolled horizon is independently reviewed and included
 - 3 represented geographies
 
 Any later release must lock the cohort, denominator, horizons, exclusions, uncertainty, misses, and abstentions. Observed association is not proof that MVR caused an outcome.
+
+For this gate, `settled` is a machine-enforced enrollment state. It requires every enrolled horizon to be independently reviewed and included; an interim reviewed observation does not count. Excluded, deferred, disputed, missing, and pending horizons do not qualify a decision for the settled-outcome floor and remain visible in locked release accounting and disclosure.
 
 ## 1. Receive a Passive Follow-up Offer
 
@@ -190,7 +192,7 @@ The first-cohort operating contract is published at [outcome-first-cohort-operat
 - Prospective outcomes and retrospective backtests are separate cohorts.
 - Selection, usage, lead, and crawler telemetry are not outcome evidence.
 - An abstention is recorded as a prediction behavior, not silently converted into a failure or success.
-- Multiple horizon observations from one enrollment do not create multiple decisions in the 50-decision publication floor.
+- Multiple horizon observations from one enrollment do not create multiple decisions in the 50-settled-decision publication floor.
 - Repeated or replacement observations cannot bypass review.
 - Silence, missing follow-up, or withdrawal is not imputed as a favorable or unfavorable outcome.
 - The live engine does not automatically learn from a submitted outcome.
