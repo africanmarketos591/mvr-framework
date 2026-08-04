@@ -11,19 +11,19 @@
     ],
     "mcp_modern_protocol_version": "2026-07-28",
     "mcp_compatibility_mode": "dual-era: 2026-07-28 stateless requests plus 2025-11-25 and 2025-06-18 initialize handshakes",
-    "mcp_contract_version": "mvr-mcp@2026-08-03.1",
-    "tool_profile_version": "consumer-7+preflight-5+licensed-runtime-5@2026-08-03.1",
+    "mcp_contract_version": "mvr-mcp@2026-08-04.2",
+    "tool_profile_version": "consumer-7+preflight-5+licensed-runtime-5@2026-08-04.2",
     "sdk_version": "typescript@6.32.4;python@6.32.4",
     "sdk_versions": {
       "typescript": "6.32.4",
       "python": "6.32.4"
     },
-    "policy_version": "mvr-agent-preflight-policy@2026-07-16.1",
+    "policy_version": "mvr-agent-preflight-policy@2026-08-04.1",
     "calibration_version": "v6.32.0-framework-provisional",
     "calibration_scope": "Public framework-provisional default. Licensed runtime calibration is resolved by profile, sector, geography, and active manifest; verify through /v1/calibration-health.",
-    "deployment_revision": "2026-08-03.evidence-gate-partner.1",
+    "deployment_revision": "2026-08-04.input-integrity-policy.2",
     "deployment_provider_revision": "Recorded in release evidence after deployment; not self-embedded because a provider revision is created by the deployment itself.",
-    "host_recipe_version": "2026-08-03.1",
+    "host_recipe_version": "2026-08-04.2",
     "checkout_contract_version": "2026-07-29.1"
   },
   "policy_modes": {
@@ -57,18 +57,54 @@
   "workflow_profiles": {
     "market_entry_preflight": {
       "purpose": "Check market permission, stakeholder evidence, guardian or regulatory gaps, and bounded next-step readiness before recommending entry, launch, deploy, or scale.",
-      "allowed_tools": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"],
-      "sequence": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"]
+      "allowed_tools": [
+        "mvr_first_call",
+        "mvr_entity_resolve",
+        "mvr_evidence_completeness",
+        "mvr_context_compile",
+        "mvr_decision_check"
+      ],
+      "sequence": [
+        "mvr_first_call",
+        "mvr_entity_resolve",
+        "mvr_evidence_completeness",
+        "mvr_context_compile",
+        "mvr_decision_check"
+      ]
     },
     "investor_diligence": {
       "purpose": "Test whether an investment recommendation is supported by verified, geographically relevant, stakeholder-diverse evidence rather than founder narrative alone.",
-      "allowed_tools": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"],
-      "sequence": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"]
+      "allowed_tools": [
+        "mvr_first_call",
+        "mvr_entity_resolve",
+        "mvr_evidence_completeness",
+        "mvr_context_compile",
+        "mvr_decision_check"
+      ],
+      "sequence": [
+        "mvr_first_call",
+        "mvr_entity_resolve",
+        "mvr_evidence_completeness",
+        "mvr_context_compile",
+        "mvr_decision_check"
+      ]
     },
     "partnership_evaluation": {
       "purpose": "Check counterparty identity, vouching, reciprocity, local permission, and evidence gaps before recommending a partnership or distributor relationship.",
-      "allowed_tools": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"],
-      "sequence": ["mvr_first_call", "mvr_entity_resolve", "mvr_evidence_completeness", "mvr_context_compile", "mvr_decision_check"]
+      "allowed_tools": [
+        "mvr_first_call",
+        "mvr_entity_resolve",
+        "mvr_evidence_completeness",
+        "mvr_context_compile",
+        "mvr_decision_check"
+      ],
+      "sequence": [
+        "mvr_first_call",
+        "mvr_entity_resolve",
+        "mvr_evidence_completeness",
+        "mvr_context_compile",
+        "mvr_decision_check"
+      ]
     }
   },
   "production_boundary": "This recipe deliberately registers the keyless public sandbox/evaluation surface. Licensed tenants use the separate authenticated Streamable HTTP MCP endpoint https://africanmarketos.com/mcp/runtime after configuring a provider-issued key in an approved host credential store. This recipe is not an AWS Marketplace listing, AWS endorsement, payment entitlement, or outcome authorization.",

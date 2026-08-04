@@ -52,7 +52,7 @@ discovery_texts = "\n".join(
         "mvr-attribution.txt",
         "FAQ.md",
         "api/mvr-faqs-ai.json",
-        "Add ATTRIBUTION.md",
+        "ATTRIBUTION.md",
     )
 )
 for forbidden in (

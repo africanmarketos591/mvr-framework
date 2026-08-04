@@ -1,0 +1,78 @@
+{
+  "evidence_schema": "mvr-release-evidence@1.0",
+  "recorded_at": "2026-08-04T17:48:29.682Z",
+  "deployment_revision": "2026-08-04.input-integrity-policy.2",
+  "deployment_provider_revision": "2fb8ec08-a7d7-4825-bde6-dd280593079e",
+  "supersedes_provider_revision": "e987c76a-8410-4de7-9b68-2f367c746d4d",
+  "mcp_contract_version": "mvr-mcp@2026-08-04.2",
+  "tool_profile_version": "consumer-7+preflight-5+licensed-runtime-5@2026-08-04.2",
+  "policy_version": "mvr-agent-preflight-policy@2026-08-04.1",
+  "local_verification": {
+    "worker_suite": {
+      "passed": 142,
+      "failed": 0
+    },
+    "public_contract_validator": "pass",
+    "public_claim_and_license_integrity": "pass",
+    "python_reference_client_self_test": "pass",
+    "javascript_reference_client_self_test": "pass",
+    "xai_host_validator_self_test": "pass",
+    "n8n_template_validator": "pass",
+    "workflow_pinning_validator": "pass",
+    "mcp_bridge_live_test": "pass"
+  },
+  "live_canaries": {
+    "unknown_well_known_path": {
+      "http_status": 404,
+      "www_authenticate_present": false
+    },
+    "non_market_rest_first_call": {
+      "country": "AQ",
+      "http_status": 422,
+      "code": "NON_MARKET_SCOPE",
+      "workflow_issued": false,
+      "commercial_route_issued": false
+    },
+    "non_market_mcp_first_call": {
+      "transport_http_status": 200,
+      "tool_is_error": true,
+      "code": "NON_MARKET_SCOPE",
+      "workflow_issued": false,
+      "commercial_route_issued": false
+    },
+    "uganda_bnpl_first_call": {
+      "http_status": 200,
+      "decision_domain": "credit_adjacent_permission",
+      "caller_subject_marked_unverified": true,
+      "unstructured_labels_received": 2,
+      "structured_evidence_items_received": 0,
+      "domain_specific_unlock_promoted": true
+    },
+    "mcp_profiles": {
+      "compatibility_endpoint": "https://africanmarketos.com/mcp/",
+      "compatibility_tool_count": 7,
+      "preflight_endpoint": "https://africanmarketos.com/mcp/preflight",
+      "preflight_tool_count": 5,
+      "licensed_runtime_unauthenticated_status": 401,
+      "first_call_response_bytes": 5423,
+      "compact_text_marks_structured_content_authoritative": true
+    },
+    "tracked_and_live_contracts_match": true
+  },
+  "policy_hardening": {
+    "credit_adjacent_use_is_evidence_gap_routing_only": true,
+    "mandatory_handoff_language_removed": true,
+    "host_and_authorized_human_control_preserved": true,
+    "natural_person_scoring_prohibited": true,
+    "protected_characteristic_proxy_scoring_prohibited": true,
+    "credit_eligibility_pricing_approval_underwriting_and_adverse_action_prohibited": true,
+    "stakeholder_signals_are_not_automatic_vetoes": true
+  },
+  "truth_boundaries": [
+    "The public first call routes evidence and identifies bounded next steps; it is not an MVR verdict or authorization.",
+    "Unstructured evidence labels are not counted as structured evidence items.",
+    "Caller-supplied entity and geography fields remain unverified until evidence and identity controls establish them.",
+    "The seven-tool compatibility endpoint remains available for submitted host integrations; the five-tool preflight remains the canonical public registry profile.",
+    "The provider revision is deployment provenance only and does not prove calibration quality, market readiness, or external validation."
+  ]
+}

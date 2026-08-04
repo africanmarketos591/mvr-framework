@@ -7,6 +7,7 @@ import argparse
 import json
 import pathlib
 import sys
+import time
 import urllib.request
 
 
@@ -151,10 +152,19 @@ def validate_local() -> None:
 
 def fetch_json(url: str, body: dict | None = None) -> dict:
     data = json.dumps(body).encode() if body is not None else None
+    if body is None:
+        separator = "&" if "?" in url else "?"
+        url = f"{url}{separator}_mvr_canary={int(time.time() * 1000)}"
     request = urllib.request.Request(
         url,
         data=data,
-        headers={"Accept": "application/json", "Content-Type": "application/json", "User-Agent": "mvr-public-contract-ci/1.0"},
+        headers={
+            "Accept": "application/json",
+            "Cache-Control": "no-cache",
+            "Content-Type": "application/json",
+            "Pragma": "no-cache",
+            "User-Agent": "mvr-public-contract-ci/1.0",
+        },
         method="POST" if body is not None else "GET",
     )
     with urllib.request.urlopen(request, timeout=30) as response:
