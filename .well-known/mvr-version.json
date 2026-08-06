@@ -19,7 +19,7 @@
   "policy_version": "mvr-agent-preflight-policy@2026-08-04.1",
   "calibration_version": "v6.32.0-framework-provisional",
   "calibration_scope": "Public framework-provisional default. Licensed runtime calibration is resolved by profile, sector, geography, and active manifest; verify through /v1/calibration-health.",
-  "deployment_revision": "2026-08-06.agentic-internet-content-signals.1",
+  "deployment_revision": "2026-08-07.markdown-for-agents-pilot.1",
   "deployment_provider_revision": "Recorded in release evidence after deployment; not self-embedded because a provider revision is created by the deployment itself.",
   "host_recipe_version": "2026-08-04.2",
   "checkout_contract_version": "2026-07-29.1",
@@ -45,5 +45,17 @@
     "version_map": "https://africanmarketos.com/docs/version-map.md"
   },
   "canonical_surface_registry": "https://africanmarketos.com/.well-known/mvr-surface-registry.json",
-  "updated_at": "2026-08-04"
+  "markdown_for_agents": {
+    "profile": "hand-authored-path-pilot@2026-08-07.1",
+    "status": "path_scoped_pilot",
+    "negotiation": "Accept: text/markdown",
+    "default_representation": "text/html",
+    "training_signal": "ai-train=no",
+    "paths": [
+      "https://africanmarketos.com/diagnostic/",
+      "https://africanmarketos.com/diligence-scan/",
+      "https://africanmarketos.com/connect-ai/"
+    ]
+  },
+  "updated_at": "2026-08-07"
 }
