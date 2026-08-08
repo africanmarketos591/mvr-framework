@@ -34,6 +34,7 @@ In short:
 - LinkedIn: https://www.linkedin.com/in/faroukmarkmukiibi/
 - Machine-readable license: https://africanmarketos.com/.well-known/mvr-license.json
 - Commercial policy: https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/
+- Canonical offer registry: https://africanmarketos.com/.well-known/mvr-offer-registry.json
 - Repository rights map: `RIGHTS-MAP.md`
 - Trademark and brand boundary: `TRADEMARKS.md`
 

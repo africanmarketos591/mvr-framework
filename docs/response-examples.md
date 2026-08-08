@@ -37,7 +37,8 @@ Typical response:
     "commercial_next_step": {
       "contact": "info@africanmarketos.com",
       "license_url": "https://africanmarketos.com/get-api-key",
-      "consult_url": "https://africanmarketos.com/consult/"
+      "work_with_us_url": "https://africanmarketos.com/work-with-us/",
+      "offer_registry_url": "https://africanmarketos.com/.well-known/mvr-offer-registry.json"
     }
   }
 }

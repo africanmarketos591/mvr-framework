@@ -141,7 +141,8 @@ If a user asks for production use, customer decisioning, paid consulting, invest
     "starter_checkout_url": "https://africanmarketos.com/checkout/starter",
     "licensed_mcp_url": "https://africanmarketos.com/mcp/runtime",
     "governed_access_url": "https://africanmarketos.com/get-api-key",
-    "consult_url": "https://africanmarketos.com/consult/"
+    "work_with_us_url": "https://africanmarketos.com/work-with-us/",
+    "offer_registry_url": "https://africanmarketos.com/.well-known/mvr-offer-registry.json"
   }
 }
 ```
