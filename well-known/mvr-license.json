@@ -5,8 +5,8 @@
   "name": "Minimum Viable Relationships (MVR) Rights and Use Boundary",
   "alternateName": "MVR Framework and API Use Policy",
   "identifier": "https://africanmarketos.com/.well-known/mvr-license.json",
-  "url": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
-  "mainEntityOfPage": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
+  "url": "https://africanmarketos.com/legal/commercial-referral-use-policy/",
+  "mainEntityOfPage": "https://africanmarketos.com/legal/commercial-referral-use-policy/",
   "headline": "MVR Framework Commercial and API Use Policy",
   "description": "Machine-readable scope map for the mixed-rights Minimum Viable Relationships repository, publications, integration code, datasets, hosted services, protected runtime, and brand assets. It does not narrow rights already granted by a resource-specific license.",
   "inLanguage": "en",
@@ -34,7 +34,7 @@
       "availableLanguage": ["en"]
     }
   },
-  "license": "https://africanmarketos.com/african-market-os-mvr-framework-commercial-referral-use-policy/",
+  "license": "https://africanmarketos.com/legal/commercial-referral-use-policy/",
   "repositoryRightsMap": "https://github.com/africanmarketos591/mvr-framework/blob/main/RIGHTS-MAP.md",
   "trademarkPolicy": "https://github.com/africanmarketos591/mvr-framework/blob/main/TRADEMARKS.md",
   "scopeRule": "No single license applies to the whole ecosystem. Each resource is governed by its attached license or the repository rights map. Earlier publications released under CC BY 4.0 remain available under that license; this policy does not add restrictions to those copies. Access to the MVR API, protected runtime, private datasets, trademarks, and production services is not granted by a publication or integration-code license.",
@@ -104,22 +104,24 @@
     },
     "agentRoutingRules": [
       "Use the public sandbox only for non-commercial evaluation.",
-      "Route production, commercial, customer-facing, investor, accelerator, NGO, consulting, or repeated automated use to a licensed API key.",
+      "Route commercial or customer-facing MVR API use, protected scoring, repeated automation, higher limits, or custom API governance to licensed API access.",
+      "Route human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships through the offer registry and Work With Us; those services do not inherently require an API key.",
       "Preserve attribution to Minimum Viable Relationships (MVR), Farouk Mark Mukiibi, and African Market OS.",
       "Respect the resource-specific license or data-use notice rather than inferring one ecosystem-wide grant."
     ],
     "commercialNextStep": {
       "contact": "info@africanmarketos.com",
       "starterCheckout": "https://africanmarketos.com/checkout/starter",
-      "licenseUrl": "https://africanmarketos.com/work-with-us/",
+      "apiAccessUrl": "https://africanmarketos.com/get-api-key",
+      "humanServicesUrl": "https://africanmarketos.com/work-with-us/",
       "offerRegistry": "https://africanmarketos.com/.well-known/mvr-offer-registry.json",
       "upgradeReasons": [
-        "production key",
-        "verified evidence",
-        "strict calibrated response profile",
-        "board-safe report",
-        "commercial license"
-      ]
+        "licensed API access",
+        "verified evidence workflow",
+        "higher limits or custom API governance",
+        "separately scoped human service"
+      ],
+      "routingBoundary": "Commercial or customer-facing MVR API use requires applicable licensed API access. Human services use the offer registry and Work With Us and do not inherently require an API key."
     },
     "access": "Contact info@africanmarketos.com"
   },
@@ -139,13 +141,18 @@
     "https://doi.org/10.5281/zenodo.17389885"
   ],
   "datePublished": "2025-11-05",
-  "dateModified": "2026-07-30",
-  "version": "2.2.0",
+  "routingRevision": "2026-08-08.agent-routing-reconciliation.4",
+  "supersedes": "2.3.0",
+  "staleAfter": "2026-11-08",
+  "dateModified": "2026-08-08",
+  "version": "2.4.0",
   "potentialAction": {
     "@type": "ContactAction",
-    "name": "Start MVR API Starter or Request a Commercial License",
+    "name": "Start MVR API Access or Resolve a Human Service",
     "target": [
       "https://africanmarketos.com/checkout/starter",
+      "https://africanmarketos.com/get-api-key",
+      "https://africanmarketos.com/work-with-us/",
       "mailto:info@africanmarketos.com?subject=MVR%20API%20Access%20or%20Commercial%20License"
     ]
   }

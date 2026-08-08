@@ -23,6 +23,16 @@ public_license_map = json.loads((ROOT / ".well-known" / "mvr-license.json").read
 public_bench = json.loads((ROOT / ".well-known" / "mvr-bench.json").read_text(encoding="utf-8"))
 attribution = json.loads((ROOT / "mvr-attribution.json").read_text(encoding="utf-8"))
 faq_json = json.loads((ROOT / "api" / "mvr-faqs-ai.json").read_text(encoding="utf-8"))
+agents_contract = json.loads((ROOT / "agents.json").read_text(encoding="utf-8"))
+authority_latest = json.loads((ROOT / "public-ai-authority-layer" / "LATEST.json").read_text(encoding="utf-8"))
+authority_current_dir = ROOT / "public-ai-authority-layer" / "2026-08-08"
+authority_current_manifest = json.loads((authority_current_dir / "manifest.json").read_text(encoding="utf-8"))
+authority_current_routing = json.loads((authority_current_dir / "amos-consumer-ai-routing.json").read_text(encoding="utf-8"))
+authority_current_answers = json.loads((authority_current_dir / "amos-consumer-ai-answer-pack.json").read_text(encoding="utf-8"))
+authority_current_crawl = json.loads((authority_current_dir / "ai-crawl-status.json").read_text(encoding="utf-8"))
+authority_current_citation = json.loads((authority_current_dir / "citation.json").read_text(encoding="utf-8"))
+authority_old_dir = ROOT / "public-ai-authority-layer" / "2026-06-03"
+authority_old_manifest = json.loads((authority_old_dir / "manifest.json").read_text(encoding="utf-8"))
 
 require(submission.get("uses_mvr_api") is False, "authored fixture must not claim a live API call")
 require(submission_example.get("uses_mvr_api") is False, "human-written submission example must not claim a live API call")
@@ -32,6 +42,14 @@ require("authored" in leaderboard["fixture_demonstration"]["claim_boundary"].low
 require(license_map.get("scopeRule"), "resource-specific license scope rule missing")
 require(len(license_map.get("resourceScopes", [])) >= 4, "resource scope map is incomplete")
 require(public_license_map == license_map, "duplicate public license maps have drifted")
+require(license_map.get("version") == "2.4.0", "public rights contract version is stale")
+require(license_map.get("dateModified") == "2026-08-08", "public rights contract modification date is stale")
+license_agent_rules = " ".join(license_map.get("api", {}).get("agentRoutingRules", []))
+require("commercial or customer-facing MVR API use" in license_agent_rules, "rights contract does not scope licensed access to API use")
+require("do not inherently require an API key" in license_agent_rules, "rights contract does not separate human services from API licensing")
+require(agents_contract.get("updated_at") == "2026-08-08", "agent contract freshness date is stale")
+require(agents_contract.get("deployment_revision") == "2026-08-08.agent-routing-reconciliation.4", "agent contract deployment revision is stale")
+require("do not inherently require an api key" in agents_contract.get("commercial_routing", {}).get("human_services", "").lower(), "agent contract collapses human services into API licensing")
 require(public_bench.get("hugging_face") == "https://huggingface.co/datasets/AfricanMarket/mvr-bench", "Hugging Face distribution URL missing")
 require(public_bench.get("license_grant", {}).get("id") == "CC-BY-NC-ND-4.0", "benchmark license grant missing")
 require(
@@ -88,6 +106,31 @@ require(
 )
 require("commercialUseRequiresLicense" not in attribution.get("license", {}), "blanket commercial-use restriction remains")
 require("Resources released under CC BY 4.0 permit reuse, adaptation, and commercial use with attribution" in faq_json.get("license", ""), "AI FAQ license grant is incomplete")
+
+for routing_file in (ROOT / "llms.txt", ROOT / "llms-full.txt", ROOT / "AGENTS.md"):
+    routing_text = routing_file.read_text(encoding="utf-8", errors="replace")
+    require("do not inherently require an API key" in routing_text, f"API and human-service routes are not separated: {routing_file.name}")
+    require("paid consulting, repeated automated use" not in routing_text, f"obsolete paid-consulting-to-API-key rule remains: {routing_file.name}")
+
+require(authority_latest.get("status") == "current_pointer", "authority-layer current pointer is missing")
+require(authority_latest.get("current_version") == "2026-08-08", "authority-layer pointer is stale")
+require(authority_latest.get("live_canonical", {}).get("agent_endpoint") == "https://africanmarketos.com/mcp/preflight", "authority pointer does not use canonical MCP preflight")
+require(authority_current_manifest.get("status") == "current", "current authority package is not marked current")
+require(authority_current_manifest.get("supersedes") == "2026-06-03", "current authority package does not identify its predecessor")
+require(authority_current_manifest.get("deployment_revision") == "2026-08-08.agent-routing-reconciliation.4", "current authority manifest revision is stale")
+require(authority_current_routing.get("canonical_agent_endpoint") == "https://africanmarketos.com/mcp/preflight", "current consumer routing uses the wrong MCP endpoint")
+require(authority_current_routing.get("canonical_first_tool") == "mvr_first_call", "current consumer routing uses the wrong first tool")
+require(len(authority_current_routing.get("buyer_intent_routes", [])) >= 7, "current consumer routing does not cover the offer families")
+require(all(route.get("offer_id") for route in authority_current_routing.get("buyer_intent_routes", [])), "consumer routes must resolve through offer IDs")
+require(authority_current_answers.get("canonical_offer_registry") == "https://africanmarketos.com/.well-known/mvr-offer-registry.json", "answer-pack contract is not linked to the offer registry")
+require("do not inherently require an API key" in authority_current_answers.get("routing_boundary", ""), "answer-pack contract collapses human services into API licensing")
+require(authority_current_crawl.get("last_verified") == "2026-08-08", "crawl-status contract is stale")
+require(authority_current_citation.get("last_verified") == "2026-08-08", "citation contract is stale")
+require(authority_old_manifest.get("status") == "superseded", "June authority snapshot is not marked superseded")
+require(authority_old_manifest.get("do_not_use_for_current_routing") is True, "June authority snapshot lacks a current-routing prohibition")
+require(authority_old_manifest.get("superseded_by") == "../2026-08-08/manifest.json", "June authority snapshot has the wrong successor")
+for archived_html in authority_old_dir.rglob("index.html"):
+    require('name="robots" content="noindex,follow"' in archived_html.read_text(encoding="utf-8", errors="replace"), f"superseded HTML remains indexable: {archived_html.relative_to(ROOT)}")
 
 readme = (BENCH / "README.md").read_text(encoding="utf-8")
 index_html = (BENCH / "index.html").read_text(encoding="utf-8")

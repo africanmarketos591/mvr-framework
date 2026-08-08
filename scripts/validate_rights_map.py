@@ -57,7 +57,11 @@ for package_license in (
     text(package_license)
 
 require(canonical == mirror, "well-known license mirror differs from canonical")
-require(canonical.get("version") == "2.2.0", "machine rights map version is not 2.2.0")
+require(canonical.get("version") == "2.4.0", "machine rights map version is not 2.4.0")
+require(canonical.get("dateModified") == "2026-08-08", "machine rights map freshness date is stale")
+agent_rules = " ".join(canonical.get("api", {}).get("agentRoutingRules", [])).lower()
+require("commercial or customer-facing mvr api use" in agent_rules, "machine rights map does not scope licensed access to API use")
+require("do not inherently require an api key" in agent_rules, "machine rights map collapses human services into API licensing")
 scopes = {item.get("scope") for item in canonical.get("resourceScopes", [])}
 required_scopes = {
     "legacy_publications",

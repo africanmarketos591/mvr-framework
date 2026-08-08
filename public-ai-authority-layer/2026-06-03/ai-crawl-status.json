@@ -1,6 +1,10 @@
 {
   "name": "African Market OS AI Crawl Status",
   "date_modified": "2026-06-03",
+  "status": "superseded",
+  "superseded_on": "2026-08-08",
+  "superseded_by": "../2026-08-08/ai-crawl-status.json",
+  "do_not_use_for_current_routing": true,
   "policy_summary": "Allow AI search and answer-time retrieval on public-safe pages; restrict training-oriented extraction and protected engine internals.",
   "public_safe_surfaces": [
     "https://africanmarketos.com/",

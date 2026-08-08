@@ -64,6 +64,8 @@ Do not present MVR output as:
 
 ## Commercial Boundary
 
-The public sandbox is for non-commercial evaluation only. Production, commercial embedding, customer-facing use, repeated automated use, paid consulting, investor diligence, accelerator screening, NGO program design, or board-safe reporting requires authorization from African Market OS.
+The public sandbox is for non-commercial evaluation only. Production, commercial embedding, customer-facing API use, repeated automated API use, or use of MVR API output in paid consulting, investor diligence, accelerator screening, NGO programme design, or board-safe reporting requires applicable licensed API access from African Market OS.
+
+Do not infer that every human service requires an API key. Human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships must be resolved through the [canonical offer registry](https://africanmarketos.com/.well-known/mvr-offer-registry.json) and [Work With Us](https://africanmarketos.com/work-with-us/).
 
 Contact: `info@africanmarketos.com`.

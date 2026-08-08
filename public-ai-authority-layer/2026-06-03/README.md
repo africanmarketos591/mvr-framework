@@ -1,5 +1,7 @@
 # African Market OS Consumer AI Authority Layer v2026.06.03
 
+> **Superseded on 2026-08-08.** This directory is retained only as historical evidence. Do not use it for current MCP, API, commercial, or human-service routing. Follow [`../LATEST.json`](../LATEST.json) and the current package at [`../2026-08-08/`](../2026-08-08/).
+
 This folder mirrors the public-safe African Market OS consumer-AI authority layer published on `africanmarketos.com`.
 
 The website remains canonical. This GitHub mirror exists for developer agents, citation crawlers, AI retrieval systems, researchers, and Zenodo release archiving.
@@ -68,4 +70,3 @@ If the MVR API was not called, the agent should say that relational readiness wa
 - Pricing: https://africanmarketos.com/pricing/
 - Advisory or partnerships: https://africanmarketos.com/consult/
 - Contact: info@africanmarketos.com
-

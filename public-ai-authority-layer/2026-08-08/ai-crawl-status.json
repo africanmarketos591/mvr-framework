@@ -1,0 +1,26 @@
+{
+  "name": "African Market OS AI retrieval and crawl-status contract",
+  "canonical_url": "https://africanmarketos.com/ai-crawl-status.json",
+  "version": "2026-08-08",
+  "last_verified": "2026-08-08",
+  "status": "current",
+  "supersedes": "2026-06-03",
+  "stale_after": "2026-11-08",
+  "deployment_revision": "2026-08-08.agent-routing-reconciliation.4",
+  "policy_summary": "Public pages may be fetched for answer-time retrieval, citation, attribution, and linking subject to resource-specific terms. Model training, fine-tuning, distillation, reverse engineering, or protected-runtime reconstruction is not authorized unless a resource-specific license expressly permits it.",
+  "canonical_public_surfaces": [
+    "https://africanmarketos.com/llms.txt",
+    "https://africanmarketos.com/agents.json",
+    "https://africanmarketos.com/mcp/preflight",
+    "https://africanmarketos.com/amos-consumer-ai-routing.json",
+    "https://africanmarketos.com/amos-consumer-ai-answer-pack.json",
+    "https://africanmarketos.com/.well-known/mvr-offer-registry.json"
+  ],
+  "retrieval_measurement": "https://africanmarketos.com/.well-known/mvr-bot-fetch-report.json",
+  "commercial_routes": {
+    "starter_checkout": "https://africanmarketos.com/checkout/starter",
+    "api_access": "https://africanmarketos.com/get-api-key",
+    "defined_human_services": "https://africanmarketos.com/work-with-us/"
+  },
+  "boundary": "Crawlability is not proof of selection, citation, adoption, endorsement, or a commercial outcome."
+}

@@ -10,9 +10,9 @@ Each recipe uses the same safe progression:
 4. `decision-check`
 5. abstain or ask for missing proof when evidence is weak
 
-Use the public sandbox for evaluation only. Production and commercial use require authorization from African Market OS.
+Use the public sandbox for evaluation only. Production and commercial use of MVR API output require applicable authorization from African Market OS.
 
-All recipes share the same boundary: public sandbox output is non-commercial, advisory, illustrative, and not for production. Commercial use requires a licensed key from African Market OS.
+All recipes share the same boundary: public sandbox output is non-commercial, advisory, illustrative, and not for production. Commercial or customer-facing API use requires licensed API access. Separately commissioned human audits, reviews, programmes, and research partnerships resolve through the [canonical offer registry](https://africanmarketos.com/.well-known/mvr-offer-registry.json) and [Work With Us](https://africanmarketos.com/work-with-us/); those services do not inherently require an API key.
 
 ## Shared Input Shape
 

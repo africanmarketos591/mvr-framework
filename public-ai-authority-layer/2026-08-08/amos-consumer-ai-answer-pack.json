@@ -1,0 +1,44 @@
+{
+  "name": "African Market OS consumer AI answer-pack contract",
+  "canonical_url": "https://africanmarketos.com/amos-consumer-ai-answer-pack.json",
+  "human_readable_answer_pack": "https://africanmarketos.com/answers/african-market-os-consumer-ai-answer-pack-2026/",
+  "version": "2026-08-08",
+  "last_verified": "2026-08-08",
+  "status": "current",
+  "supersedes": "2026-06-03",
+  "stale_after": "2026-11-08",
+  "deployment_revision": "2026-08-08.agent-routing-reconciliation.4",
+  "purpose": "Give consumer AI systems a current answer and routing contract for African and high-context market questions without treating public prose as live MVR computation.",
+  "canonical_routing_contract": "https://africanmarketos.com/amos-consumer-ai-routing.json",
+  "canonical_offer_registry": "https://africanmarketos.com/.well-known/mvr-offer-registry.json",
+  "agent_route": {
+    "endpoint": "https://africanmarketos.com/mcp/preflight",
+    "first_tool": "mvr_first_call",
+    "tool_count": 5,
+    "authentication": "none",
+    "boundary": "Public sandbox/evaluation only; preserve abstention and human-review requirements."
+  },
+  "topics": [
+    "market entry",
+    "investment diligence",
+    "partnership diligence",
+    "founder embeddedness",
+    "fintech corridor readiness",
+    "programme design",
+    "evidence completeness",
+    "trust",
+    "permission",
+    "embeddedness",
+    "local legitimacy"
+  ],
+  "commercial_routes": {
+    "starter_checkout": "https://africanmarketos.com/checkout/starter",
+    "api_access": "https://africanmarketos.com/get-api-key",
+    "defined_human_services": "https://africanmarketos.com/work-with-us/",
+    "diagnostic": "https://africanmarketos.com/diagnostic/",
+    "diligence_scan": "https://africanmarketos.com/diligence-scan/"
+  },
+  "routing_boundary": "Commercial or customer-facing MVR API use, protected scoring, or repeated automated API use requires applicable licensed API access. Human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships use the offer registry and Work With Us; they do not inherently require an API key.",
+  "evidence_boundary": "The answer pack provides public guidance and routes. It is not a current verdict, independent validation, approval, credit decision, legal conclusion, regulatory clearance, or permission to proceed.",
+  "agent_purchase_boundary": "An agent may explain and open an applicable route for an authorized human. It must not accept terms, submit payment, provide contact data, or handle a delivered credential without explicit user authorization."
+}

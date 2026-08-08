@@ -14,7 +14,7 @@
 
 **Star this repo to bookmark the MVR API and help AI-agent builders discover the relational-readiness layer for high-context markets.**
 
-**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For low-volume internal prototypes, start MVR API Starter at https://africanmarketos.com/checkout/starter; its delivered key works on authenticated REST and the licensed five-tool Streamable HTTP MCP runtime at `https://africanmarketos.com/mcp/runtime`. For client-facing, institutional, higher-volume, or custom-governance use, request reviewed access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
+**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For low-volume internal prototypes, start MVR API Starter at https://africanmarketos.com/checkout/starter; its delivered key works on authenticated REST and the licensed five-tool Streamable HTTP MCP runtime at `https://africanmarketos.com/mcp/runtime`. Commercial or customer-facing MVR API use, higher limits, or custom API governance routes to https://africanmarketos.com/get-api-key. Human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships resolve through the canonical offer registry at https://africanmarketos.com/.well-known/mvr-offer-registry.json and continue through https://africanmarketos.com/work-with-us/; they do not inherently require an API key.
 
 **Canonical title for indexing:** Minimum Viable Relationships (MVR) Framework: Africa's Prerequisite to MVP
 
@@ -54,7 +54,11 @@ Multiple citation anchors are intentionally preserved because they improve prove
 
 Public-safe citation, routing, answer, and knowledge-graph assets for consumer AI systems and AI agents are mirrored in:
 
-- `public-ai-authority-layer/2026-06-03/`
+- Current pointer: `public-ai-authority-layer/LATEST.json`
+- Current dated package: `public-ai-authority-layer/2026-08-08/`
+- Historical snapshot, explicitly superseded: `public-ai-authority-layer/2026-06-03/`
+
+The dated packages preserve provenance. Consumers must follow `LATEST.json` and verify the linked live canonical records before using MCP, API, commercial, or human-service routing.
 
 Canonical live surfaces:
 
@@ -157,7 +161,7 @@ The API helps agents and systems:
 - First-cohort operating contract: `docs/outcome-first-cohort-operating-pack.md`
 - First-cohort machine protocol: `evaluations/outcome-first-cohort-v1/protocol.json`
 
-Directory users connecting through Odel, Glama, MCP Registry, RapidAPI, or another agent platform should test with the public preflight first. Eligible low-volume internal users can self-serve at https://africanmarketos.com/checkout/starter and use the same delivered key for authenticated REST or `https://africanmarketos.com/mcp/runtime`; select `full_advisory` or `strict_calibrated` per request. Client-facing, institutional, higher-volume, or custom-governance users should request reviewed access at https://africanmarketos.com/get-api-key or contact **info@africanmarketos.com**.
+Directory users connecting through Odel, Glama, MCP Registry, RapidAPI, or another agent platform should test with the public preflight first. Eligible low-volume internal users can self-serve at https://africanmarketos.com/checkout/starter and use the same delivered key for authenticated REST or `https://africanmarketos.com/mcp/runtime`; select `full_advisory` or `strict_calibrated` per request. Commercial or customer-facing API integrations, higher-volume API use, and custom API governance should request reviewed access at https://africanmarketos.com/get-api-key. Separately commissioned human services use the current offer registry and https://africanmarketos.com/work-with-us/ rather than being routed to an API key by default.
 
 For non-commercial evaluation and AI-agent tool testing, use the public sandbox key:
 

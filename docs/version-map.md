@@ -13,11 +13,11 @@ Every integration should preserve these fields separately:
 | `mcp_contract_version` | `mvr-mcp@2026-08-08.1` | Public and licensed MCP schemas, discovery metadata, and transport contract. |
 | `tool_profile_version` | `consumer-7+preflight-5+licensed-runtime-5@2026-08-08.1` | MCP family: seven-tool compatibility, five-tool keyless preflight, and five-tool licensed runtime. The registry still publishes only the keyless preflight. |
 | `sdk_version` | `typescript@6.32.4;python@6.32.4` | Current published SDK lines, kept distinct by language. |
-| `policy_version` | `mvr-agent-preflight-policy@2026-08-04.1` | Host-policy middleware and selection boundary. |
+| `policy_version` | `mvr-agent-preflight-policy@2026-08-08.2` | Host-policy middleware, selection boundary, and distinct API-versus-human-service routing. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-08-08.offer-routing-reconciliation.3` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
+| `deployment_revision` | `2026-08-08.agent-routing-reconciliation.4` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
 | `deployment_provider_revision` | `Recorded in release evidence after deployment` | Provider-generated Cloudflare version; not self-embedded because the provider creates it during deployment. |
-| `host_recipe_version` | `2026-08-08.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
+| `host_recipe_version` | `2026-08-08.2` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
 Machine-readable source: `https://africanmarketos.com/.well-known/mvr-version.json`.
 

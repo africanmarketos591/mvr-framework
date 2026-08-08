@@ -10,7 +10,7 @@ Public sandbox key for non-commercial evaluation only:
 X-API-Key: mvr-demo-key-2026
 ```
 
-Sandbox responses are advisory, illustrative, client-safe, and not for production. Commercial or production use requires a licensed key from African Market OS. Contact `info@africanmarketos.com`.
+Sandbox responses are advisory, illustrative, client-safe, and not for production. Commercial or production use of MVR API output requires applicable licensed API access from African Market OS. Separately commissioned human services resolve through the [canonical offer registry](https://africanmarketos.com/.well-known/mvr-offer-registry.json) and [Work With Us](https://africanmarketos.com/work-with-us/) and do not inherently require an API key.
 
 ## 1. Auth Check
 

@@ -40,7 +40,7 @@ Submitted to the Anthropic Plugin Directory for review on `2026-07-30` for Claud
 
 ## Commercial route
 
-The public connector is for bounded evaluation. An authorized human can start the low-volume internal-use plan at [Starter checkout](https://africanmarketos.com/checkout/starter). Client-facing, institutional, consulting, higher-volume, or custom-governance use should follow the [governed access route](https://africanmarketos.com/get-api-key/).
+The public connector is for bounded evaluation. An authorized human can start the low-volume internal-use plan at [Starter checkout](https://africanmarketos.com/checkout/starter). Commercial or customer-facing API use, protected scoring, repeated automation, higher-volume API use, or custom API governance should follow the [governed API route](https://africanmarketos.com/get-api-key/). Separately commissioned human services resolve through the [canonical offer registry](https://africanmarketos.com/.well-known/mvr-offer-registry.json) and [Work With Us](https://africanmarketos.com/work-with-us/); they do not inherently require an API key.
 
 ## Rights
 

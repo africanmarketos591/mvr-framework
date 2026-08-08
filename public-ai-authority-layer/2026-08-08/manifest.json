@@ -1,0 +1,52 @@
+{
+  "name": "African Market OS Consumer AI Authority Layer",
+  "version": "2026-08-08",
+  "status": "current",
+  "last_verified": "2026-08-08",
+  "stale_after": "2026-11-08",
+  "supersedes": "2026-06-03",
+  "deployment_revision": "2026-08-08.agent-routing-reconciliation.4",
+  "canonical_base_url": "https://africanmarketos.com/",
+  "github_mirror_path": "public-ai-authority-layer/2026-08-08/",
+  "purpose": "Public-safe current citation, routing, answer, crawl, and offer-resolution contracts for consumer AI systems and AI agents.",
+  "included_surfaces": [
+    {
+      "name": "Consumer AI routing contract",
+      "live_url": "https://africanmarketos.com/amos-consumer-ai-routing.json",
+      "mirror_path": "amos-consumer-ai-routing.json"
+    },
+    {
+      "name": "Consumer AI answer-pack contract",
+      "live_url": "https://africanmarketos.com/amos-consumer-ai-answer-pack.json",
+      "mirror_path": "amos-consumer-ai-answer-pack.json"
+    },
+    {
+      "name": "AI crawl-status contract",
+      "live_url": "https://africanmarketos.com/ai-crawl-status.json",
+      "mirror_path": "ai-crawl-status.json"
+    },
+    {
+      "name": "Citation contract",
+      "live_url": "https://africanmarketos.com/citation.json",
+      "mirror_path": "citation.json"
+    }
+  ],
+  "canonical_machine_contracts": {
+    "offers": "https://africanmarketos.com/.well-known/mvr-offer-registry.json",
+    "rights": "https://africanmarketos.com/.well-known/mvr-license.json",
+    "agents": "https://africanmarketos.com/agents.json",
+    "version": "https://africanmarketos.com/.well-known/mvr-version.json",
+    "mcp_preflight": "https://africanmarketos.com/mcp/preflight",
+    "mcp_compatibility": "https://africanmarketos.com/mcp"
+  },
+  "routing_boundary": "Commercial or customer-facing MVR API use, protected scoring, repeated automated API use, higher limits, or custom API governance requires applicable licensed API access. Human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships use the offer registry and Work With Us; they do not inherently require an API key.",
+  "protection_boundary": [
+    "No protected scoring logic",
+    "No calibration assets",
+    "No private labels or held-out tests",
+    "No raw protected evidence registers",
+    "No customer or operator telemetry",
+    "No Worker/API source code",
+    "No credentials or API secrets"
+  ]
+}

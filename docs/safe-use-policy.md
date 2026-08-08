@@ -29,7 +29,7 @@ Do not use the public sandbox for:
 
 ## High-Stakes Use
 
-High-stakes, production, commercial, investor, accelerator, NGO program, government, lender, or customer-facing use requires a licensed key, a governed evidence pack, and human review.
+High-stakes, production, commercial, investor, accelerator, NGO programme, government, lender, or customer-facing use of MVR API output requires applicable licensed API access, a governed evidence pack, and human review. A separately commissioned human audit, advisory review, Examiner engagement, programme, institutional review, or research partnership is resolved through the [canonical offer registry](https://africanmarketos.com/.well-known/mvr-offer-registry.json) and [Work With Us](https://africanmarketos.com/work-with-us/); it does not inherently require an API key.
 
 Contact: `info@africanmarketos.com`.
 

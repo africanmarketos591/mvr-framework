@@ -1,0 +1,28 @@
+{
+  "name": "African Market OS Public AI Authority Layer Pointer",
+  "status": "current_pointer",
+  "current_version": "2026-08-08",
+  "current_package_path": "public-ai-authority-layer/2026-08-08/",
+  "current_manifest": "public-ai-authority-layer/2026-08-08/manifest.json",
+  "last_verified": "2026-08-08",
+  "stale_after": "2026-11-08",
+  "live_canonical": {
+    "routing": "https://africanmarketos.com/amos-consumer-ai-routing.json",
+    "answer_pack": "https://africanmarketos.com/amos-consumer-ai-answer-pack.json",
+    "crawl_status": "https://africanmarketos.com/ai-crawl-status.json",
+    "citation": "https://africanmarketos.com/citation.json",
+    "offer_registry": "https://africanmarketos.com/.well-known/mvr-offer-registry.json",
+    "rights": "https://africanmarketos.com/.well-known/mvr-license.json",
+    "agent_endpoint": "https://africanmarketos.com/mcp/preflight",
+    "first_tool": "mvr_first_call"
+  },
+  "routing_boundary": "Licensed API access and separately scoped human services are distinct routes. Human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships do not inherently require an API key.",
+  "historical_packages": [
+    {
+      "version": "2026-06-03",
+      "path": "public-ai-authority-layer/2026-06-03/",
+      "status": "superseded",
+      "do_not_use_for_current_routing": true
+    }
+  ]
+}

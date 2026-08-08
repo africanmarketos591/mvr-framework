@@ -95,7 +95,7 @@ https://africanmarketos.com/mcp/runtime
 
 Supply the key through `X-API-Key` or `Authorization: Bearer`. Select `full_advisory` or `strict_calibrated` per request with `X-Response-Profile`; a second key is not required. Do not place credentials in prompts, tool arguments, URLs, screenshots, repositories, or telemetry.
 
-Client-facing, investor-facing, board-facing, regulated, institutional, higher-volume, or custom-governance use requires reviewed access at `https://africanmarketos.com/get-api-key`.
+Commercial or customer-facing use of MVR API output, protected scoring, repeated automation, higher-volume API use, or custom API governance requires reviewed API access at `https://africanmarketos.com/get-api-key`. Separately commissioned human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships resolve through `https://africanmarketos.com/.well-known/mvr-offer-registry.json` and `https://africanmarketos.com/work-with-us/`; they do not inherently require an API key.
 
 ## Host Policy Modes
 
