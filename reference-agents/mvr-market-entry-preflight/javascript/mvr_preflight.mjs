@@ -47,36 +47,70 @@ function compact(object) {
   return Object.fromEntries(Object.entries(object).filter(([, value]) => value !== undefined && value !== null && value !== "" && !(typeof value === "object" && !Array.isArray(value) && Object.keys(value).length === 0)));
 }
 
-export function buildSequence(requestData = {}) {
+export function buildInitialCall(requestData = {}) {
   const subject = requestData.subject && typeof requestData.subject === "object" ? requestData.subject : {};
   const marketScope = requestData.market_scope && typeof requestData.market_scope === "object" ? requestData.market_scope : {};
   const question = String(requestData.question || "").trim();
   const country = String(requestData.country || marketScope.country || "").trim();
   const sector = String(requestData.sector || subject.sector || "").trim();
-  const calls = [["mvr_first_call", compact({ question, entity: subject.entity_name || requestData.entity, country, sector })]];
-  if (!Array.isArray(requestData.evidence_pack) || requestData.evidence_pack.length === 0) return calls;
-
-  const payload = compact({
-    subject,
-    market_scope: Object.keys(marketScope).length ? marketScope : country ? { country } : {},
-    decision_stage: requestData.decision_stage,
+  return compact({
+    question,
+    use_case: requestData.use_case,
     target_claim: requestData.target_claim || question,
-    evidence_pack: requestData.evidence_pack
-  });
-  const entityPayload = compact({
-    entity_name: subject.entity_name || requestData.entity,
+    entity: subject.entity_name || requestData.entity,
+    company_name: requestData.company_name,
     entity_archetype: subject.entity_archetype,
-    sector: subject.sector || sector,
+    sector,
+    stage: requestData.stage || requestData.decision_stage,
+    target_users: requestData.target_users,
     country: marketScope.country || country,
-    market_scope: Object.keys(marketScope).length ? marketScope : undefined
+    market_scope: Object.keys(marketScope).length ? marketScope : country ? { country } : undefined,
+    evidence_available: requestData.evidence_available,
+    evidence_pack: requestData.evidence_pack,
+    evidence_items: requestData.evidence_items,
+    known_partners: requestData.known_partners
   });
-  calls.push(
-    ["mvr_entity_resolve", { payload: entityPayload }],
-    ["mvr_evidence_completeness", { payload }],
-    ["mvr_context_compile", { payload }],
-    ["mvr_decision_check", { payload }]
-  );
-  return calls;
+}
+
+export function extractToolPayload(result = {}) {
+  if (result.structuredContent && typeof result.structuredContent === "object" && !Array.isArray(result.structuredContent)) return result.structuredContent;
+  for (const item of Array.isArray(result.content) ? result.content : []) {
+    if (item?.type !== "text" || typeof item.text !== "string") continue;
+    try {
+      const parsed = JSON.parse(item.text);
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) return parsed;
+    } catch {
+      // Continue to the next content item; structuredContent remains authoritative when present.
+    }
+  }
+  return result;
+}
+
+export function normalizeNextCall(result = {}, completedSequence = []) {
+  const disposition = String(result.continuation_disposition || (result.mcp_next_call || result.mcp_next_tool ? "call_now" : "terminal"));
+  const canonical = result.mcp_next_call;
+  const legacy = result.mcp_next_tool?.tool_name
+    ? { name: result.mcp_next_tool.tool_name, arguments: result.mcp_next_tool.arguments || {} }
+    : null;
+  if (canonical && legacy && (canonical.name !== legacy.name || JSON.stringify(canonical.arguments || {}) !== JSON.stringify(legacy.arguments || {}))) {
+    throw new Error("MCP handoff mismatch between mcp_next_call and legacy mcp_next_tool");
+  }
+  const nextCall = canonical || legacy;
+  if (disposition === "await_input" || disposition === "terminal") {
+    if (nextCall) throw new Error(`MCP handoff must be null when continuation_disposition=${disposition}`);
+    return null;
+  }
+  if (disposition !== "call_now") throw new Error(`Unsupported continuation_disposition: ${disposition}`);
+  if (!nextCall || typeof nextCall !== "object" || Array.isArray(nextCall)) throw new Error("MCP call_now result is missing mcp_next_call");
+  if (typeof nextCall.name !== "string" || !nextCall.name) throw new Error("MCP next call is missing a tool name");
+  if (!nextCall.arguments || typeof nextCall.arguments !== "object" || Array.isArray(nextCall.arguments)) throw new Error("MCP next call arguments must be an object");
+  const expected = CANONICAL_SEQUENCE[completedSequence.length];
+  if (nextCall.name !== expected) throw new Error(`MCP server returned ${nextCall.name}; expected ${expected || "no further tool"}`);
+  if (completedSequence.includes(nextCall.name)) throw new Error(`MCP handoff cycle detected at ${nextCall.name}`);
+  const resultWorkflow = String(result.workflow_id || "");
+  const handoffWorkflow = String(nextCall.arguments?.payload?.workflow_id || "");
+  if (resultWorkflow && handoffWorkflow && resultWorkflow !== handoffWorkflow) throw new Error("MCP handoff workflow_id does not match the current result");
+  return nextCall;
 }
 
 class McpClient {
@@ -139,14 +173,22 @@ async function execute(requestData, endpoint, policyMode = "advisory_selection")
   const missing = CANONICAL_SEQUENCE.filter((name) => !names.has(name));
   if (missing.length) throw new Error(`MCP server is missing canonical tools: ${missing.join(", ")}`);
 
-  const sequence = buildSequence(requestData);
+  const sequence = [];
   const results = {};
-  for (const [name, argumentsValue] of sequence) {
-    const result = await client.rpc("tools/call", { name, arguments: argumentsValue });
-    results[name] = result.structuredContent || result;
+  let nextCall = { name: "mvr_first_call", arguments: buildInitialCall(requestData) };
+  let final = null;
+  for (let step = 0; step < CANONICAL_SEQUENCE.length && nextCall; step += 1) {
+    const expected = CANONICAL_SEQUENCE[sequence.length];
+    if (nextCall.name !== expected) throw new Error(`MCP client refused out-of-order call ${nextCall.name}; expected ${expected}`);
+    const rpcResult = await client.rpc("tools/call", nextCall);
+    final = extractToolPayload(rpcResult);
+    sequence.push(nextCall.name);
+    results[nextCall.name] = final;
+    nextCall = normalizeNextCall(final, sequence);
   }
-  const complete = sequence.length === CANONICAL_SEQUENCE.length;
-  const final = results[sequence.at(-1)[0]];
+  if (nextCall) throw new Error("MCP handoff exceeded the bounded five-tool sequence");
+  const continuationDisposition = String(final?.continuation_disposition || "terminal");
+  const complete = sequence.at(-1) === "mvr_decision_check" && continuationDisposition === "terminal";
   const requiredGate = complete ? "preflight_completed_but_public_sandbox_not_authorizing" : "blocked_pending_evidence";
   return {
     status: complete ? "full_preflight_completed" : "evidence_requested",
@@ -155,24 +197,41 @@ async function execute(requestData, endpoint, policyMode = "advisory_selection")
     policy_gate: policyMode === "required_preflight" ? requiredGate : "advisory_only",
     recommendation_release_allowed: false,
     environment: "public_sandbox",
-    sequence: sequence.map(([name]) => name),
-    not_a_verdict: final.not_a_verdict ?? true,
+    sequence,
+    continuation_disposition: continuationDisposition,
+    workflow_status: final?.workflow_status || null,
+    not_a_verdict: final?.not_a_verdict ?? true,
     result: final,
     boundary: "Public sandbox output is advisory routing, not a production verdict, approval, certification, legal opinion, underwriting decision, or autonomous authorization."
   };
 }
 
 function selfTest() {
-  const short = buildSequence({ question: "Should we enter Kenya?", country: "KE" });
-  if (short.map(([name]) => name).join(",") !== "mvr_first_call") throw new Error("short sequence mismatch");
-  const full = buildSequence({
+  const initial = buildInitialCall({
     question: "Should we enter Kenya?",
     country: "KE",
     subject: { entity_name: "Example", entity_archetype: "distributor_network" },
     market_scope: { country: "KE" },
     evidence_pack: [{ id: "EV-1", verification_status: "verified" }]
   });
-  if (full.map(([name]) => name).join(",") !== CANONICAL_SEQUENCE.join(",")) throw new Error("full sequence mismatch");
+  if (initial.entity !== "Example" || initial.country !== "KE" || initial.evidence_pack?.[0]?.id !== "EV-1") throw new Error("initial call did not preserve supplied context and evidence");
+  const canonicalHandoff = normalizeNextCall({
+    continuation_disposition: "call_now",
+    workflow_id: "MVRWF-test",
+    mcp_next_call: { name: "mvr_entity_resolve", arguments: { payload: { workflow_id: "MVRWF-test" } } }
+  }, ["mvr_first_call"]);
+  if (canonicalHandoff.name !== "mvr_entity_resolve") throw new Error("canonical handoff mismatch");
+  const legacyHandoff = normalizeNextCall({ continuation_disposition: "call_now", mcp_next_tool: { tool_name: "mvr_entity_resolve", arguments: { payload: {} } } }, ["mvr_first_call"]);
+  if (legacyHandoff.name !== "mvr_entity_resolve") throw new Error("legacy handoff mismatch");
+  if (normalizeNextCall({ continuation_disposition: "await_input", mcp_next_call: null }, ["mvr_first_call"]) !== null) throw new Error("await_input must stop the client");
+  const contentOnly = extractToolPayload({ content: [{ type: "text", text: JSON.stringify({ status: "ok", continuation_disposition: "terminal" }) }] });
+  if (contentOnly.status !== "ok") throw new Error("content-only result extraction mismatch");
+  try {
+    normalizeNextCall({ continuation_disposition: "call_now", mcp_next_call: { name: "mvr_decision_check", arguments: { payload: {} } } }, ["mvr_first_call"]);
+    throw new Error("out-of-order handoff was accepted");
+  } catch (error) {
+    if (!error.message.includes("expected mvr_entity_resolve")) throw error;
+  }
   if (classifyPolicyIntent({ question: "Should this fintech launch lending in Uganda?", country: "UG" }) !== "protected") throw new Error("protected policy classification mismatch");
   if (classifyPolicyIntent({ question: "Translate this paragraph into Luganda." }) !== "not_protected") throw new Error("no-call policy classification mismatch");
   if (classifyPolicyIntent({ question: "Should we launch this?" }) !== "ambiguous") throw new Error("ambiguous policy classification mismatch");
@@ -194,7 +253,7 @@ function selfTest() {
       if (!error.message.includes(expected)) throw error;
     }
   }
-  process.stdout.write(`${JSON.stringify({ self_test: "PASS", short_sequence: 1, full_sequence: full.length, policy_modes: POLICY_MODES, malformed_envelopes_rejected: invalidEnvelopes.length })}\n`);
+  process.stdout.write(`${JSON.stringify({ self_test: "PASS", canonical_sequence_bound: CANONICAL_SEQUENCE.length, replayable_handoff: true, content_only_fallback: true, policy_modes: POLICY_MODES, malformed_envelopes_rejected: invalidEnvelopes.length })}\n`);
 }
 
 const args = process.argv.slice(2);

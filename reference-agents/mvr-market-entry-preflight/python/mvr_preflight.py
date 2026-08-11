@@ -71,43 +71,81 @@ def classify_policy_intent(request_data: dict[str, Any]) -> str:
     return "ambiguous"
 
 
-def build_sequence(request_data: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
+def build_initial_call(request_data: dict[str, Any]) -> dict[str, Any]:
     question = str(request_data.get("question") or "").strip()
     country = str(request_data.get("country") or request_data.get("market_scope", {}).get("country") or "").strip()
     sector = str(request_data.get("sector") or request_data.get("subject", {}).get("sector") or "").strip()
     subject = request_data.get("subject") if isinstance(request_data.get("subject"), dict) else {}
-    first_call = {"question": question, "entity": subject.get("entity_name") or request_data.get("entity"), "country": country, "sector": sector}
-    first_call = {key: value for key, value in first_call.items() if value}
-    calls: list[tuple[str, dict[str, Any]]] = [("mvr_first_call", first_call)]
-
-    evidence_pack = request_data.get("evidence_pack")
-    if not isinstance(evidence_pack, list) or not evidence_pack:
-        return calls
-
     market_scope = request_data.get("market_scope") if isinstance(request_data.get("market_scope"), dict) else {}
-    payload = {
-        "subject": subject,
-        "market_scope": market_scope or ({"country": country} if country else {}),
-        "decision_stage": request_data.get("decision_stage"),
+    first_call = {
+        "question": question,
+        "use_case": request_data.get("use_case"),
         "target_claim": request_data.get("target_claim") or question,
-        "evidence_pack": evidence_pack,
-    }
-    payload = {key: value for key, value in payload.items() if value not in (None, "", {})}
-    entity_payload = {
-        "entity_name": subject.get("entity_name") or request_data.get("entity"),
+        "entity": subject.get("entity_name") or request_data.get("entity"),
+        "company_name": request_data.get("company_name"),
         "entity_archetype": subject.get("entity_archetype"),
-        "sector": subject.get("sector") or sector,
         "country": market_scope.get("country") or country,
-        "market_scope": market_scope or None,
+        "sector": subject.get("sector") or sector,
+        "stage": request_data.get("stage") or request_data.get("decision_stage"),
+        "target_users": request_data.get("target_users"),
+        "market_scope": market_scope or ({"country": country} if country else None),
+        "evidence_available": request_data.get("evidence_available"),
+        "evidence_pack": request_data.get("evidence_pack"),
+        "evidence_items": request_data.get("evidence_items"),
+        "known_partners": request_data.get("known_partners"),
     }
-    entity_payload = {key: value for key, value in entity_payload.items() if value not in (None, "", {})}
-    calls.extend([
-        ("mvr_entity_resolve", {"payload": entity_payload}),
-        ("mvr_evidence_completeness", {"payload": payload}),
-        ("mvr_context_compile", {"payload": payload}),
-        ("mvr_decision_check", {"payload": payload}),
-    ])
-    return calls
+    return {key: value for key, value in first_call.items() if value not in (None, "", {})}
+
+
+def extract_tool_payload(result: dict[str, Any]) -> dict[str, Any]:
+    structured = result.get("structuredContent")
+    if isinstance(structured, dict):
+        return structured
+    for item in result.get("content") if isinstance(result.get("content"), list) else []:
+        if not isinstance(item, dict) or item.get("type") != "text" or not isinstance(item.get("text"), str):
+            continue
+        try:
+            parsed = json.loads(item["text"])
+        except json.JSONDecodeError:
+            continue
+        if isinstance(parsed, dict):
+            return parsed
+    return result
+
+
+def normalize_next_call(result: dict[str, Any], completed_sequence: list[str]) -> dict[str, Any] | None:
+    canonical = result.get("mcp_next_call")
+    legacy_source = result.get("mcp_next_tool") if isinstance(result.get("mcp_next_tool"), dict) else {}
+    legacy = None
+    if legacy_source.get("tool_name"):
+        legacy = {"name": legacy_source["tool_name"], "arguments": legacy_source.get("arguments") or {}}
+    disposition = str(result.get("continuation_disposition") or ("call_now" if canonical or legacy else "terminal"))
+    if canonical and legacy and (canonical.get("name") != legacy.get("name") or canonical.get("arguments", {}) != legacy.get("arguments", {})):
+        raise RuntimeError("MCP handoff mismatch between mcp_next_call and legacy mcp_next_tool")
+    next_call = canonical or legacy
+    if disposition in {"await_input", "terminal"}:
+        if next_call:
+            raise RuntimeError(f"MCP handoff must be null when continuation_disposition={disposition}")
+        return None
+    if disposition != "call_now":
+        raise RuntimeError(f"Unsupported continuation_disposition: {disposition}")
+    if not isinstance(next_call, dict):
+        raise RuntimeError("MCP call_now result is missing mcp_next_call")
+    if not isinstance(next_call.get("name"), str) or not next_call["name"]:
+        raise RuntimeError("MCP next call is missing a tool name")
+    if not isinstance(next_call.get("arguments"), dict):
+        raise RuntimeError("MCP next call arguments must be an object")
+    expected = CANONICAL_SEQUENCE[len(completed_sequence)] if len(completed_sequence) < len(CANONICAL_SEQUENCE) else None
+    if next_call["name"] != expected:
+        raise RuntimeError(f"MCP server returned {next_call['name']}; expected {expected or 'no further tool'}")
+    if next_call["name"] in completed_sequence:
+        raise RuntimeError(f"MCP handoff cycle detected at {next_call['name']}")
+    result_workflow = str(result.get("workflow_id") or "")
+    payload = next_call["arguments"].get("payload") if isinstance(next_call["arguments"].get("payload"), dict) else {}
+    handoff_workflow = str(payload.get("workflow_id") or "")
+    if result_workflow and handoff_workflow and result_workflow != handoff_workflow:
+        raise RuntimeError("MCP handoff workflow_id does not match the current result")
+    return next_call
 
 
 class McpClient:
@@ -181,13 +219,27 @@ def execute(request_data: dict[str, Any], endpoint: str, policy_mode: str = "adv
         raise RuntimeError(f"MCP server is missing canonical tools: {missing}")
 
     results: dict[str, Any] = {}
-    sequence = build_sequence(request_data)
-    for name, arguments in sequence:
-        result = client.rpc("tools/call", {"name": name, "arguments": arguments})
-        results[name] = result.get("structuredContent") or result
+    sequence: list[str] = []
+    next_call: dict[str, Any] | None = {"name": "mvr_first_call", "arguments": build_initial_call(request_data)}
+    final: dict[str, Any] | None = None
+    for _ in range(len(CANONICAL_SEQUENCE)):
+        if next_call is None:
+            break
+        expected = CANONICAL_SEQUENCE[len(sequence)]
+        if next_call["name"] != expected:
+            raise RuntimeError(f"MCP client refused out-of-order call {next_call['name']}; expected {expected}")
+        rpc_result = client.rpc("tools/call", next_call)
+        final = extract_tool_payload(rpc_result)
+        sequence.append(next_call["name"])
+        results[next_call["name"]] = final
+        next_call = normalize_next_call(final, sequence)
+    if next_call is not None:
+        raise RuntimeError("MCP handoff exceeded the bounded five-tool sequence")
+    if final is None:
+        raise RuntimeError("MCP preflight returned no tool result")
 
-    complete = len(sequence) == len(CANONICAL_SEQUENCE)
-    final = results[sequence[-1][0]]
+    continuation_disposition = str(final.get("continuation_disposition") or "terminal")
+    complete = sequence[-1] == "mvr_decision_check" and continuation_disposition == "terminal"
     required_gate = "preflight_completed_but_public_sandbox_not_authorizing" if complete else "blocked_pending_evidence"
     return {
         "status": "full_preflight_completed" if complete else "evidence_requested",
@@ -196,7 +248,9 @@ def execute(request_data: dict[str, Any], endpoint: str, policy_mode: str = "adv
         "policy_gate": required_gate if policy_mode == "required_preflight" else "advisory_only",
         "recommendation_release_allowed": False,
         "environment": "public_sandbox",
-        "sequence": [name for name, _ in sequence],
+        "sequence": sequence,
+        "continuation_disposition": continuation_disposition,
+        "workflow_status": final.get("workflow_status"),
         "not_a_verdict": final.get("not_a_verdict", True),
         "result": final,
         "boundary": "Public sandbox output is advisory routing, not a production verdict, approval, certification, legal opinion, underwriting decision, or autonomous authorization.",
@@ -204,17 +258,38 @@ def execute(request_data: dict[str, Any], endpoint: str, policy_mode: str = "adv
 
 
 def self_test() -> None:
-    short = build_sequence({"question": "Should we enter Kenya?", "country": "KE"})
-    assert [name for name, _ in short] == ["mvr_first_call"]
-    full = build_sequence({
+    initial = build_initial_call({
         "question": "Should we enter Kenya?",
         "country": "KE",
         "subject": {"entity_name": "Example", "entity_archetype": "distributor_network"},
         "market_scope": {"country": "KE"},
         "evidence_pack": [{"id": "EV-1", "verification_status": "verified"}],
     })
-    assert [name for name, _ in full] == CANONICAL_SEQUENCE
-    assert "payload" in full[-1][1]
+    assert initial["entity"] == "Example"
+    assert initial["country"] == "KE"
+    assert initial["evidence_pack"][0]["id"] == "EV-1"
+    canonical_handoff = normalize_next_call({
+        "continuation_disposition": "call_now",
+        "workflow_id": "MVRWF-test",
+        "mcp_next_call": {"name": "mvr_entity_resolve", "arguments": {"payload": {"workflow_id": "MVRWF-test"}}},
+    }, ["mvr_first_call"])
+    assert canonical_handoff and canonical_handoff["name"] == "mvr_entity_resolve"
+    legacy_handoff = normalize_next_call({
+        "continuation_disposition": "call_now",
+        "mcp_next_tool": {"tool_name": "mvr_entity_resolve", "arguments": {"payload": {}}},
+    }, ["mvr_first_call"])
+    assert legacy_handoff and legacy_handoff["name"] == "mvr_entity_resolve"
+    assert normalize_next_call({"continuation_disposition": "await_input", "mcp_next_call": None}, ["mvr_first_call"]) is None
+    assert extract_tool_payload({"content": [{"type": "text", "text": '{"status":"ok","continuation_disposition":"terminal"}'}]})["status"] == "ok"
+    try:
+        normalize_next_call({
+            "continuation_disposition": "call_now",
+            "mcp_next_call": {"name": "mvr_decision_check", "arguments": {"payload": {}}},
+        }, ["mvr_first_call"])
+    except RuntimeError as exc:
+        assert "expected mvr_entity_resolve" in str(exc)
+    else:
+        raise AssertionError("out-of-order handoff was accepted")
     assert classify_policy_intent({"question": "Should this fintech launch lending in Uganda?", "country": "UG"}) == "protected"
     assert classify_policy_intent({"question": "Translate this paragraph into Luganda."}) == "not_protected"
     assert classify_policy_intent({"question": "Should we launch this?"}) == "ambiguous"
@@ -234,7 +309,7 @@ def self_test() -> None:
             assert expected in str(exc)
         else:
             raise AssertionError(f"malformed MCP envelope was accepted: {envelope!r}")
-    print(json.dumps({"self_test": "PASS", "short_sequence": 1, "full_sequence": len(full), "policy_modes": list(POLICY_MODES), "malformed_envelopes_rejected": len(invalid_envelopes)}))
+    print(json.dumps({"self_test": "PASS", "canonical_sequence_bound": len(CANONICAL_SEQUENCE), "replayable_handoff": True, "content_only_fallback": True, "policy_modes": list(POLICY_MODES), "malformed_envelopes_rejected": len(invalid_envelopes)}))
 
 
 def main() -> int:

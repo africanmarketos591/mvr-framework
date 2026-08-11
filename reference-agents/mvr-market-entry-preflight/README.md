@@ -12,9 +12,10 @@ The classifier is a transparent reference policy, not semantic proof. Enterprise
 1. initializes the MCP session
 2. verifies the expected public tool set
 3. calls `mvr_first_call`
-4. stops and returns evidence requirements when no evidence pack is supplied
-5. otherwise runs entity resolution, evidence completeness, context compilation, and decision check
-6. preserves `not_a_verdict`, evidence gaps, and the public sandbox boundary
+4. replays the returned `mcp_next_call` exactly as the next `tools/call` parameters
+5. stops when `mcp_next_call` is null or `continuation_disposition` is `await_input`
+6. refuses out-of-order, cyclic, mismatched-workflow, or longer-than-five handoffs
+7. preserves `not_a_verdict`, evidence gaps, and the public sandbox boundary
 
 ## Input
 
@@ -34,7 +35,7 @@ The classifier is a transparent reference policy, not semantic proof. Enterprise
 }
 ```
 
-An empty or absent `evidence_pack` intentionally produces an evidence-request result rather than manufactured readiness.
+An empty or absent `evidence_pack` intentionally produces an evidence-request result rather than manufactured readiness. The clients do not precompute later stages from local assumptions. The server is authoritative about whether another tool can be called and with which exact arguments.
 
 ## Run
 
@@ -53,7 +54,7 @@ python python\mvr_preflight.py --self-test
 node javascript\mvr_preflight.mjs --self-test
 ```
 
-The default endpoint is the registry's five-tool read-only profile at `https://africanmarketos.com/mcp/preflight`. Override it only with `MVR_MCP_URL`. The public endpoint is sandbox/evaluation only; it never authorizes launch, scale, lending, investment, certification, or legal reliance. Do not send confidential evidence, personal records, credentials, or regulated data.
+The default endpoint is the registry's five-tool read-only profile at `https://africanmarketos.com/mcp/preflight`. Override it only with `MVR_MCP_URL`. Hosts that can invoke one MCP tool but cannot reliably execute another call from a tool result can use the single-tool guided fallback at `https://africanmarketos.com/mcp/guided`; it follows the same server-generated handoffs internally and stops at every context or evidence gate. The public endpoints are sandbox/evaluation only; they never authorize launch, scale, lending, investment, certification, or legal reliance. Do not send confidential evidence, personal records, credentials, or regulated data.
 
 Host recipes:
 
