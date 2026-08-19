@@ -35,6 +35,44 @@
       "pattern": "^[a-fA-F0-9]{64}$",
       "description": "Optional SHA-256 hash of the normalized source material."
     },
+    "source_doc_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable document or record identifier within the submitting system."
+    },
+    "provenance_status": {
+      "type": "string",
+      "enum": ["observed", "declared", "inferred_legacy", "imputed", "synthetic"],
+      "description": "How the provenance record was established. Inferred, imputed, or synthetic metadata must never be represented as observed."
+    },
+    "synthetic_fields": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"},
+      "description": "Fields supplied by migration or compatibility logic rather than present in the native source."
+    },
+    "independence_group_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Submitter-declared dependency group. A distinct group label is not sufficient by itself to prove independence."
+    },
+    "independence_basis": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Auditable explanation of why this item is or is not independent from other evidence."
+    },
+    "upstream_source_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1},
+      "description": "Known parent records or shared upstream sources used to detect dependence across evidence items."
+    },
+    "event_id": {"type": "string", "minLength": 1},
+    "dataset_id": {"type": "string", "minLength": 1},
+    "method_id": {"type": "string", "minLength": 1},
+    "instrument_id": {"type": "string", "minLength": 1},
+    "collector_id": {"type": "string", "minLength": 1},
+    "error_process_id": {"type": "string", "minLength": 1},
     "evidence_origin": {
       "type": "string",
       "enum": ["field_research", "public_record", "platform_telemetry", "partner_attestation", "self_reported", "third_party_verification"]
@@ -102,4 +140,3 @@
     }
   }
 }
-

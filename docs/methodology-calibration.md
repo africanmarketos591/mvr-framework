@@ -22,3 +22,12 @@ Lab and fixture calibration are not the same as live field accuracy. Published b
 
 Named-entity corpus baselines are sector reference baselines. They are not company-specific ratings or endorsements.
 
+## Evidence Dependence and Claim Release
+
+Evidence count and source count are not measures of independence. Two items may share the same event, dataset, method, instrument, collector, parent record, or error process even when they have different URLs, publishers, or source labels.
+
+The public provenance exchange schema therefore supports explicit dependency metadata. A source hostname is only a discovery hint. It is not proof that an item is independent.
+
+For a claim to be eligible for a board-safe technical release state, the governed runtime requires exact reviewed-content binding, eligible human review, at least two verified support items in two effective independent dependency components, privacy eligibility, and no unresolved or inferred legacy provenance. Caller-supplied citations or waivers cannot create verified support.
+
+This is an evidence-governance condition, not a legal opinion, external certification, or guarantee that the underlying claim is true.

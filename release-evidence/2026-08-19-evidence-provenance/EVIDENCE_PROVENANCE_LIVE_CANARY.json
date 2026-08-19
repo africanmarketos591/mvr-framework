@@ -1,0 +1,52 @@
+{
+  "evidence_schema": "mvr-release-evidence@1.0",
+  "recorded_at": "2026-08-19T08:18:42.188Z",
+  "source_commit": "25208b97b9be2f61a8de825fdc19870a1579e5e6",
+  "sbom_binding_commit": "46d92eacede50b2122bbc406afbe66919cf98405",
+  "sbom_sha256": "319cd5ce578551e8cb2b6ef6cc7e717ebcc4984bd1566ec67482eaa7e8f1a01e",
+  "deployment_provider_revision": "265ab407-cd1f-4583-a543-d836440b227f",
+  "local_verification": {
+    "worker_suite": {"passed": 150, "failed": 0},
+    "founder_registry_draft_2020_12_schema": "pass",
+    "founder_registry_negative_self_tests": "pass",
+    "partnership_readiness_negative_self_tests": "pass",
+    "golden_full_advisory": {"matched": 10, "total": 10},
+    "golden_strict_calibrated": {"matched": 10, "total": 10},
+    "worker_syntax": "pass",
+    "cyclonedx_1_5_sbom": {"status": "valid", "components": 91}
+  },
+  "live_canaries": {
+    "status_manifest": {"http_status": 200, "status": "operational"},
+    "founder_operating_patterns": {
+      "http_status": 200,
+      "modified_date_present": true,
+      "reversible_rule_present": true,
+      "rollback_rule_present": true,
+      "unsafe_unreviewed_client_experiment_absent": true
+    },
+    "claim_audit_without_credentials": {"http_status": 401},
+    "first_call_entity_name_contract": {
+      "http_status": 200,
+      "entity_name_preserved": true,
+      "workflow_issued": true,
+      "next_tool": "mvr_entity_resolve",
+      "not_a_verdict": true,
+      "live_mvr_scoring_executed": false
+    }
+  },
+  "policy_hardening": {
+    "source_count_is_not_independence": true,
+    "shared_dependencies_collapse_to_one_component": true,
+    "inferred_legacy_provenance_is_not_observed": true,
+    "exact_reviewed_content_binding_required": true,
+    "caller_waivers_cannot_manufacture_support": true,
+    "watchlist_event_vocabulary_is_coherent": true,
+    "founder_experiments_are_reversible_and_low_consequence": true
+  },
+  "truth_boundaries": [
+    "The provider revision and SBOM establish deployment provenance, not scientific validity or commercial impact.",
+    "A board-safe technical release state is evidence-governance metadata, not legal, investment, credit, regulatory, or procurement approval.",
+    "The reviewed buyer-selector and evidence-drift proposals remain research candidates and are not represented as validated products or proven demand.",
+    "No price, public score, autonomous monitoring claim, or new commercial offer was created from the reviewed drafts."
+  ]
+}
