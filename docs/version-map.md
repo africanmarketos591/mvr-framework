@@ -15,7 +15,7 @@ Every integration should preserve these fields separately:
 | `sdk_version` | `typescript@6.32.4;python@6.32.4` | Current published SDK lines, kept distinct by language. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-08-08.2` | Host-policy middleware, selection boundary, and distinct API-versus-human-service routing. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-08-18.founder-self-governance.1` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
+| `deployment_revision` | `2026-08-20.dodo-revenue-truth.1` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
 | `deployment_provider_revision` | `Recorded in release evidence after deployment` | Provider-generated Cloudflare version; not self-embedded because the provider creates it during deployment. |
 | `host_recipe_version` | `2026-08-12.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
