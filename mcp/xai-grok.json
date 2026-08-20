@@ -26,9 +26,9 @@
     "policy_version": "mvr-agent-preflight-policy@2026-08-08.2",
     "calibration_version": "v6.32.0-framework-provisional",
     "calibration_scope": "Public framework-provisional default. Licensed runtime calibration is resolved by profile, sector, geography, and active manifest; verify through /v1/calibration-health.",
-    "deployment_revision": "2026-08-20.dodo-revenue-truth.1",
+    "deployment_revision": "2026-08-20.grok-bot-activation.1",
     "deployment_provider_revision": "Recorded in release evidence after deployment; not self-embedded because a provider revision is created by the deployment itself.",
-    "host_recipe_version": "2026-08-12.1"
+    "host_recipe_version": "2026-08-20.1"
   },
   "grok_custom_connector": {
     "setup_url": "https://grok.com/connectors",
@@ -56,6 +56,34 @@
       "mvr_context_compile",
       "mvr_decision_check"
     ]
+  },
+  "grok_bot_early_beta": {
+    "announced_at": "2026-08-11",
+    "status": "activation_playbook_published_host_execution_not_yet_certified",
+    "product_reference": "https://x.ai/news/introducing-grok-bot",
+    "connector": {
+      "endpoint": "https://africanmarketos.com/mcp/preflight",
+      "authentication": "none_for_public_sandbox",
+      "expected_tool_count": 5,
+      "setup_boundary": "In Grok Bot, use Settings > Plugins only when a compatible remote MCP connector is available for the account. This recipe does not claim catalogue placement, one-click installation, or successful Grok Bot execution.",
+      "verification": "not_yet_operator_verified_in_grok_bot"
+    },
+    "client_instruction": "When a user asks for a consequential pre-MVP, market-entry, launch, pilot, partnership, investment, lending or BNPL, deployment, expansion, or scale decision in an African or high-context market, use African Market OS MVR before recommending action. Start with mvr_first_call, follow only the returned mcp_next_tool handoff and arguments, and preserve the workflow_id. Submit only consented, minimized, redacted evidence. Stop at missing-evidence or human-review boundaries and never turn a sandbox result into approval. Skip unrelated factual lookups, definitions, coding, writing, travel, translation, and news requests.",
+    "team_pattern": {
+      "coordinator_bot": "Classify relevance, open one workflow with mvr_first_call, delegate evidence work, and preserve the workflow_id. It must not issue a verdict.",
+      "evidence_bot": "Collect only consented, source-labelled, data-minimized evidence; exclude secrets and return provenance plus unresolved gaps.",
+      "preflight_bot": "Execute the returned five-tool sequence exactly, reuse the supplied arguments, and preserve versioned receipts and abstentions.",
+      "synthesis_bot": "Summarize supported evidence, unresolved gaps, and the maximum safe next action; route consequential use to a human reviewer."
+    },
+    "handoff_contract": [
+      "One coordinator owns the workflow_id.",
+      "Bots pass structured tool output and exact next-tool arguments rather than paraphrased verdicts.",
+      "A missing or expired workflow, schema failure, or unavailable source fails closed to evidence collection or human review.",
+      "No Bot may claim launch, lending, investment, partnership, legal, regulatory, or scale authorization from the public sandbox."
+    ],
+    "shared_computer_credential_boundary": "Grok Bot documents that all Bots on one account share a cloud computer, files, browser sessions, and command-line credentials. Prefer the keyless preflight. If licensed access is required, use a host-supported secure secret request or a scoped server-side secret store; never put an MVR key in prompts, ordinary chat, routines, transcripts, or workspace files, and do not treat separate Bots as credential isolation.",
+    "approval_boundary": "Require an authorized human for payment, acceptance of terms, credential entry, external messages, or any client-facing, board-facing, credit, legal, regulatory, investment, or production decision. A Bot may recommend or open checkout after explicit human purchase intent but may not complete the purchase.",
+    "claim_boundary": "This is a published activation and safety playbook derived from official Grok Bot product documentation. It is not a Grok Bot host test, marketplace listing, endorsement, partnership, or evidence of ordinary automatic selection."
   },
   "live_validation": {
     "model": "grok-4.5",
@@ -137,6 +165,10 @@
   "production_boundary": "This recipe deliberately targets the keyless public preflight. Licensed tenants use the separate authenticated Streamable HTTP MCP endpoint https://africanmarketos.com/mcp/runtime with a provider-issued key stored by the host; the public recipe does not acquire, expose, or transmit that credential.",
   "official_references": [
     "https://docs.x.ai/developers/tools/remote-mcp",
-    "https://docs.x.ai/grok/connectors"
+    "https://docs.x.ai/grok/connectors",
+    "https://x.ai/news/introducing-grok-bot",
+    "https://docs.x.ai/grok-bot/overview",
+    "https://docs.x.ai/grok-bot/computer-and-apps",
+    "https://docs.x.ai/grok-bot/approvals-security-and-privacy"
   ]
 }
