@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import pathlib
+import re
 import sys
 import time
 import urllib.request
@@ -61,6 +62,7 @@ def validate_local() -> None:
     agent_card = load_json(".well-known/agent-card.json")
     observatory = load_json(".well-known/mvr-selection-observatory.json")
     server = load_json("server.json")
+    grok_release = load_json("release-evidence/2026-08-20-grok-bot-activation/RELEASE_EVIDENCE.json")
     readme = (ROOT / "mcp/README.md").read_text(encoding="utf-8")
     version_map = (ROOT / "docs/version-map.md").read_text(encoding="utf-8")
     python_client = (ROOT / "reference-agents/mvr-market-entry-preflight/python/mvr_preflight.py").read_text(encoding="utf-8")
@@ -134,6 +136,11 @@ def validate_local() -> None:
     require("all Bots" in grok_bot.get("shared_computer_credential_boundary", "") and "never put an MVR key" in grok_bot.get("shared_computer_credential_boundary", ""), "Grok Bot shared-computer credential boundary")
     require("may not complete the purchase" in grok_bot.get("approval_boundary", ""), "Grok Bot human purchase boundary")
     require("not a Grok Bot host test" in grok_bot.get("claim_boundary", "") and "marketplace listing" in grok_bot.get("claim_boundary", ""), "Grok Bot host non-claim")
+    require(grok_release.get("deployment_revision") == EXPECTED["deployment_revision"], "Grok Bot release revision binding")
+    require(bool(re.fullmatch(r"[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}", grok_release.get("provider_revision", ""))), "Grok Bot provider revision binding")
+    require(grok_release.get("published_activation_contract", {}).get("expected_tool_count") == 5, "Grok Bot release tool profile")
+    require(grok_release.get("verification", {}).get("live_mcp_compatibility_tool_count") == 7 and grok_release.get("verification", {}).get("live_public_preflight_tool_count") == 5, "Grok Bot live profile evidence")
+    require(grok_release.get("security_and_authority_boundaries", {}).get("autonomous_payment_allowed") is False and grok_release.get("security_and_authority_boundaries", {}).get("human_approval_required_for_payment_terms_credentials_and_consequential_use") is True, "Grok Bot release authority boundary")
     require("mvr_commercial_handshake" not in recipe["responses_api_tool"], "xAI handshake exposure")
     require("require_approval" not in recipe["responses_api_tool"], "unsupported xAI approval field")
     require(recipe.get("live_validation", {}).get("cases_passed") == 3, "xAI live canary evidence")
