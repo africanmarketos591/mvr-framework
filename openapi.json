@@ -16291,6 +16291,12 @@
                   "non_confidential_brief"
                 ],
                 "properties": {
+                  "idempotency_key": {
+                    "type": "string",
+                    "minLength": 12,
+                    "maxLength": 120,
+                    "description": "Caller-generated retry key. Reuse it only for an identical submission."
+                  },
                   "use_case": {
                     "type": "string",
                     "enum": [
@@ -16304,8 +16310,12 @@
                       "procurement_tender_readiness",
                       "ngo_dfi_program_readiness",
                       "embeddedness_audit",
-                      "mvr_api_integration"
-                    ]
+                      "mvr_api_integration",
+                      "mvr_examiner",
+                      "speaking_and_masterclasses",
+                      "research_and_data_partnership"
+                    ],
+                    "description": "The bounded decision or engagement category the user explicitly wants African Market OS to review."
                   },
                   "organization_type": {
                     "type": "string",
@@ -16320,13 +16330,16 @@
                       "ai_agent_or_platform",
                       "research_or_academic",
                       "other"
-                    ]
+                    ],
+                    "description": "The submitting organization category; this controls routing only and is not an eligibility verdict."
                   },
                   "country": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Country or corridor relevant to the proposed decision."
                   },
                   "sector": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Sector or operating context when known."
                   },
                   "decision_stage": {
                     "type": "string",
@@ -16340,46 +16353,81 @@
                       "procurement",
                       "integration",
                       "other"
-                    ]
+                    ],
+                    "description": "Current stage of the decision or engagement."
                   },
                   "timeline": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Non-confidential timing or deadline for the decision."
                   },
                   "brief": {
                     "type": "string",
                     "minLength": 20,
-                    "maxLength": 1500
+                    "maxLength": 1500,
+                    "description": "User-approved non-confidential description of the decision that needs review."
                   },
                   "source_agent": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Optional host or agent name for aggregate channel measurement."
+                  },
+                  "offer_id": {
+                    "type": "string",
+                    "enum": [
+                      "mvr_api_starter",
+                      "founder_embeddedness_audit",
+                      "venture_embeddedness_audit",
+                      "portfolio_embeddedness_audit",
+                      "venture_market_entry_review",
+                      "retail_partner_diligence",
+                      "fintech_corridor_preflight",
+                      "institutional_shadow_review",
+                      "mvr_examiner",
+                      "speaking_and_masterclasses",
+                      "research_and_data_partnership",
+                      "african_startups_playbook"
+                    ],
+                    "description": "Stable offer identifier from /.well-known/mvr-offer-registry.json. The server derives it from use_case when omitted."
+                  },
+                  "acquisition_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "Optional random, non-PII journey identifier used to link discovery with a consented submission."
+                  },
+                  "intent_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "Optional random, non-PII identifier for this specific commercial intent."
                   },
                   "user_confirmed_submission": {
                     "type": "boolean",
-                    "enum": [
-                      true
-                    ]
+                    "const": true,
+                    "description": "Must be true only after the user reviews and explicitly approves the exact brief."
                   },
                   "non_confidential_brief": {
                     "type": "boolean",
-                    "enum": [
-                      true
-                    ]
+                    "const": true,
+                    "description": "Must be true only after confirming that the brief contains no confidential evidence, credentials, personal case records, or regulated data."
                   },
                   "consent_to_contact": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Required and true when any contact details are supplied."
                   },
                   "contact": {
                     "type": "object",
+                    "description": "Optional contact details supplied by the user with separate consent.",
                     "properties": {
                       "name": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "User-approved contact name."
                       },
                       "email": {
                         "type": "string",
-                        "format": "email"
+                        "format": "email",
+                        "description": "User-approved reply email."
                       },
                       "phone": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "User-approved reply phone number."
                       }
                     },
                     "additionalProperties": false
@@ -16398,7 +16446,7 @@
             "description": "Consent or validation error"
           },
           "409": {
-            "description": "Idempotency conflict"
+            "description": "Idempotency or offer mismatch"
           },
           "429": {
             "description": "Rate limited"
