@@ -1,0 +1,52 @@
+{
+  "evidence_contract": "amos-governed-revenue-closure-release-evidence@2026-08-20.1",
+  "release_date": "2026-08-20",
+  "service": "African Market OS - MVR API",
+  "deployment_revision": "2026-08-20.governed-revenue-closure.1",
+  "provider_revision": "ca793a95-746d-4ba5-9a46-02fe40c19a44",
+  "private_worker_source_commit": "167373db9102c3866017c7764e6bb32c297525b2",
+  "private_sbom_commit": "bd1d225",
+  "scope": "Close the durable operator and provider-authoritative lifecycle for existing fit-gated governed engagements without changing public offers or the self-serve Starter entitlement path.",
+  "production_reconciliation": {
+    "stored_intake_records": 34,
+    "internal_test_records": 33,
+    "external_behavioral_intents": 1,
+    "confirmed_external_leads": 1,
+    "durably_reviewed_leads": 0,
+    "fit_accepted": 0,
+    "scope_and_price_sent": 0,
+    "payment_route_sent": 0,
+    "paid_governed_engagements": 0,
+    "observed_first_review_response_count": 0,
+    "median_first_review_response_minutes": null,
+    "truth_boundary": "Only stored, contact-classified submissions and durable lifecycle transitions count. Views, inferred intent, checkout creation, browser returns, and internal canaries are not sales."
+  },
+  "validation": {
+    "private_worker_tests": "151/151 pass",
+    "public_safe_worker_ci": "pass",
+    "wrangler_dry_run": "pass",
+    "production_deploy": "pass",
+    "public_version_contract": "pass",
+    "governed_return_page": "200; noindex,nofollow; does not claim payment",
+    "unauthenticated_operator_route": "401",
+    "live_dodo_private_product": "existing product contract revalidated; exact USD 950 preview preserved; no entitlement attached; not a public offer",
+    "live_dodo_webhook": "one active canonical webhook; payment.succeeded and payment.failed subscribed"
+  },
+  "authority_boundaries": {
+    "provider_success_required_for_paid": true,
+    "browser_return_is_payment_proof": false,
+    "operator_fit_review_required": true,
+    "exact_scope_and_price_required_before_checkout": true,
+    "autonomous_agent_payment_allowed": false,
+    "new_public_offer_created": false,
+    "dodo_replaced": false,
+    "new_attribution_identifier_created": false
+  },
+  "actual_break": "Lead creation and alert delivery were functioning. The missing production capability was durable operator response and governed close-state instrumentation after receipt.",
+  "claims_not_made": [
+    "A governed engagement sale has occurred",
+    "The historical external lead was reviewed or commercially closed inside the new lifecycle",
+    "A checkout route or browser return proves payment",
+    "The private fit-gated carrier is a new public self-serve offer"
+  ]
+}
