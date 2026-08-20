@@ -1,0 +1,50 @@
+{
+  "evidence_contract": "amos-grok-bot-activation-release-evidence@2026-08-20.1",
+  "release_date": "2026-08-20",
+  "service": "African Market OS - MVR API",
+  "deployment_revision": "2026-08-20.grok-bot-activation.1",
+  "provider_revision": "62c5ecda-57d2-423f-8f75-3630cc6caeed",
+  "public_contract_commit": "3c1676aa68c284603fa89512c3f2c7ff0c74c894",
+  "private_worker_source_commit": "6f5dd3be1cb4cbe7968dadaf44b0265c2ed33d35",
+  "official_product_announcement": {
+    "product": "Grok Bot early beta",
+    "announced_at": "2026-08-11",
+    "url": "https://x.ai/news/introducing-grok-bot"
+  },
+  "published_activation_contract": {
+    "url": "https://africanmarketos.com/mcp/xai-grok.json",
+    "status": "activation_playbook_published_host_execution_not_yet_certified",
+    "public_endpoint": "https://africanmarketos.com/mcp/preflight",
+    "expected_tool_count": 5,
+    "authentication": "none_for_public_sandbox",
+    "team_roles": [
+      "coordinator_bot",
+      "evidence_bot",
+      "preflight_bot",
+      "synthesis_bot"
+    ]
+  },
+  "verification": {
+    "private_worker_tests": "150/150 pass",
+    "public_safe_worker_ci": "pass",
+    "public_contract_local_and_live": "pass",
+    "live_contract_revision": "2026-08-20.grok-bot-activation.1",
+    "live_mcp_compatibility_tool_count": 7,
+    "live_public_preflight_tool_count": 5,
+    "cloudflare_schedule": "0 6 * * *"
+  },
+  "security_and_authority_boundaries": {
+    "shared_computer_is_credential_isolation": false,
+    "credentials_allowed_in_prompts_or_workspace_files": false,
+    "autonomous_payment_allowed": false,
+    "human_approval_required_for_payment_terms_credentials_and_consequential_use": true,
+    "public_preflight_is_a_verdict": false
+  },
+  "claims_not_made": [
+    "Grok Bot host execution has been operator-certified",
+    "African Market OS is listed in a Grok Bot marketplace or catalogue",
+    "xAI endorses or partners with African Market OS",
+    "Grok Bot ordinarily or automatically selects African Market OS",
+    "Prior Grok.com or xAI Responses API observations are Grok Bot evidence"
+  ]
+}
