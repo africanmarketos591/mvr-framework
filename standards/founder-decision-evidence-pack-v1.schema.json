@@ -1,0 +1,394 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://africanmarketos.com/standards/founder-decision-evidence-pack-v1.schema.json",
+  "title": "AMOS Founder Decision Evidence Pack v1",
+  "description": "A founder-generated, browser-local record of one decision, its current evidence gaps, and one reversible experiment. It is not an AMOS assessment, verification, score, diagnosis, or authorization.",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "evidence_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lens",
+        "label",
+        "answer_state",
+        "evidence_state",
+        "observation"
+      ],
+      "properties": {
+        "lens": {
+          "enum": [
+            "demand_reality",
+            "value_and_offer",
+            "economic_health",
+            "customer_continuity",
+            "delivery_reliability",
+            "team_and_decision_architecture",
+            "learning_and_adaptation"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 80
+        },
+        "answer_state": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "evidence_state": {
+          "enum": [
+            "none",
+            "observed",
+            "internal_record",
+            "artifact_reviewed_by_founder"
+          ]
+        },
+        "observation": {
+          "type": "string",
+          "maxLength": 500
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "answer_state": {
+                "enum": [
+                  "unknown",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [
+              "answer_state"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence_state": {
+                "const": "none"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "tool_version",
+    "pack_id",
+    "generated_at",
+    "origin",
+    "completion_state",
+    "decision",
+    "evidence_snapshot",
+    "priority_gaps",
+    "experiment",
+    "safe_next_action",
+    "unsafe_claim_to_avoid",
+    "sharing_boundary",
+    "boundaries"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "tool_version": {
+      "const": "2026-08-29.1"
+    },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "origin": {
+      "const": "browser_local_founder_generated"
+    },
+    "completion_state": {
+      "const": "complete"
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "statement",
+        "horizon_days"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "market_entry",
+            "fundraising",
+            "partnership",
+            "hiring_or_delegation",
+            "scaling",
+            "product_or_offer",
+            "other"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 12,
+          "maxLength": 500
+        },
+        "horizon_days": {
+          "type": "integer",
+          "minimum": 7,
+          "maximum": 365
+        }
+      }
+    },
+    "evidence_snapshot": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "prefixItems": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_row"
+            },
+            {
+              "properties": {
+                "lens": {
+                  "const": "demand_reality"
+                },
+                "label": {
+                  "const": "Demand reality"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_row"
+            },
+            {
+              "properties": {
+                "lens": {
+                  "const": "value_and_offer"
+                },
+                "label": {
+                  "const": "Value and offer"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_row"
+            },
+            {
+              "properties": {
+                "lens": {
+                  "const": "economic_health"
+                },
+                "label": {
+                  "const": "Economic health"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_row"
+            },
+            {
+              "properties": {
+                "lens": {
+                  "const": "customer_continuity"
+                },
+                "label": {
+                  "const": "Customer continuity"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_row"
+            },
+            {
+              "properties": {
+                "lens": {
+                  "const": "delivery_reliability"
+                },
+                "label": {
+                  "const": "Delivery reliability"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_row"
+            },
+            {
+              "properties": {
+                "lens": {
+                  "const": "team_and_decision_architecture"
+                },
+                "label": {
+                  "const": "Team and decision architecture"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/evidence_row"
+            },
+            {
+              "properties": {
+                "lens": {
+                  "const": "learning_and_adaptation"
+                },
+                "label": {
+                  "const": "Learning and adaptation"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "items": false
+    },
+    "priority_gaps": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 300
+      }
+    },
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "risk_to_test",
+        "reversible_action",
+        "expected_observation",
+        "stop_rule",
+        "evidence_to_keep",
+        "review_date",
+        "support_request"
+      ],
+      "properties": {
+        "risk_to_test": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 400
+        },
+        "reversible_action": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 500
+        },
+        "expected_observation": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 400
+        },
+        "stop_rule": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 400
+        },
+        "evidence_to_keep": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 400
+        },
+        "review_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "support_request": {
+          "type": "string",
+          "maxLength": 400
+        }
+      }
+    },
+    "safe_next_action": {
+      "enum": [
+        "gather_evidence_only",
+        "run_reversible_test",
+        "proceed_with_bounded_pilot",
+        "pause_and_seek_specialist_review"
+      ]
+    },
+    "unsafe_claim_to_avoid": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 400
+    },
+    "sharing_boundary": {
+      "enum": [
+        "private_draft",
+        "founder_selected_coach",
+        "founder_selected_programme",
+        "founder_selected_external_conversation"
+      ]
+    },
+    "boundaries": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "private_reflection_excluded",
+        "no_score",
+        "no_verification",
+        "no_decision_authorization",
+        "founder_controlled_export",
+        "no_source_contact",
+        "source_instrument_results_imported"
+      ],
+      "properties": {
+        "private_reflection_excluded": {
+          "const": true
+        },
+        "no_score": {
+          "const": true
+        },
+        "no_verification": {
+          "const": true
+        },
+        "no_decision_authorization": {
+          "const": true
+        },
+        "founder_controlled_export": {
+          "const": true
+        },
+        "no_source_contact": {
+          "const": true
+        },
+        "source_instrument_results_imported": {
+          "const": false
+        }
+      }
+    }
+  }
+}
