@@ -29,7 +29,9 @@ It is not a founder assessment, psychometric instrument, MVR verdict, evidence v
 - Private Self reflection stays in the founder's browser and is excluded from export.
 - The lab does not ask for or infer trauma, childhood causes, attachment, personality, diagnosis, mental health, or founder quality.
 - A business translation is included only when the founder writes and opts into it; no Self result is imported.
-- The context passport records a non-confidential venture label, sector, stage, operating model, current founder role, market context, segment, and offering. These are working context fields, not verified identity or classification claims.
+- The context passport records a non-confidential venture label, sector, stage, operating model, current founder role, primary ISO-2 country code, local market/city/district/corridor, segment, and offering. These are working context fields, not verified identity or classification claims.
+- Stage, operating model, and founder role default to `not_stated`; leaving a menu untouched cannot silently label the venture or person.
+- The MVR handoff maps the primary country to `country` and `market_scope.country`, and maps the local market/city/district/corridor separately to `market_scope.town_or_zone`.
 - Option A, Option B, doing nothing, decision criteria, exposure, accountable owner, and required approvals remain visible in the founder's Decision Board.
 - An external dependency without bounded permission and at least some current evidence caps the safe next action at evidence gathering or specialist review.
 - Any safe-action ceiling is shown before export and recorded separately from the founder's evidence gaps. The Decision Board preserves both the founder-selected candidate and the more cautious applied ceiling.
@@ -39,6 +41,7 @@ It is not a founder assessment, psychometric instrument, MVR verdict, evidence v
 - Plain-text and support-slice exports use human-readable labels and omit declined optional sections. JSON retains the stable machine contract.
 - The minimized support slice is for a founder-selected coach or programme support conversation. It is not an external diligence, assurance, verification, selection, or decision-authorization record.
 - The separate MVR preflight handoff excludes private Self material, private scratch, detailed evidence observations, contact details and personal identifiers, the pack identifier, and any Diagnostic response total or reflection band.
+- Evidence-state labels in the handoff are founder-declared categories, not reviewed evidence. With observations and artifacts withheld, `mvr_first_call` can return a missing-context/evidence-gap map and next-tool route but cannot evaluate authenticity, relevance, source quality, readiness, or claim truth.
 - The MVR preflight handoff creates no automatic network call, score, verdict, or decision authorization. Consequential use still requires human review and the appropriate governed route.
 - Coaches do not request private reflection, diagnose founders, verify claims, rank participants, or decide funding.
 - Programme operators and sponsors must not require completion or disclosure for admission, support, employment, funding, or standing.
@@ -68,6 +71,8 @@ The Facilitator Field Guide is a static, no-account protocol. It collects no ans
 ## Deliberate Deferrals
 
 The current beta is the planning half of a decision cycle. Decision Closeout, prior-pack import, cross-pack history, claim-level identifiers, accounts, cohort dashboards, automatic API submission, and an external assurance surface are not live. They remain possible later only if the 4-6 founder rehearsal shows that founders complete the present flow, return to review evidence, understand its boundaries, and derive useful decisions from it.
+
+The Lab is a deep decision session, not a required weekly ritual: allow roughly 30-60 minutes for a careful self-guided first pass or 60-90 minutes with a facilitator. Founder Operating Patterns and the MVR Diagnostic are separate optional instruments and need not be completed in the same sitting.
 
 ## Commercial Route
 
