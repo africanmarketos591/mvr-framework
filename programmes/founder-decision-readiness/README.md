@@ -6,6 +6,10 @@ The public browser-local lab is available at:
 
 https://africanmarketos.com/founder-decision-readiness/
 
+The public facilitator protocol is available at:
+
+https://africanmarketos.com/facilitator-field-guide/
+
 Its current machine-readable export contract is:
 
 `../../standards/founder-decision-evidence-pack-v1.1.schema.json`
@@ -24,7 +28,11 @@ It is not a founder assessment, psychometric instrument, MVR verdict, evidence v
 - The lab does not ask for or infer trauma, childhood causes, attachment, personality, diagnosis, mental health, or founder quality.
 - A business translation is included only when the founder writes and opts into it; no Self result is imported.
 - An external dependency without bounded permission and at least some current evidence caps the safe next action at evidence gathering or specialist review.
+- Any safe-action ceiling is shown before export and recorded separately from the founder's evidence gaps. It does not silently replace the founder's requested action.
+- All three founder-selected priority gaps are preserved. A system-applied relational-dependency constraint is a separate record and cannot evict a founder gap.
 - The founder chooses whether to create, download, correct, share, or withhold the pack.
+- The founder may explicitly save, restore, or delete a non-private working copy on the current device. There is no automatic save or account sync; private pre-mortem scratch and generated packs are excluded from the saved working copy.
+- Plain-text and support-slice exports use human-readable labels and omit declined optional sections. JSON retains the stable machine contract.
 - The minimized support slice is for a founder-selected coach or programme support conversation. It is not an external diligence, assurance, verification, selection, or decision-authorization record.
 - Coaches do not request private reflection, diagnose founders, verify claims, rank participants, or decide funding.
 - Programme operators and sponsors must not require completion or disclosure for admission, support, employment, funding, or standing.
@@ -44,6 +52,12 @@ The v1.1 pack carries a random browser-generated `pack_id`, `schema_version`, st
 `founder_held_reference` is an optional founder-controlled local alias. A pseudonym is not anonymous, and the alias is not assigned or verified by AMOS. It should not contain names, contact details, account numbers, or programme identifiers.
 
 A future, separately consented assurance record could reference an immutable pack by `pack_id`, `schema_version`, and a JSON Pointer or stable lens identifier. It must not rewrite or convert the founder-generated pack into a verified record.
+
+The optional calendar export creates a private evidence-review cadence rather than storing the decision itself: a fortnightly evidence check, a midpoint stop-rule check, and the founder-set final review date. Event titles and descriptions contain no decision text, founder reference, pack identifier, or venture name.
+
+## Facilitator Protocol
+
+The Facilitator Field Guide is a static, no-account protocol. It collects no answers and creates no programme dashboard, cohort ranking, assurance result, investor score, or custody system. It teaches a 90-second read order, five support questions, unsafe-pack recognition, private-Self boundaries, an optional six-month programme rhythm, and escalation outside the instrument. The founder chooses what to share.
 
 ## Deliberate Deferrals
 
