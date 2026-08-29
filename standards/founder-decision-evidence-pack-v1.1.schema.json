@@ -104,24 +104,28 @@
       "const": "1.1.0"
     },
     "tool_version": {
-      "const": "2026-08-29.2"
+      "const": "2026-08-29.3"
     },
     "pack_id": {
       "type": "string",
-      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "description": "Random UUID generated in the founder's browser for this exact pack. It is not a person, venture, programme, account, verification, or authority identifier."
     },
     "generated_at": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Browser-local pack generation timestamp and evidence-snapshot as-of time."
     },
     "pack_expires_at": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Founder-set currentness review deadline computed from generated_at plus decision.horizon_days. It is not AMOS-certified validity and does not establish the freshness or expiry of any source fact."
     },
     "founder_held_reference": {
       "type": "string",
       "maxLength": 80,
-      "pattern": "^(|[A-Za-z0-9][A-Za-z0-9._-]{0,79})$"
+      "pattern": "^(|[A-Za-z0-9][A-Za-z0-9._-]{0,79})$",
+      "description": "Optional founder-controlled local alias. A pseudonym is not anonymous and this value is not assigned or verified by AMOS; do not use names, contact details, account numbers, or programme identifiers."
     },
     "origin": {
       "const": "browser_local_founder_generated"

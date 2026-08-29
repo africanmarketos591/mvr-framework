@@ -10730,7 +10730,7 @@
     },
     "/v1/ingest-event": {
       "post": {
-        "summary": "Ingest live African market events into MVR_EVENTS KV so subsequent decision-checks can auto-populate liquidity context. Requires event_admin, ops_admin, or policy_admin role and Idempotency-Key. Valid event_type values: school_fees_window, harvest_inflow, harvest_outflow, pre_election_hoarding, post_election_normalisation, religious_fasting, religious_feasting, market_day_cycle, salary_cycle_peak, salary_cycle_trough, flooding_disruption, drought_period, festive_season, fuel_shortage, lab_window, formalization_wave. Lightweight payloads may use intensity/signal_date/notes; conservative governance defaults are filled.",
+        "summary": "Ingest live African market events into MVR_EVENTS KV so subsequent decision-checks can auto-populate liquidity context. Requires event_admin, ops_admin, or policy_admin role and Idempotency-Key. Valid event_type values: school_fees_window, harvest_inflow, harvest_outflow, pre_election_hoarding, post_election_normalisation, religious_fasting, religious_feasting, market_day_cycle, salary_cycle_peak, salary_cycle_trough, flooding_disruption, drought_period, festive_season, fuel_shortage, lab_window, formalization_wave, regulatory_shock, evidence_staleness. Lightweight payloads may use intensity/signal_date/notes; conservative governance defaults are filled.",
         "description": "Release-candidate route. Verify with route, evidence, output-mode, security, and regression harnesses before production promotion.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/ingest-event",
@@ -11074,6 +11074,116 @@
           "pii_redacted_by_default",
           "rbac_gated",
           "plan_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateAdminObservability",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/commercial-lifecycle": {
+      "get": {
+        "summary": "Review governed leads, bind an existing offer and approved scope, issue a private Dodo checkout, reconcile provider payment, and report aggregate lead-to-cash truth.",
+        "description": "Private operator state machine for existing fit-gated offers. It reuses stored lead identifiers, never marks payment from browser intent, and accepts paid state only from signed Dodo webhooks or authenticated provider reconciliation.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/admin/commercial-lifecycle",
+        "x-mvr-maturity": "stable",
+        "x-mvr-labels": [
+          "governed_commerce",
+          "operator_only",
+          "human_approval_required",
+          "provider_authoritative_payment",
+          "plan_gated",
+          "rbac_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateAdminObservability",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not found"
+          },
+          "422": {
+            "description": "Validation or calibration failure"
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded"
+          }
+        }
+      },
+      "post": {
+        "summary": "Review governed leads, bind an existing offer and approved scope, issue a private Dodo checkout, reconcile provider payment, and report aggregate lead-to-cash truth.",
+        "description": "Private operator state machine for existing fit-gated offers. It reuses stored lead identifiers, never marks payment from browser intent, and accepts paid state only from signed Dodo webhooks or authenticated provider reconciliation.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/admin/commercial-lifecycle",
+        "x-mvr-maturity": "stable",
+        "x-mvr-labels": [
+          "governed_commerce",
+          "operator_only",
+          "human_approval_required",
+          "provider_authoritative_payment",
+          "plan_gated",
+          "rbac_gated"
         ],
         "x-mvr-validator-contract": {
           "name": "validateAdminObservability",
@@ -16310,6 +16420,7 @@
                       "procurement_tender_readiness",
                       "ngo_dfi_program_readiness",
                       "embeddedness_audit",
+                      "founder_decision_readiness_pilot",
                       "mvr_api_integration",
                       "mvr_examiner",
                       "speaking_and_masterclasses",
@@ -16370,6 +16481,11 @@
                     "type": "string",
                     "description": "Optional host or agent name for aggregate channel measurement."
                   },
+                  "acquisition_source": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9][a-z0-9_:-]{0,79}$",
+                    "description": "Optional bounded, non-PII source label carried from the referring AMOS page or approved agent route. This is attribution context, not proof of identity."
+                  },
                   "offer_id": {
                     "type": "string",
                     "enum": [
@@ -16383,6 +16499,7 @@
                       "institutional_shadow_review",
                       "mvr_examiner",
                       "speaking_and_masterclasses",
+                      "founder_decision_readiness_pilot",
                       "research_and_data_partnership",
                       "african_startups_playbook"
                     ],
