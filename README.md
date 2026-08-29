@@ -150,7 +150,8 @@ The API helps agents and systems:
 - MVR-first agent patterns: `agent-patterns/`
 - Agent wrapper tool schemas: `agent-patterns/tool-schemas.json`
 - Provenance ledger schema: `standards/mvr-provenance-ledger.schema.json`
-- Founder Decision Evidence Pack schema: `standards/founder-decision-evidence-pack-v1.schema.json`
+- Founder Decision Evidence Pack current schema: `standards/founder-decision-evidence-pack-v1.1.schema.json`
+- Founder Decision Evidence Pack v1.0 provenance contract: `standards/founder-decision-evidence-pack-v1.schema.json`
 - Founder Decision Readiness programme boundary: `programmes/founder-decision-readiness/README.md`
 - Public stress-test corpus: `stress-test-corpus/`
 - Public agent preflight intent corpus: `agent-intent-corpus/`
