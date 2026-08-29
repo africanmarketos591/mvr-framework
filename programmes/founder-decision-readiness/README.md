@@ -1,6 +1,6 @@
 # Founder Decision Readiness
 
-Founder Decision Readiness is a founder-controlled planning layer for programmes that work across Self, Business, and Ecosystem.
+Founder Decision Readiness is a founder-controlled planning layer for programmes that keep four distinct planes connected: private Self reflection, one Business decision, Ecosystem evidence and permission, and a founder-approved Integration handoff.
 
 The public browser-local lab is available at:
 
@@ -18,7 +18,9 @@ The v1.0 schema remains published as a provenance contract.
 
 ## Intended Use
 
-The lab helps a founder name one consequential decision, optionally rewrite one private observation as an observable business action, take a non-scored evidence snapshot, identify any external permission or behaviour the decision depends on, define one reversible experiment, and optionally create a portable Decision Evidence Pack or minimized support slice.
+The lab helps a founder name one consequential decision, describe its operating context, compare two real alternatives with doing nothing, name ownership and required approvals, optionally rewrite one private observation as an observable business action, take a non-scored evidence snapshot, identify any external permission or behaviour the decision depends on, define one reversible experiment, and optionally create a portable Decision Evidence Pack or minimized support slice.
+
+After the pack is generated, the founder may separately export a minimized, non-confidential MVR preflight handoff. That handoff names `POST /v1/first-call` and `mvr_first_call`, but this browser-local page never submits it. The founder must inspect and deliberately authorize the exact payload before a facilitator or agent uses it.
 
 It is not a founder assessment, psychometric instrument, MVR verdict, evidence verification, programme score, funding recommendation, prediction, certification, or authorization.
 
@@ -27,13 +29,17 @@ It is not a founder assessment, psychometric instrument, MVR verdict, evidence v
 - Private Self reflection stays in the founder's browser and is excluded from export.
 - The lab does not ask for or infer trauma, childhood causes, attachment, personality, diagnosis, mental health, or founder quality.
 - A business translation is included only when the founder writes and opts into it; no Self result is imported.
+- The context passport records a non-confidential venture label, sector, stage, operating model, current founder role, market context, segment, and offering. These are working context fields, not verified identity or classification claims.
+- Option A, Option B, doing nothing, decision criteria, exposure, accountable owner, and required approvals remain visible in the founder's Decision Board.
 - An external dependency without bounded permission and at least some current evidence caps the safe next action at evidence gathering or specialist review.
-- Any safe-action ceiling is shown before export and recorded separately from the founder's evidence gaps. It does not silently replace the founder's requested action.
+- Any safe-action ceiling is shown before export and recorded separately from the founder's evidence gaps. The Decision Board preserves both the founder-selected candidate and the more cautious applied ceiling.
 - All three founder-selected priority gaps are preserved. A system-applied relational-dependency constraint is a separate record and cannot evict a founder gap.
 - The founder chooses whether to create, download, correct, share, or withhold the pack.
 - The founder may explicitly save, restore, or delete a non-private working copy on the current device. There is no automatic save or account sync; private pre-mortem scratch and generated packs are excluded from the saved working copy.
 - Plain-text and support-slice exports use human-readable labels and omit declined optional sections. JSON retains the stable machine contract.
 - The minimized support slice is for a founder-selected coach or programme support conversation. It is not an external diligence, assurance, verification, selection, or decision-authorization record.
+- The separate MVR preflight handoff excludes private Self material, private scratch, detailed evidence observations, contact details and personal identifiers, the pack identifier, and any Diagnostic response total or reflection band.
+- The MVR preflight handoff creates no automatic network call, score, verdict, or decision authorization. Consequential use still requires human review and the appropriate governed route.
 - Coaches do not request private reflection, diagnose founders, verify claims, rank participants, or decide funding.
 - Programme operators and sponsors must not require completion or disclosure for admission, support, employment, funding, or standing.
 - The seven operating lenses are not the current MVR Diagnostic roots and are not a validated scale.
@@ -57,11 +63,11 @@ The optional calendar export creates a private evidence-review cadence rather th
 
 ## Facilitator Protocol
 
-The Facilitator Field Guide is a static, no-account protocol. It collects no answers and creates no programme dashboard, cohort ranking, assurance result, investor score, or custody system. It teaches a 90-second read order, five support questions, unsafe-pack recognition, private-Self boundaries, an optional six-month programme rhythm, and escalation outside the instrument. The founder chooses what to share.
+The Facilitator Field Guide is a static, no-account protocol. It collects no answers and creates no programme dashboard, cohort ranking, assurance result, investor score, or custody system. It teaches the four-plane journey, a 90-second read order, an executable 60-90 minute session, stage- and context-aware evidence questions, facilitator calibration, unsafe-pack recognition, private-Self boundaries, the founder-approved MVR handoff, an optional six-month programme rhythm, and escalation outside the instrument. The founder chooses what to share.
 
 ## Deliberate Deferrals
 
-The current beta is the planning half of a decision cycle. Decision Closeout, prior-pack import, cross-pack history, claim-level identifiers, accounts, and an external assurance surface are not live. They remain possible later only if the 4-6 founder rehearsal shows that founders complete the present flow, return to review evidence, understand its boundaries, and derive useful decisions from it.
+The current beta is the planning half of a decision cycle. Decision Closeout, prior-pack import, cross-pack history, claim-level identifiers, accounts, cohort dashboards, automatic API submission, and an external assurance surface are not live. They remain possible later only if the 4-6 founder rehearsal shows that founders complete the present flow, return to review evidence, understand its boundaries, and derive useful decisions from it.
 
 ## Commercial Route
 
