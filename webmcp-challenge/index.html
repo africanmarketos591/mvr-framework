@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WebMCP Decision Readiness Lab | African Market OS</title>
+  <meta name="description" content="A public African Market OS WebMCP demo where a human and browser agent scope a high-context market decision, run a bounded MVR first-call preflight, and prepare the next safe action.">
+  <style>
+    :root{--ink:#111814;--muted:#4e5f55;--line:#d8e4dc;--soft:#f5f8f3;--green:#126644}
+    *{box-sizing:border-box}
+    body{margin:0;color:var(--ink);background:#fbfcfa;font:16px/1.55 Inter,Segoe UI,Arial,sans-serif}
+    a{color:var(--green);font-weight:800}
+    nav{display:flex;gap:16px;justify-content:space-between;align-items:center;padding:15px 22px;border-bottom:1px solid var(--line);background:#fff;flex-wrap:wrap}
+    .brand{font-weight:900;text-decoration:none}
+    .hero{background:#122018;color:#fff;padding:42px 22px 34px}
+    .wrap{max-width:1120px;margin:auto}
+    .hero p{max-width:790px;color:#dce6dd}
+    .eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#bfe3ce}
+    .hero h1{font-size:42px;line-height:1.1;margin:8px 0 12px;letter-spacing:0}
+    .band{padding:28px 22px}
+    .grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:20px;align-items:start}
+    .panel{border:1px solid var(--line);background:#fff;border-radius:8px;padding:18px}
+    .rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    label{display:block;font-weight:850;font-size:13px;margin-bottom:5px}
+    input,select,textarea{width:100%;border:1px solid #b9c9be;border-radius:6px;padding:10px 11px;font:inherit}
+    textarea{min-height:92px;resize:vertical}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    button,.btn{border:1px solid var(--green);background:var(--green);color:white;border-radius:6px;padding:10px 13px;font-weight:850;font:inherit;cursor:pointer;text-decoration:none}
+    .secondary{background:#fff;color:var(--green)}
+    .result{white-space:pre-wrap;background:#102017;color:#e5f2ea;border-radius:8px;padding:14px;min-height:220px;overflow:auto;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace}
+    .small{font-size:13px;color:var(--muted)}
+    @media(max-width:820px){.grid,.rows{grid-template-columns:1fr}.hero h1{font-size:34px}}
+  </style>
+</head>
+<body>
+  <nav><a class="brand" href="https://africanmarketos.com/">African Market OS</a><a href="https://africanmarketos.com/connect-ai/">Connect AI</a></nav>
+  <header class="hero"><div class="wrap"><p class="eyebrow">OpenAI WebMCP Challenge demo</p><h1>Decision readiness for people and browser agents</h1><p>This public lab lets a human and an agent scope a high-context market decision, call the bounded MVR first-call preflight, convert the result into evidence gaps, and choose a human-controlled next step.</p></div></header>
+  <main><section class="band"><div class="wrap grid"><section class="panel"><h2>Scope a decision</h2><div class="rows"><div><label for="entity_name">Entity or venture</label><input id="entity_name" value="Example Kampala Supplier-Finance Venture"></div><div><label for="country">Country code</label><input id="country" value="UG" maxlength="2"></div><div><label for="local_market">Local market or corridor</label><input id="local_market" value="Kampala supplier-finance corridor"></div><div><label for="sector">Sector</label><input id="sector" value="supplier finance BNPL"></div><div><label for="decision">Decision</label><select id="decision"><option value="market_entry">Market entry</option><option value="partnership">Partnership</option><option value="investment_screening">Investment screening</option><option value="pilot_design">Pilot design</option><option value="scale_review">Scale review</option></select></div><div><label for="timeframe">Timeframe</label><select id="timeframe"><option value="30_days">30 days</option><option value="90_days">90 days</option><option value="six_months">Six months</option></select></div></div><label for="evidence_note" style="margin-top:12px">Non-confidential evidence note</label><textarea id="evidence_note">No dated local stakeholder evidence has been added yet.</textarea><div class="actions"><button id="sample_btn" type="button">Load Sample</button><button id="run_btn" type="button">Run First Call</button><button id="plan_btn" class="secondary" type="button">Gap Plan</button><a class="btn secondary" href="https://africanmarketos.com/checkout/starter?source=webmcp_challenge">Starter Checkout</a></div><p id="ui_status" class="small">Ready for a browser agent or human click.</p></section><aside class="panel"><h2>Result</h2><div id="result_box" class="result">The result will appear here after the human or browser agent runs a tool.</div></aside></div></section></main>
+  <script>
+  (function(){
+    "use strict";
+    var mc=typeof document!=="undefined"&&document.modelContext;
+    var lastFirstCall=null;
+    var routeMap={diagnostic:"https://africanmarketos.com/diagnostic/?source=webmcp_challenge",evidence_builder:"https://africanmarketos.com/mvr-evidence-builder/?source=webmcp_challenge",work_with_us:"https://africanmarketos.com/work-with-us/?service=market_entry_preflight&source=webmcp_challenge#brief",starter_checkout:"https://africanmarketos.com/checkout/starter?source=webmcp_challenge"};
+    function byId(id){return document.getElementById(id);}
+    function val(id){var el=byId(id);return el&&"value" in el?String(el.value||"").trim():"";}
+    function setVal(id,value){var el=byId(id);if(el&&"value" in el)el.value=String(value||"");}
+    function print(payload){byId("result_box").textContent=JSON.stringify(payload,null,2);return payload;}
+    function safe(extra){return Object.assign({source:"African Market OS WebMCP Decision Readiness Lab",not_a_verdict:true,boundary:"Public sandbox preflight only. The agent must not purchase, accept terms, submit payment, or treat this as legal, credit, investment, procurement, or regulatory authorization."},extra||{});}
+    function payload(){var country=val("country").toUpperCase().slice(0,2);return{entity_name:val("entity_name"),country:country,sector:val("sector"),entity_archetype:val("sector"),use_case:val("decision"),question:"What is the maximum safe next action for this market decision?",market_scope:{country:country,city_or_corridor:val("local_market")},evidence_available:[],known_partners:[]};}
+    async function runFirstCall(_args,options){try{var init={method:"POST",headers:{"Content-Type":"application/json","X-AMOS-WebMCP":"challenge-2026-09-02"},body:JSON.stringify(payload())};if(options&&options.signal)init.signal=options.signal;var res=await fetch("https://africanmarketos.com/v1/first-call",init);var data=await res.json();lastFirstCall=data;return print(safe({status:res.ok?"complete":"http_error",http_status:res.status,preflight:data}));}catch(error){return print(safe({status:"network_or_browser_error",message:String(error&&error.message||error)}));}}
+    function scopeDecision(args){args=args||{};setVal("entity_name",args.entity_name||"Example Kampala Supplier-Finance Venture");setVal("country",String(args.country||args.country_code||"UG").toUpperCase().slice(0,2));setVal("local_market",args.local_market_or_corridor||"Kampala supplier-finance corridor");setVal("sector",args.sector||"supplier finance BNPL");setVal("decision",args.decision||"market_entry");setVal("timeframe",args.timeframe||"90_days");setVal("evidence_note",args.evidence_note||"No dated local stakeholder evidence has been added yet.");return print(safe({status:"scope_loaded",payload:payload(),next:"Run amos_run_public_first_call."}));}
+    function gapPlan(args){var gaps=lastFirstCall&&Array.isArray(lastFirstCall.evidence_gaps)?lastFirstCall.evidence_gaps:["Name the entity, country, intended decision, and target geography.","Attach dated source class, geography, and provenance for each evidence item.","Add one local stakeholder signal before asking for a readiness verdict."];return print(safe({status:"gap_plan_ready",items:gaps.slice(0,Math.max(1,Math.min(5,Number(args&&args.max_items)||3))).map(function(gap,index){return{step:index+1,gap:gap};}),human_next_steps:routeMap}));}
+    function nextStep(args){var route=String(args&&args.route||"work_with_us");var url=routeMap[route]||routeMap.work_with_us;if(args&&args.open_now)location.assign(url);return print(safe({status:args&&args.open_now?"opening_human_route":"route_prepared",route:route,url:url}));}
+    function demoScript(){return print(safe({status:"demo_script_ready",steps:["Open the live page in a WebMCP-capable browser.","Use amos_scope_market_decision.","Use amos_run_public_first_call.","Use amos_extract_evidence_gap_plan.","Use amos_prepare_human_next_step without submitting or paying."],implementation:"document.modelContext.registerTool() exposes five page-specific tools."}));}
+    function register(){if(!mc||typeof mc.registerTool!=="function")return;[
+      {name:"amos_scope_market_decision",description:"Populate the visible page with a non-confidential market decision scope.",inputSchema:{type:"object",properties:{entity_name:{type:"string"},country_code:{type:"string"},local_market_or_corridor:{type:"string"},sector:{type:"string"},decision:{type:"string"},timeframe:{type:"string"},evidence_note:{type:"string"}},additionalProperties:false},annotations:{readOnlyHint:false},execute:scopeDecision},
+      {name:"amos_run_public_first_call",description:"Run the public MVR first-call preflight and return gaps, not a verdict.",inputSchema:{type:"object",properties:{},additionalProperties:false},annotations:{readOnlyHint:true,openWorldHint:true},execute:runFirstCall},
+      {name:"amos_extract_evidence_gap_plan",description:"Convert the current first-call response into an evidence-gap plan.",inputSchema:{type:"object",properties:{max_items:{type:"integer",minimum:1,maximum:5}},additionalProperties:false},annotations:{readOnlyHint:true},execute:gapPlan},
+      {name:"amos_prepare_human_next_step",description:"Prepare or open a human-controlled route; never submits, accepts terms, or pays.",inputSchema:{type:"object",required:["route"],properties:{route:{type:"string",enum:["diagnostic","evidence_builder","work_with_us","starter_checkout"]},open_now:{type:"boolean"}},additionalProperties:false},annotations:{readOnlyHint:false},execute:nextStep},
+      {name:"amos_get_webmcp_demo_script",description:"Return a concise reviewer demo script.",inputSchema:{type:"object",properties:{},additionalProperties:false},annotations:{readOnlyHint:true},execute:demoScript}
+    ].forEach(function(tool){mc.registerTool(tool);});}
+    byId("sample_btn").addEventListener("click",function(){scopeDecision({});});
+    byId("run_btn").addEventListener("click",function(){runFirstCall();});
+    byId("plan_btn").addEventListener("click",function(){gapPlan({max_items:3});});
+    register();
+  })();
+  </script>
+</body>
+</html>
