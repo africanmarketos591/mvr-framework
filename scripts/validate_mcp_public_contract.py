@@ -142,7 +142,7 @@ def validate_local() -> None:
     require(grok_release.get("published_activation_contract", {}).get("expected_tool_count") == 5, "Grok Bot release tool profile")
     require(grok_release.get("verification", {}).get("live_mcp_compatibility_tool_count") == 7 and grok_release.get("verification", {}).get("live_public_preflight_tool_count") == 5, "Grok Bot live profile evidence")
     require(grok_release.get("security_and_authority_boundaries", {}).get("autonomous_payment_allowed") is False and grok_release.get("security_and_authority_boundaries", {}).get("human_approval_required_for_payment_terms_credentials_and_consequential_use") is True, "Grok Bot release authority boundary")
-    require(governed_revenue_release.get("deployment_revision") == EXPECTED["deployment_revision"], "governed revenue release revision binding")
+    require(governed_revenue_release.get("deployment_revision") == "2026-08-20.governed-revenue-closure.1", "governed revenue release revision must remain an immutable historical record")
     require(bool(re.fullmatch(r"[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}", governed_revenue_release.get("provider_revision", ""))), "governed revenue provider revision binding")
     require(governed_revenue_release.get("validation", {}).get("private_worker_tests") == "151/151 pass", "governed revenue private test evidence")
     require(governed_revenue_release.get("production_reconciliation", {}).get("paid_governed_engagements") == 0, "governed revenue truth must not invent a sale")
