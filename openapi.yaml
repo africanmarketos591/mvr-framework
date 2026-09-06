@@ -6503,7 +6503,59 @@
               "schema": {
                 "type": "object",
                 "additionalProperties": true,
-                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "properties": {
+                  "snapshot_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "decision_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "safe_harbor_days": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 365
+                  },
+                  "locked_by": {
+                    "type": "string"
+                  },
+                  "human_review_acknowledged": {
+                    "type": "boolean"
+                  },
+                  "human_review_acknowledgement": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "properties": {
+                      "acknowledged": {
+                        "type": "boolean"
+                      },
+                      "acknowledged_by": {
+                        "type": "string"
+                      },
+                      "acknowledged_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "scope": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "anyOf": [
+                  {
+                    "required": [
+                      "snapshot_id"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "decision_id"
+                    ]
+                  }
+                ],
+                "description": "Locks an existing, server-lineage-verified decision-check snapshot in the authorized tenant/workspace. Requires the normal idempotency header. Locking is not execution authorization, outcome enrollment, or consent. Do not generate a receipt identifier or human acknowledgement on the user's behalf."
               }
             }
           }
@@ -11637,7 +11689,21 @@
               "schema": {
                 "type": "object",
                 "additionalProperties": true,
-                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "properties": {
+                  "include_full_reports": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "include_advisory_report": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "include_deep_health_harness": {
+                    "type": "boolean",
+                    "default": true
+                  }
+                },
+                "description": "Creates an integrity-bearing readiness document, always including the full manifest-inventory check. status=ok means document generation succeeded, not that calibration attestation passed. Inspect full_corpus_attested and full_coverage. The /v1/calibration-readiness GET alias uses defaults."
               }
             }
           }
@@ -11833,7 +11899,21 @@
               "schema": {
                 "type": "object",
                 "additionalProperties": true,
-                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "properties": {
+                  "baseline_scores": {
+                    "type": "object",
+                    "description": "Numeric MVR dimensions, directly or under executive. Not a baseline model execution."
+                  },
+                  "current_scores": {
+                    "type": "object",
+                    "description": "Numeric MVR dimensions, directly or under executive."
+                  }
+                },
+                "required": [
+                  "baseline_scores",
+                  "current_scores"
+                ],
+                "description": "Stateless arithmetic comparison of caller-supplied scores; requires at least one shared numeric dimension. GET is usage guidance, not an outcome-ledger count. Does not enroll, store, review or validate outcomes, or establish model superiority."
               }
             }
           }
