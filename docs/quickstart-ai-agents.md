@@ -26,7 +26,7 @@ At await_input, ask for the missing input or evidence. At terminal, stop. mcp_ne
 
 Read result.structuredContent for tool data; outputSchema describes that object, not the whole JSON-RPC envelope. The text content is a compact presentation summary.
 
-The [public evidence-item schema](https://africanmarketos.com/schemas/mvr-public-preflight-evidence.schema.json) is also inlined in tools/list. evidence_available contains optional context labels, not proof. Missing geography is a warning on each evidence item; do not invent it to satisfy a required field. Public preflight does not authenticate source independence, permission, freshness, geographic fit or claim truth.
+The [public evidence-item schema](https://africanmarketos.com/schemas/mvr-public-preflight-evidence.schema.json) is also inlined in tools/list. evidence_available contains optional context labels, not proof. Missing geography is a warning on each evidence item; do not invent it to satisfy a required field. evidence_fit checks declared country/date consistency and an optional caller-declared context_freshness_window_days; known foreign or out-of-window items do not supply coverage. Source validation remains required even after coverage passes. Public preflight does not authenticate source independence, permission, freshness, geographic fit or claim truth. See the [integration guide](https://africanmarketos.com/docs/mcp-integration.md) for background exclusions and evidence recovery.
 
 ## REST: Request Bodies Are Not Tool Results
 

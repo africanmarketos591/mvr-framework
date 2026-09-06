@@ -48,11 +48,33 @@
     },
     "source_date": {
       "type": "string",
-      "description": "Source date, preferably YYYY-MM-DD. Public preflight does not assess freshness or date validity."
+      "description": "Declared source date, YYYY-MM-DD or ISO timestamp with timezone. Date validity and age can be checked; the source and current applicability remain unverified."
+    },
+    "freshness_date": {
+      "type": "string",
+      "description": "Compatibility alias for source_date; conflicting supplied dates require correction."
     },
     "geography": {
       "type": "string",
-      "description": "Geography represented by this source. Public preflight does not verify geographic relevance."
+      "description": "Source country name/code or broader geographic description. Known country conflicts are flagged; local applicability is not authenticated."
+    },
+    "evidence_geography": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Declared source country, not the target country."
+        },
+        "city": {
+          "type": "string",
+          "description": "Declared source city."
+        },
+        "region": {
+          "type": "string",
+          "description": "Declared source region."
+        }
+      }
     },
     "source_doc_id": {
       "type": "string",
