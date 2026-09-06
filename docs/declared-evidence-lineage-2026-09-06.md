@@ -1,6 +1,6 @@
 # Declared Evidence Lineage
 
-Application revision: `2026-09-06.engine-contract.4`.
+Application revision: `2026-09-06.engine-contract.5` (source grouping introduced in `.4`).
 
 African Market OS-MVR API now distinguishes multiple items carrying the same disclosed source reference from items carrying distinct references. This strengthens the existing evidence-completeness prefilter; it is not source authentication or a new independent-evidence certification product.
 
@@ -34,6 +34,22 @@ These are connected components of declared references, **not verified independen
 The legacy `verified_source_families` array is retained for compatibility and represents caller-labelled coverage, not authenticated independent families. `caller_labelled_source_families` and `source_family_labels_are_not_independence` clarify that meaning. Use `source_family_component_count` for the structural diversity check.
 
 Passing the public gate means only that the declared structure can continue to evaluation. It does not establish evidence truth, grant market permission, certify a company or authorize an investment or payment.
+
+### Shared Material Within Sufficient Coverage
+
+A pack can contain a shared pair and still have three source components covering three source families. That is not contradictory: the shared material counts together, while other components may provide sufficient structural coverage. Do not block all sharing or interpret a structural pass as independent corroboration.
+
+Public responses identify `evidence_gate_scope: public_structural_coverage_only`. If declared overlap is present, `evidence_notices` includes `declared_source_overlap` with `blocking: false`, even when the gate passes. The ordinary next-action text and compact MCP text also surface the notice. `evidence_gaps` remains reserved for missing requirements; a notice is not a concealed blocker. Both `shared_reference_detected: false` and `independence_verified: false` can occur together and mean only that no disclosed reference overlap was found.
+
+Licensed completeness is a different question from suitability for consequential use. Submit the real intended use through the supported `requested_use` fields. Existing board-review reliance checks block when independence is unresolved; an ordinary `decision_ready` completeness status is not board approval. Agents and humans must respect the returned warnings, blockers and authorization boundary. Neither buying a license nor declaring more document IDs removes those requirements.
+
+### Version and Calibration Scope
+
+Source grouping is identified by `evidence_lineage.policy_version`. The broader agent policy, application deployment and provisional numerical calibration have separate version fields because they govern different artifacts. The `.5` update changes disclosure, not component-count thresholds or numerical calibration. Regression tests check both the structural gates and existing calibration behavior; calibration asset health is not a substitute for those tests.
+
+The default `/v1/calibration-health` response separates the requested-profile report from a separately executed strict readiness check. An advisory namespace's `manifest_valid: null` and `freshness_valid: null` mean those checks were not run in that namespace inspection. `validation_scope` states what was checked. `false` must not be interpreted as equivalent to `null`. Strict-profile inspections continue checking manifest approval, asset hashes and freshness, and fail when their requirements fail.
+
+The default health coverage remains `smoke_validation_only`, not full validation. The existing `?coverage=full` path performs the separate complete manifest-matrix check. Neither mode validates market outcomes or the truth of caller-submitted evidence.
 
 ## Hash and Review Boundaries
 
