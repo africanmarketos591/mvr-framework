@@ -32,6 +32,33 @@ function parseRemoteEnvelope(text, contentType = "") {
   return JSON.parse(text);
 }
 
+export async function readBoundedRemoteText(response) {
+  const tooLarge = () => new Error("The remote MCP response exceeded the bridge size limit.");
+  if (Number(response.headers.get("content-length") || 0) > MAX_REMOTE_RESPONSE_BYTES) {
+    await response.body?.cancel();
+    throw tooLarge();
+  }
+  if (!response.body) return "";
+  const reader = response.body.getReader();
+  const chunks = [];
+  let size = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > MAX_REMOTE_RESPONSE_BYTES) {
+        await reader.cancel();
+        throw tooLarge();
+      }
+      chunks.push(value);
+    }
+    return Buffer.concat(chunks, size).toString("utf8");
+  } finally {
+    reader.releaseLock();
+  }
+}
+
 export async function remoteMcpCall(method, params = {}, options = {}) {
   const remoteUrl = validateRemoteUrl(options.remoteUrl || process.env.MVR_REMOTE_MCP_URL || DEFAULT_REMOTE_URL);
   const timeoutMs = Number(options.timeoutMs || process.env.MVR_REMOTE_TIMEOUT_MS || 30_000);
@@ -56,15 +83,7 @@ export async function remoteMcpCall(method, params = {}, options = {}) {
       signal: controller.signal
     });
 
-    const declaredLength = Number(response.headers.get("content-length") || 0);
-    if (declaredLength > MAX_REMOTE_RESPONSE_BYTES) {
-      throw new Error("The remote MCP response exceeded the bridge size limit.");
-    }
-
-    const text = await response.text();
-    if (Buffer.byteLength(text, "utf8") > MAX_REMOTE_RESPONSE_BYTES) {
-      throw new Error("The remote MCP response exceeded the bridge size limit.");
-    }
+    const text = await readBoundedRemoteText(response);
 
     let envelope;
     try {

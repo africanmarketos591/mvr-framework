@@ -28,7 +28,7 @@ jobs:
           cache: npm
           cache-dependency-path: packages/mvr-mcp-bridge/package-lock.json
       - name: Install bridge dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts
         working-directory: packages/mvr-mcp-bridge
       - name: Run bridge tests
         run: npm test

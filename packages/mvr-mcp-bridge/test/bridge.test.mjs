@@ -5,9 +5,44 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+import { readBoundedRemoteText } from "../src/index.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const bridgeEntry = path.resolve(here, "../src/index.mjs");
+
+test("remote body cap cancels a declared oversize response without reading", async () => {
+  let cancelled = false;
+  const response = new Response(new ReadableStream({ cancel() { cancelled = true; } }), {
+    headers: { "Content-Length": String(2 * 1024 * 1024 + 1) }
+  });
+  await assert.rejects(() => readBoundedRemoteText(response), /size limit/);
+  assert.equal(cancelled, true);
+});
+
+test("remote body cap bounds chunked data even with a misleading length", async () => {
+  for (const headers of [{}, { "Content-Length": "10" }]) {
+    let cancelled = false;
+    const response = new Response(new ReadableStream({
+      pull(controller) { controller.enqueue(new Uint8Array(1024 * 1024)); },
+      cancel() { cancelled = true; }
+    }), { headers });
+    await assert.rejects(() => readBoundedRemoteText(response), /size limit/);
+    assert.equal(cancelled, true);
+    assert.equal(response.body.locked, false);
+  }
+});
+
+test("remote body reader preserves split UTF-8, exact limit and empty response", async () => {
+  const bytes = new TextEncoder().encode("A\u00e9Z");
+  const split = new Response(new ReadableStream({ start(controller) {
+    controller.enqueue(bytes.slice(0, 2));
+    controller.enqueue(bytes.slice(2));
+    controller.close();
+  } }));
+  assert.equal(await readBoundedRemoteText(split), "A\u00e9Z");
+  assert.equal((await readBoundedRemoteText(new Response("x".repeat(2 * 1024 * 1024)))).length, 2 * 1024 * 1024);
+  assert.equal(await readBoundedRemoteText(new Response(null)), "");
+});
 
 async function startMockRemote() {
   const observed = [];
