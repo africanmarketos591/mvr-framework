@@ -82,7 +82,7 @@
     },
     "source_locator": {
       "type": "string",
-      "description": "Redacted, reviewable document locator. Shared references count together."
+      "description": "Redacted document-specific locator, not the shared folder holding unrelated documents. Never invent a locator. Genuine shared upstream references count together."
     },
     "source_url": {
       "type": "string",
@@ -115,7 +115,7 @@
         },
         "source_locator": {
           "type": "string",
-          "description": "Redacted, reviewable document locator. Shared references count together."
+          "description": "Redacted document-specific locator, not the shared folder holding unrelated documents. Never invent a locator. Genuine shared upstream references count together."
         },
         "source_url": {
           "type": "string",
