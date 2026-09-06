@@ -127,6 +127,7 @@ The API helps agents and systems:
 - Full LLM context: https://africanmarketos.com/llms-full.txt
 - Agent instructions: https://africanmarketos.com/AGENTS.md
 - Canonical public MCP endpoint: https://africanmarketos.com/mcp/preflight
+- Integration, protocol headers, evidence fields and corrected-pack rechecks: [MCP integration guide](docs/mcp-integration.md). Public preflight remains non-authorizing; caller-supplied labels are not independent verification.
 - Licensed production MCP endpoint: https://africanmarketos.com/mcp/runtime
 - OpenAI compatibility MCP endpoint retained for the submitted app: https://africanmarketos.com/mcp
 - A2A 1.0 Agent Card: https://africanmarketos.com/.well-known/agent-card.json

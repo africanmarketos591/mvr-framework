@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://africanmarketos.com/schemas/mvr-public-preflight-evidence.schema.json",
+  "title": "African Market OS-MVR API public preflight evidence item",
+  "type": "object",
+  "additionalProperties": true,
+  "description": "A caller-declared, consented and redacted evidence item. No required fields at intake: incomplete items receive correction feedback. Passing coverage never verifies truth, permission or readiness.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Optional item identifier. Does not establish a distinct source."
+    },
+    "claim": {
+      "type": "string",
+      "description": "Minimal, non-confidential claim supported by the item; do not send raw private interviews."
+    },
+    "evidence_type": {
+      "type": "string",
+      "description": "What was collected, for example interview, field observation or licence record. Not merely the conclusion."
+    },
+    "source_class": {
+      "type": "string",
+      "description": "Origin label, for example entity_reported, regulator_published, structured_field_research, operational_data or counterparty_reference. Not a claim of independence."
+    },
+    "evidence_origin": {
+      "type": "string",
+      "description": "Alias for source_class. Source-class precedence: source_class, evidence_origin, source_family, then evidence_type."
+    },
+    "source_family": {
+      "type": "string",
+      "description": "Compatibility origin label; source_class takes precedence."
+    },
+    "stakeholder_class": {
+      "type": "string",
+      "description": "Role represented, for example guardian, customer, supplier or partner. Do not submit a person identifier."
+    },
+    "verification_status": {
+      "type": "string",
+      "description": "Caller label. verified, independently_verified, corroborated, attested, confirmed and validated count for the structural prefilter only. self_attested, unverified, missing and other labels do not. Do not change labels without actually checking the source."
+    },
+    "status": {
+      "type": "string",
+      "description": "Legacy alias for verification_status."
+    },
+    "source_grade": {
+      "type": "string",
+      "description": "Caller-supplied grade. Not a substitute for verification or source lineage."
+    },
+    "source_date": {
+      "type": "string",
+      "description": "Source date, preferably YYYY-MM-DD. Public preflight does not assess freshness or date validity."
+    },
+    "geography": {
+      "type": "string",
+      "description": "Geography represented by this source. Public preflight does not verify geographic relevance."
+    },
+    "source_doc_id": {
+      "type": "string",
+      "description": "Opaque source-document reference, not an evidence-item ID or personal identifier."
+    },
+    "source_locator": {
+      "type": "string",
+      "description": "Redacted, reviewable document locator. Shared references count together."
+    },
+    "source_url": {
+      "type": "string",
+      "description": "Source reference only; the sandbox does not fetch or authenticate it."
+    },
+    "upstream_source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Disclose shared upstream sources; distinct identifiers do not prove independence."
+    },
+    "parent_source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_hash": {
+      "type": "string",
+      "description": "Optional SHA-256 source hash, 64 hexadecimal characters; a hash does not authenticate its origin."
+    },
+    "provenance_ledger": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "source_doc_id": {
+          "type": "string",
+          "description": "Opaque source-document reference, not an evidence-item ID or personal identifier."
+        },
+        "source_locator": {
+          "type": "string",
+          "description": "Redacted, reviewable document locator. Shared references count together."
+        },
+        "source_url": {
+          "type": "string",
+          "description": "Source reference only; the sandbox does not fetch or authenticate it."
+        },
+        "upstream_source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Disclose shared upstream sources; distinct identifiers do not prove independence."
+        },
+        "parent_source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "synthetic_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Source-reference fields that were generated rather than observed; these do not establish lineage."
+        }
+      }
+    },
+    "load_bearing": {
+      "type": "boolean",
+      "description": "True if the target recommendation materially depends on this item."
+    },
+    "is_load_bearing": {
+      "type": "boolean",
+      "description": "Compatibility alias for load_bearing."
+    }
+  }
+}
