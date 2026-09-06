@@ -16901,6 +16901,27 @@
               "low"
             ]
           },
+          "stance": {
+            "type": "string",
+            "enum": [
+              "hostile",
+              "neutral",
+              "friendly",
+              "opposed"
+            ]
+          },
+          "verification_status": {
+            "type": "string",
+            "enum": [
+              "unverified",
+              "self_reported",
+              "document_supported",
+              "independently_verified",
+              "verified",
+              "disputed"
+            ],
+            "description": "Caller declaration, not independent verification. No confidence boost from this label. Disputed evidence blocks authorization until reconciled or segregated."
+          },
           "freshness_date": {
             "type": "string",
             "format": "date"
@@ -17055,7 +17076,19 @@
             "type": "object"
           },
           "survey_payload": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "sampling_method": {
+                "type": "string",
+                "enum": [
+                  "probability",
+                  "quota",
+                  "convenience",
+                  "panel"
+                ]
+              }
+            },
+            "description": "For survey evidence, include survey_name, population_definition, sampling_method and sample_frame. Panel is an accepted sampling method."
           },
           "program_payload": {
             "type": "object"
