@@ -2,7 +2,7 @@
 
 Contract update: 2026-09-07. Public endpoints are evaluation-only, not production scoring or authorization.
 
-Compatibility notice for 2026-09-07.engine-contract.6: complete source-to-target claim linkage is required for content-bearing or load-bearing evidence, including every item in a partially linked pack. Refresh licensed tools/list; follow only returned call_now handoffs. Licensed evidence_fit now blocks declared load-bearing country/date conflicts. Excluded rows that also supply scoring values remain non-decisive even if called background. decision-check rejects output receipt fields submitted as request authority with OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY; it is not an input receipt-verification endpoint. See the migration and interpretation sections below before upgrading an integration.
+Compatibility notice for 2026-09-07.engine-contract.7: complete source-to-target claim linkage is required for content-bearing or load-bearing evidence, including every item in a partially linked pack. Refresh licensed tools/list; follow only returned call_now handoffs. Licensed evidence_fit now blocks declared load-bearing country/date conflicts. Excluded rows that also supply scoring values remain non-decisive even if called background. decision-check rejects output receipt fields submitted as request authority with OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY; it is not an input receipt-verification endpoint. See the migration and interpretation sections below before upgrading an integration.
 
 ## Connect and parse
 
