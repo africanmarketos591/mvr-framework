@@ -12257,6 +12257,10 @@
                     "type": "string",
                     "description": "Alias resolved to a supported entity archetype."
                   },
+                  "sector": {
+                    "type": "string",
+                    "description": "Optional descriptive context; not a substitute for a supported entity_archetype or category and never used to guess one."
+                  },
                   "subject": {
                     "type": "object",
                     "properties": {
