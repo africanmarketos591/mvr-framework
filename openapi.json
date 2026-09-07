@@ -4404,7 +4404,7 @@
                   },
                   "analysis_date": {
                     "type": "string",
-                    "description": "Analysis anchor; parsing and evidence freshness checks remain runtime/profile dependent."
+                    "description": "Declared analysis calendar date or ISO timestamp with timezone. No later than today in analysis_timezone."
                   },
                   "market_context": {
                     "type": "object",
@@ -4424,18 +4424,115 @@
                     "type": "string"
                   },
                   "context_freshness_window_days": {
-                    "anyOf": [
-                      {
-                        "type": "number"
-                      },
-                      {
-                        "type": "string"
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Caller-declared maximum evidence age, not a calibrated universal cutoff."
+                  },
+                  "claims": {
+                    "type": "array",
+                    "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "claim_id",
+                        "claim"
+                      ],
+                      "properties": {
+                        "claim_id": {
+                          "type": "string",
+                          "description": "Opaque claim identifier."
+                        },
+                        "claim": {
+                          "type": "string",
+                          "description": "Minimal public-safe target proposition."
+                        },
+                        "support_links": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "claim_id",
+                              "evidence_id",
+                              "relationship",
+                              "locator"
+                            ],
+                            "properties": {
+                              "claim_id": {
+                                "type": "string",
+                                "description": "Must match the containing claim."
+                              },
+                              "evidence_id": {
+                                "type": "string",
+                                "description": "Must identify an item in this complete evidence pack."
+                              },
+                              "relationship": {
+                                "type": "string",
+                                "enum": [
+                                  "direct_support",
+                                  "qualifies",
+                                  "contradicts",
+                                  "context_only"
+                                ]
+                              },
+                              "locator": {
+                                "type": "string",
+                                "description": "Specific page, cell or section. A locator is not proof."
+                              },
+                              "review_event_id": {
+                                "type": "string",
+                                "description": "Only the licensed review service can check this event; ignored as authority by public preflight."
+                              }
+                            }
+                          }
+                        }
                       }
-                    ],
-                    "description": "Runtime uses Number(value) || 90 for the standard context window. No positive-range validation is currently enforced."
+                    }
+                  },
+                  "target_claim": {
+                    "type": "string"
+                  },
+                  "target_use": {
+                    "type": "string"
+                  },
+                  "decision_stage": {
+                    "type": "string"
+                  },
+                  "decision_context": {
+                    "type": "string"
+                  },
+                  "analysis_timezone": {
+                    "type": "string",
+                    "description": "IANA analysis timezone; defaults to UTC."
+                  },
+                  "entity_name": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "sector": {
+                    "type": "string"
+                  },
+                  "use_case": {
+                    "type": "string"
+                  },
+                  "maturity_level": {
+                    "type": "string",
+                    "enum": [
+                      "startup",
+                      "mature",
+                      "scaled",
+                      "seed"
+                    ]
+                  },
+                  "workflow_id": {
+                    "type": "string"
+                  },
+                  "workflow_expires_at": {
+                    "type": "string"
                   }
                 },
-                "description": "Compiles incomplete or complete context without requiring evidence, subject, country or requested_use. Market precedence: market_context, market_scope, target_market, subject. Use precedence: requested_use, decision_use, output_use. Empty input returns verification_required. Evidence item schema checks are skipped for this utility; sentiment, freshness and corroboration remain inference limits, not authorization."
+                "description": "Compiles incomplete or complete context without requiring evidence, subject, country or requested_use. Market precedence: market_context, market_scope, target_market, subject. Use precedence: requested_use, decision_use, output_use. Empty input returns verification_required. Supplied containers and evidence field types are validated before normalization, and a supplied analysis_date must be a real ISO date or datetime. Full decision evidence requirements are not imposed on incomplete items; sentiment, freshness and corroboration remain inference limits, not authorization."
               }
             }
           }
@@ -6393,6 +6490,7 @@
                               "items": {
                                 "type": "object",
                                 "additionalProperties": true,
+                                "x-review-claim-binding": "evidence-review approval requires claim (exact reviewed text, 1-1000 characters). The server computes claim_text_sha256; legacy ID-only reviews cannot verify claim support.",
                                 "properties": {
                                   "claim_id": {
                                     "type": "string"
@@ -6433,9 +6531,15 @@
                                   },
                                   "audit_event_id": {
                                     "type": "string"
+                                  },
+                                  "claim": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 1000,
+                                    "description": "Exact reviewed target proposition, required when approving claim_support. claim-audit gets the proposition from its containing claim, not from a caller-supplied hash."
                                   }
                                 },
-                                "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. Persisted review verification is server-scoped."
+                                "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. To approve support, evidence-review additionally requires claim: the exact reviewed target text, 1-1000 characters. The server binds both claim wording and evidence content. Old ID-only events require a fresh authorized review; no backfill invents what was reviewed."
                               }
                             },
                             "claim_support": {
@@ -6443,6 +6547,7 @@
                               "items": {
                                 "type": "object",
                                 "additionalProperties": true,
+                                "x-review-claim-binding": "evidence-review approval requires claim (exact reviewed text, 1-1000 characters). The server computes claim_text_sha256; legacy ID-only reviews cannot verify claim support.",
                                 "properties": {
                                   "claim_id": {
                                     "type": "string"
@@ -6483,9 +6588,15 @@
                                   },
                                   "audit_event_id": {
                                     "type": "string"
+                                  },
+                                  "claim": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 1000,
+                                    "description": "Exact reviewed target proposition, required when approving claim_support. claim-audit gets the proposition from its containing claim, not from a caller-supplied hash."
                                   }
                                 },
-                                "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. Persisted review verification is server-scoped."
+                                "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. To approve support, evidence-review additionally requires claim: the exact reviewed target text, 1-1000 characters. The server binds both claim wording and evidence content. Old ID-only events require a fresh authorized review; no backfill invents what was reviewed."
                               }
                             },
                             "human_review_required": {
@@ -6582,6 +6693,7 @@
                                   "items": {
                                     "type": "object",
                                     "additionalProperties": true,
+                                    "x-review-claim-binding": "evidence-review approval requires claim (exact reviewed text, 1-1000 characters). The server computes claim_text_sha256; legacy ID-only reviews cannot verify claim support.",
                                     "properties": {
                                       "claim_id": {
                                         "type": "string"
@@ -6622,9 +6734,15 @@
                                       },
                                       "audit_event_id": {
                                         "type": "string"
+                                      },
+                                      "claim": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 1000,
+                                        "description": "Exact reviewed target proposition, required when approving claim_support. claim-audit gets the proposition from its containing claim, not from a caller-supplied hash."
                                       }
                                     },
-                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. Persisted review verification is server-scoped."
+                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. To approve support, evidence-review additionally requires claim: the exact reviewed target text, 1-1000 characters. The server binds both claim wording and evidence content. Old ID-only events require a fresh authorized review; no backfill invents what was reviewed."
                                   }
                                 },
                                 "claim_support": {
@@ -6632,6 +6750,7 @@
                                   "items": {
                                     "type": "object",
                                     "additionalProperties": true,
+                                    "x-review-claim-binding": "evidence-review approval requires claim (exact reviewed text, 1-1000 characters). The server computes claim_text_sha256; legacy ID-only reviews cannot verify claim support.",
                                     "properties": {
                                       "claim_id": {
                                         "type": "string"
@@ -6672,9 +6791,15 @@
                                       },
                                       "audit_event_id": {
                                         "type": "string"
+                                      },
+                                      "claim": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 1000,
+                                        "description": "Exact reviewed target proposition, required when approving claim_support. claim-audit gets the proposition from its containing claim, not from a caller-supplied hash."
                                       }
                                     },
-                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. Persisted review verification is server-scoped."
+                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. To approve support, evidence-review additionally requires claim: the exact reviewed target text, 1-1000 characters. The server binds both claim wording and evidence content. Old ID-only events require a fresh authorized review; no backfill invents what was reviewed."
                                   }
                                 },
                                 "human_review_required": {
@@ -6773,6 +6898,7 @@
                                   "items": {
                                     "type": "object",
                                     "additionalProperties": true,
+                                    "x-review-claim-binding": "evidence-review approval requires claim (exact reviewed text, 1-1000 characters). The server computes claim_text_sha256; legacy ID-only reviews cannot verify claim support.",
                                     "properties": {
                                       "claim_id": {
                                         "type": "string"
@@ -6813,9 +6939,15 @@
                                       },
                                       "audit_event_id": {
                                         "type": "string"
+                                      },
+                                      "claim": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 1000,
+                                        "description": "Exact reviewed target proposition, required when approving claim_support. claim-audit gets the proposition from its containing claim, not from a caller-supplied hash."
                                       }
                                     },
-                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. Persisted review verification is server-scoped."
+                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. To approve support, evidence-review additionally requires claim: the exact reviewed target text, 1-1000 characters. The server binds both claim wording and evidence content. Old ID-only events require a fresh authorized review; no backfill invents what was reviewed."
                                   }
                                 },
                                 "claim_support": {
@@ -6823,6 +6955,7 @@
                                   "items": {
                                     "type": "object",
                                     "additionalProperties": true,
+                                    "x-review-claim-binding": "evidence-review approval requires claim (exact reviewed text, 1-1000 characters). The server computes claim_text_sha256; legacy ID-only reviews cannot verify claim support.",
                                     "properties": {
                                       "claim_id": {
                                         "type": "string"
@@ -6863,9 +6996,15 @@
                                       },
                                       "audit_event_id": {
                                         "type": "string"
+                                      },
+                                      "claim": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 1000,
+                                        "description": "Exact reviewed target proposition, required when approving claim_support. claim-audit gets the proposition from its containing claim, not from a caller-supplied hash."
                                       }
                                     },
-                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. Persisted review verification is server-scoped."
+                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. To approve support, evidence-review additionally requires claim: the exact reviewed target text, 1-1000 characters. The server binds both claim wording and evidence content. Old ID-only events require a fresh authorized review; no backfill invents what was reviewed."
                                   }
                                 },
                                 "human_review_required": {
@@ -6964,6 +7103,7 @@
                                   "items": {
                                     "type": "object",
                                     "additionalProperties": true,
+                                    "x-review-claim-binding": "evidence-review approval requires claim (exact reviewed text, 1-1000 characters). The server computes claim_text_sha256; legacy ID-only reviews cannot verify claim support.",
                                     "properties": {
                                       "claim_id": {
                                         "type": "string"
@@ -7004,9 +7144,15 @@
                                       },
                                       "audit_event_id": {
                                         "type": "string"
+                                      },
+                                      "claim": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 1000,
+                                        "description": "Exact reviewed target proposition, required when approving claim_support. claim-audit gets the proposition from its containing claim, not from a caller-supplied hash."
                                       }
                                     },
-                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. Persisted review verification is server-scoped."
+                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. To approve support, evidence-review additionally requires claim: the exact reviewed target text, 1-1000 characters. The server binds both claim wording and evidence content. Old ID-only events require a fresh authorized review; no backfill invents what was reviewed."
                                   }
                                 },
                                 "claim_support": {
@@ -7014,6 +7160,7 @@
                                   "items": {
                                     "type": "object",
                                     "additionalProperties": true,
+                                    "x-review-claim-binding": "evidence-review approval requires claim (exact reviewed text, 1-1000 characters). The server computes claim_text_sha256; legacy ID-only reviews cannot verify claim support.",
                                     "properties": {
                                       "claim_id": {
                                         "type": "string"
@@ -7054,9 +7201,15 @@
                                       },
                                       "audit_event_id": {
                                         "type": "string"
+                                      },
+                                      "claim": {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 1000,
+                                        "description": "Exact reviewed target proposition, required when approving claim_support. claim-audit gets the proposition from its containing claim, not from a caller-supplied hash."
                                       }
                                     },
-                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. Persisted review verification is server-scoped."
+                                    "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. To approve support, evidence-review additionally requires claim: the exact reviewed target text, 1-1000 characters. The server binds both claim wording and evidence content. Old ID-only events require a fresh authorized review; no backfill invents what was reviewed."
                                   }
                                 },
                                 "human_review_required": {
@@ -12962,6 +13115,87 @@
                       "additionalProperties": true
                     }
                   },
+                  "analysis_date": {
+                    "type": "string",
+                    "description": "Analysis calendar date or ISO timestamp with timezone."
+                  },
+                  "analysis_timezone": {
+                    "type": "string",
+                    "description": "IANA analysis timezone; defaults to UTC."
+                  },
+                  "context_freshness_window_days": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "claims": {
+                    "type": "array",
+                    "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "claim_id",
+                        "claim"
+                      ],
+                      "properties": {
+                        "claim_id": {
+                          "type": "string",
+                          "description": "Opaque claim identifier."
+                        },
+                        "claim": {
+                          "type": "string",
+                          "description": "Minimal public-safe target proposition."
+                        },
+                        "support_links": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "claim_id",
+                              "evidence_id",
+                              "relationship",
+                              "locator"
+                            ],
+                            "properties": {
+                              "claim_id": {
+                                "type": "string",
+                                "description": "Must match the containing claim."
+                              },
+                              "evidence_id": {
+                                "type": "string",
+                                "description": "Must identify an item in this complete evidence pack."
+                              },
+                              "relationship": {
+                                "type": "string",
+                                "enum": [
+                                  "direct_support",
+                                  "qualifies",
+                                  "contradicts",
+                                  "context_only"
+                                ]
+                              },
+                              "locator": {
+                                "type": "string",
+                                "description": "Specific page, cell or section. A locator is not proof."
+                              },
+                              "review_event_id": {
+                                "type": "string",
+                                "description": "Only the licensed review service can check this event; ignored as authority by public preflight."
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "target_claim": {
+                    "type": "string"
+                  },
+                  "target_use": {
+                    "type": "string"
+                  },
+                  "decision_stage": {
+                    "type": "string"
+                  },
                   "city": {
                     "type": "string"
                   },
@@ -13256,6 +13490,154 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
+                  "claims": {
+                    "type": "array",
+                    "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "claim_id",
+                        "claim"
+                      ],
+                      "properties": {
+                        "claim_id": {
+                          "type": "string",
+                          "description": "Opaque claim identifier."
+                        },
+                        "claim": {
+                          "type": "string",
+                          "description": "Minimal public-safe target proposition."
+                        },
+                        "support_links": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "claim_id",
+                              "evidence_id",
+                              "relationship",
+                              "locator"
+                            ],
+                            "properties": {
+                              "claim_id": {
+                                "type": "string",
+                                "description": "Must match the containing claim."
+                              },
+                              "evidence_id": {
+                                "type": "string",
+                                "description": "Must identify an item in this complete evidence pack."
+                              },
+                              "relationship": {
+                                "type": "string",
+                                "enum": [
+                                  "direct_support",
+                                  "qualifies",
+                                  "contradicts",
+                                  "context_only"
+                                ]
+                              },
+                              "locator": {
+                                "type": "string",
+                                "description": "Specific page, cell or section. A locator is not proof."
+                              },
+                              "review_event_id": {
+                                "type": "string",
+                                "description": "Only the licensed review service can check this event; ignored as authority by public preflight."
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "target_claim": {
+                    "type": "string"
+                  },
+                  "target_use": {
+                    "type": "string"
+                  },
+                  "requested_use": {
+                    "type": "string"
+                  },
+                  "decision_use": {
+                    "type": "string"
+                  },
+                  "output_use": {
+                    "type": "string"
+                  },
+                  "decision_stage": {
+                    "type": "string"
+                  },
+                  "decision_context": {
+                    "type": "string"
+                  },
+                  "analysis_date": {
+                    "type": "string",
+                    "description": "Declared analysis calendar date or ISO timestamp with timezone. No later than today in analysis_timezone."
+                  },
+                  "analysis_timezone": {
+                    "type": "string",
+                    "description": "IANA analysis timezone; defaults to UTC."
+                  },
+                  "context_freshness_window_days": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Caller-declared maximum evidence age, not a calibrated universal cutoff."
+                  },
+                  "entity_name": {
+                    "type": "string"
+                  },
+                  "entity_archetype": {
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "sector": {
+                    "type": "string"
+                  },
+                  "use_case": {
+                    "type": "string"
+                  },
+                  "maturity_level": {
+                    "type": "string",
+                    "enum": [
+                      "startup",
+                      "mature",
+                      "scaled",
+                      "seed"
+                    ]
+                  },
+                  "workflow_id": {
+                    "type": "string"
+                  },
+                  "workflow_expires_at": {
+                    "type": "string"
+                  },
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "exploratory",
+                      "evidence_backed",
+                      "score_direct",
+                      "compiled_evidence",
+                      "backtest",
+                      "backtest_demo",
+                      "synthetic_fixture"
+                    ]
+                  },
+                  "case_type": {
+                    "type": "string",
+                    "enum": [
+                      "greenfield_entry",
+                      "partnership_trust_transfer",
+                      "scaling",
+                      "test_market",
+                      "fmcg_rollout",
+                      "channel_choice",
+                      "startup_readiness"
+                    ]
+                  },
                   "subject": {
                     "type": "object"
                   },
@@ -13442,6 +13824,54 @@
                       }
                     },
                     "additionalProperties": false
+                  },
+                  "unit_economics": {
+                    "type": "object",
+                    "description": "Enterprise blueprint: LTV/CAC, runway, margin - gates scaling verdict when structurally unprofitable."
+                  },
+                  "financial_context": {
+                    "type": "object",
+                    "description": "Optional unit economics overlay (CAC/LTV/runway/margin). Advisory; does not mutate relational scores. Treasury-grade models still required."
+                  },
+                  "competitive_context": {
+                    "type": "object",
+                    "description": "Optional incumbent share, switching costs, price-war risk. Pair with /v1/competitive-wargame for scenarios."
+                  },
+                  "behavioral_signals": {
+                    "type": "object",
+                    "description": "Optional revealed-preference telemetry (DAU, churn fraction). Complements interview-derived evidence."
+                  },
+                  "operational_readiness": {
+                    "type": "object",
+                    "description": "Optional execution SLAs/uptime/fulfillment proxies for internal capacity."
+                  },
+                  "sentiment_velocity": {
+                    "type": "object",
+                    "description": "Optional wave-over-wave deltas on trust/permission to detect momentum vs static snapshots."
+                  },
+                  "network_economics": {
+                    "type": "object",
+                    "description": "Two-sided marketplace density / attachment (ecommerce_platform)."
+                  },
+                  "b2b_context": {
+                    "type": "object",
+                    "description": "Procurement/SLA/RFP signals where relational consumer metrics are weak proxies."
+                  },
+                  "scaling_physics": {
+                    "type": "object",
+                    "description": "Expected intimacy decay at scale; friction coefficient for pilot->mass transitions."
+                  },
+                  "market_education_profile": {
+                    "type": "object",
+                    "description": "Ignorance vs hostility: discovery/education phases for category creation."
+                  },
+                  "backtest_mode": {
+                    "type": "boolean",
+                    "description": "When true, response echoes backtest_mode and optional t0_date for replay transparency."
+                  },
+                  "t0_date": {
+                    "type": "string",
+                    "description": "Backtest as-of date echoed when backtest_mode is true."
                   },
                   "target_verdict": {
                     "type": "string",
@@ -21785,6 +22215,7 @@
                     "items": {
                       "type": "object",
                       "additionalProperties": true,
+                      "x-review-claim-binding": "evidence-review approval requires claim (exact reviewed text, 1-1000 characters). The server computes claim_text_sha256; legacy ID-only reviews cannot verify claim support.",
                       "properties": {
                         "claim_id": {
                           "type": "string"
@@ -21825,9 +22256,15 @@
                         },
                         "audit_event_id": {
                           "type": "string"
+                        },
+                        "claim": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 1000,
+                          "description": "Exact reviewed target proposition, required when approving claim_support. claim-audit gets the proposition from its containing claim, not from a caller-supplied hash."
                         }
                       },
-                      "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. Persisted review verification is server-scoped."
+                      "description": "Precise claim support. Runtime requires a claim ID, evidence ID, recognized relationship and locator after alias normalization. evidence-review may default evidence_id from the reviewed item; claim-audit requires it on each link. To approve support, evidence-review additionally requires claim: the exact reviewed target text, 1-1000 characters. The server binds both claim wording and evidence content. Old ID-only events require a fresh authorized review; no backfill invents what was reviewed."
                     }
                   },
                   "independence_attestation": {
@@ -23994,6 +24431,58 @@
           "evidence_id": {
             "type": "string"
           },
+          "claim": {
+            "type": "string"
+          },
+          "load_bearing": {
+            "type": "boolean"
+          },
+          "is_load_bearing": {
+            "type": "boolean"
+          },
+          "source_date": {
+            "type": "string"
+          },
+          "source_url": {
+            "type": "string"
+          },
+          "source_doc_id": {
+            "type": "string"
+          },
+          "sample_size": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "collection_context": {
+            "type": "object",
+            "properties": {
+              "sample_size": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "collection_tool": {
+                "type": "string",
+                "enum": [
+                  "structured_interview_protocol",
+                  "expert_ethnographic_observation",
+                  "field_observation",
+                  "survey_platform_verified",
+                  "survey_paper_based",
+                  "key_informant_interview",
+                  "team_consensus_estimate",
+                  "founder_intuition",
+                  "inferred_from_secondary",
+                  "direct",
+                  "inferred",
+                  "secondary_source",
+                  "corporate_telemetry",
+                  "database_aggregation",
+                  "expert_opinion",
+                  "intercept_interview"
+                ]
+              }
+            }
+          },
           "evidence_type": {
             "type": "string",
             "enum": [
@@ -24257,7 +24746,15 @@
             "type": "object"
           },
           "geography": {
-            "type": "object"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "additionalProperties": true
+              }
+            ]
           },
           "temporal": {
             "type": "object"
@@ -24317,7 +24814,15 @@
             "description": "Platform telemetry: retention, churn, frequency - used for survey vs behavior dissonance checks."
           },
           "structured_values_provenance": {
-            "type": "object"
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "enum": [
+                "observed",
+                "proxy-derived",
+                "imputed"
+              ]
+            }
           },
           "human_reviewed": {
             "type": "boolean",
@@ -24405,6 +24910,15 @@
           "survey_payload": {
             "type": "object",
             "properties": {
+              "survey_name": {
+                "type": "string"
+              },
+              "population_definition": {
+                "type": "string"
+              },
+              "sample_frame": {
+                "type": "string"
+              },
               "sampling_method": {
                 "type": "string",
                 "enum": [
@@ -24413,6 +24927,19 @@
                   "convenience",
                   "panel"
                 ]
+              },
+              "sample_size": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "effective_sample_size": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "response_rate_pct": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
               }
             },
             "description": "For survey evidence, include survey_name, population_definition, sampling_method and sample_frame. Panel is an accepted sampling method."
@@ -24510,6 +25037,130 @@
       "DecisionCheckRequest": {
         "type": "object",
         "properties": {
+          "claims": {
+            "type": "array",
+            "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
+            "items": {
+              "type": "object",
+              "required": [
+                "claim_id",
+                "claim"
+              ],
+              "properties": {
+                "claim_id": {
+                  "type": "string",
+                  "description": "Opaque claim identifier."
+                },
+                "claim": {
+                  "type": "string",
+                  "description": "Minimal public-safe target proposition."
+                },
+                "support_links": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "claim_id",
+                      "evidence_id",
+                      "relationship",
+                      "locator"
+                    ],
+                    "properties": {
+                      "claim_id": {
+                        "type": "string",
+                        "description": "Must match the containing claim."
+                      },
+                      "evidence_id": {
+                        "type": "string",
+                        "description": "Must identify an item in this complete evidence pack."
+                      },
+                      "relationship": {
+                        "type": "string",
+                        "enum": [
+                          "direct_support",
+                          "qualifies",
+                          "contradicts",
+                          "context_only"
+                        ]
+                      },
+                      "locator": {
+                        "type": "string",
+                        "description": "Specific page, cell or section. A locator is not proof."
+                      },
+                      "review_event_id": {
+                        "type": "string",
+                        "description": "Only the licensed review service can check this event; ignored as authority by public preflight."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "target_claim": {
+            "type": "string"
+          },
+          "target_use": {
+            "type": "string"
+          },
+          "requested_use": {
+            "type": "string"
+          },
+          "decision_use": {
+            "type": "string"
+          },
+          "output_use": {
+            "type": "string"
+          },
+          "decision_stage": {
+            "type": "string"
+          },
+          "decision_context": {
+            "type": "string"
+          },
+          "analysis_date": {
+            "type": "string",
+            "description": "Declared analysis calendar date or ISO timestamp with timezone. No later than today in analysis_timezone."
+          },
+          "analysis_timezone": {
+            "type": "string",
+            "description": "IANA analysis timezone; defaults to UTC."
+          },
+          "context_freshness_window_days": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Caller-declared maximum evidence age, not a calibrated universal cutoff."
+          },
+          "entity_name": {
+            "type": "string"
+          },
+          "entity_archetype": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "sector": {
+            "type": "string"
+          },
+          "use_case": {
+            "type": "string"
+          },
+          "maturity_level": {
+            "type": "string",
+            "enum": [
+              "startup",
+              "mature",
+              "scaled",
+              "seed"
+            ]
+          },
+          "workflow_id": {
+            "type": "string"
+          },
+          "workflow_expires_at": {
+            "type": "string"
+          },
           "mode": {
             "type": "string",
             "enum": [
