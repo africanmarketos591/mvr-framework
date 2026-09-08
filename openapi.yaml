@@ -24458,6 +24458,24 @@
             "type": "integer",
             "minimum": 1
           },
+          "population_size": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "population_definition": {
+            "type": "string"
+          },
+          "sampling_method": {
+            "type": "string",
+            "description": "Use census for a declared complete finite population; this does not override weighted sample admission."
+          },
+          "is_complete_population": {
+            "type": "boolean"
+          },
+          "census": {
+            "type": "boolean",
+            "description": "Alias for is_complete_population. Only literal true with consistent positive integer sample_size = population_size enables the disclosure."
+          },
           "collection_context": {
             "type": "object",
             "properties": {
@@ -24485,6 +24503,24 @@
                   "expert_opinion",
                   "intercept_interview"
                 ]
+              },
+              "population_size": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "population_definition": {
+                "type": "string"
+              },
+              "sampling_method": {
+                "type": "string",
+                "description": "Use census for a declared complete finite population; this does not override weighted sample admission."
+              },
+              "is_complete_population": {
+                "type": "boolean"
+              },
+              "census": {
+                "type": "boolean",
+                "description": "Alias for is_complete_population. Only literal true with consistent positive integer sample_size = population_size enables the disclosure."
               }
             }
           },

@@ -1,6 +1,22 @@
 # African Market OS-MVR API: public and licensed MCP integration
 
-Contract update: 2026-09-08. Current licensed compatibility: 2026-09-08.engine-contract.1; see Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+Contract update: 2026-09-08. Current licensed compatibility: 2026-09-08.engine-contract.2; see Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+
+## Serving revision, coverage and declared source review
+
+The five preflight REST routes now include response_meta.deployment_revision and X-MVR-Deployment-Revision on JSON responses, including errors. Licensed MCP places the same revision in structuredContent.response_meta and its serialized content, alongside the existing mvr_response_receipt and transport metadata. Preserve these with your trace. This identifies the serving build, not evidence authenticity or execution authority. Stable decision/content hashes do not attest this transport-level release annotation.
+
+First-call now carries response_meta.country_calibration_scope as well as downstream assessment routes. Recognized ISO countries outside the African home-market set are labelled global_provisional_high_context, not calibrated by virtue of being accepted. Strict downstream assessment still needs applicable country calibration; the existing country gate is not relaxed.
+
+Finite-population example, to merge into a truthful existing evidence item (not a complete scoring pack):
+
+{"collection_context":{"sample_size":4,"population_size":4,"sampling_method":"census","is_complete_population":true,"population_definition":"All four identified authorities responsible for this exact local permission"}}
+
+Literal census:true is also supported at item or collection_context level. sample_size and population_size must be matching positive integers and all supplied declarations must agree. No inference from prose, a survey count alone or a string "true" is made. The resulting finite_population_review is disclosure only; generic weighted admission may remain unmet. Use its scoped review guidance, not invented respondents. Survey sampling_method has its own enum; this census declaration belongs on the item or collection_context, not survey_payload.
+
+Compatibility change: licensed evidence_fit now requires review when all decision-relevant items across multiple stakeholder classes collapse to one declared source component. The code is shared_source_diversity_requires_review. This does not prove duplication, false content or bad faith. It prevents one declared source being used as independent cross-stakeholder corroboration merely by changing IDs or class labels. Retain real references and review the collection basis; do not rename them to pass. Distinct references still do not establish independence, and undisclosed common ancestry is not detected by this check.
+
+Arbitrary source prose is not evaluated for factual entailment or truth. A caller can omit or falsely label adverse evidence; a candidate result does not repair that incentive problem. Before consequential reliance a responsible reviewer must inspect original sources, independently reconcile each target claim (including contrary facts), and check permission scope and validity with the competent issuer. Do not connect this API alone to unattended tranche release, payment, credit or legal authorization. A signed/hash-linked artifact is not itself verification of its assertions.
 
 Compatibility notice for 2026-09-07.engine-contract.8: complete source-to-target claim linkage is required for content-bearing or load-bearing evidence, including every item in a partially linked pack. Refresh licensed tools/list; follow only returned call_now handoffs. Licensed evidence_fit now blocks declared load-bearing country/date conflicts. Excluded rows that also supply scoring values remain non-decisive even if called background. decision-check rejects output receipt fields submitted as request authority with OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY; it is not an input receipt-verification endpoint. See the migration and interpretation sections below before upgrading an integration.
 
