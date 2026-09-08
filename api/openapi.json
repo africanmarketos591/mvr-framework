@@ -4532,7 +4532,13 @@
                     "type": "string"
                   }
                 },
-                "description": "Compiles incomplete or complete context without requiring evidence, subject, country or requested_use. Market precedence: market_context, market_scope, target_market, subject. Use precedence: requested_use, decision_use, output_use. Empty input returns verification_required. Supplied containers and evidence field types are validated before normalization, and a supplied analysis_date must be a real ISO date or datetime. Full decision evidence requirements are not imposed on incomplete items; sentiment, freshness and corroboration remain inference limits, not authorization."
+                "description": "Compiles incomplete or complete context without requiring evidence, subject, country or requested_use. Market precedence: market_context, market_scope, target_market, subject. Use precedence: requested_use, decision_use, output_use. Empty input returns verification_required. Supplied containers and evidence field types are validated before normalization, and a supplied analysis_date must be a real ISO date or datetime. Full decision evidence requirements are not imposed on incomplete items; sentiment, freshness and corroboration remain inference limits, not authorization.",
+                "not": {
+                  "required": [
+                    "evidence_pack",
+                    "compiled_pack"
+                  ]
+                }
               }
             }
           }
@@ -13492,6 +13498,12 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "not": {
+                  "required": [
+                    "evidence_pack",
+                    "compiled_pack"
+                  ]
+                },
                 "additionalProperties": false,
                 "properties": {
                   "claims": {
@@ -25442,7 +25454,7 @@
                     "description": "Caller-supplied finite 0-1 bot/farm-risk estimate from an upstream assessment. AMOS does not calculate this probability from source prose."
                   }
                 },
-                "description": "Optional declared integrity signals, honored for flat evidence and compiled lanes. Unknown keys, null, invalid types and out-of-range values are rejected. Omission or an empty object means no assessment supplied, not a clean bill of health. Inspect scale_recommendation.blueprint_codes, data_quality.integrity_alerts and decision_authorization together; a confidence or candidate label alone is not the gate result. These are configured review controls, not independently verified anti-fraud detection."
+                "description": "Optional declared integrity signals, honored for flat evidence and compiled lanes. Unknown keys, null, invalid types and out-of-range values are rejected. Omission or an empty object means no assessment supplied, not a clean bill of health. In client_safe read scale_recommendation.blueprint_codes and decision_authorization, including data_integrity_gate.blocking_alerts when blocked. data_quality.integrity_alerts is an internal/full diagnostic path and may be omitted by projection. A confidence or candidate label alone is not the gate result. These are configured review controls, not independently verified anti-fraud detection."
               }
             }
           },
@@ -25496,6 +25508,12 @@
       },
       "DecisionCheckRequest": {
         "type": "object",
+        "not": {
+          "required": [
+            "evidence_pack",
+            "compiled_pack"
+          ]
+        },
         "properties": {
           "claims": {
             "type": "array",
