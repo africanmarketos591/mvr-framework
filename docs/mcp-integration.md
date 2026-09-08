@@ -1,6 +1,6 @@
 # African Market OS-MVR API: public and licensed MCP integration
 
-Contract update: 2026-09-08. Current licensed compatibility: 2026-09-08.engine-contract.2; see Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+Contract update: 2026-09-08. Current licensed compatibility: 2026-09-08.engine-contract.4; see Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
 
 ## Serving revision, coverage and declared source review
 
@@ -140,6 +140,8 @@ behavioral_values currently accepts only 30_day_active_retention_percent (0-100)
 uncertainty_envelope supports source_uncertainty, sampling_uncertainty, extraction_uncertainty, temporal_uncertainty, archetype_fit_uncertainty and disagreement_uncertainty, each 0-1. These components affect weights. interval_80, score_point_estimate and basis are descriptive input metadata, not calculated confidence bounds or gate overrides. A wide interval is not silently treated as a different uncertainty model. Unknown field names are rejected. guardian_tier describes an applicable guardian's role, not a universal confidence control; changing a role label alone need not change a score. Explicit temporal.expired=true on decision-relevant evidence requires review even when its source date is recent.
 
 Human-review fields are caller declarations. reviewer_identity_verified=false and review_event_authenticated=false are explicit in AI-extraction policy disclosures. Typing a name is not a signature, reviewer consent, independently established identity, source independence or proof a review occurred. No blanket self_reported attestation requirement has been added: another checkbox would not solve hidden ancestry. Separately authorized persisted claim-review workflows remain separate from these intake declarations.
+
+Projection correction 2026-09-08.engine-contract.4: claim_review.human_review_authority carries these non-authentication flags for declared-reviewed AI evidence in client, board, export and compact results. It includes no reviewer name or source contents. Internal-only policy metadata is not sufficient disclosure for a consuming agent.
 
 Finite-population reproduction: call POST /v1/evidence-completeness (licensed MCP mvr_evidence_completeness uses arguments.payload) with a complete valid pack containing a field_research guardian item and collection_context {"sample_size":4,"population_size":4,"sampling_method":"census","is_complete_population":true,"population_definition":"All four identified guardians for the exact synthetic permission decision"}. Read /finite_population_review there. On decision-check inspect /local_relational_assessment/sample_sufficiency/finite_population_review or /field_sample_report/finite_population_review, including diagnostic projections; do not assume the same top-level pointer on every route. For blocked early scores the generic admission may be not_evaluated rather than a numerical pass. The complete maintainer-supplied synthetic request contains the other required context, source metadata and claim links; this small fragment alone is not a valid pack and does not waive any gate.
 
