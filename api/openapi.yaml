@@ -25124,6 +25124,10 @@
           "temporal": {
             "type": "object",
             "properties": {
+              "freshness_date": {
+                "type": "string",
+                "description": "ISO calendar date for the collection/freshness alias. Must satisfy the same runtime date checks as freshness_date."
+              },
               "expired": {
                 "type": "boolean",
                 "description": "Literal true requires review for decision-relevant evidence, regardless of a recent source date."
@@ -25357,7 +25361,8 @@
                   "probability",
                   "quota",
                   "convenience",
-                  "panel"
+                  "panel",
+                  "census"
                 ]
               },
               "sample_size": {
@@ -25374,7 +25379,7 @@
                 "maximum": 100
               }
             },
-            "description": "For survey evidence, include survey_name, population_definition, sampling_method and sample_frame. Panel is an accepted sampling method."
+            "description": "For survey evidence, include survey_name, population_definition, sampling_method and sample_frame. Panel and census are accepted sampling methods. Census additionally requires consistent declared population_size and sample_size; it never bypasses weighted admission or establishes representativeness."
           },
           "payload": {
             "type": "object",
@@ -25458,6 +25463,10 @@
               "source_family": {
                 "type": "string",
                 "example": "annual_report"
+              },
+              "collection_date": {
+                "type": "string",
+                "description": "ISO calendar date for the collection/freshness alias. Must satisfy the same runtime date checks as freshness_date."
               },
               "source_doc_id": {
                 "type": "string"
