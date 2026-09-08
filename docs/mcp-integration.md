@@ -1,6 +1,6 @@
 # African Market OS-MVR API: public and licensed MCP integration
 
-Contract update: 2026-09-07. Public endpoints are evaluation-only, not production scoring or authorization.
+Contract update: 2026-09-08. Current licensed compatibility: 2026-09-08.engine-contract.1; see Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
 
 Compatibility notice for 2026-09-07.engine-contract.8: complete source-to-target claim linkage is required for content-bearing or load-bearing evidence, including every item in a partially linked pack. Refresh licensed tools/list; follow only returned call_now handoffs. Licensed evidence_fit now blocks declared load-bearing country/date conflicts. Excluded rows that also supply scoring values remain non-decisive even if called background. decision-check rejects output receipt fields submitted as request authority with OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY; it is not an input receipt-verification endpoint. See the migration and interpretation sections below before upgrading an integration.
 
@@ -78,6 +78,20 @@ Follow the returned native MCP handoff exactly while continuation_disposition=ca
 An unresolved or ambiguous identity does not itself require a REST switch. With declared scope and evidence, entity-resolve can emit a native mvr_evidence_completeness call while resolved remains false. Without evidence, await_input and null mcp_next_call are intentional. continuation_resume names the same MCP tool to call only after the user supplies the missing or corrected inputs; retain the previous payload and do not retry it unchanged. A known company name is not a substitute for case evidence. recommended-inputs accepts sector as optional descriptive context, but still requires a supported entity_archetype or category; it never guesses one from sector alone.
 
 Do not invent an entity, canonical archetype, country, date, target claim, source reference or any other missing field to keep the chain moving. Preserve the original sector wording, exact target and declared relationships, and use a returned resolved archetype only as provided. Workflow IDs track operational continuation, not authority. A handoff permits the next API call, not the proposed market action. Do not apply the public retry window or public sandbox output assumptions to licensed calls; follow the returned instructions and current licensed contract.
+
+## Licensed intake and correction states
+
+Compatibility update 2026-09-08.engine-contract.1: licensed tools/list now specializes the flat evidence intake schema for the authenticated response profile. Strict privacy requirements and typed document fields are exposed before the call. Input schemas disclose canonical ID, collection/freshness, country, modality, artifact-media, admin/program payload and ontology-key requirements. Supported legacy aliases remain accepted by runtime normalization; calendar validity, source conflicts, mode-specific provenance, archetype-specific metric admissibility and claim-link coverage are still checked at runtime. JSON-Schema validity is necessary for the canonical shape, not a promise of completeness, truth or a positive verdict.
+
+For licensed first-call, supply a supported entity_archetype and the available structured evidence_pack. A sector description with no supported archetype, or a prose-only dossier, pauses before a workflow is minted. Public keyless discovery remains available with incomplete context. Include explicit claims/support_links for load-bearing items, preserving qualifications and contradictions. Do not convert a permit, an interview quote or a narrative summary into invented numeric MVR observations.
+
+The existing generic typed document/telemetry field is payload, not telemetry_payload. It may retain public-safe source details; it does not extract factual entailment or manufacture observed scores. Explicit admin_data records require admin_data_payload.collection_authority; source_artifacts require artifact_id and media_type. Strict evidence needs an accurate privacy_envelope with consent_basis, retention_class, redaction_status and safe_for_modeling=true. If those facts are unknown, ask the responsible source owner; never declare consent or review merely to pass validation.
+
+A licensed 422 is input_disposition=correction_required_not_a_decision. It is not an abstention verdict about the venture. Corrections now expose up to 100 errors with total_errors and validation_errors_truncated; a larger request can still be truncated. Do not retry unchanged or repeatedly relabel evidence. Return the missing-fact questions to the user. No new ingestion or source-authentication capability is implied.
+
+For analysis sequencing, continuation_disposition is authoritative: call_now permits only the supplied next-tool call, even if a discovery-stage evidence_gaps list describes later work; await_input requires corrected or additional facts; terminal ends the sequence. None authorizes an external action. A paused completeness/context response marks answer.human_review_required=true, authorization_status=not_authorized and restricted uses. A finite n=N population with an unmet numerical floor receives scoped human-review steps, not a demand to invent respondents or a numerical override.
+
+Each licensed tool result, including validation failure, carries mvr_response_receipt.deployment_revision and metadata.deployment_revision. The response header X-MVR-Deployment-Revision and initialize/tools-list _meta also expose the revision. These identify the serving release, not source authenticity, receipt validity or decision authority. Core API and package versions remain separately scoped.
 
 ## Interpret licensed results
 

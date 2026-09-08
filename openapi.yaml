@@ -24445,7 +24445,8 @@
             "type": "boolean"
           },
           "source_date": {
-            "type": "string"
+            "type": "string",
+            "description": "Real ISO date or timestamp with timezone. This records source age; it does not replace the collection/freshness date required for typed scoring."
           },
           "source_url": {
             "type": "string"
@@ -24747,7 +24748,273 @@
             "format": "date"
           },
           "evidence_geography": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string",
+                "enum": [
+                  "AD",
+                  "AE",
+                  "AF",
+                  "AG",
+                  "AI",
+                  "AL",
+                  "AM",
+                  "AO",
+                  "AQ",
+                  "AR",
+                  "AS",
+                  "AT",
+                  "AU",
+                  "AW",
+                  "AX",
+                  "AZ",
+                  "BA",
+                  "BB",
+                  "BD",
+                  "BE",
+                  "BF",
+                  "BG",
+                  "BH",
+                  "BI",
+                  "BJ",
+                  "BL",
+                  "BM",
+                  "BN",
+                  "BO",
+                  "BQ",
+                  "BR",
+                  "BS",
+                  "BT",
+                  "BV",
+                  "BW",
+                  "BY",
+                  "BZ",
+                  "CA",
+                  "CC",
+                  "CD",
+                  "CF",
+                  "CG",
+                  "CH",
+                  "CI",
+                  "CK",
+                  "CL",
+                  "CM",
+                  "CN",
+                  "CO",
+                  "CR",
+                  "CU",
+                  "CV",
+                  "CW",
+                  "CX",
+                  "CY",
+                  "CZ",
+                  "DE",
+                  "DJ",
+                  "DK",
+                  "DM",
+                  "DO",
+                  "DZ",
+                  "EC",
+                  "EE",
+                  "EG",
+                  "EH",
+                  "ER",
+                  "ES",
+                  "ET",
+                  "FI",
+                  "FJ",
+                  "FK",
+                  "FM",
+                  "FO",
+                  "FR",
+                  "GA",
+                  "GB",
+                  "GD",
+                  "GE",
+                  "GF",
+                  "GG",
+                  "GH",
+                  "GI",
+                  "GL",
+                  "GM",
+                  "GN",
+                  "GP",
+                  "GQ",
+                  "GR",
+                  "GS",
+                  "GT",
+                  "GU",
+                  "GW",
+                  "GY",
+                  "HK",
+                  "HM",
+                  "HN",
+                  "HR",
+                  "HT",
+                  "HU",
+                  "ID",
+                  "IE",
+                  "IL",
+                  "IM",
+                  "IN",
+                  "IO",
+                  "IQ",
+                  "IR",
+                  "IS",
+                  "IT",
+                  "JE",
+                  "JM",
+                  "JO",
+                  "JP",
+                  "KE",
+                  "KG",
+                  "KH",
+                  "KI",
+                  "KM",
+                  "KN",
+                  "KP",
+                  "KR",
+                  "KW",
+                  "KY",
+                  "KZ",
+                  "LA",
+                  "LB",
+                  "LC",
+                  "LI",
+                  "LK",
+                  "LR",
+                  "LS",
+                  "LT",
+                  "LU",
+                  "LV",
+                  "LY",
+                  "MA",
+                  "MC",
+                  "MD",
+                  "ME",
+                  "MF",
+                  "MG",
+                  "MH",
+                  "MK",
+                  "ML",
+                  "MM",
+                  "MN",
+                  "MO",
+                  "MP",
+                  "MQ",
+                  "MR",
+                  "MS",
+                  "MT",
+                  "MU",
+                  "MV",
+                  "MW",
+                  "MX",
+                  "MY",
+                  "MZ",
+                  "NA",
+                  "NC",
+                  "NE",
+                  "NF",
+                  "NG",
+                  "NI",
+                  "NL",
+                  "NO",
+                  "NP",
+                  "NR",
+                  "NU",
+                  "NZ",
+                  "OM",
+                  "PA",
+                  "PE",
+                  "PF",
+                  "PG",
+                  "PH",
+                  "PK",
+                  "PL",
+                  "PM",
+                  "PN",
+                  "PR",
+                  "PS",
+                  "PT",
+                  "PW",
+                  "PY",
+                  "QA",
+                  "RE",
+                  "RO",
+                  "RS",
+                  "RU",
+                  "RW",
+                  "SA",
+                  "SB",
+                  "SC",
+                  "SD",
+                  "SE",
+                  "SG",
+                  "SH",
+                  "SI",
+                  "SJ",
+                  "SK",
+                  "SL",
+                  "SM",
+                  "SN",
+                  "SO",
+                  "SR",
+                  "SS",
+                  "ST",
+                  "SV",
+                  "SX",
+                  "SY",
+                  "SZ",
+                  "TC",
+                  "TD",
+                  "TF",
+                  "TG",
+                  "TH",
+                  "TJ",
+                  "TK",
+                  "TL",
+                  "TM",
+                  "TN",
+                  "TO",
+                  "TR",
+                  "TT",
+                  "TV",
+                  "TW",
+                  "TZ",
+                  "UA",
+                  "UG",
+                  "UM",
+                  "US",
+                  "UY",
+                  "UZ",
+                  "VA",
+                  "VC",
+                  "VE",
+                  "VG",
+                  "VI",
+                  "VN",
+                  "VU",
+                  "WF",
+                  "WS",
+                  "YE",
+                  "YT",
+                  "ZA",
+                  "ZM",
+                  "ZW"
+                ]
+              },
+              "region": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "town_or_zone": {
+                "type": "string"
+              }
+            },
+            "description": "Use a supported ISO country code, not a country name. The item country is the source geography, not an assertion of target-market fit."
           },
           "geography": {
             "anyOf": [
@@ -24948,14 +25215,81 @@
             },
             "description": "For survey evidence, include survey_name, population_definition, sampling_method and sample_frame. Panel is an accepted sampling method."
           },
+          "payload": {
+            "type": "object",
+            "description": "Generic typed evidence payload, including telemetry or evaluation details. Retains supplied context only; prose does not become observed numeric scores or authenticated proof. Evaluation payloads need evaluator_name.",
+            "properties": {
+              "evaluator_name": {
+                "type": "string"
+              },
+              "evaluation_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "methodology": {
+                "type": "string"
+              }
+            }
+          },
           "program_payload": {
-            "type": "object"
+            "type": "object",
+            "required": [
+              "program_name",
+              "beneficiary_definition"
+            ],
+            "properties": {
+              "program_name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "beneficiary_definition": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
           },
           "admin_data_payload": {
-            "type": "object"
+            "type": "object",
+            "required": [
+              "collection_authority"
+            ],
+            "properties": {
+              "collection_authority": {
+                "type": "string",
+                "minLength": 1
+              },
+              "extraction_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "reporting_completeness_pct": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              }
+            }
           },
           "retail_audit_payload": {
-            "type": "object"
+            "type": "object",
+            "required": [
+              "outlet_frame",
+              "coverage_universe",
+              "stock_check_method"
+            ],
+            "properties": {
+              "outlet_frame": {
+                "type": "string",
+                "minLength": 1
+              },
+              "coverage_universe": {
+                "type": "string",
+                "minLength": 1
+              },
+              "stock_check_method": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
           },
           "provenance_ledger": {
             "type": "object",
@@ -24999,6 +25333,10 @@
             "maxItems": 20,
             "items": {
               "type": "object",
+              "required": [
+                "artifact_id",
+                "media_type"
+              ],
               "properties": {
                 "artifact_id": {
                   "type": "string"
