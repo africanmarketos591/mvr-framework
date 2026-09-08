@@ -1,6 +1,12 @@
 # African Market OS-MVR API: public and licensed MCP integration
 
-Contract update: 2026-09-08. Current licensed compatibility: 2026-09-08.engine-contract.5; see Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+Contract update: 2026-09-09. Current licensed compatibility: 2026-09-09.engine-contract.1; see Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+
+## Final decision summaries and request depth
+
+board_pack_v1 recommendation and confidence, requested_judgement_output.sections.headline_verdict, and local_relational_assessment.score_summary.compatibility_verdict reflect the final governed decision, not a pre-gate candidate. Board blocking gates and risks project decision_authorization.blocking_gates and risk_assessment.flags without a top-three cutoff. A null final verdict remains null; a labelled historical warning is not a candidate verdict. Diagnostic lane scores, lane-specific confidence, and explicitly labelled counterfactual scenarios retain their own meanings. No board-reporting permission authorizes execution. Preserve the enclosing governance fields when quoting numeric scores.
+
+JSON requests are limited to 32 nested object/array levels, counting the entire HTTP body root as level one. MCP envelopes count toward this limit. Excessive nesting returns HTTP 422 with MAX_JSON_DEPTH_EXCEEDED and max_depth: 32; MCP returns JSON-RPC -32602 with those fields in error.data. Reduce nesting rather than retrying unchanged. Byte-size limits remain separate (413); invalid JSON syntax remains 400. This check runs before recursive request processing and does not assess the truth of evidence.
 
 ## Serving revision, coverage and declared source review
 
