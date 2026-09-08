@@ -1,6 +1,6 @@
 # African Market OS-MVR API: public and licensed MCP integration
 
-Contract update: 2026-09-08. Current licensed compatibility: 2026-09-08.engine-contract.4; see Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+Contract update: 2026-09-08. Current licensed compatibility: 2026-09-08.engine-contract.5; see Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
 
 ## Serving revision, coverage and declared source review
 
@@ -130,6 +130,12 @@ Native licensed handoffs return the caller's supplied evidence to the same autho
 Compact output is a projection, not a weaker safety contract: preserve its answer, authorization boundaries, claim review, abstention reasons and diagnostic/calibration disclosures. Do not interpret omitted bulky branches as passed checks. Neither a receipt/hash, deterministic replay, direct_support label, successful tool call nor strict_calibrated profile proves source truth, detects all fraud, or establishes empirical superiority over another method. Empirical performance claims need separately scoped evaluation evidence; this integration contract makes no such guarantee.
 
 ## Declared controls and review authority
+
+Compatibility update 2026-09-08.engine-contract.5: provenance_ledger.data_integrity now has a closed, discoverable schema. Example fragment inside a complete evidence item: {"data_integrity":{"variance_anomaly_detected":true,"bot_or_farm_probability":0.95}}. variance_anomaly_detected is boolean, NOT a numeric anomaly score. bot_or_farm_probability is a finite number from 0 to 1. Unknown names and null now return correction errors instead of silently passing; correct clients need no migration. Omit the object when unavailable. An empty object or omission means no assessment supplied, not a passed fraud check. Do not invent clean values to satisfy validation.
+
+These caller-declared upstream signals were already used by decision-check before this contract repair, in flat evidence_pack and compiled_pack. Inspect scale_recommendation.blueprint_codes, data_quality.integrity_alerts and decision_authorization, not only confidence or pilot_only. The controls constrain decisions and institutional use but do not read adverse prose, authenticate originals, detect concealed source ancestry, verify a reviewer name or calculate bot probability. No scoring, sample or integrity threshold was changed by this release.
+
+Compiled input is an alternative container, not an exemption: retain the actual evidence type, provenance, source IDs and claim links when placing items into the documented lanes. Do not relabel an item to suit a lane. Every supplied lane is validated, including malformed data_integrity, before normalization. Context compilation is assembly, not a decision or fraud verdict. Coverage of flat requests alone does not establish coverage of compiled requests or the other licensed workflows.
 
 Compatibility update 2026-09-08.engine-contract.3: load-bearing stance=opposed or hostile produces declared_adverse_stance_requires_review. The result keeps the supplied claim relationships unchanged: stakeholder opposition is a decision risk, not proof that a statement is false. An adverse stance is indexed by item and linked claim; existing contradiction, sample and authorization gates still apply. This change catches disclosed opposition, not unmarked adverse prose. Do not omit or relabel evidence to pass.
 
