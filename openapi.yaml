@@ -24717,7 +24717,8 @@
               "macro_regulator",
               "meso_community",
               "micro_street"
-            ]
+            ],
+            "description": "Guardian role classification, not an adverse score setting. Only guardian evidence activates guardian-specific analysis; stance, observed substance and actual veto authority determine applicable gates. A tier change need not change the verdict."
           },
           "evidence_origin": {
             "type": "string",
@@ -24765,7 +24766,8 @@
               "neutral",
               "friendly",
               "opposed"
-            ]
+            ],
+            "description": "Declared stakeholder stance. Opposed or hostile load-bearing evidence requires stakeholder review even when linked as direct_support. This does not rewrite the factual claim relationship or authenticate the source."
           },
           "verification_status": {
             "type": "string",
@@ -25064,7 +25066,13 @@
             ]
           },
           "temporal": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "expired": {
+                "type": "boolean",
+                "description": "Literal true requires review for decision-relevant evidence, regardless of a recent source date."
+              }
+            }
           },
           "public_metric_scope": {
             "type": "string",
@@ -25118,7 +25126,15 @@
           },
           "behavioral_values": {
             "type": "object",
-            "description": "Platform telemetry: retention, churn, frequency - used for survey vs behavior dissonance checks."
+            "additionalProperties": false,
+            "properties": {
+              "30_day_active_retention_percent": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              }
+            },
+            "description": "Supported on corporate telemetry. The current check pairs high consumer field permission with low 30_day_active_retention_percent under the configured maturity policy, caps scale at pilot_ready and emits severe_evidence_dissonance_survey_vs_telemetry in scale_recommendation.blueprint_codes. A lower existing pilot_only ceiling need not change. This is not a general trust/churn causal inference; unspecified churn, retention and frequency keys are rejected."
           },
           "structured_values_provenance": {
             "type": "object",
@@ -25129,11 +25145,12 @@
                 "proxy-derived",
                 "imputed"
               ]
-            }
+            },
+            "description": "Per-dimension map using exact keys present in structured_values, for example {trust:\"observed\",permission:\"imputed\"}. input_score_provenance is not a blanket override and is rejected as an unknown dimension. Provenance affects admitted support and weights; other gates may keep headline scores or confidence unchanged."
           },
           "human_reviewed": {
             "type": "boolean",
-            "description": "Required for AI-extracted material before strict or decisive use."
+            "description": "Caller-declared review required for AI-extracted material before strict or decisive use. Not identity verification, a signature, authenticated reviewer approval or independent source verification."
           },
           "review_status": {
             "type": "string",
@@ -25148,7 +25165,7 @@
           },
           "reviewed_by": {
             "type": "string",
-            "description": "Named human reviewer for AI-extracted material when human_reviewed=true."
+            "description": "Caller-supplied reviewer name for AI-extracted material when human_reviewed=true. The name is not authenticated; supplying it does not establish identity, independence or that review occurred."
           },
           "reviewed_at": {
             "type": "string",
@@ -25212,7 +25229,59 @@
             }
           },
           "uncertainty_envelope": {
-            "type": "object"
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source_uncertainty": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "sampling_uncertainty": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "extraction_uncertainty": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "temporal_uncertainty": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "archetype_fit_uncertainty": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "disagreement_uncertainty": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "interval_80": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100
+                }
+              },
+              "score_point_estimate": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "basis": {
+                "type": "string"
+              }
+            },
+            "description": "Named 0-1 components influence evidence weighting. interval_80, score_point_estimate and basis are caller-supplied descriptions, not calibrated output intervals or gate overrides. Unknown component names are rejected; uniform reweighting or another cap can leave headline confidence unchanged."
           },
           "survey_payload": {
             "type": "object",
