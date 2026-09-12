@@ -1,6 +1,6 @@
 # African Market OS-MVR API: public and licensed MCP integration
 
-Serving deployment: 2026-09-12.engine-contract.1. This identifier is rendered from the worker serving this guide. See Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+Serving deployment: 2026-09-12.engine-contract.2. This identifier is rendered from the worker serving this guide. See Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
 
 ## Final decision summaries and request depth
 
@@ -10,7 +10,7 @@ JSON requests are limited to 32 nested object/array levels, counting the entire 
 
 ## Serving revision, coverage and declared source review
 
-For a release-controlled comparison, optionally send X-MVR-Expected-Deployment-Revision: 2026-09-12.engine-contract.1 on every preflight REST POST and MCP POST, including each continuation. A mismatch returns HTTP 409, DEPLOYMENT_REVISION_MISMATCH, the expected and serving revisions, and assessment_executed:false. MCP uses JSON-RPC -32009 with these fields in error.data. Invalid identifiers return 400. The header is not an API contract-version selector, does not host an old engine, and does not freeze calibration assets, quotas, time or external state. Stop and restart a matched comparison on one serving revision; do not mix cells across releases. Existing callers without this optional header retain their behavior.
+For a release-controlled comparison, optionally send X-MVR-Expected-Deployment-Revision: 2026-09-12.engine-contract.2 on every preflight REST POST and MCP POST, including each continuation. A mismatch returns HTTP 409, DEPLOYMENT_REVISION_MISMATCH, the expected and serving revisions, and assessment_executed:false. MCP uses JSON-RPC -32009 with these fields in error.data. Invalid identifiers return 400. The header is not an API contract-version selector, does not host an old engine, and does not freeze calibration assets, quotas, time or external state. Stop and restart a matched comparison on one serving revision; do not mix cells across releases. Existing callers without this optional header retain their behavior.
 
 source_review_requirements preserves per-item declared verification status through the five REST preflight routes, licensed MCP content/structuredContent, compact decision responses and any board_pack_v1. Missing, unverified and self_reported declarations remain source_review_outstanding; disputed remains dispute_requires_resolution. Caller-labelled document_supported or independently_verified means review_claimed_by_caller_not_authenticated, never AMOS authentication. Counts cover the whole pack; the bounded item preview prioritizes outstanding reviews and declares truncation. Original claim prose, documents, signer names and private locators are not copied into this summary. This is a disclosure, not a new score or a source-authentication gate. Existing disputed-evidence and other blockers remain unchanged. Never treat a candidate verdict as proof that source-review requirements were satisfied.
 
