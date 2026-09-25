@@ -2,6 +2,12 @@
 
 This page is the canonical version guide for MVR API public integration.
 
+## 2026-09-26 Durable Runtime Update
+
+`2026-09-26.durable-runtime.1` adds feature-gated durable workspace transactions, queued execution and delivery retries, checkpointed scheduled fan-out, an authenticated evidence inbox, and source-bound PDF/HTML/Markdown/CSV exports. Read `GET /v1/capabilities` for the actually enabled runtime state; a release label alone is not proof that a storage migration has been activated.
+
+External delivery is at least once, not exactly once. Receivers must deduplicate stable event IDs. Workspace administrators can inspect `/v1/runtime-jobs`; uncertain effects require reconciliation. The founder programme remains browser-local with no automatic upload, and public/OpenAI tool schemas and scoring policy are unchanged.
+
 ## 2026-09-25 Runtime Reliability Update
 
 `2026-09-25.engine-contract.2` preserves the public/OpenAI tool schemas and scoring boundaries. It hardens retry receipt ownership, secret redaction and project-scoped subscriptions; bounds finite upstream responses; and runs independent calibration health checks with bounded concurrency.
@@ -21,7 +27,7 @@ Every integration should preserve these fields separately:
 | `sdk_version` | `typescript@6.32.4;python@6.32.4` | Current published SDK lines, kept distinct by language. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-08-08.2` | Host-policy middleware, selection boundary, and distinct API-versus-human-service routing. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-09-25.engine-contract.2` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
+| `deployment_revision` | `2026-09-26.durable-runtime.1` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
 | `deployment_provider_revision` | `Recorded in release evidence after deployment` | Provider-generated Cloudflare version; not self-embedded because the provider creates it during deployment. |
 | `host_recipe_version` | `2026-08-20.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
