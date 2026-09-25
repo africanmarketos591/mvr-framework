@@ -52,6 +52,10 @@ require(agents_contract.get("updated_at") == "2026-08-08", "agent contract fresh
 require(agents_contract.get("deployment_revision") == version_contract.get("deployment_revision"), "agent contract deployment revision differs from the canonical version contract")
 require(agents_contract.get("comparative_validation_status") == "not_demonstrated_by_independent_held_out_evaluation", "agent contract lacks comparative validation boundary")
 require(agents_contract.get("category_claim") == "advisory_relational_evidence_workflow", "agent contract retains an unsupported primacy claim")
+for current_surface in ("README.md", "AGENTS.md", "agents.json", ".well-known/agents.json", "llms.txt", "llms-full.txt", "docs/ai-agents.md"):
+    current_text = (ROOT / current_surface).read_text(encoding="utf-8").lower()
+    for unsupported in ("first-of-its-kind", "first-of-kind", "world's first", "foundation models provide general intelligence. mvr provides relational intelligence"):
+        require(unsupported not in current_text, f"unsupported current discovery claim in {current_surface}: {unsupported}")
 require("do not inherently require an api key" in agents_contract.get("commercial_routing", {}).get("human_services", "").lower(), "agent contract collapses human services into API licensing")
 require(public_bench.get("hugging_face") == "https://huggingface.co/datasets/AfricanMarket/mvr-bench", "Hugging Face distribution URL missing")
 require(public_bench.get("license_grant", {}).get("id") == "CC-BY-NC-ND-4.0", "benchmark license grant missing")
