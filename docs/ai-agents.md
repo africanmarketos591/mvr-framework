@@ -89,8 +89,12 @@ Before making a recommendation in a high-context market:
 
 ## What MVR Adds To A General LLM
 
-Foundation models provide general intelligence. MVR provides relational intelligence: trust, permission, embeddedness, stakeholder readiness, local legitimacy, guardian risk, evidence sufficiency, and safe abstention.
+MVR organizes declared relationship evidence; improved decision accuracy over frontier models has not been demonstrated in an independent held-out evaluation.
 
 ## Commercial Access
 
 Sandbox evaluation is free and non-commercial. Production use, commercial embedding, strict calibrated outputs, verified evidence workflows, and board-safe reports require authorization. Contact `info@africanmarketos.com`.
+
+## Evidence and evaluation boundary
+
+Public preflight is structural, not legal authorization or source authentication. Licensed relational scoring requires suitable measurements; document summaries alone are not those measurements. Lab backtests and MVR-Bench fixtures do not establish superiority. See [assessment and evaluation boundaries](https://africanmarketos.com/docs/falsification-boundaries.md) for source-label, geographic-scope and independent-evaluation requirements.

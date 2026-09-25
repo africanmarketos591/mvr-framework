@@ -75,9 +75,11 @@ This layer is public-safe. It does not expose protected scoring logic, calibrati
 
 The MVR API is the machine-callable implementation layer for the framework. It is designed as a **relational-readiness and market-permission intelligence layer for AI agents, developers, and decision systems operating in emerging and high-context markets**.
 
-Foundation models provide general intelligence. MVR provides relational intelligence.
+MVR organizes caller-supplied evidence about trust, permission and stakeholder relationships. Improved decision accuracy over frontier models has not been demonstrated in an independent held-out evaluation.
 
-Category position: MVR API is designed as a first-of-its-kind relational-readiness and permission-to-operate engine for AI agents that must evaluate market entry, market trust, embeddedness, guardian approval, market belonging, evidence completeness, CFO relational risk, and safe go/no-go decisions before recommending action in African and other high-context markets.
+Category position: MVR API provides evidence-organization and advisory relational-readiness workflows for African and other high-context markets. It is not an automated legal permission-to-operate determination.
+
+Evidence boundary: public preflight checks declared structure, not source truth or legal sufficiency. Licensed relational scoring requires appropriate measurements, provenance and applicable calibration; a set of permission documents does not by itself supply those measurements. Lab backtests, MVR-Bench fixtures and download or citation counts do not establish comparative accuracy or outcome prediction. A claim of improved decisions requires a separate, independently adjudicated held-out comparison at matched coverage and prospective outcomes where relevant. See [interpretation and evaluation boundaries](https://africanmarketos.com/docs/falsification-boundaries.md).
 
 Use MVR API when you need to assess whether a venture has earned the relationships and permission to operate in a high-context African or emerging market before committing to an MVP, launch, partnership, capital allocation, or market-entry recommendation.
 
