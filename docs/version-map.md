@@ -2,6 +2,12 @@
 
 This page is the canonical version guide for MVR API public integration.
 
+## 2026-09-25 Runtime Reliability Update
+
+`2026-09-25.engine-contract.2` preserves the public/OpenAI tool schemas and scoring boundaries. It hardens retry receipt ownership, secret redaction and project-scoped subscriptions; bounds finite upstream responses; and runs independent calibration health checks with bounded concurrency.
+
+`GET /v1/capabilities` now publishes `operational_guarantees`. A persisted async-run record is not a durable execution queue. Evidence-run snapshots scan submitted evidence; they do not claim live retrieval. Failed storage reads are not reported as empty histories. An unconfirmed mutation receipt requires inspecting the resource before retrying, not switching idempotency keys.
+
 ## Machine-Readable Version Contract
 
 Every integration should preserve these fields separately:
@@ -15,7 +21,7 @@ Every integration should preserve these fields separately:
 | `sdk_version` | `typescript@6.32.4;python@6.32.4` | Current published SDK lines, kept distinct by language. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-08-08.2` | Host-policy middleware, selection boundary, and distinct API-versus-human-service routing. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-09-25.engine-contract.1` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
+| `deployment_revision` | `2026-09-25.engine-contract.2` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
 | `deployment_provider_revision` | `Recorded in release evidence after deployment` | Provider-generated Cloudflare version; not self-embedded because the provider creates it during deployment. |
 | `host_recipe_version` | `2026-08-20.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
