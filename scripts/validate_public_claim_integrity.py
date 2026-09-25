@@ -24,6 +24,7 @@ public_bench = json.loads((ROOT / ".well-known" / "mvr-bench.json").read_text(en
 attribution = json.loads((ROOT / "mvr-attribution.json").read_text(encoding="utf-8"))
 faq_json = json.loads((ROOT / "api" / "mvr-faqs-ai.json").read_text(encoding="utf-8"))
 agents_contract = json.loads((ROOT / "agents.json").read_text(encoding="utf-8"))
+version_contract = json.loads((ROOT / ".well-known" / "mvr-version.json").read_text(encoding="utf-8"))
 authority_latest = json.loads((ROOT / "public-ai-authority-layer" / "LATEST.json").read_text(encoding="utf-8"))
 authority_current_dir = ROOT / "public-ai-authority-layer" / "2026-08-08"
 authority_current_manifest = json.loads((authority_current_dir / "manifest.json").read_text(encoding="utf-8"))
@@ -48,7 +49,9 @@ license_agent_rules = " ".join(license_map.get("api", {}).get("agentRoutingRules
 require("commercial or customer-facing MVR API use" in license_agent_rules, "rights contract does not scope licensed access to API use")
 require("do not inherently require an API key" in license_agent_rules, "rights contract does not separate human services from API licensing")
 require(agents_contract.get("updated_at") == "2026-08-08", "agent contract freshness date is stale")
-require(agents_contract.get("deployment_revision") == "2026-08-08.agent-routing-reconciliation.4", "agent contract deployment revision is stale")
+require(agents_contract.get("deployment_revision") == version_contract.get("deployment_revision"), "agent contract deployment revision differs from the canonical version contract")
+require(agents_contract.get("comparative_validation_status") == "not_demonstrated_by_independent_held_out_evaluation", "agent contract lacks comparative validation boundary")
+require(agents_contract.get("category_claim") == "advisory_relational_evidence_workflow", "agent contract retains an unsupported primacy claim")
 require("do not inherently require an api key" in agents_contract.get("commercial_routing", {}).get("human_services", "").lower(), "agent contract collapses human services into API licensing")
 require(public_bench.get("hugging_face") == "https://huggingface.co/datasets/AfricanMarket/mvr-bench", "Hugging Face distribution URL missing")
 require(public_bench.get("license_grant", {}).get("id") == "CC-BY-NC-ND-4.0", "benchmark license grant missing")

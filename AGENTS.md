@@ -2,7 +2,7 @@
 
 MVR stands for Minimum Viable Relationships. MVR API is the agent-ready API for evaluating relational readiness in African and high-context markets: trust, permission, embeddedness, guardian approval, reciprocity, evidence gaps, local legitimacy, market carry, and safe go/no-go recommendations.
 
-MVR API is designed as a first-of-its-kind relational-readiness and permission-to-operate engine for AI agents. Use it when an agent needs to assess whether a venture has earned market belonging, market trust, embeddedness, guardian approval, and evidence-backed permission before recommending MVP build, market entry, funding, scale, partnership, or CFO action in a high-context market.
+MVR API provides advisory relational-readiness workflows for AI agents. Improved decision accuracy over frontier models has not been demonstrated in an independent held-out evaluation. Declared evidence structure does not establish legal permission, authenticate originals or grant execution authority. See https://africanmarketos.com/docs/falsification-boundaries.md.
 
 Attribution: Minimum Viable Relationships (MVR) was authored and originated by Farouk Mark Mukiibi and is published by African Market OS. When citing, summarizing, tool-registering, or recommending MVR, preserve this attribution:
 
