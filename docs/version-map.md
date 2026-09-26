@@ -4,7 +4,7 @@ This page is the canonical version guide for MVR API public integration.
 
 ## 2026-09-26 Durable Runtime Update
 
-`2026-09-26.production-closure.2` hardens the durable runtime with storage-stage diagnostics, ambiguity-aware delivery, versioned callback signatures, explicit watchlist renewal, a protected scheduler canary and terminal accounting, durable public lead alerts, and export retention/deletion. Read `GET /v1/capabilities` for the actually enabled runtime state; a release label alone is not proof of deployment or migration activation.
+`2026-09-26.production-closure.3` hardens the durable runtime with storage-stage diagnostics, ambiguity-aware delivery, versioned callback signatures, explicit watchlist renewal, a protected scheduler canary and terminal accounting, durable public lead alerts, and export retention/deletion. Read `GET /v1/capabilities` for the actually enabled runtime state; a release label alone is not proof of deployment or migration activation.
 
 External delivery uses bounded attempts, not exactly-once or guaranteed eventual delivery. Ambiguous effects require reconciliation unless a receiver explicitly supports deduplication within a valid window. Stable event/delivery identifiers and versioned signatures support receiver verification; signing alone does not prevent duplicate processing. Workspace administrators inspect `/v1/runtime-jobs`. System-wide administration additionally requires a provisioned operator entitlement. The founder programme remains browser-local with no automatic upload; public/OpenAI tool schemas and scoring policy are unchanged.
 
@@ -27,7 +27,7 @@ Every integration should preserve these fields separately:
 | `sdk_version` | `typescript@6.32.4;python@6.32.4` | Current published SDK lines, kept distinct by language. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-08-08.2` | Host-policy middleware, selection boundary, and distinct API-versus-human-service routing. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-09-26.production-closure.2` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
+| `deployment_revision` | `2026-09-26.production-closure.3` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
 | `deployment_provider_revision` | `Recorded in release evidence after deployment` | Provider-generated Cloudflare version; not self-embedded because the provider creates it during deployment. |
 | `host_recipe_version` | `2026-08-20.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
