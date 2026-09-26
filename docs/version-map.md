@@ -2,6 +2,12 @@
 
 This page is the canonical version guide for MVR API public integration.
 
+## 2026-09-27 Outsider Review
+
+`2026-09-27.outsider-review.1` binds governed snapshots to server-persisted evaluated evidence and material decisions, flags legacy unbound receipts, labels unsigned receipts honestly, isolates operator telemetry, and makes licensed MCP schemas and default text substantially smaller. Full structured artifacts remain available; `X-MVR-MCP-Text: full` restores complete text for legacy hosts. Public/OpenAI tools and scoring values are unchanged.
+
+Fixture replay now asserts expected behavior as well as hashes. The legacy `strong_enterprise_telecom` ID is explicitly a thin-evidence abstention example, not a strong readiness case. Geography/source-class vocabularies, project-memory/field-signal prerequisites and snapshot contracts are documented. Calibration readiness still checks every manifest with bounded concurrent reads. Read [the integration guide](mcp-integration.md) for migration, legacy receipt interpretation and exact workflow steps. Long-tail release-candidate routes are not silently promoted to fully documented contracts.
+
 ## 2026-09-26 Durable Runtime Update
 
 `2026-09-26.production-closure.3` hardens the durable runtime with storage-stage diagnostics, ambiguity-aware delivery, versioned callback signatures, explicit watchlist renewal, a protected scheduler canary and terminal accounting, durable public lead alerts, and export retention/deletion. Read `GET /v1/capabilities` for the actually enabled runtime state; a release label alone is not proof of deployment or migration activation.
@@ -27,7 +33,7 @@ Every integration should preserve these fields separately:
 | `sdk_version` | `typescript@6.32.4;python@6.32.4` | Current published SDK lines, kept distinct by language. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-08-08.2` | Host-policy middleware, selection boundary, and distinct API-versus-human-service routing. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |
-| `deployment_revision` | `2026-09-26.production-closure.3` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
+| `deployment_revision` | `2026-09-27.outsider-review.1` | In-band application build identifier. The provider-generated deployment revision is recorded separately after deployment. |
 | `deployment_provider_revision` | `Recorded in release evidence after deployment` | Provider-generated Cloudflare version; not self-embedded because the provider creates it during deployment. |
 | `host_recipe_version` | `2026-08-20.1` | Microsoft, Google, AWS, OpenAI, Anthropic, and xAI recipe family. |
 
