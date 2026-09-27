@@ -1,6 +1,6 @@
 # Fourth Retest: Reproduction Contract
 
-Target deployment: `2026-09-27.outsider-retest4.2`. Confirm the X-MVR-Deployment-Revision response header. Use an authorized licensed test workspace and synthetic records only.
+Target deployment: `2026-09-27.outsider-retest4.3`. Confirm the X-MVR-Deployment-Revision response header. Use an authorized licensed test workspace and synthetic records only.
 
 Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.
 
@@ -14,7 +14,7 @@ Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African M
 ## Discoverability
 
 - GET /v1/audit-events?category=governance&limit=50, or the admin alias with the required role, lists scoped governance summaries. Continue with governance_cursor until governance_list_complete. The ordinary security cursor is separate. The admin route also accepts documented POST fields; the non-admin alias is GET-only.
-- Full [OpenAPI](https://africanmarketos.com/v1/openapi.json) publishes governance query parameters, the admin request and selected response schemas. [Runtime schema](https://africanmarketos.com/v1/schema) includes governance_response_contracts and route_registry query/response references. The intentionally narrower agent registration surface is not a grant to enterprise governance routes.
+- Full [OpenAPI](https://africanmarketos.com/v1/openapi.json) publishes governance query parameters, the admin request and selected response schemas. [Runtime schema](https://africanmarketos.com/v1/schema) includes governance_response_contracts and route_registry query/response references. The current agent OpenAPI alias mirrors the full catalog; the five-tool licensed MCP runtime is narrower. Neither discovery surface grants access to enterprise governance routes.
 - Evidence-review review_eligibility distinguishes schema validity, reviewer authorization/declared independence, source authenticity, issuer standing and release eligibility. Legacy strict_eligible is not execution permission.
 - Conflicting output modes and invalid mode enums return assessment_executed:false before evaluation. An absent flag cannot be interpreted as proof of nonexecution.
 - Calibration-readiness, using an output mode allowed by that route, reports full_corpus_attested next to strict_calibrated_ready. Both use full-corpus readiness. strict_smoke_calibration_ready names only the representative subset. Quarantined calibration is not certified by a passing smoke subset.
