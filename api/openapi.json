@@ -2211,7 +2211,82 @@
               "schema": {
                 "type": "object",
                 "additionalProperties": true,
-                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "properties": {
+                  "entity_name": {
+                    "type": "string"
+                  },
+                  "entity_fingerprint": {
+                    "type": "string",
+                    "description": "Compatibility alias for entity_name, not an independently resolved identifier."
+                  },
+                  "entity_id": {
+                    "type": "string"
+                  },
+                  "decision_check_id": {
+                    "type": "string"
+                  },
+                  "decision_id": {
+                    "type": "string",
+                    "description": "Compatibility alias for the automatic decision-check ID."
+                  },
+                  "snapshots": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 50,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": true
+                    }
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 50,
+                    "default": 50
+                  },
+                  "cursor": {
+                    "type": "string"
+                  }
+                },
+                "anyOf": [
+                  {
+                    "required": [
+                      "entity_name"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "entity_fingerprint"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "entity_id"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "decision_check_id"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "decision_id"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "snapshots"
+                    ]
+                  }
+                ],
+                "description": "Bounded tenant/workspace history page. At most limit storage records are examined; selectors filter that page, so an empty page may have a continuation. Follow cursor with the identical selector and limit until list_complete. Pages use storage-key order, with timestamp descending only within each page; counts describe the current page, not total entity history. Provided snapshots are unverified caller history, bounded by limit, and cannot use a storage cursor. Missing storage fails rather than inventing an empty history.",
+                "examples": [
+                  {
+                    "entity_name": "Fictional dealer network",
+                    "limit": 50
+                  }
+                ]
               }
             }
           }
@@ -10166,6 +10241,7 @@
                   "action": {
                     "type": "string",
                     "enum": [
+                      "get_followup_offer",
                       "issue_consent_token",
                       "decline_followup",
                       "enroll",
@@ -10175,6 +10251,11 @@
                       "metrics",
                       "withdraw"
                     ]
+                  },
+                  "decision_check_id": {
+                    "type": "string",
+                    "pattern": "^DCHK-[A-Za-z0-9-]{1,100}$",
+                    "description": "Server-issued decision ID, allowed only for get_followup_offer. Caller-supplied eligibility or verdict fields cannot establish eligibility."
                   },
                   "decision_reference_hash": {
                     "type": "string",
@@ -10373,7 +10454,42 @@
                 "required": [
                   "action"
                 ],
-                "description": "Consent-gated, receipt-bound prospective outcome ledger. issue_consent_token requires elevated operator verification; enroll requires consent_token; record_outcome accepts bounded metadata only; withdraw deletes case-bearing enrollment and observations while retaining only HMAC-pseudonymized cohort-denominator metadata and a 90-day audit tombstone."
+                "anyOf": [
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "get_followup_offer"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "decision_check_id"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "issue_consent_token",
+                          "decline_followup",
+                          "enroll",
+                          "record_outcome",
+                          "get",
+                          "list",
+                          "metrics",
+                          "withdraw"
+                        ]
+                      }
+                    },
+                    "not": {
+                      "required": [
+                        "decision_check_id"
+                      ]
+                    }
+                  }
+                ],
+                "description": "Consent-gated, receipt-bound prospective outcome ledger. get_followup_offer recovers an explicitly deferred passive offer using decision_check_id in the authenticated tenant/workspace and original prospective window; use a new Idempotency-Key for a later recovery attempt. It never records consent or enrolls. issue_consent_token requires elevated operator verification; enroll requires consent_token; record_outcome accepts bounded metadata only; withdraw deletes case-bearing enrollment and observations while retaining only HMAC-pseudonymized cohort-denominator metadata and a 90-day audit tombstone."
               }
             }
           }
@@ -12355,7 +12471,13 @@
                     "type": "string"
                   }
                 },
-                "description": "Creates a snapshot in authenticated tenant/workspace storage; requires Idempotency-Key. Empty/client-authored drafts are allowed but cannot lock. For governed creation supply decision_check_id and its response_hash at top level or in decision_result. The server copies evaluated evidence count/hash, verdict, scores, scope and authorization from that persisted decision. Conflicting evidence, count, hash, top-level verdict or project is rejected. Conflicting nested decision_result material is ignored and disclosed in decision_snapshot.submission_review. Legacy decisions without a server evidence binding must be rerun. Duplicate IDs conflict. This is not locking, execution permission, consent or outcome enrollment."
+                "description": "Creates a snapshot in authenticated tenant/workspace storage; requires Idempotency-Key. Empty/client-authored drafts are allowed but cannot lock. For governed creation supply decision_check_id and its response_hash at top level or in decision_result. Replace both fictional example values with the exact pair returned by decision-check; the literal example is rejected. The server copies evaluated evidence count/hash, verdict, scores, scope and authorization from that persisted decision. Conflicting evidence, count, hash, top-level verdict or project is rejected. Conflicting nested decision_result material is ignored and disclosed in decision_snapshot.submission_review. Legacy decisions without a server evidence binding must be rerun. Duplicate IDs conflict. This is not locking, execution permission, consent or outcome enrollment.",
+                "examples": [
+                  {
+                    "decision_check_id": "DCHK-fictional-replace-with-evaluated-id",
+                    "response_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+                  }
+                ]
               }
             }
           }
@@ -12445,7 +12567,12 @@
                     ]
                   }
                 ],
-                "description": "Reads a stored snapshot in authenticated scope. A shared_access_token additionally requires owner_tenant_id and owner_workspace_id and must match the owner record. The token is not returned. Retrieval does not verify source truth or grant execution permission."
+                "description": "Reads a stored snapshot in authenticated scope. A shared_access_token additionally requires owner_tenant_id and owner_workspace_id and must match the owner record. The token is not returned. Retrieval does not verify source truth or grant execution permission. Replace the fictional snapshot_id with the ID returned by creation; the literal example returns not_found.",
+                "examples": [
+                  {
+                    "snapshot_id": "SNAP-fictional-replace-with-created-id"
+                  }
+                ]
               }
             }
           }
@@ -13839,7 +13966,13 @@
                     "type": "string"
                   }
                 },
-                "description": "Creates a snapshot in authenticated tenant/workspace storage; requires Idempotency-Key. Empty/client-authored drafts are allowed but cannot lock. For governed creation supply decision_check_id and its response_hash at top level or in decision_result. The server copies evaluated evidence count/hash, verdict, scores, scope and authorization from that persisted decision. Conflicting evidence, count, hash, top-level verdict or project is rejected. Conflicting nested decision_result material is ignored and disclosed in decision_snapshot.submission_review. Legacy decisions without a server evidence binding must be rerun. Duplicate IDs conflict. This is not locking, execution permission, consent or outcome enrollment."
+                "description": "Creates a snapshot in authenticated tenant/workspace storage; requires Idempotency-Key. Empty/client-authored drafts are allowed but cannot lock. For governed creation supply decision_check_id and its response_hash at top level or in decision_result. Replace both fictional example values with the exact pair returned by decision-check; the literal example is rejected. The server copies evaluated evidence count/hash, verdict, scores, scope and authorization from that persisted decision. Conflicting evidence, count, hash, top-level verdict or project is rejected. Conflicting nested decision_result material is ignored and disclosed in decision_snapshot.submission_review. Legacy decisions without a server evidence binding must be rerun. Duplicate IDs conflict. This is not locking, execution permission, consent or outcome enrollment.",
+                "examples": [
+                  {
+                    "decision_check_id": "DCHK-fictional-replace-with-evaluated-id",
+                    "response_hash": "0000000000000000000000000000000000000000000000000000000000000000"
+                  }
+                ]
               }
             }
           }

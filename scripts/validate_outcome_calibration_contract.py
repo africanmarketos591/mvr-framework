@@ -78,6 +78,7 @@ def validate_openapi_operation(openapi: dict, source: str) -> dict:
     require(
         set(action.get("enum") or [])
         == {
+            "get_followup_offer",
             "issue_consent_token",
             "decline_followup",
             "enroll",
@@ -100,7 +101,9 @@ def validate_openapi_operation(openapi: dict, source: str) -> dict:
         f"{source} horizon_months enum drifted",
     )
     properties = schema.get("properties", {})
-    for free_text_field in ("decision_check_id", "decision_domain", "decision_type", "response_profile"):
+    require(properties.get("decision_check_id", {}).get("pattern") == "^DCHK-[A-Za-z0-9-]{1,100}$", f"{source} recovery requires a bounded server-issued decision ID")
+    require(any("decision_check_id" in branch.get("not", {}).get("required", []) for branch in schema.get("anyOf", [])), f"{source} must forbid caller decision IDs on consent and enrollment actions")
+    for free_text_field in ("decision_domain", "decision_type", "response_profile"):
         require(
             free_text_field not in properties,
             f"{source} must not accept caller-supplied {free_text_field}",

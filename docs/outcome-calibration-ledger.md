@@ -169,6 +169,20 @@ The `metrics` action also returns an identity-free `first_cohort_screening` bloc
 
 ## 7. Daily Follow-up Operations
 
+### Recovering a Deferred Passive Offer
+
+An eligible live Enterprise decision can return `outcome_followup_offer_status.status: deferred` when its screening record could not be saved. This is not consent, enrollment or a lost decision. Recover the existing offer with a new `Idempotency-Key`:
+
+```json
+{"action":"get_followup_offer","decision_check_id":"DCHK-replace-with-the-server-issued-id"}
+```
+
+Send this to `POST /v1/outcome-ledger` using the same tenant/workspace credential. The response contains the passive offer or an explicit deferral. A later recovery attempt needs a new idempotency key; retry an uncertain request with its original key. Recovery uses the persisted original eligibility, receipt binding and seven-day window. It cannot promote sandbox, trial, backtest or historical ineligible decisions, extend the window, reverse decline/withdrawal, issue consent or create enrollment. Recovered offers enter screening in recovery-time order. The original decision response and receipt hashes are unchanged.
+
+`decision_check_id` is permitted only for this recovery action. Consent and enrollment still obtain their decision identity from the verified receipt. A recovered offer still requires operator-verified human consent before enrollment.
+
+As of `2026-09-27.outsider-retest2.1`, `stable_content_hash` excludes passive-offer availability and deferral metadata. Use `semantic_decision_hash` for the evaluated decision identity and `response_hash` for the exact delivered response. Do not rewrite historical hashes to the new stable projection.
+
 The production scheduler scans the outcome queue once per day. It persists an aggregate operational summary and sends an operator alert when at least one check-back is due or an observation awaits governed review.
 
 The summary is intentionally identity-free. It contains only:
