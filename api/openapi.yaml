@@ -10461,11 +10461,15 @@
                         "enum": [
                           "get_followup_offer"
                         ]
+                      },
+                      "decision_check_id": {
+                        "type": "string"
                       }
                     },
                     "required": [
                       "decision_check_id"
-                    ]
+                    ],
+                    "additionalProperties": false
                   },
                   {
                     "properties": {
@@ -12553,6 +12557,14 @@
                   },
                   "owner_workspace_id": {
                     "type": "string"
+                  },
+                  "amendment_cursor": {
+                    "type": "string"
+                  },
+                  "amendment_limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
                   }
                 },
                 "anyOf": [
@@ -12567,7 +12579,7 @@
                     ]
                   }
                 ],
-                "description": "Reads a stored snapshot in authenticated scope. A shared_access_token additionally requires owner_tenant_id and owner_workspace_id and must match the owner record. The token is not returned. Retrieval does not verify source truth or grant execution permission. Replace the fictional snapshot_id with the ID returned by creation; the literal example returns not_found.",
+                "description": "Reads a stored snapshot in authenticated scope with a separate owner-only amendment page; follow amendment_cursor without changing the snapshot. Source decision hashes remain in source_decision_integrity, separate from the locked snapshot hash. A shared_access_token additionally requires owner_tenant_id and owner_workspace_id and must match the owner record. The token is not returned. Retrieval does not verify source truth or grant execution permission. Replace the fictional snapshot_id with the ID returned by creation; the literal example returns not_found.",
                 "examples": [
                   {
                     "snapshot_id": "SNAP-fictional-replace-with-created-id"
@@ -30877,6 +30889,9 @@
         }
       }
     }
+  },
+  "response_meta": {
+    "deployment_revision": "2026-09-27.outsider-retest3.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
