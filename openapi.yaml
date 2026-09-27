@@ -5601,6 +5601,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
+              }
             }
           },
           "400": {
@@ -6926,6 +6933,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
               }
             }
           },
@@ -9958,6 +9972,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
+              }
             }
           },
           "400": {
@@ -10135,6 +10156,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
               }
             }
           },
@@ -13888,6 +13916,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
               }
             }
           },
@@ -21408,6 +21443,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
+              }
             }
           },
           "400": {
@@ -21493,7 +21535,127 @@
               "schema": {
                 "type": "object",
                 "additionalProperties": true,
-                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "properties": {
+                  "decision_result": {
+                    "type": "object",
+                    "description": "Prior /v1/decision-check response or compatible decision object."
+                  },
+                  "subject": {
+                    "type": "object"
+                  },
+                  "market_scope": {
+                    "type": "object"
+                  },
+                  "evidence_pack": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/EvidenceItem"
+                    }
+                  },
+                  "compiled_pack": {
+                    "type": "object",
+                    "properties": {
+                      "public_reality_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "telemetry_proxy_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "localized_observed_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "survey_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "retail_audit_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "ngo_program_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "evaluation_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "administrative_data_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "partner_network_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      },
+                      "social_listening_pack": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/EvidenceItem"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "target_verdict": {
+                    "type": "string",
+                    "enum": [
+                      "permission_not_yet_earned",
+                      "pilot_only",
+                      "pilot_ready",
+                      "ready_to_scale"
+                    ]
+                  },
+                  "audience": {
+                    "type": "string"
+                  },
+                  "gap_plan": {
+                    "type": "object"
+                  },
+                  "evidence_run": {
+                    "type": "object"
+                  },
+                  "evidence_recruitment_plan": {
+                    "type": "object"
+                  },
+                  "mvr_result": {
+                    "type": "object"
+                  },
+                  "decision_room": {
+                    "type": "object"
+                  },
+                  "red_team": {
+                    "type": "object"
+                  },
+                  "release_check": {
+                    "type": "object"
+                  },
+                  "project_id": {
+                    "type": "string"
+                  }
+                },
+                "description": "Non-authorizing next-step guidance from decision_result, evidence/gap context, project_id or market_scope. No context returns no_context. Output prioritizes source restrictions and human authority checks before stakeholder handoff."
               }
             }
           }
@@ -21532,6 +21694,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
               }
             }
           },
@@ -22826,6 +22995,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
               }
             }
           },
@@ -26905,7 +27081,55 @@
                     "additionalProperties": true
                   },
                   "financials": {
-                    "type": "object"
+                    "type": "object",
+                    "properties": {
+                      "acquisition_cost_usd": {
+                        "type": "number",
+                        "exclusiveMinimum": 0
+                      },
+                      "ltv_usd": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "conversion_rate_pct": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                      },
+                      "conversion_rate_percent": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100,
+                        "description": "Compatibility alias for conversion_rate_pct."
+                      },
+                      "friction_premium_pct": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                      },
+                      "fx_exposure_pct": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                      }
+                    },
+                    "required": [
+                      "acquisition_cost_usd",
+                      "ltv_usd"
+                    ],
+                    "anyOf": [
+                      {
+                        "required": [
+                          "conversion_rate_pct"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "conversion_rate_percent"
+                        ]
+                      }
+                    ],
+                    "additionalProperties": true
                   },
                   "unit_economics": {
                     "type": "object"
@@ -26929,8 +27153,10 @@
                   }
                 },
                 "required": [
-                  "mvr_scores"
-                ]
+                  "mvr_scores",
+                  "financials"
+                ],
+                "description": "Requires numeric executive trust and permission scores (0-100) and financials. Currency inputs are USD. A simulation is not credit or execution permission."
               }
             }
           }
@@ -32499,6 +32725,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
+              }
             }
           },
           "400": {
@@ -32584,7 +32817,45 @@
               "schema": {
                 "type": "object",
                 "additionalProperties": true,
-                "description": "A complete route-specific request schema is not yet published for this operation. Runtime validation remains authoritative; use /v1/recommended-inputs or /v1/schema for route-specific guidance before sending production payloads."
+                "required": [
+                  "project_id"
+                ],
+                "properties": {
+                  "project_id": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "decision_result": {
+                    "type": "object"
+                  },
+                  "current_verdict": {
+                    "type": "string"
+                  },
+                  "open_tasks": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  },
+                  "risks": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "red_team": {
+                    "type": "object"
+                  },
+                  "compiled_pack": {
+                    "type": "object"
+                  },
+                  "watchlist_triggers": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "last_decision_snapshot": {
+                    "type": "object"
+                  }
+                },
+                "description": "Stateless summary of supplied context. POST accepts the listed context fields; GET accepts project_id only and does not load stored project memory. Memory remains context, never evidence or action authority."
               }
             }
           }
@@ -32593,7 +32864,18 @@
       "get": {
         "summary": "Return one project home-screen payload: current verdict, open tasks, latest risks, evidence health, watchlist triggers, and next best action.",
         "description": "Return one project home-screen payload: current verdict, open tasks, latest risks, evidence health, watchlist triggers, and next best action.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Project context identifier. This stateless GET summary does not load project memory; use /v1/project-memory/{project_id} for stored context."
+          }
+        ],
         "x-mvr-registry-route": "/v1/project-dashboard",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -32618,6 +32900,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
               }
             }
           },
@@ -33106,6 +33395,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
               }
             }
           },
@@ -44172,6 +44468,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSupportResponse"
+                }
+              }
             }
           },
           "400": {
@@ -46152,6 +46455,152 @@
           }
         }
       },
+      "ActionAuthorizationBoundary": {
+        "type": "object",
+        "required": [
+          "contract",
+          "decision",
+          "capability_issued",
+          "execution_authorized"
+        ],
+        "properties": {
+          "contract": {
+            "type": "string",
+            "enum": [
+              "mvr-action-boundary@1"
+            ]
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "BLOCKED"
+            ]
+          },
+          "capability_issued": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "execution_authorized": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "source_authenticity_verified": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "signer_standing_verified": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "revocation_checked": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "signature": {
+            "enum": [
+              null
+            ],
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Fail-closed action boundary, not a signed permission capability. This release cannot emit ALLOWED. Independent authority is required outside AMOS. Legacy authorized output-use labels never lift this boundary."
+      },
+      "DecisionSupportResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Processing status, not a recommendation."
+          },
+          "action_authorization": {
+            "$ref": "#/components/schemas/ActionAuthorizationBoundary"
+          },
+          "output_use_authorization": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "not_assessed",
+                  "not_permitted",
+                  "permitted_for_listed_uses_only"
+                ]
+              },
+              "permitted_uses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "execution_permission": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              }
+            },
+            "additionalProperties": true
+          },
+          "execution_authorization_state": {
+            "type": "string",
+            "enum": [
+              "not_authorized"
+            ]
+          },
+          "human_review_required": {
+            "type": "boolean"
+          },
+          "answer": {
+            "type": "object",
+            "properties": {
+              "processing_status": {
+                "type": "string"
+              },
+              "recommendation": {
+                "type": "string",
+                "nullable": true
+              },
+              "action_headline": {
+                "type": "string",
+                "enum": [
+                  "NOT YET"
+                ]
+              },
+              "human_review_required": {
+                "type": "boolean"
+              },
+              "action_authorization": {
+                "$ref": "#/components/schemas/ActionAuthorizationBoundary"
+              }
+            },
+            "additionalProperties": true
+          },
+          "response_meta": {
+            "type": "object",
+            "properties": {
+              "deployment_revision": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      },
       "RequestErrorResponse": {
         "type": "object",
         "properties": {
@@ -47092,7 +47541,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-09-27.outsider-retest4.3"
+    "deployment_revision": "2026-09-27.outsider-retest5.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
