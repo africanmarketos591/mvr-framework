@@ -1,6 +1,6 @@
 # African Market OS-MVR API: public and licensed MCP integration
 
-Serving deployment: 2026-09-27.outsider-retest5.3. This identifier is rendered from the worker serving this guide. See Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+Serving deployment: 2026-09-27.outsider-retest6.1. This identifier is rendered from the worker serving this guide. See Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
 
 ## Operator failure reporting
 
@@ -14,7 +14,7 @@ JSON requests are limited to 32 nested object/array levels, counting the entire 
 
 ## Serving revision, coverage and declared source review
 
-For a release-controlled comparison, optionally send X-MVR-Expected-Deployment-Revision: 2026-09-27.outsider-retest5.3 on every preflight REST POST and MCP POST, including each continuation. A mismatch returns HTTP 409, DEPLOYMENT_REVISION_MISMATCH, the expected and serving revisions, and assessment_executed:false. MCP uses JSON-RPC -32009 with these fields in error.data. Invalid identifiers return 400. The header is not an API contract-version selector, does not host an old engine, and does not freeze calibration assets, quotas, time or external state. Stop and restart a matched comparison on one serving revision; do not mix cells across releases. Existing callers without this optional header retain their behavior.
+For a release-controlled comparison, optionally send X-MVR-Expected-Deployment-Revision: 2026-09-27.outsider-retest6.1 on every preflight REST POST and MCP POST, including each continuation. A mismatch returns HTTP 409, DEPLOYMENT_REVISION_MISMATCH, the expected and serving revisions, and assessment_executed:false. MCP uses JSON-RPC -32009 with these fields in error.data. Invalid identifiers return 400. The header is not an API contract-version selector, does not host an old engine, and does not freeze calibration assets, quotas, time or external state. Stop and restart a matched comparison on one serving revision; do not mix cells across releases. Existing callers without this optional header retain their behavior.
 
 source_review_requirements preserves per-item declared verification status through the five REST preflight routes, licensed MCP content/structuredContent, compact decision responses and any board_pack_v1. Missing, unverified and self_reported declarations remain source_review_outstanding; disputed remains dispute_requires_resolution. Caller-labelled document_supported or independently_verified may mean review_claimed_by_caller_not_authenticated, never AMOS authentication. Positive labels on self-reported origins remain outstanding and carry verification_label_conflict. An explicit pending/rejected review, unrecognized review disposition or human_reviewed:false also remains outstanding alongside an affirmative label; review_declaration_conflict identifies that inconsistent declaration. declared_human_reviewed and declared_review_status are bounded caller declarations, not authenticated attestations. A name or approval alone does not create verified evidence. Counts cover the whole pack; the bounded item preview prioritizes outstanding reviews and declares truncation. Original claim prose, documents, signer names and private locators are not copied into this summary. The self-reported verification control is described below; it does not authenticate other sources or grant permission. Never treat a candidate verdict as proof that source-review requirements were satisfied.
 
@@ -170,6 +170,18 @@ Each licensed tool result, including validation failure, carries mvr_response_re
 ## Profile confidence boundary
 
 response_profile selects calibration policy, not a confidence ordering. strict_calibrated requires applicable approved manifests; full_advisory may apply a proxy/fallback cap. Their confidence numbers are not directly comparable and neither is a probability of venture success. Preserve calibration_basis.confidence_interpretation; a higher strict value does not establish stronger evidence, source authentication or outcome validation.
+
+Do not copy AMOS confidence into a host model's confidence field. It is a scoped engine measure, not the host's certainty, a probability of success or a probability that execution is authorized.
+
+## Required action boundary and corrected inputs
+
+The five licensed tools now publish outputSchema for their shared governed response fields. Validate result.structuredContent, not the JSON-RPC envelope. REST DecisionSupportResponse and the guided output schema require the action boundary. Missing, malformed, unknown-version or contradictory boundaries mean BLOCKED; transport success, a score, a bounded output-use label and a host's prose cannot authorize execution. This version permits only mvr-action-boundary@1 with decision=BLOCKED, capability_issued=false, execution_authorized=false, all three source/signer/revocation verification flags false, and signature=null. It issues no ALLOWED capability.
+
+Evidence-array lanes must be arrays of objects, including inside compiled_pack. Wrong-shaped containers or lanes return 422 with the offending field before normalization; empty but correctly shaped packs have a separate no-evidence error. Evidence presence is distinct from quality: remediation must preserve sample, provenance, calibration and review blockers even when a lane is populated. Export jobs reject a source with no usable content after redaction, before renderer work or job creation.
+
+ROI simulation accepts simulation_iterations from 100 to 50000 and a string simulation_seed at top level. The legacy financials locations remain accepted, including numeric seeds there. Matching copies are allowed; conflicting locations return 422. Responses report the seed and actual iteration count. Reproducible synthetic simulation is not outcome validation or financial advice.
+
+An unrelated technical question returns status=not_relevant, activation_outcome=out_of_scope and continuation_disposition=terminal. It creates no workflow and requests no market evidence. A negated technical preamble does not exempt a real credit, deployment, consent or counterparty decision supplied alongside it.
 
 ## Governed snapshots and field-signal inputs
 

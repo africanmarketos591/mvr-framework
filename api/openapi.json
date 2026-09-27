@@ -27111,6 +27111,23 @@
                         "type": "number",
                         "minimum": 0,
                         "maximum": 100
+                      },
+                      "simulation_iterations": {
+                        "type": "integer",
+                        "minimum": 100,
+                        "maximum": 50000,
+                        "description": "Compatibility location. Conflicting top-level controls are rejected."
+                      },
+                      "simulation_seed": {
+                        "oneOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "number"
+                          }
+                        ],
+                        "description": "Compatibility location; numeric seeds are accepted here. Conflicting top-level controls are rejected."
                       }
                     },
                     "required": [
@@ -46461,7 +46478,11 @@
           "contract",
           "decision",
           "capability_issued",
-          "execution_authorized"
+          "execution_authorized",
+          "source_authenticity_verified",
+          "signer_standing_verified",
+          "revocation_checked",
+          "signature"
         ],
         "properties": {
           "contract": {
@@ -46517,7 +46538,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Fail-closed action boundary, not a signed permission capability. This release cannot emit ALLOWED. Independent authority is required outside AMOS. Legacy authorized output-use labels never lift this boundary."
+        "description": "Required fail-closed action boundary, not a signed permission capability. Missing, malformed or unknown boundaries must be treated as BLOCKED by the host. This release cannot emit ALLOWED. Independent authority is required outside AMOS. Legacy authorized output-use labels never lift this boundary."
       },
       "DecisionSupportResponse": {
         "type": "object",
@@ -46587,7 +46608,12 @@
                 "$ref": "#/components/schemas/ActionAuthorizationBoundary"
               }
             },
-            "additionalProperties": true
+            "additionalProperties": true,
+            "required": [
+              "action_headline",
+              "action_authorization",
+              "human_review_required"
+            ]
           },
           "response_meta": {
             "type": "object",
@@ -46599,7 +46625,13 @@
             "additionalProperties": true
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "required": [
+          "action_authorization",
+          "execution_authorization_state",
+          "human_review_required",
+          "answer"
+        ]
       },
       "RequestErrorResponse": {
         "type": "object",
@@ -47541,7 +47573,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-09-27.outsider-retest5.3"
+    "deployment_revision": "2026-09-27.outsider-retest6.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
