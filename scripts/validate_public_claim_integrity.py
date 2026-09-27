@@ -50,6 +50,8 @@ require("commercial or customer-facing MVR API use" in license_agent_rules, "rig
 require("do not inherently require an API key" in license_agent_rules, "rights contract does not separate human services from API licensing")
 require(agents_contract.get("updated_at") == "2026-08-08", "agent contract freshness date is stale")
 require(agents_contract.get("deployment_revision") == version_contract.get("deployment_revision"), "agent contract deployment revision differs from the canonical version contract")
+public_agents_contract = json.loads((ROOT / ".well-known" / "agents.json").read_text(encoding="utf-8"))
+require(public_agents_contract.get("deployment_revision") == version_contract.get("deployment_revision"), "well-known agent contract deployment revision differs from the canonical version contract")
 require(agents_contract.get("comparative_validation_status") == "not_demonstrated_by_independent_held_out_evaluation", "agent contract lacks comparative validation boundary")
 require(agents_contract.get("category_claim") == "advisory_relational_evidence_workflow", "agent contract retains an unsupported primacy claim")
 for current_surface in ("README.md", "AGENTS.md", "agents.json", ".well-known/agents.json", "llms.txt", "llms-full.txt", "docs/ai-agents.md"):

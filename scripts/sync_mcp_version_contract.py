@@ -64,6 +64,16 @@ def update_json_contract(path: pathlib.Path, expected: dict[str, str]) -> bool:
     return changed
 
 
+def update_agent_revision(path: pathlib.Path, expected: dict[str, str]) -> bool:
+    document = load_json(path)
+    revision = expected["deployment_revision"]
+    if document.get("deployment_revision") == revision:
+        return False
+    document["deployment_revision"] = revision
+    path.write_text(serialized(document), encoding="utf-8")
+    return True
+
+
 def update_server(path: pathlib.Path, expected: dict[str, str]) -> bool:
     document = load_json(path)
     publisher = document["_meta"]["io.modelcontextprotocol.registry/publisher-provided"]
@@ -107,6 +117,8 @@ def synchronize(check_only: bool) -> list[str]:
     ]
     operations.extend(
         [
+            (ROOT / "agents.json", update_agent_revision),
+            (ROOT / ".well-known" / "agents.json", update_agent_revision),
             (ROOT / "server.json", update_server),
             (ROOT / "docs" / "version-map.md", update_version_map),
         ]
