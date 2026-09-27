@@ -1,6 +1,6 @@
 # Fourth Retest: Reproduction Contract
 
-Target deployment: `2026-09-27.outsider-retest4.1`. Confirm the X-MVR-Deployment-Revision response header. Use an authorized licensed test workspace and synthetic records only.
+Target deployment: `2026-09-27.outsider-retest4.2`. Confirm the X-MVR-Deployment-Revision response header. Use an authorized licensed test workspace and synthetic records only.
 
 Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.
 
