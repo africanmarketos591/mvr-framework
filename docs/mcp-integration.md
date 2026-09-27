@@ -1,6 +1,6 @@
 # African Market OS-MVR API: public and licensed MCP integration
 
-Serving deployment: 2026-09-27.outsider-retest3.1. This identifier is rendered from the worker serving this guide. See Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+Serving deployment: 2026-09-27.outsider-retest4.1. This identifier is rendered from the worker serving this guide. See Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
 
 ## Operator failure reporting
 
@@ -14,7 +14,7 @@ JSON requests are limited to 32 nested object/array levels, counting the entire 
 
 ## Serving revision, coverage and declared source review
 
-For a release-controlled comparison, optionally send X-MVR-Expected-Deployment-Revision: 2026-09-27.outsider-retest3.1 on every preflight REST POST and MCP POST, including each continuation. A mismatch returns HTTP 409, DEPLOYMENT_REVISION_MISMATCH, the expected and serving revisions, and assessment_executed:false. MCP uses JSON-RPC -32009 with these fields in error.data. Invalid identifiers return 400. The header is not an API contract-version selector, does not host an old engine, and does not freeze calibration assets, quotas, time or external state. Stop and restart a matched comparison on one serving revision; do not mix cells across releases. Existing callers without this optional header retain their behavior.
+For a release-controlled comparison, optionally send X-MVR-Expected-Deployment-Revision: 2026-09-27.outsider-retest4.1 on every preflight REST POST and MCP POST, including each continuation. A mismatch returns HTTP 409, DEPLOYMENT_REVISION_MISMATCH, the expected and serving revisions, and assessment_executed:false. MCP uses JSON-RPC -32009 with these fields in error.data. Invalid identifiers return 400. The header is not an API contract-version selector, does not host an old engine, and does not freeze calibration assets, quotas, time or external state. Stop and restart a matched comparison on one serving revision; do not mix cells across releases. Existing callers without this optional header retain their behavior.
 
 source_review_requirements preserves per-item declared verification status through the five REST preflight routes, licensed MCP content/structuredContent, compact decision responses and any board_pack_v1. Missing, unverified and self_reported declarations remain source_review_outstanding; disputed remains dispute_requires_resolution. Caller-labelled document_supported or independently_verified may mean review_claimed_by_caller_not_authenticated, never AMOS authentication. Positive labels on self-reported origins remain outstanding and carry verification_label_conflict. An explicit pending/rejected review, unrecognized review disposition or human_reviewed:false also remains outstanding alongside an affirmative label; review_declaration_conflict identifies that inconsistent declaration. declared_human_reviewed and declared_review_status are bounded caller declarations, not authenticated attestations. A name or approval alone does not create verified evidence. Counts cover the whole pack; the bounded item preview prioritizes outstanding reviews and declares truncation. Original claim prose, documents, signer names and private locators are not copied into this summary. The self-reported verification control is described below; it does not authenticate other sources or grant permission. Never treat a candidate verdict as proof that source-review requirements were satisfied.
 
@@ -178,6 +178,20 @@ After a successful decision-check, POST /v1/decision-snapshot/create with decisi
 Public receipts separately report evidence_bound_by_server and signature.status. Unsigned records say hash_registered, not signature_verified. Legacy unbound receipts remain hash-addressable but withhold their verdict/evidence count and say legacy_or_mismatched_evidence_do_not_rely. None of these labels certifies source truth or a business decision. Logged non-2xx responses say logged_error_response.
 
 When nested decision_result values differ from the stored evaluation, decision_snapshot.submission_review lists ignored_fields and identifies server_persisted_decision_check as authoritative. No submitted verdict or permission is promoted. A conflicting top-level verdict still fails validation.
+
+Every supplied response_hash and semantic_decision_hash, at either input location, must match the persisted decision. A mismatch returns 422 with lineage_status and the offending field. Caller immutable_audit_hash and anti_corruption_audit_hash never replace server values; differing values are listed in decision_snapshot.submission_review. A snapshot lock has its own immutable_snapshot_hash, distinct from the source decision hashes.
+
+## Governance discovery and completion
+
+GET /v1/audit-events?category=governance uses governance_cursor, not the security cursor. Continue until governance_list_complete is true. This tenant/workspace index is forward-only; older records remain on their original routes. Owner retrieval of a locked snapshot lists amendments separately and never rewrites the original snapshot.
+
+Entity timeline pagination.list_complete and analysis.history_complete agree, including on a final empty filtered page. Accumulate preceding pages to reconstruct history. analysis_scope is current_page_only; snapshot_count is not a portfolio total. Follow every cursor even if a page contains no matching rows.
+
+Evidence review exposes review_eligibility separately from legacy strict_eligible: schema validity and an authorized review do not establish source authenticity, issuer standing or execution permission. Pre-assessment output-mode conflicts and invalid enums return assessment_executed: false. An absent flag is not proof of nonexecution.
+
+The full OpenAPI catalog and /v1/schema governance_response_contracts publish these fields. Use the full enterprise catalog for governance routes; the agent catalog intentionally exposes a narrower tool surface. Calibration-readiness headlines strict_calibrated_ready and full_corpus_attested use full-manifest readiness; strict_smoke_calibration_ready is only a representative subset and cannot override a failed corpus.
+
+REST and MCP responses expose Server-Timing with an aggregate mvr duration in milliseconds to response construction. Cloudflare Worker clocks advance after I/O. This is not CPU time, excludes delivery and background work, and does not precisely separate network latency. Compare bounded repeated observations, not a single subtraction. No Timing-Allow-Origin grant or infrastructure identities are added.
 
 Independent decision-checks can execute concurrently within one tenant/workspace. The durable commit validates the records and watchlist pages actually observed, including additions/removals, not every unrelated workspace write. A genuine state conflict returns HTTP 409, code RUNTIME_STATE_CONFLICT, retryable:true and Retry-After: 1; no staged writes were committed. Retry the same request with its original Idempotency-Key and bounded backoff. A reused key with different input, denied authority, an unsupported schema or an uncertain commit is not this retryable conflict. RUNTIME_COMMIT_UNCONFIRMED still requires reconciliation or the same idempotency key; never invent a new key to bypass ambiguity.
 
