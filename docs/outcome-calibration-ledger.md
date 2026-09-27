@@ -181,7 +181,7 @@ Send this to `POST /v1/outcome-ledger` using the same tenant/workspace credentia
 
 `decision_check_id` is permitted only for this recovery action. Consent and enrollment still obtain their decision identity from the verified receipt. A recovered offer still requires operator-verified human consent before enrollment.
 
-As of `2026-09-27.outsider-retest2.1`, `stable_content_hash` excludes passive-offer availability and deferral metadata. Use `semantic_decision_hash` for the evaluated decision identity and `response_hash` for the exact delivered response. Do not rewrite historical hashes to the new stable projection.
+As of `2026-09-27.outsider-retest2.2`, `stable_content_hash` excludes passive-offer availability and deferral metadata. Use `semantic_decision_hash` for the evaluated decision identity and `response_hash` for the exact delivered response. Do not rewrite historical hashes to the new stable projection.
 
 The production scheduler scans the outcome queue once per day. It persists an aggregate operational summary and sends an operator alert when at least one check-back is due or an observation awaits governed review.
 
