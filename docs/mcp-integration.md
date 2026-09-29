@@ -1,6 +1,6 @@
 # African Market OS-MVR API: public and licensed MCP integration
 
-Serving deployment: 2026-09-30.outsider-retest8.1. This identifier is rendered from the worker serving this guide. See Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
+Serving deployment: 2026-09-30.outsider-retest8.2. This identifier is rendered from the worker serving this guide. See Licensed intake and correction states below. Public endpoints are evaluation-only, not production scoring or authorization.
 
 ## Operator failure reporting
 
@@ -14,7 +14,7 @@ JSON requests are limited to 32 nested object/array levels, counting the entire 
 
 ## Serving revision, coverage and declared source review
 
-For a release-controlled comparison, optionally send X-MVR-Expected-Deployment-Revision: 2026-09-30.outsider-retest8.1 on every preflight REST POST and MCP POST, including each continuation. A mismatch returns HTTP 409, DEPLOYMENT_REVISION_MISMATCH, the expected and serving revisions, and assessment_executed:false. MCP uses JSON-RPC -32009 with these fields in error.data. Invalid identifiers return 400. The header is not an API contract-version selector, does not host an old engine, and does not freeze calibration assets, quotas, time or external state. Stop and restart a matched comparison on one serving revision; do not mix cells across releases. Existing callers without this optional header retain their behavior.
+For a release-controlled comparison, optionally send X-MVR-Expected-Deployment-Revision: 2026-09-30.outsider-retest8.2 on every preflight REST POST and MCP POST, including each continuation. A mismatch returns HTTP 409, DEPLOYMENT_REVISION_MISMATCH, the expected and serving revisions, and assessment_executed:false. MCP uses JSON-RPC -32009 with these fields in error.data. Invalid identifiers return 400. The header is not an API contract-version selector, does not host an old engine, and does not freeze calibration assets, quotas, time or external state. Stop and restart a matched comparison on one serving revision; do not mix cells across releases. Existing callers without this optional header retain their behavior.
 
 source_review_requirements preserves per-item declared verification status through the five REST preflight routes, licensed MCP content/structuredContent, compact decision responses and any board_pack_v1. Missing, unverified and self_reported declarations remain source_review_outstanding; disputed remains dispute_requires_resolution. Caller-labelled document_supported or independently_verified may mean review_claimed_by_caller_not_authenticated, never AMOS authentication. Positive labels on self-reported origins remain outstanding and carry verification_label_conflict. An explicit pending/rejected review, unrecognized review disposition or human_reviewed:false also remains outstanding alongside an affirmative label; review_declaration_conflict identifies that inconsistent declaration. declared_human_reviewed and declared_review_status are bounded caller declarations, not authenticated attestations. A name or approval alone does not create verified evidence. Counts cover the whole pack; the bounded item preview prioritizes outstanding reviews and declares truncation. Original claim prose, documents, signer names and private locators are not copied into this summary. The self-reported verification control is described below; it does not authenticate other sources or grant permission. Never treat a candidate verdict as proof that source-review requirements were satisfied.
 
@@ -311,7 +311,7 @@ The client retains the consented original context and entire pack. With correcte
 
 No Notion, Airtable or Jira connector is required. A client may show the structured task list to its user and, only after separate approval, copy a minimized version into their task system. AMOS does not do that automatically. Completion, a lead, checkout and payment remain different events. Optional paid routes never authorize purchase or replace evidence collection.
 
-## Persistent agents and confidence (2026-09-30.outsider-retest8.1)
+## Persistent agents and confidence (2026-09-30.outsider-retest8.2)
 
 An agent's chat memory is not a current assessment, source archive, approval or permission. Licensed decision-check persists a tenant/workspace-scoped assessment reference without the public workflow's two-hour expiry. Keep decision_check_id, response_hash, semantic_decision_hash, project_id and the consented original sources in the host's governed storage. Completed licensed guided summaries now expose decision_reference; paused summaries return null. Retrieval must still succeed under current credentials. A reference is not a guarantee of source availability or a public sharing capability.
 
