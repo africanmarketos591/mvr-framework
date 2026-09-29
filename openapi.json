@@ -46543,6 +46543,102 @@
       "DecisionSupportResponse": {
         "type": "object",
         "properties": {
+          "confidence_semantics": {
+            "type": "object",
+            "required": [
+              "decision_confidence",
+              "evidence_quality",
+              "evidence_completeness"
+            ],
+            "properties": {
+              "decision_confidence": {
+                "type": "object",
+                "required": [
+                  "kind",
+                  "calibrated_probability",
+                  "measures_evidence_completeness",
+                  "interpretation"
+                ],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "heuristic_support_index"
+                    ]
+                  },
+                  "calibrated_probability": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "measures_evidence_completeness": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "interpretation": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "evidence_quality": {
+                "type": "object",
+                "required": [
+                  "kind",
+                  "is_decision_confidence",
+                  "interpretation"
+                ],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "source_and_rubric_assessment"
+                    ]
+                  },
+                  "is_decision_confidence": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "interpretation": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "evidence_completeness": {
+                "type": "object",
+                "required": [
+                  "value",
+                  "measurement_status",
+                  "interpretation"
+                ],
+                "properties": {
+                  "value": {
+                    "nullable": true,
+                    "enum": [
+                      null
+                    ]
+                  },
+                  "measurement_status": {
+                    "type": "string",
+                    "enum": [
+                      "no_global_percentage_estimated"
+                    ]
+                  },
+                  "interpretation": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
           "status": {
             "type": "string",
             "description": "Processing status, not a recommendation."
@@ -46880,6 +46976,134 @@
       "DecisionSnapshotResponse": {
         "type": "object",
         "properties": {
+          "confidence_semantics": {
+            "type": "object",
+            "required": [
+              "decision_confidence",
+              "evidence_quality",
+              "evidence_completeness"
+            ],
+            "properties": {
+              "decision_confidence": {
+                "type": "object",
+                "required": [
+                  "kind",
+                  "calibrated_probability",
+                  "measures_evidence_completeness",
+                  "interpretation"
+                ],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "heuristic_support_index"
+                    ]
+                  },
+                  "calibrated_probability": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "measures_evidence_completeness": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "interpretation": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "evidence_quality": {
+                "type": "object",
+                "required": [
+                  "kind",
+                  "is_decision_confidence",
+                  "interpretation"
+                ],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "source_and_rubric_assessment"
+                    ]
+                  },
+                  "is_decision_confidence": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "interpretation": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "evidence_completeness": {
+                "type": "object",
+                "required": [
+                  "value",
+                  "measurement_status",
+                  "interpretation"
+                ],
+                "properties": {
+                  "value": {
+                    "nullable": true,
+                    "enum": [
+                      null
+                    ]
+                  },
+                  "measurement_status": {
+                    "type": "string",
+                    "enum": [
+                      "no_global_percentage_estimated"
+                    ]
+                  },
+                  "interpretation": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "decision_continuity": {
+            "type": "object",
+            "properties": {
+              "record_role": {
+                "type": "string",
+                "enum": [
+                  "historical_assessment"
+                ]
+              },
+              "current_reliance_authorized": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "fresh_evaluation_required": {
+                "type": "boolean",
+                "enum": [
+                  true
+                ]
+              },
+              "evaluated_at": {
+                "type": "string",
+                "nullable": true
+              },
+              "decision_check_id": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "additionalProperties": true
+          },
           "status": {
             "type": "string"
           },
@@ -47573,7 +47797,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-09-29.outsider-retest7.1"
+    "deployment_revision": "2026-09-30.outsider-retest8.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
