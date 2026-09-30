@@ -67605,7 +67605,7 @@
     "/v1/auth-check": {
       "post": {
         "summary": "Verify API key, operational plan (STANDARD/ENTERPRISE), active response profile, and public sandbox policy when X-API-Key is the demo key.",
-        "description": "Authentication uses headers only. No operation-specific body fields are used; omit the body or send an empty object. Legacy body fields are ignored and cannot alter credentials or scope.",
+        "description": "Authentication uses headers only. Omit the body or send an empty JSON object. Nonempty objects are rejected with 422; body fields cannot alter credentials or scope.",
         "requestBody": {
           "required": false,
           "content": {
@@ -67631,11 +67631,20 @@
           "200": {
             "description": "Successful response"
           },
+          "400": {
+            "description": "Malformed JSON or non-object body"
+          },
           "401": {
             "description": "Unauthorized"
           },
           "403": {
             "description": "Forbidden"
+          },
+          "413": {
+            "description": "Request body exceeds the size limit"
+          },
+          "422": {
+            "description": "Nonempty object or excessive JSON depth"
           },
           "500": {
             "description": "Server error"
@@ -71911,7 +71920,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-09-30.outsider-retest10.1"
+    "deployment_revision": "2026-09-30.outsider-retest11.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
