@@ -54,6 +54,14 @@ export function assertExplicitRequestSchema(schema,document){
 
 export function validateDocument(document){
   const errors=[];let posts=0;
+  if(String(document.openapi).startsWith('3.0')){
+    const inspect=(value,path='')=>{
+      if(!value||typeof value!=='object')return;
+      if(value.$ref&&Object.keys(value).length>1)errors.push(path+': OpenAPI 3.0 ignores Reference Object siblings; use an explicit component or allOf');
+      for(const [key,child] of Object.entries(value))if(!['example','examples','default','enum'].includes(key))inspect(child,path+'/'+key);
+    };
+    inspect(document);
+  }
   if(!String(document.openapi||'').startsWith('3.'))errors.push('Missing OpenAPI 3.x version');
   if(!document.info?.title||!document.info?.version)errors.push('Missing info.title or info.version');
   if(!document.paths||!Object.keys(document.paths).length)errors.push('No paths');

@@ -5256,6 +5256,219 @@
                   "currency",
                   "rows"
                 ],
+                "allOf": [
+                  {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "company"
+                        ],
+                        "properties": {
+                          "company": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "sector"
+                                ],
+                                "properties": {
+                                  "sector": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "subject"
+                        ],
+                        "properties": {
+                          "subject": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "entity_archetype"
+                                ],
+                                "properties": {
+                                  "entity_archetype": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              },
+                              {
+                                "required": [
+                                  "category"
+                                ],
+                                "properties": {
+                                  "category": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "sector"
+                        ],
+                        "properties": {
+                          "sector": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "entity_archetype"
+                        ],
+                        "properties": {
+                          "entity_archetype": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "category"
+                        ],
+                        "properties": {
+                          "category": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "company"
+                        ],
+                        "properties": {
+                          "company": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "country"
+                                ],
+                                "properties": {
+                                  "country": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              },
+                              {
+                                "required": [
+                                  "region"
+                                ],
+                                "properties": {
+                                  "region": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "market_scope"
+                        ],
+                        "properties": {
+                          "market_scope": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "country"
+                                ],
+                                "properties": {
+                                  "country": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              },
+                              {
+                                "required": [
+                                  "region"
+                                ],
+                                "properties": {
+                                  "region": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "subject"
+                        ],
+                        "properties": {
+                          "subject": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "country"
+                                ],
+                                "properties": {
+                                  "country": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "country"
+                        ],
+                        "properties": {
+                          "country": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "region"
+                        ],
+                        "properties": {
+                          "region": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
                 "description": "Requires resolvable company sector and country/region (including root and subject aliases). Period is strongly recommended but compatibility inference is supported. Combined current and comparison rows must not exceed 200. Monetary amounts are integer minor units, not floating point currency; metric definitions are opaque per-metric objects. Unknown or unsupported rows return explicit row errors."
               }
             }
@@ -5886,6 +6099,219 @@
                 "required": [
                   "currency",
                   "rows"
+                ],
+                "allOf": [
+                  {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "company"
+                        ],
+                        "properties": {
+                          "company": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "sector"
+                                ],
+                                "properties": {
+                                  "sector": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "subject"
+                        ],
+                        "properties": {
+                          "subject": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "entity_archetype"
+                                ],
+                                "properties": {
+                                  "entity_archetype": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              },
+                              {
+                                "required": [
+                                  "category"
+                                ],
+                                "properties": {
+                                  "category": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "sector"
+                        ],
+                        "properties": {
+                          "sector": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "entity_archetype"
+                        ],
+                        "properties": {
+                          "entity_archetype": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "category"
+                        ],
+                        "properties": {
+                          "category": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "company"
+                        ],
+                        "properties": {
+                          "company": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "country"
+                                ],
+                                "properties": {
+                                  "country": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              },
+                              {
+                                "required": [
+                                  "region"
+                                ],
+                                "properties": {
+                                  "region": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "market_scope"
+                        ],
+                        "properties": {
+                          "market_scope": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "country"
+                                ],
+                                "properties": {
+                                  "country": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              },
+                              {
+                                "required": [
+                                  "region"
+                                ],
+                                "properties": {
+                                  "region": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "subject"
+                        ],
+                        "properties": {
+                          "subject": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "country"
+                                ],
+                                "properties": {
+                                  "country": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "country"
+                        ],
+                        "properties": {
+                          "country": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "region"
+                        ],
+                        "properties": {
+                          "region": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
+                    ]
+                  }
                 ],
                 "description": "Requires resolvable company sector and country/region (including root and subject aliases). Period is strongly recommended but compatibility inference is supported. Combined current and comparison rows must not exceed 200. Monetary amounts are integer minor units, not floating point currency; metric definitions are opaque per-metric objects. Unknown or unsupported rows return explicit row errors."
               }
@@ -9554,166 +9980,172 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/DecisionRoomRequest",
-                "type": "object",
-                "properties": {
-                  "decision_check_id": {
-                    "type": "string"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/DecisionRoomRequest"
                   },
-                  "subject": {
-                    "type": "object"
-                  },
-                  "market_scope": {
-                    "type": "object"
-                  },
-                  "compiled_pack": {
-                    "type": "object"
-                  },
-                  "case_type": {
-                    "type": "string",
-                    "enum": [
-                      "greenfield_entry",
-                      "partnership_trust_transfer",
-                      "scaling",
-                      "test_market",
-                      "fmcg_rollout",
-                      "channel_choice",
-                      "startup_readiness"
-                    ]
-                  },
-                  "stakeholder_scope": {
-                    "type": "array",
-                    "items": {
-                      "type": "string",
-                      "enum": [
-                        "agent",
-                        "anchor_customer",
-                        "bank_lender",
-                        "beneficiary",
-                        "board",
-                        "board_member",
-                        "chama_member",
-                        "channel_gatekeeper",
-                        "chief",
-                        "civil_society_org",
-                        "clinic",
-                        "community_guardian",
-                        "community_leader",
-                        "competitor",
-                        "competitors",
-                        "consumer",
-                        "cooperative_member",
-                        "court",
-                        "courts",
-                        "creditor",
-                        "creditors",
-                        "customary_land_authority",
-                        "customer",
-                        "customs",
-                        "customs_authority",
-                        "distributor",
-                        "donor",
-                        "donor_guardian",
-                        "enumerator",
-                        "farmer",
-                        "field_agent",
-                        "field_supervisor",
-                        "gatekeeper",
-                        "guarantor",
-                        "guardian",
-                        "guardian_node",
-                        "implementing_partner",
-                        "incumbent",
-                        "incumbent_competitor",
-                        "incumbents",
-                        "influencer",
-                        "informal_logistics",
-                        "informal_logistics_partner",
-                        "institutional_guardian",
-                        "internal_operations",
-                        "internal_operator",
-                        "investor",
-                        "investor_board",
-                        "investors",
-                        "journalist",
-                        "journalists",
-                        "judiciary",
-                        "judiciary_court",
-                        "labor_union",
-                        "labour_union",
-                        "land_custodian",
-                        "land_owner",
-                        "landlord",
-                        "landowner",
-                        "lender",
-                        "lender_creditor",
-                        "lenders",
-                        "market_queen",
-                        "media",
-                        "media_press",
-                        "member",
-                        "micro_logistics",
-                        "mobile_money_agent",
-                        "organized_labour",
-                        "platform_partner",
-                        "political_guardian",
-                        "press",
-                        "public_official",
-                        "regulator",
-                        "regulatory_body",
-                        "religious_leader",
-                        "research_respondent_group",
-                        "retail_partner",
-                        "retailer",
-                        "retailer_partner",
-                        "revenue_authority",
-                        "sacco_member",
-                        "school",
-                        "service_provider",
-                        "shareholder",
-                        "shareholders",
-                        "supplier",
-                        "suppliers",
-                        "tax_authority",
-                        "tax_revenue_authority",
-                        "teacher",
-                        "traditional_chief",
-                        "union",
-                        "upstream_supplier",
-                        "upstream_vendor",
-                        "vc",
-                        "vendor",
-                        "vendors",
-                        "venture_capital",
-                        "worker_association",
-                        "works_council"
-                      ]
+                  {
+                    "type": "object",
+                    "properties": {
+                      "decision_check_id": {
+                        "type": "string"
+                      },
+                      "subject": {
+                        "type": "object"
+                      },
+                      "market_scope": {
+                        "type": "object"
+                      },
+                      "compiled_pack": {
+                        "type": "object"
+                      },
+                      "case_type": {
+                        "type": "string",
+                        "enum": [
+                          "greenfield_entry",
+                          "partnership_trust_transfer",
+                          "scaling",
+                          "test_market",
+                          "fmcg_rollout",
+                          "channel_choice",
+                          "startup_readiness"
+                        ]
+                      },
+                      "stakeholder_scope": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "agent",
+                            "anchor_customer",
+                            "bank_lender",
+                            "beneficiary",
+                            "board",
+                            "board_member",
+                            "chama_member",
+                            "channel_gatekeeper",
+                            "chief",
+                            "civil_society_org",
+                            "clinic",
+                            "community_guardian",
+                            "community_leader",
+                            "competitor",
+                            "competitors",
+                            "consumer",
+                            "cooperative_member",
+                            "court",
+                            "courts",
+                            "creditor",
+                            "creditors",
+                            "customary_land_authority",
+                            "customer",
+                            "customs",
+                            "customs_authority",
+                            "distributor",
+                            "donor",
+                            "donor_guardian",
+                            "enumerator",
+                            "farmer",
+                            "field_agent",
+                            "field_supervisor",
+                            "gatekeeper",
+                            "guarantor",
+                            "guardian",
+                            "guardian_node",
+                            "implementing_partner",
+                            "incumbent",
+                            "incumbent_competitor",
+                            "incumbents",
+                            "influencer",
+                            "informal_logistics",
+                            "informal_logistics_partner",
+                            "institutional_guardian",
+                            "internal_operations",
+                            "internal_operator",
+                            "investor",
+                            "investor_board",
+                            "investors",
+                            "journalist",
+                            "journalists",
+                            "judiciary",
+                            "judiciary_court",
+                            "labor_union",
+                            "labour_union",
+                            "land_custodian",
+                            "land_owner",
+                            "landlord",
+                            "landowner",
+                            "lender",
+                            "lender_creditor",
+                            "lenders",
+                            "market_queen",
+                            "media",
+                            "media_press",
+                            "member",
+                            "micro_logistics",
+                            "mobile_money_agent",
+                            "organized_labour",
+                            "platform_partner",
+                            "political_guardian",
+                            "press",
+                            "public_official",
+                            "regulator",
+                            "regulatory_body",
+                            "religious_leader",
+                            "research_respondent_group",
+                            "retail_partner",
+                            "retailer",
+                            "retailer_partner",
+                            "revenue_authority",
+                            "sacco_member",
+                            "school",
+                            "service_provider",
+                            "shareholder",
+                            "shareholders",
+                            "supplier",
+                            "suppliers",
+                            "tax_authority",
+                            "tax_revenue_authority",
+                            "teacher",
+                            "traditional_chief",
+                            "union",
+                            "upstream_supplier",
+                            "upstream_vendor",
+                            "vc",
+                            "vendor",
+                            "vendors",
+                            "venture_capital",
+                            "worker_association",
+                            "works_council"
+                          ]
+                        }
+                      },
+                      "maturity_level": {
+                        "type": "string",
+                        "enum": [
+                          "startup",
+                          "mature",
+                          "scaled",
+                          "seed"
+                        ]
+                      },
+                      "analysis_date": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "include_gap_plan": {
+                        "type": "boolean"
+                      },
+                      "include_red_team": {
+                        "type": "boolean"
+                      },
+                      "use_authored_decision_result": {
+                        "type": "boolean",
+                        "description": "When compiled_pack is also supplied, true disables server-side re-evaluation and uses the authored decision_result only as a labelled replay artifact."
+                      }
                     }
-                  },
-                  "maturity_level": {
-                    "type": "string",
-                    "enum": [
-                      "startup",
-                      "mature",
-                      "scaled",
-                      "seed"
-                    ]
-                  },
-                  "analysis_date": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "include_gap_plan": {
-                    "type": "boolean"
-                  },
-                  "include_red_team": {
-                    "type": "boolean"
-                  },
-                  "use_authored_decision_result": {
-                    "type": "boolean",
-                    "description": "When compiled_pack is also supplied, true disables server-side re-evaluation and uses the authored decision_result only as a labelled replay artifact."
                   }
-                }
+                ]
               },
               "example": {
                 "subject": {
@@ -10726,7 +11158,9 @@
                     ]
                   },
                   "workflow_id": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^MVRWF-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                    "description": "Caller-carried operational correlation only, not authenticated lineage or authority."
                   },
                   "workflow_expires_at": {
                     "type": "string"
@@ -12415,7 +12849,9 @@
                     ]
                   },
                   "workflow_id": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^MVRWF-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                    "description": "Caller-carried operational correlation only, not authenticated lineage or authority."
                   },
                   "workflow_expires_at": {
                     "type": "string"
@@ -16778,6 +17214,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonResponse"
+                }
+              }
             }
           },
           "400": {
@@ -17017,7 +17460,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Compares submitted scores, not independently verified alternatives. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -17056,6 +17499,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonResponse"
+                }
+              }
             }
           },
           "400": {
@@ -17295,7 +17745,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Compares submitted scores, not independently verified alternatives. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -17334,6 +17784,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonResponse"
+                }
+              }
             }
           },
           "400": {
@@ -17573,7 +18030,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Compares submitted scores, not independently verified alternatives. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -17612,6 +18069,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonResponse"
+                }
+              }
             }
           },
           "400": {
@@ -17851,7 +18315,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Compares submitted scores, not independently verified alternatives. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -17891,6 +18355,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ComparisonResponse"
+                }
+              }
             }
           },
           "400": {
@@ -18130,7 +18601,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Compares submitted scores, not independently verified alternatives. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -22800,19 +23271,61 @@
                   }
                 },
                 "additionalProperties": true,
-                "anyOf": [
+                "allOf": [
                   {
-                    "required": [
-                      "source_type"
+                    "anyOf": [
+                      {
+                        "required": [
+                          "source_type"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "connector_type"
+                        ]
+                      }
                     ]
                   },
                   {
-                    "required": [
-                      "connector_type"
+                    "anyOf": [
+                      {
+                        "required": [
+                          "evidence_geography"
+                        ],
+                        "properties": {
+                          "evidence_geography": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "country"
+                                ],
+                                "properties": {
+                                  "country": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "country"
+                        ],
+                        "properties": {
+                          "country": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
                     ]
                   }
                 ],
-                "description": "Supported source types: crm, hris, erp_inventory, compliance, pos, program_monitoring, fleet_operations, field_operations. salesforce_crm aliases crm. Supply mapped metrics and dated source metadata. Normalization creates proxy evidence, not observed facts."
+                "description": "Supported source types: crm, hris, erp_inventory, compliance, pos, program_monitoring, fleet_operations, field_operations. salesforce_crm aliases crm. Supply mapped metrics, a valid source country and dated source metadata. Normalization creates proxy evidence, not observed facts."
               },
               "example": {
                 "source_type": "crm",
@@ -30546,7 +31059,9 @@
                     ]
                   },
                   "workflow_id": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^MVRWF-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                    "description": "Caller-carried operational correlation only, not authenticated lineage or authority."
                   },
                   "workflow_expires_at": {
                     "type": "string"
@@ -30975,12 +31490,22 @@
                     "type": "object",
                     "properties": {
                       "executive": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "type": "number",
-                          "minimum": 0,
-                          "maximum": 100
-                        }
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 100
+                            }
+                          },
+                          {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100
+                          }
+                        ],
+                        "description": "Prefer dimension-keyed scores. Legacy bounded scalar executive score is normalized separately and cannot fill missing evidence dimensions."
                       },
                       "dimensions": {
                         "type": "object",
@@ -31132,6 +31657,17 @@
                     ],
                     "nullable": true
                   },
+                  "project_id": {
+                    "type": "string"
+                  },
+                  "use_project_memory": {
+                    "type": "boolean",
+                    "description": "Defaults to true when a project ID is supplied. Set false to disable contextual defaults."
+                  },
+                  "project_memory": {
+                    "type": "boolean",
+                    "description": "Compatibility alias for use_project_memory; either false disables loading."
+                  },
                   "backtest_mode": {
                     "type": "boolean",
                     "description": "When true, response echoes backtest_mode and optional t0_date for replay transparency."
@@ -31141,9 +31677,6 @@
                     "description": "Backtest as-of date echoed when backtest_mode is true."
                   },
                   "category": {
-                    "type": "string"
-                  },
-                  "project_id": {
                     "type": "string"
                   },
                   "target_verdict": {
@@ -41593,7 +42126,9 @@
                               ]
                             },
                             "workflow_id": {
-                              "type": "string"
+                              "type": "string",
+                              "pattern": "^MVRWF-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                              "description": "Caller-carried operational correlation only, not authenticated lineage or authority."
                             },
                             "workflow_expires_at": {
                               "type": "string"
@@ -42092,12 +42627,22 @@
                               "type": "object",
                               "properties": {
                                 "executive": {
-                                  "type": "object",
-                                  "additionalProperties": {
-                                    "type": "number",
-                                    "minimum": 0,
-                                    "maximum": 100
-                                  }
+                                  "anyOf": [
+                                    {
+                                      "type": "object",
+                                      "additionalProperties": {
+                                        "type": "number",
+                                        "minimum": 0,
+                                        "maximum": 100
+                                      }
+                                    },
+                                    {
+                                      "type": "number",
+                                      "minimum": 0,
+                                      "maximum": 100
+                                    }
+                                  ],
+                                  "description": "Prefer dimension-keyed scores. Legacy bounded scalar executive score is normalized separately and cannot fill missing evidence dimensions."
                                 },
                                 "dimensions": {
                                   "type": "object",
@@ -42248,6 +42793,19 @@
                                 "metrics"
                               ],
                               "nullable": true
+                            },
+                            "project_id": {
+                              "type": "string",
+                              "minLength": 1,
+                              "description": "Tenant/workspace project context. Equivalent to subject.project_id; conflicting identifiers are rejected. Memory never supplies evidence or permission."
+                            },
+                            "use_project_memory": {
+                              "type": "boolean",
+                              "description": "Defaults to true when a project ID is supplied. Set false to disable contextual defaults."
+                            },
+                            "project_memory": {
+                              "type": "boolean",
+                              "description": "Compatibility alias for use_project_memory; either false disables loading."
                             },
                             "backtest_mode": {
                               "type": "boolean",
@@ -58763,7 +59321,9 @@
                     ]
                   },
                   "workflow_id": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^MVRWF-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                    "description": "Caller-carried operational correlation only, not authenticated lineage or authority."
                   },
                   "workflow_expires_at": {
                     "type": "string"
@@ -59262,12 +59822,22 @@
                     "type": "object",
                     "properties": {
                       "executive": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "type": "number",
-                          "minimum": 0,
-                          "maximum": 100
-                        }
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 100
+                            }
+                          },
+                          {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100
+                          }
+                        ],
+                        "description": "Prefer dimension-keyed scores. Legacy bounded scalar executive score is normalized separately and cannot fill missing evidence dimensions."
                       },
                       "dimensions": {
                         "type": "object",
@@ -59419,6 +59989,17 @@
                     ],
                     "nullable": true
                   },
+                  "project_id": {
+                    "type": "string"
+                  },
+                  "use_project_memory": {
+                    "type": "boolean",
+                    "description": "Defaults to true when a project ID is supplied. Set false to disable contextual defaults."
+                  },
+                  "project_memory": {
+                    "type": "boolean",
+                    "description": "Compatibility alias for use_project_memory; either false disables loading."
+                  },
                   "backtest_mode": {
                     "type": "boolean",
                     "description": "When true, response echoes backtest_mode and optional t0_date for replay transparency."
@@ -59428,9 +60009,6 @@
                     "description": "Backtest as-of date echoed when backtest_mode is true."
                   },
                   "run_id": {
-                    "type": "string"
-                  },
-                  "project_id": {
                     "type": "string"
                   },
                   "target_market": {
@@ -60318,6 +60896,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectMemoryResponse"
+                }
+              }
             }
           },
           "400": {
@@ -60493,7 +61078,46 @@
                     "type": "array",
                     "items": {}
                   },
-                  "last_verdict": {},
+                  "last_verdict": {
+                    "type": "object",
+                    "properties": {
+                      "recommendation": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "verdict": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "status": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "evaluated_at": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "timestamp": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "decision_check_id": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "response_hash": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "confidence": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1,
+                        "nullable": true
+                      }
+                    },
+                    "description": "Caller-authored summary unless decision_check_id and response_hash match a server-held receipt in the same tenant/workspace/project. Supplied origin, receipt_verified and authority flags are ignored."
+                  },
                   "open_task_count": {
                     "type": "integer",
                     "minimum": 0,
@@ -60622,6 +61246,19 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "view",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "full",
+                "agent"
+              ],
+              "default": "full"
+            },
+            "description": "agent omits raw notes, arbitrary metadata and caller-authored verdict text. It does not turn memory into evidence or authority."
           }
         ],
         "x-mvr-registry-route": "/v1/project-memory/:project_id",
@@ -60650,6 +61287,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectMemoryResponse"
+                }
               }
             }
           },
@@ -61396,19 +62040,61 @@
                   }
                 },
                 "additionalProperties": true,
-                "anyOf": [
+                "allOf": [
                   {
-                    "required": [
-                      "source_type"
+                    "anyOf": [
+                      {
+                        "required": [
+                          "source_type"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "connector_type"
+                        ]
+                      }
                     ]
                   },
                   {
-                    "required": [
-                      "connector_type"
+                    "anyOf": [
+                      {
+                        "required": [
+                          "evidence_geography"
+                        ],
+                        "properties": {
+                          "evidence_geography": {
+                            "type": "object",
+                            "anyOf": [
+                              {
+                                "required": [
+                                  "country"
+                                ],
+                                "properties": {
+                                  "country": {
+                                    "type": "string",
+                                    "minLength": 1
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "country"
+                        ],
+                        "properties": {
+                          "country": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
+                      }
                     ]
                   }
                 ],
-                "description": "Supported source types: crm, hris, erp_inventory, compliance, pos, program_monitoring, fleet_operations, field_operations. salesforce_crm aliases crm. Supply mapped metrics and dated source metadata. Normalization creates proxy evidence, not observed facts."
+                "description": "Supported source types: crm, hris, erp_inventory, compliance, pos, program_monitoring, fleet_operations, field_operations. salesforce_crm aliases crm. Supply mapped metrics, a valid source country and dated source metadata. Normalization creates proxy evidence, not observed facts."
               },
               "example": {
                 "source_type": "crm",
@@ -66000,7 +66686,9 @@
                     ]
                   },
                   "workflow_id": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "^MVRWF-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                    "description": "Caller-carried operational correlation only, not authenticated lineage or authority."
                   },
                   "workflow_expires_at": {
                     "type": "string"
@@ -66499,12 +67187,22 @@
                     "type": "object",
                     "properties": {
                       "executive": {
-                        "type": "object",
-                        "additionalProperties": {
-                          "type": "number",
-                          "minimum": 0,
-                          "maximum": 100
-                        }
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 100
+                            }
+                          },
+                          {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100
+                          }
+                        ],
+                        "description": "Prefer dimension-keyed scores. Legacy bounded scalar executive score is normalized separately and cannot fill missing evidence dimensions."
                       },
                       "dimensions": {
                         "type": "object",
@@ -66656,6 +67354,19 @@
                     ],
                     "nullable": true
                   },
+                  "project_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Tenant/workspace project context. Equivalent to subject.project_id; conflicting identifiers are rejected. Memory never supplies evidence or permission."
+                  },
+                  "use_project_memory": {
+                    "type": "boolean",
+                    "description": "Defaults to true when a project ID is supplied. Set false to disable contextual defaults."
+                  },
+                  "project_memory": {
+                    "type": "boolean",
+                    "description": "Compatibility alias for use_project_memory; either false disables loading."
+                  },
                   "backtest_mode": {
                     "type": "boolean",
                     "description": "When true, response echoes backtest_mode and optional t0_date for replay transparency."
@@ -66788,7 +67499,9 @@
                           ]
                         },
                         "workflow_id": {
-                          "type": "string"
+                          "type": "string",
+                          "pattern": "^MVRWF-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                          "description": "Caller-carried operational correlation only, not authenticated lineage or authority."
                         },
                         "workflow_expires_at": {
                           "type": "string"
@@ -67287,12 +68000,22 @@
                           "type": "object",
                           "properties": {
                             "executive": {
-                              "type": "object",
-                              "additionalProperties": {
-                                "type": "number",
-                                "minimum": 0,
-                                "maximum": 100
-                              }
+                              "anyOf": [
+                                {
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 100
+                                  }
+                                },
+                                {
+                                  "type": "number",
+                                  "minimum": 0,
+                                  "maximum": 100
+                                }
+                              ],
+                              "description": "Prefer dimension-keyed scores. Legacy bounded scalar executive score is normalized separately and cannot fill missing evidence dimensions."
                             },
                             "dimensions": {
                               "type": "object",
@@ -67443,6 +68166,19 @@
                             "metrics"
                           ],
                           "nullable": true
+                        },
+                        "project_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "Tenant/workspace project context. Equivalent to subject.project_id; conflicting identifiers are rejected. Memory never supplies evidence or permission."
+                        },
+                        "use_project_memory": {
+                          "type": "boolean",
+                          "description": "Defaults to true when a project ID is supplied. Set false to disable contextual defaults."
+                        },
+                        "project_memory": {
+                          "type": "boolean",
+                          "description": "Compatibility alias for use_project_memory; either false disables loading."
                         },
                         "backtest_mode": {
                           "type": "boolean",
@@ -69228,7 +69964,9 @@
             ]
           },
           "workflow_id": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^MVRWF-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+            "description": "Caller-carried operational correlation only, not authenticated lineage or authority."
           },
           "workflow_expires_at": {
             "type": "string"
@@ -69727,12 +70465,22 @@
             "type": "object",
             "properties": {
               "executive": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 100
-                }
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100
+                    }
+                  },
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  }
+                ],
+                "description": "Prefer dimension-keyed scores. Legacy bounded scalar executive score is normalized separately and cannot fill missing evidence dimensions."
               },
               "dimensions": {
                 "type": "object",
@@ -69883,6 +70631,19 @@
               "metrics"
             ],
             "nullable": true
+          },
+          "project_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Tenant/workspace project context. Equivalent to subject.project_id; conflicting identifiers are rejected. Memory never supplies evidence or permission."
+          },
+          "use_project_memory": {
+            "type": "boolean",
+            "description": "Defaults to true when a project ID is supplied. Set false to disable contextual defaults."
+          },
+          "project_memory": {
+            "type": "boolean",
+            "description": "Compatibility alias for use_project_memory; either false disables loading."
           },
           "backtest_mode": {
             "type": "boolean",
@@ -70525,6 +71286,254 @@
             "additionalProperties": {
               "type": "string"
             }
+          }
+        },
+        "additionalProperties": true
+      },
+      "ComparisonOption": {
+        "type": "object",
+        "properties": {
+          "option_id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number",
+            "nullable": true,
+            "minimum": 0,
+            "maximum": 100
+          },
+          "score_dimensions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verdict": {
+            "type": "string"
+          },
+          "evidence_strength": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "strong",
+              "limited",
+              "proxy_heavy"
+            ]
+          },
+          "risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "ComparisonResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "insufficient_basis"
+            ]
+          },
+          "comparison_basis": {
+            "type": "string",
+            "enum": [
+              "insufficient_comparable_scores",
+              "evidence_basis_unknown",
+              "tied_submitted_scores",
+              "submitted_score_comparison"
+            ]
+          },
+          "scope_limitation": {
+            "type": "string"
+          },
+          "best_option": {
+            "type": "object",
+            "properties": {
+              "option_id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "score": {
+                "type": "number",
+                "nullable": true,
+                "minimum": 0,
+                "maximum": 100
+              },
+              "score_dimensions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verdict": {
+                "type": "string"
+              },
+              "evidence_strength": {
+                "type": "string",
+                "enum": [
+                  "unknown",
+                  "strong",
+                  "limited",
+                  "proxy_heavy"
+                ]
+              },
+              "risks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "why": {
+            "type": "string",
+            "nullable": true
+          },
+          "fastest_path_to_pilot_ready": {
+            "type": "object",
+            "nullable": true,
+            "enum": [
+              null
+            ]
+          },
+          "rankings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComparisonOption"
+            }
+          },
+          "ranked_options": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComparisonOption"
+            }
+          },
+          "unranked_options": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComparisonOption"
+            }
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "status",
+          "comparison_basis",
+          "best_option",
+          "rankings",
+          "fastest_path_to_pilot_ready"
+        ]
+      },
+      "ProjectMemoryResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "project_memory": {
+            "type": "object",
+            "properties": {
+              "project_id": {
+                "type": "string"
+              },
+              "content_trust": {
+                "type": "object",
+                "properties": {
+                  "origin": {
+                    "type": "string"
+                  },
+                  "instruction_authority": {
+                    "type": "string",
+                    "enum": [
+                      "none"
+                    ]
+                  },
+                  "untrusted_paths": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "policy": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "agent_context": {
+                "type": "object",
+                "properties": {
+                  "project_id": {
+                    "type": "string"
+                  },
+                  "memory_item_count": {
+                    "type": "integer"
+                  },
+                  "evidence_reference_count": {
+                    "type": "integer"
+                  },
+                  "has_verified_historical_receipt": {
+                    "type": "boolean"
+                  },
+                  "execution_authorized": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "raw_content_omitted": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "last_verdict": {
+                "type": "object",
+                "properties": {
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "caller_authored_memory_summary",
+                      "verified_decision_receipt"
+                    ]
+                  },
+                  "receipt_verified": {
+                    "type": "boolean"
+                  },
+                  "decision_check_id": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "response_hash": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "evaluated_at": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "recommendation": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                },
+                "additionalProperties": true,
+                "nullable": true
+              }
+            },
+            "additionalProperties": true
           }
         },
         "additionalProperties": true
@@ -71421,8 +72430,23 @@
       "DecisionRoomRequest": {
         "type": "object",
         "properties": {
+          "decision_check_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "use_authored_decision_result": {
+            "type": "boolean",
+            "deprecated": true,
+            "description": "Never permits caller-authored verdicts. Without a stored decision ID, true is rejected. Use a persisted decision_check_id or submit subject, market_scope and compiled_pack for a fresh evaluation."
+          },
           "decision_result": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "decision_check_id": {
+                "type": "string"
+              }
+            },
+            "description": "Only a stored ID plus scope/hash consistency declarations may be consumed; authored conclusions are ignored and disclosed in input_resolution."
           },
           "subject": {
             "type": "object"
@@ -71638,7 +72662,33 @@
           "include_red_team": {
             "type": "boolean"
           }
-        }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "decision_check_id"
+            ]
+          },
+          {
+            "required": [
+              "decision_result"
+            ],
+            "properties": {
+              "decision_result": {
+                "required": [
+                  "decision_check_id"
+                ]
+              }
+            }
+          },
+          {
+            "required": [
+              "subject",
+              "market_scope",
+              "compiled_pack"
+            ]
+          }
+        ]
       },
       "VerdictDeltaRequest": {
         "type": "object",
@@ -71920,7 +72970,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-09-30.outsider-retest11.2"
+    "deployment_revision": "2026-09-30.mac001-review.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }

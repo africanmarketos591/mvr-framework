@@ -17,4 +17,6 @@ for(const bad of [{}, {content:{'application/json':{schema:{type:'object'}}}}, {
 }
 const added=structuredClone(document);added.paths['/new-anonymous-route']={post:{requestBody:{content:{'application/json':{schema:{type:'object',additionalProperties:true}}}}}};
 assert(validateDocument(added).errors.some(e=>e.includes('/new-anonymous-route')));cases++;
+const siblings=structuredClone(document);siblings.paths['/fixture'].post.requestBody={...siblings.paths['/fixture'].post.requestBody,description:'Ignored sibling'};
+assert(validateDocument(siblings).errors.some(e=>e.includes('Reference Object siblings')));cases++;
 console.log(JSON.stringify({passed:cases,failed:0,network_requests:0}));
