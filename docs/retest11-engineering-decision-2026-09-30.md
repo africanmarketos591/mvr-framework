@@ -1,12 +1,14 @@
 # Retest11 engineering decision
 
-Target revision: `2026-09-30.outsider-retest11.1`.
+Target revision: `2026-09-30.outsider-retest11.2`.
 
 ## Finding and decision
 
 **N17 confirmed independently against Retest10 production using both developer credentials.** `/v1/auth-check` returned 200 for `{"probe":1}` despite its deliberately empty request schema. This was a low-severity contract mismatch, not a demonstrated authentication bypass.
 
 Enforce the published contract rather than relaxing it: omit the body or send `{}`. Nonempty objects now return 422 `AUTH_CHECK_BODY_NOT_EMPTY`, with bounded field names but no values. Malformed JSON and non-object bodies return 400; oversized requests return 413; excessive nesting returns 422. Header authentication still runs first. The existing size/depth-limited reader cancels an oversized streamed request. The legacy route alias behaves identically.
+
+The first deployment (`retest11.1`) failed live acceptance because Cloudflare represented a bodyless POST as a non-null empty stream, unlike the original Node fixture. Production was rolled back to the verified Retest10 version. The corrected parser permits zero actual bytes only for this explicitly optional-body route, without trusting Content-Length or changing other routes. Regression coverage now includes closed/zero-length streams and both aliases in real workerd. Whitespace-only content remains invalid JSON. The failed attempt is retained in release evidence; it is not counted as a passing release.
 
 Credentials and profile/output controls remain header-only on this route. Previously ignored body fields are an intentional compatibility tightening. No key entitlement, scoring formula, output authorization, calibration approval or storage binding changes.
 
