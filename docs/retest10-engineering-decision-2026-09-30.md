@@ -16,7 +16,7 @@ The supplied record's one pulse 503 reports `atomic_rate_limit_backend_required`
 ## Durable regression coverage
 
 - Public gate: 32 positive/negative mutation cases; local references, composed schemas, permissive branches, missing contracts, malformed references and intentionally empty contracts.
-- Private catalogue: all 179 POST contracts, field-type mutations, owned compatibility fixtures, terminal templates and all 46 published request examples. Historical raw traffic remains an optional compatibility audit, not a source of test credentials or production mutations.
+- Private catalogue: all 179 POST contracts, field-type mutations, owned compatibility fixtures, terminal templates and all 50 distinct published request examples, including schema-level alternatives rather than only the first example per route. Historical raw traffic remains an optional compatibility audit, not a source of test credentials or production mutations.
 - Licensed output: both response profiles through all five MCP steps, including the abstaining final response; positive and abstained HTTP output across three output modes and both detail levels. Invalid score-summary scalars and incorrectly typed candidate flags must still fail validation.
 - ROI: unknown and underscore-prefixed controls fail with their names; supported aliases and body transport controls remain valid; equivalent deterministic inputs preserve ROI output.
 - Existing full Worker, security, storage, history, calibration, scoring and frontend regressions remain required before release. Deployment and live acceptance evidence are recorded separately; this document alone is not deployment attestation.
