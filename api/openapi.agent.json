@@ -41284,6 +41284,31 @@
                       "unknown"
                     ]
                   },
+                  "output_mode": {
+                    "type": "string",
+                    "enum": [
+                      "internal_full",
+                      "audit_trace",
+                      "client_safe",
+                      "excel_safe",
+                      "board_safe",
+                      "export_safe"
+                    ]
+                  },
+                  "response_profile": {
+                    "type": "string",
+                    "enum": [
+                      "full_advisory",
+                      "strict_calibrated"
+                    ]
+                  },
+                  "response_detail": {
+                    "type": "string",
+                    "enum": [
+                      "full",
+                      "compact"
+                    ]
+                  },
                   "simulation_iterations": {
                     "type": "integer",
                     "minimum": 100,
@@ -70512,7 +70537,8 @@
           }
         },
         "additionalProperties": true,
-        "description": "Both flags, when present, have identical values. Absence does not mean authorization. action_authorization remains authoritative for the execution boundary."
+        "nullable": true,
+        "description": "Null when no score summary was produced, including abstention. Both flags, when present, have identical values. Absence does not mean authorization. action_authorization remains authoritative for the execution boundary."
       },
       "ActionAuthorizationBoundary": {
         "type": "object",
@@ -71885,7 +71911,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-09-30.outsider-retest9.1"
+    "deployment_revision": "2026-09-30.outsider-retest10.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }

@@ -17,6 +17,8 @@ on:
       - "api/openapi.agent.json"
       - "api/openapi.agent.sandbox.json"
       - ".github/workflows/openapi-sanity.yml"
+      - "scripts/validate-openapi-request-contracts.mjs"
+      - "scripts/test-openapi-request-contracts.mjs"
   pull_request:
     branches: ["main"]
     paths:
@@ -29,6 +31,8 @@ on:
       - "api/openapi.agent.json"
       - "api/openapi.agent.sandbox.json"
       - ".github/workflows/openapi-sanity.yml"
+      - "scripts/validate-openapi-request-contracts.mjs"
+      - "scripts/test-openapi-request-contracts.mjs"
 
 jobs:
   validate:
@@ -73,3 +77,8 @@ jobs:
             console.log(`${specPath}: ${spec.info.title} ${spec.info.version} (${Object.keys(spec.paths).length} paths)`);
           }
           NODE
+
+      - name: Reject anonymous POST request contracts on every public surface
+        run: |
+          node scripts/test-openapi-request-contracts.mjs
+          node scripts/validate-openapi-request-contracts.mjs
