@@ -49240,7 +49240,7 @@
                     "default": true
                   }
                 },
-                "description": "Creates an integrity-bearing readiness document, always including the full manifest-inventory check. status=ok means document generation succeeded, not that calibration attestation passed. Inspect full_corpus_attested and full_coverage. The /v1/calibration-readiness GET alias uses defaults."
+                "description": "Creates an integrity-bearing readiness document, always including the full manifest-inventory check. status=ok means document generation succeeded, not that calibration attestation passed. Inspect active_manifest_attestation_status, inventory_disposition_complete, full_corpus_attested and full_coverage separately. Governed retirements remain unavailable and are never attested. The /v1/calibration-readiness GET alias uses defaults."
               }
             }
           }
@@ -68633,7 +68633,7 @@
                 "full"
               ]
             },
-            "description": "Inspect the complete manifest corpus, including quarantine. More expensive than representative checks."
+            "description": "Inspect the complete manifest corpus, including quarantine and governed retirements. More expensive than representative checks."
           }
         ],
         "security": [
@@ -68646,7 +68646,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Requested calibration coverage is healthy"
+            "description": "Operational inventory is ready. For coverage=full, inspect inventory_operational_ready and status (ready or ready_with_retirements). Retired scopes remain unavailable. HTTP 200 never implies full_corpus_attested or empirical validity."
           },
           "401": {
             "description": "Unauthorized"
@@ -68658,7 +68658,7 @@
             "description": "Server error"
           },
           "503": {
-            "description": "Calibration coverage is degraded (for example, quarantined manifests), not necessarily a service outage. Inspect each failure reason. active_manifest_attestation_status describes active assets only; full_corpus_attested separately includes quarantined assets. Never clear quarantine by rehashing."
+            "description": "Calibration inventory or required infrastructure is degraded, not necessarily a service outage. Inspect each failure reason. active_manifest_attestation_status describes active assets only; full_corpus_attested is false if any historical record is quarantined or retired. Never clear quarantine by rehashing."
           }
         }
       }
@@ -72322,6 +72322,18 @@
           "full_corpus_attested": {
             "type": "boolean"
           },
+          "inventory_disposition_complete": {
+            "type": "boolean",
+            "description": "Every inventoried record is attested or has a verified governed retirement. Not empirical validation or replacement coverage."
+          },
+          "active_manifest_attestation_status": {
+            "type": "string",
+            "enum": [
+              "pass",
+              "fail",
+              "not_evaluated"
+            ]
+          },
           "strict_smoke_calibration_ready": {
             "type": "boolean",
             "description": "Representative subset only. Does not override a false full_corpus_attested."
@@ -72337,6 +72349,129 @@
             "properties": {
               "full_corpus_attested": {
                 "type": "boolean"
+              },
+              "inventory_disposition_complete": {
+                "type": "boolean",
+                "description": "Every inventoried record is attested or has a verified governed retirement. Not empirical validation or replacement coverage."
+              },
+              "active_manifest_attestation_status": {
+                "type": "string",
+                "enum": [
+                  "pass",
+                  "fail",
+                  "not_evaluated"
+                ]
+              },
+              "calibration_attestation_status": {
+                "type": "string",
+                "enum": [
+                  "pass",
+                  "partial_with_governed_retirements",
+                  "fail"
+                ]
+              },
+              "full_coverage": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "total_manifest_records": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "active_manifest_records": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "attested_records": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "quarantined_records": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "retired_records": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "retired": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "manifest_key": {
+                          "type": "string"
+                        },
+                        "namespace": {
+                          "type": "string"
+                        },
+                        "key": {
+                          "type": "string"
+                        },
+                        "decision_ref": {
+                          "type": "string"
+                        },
+                        "reason_code": {
+                          "type": "string"
+                        },
+                        "approved_at": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "serving_prohibited": {
+                          "type": "boolean",
+                          "enum": [
+                            true
+                          ]
+                        },
+                        "attested": {
+                          "type": "boolean",
+                          "enum": [
+                            false
+                          ]
+                        },
+                        "replacement_available": {
+                          "type": "boolean",
+                          "enum": [
+                            false
+                          ]
+                        },
+                        "source_truth_verified": {
+                          "type": "boolean",
+                          "enum": [
+                            false
+                          ]
+                        }
+                      },
+                      "additionalProperties": true
+                    }
+                  },
+                  "inventory_disposition_complete": {
+                    "type": "boolean",
+                    "description": "Every inventoried record is attested or has a verified governed retirement. Not empirical validation or replacement coverage."
+                  },
+                  "active_manifest_attestation_status": {
+                    "type": "string",
+                    "enum": [
+                      "pass",
+                      "fail",
+                      "not_evaluated"
+                    ]
+                  },
+                  "full_corpus_attested": {
+                    "type": "boolean"
+                  },
+                  "failure_reasons": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "additionalProperties": true
               }
             },
             "additionalProperties": true
@@ -72970,7 +73105,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-01.calibration-boundaries.1"
+    "deployment_revision": "2026-10-01.calibration-disposition.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
