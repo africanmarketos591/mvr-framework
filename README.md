@@ -4,7 +4,7 @@
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17054819-blue)](https://doi.org/10.5281/zenodo.17054819)
 [![Glama Connector](https://img.shields.io/badge/Glama-remote%20connector-7c3aed)](https://glama.ai/mcp/connectors/io.github.africanmarketos591/mvr-api)
 [![RapidAPI](https://img.shields.io/badge/RapidAPI-available-0055da)](https://rapidapi.com/africanmarketos591/api/mvr-framework-tm-api-african-market-os)
-[![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-6ba539)](https://africanmarketos.com/api/openapi.json)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0.3-6ba539)](https://africanmarketos.com/api/openapi.json)
 [![OpenAPI Sanity](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml/badge.svg)](https://github.com/africanmarketos591/mvr-framework/actions/workflows/openapi-sanity.yml)
 [![Sandbox](https://img.shields.io/badge/sandbox-mvr--demo--key--2026-0f6b45)](https://africanmarketos.com/docs/sandbox.md)
 [![Rights map](https://img.shields.io/badge/licensing-mixed%20rights-lightgrey)](LICENSE)
@@ -27,6 +27,8 @@ In short:
 **Canonical compute:** The MVR framework defines what to assess; the MVR API is the official engine that computes it. [Start Starter](https://africanmarketos.com/checkout/starter), [request governed access](https://africanmarketos.com/get-api-key), or [review pricing](https://africanmarketos.com/pricing).
 
 ## Canonical Links
+
+- Latest engineering disposition: [Retest12, October 1, 2026](docs/retest12-engineering-decision-2026-10-01.md), including links to prior review decisions.
 
 - Framework home: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
 - African Market OS: https://africanmarketos.com/
