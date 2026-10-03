@@ -10141,7 +10141,7 @@
                       },
                       "use_authored_decision_result": {
                         "type": "boolean",
-                        "description": "When compiled_pack is also supplied, true disables server-side re-evaluation and uses the authored decision_result only as a labelled replay artifact."
+                        "description": "Never permits caller-authored verdicts. Without a stored decision ID, true is rejected. Use a persisted decision_check_id or submit subject, market_scope and compiled_pack for a fresh evaluation."
                       }
                     }
                   }
@@ -17460,7 +17460,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique resolved identifiers; explicit IDs are recommended but optional, with aliases and positional fallback described by UtilityComparisonOption. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -17745,7 +17745,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique resolved identifiers; explicit IDs are recommended but optional, with aliases and positional fallback described by UtilityComparisonOption. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -18030,7 +18030,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique resolved identifiers; explicit IDs are recommended but optional, with aliases and positional fallback described by UtilityComparisonOption. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -18315,7 +18315,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique resolved identifiers; explicit IDs are recommended but optional, with aliases and positional fallback described by UtilityComparisonOption. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -18601,7 +18601,7 @@
                     ]
                   }
                 ],
-                "description": "At least two alternatives with unique IDs. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
+                "description": "At least two alternatives with unique resolved identifiers; explicit IDs are recommended but optional, with aliases and positional fallback described by UtilityComparisonOption. Missing scores, unknown evidence basis, unequal score dimensions or tied top scores return insufficient_basis without a best option or ranking. Comparable non-tied supplied scores with declared evidence support only a submitted-score comparison, not independently verified alternatives or time-to-readiness. Named collection aliases normalize to options."
               }
             }
           }
@@ -70898,7 +70898,8 @@
             }
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "description": "Alternative identifier precedence: option_id, id, market_id, route_id, entity_name, name, country; omitted identifiers receive a positional option_N ID. Resolved identifiers must be unique. An identifier is correlation only, not evidence or authority."
       },
       "UtilityHistoryEntry": {
         "type": "object",
@@ -73105,7 +73106,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-01.calibration-disposition.1"
+    "deployment_revision": "2026-10-03.calibration-integrity.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
