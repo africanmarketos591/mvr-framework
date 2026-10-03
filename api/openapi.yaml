@@ -72213,7 +72213,8 @@
             "type": "object",
             "properties": {
               "processing_status": {
-                "type": "string"
+                "type": "string",
+                "nullable": true
               },
               "source_decision_status": {
                 "type": "string",
