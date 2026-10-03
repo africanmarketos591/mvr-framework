@@ -245,3 +245,9 @@ For commercial users, agents should surface:
   }
 }
 ```
+
+## Receipt, calibration and scope boundaries
+
+- OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY (HTTP 422): declared AMOS output receipts inside evidence are historical context, not new source evidence. receipt_evidence_findings names the evidence_id, marker and JSON Pointer path (at most 15 findings; truncation is disclosed). Receipt authenticity, expiry and revocation were not checked. A generic response_hash or a non-AMOS decision_check_id alone is not an AMOS receipt; acceptance does not authenticate a source.
+- calibration_disposition reports calibration_retired or calibration_quarantined. serving_prohibited=true and replacement_available=false mean no score or substitution is available. A held public_reality has null score, threshold_used and verdict. A verified retirement is not verified source truth.
+- awaiting_scope_clarification with activation_outcome=relevance_unresolved means first-call needs the external market, counterparty or permission scope. Ask required_user_inputs; workflow_id and mcp_next_call remain null. Do not treat this as a verdict or start a workflow.

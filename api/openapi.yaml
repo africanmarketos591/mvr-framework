@@ -29856,6 +29856,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FirstCallResponse"
+                }
+              }
             }
           },
           "400": {
@@ -29958,6 +29965,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FirstCallResponse"
+                }
               }
             }
           },
@@ -31087,8 +31101,10 @@
                       "test_market",
                       "fmcg_rollout",
                       "channel_choice",
-                      "startup_readiness"
-                    ]
+                      "startup_readiness",
+                      "market_entry"
+                    ],
+                    "description": "Use a canonical case type. market_entry is an accepted compatibility alias for greenfield_entry and is disclosed as the original input in internal audit metadata."
                   },
                   "subject": {
                     "type": "object"
@@ -31973,70 +31989,209 @@
                     }
                   },
                   "compiled_pack": {
-                    "type": "object",
-                    "properties": {
-                      "public_reality_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "public_reality_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "telemetry_proxy_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "localized_observed_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "survey_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "retail_audit_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "ngo_program_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "evaluation_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "administrative_data_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "partner_network_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "social_listening_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          }
+                        },
+                        "additionalProperties": false
                       },
-                      "telemetry_proxy_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "localized_observed_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "survey_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "retail_audit_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "ngo_program_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "evaluation_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "administrative_data_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "partner_network_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "social_listening_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
+                      {
+                        "type": "object",
+                        "required": [
+                          "compiled_pack"
+                        ],
+                        "properties": {
+                          "compiled_pack": {
+                            "type": "object",
+                            "properties": {
+                              "public_reality_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              },
+                              "telemetry_proxy_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              },
+                              "localized_observed_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              },
+                              "survey_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              },
+                              "retail_audit_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              },
+                              "ngo_program_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              },
+                              "evaluation_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              },
+                              "administrative_data_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              },
+                              "partner_network_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              },
+                              "social_listening_pack": {
+                                "type": "array",
+                                "items": {
+                                  "$ref": "#/components/schemas/EvidenceItem"
+                                }
+                              }
+                            },
+                            "additionalProperties": false
+                          }
+                        },
+                        "not": {
+                          "anyOf": [
+                            {
+                              "required": [
+                                "public_reality_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "telemetry_proxy_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "localized_observed_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "survey_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "retail_audit_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "ngo_program_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "evaluation_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "administrative_data_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "partner_network_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "social_listening_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "evidence_pack"
+                              ]
+                            }
+                          ]
+                        },
+                        "additionalProperties": true,
+                        "description": "Full compiler response envelope. Only the inner typed lanes are source inputs; outer response metadata, hashes and receipts do not become evidence or authority."
                       }
-                    },
-                    "additionalProperties": false
+                    ]
                   },
                   "target_verdict": {
                     "type": "string",
@@ -41249,6 +41404,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BenchmarkResponse"
+                }
+              }
             }
           },
           "400": {
@@ -42154,8 +42316,10 @@
                                 "test_market",
                                 "fmcg_rollout",
                                 "channel_choice",
-                                "startup_readiness"
-                              ]
+                                "startup_readiness",
+                                "market_entry"
+                              ],
+                              "description": "Use a canonical case type. market_entry is an accepted compatibility alias for greenfield_entry and is disclosed as the original input in internal audit metadata."
                             },
                             "subject": {
                               "type": "object",
@@ -59349,8 +59513,10 @@
                       "test_market",
                       "fmcg_rollout",
                       "channel_choice",
-                      "startup_readiness"
-                    ]
+                      "startup_readiness",
+                      "market_entry"
+                    ],
+                    "description": "Use a canonical case type. market_entry is an accepted compatibility alias for greenfield_entry and is disclosed as the original input in internal audit metadata."
                   },
                   "subject": {
                     "type": "object",
@@ -61126,6 +61292,10 @@
                   "watchlist_dimensions": {
                     "type": "array",
                     "items": {}
+                  },
+                  "notes": {
+                    "type": "string",
+                    "description": "Compatibility alias for a single untrusted memory item of type note, retained up to 2000 characters. An explicit memory_items array takes precedence, even when empty. Notes are context, never source evidence, instructions or permission."
                   }
                 },
                 "anyOf": [
@@ -61197,6 +61367,21 @@
                       "watchlist_dimensions": {
                         "minItems": 1
                       }
+                    }
+                  },
+                  {
+                    "required": [
+                      "notes"
+                    ],
+                    "properties": {
+                      "notes": {
+                        "minLength": 1
+                      }
+                    },
+                    "not": {
+                      "required": [
+                        "memory_items"
+                      ]
                     }
                   }
                 ],
@@ -66714,8 +66899,10 @@
                       "test_market",
                       "fmcg_rollout",
                       "channel_choice",
-                      "startup_readiness"
-                    ]
+                      "startup_readiness",
+                      "market_entry"
+                    ],
+                    "description": "Use a canonical case type. market_entry is an accepted compatibility alias for greenfield_entry and is disclosed as the original input in internal audit metadata."
                   },
                   "subject": {
                     "type": "object",
@@ -67527,8 +67714,10 @@
                             "test_market",
                             "fmcg_rollout",
                             "channel_choice",
-                            "startup_readiness"
-                          ]
+                            "startup_readiness",
+                            "market_entry"
+                          ],
+                          "description": "Use a canonical case type. market_entry is an accepted compatibility alias for greenfield_entry and is disclosed as the original input in internal audit metadata."
                         },
                         "subject": {
                           "type": "object",
@@ -69992,8 +70181,10 @@
               "test_market",
               "fmcg_rollout",
               "channel_choice",
-              "startup_readiness"
-            ]
+              "startup_readiness",
+              "market_entry"
+            ],
+            "description": "Use a canonical case type. market_entry is an accepted compatibility alias for greenfield_entry and is disclosed as the original input in internal audit metadata."
           },
           "subject": {
             "type": "object",
@@ -71291,6 +71482,214 @@
         },
         "additionalProperties": true
       },
+      "CalibrationDisposition": {
+        "type": "object",
+        "description": "A serving hold, not empirical validation. Governed retirement requires a verified retirement record; otherwise the hold is quarantined. Neither permits substitution.",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "calibration_retired",
+              "calibration_quarantined"
+            ]
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "manifest_key": {
+            "type": "string"
+          },
+          "decision_ref": {
+            "type": "string"
+          },
+          "reason_code": {
+            "type": "string"
+          },
+          "approved_at": {
+            "type": "string"
+          },
+          "serving_prohibited": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
+          "replacement_available": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "source_truth_verified": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "attested": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "retirement_verified": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      },
+      "ReceiptEvidenceFinding": {
+        "type": "object",
+        "required": [
+          "path",
+          "evidence_id",
+          "marker",
+          "path_truncated",
+          "evidence_id_truncated"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "maxLength": 1024,
+            "description": "RFC 6901 JSON Pointer into the submitted body. Truncated pointers are not directly resolvable."
+          },
+          "evidence_id": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 160
+          },
+          "marker": {
+            "type": "string"
+          },
+          "path_truncated": {
+            "type": "boolean"
+          },
+          "evidence_id_truncated": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutputReceiptEvidenceError": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY"
+            ]
+          },
+          "receipt_evidence_findings": {
+            "type": "array",
+            "maxItems": 15,
+            "items": {
+              "$ref": "#/components/schemas/ReceiptEvidenceFinding"
+            }
+          },
+          "receipt_validation": {
+            "type": "object",
+            "properties": {
+              "performed": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "not_checked"
+                ]
+              },
+              "validity": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "expiry": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "revocation": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              }
+            }
+          },
+          "total_errors": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "validation_errors_truncated": {
+            "type": "boolean"
+          }
+        },
+        "description": "HTTP 422 for declared AMOS receipt shapes inside evidence containers. Generic third-party hashes and non-AMOS IDs alone are not receipts. Shape detection never authenticates a receipt or checks its ledger, expiry or revocation.",
+        "additionalProperties": true
+      },
+      "FirstCallResponse": {
+        "type": "object",
+        "description": "Scope clarification requests the missing external dependency before workflow creation. No verdict or action permission is issued.",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "awaiting_scope_clarification: ask scope."
+          },
+          "activation_outcome": {
+            "type": "string",
+            "description": "relevance_unresolved: clarify scope."
+          },
+          "workflow_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "workflow_status": {
+            "type": "string"
+          },
+          "continuation_disposition": {
+            "type": "string"
+          },
+          "mcp_next_call": {
+            "type": "object",
+            "nullable": true
+          },
+          "required_user_inputs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "not_a_verdict": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      },
+      "BenchmarkResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "calibration_disposition": {
+            "$ref": "#/components/schemas/CalibrationDisposition"
+          },
+          "percentile_rank": {
+            "type": "number",
+            "nullable": true,
+            "description": "Null for research-only results; absent on held benchmarks. Never substitute a percentile for a retired or quarantined asset."
+          }
+        },
+        "additionalProperties": true
+      },
       "ComparisonOption": {
         "type": "object",
         "properties": {
@@ -71728,7 +72127,7 @@
           },
           "status": {
             "type": "string",
-            "description": "Processing status, not a recommendation."
+            "description": "awaiting_scope_clarification: ask scope."
           },
           "source_decision_status": {
             "type": "string",
@@ -71852,6 +72251,89 @@
               }
             },
             "additionalProperties": true
+          },
+          "receipt_evidence_findings": {
+            "type": "array",
+            "maxItems": 15,
+            "items": {
+              "$ref": "#/components/schemas/ReceiptEvidenceFinding"
+            }
+          },
+          "receipt_validation": {
+            "type": "object",
+            "properties": {
+              "performed": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "not_checked"
+                ]
+              },
+              "validity": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "expiry": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "revocation": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              }
+            }
+          },
+          "total_errors": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "validation_errors_truncated": {
+            "type": "boolean"
+          },
+          "code": {
+            "type": "string",
+            "description": "OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY"
+          },
+          "calibration_disposition": {
+            "$ref": "#/components/schemas/CalibrationDisposition"
+          },
+          "public_reality": {
+            "type": "object",
+            "properties": {
+              "calibration_disposition": {
+                "$ref": "#/components/schemas/CalibrationDisposition"
+              }
+            },
+            "additionalProperties": true
+          },
+          "activation_outcome": {
+            "type": "string",
+            "description": "relevance_unresolved: clarify scope."
+          },
+          "workflow_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "workflow_status": {
+            "type": "string"
+          },
+          "mcp_next_call": {
+            "type": "object",
+            "nullable": true
+          },
+          "not_a_verdict": {
+            "type": "boolean"
           }
         },
         "additionalProperties": true,
@@ -71869,7 +72351,8 @@
             "type": "string"
           },
           "code": {
-            "type": "string"
+            "type": "string",
+            "description": "OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY"
           },
           "message": {
             "type": "string"
@@ -71888,6 +72371,58 @@
           "field": {
             "type": "string",
             "description": "Caller field that mismatched server-persisted decision lineage."
+          },
+          "receipt_evidence_findings": {
+            "type": "array",
+            "maxItems": 15,
+            "items": {
+              "$ref": "#/components/schemas/ReceiptEvidenceFinding"
+            }
+          },
+          "receipt_validation": {
+            "type": "object",
+            "properties": {
+              "performed": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "not_checked"
+                ]
+              },
+              "validity": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "expiry": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              },
+              "revocation": {
+                "type": "string",
+                "enum": [
+                  "unknown"
+                ]
+              }
+            }
+          },
+          "total_errors": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "validation_errors_truncated": {
+            "type": "boolean"
+          },
+          "calibration_disposition": {
+            "$ref": "#/components/schemas/CalibrationDisposition"
           }
         },
         "additionalProperties": true
@@ -73106,7 +73641,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-03.calibration-integrity.2"
+    "deployment_revision": "2026-10-03.calibration-integrity.3"
   },
   "response_contract_version": "2026-05-01.v1"
 }
