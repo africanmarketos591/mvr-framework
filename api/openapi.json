@@ -31228,70 +31228,309 @@
                     }
                   },
                   "compiled_pack": {
-                    "type": "object",
-                    "properties": {
-                      "public_reality_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "public_reality_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "telemetry_proxy_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "localized_observed_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "survey_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "retail_audit_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "ngo_program_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "evaluation_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "administrative_data_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "partner_network_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "social_listening_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          }
+                        },
+                        "additionalProperties": false
                       },
-                      "telemetry_proxy_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
+                      {
+                        "type": "object",
+                        "required": [
+                          "evidence_pack"
+                        ],
+                        "properties": {
+                          "evidence_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "subject": {
+                            "type": "object"
+                          },
+                          "market_scope": {
+                            "type": "object"
+                          },
+                          "target_market": {
+                            "type": "object"
+                          },
+                          "metadata": {
+                            "type": "object"
+                          },
+                          "entity_archetype": {
+                            "type": "string"
+                          },
+                          "country": {
+                            "type": "string"
+                          },
+                          "assembly_method": {
+                            "type": "string"
+                          },
+                          "source_type": {
+                            "type": "string"
+                          },
+                          "pack_type": {
+                            "type": "string"
+                          },
+                          "pack_label": {
+                            "type": "string"
+                          },
+                          "notes": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
                       },
-                      "localized_observed_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "survey_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "retail_audit_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "ngo_program_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "evaluation_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "administrative_data_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "partner_network_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
-                      },
-                      "social_listening_pack": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/EvidenceItem"
-                        }
+                      {
+                        "type": "object",
+                        "required": [
+                          "compiled_pack"
+                        ],
+                        "properties": {
+                          "compiled_pack": {
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "public_reality_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "telemetry_proxy_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "localized_observed_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "survey_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "retail_audit_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "ngo_program_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "evaluation_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "administrative_data_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "partner_network_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "social_listening_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  }
+                                },
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "object",
+                                "required": [
+                                  "evidence_pack"
+                                ],
+                                "properties": {
+                                  "evidence_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "subject": {
+                                    "type": "object"
+                                  },
+                                  "market_scope": {
+                                    "type": "object"
+                                  },
+                                  "target_market": {
+                                    "type": "object"
+                                  },
+                                  "metadata": {
+                                    "type": "object"
+                                  },
+                                  "entity_archetype": {
+                                    "type": "string"
+                                  },
+                                  "country": {
+                                    "type": "string"
+                                  },
+                                  "assembly_method": {
+                                    "type": "string"
+                                  },
+                                  "source_type": {
+                                    "type": "string"
+                                  },
+                                  "pack_type": {
+                                    "type": "string"
+                                  },
+                                  "pack_label": {
+                                    "type": "string"
+                                  },
+                                  "notes": {
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false
+                              }
+                            ]
+                          }
+                        },
+                        "not": {
+                          "anyOf": [
+                            {
+                              "required": [
+                                "public_reality_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "telemetry_proxy_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "localized_observed_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "survey_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "retail_audit_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "ngo_program_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "evaluation_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "administrative_data_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "partner_network_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "social_listening_pack"
+                              ]
+                            },
+                            {
+                              "required": [
+                                "evidence_pack"
+                              ]
+                            }
+                          ]
+                        },
+                        "additionalProperties": true,
+                        "description": "Full compiler response envelope. Only one inner typed or legacy evidence map is consumed; outer metadata and receipts do not become evidence or authority."
                       }
-                    },
-                    "additionalProperties": false
+                    ]
                   },
                   "unit_economics": {
                     "type": "object",
@@ -32059,74 +32298,174 @@
                       {
                         "type": "object",
                         "required": [
+                          "evidence_pack"
+                        ],
+                        "properties": {
+                          "evidence_pack": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/EvidenceItem"
+                            }
+                          },
+                          "subject": {
+                            "type": "object"
+                          },
+                          "market_scope": {
+                            "type": "object"
+                          },
+                          "target_market": {
+                            "type": "object"
+                          },
+                          "metadata": {
+                            "type": "object"
+                          },
+                          "entity_archetype": {
+                            "type": "string"
+                          },
+                          "country": {
+                            "type": "string"
+                          },
+                          "assembly_method": {
+                            "type": "string"
+                          },
+                          "source_type": {
+                            "type": "string"
+                          },
+                          "pack_type": {
+                            "type": "string"
+                          },
+                          "pack_label": {
+                            "type": "string"
+                          },
+                          "notes": {
+                            "type": "string"
+                          }
+                        },
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "required": [
                           "compiled_pack"
                         ],
                         "properties": {
                           "compiled_pack": {
-                            "type": "object",
-                            "properties": {
-                              "public_reality_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "public_reality_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "telemetry_proxy_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "localized_observed_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "survey_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "retail_audit_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "ngo_program_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "evaluation_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "administrative_data_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "partner_network_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "social_listening_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  }
+                                },
+                                "additionalProperties": false
                               },
-                              "telemetry_proxy_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
-                              },
-                              "localized_observed_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
-                              },
-                              "survey_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
-                              },
-                              "retail_audit_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
-                              },
-                              "ngo_program_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
-                              },
-                              "evaluation_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
-                              },
-                              "administrative_data_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
-                              },
-                              "partner_network_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
-                              },
-                              "social_listening_pack": {
-                                "type": "array",
-                                "items": {
-                                  "$ref": "#/components/schemas/EvidenceItem"
-                                }
+                              {
+                                "type": "object",
+                                "required": [
+                                  "evidence_pack"
+                                ],
+                                "properties": {
+                                  "evidence_pack": {
+                                    "type": "array",
+                                    "items": {
+                                      "$ref": "#/components/schemas/EvidenceItem"
+                                    }
+                                  },
+                                  "subject": {
+                                    "type": "object"
+                                  },
+                                  "market_scope": {
+                                    "type": "object"
+                                  },
+                                  "target_market": {
+                                    "type": "object"
+                                  },
+                                  "metadata": {
+                                    "type": "object"
+                                  },
+                                  "entity_archetype": {
+                                    "type": "string"
+                                  },
+                                  "country": {
+                                    "type": "string"
+                                  },
+                                  "assembly_method": {
+                                    "type": "string"
+                                  },
+                                  "source_type": {
+                                    "type": "string"
+                                  },
+                                  "pack_type": {
+                                    "type": "string"
+                                  },
+                                  "pack_label": {
+                                    "type": "string"
+                                  },
+                                  "notes": {
+                                    "type": "string"
+                                  }
+                                },
+                                "additionalProperties": false
                               }
-                            },
-                            "additionalProperties": false
+                            ]
                           }
                         },
                         "not": {
@@ -32189,7 +32528,7 @@
                           ]
                         },
                         "additionalProperties": true,
-                        "description": "Full compiler response envelope. Only the inner typed lanes are source inputs; outer response metadata, hashes and receipts do not become evidence or authority."
+                        "description": "Full compiler response envelope. Only one inner typed or legacy evidence map is consumed; outer metadata and receipts do not become evidence or authority."
                       }
                     ]
                   },
@@ -73642,7 +73981,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-03.calibration-integrity.3"
+    "deployment_revision": "2026-10-04.calibration-integrity.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
