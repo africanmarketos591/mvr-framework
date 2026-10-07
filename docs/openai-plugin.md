@@ -5,7 +5,9 @@ Authentication: none. Do not paste or submit a key.
 
 This is a complete public evidence-organization workflow, not a trial of calibrated scoring. It applies the same structural evidence gates as the general public preflight, with no commercial intake or subscription promotion. The endpoint behaves identically for every caller; it does not inspect user-agent identity to grant different behavior.
 
-Start mvr_first_call with the task-specific question, a venture working name, target business country and sector. If context is missing, ask for it. If mcp_next_call is non-null, replay that exact object as tools/call params subject to host permission. When it is null, stop. await_input requests missing facts; terminal ends this run.
+For a requested evidence check, start_market_evidence_check accepts the task-specific question, a venture working name, target business country and sector. If context is missing, ask for it. A non-null mcp_next_call offers a continuation; use its exact arguments only within user intent and host permission. When it is null, stop. await_input requests missing facts; terminal ends this run. Each listed operation can also be called directly with its declared inputs.
+
+The six tools are start_market_evidence_check, explain_market_relationship_factors, normalize_venture_context, check_evidence_coverage, organize_evidence_context and summarize_evidence_check. The six previous operation identifiers remain accepted for cached clients; discovery and continuations use the names above. Other API profiles retain their existing identifiers.
 
 Evidence descriptions are not inspected source records. Missing dates and verification must remain unknown. Preserve adverse facts and honest source-to-claim relationships. The tool cannot authenticate sources, discover concealed ancestry or establish that prose is true.
 
