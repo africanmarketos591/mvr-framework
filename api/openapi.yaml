@@ -41940,6 +41940,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BenchmarkResponse"
+                }
+              }
             }
           },
           "400": {
@@ -71824,6 +71831,17 @@
       "CalibrationDisposition": {
         "type": "object",
         "description": "A serving hold, not empirical validation. Governed retirement requires a verified retirement record; otherwise the hold is quarantined. Neither permits substitution.",
+        "required": [
+          "status",
+          "namespace",
+          "key",
+          "manifest_key",
+          "serving_prohibited",
+          "replacement_available",
+          "source_truth_verified",
+          "attested",
+          "retirement_verified"
+        ],
         "properties": {
           "status": {
             "type": "string",
@@ -71848,7 +71866,8 @@
             "type": "string"
           },
           "approved_at": {
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           "serving_prohibited": {
             "type": "boolean",
@@ -71878,6 +71897,41 @@
             "type": "boolean"
           }
         },
+        "oneOf": [
+          {
+            "properties": {
+              "status": {
+                "enum": [
+                  "calibration_retired"
+                ]
+              },
+              "retirement_verified": {
+                "enum": [
+                  true
+                ]
+              }
+            },
+            "required": [
+              "decision_ref",
+              "reason_code",
+              "approved_at"
+            ]
+          },
+          {
+            "properties": {
+              "status": {
+                "enum": [
+                  "calibration_quarantined"
+                ]
+              },
+              "retirement_verified": {
+                "enum": [
+                  false
+                ]
+              }
+            }
+          }
+        ],
         "additionalProperties": true
       },
       "ReceiptEvidenceFinding": {
@@ -71911,6 +71965,104 @@
           }
         },
         "additionalProperties": false
+      },
+      "ArtifactRoleEvidenceFinding": {
+        "type": "object",
+        "required": [
+          "path",
+          "evidence_id",
+          "marker",
+          "path_truncated",
+          "evidence_id_truncated",
+          "artifact_role"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "maxLength": 1024,
+            "description": "RFC 6901 JSON Pointer into the submitted body. Truncated pointers are not directly resolvable."
+          },
+          "evidence_id": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 160
+          },
+          "marker": {
+            "type": "string"
+          },
+          "path_truncated": {
+            "type": "boolean"
+          },
+          "evidence_id_truncated": {
+            "type": "boolean"
+          },
+          "artifact_role": {
+            "type": "string",
+            "enum": [
+              "derived_summary",
+              "model_inferred",
+              "decision_output",
+              "historical_context",
+              "unknown"
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "description": "Explicit prohibited role declaration, not source authentication. unknown means an explicit unknown role, never absent classification."
+      },
+      "ArtifactRoleEvidenceError": {
+        "type": "object",
+        "required": [
+          "code",
+          "strict_eligible",
+          "schema_and_reviewer_eligible",
+          "artifact_role_findings",
+          "details",
+          "total_errors",
+          "validation_errors_truncated"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE"
+            ]
+          },
+          "strict_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "schema_and_reviewer_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "artifact_role_findings": {
+            "type": "array",
+            "maxItems": 15,
+            "items": {
+              "$ref": "#/components/schemas/ArtifactRoleEvidenceFinding"
+            }
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "total_errors": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "validation_errors_truncated": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true,
+        "description": "HTTP 422: explicit derived, inferred, decision-output, historical or unknown roles cannot be source evidence. Bounded declaration diagnostics only; no source authentication."
       },
       "OutputReceiptEvidenceError": {
         "type": "object",
@@ -72014,6 +72166,9 @@
       },
       "BenchmarkResponse": {
         "type": "object",
+        "required": [
+          "status"
+        ],
         "properties": {
           "status": {
             "type": "string"
@@ -72028,6 +72183,72 @@
           }
         },
         "additionalProperties": true
+      },
+      "AnalysisUse": {
+        "type": "object",
+        "required": [
+          "status",
+          "permitted_uses",
+          "execution_permission"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_assessed",
+              "not_permitted",
+              "permitted_for_listed_uses_only"
+            ]
+          },
+          "permitted_uses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "execution_permission": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "description": "Bounded use of this analysis only. Never permission to execute the proposed action."
+      },
+      "ActionCapability": {
+        "type": "object",
+        "required": [
+          "status",
+          "reason",
+          "capability_issued",
+          "execution_authorized"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_issued"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "capability_issued": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "execution_authorized": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "description": "No execution capability exists in this release. action_authorization.decision remains BLOCKED; this is not a capability issuer or verifier."
       },
       "ComparisonOption": {
         "type": "object",
@@ -72574,6 +72795,23 @@
               },
               "action_authorization": {
                 "$ref": "#/components/schemas/ActionAuthorizationBoundary"
+              },
+              "analysis_use": {
+                "$ref": "#/components/schemas/AnalysisUse"
+              },
+              "action_capability": {
+                "$ref": "#/components/schemas/ActionCapability"
+              },
+              "authorization_status": {
+                "type": "string",
+                "nullable": true,
+                "deprecated": true,
+                "not": {
+                  "enum": [
+                    "authorized"
+                  ]
+                },
+                "description": "Legacy bounded output-use alias; use analysis_use. Never execution permission."
               }
             },
             "additionalProperties": true,
@@ -72588,6 +72826,34 @@
             "properties": {
               "deployment_revision": {
                 "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "analysis_use": {
+            "$ref": "#/components/schemas/AnalysisUse"
+          },
+          "action_capability": {
+            "$ref": "#/components/schemas/ActionCapability"
+          },
+          "decision_authorization": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "deprecated": true,
+                "description": "Legacy output-use alias. The positive value is permitted_for_listed_uses_only, never authorized. Negative and unknown states do not permit use; prefer analysis_use.",
+                "not": {
+                  "enum": [
+                    "authorized"
+                  ]
+                }
+              },
+              "authorized_use": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "additionalProperties": true
@@ -72643,7 +72909,7 @@
           },
           "code": {
             "type": "string",
-            "description": "OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY"
+            "description": "Stable rejection code, including OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE and DUPLICATE_COMPARISON_OPTION_ID."
           },
           "calibration_disposition": {
             "$ref": "#/components/schemas/CalibrationDisposition"
@@ -72674,6 +72940,25 @@
           },
           "not_a_verdict": {
             "type": "boolean"
+          },
+          "artifact_role_findings": {
+            "type": "array",
+            "maxItems": 15,
+            "items": {
+              "$ref": "#/components/schemas/ArtifactRoleEvidenceFinding"
+            }
+          },
+          "strict_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "schema_and_reviewer_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
           }
         },
         "additionalProperties": true,
@@ -72681,7 +72966,9 @@
           "action_authorization",
           "execution_authorization_state",
           "human_review_required",
-          "answer"
+          "answer",
+          "analysis_use",
+          "action_capability"
         ]
       },
       "RequestErrorResponse": {
@@ -72692,7 +72979,7 @@
           },
           "code": {
             "type": "string",
-            "description": "OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY"
+            "description": "Stable rejection code, including OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE and DUPLICATE_COMPARISON_OPTION_ID."
           },
           "message": {
             "type": "string"
@@ -72763,6 +73050,33 @@
           },
           "calibration_disposition": {
             "$ref": "#/components/schemas/CalibrationDisposition"
+          },
+          "artifact_role_findings": {
+            "type": "array",
+            "maxItems": 15,
+            "items": {
+              "$ref": "#/components/schemas/ArtifactRoleEvidenceFinding"
+            }
+          },
+          "strict_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "schema_and_reviewer_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "duplicate_option_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Resolved comparison IDs that collided after the documented alias precedence and positional fallback. Present with DUPLICATE_COMPARISON_OPTION_ID; HTTP 422."
           }
         },
         "additionalProperties": true
@@ -72810,8 +73124,23 @@
             "type": "boolean",
             "description": "Legacy schema-and-authorized-review eligibility, not independent verification or execution permission."
           },
+          "schema_and_reviewer_eligible": {
+            "type": "boolean",
+            "description": "Optional exact alias of strict_eligible. Schema and authorized-review eligibility only; not independently verified source/reviewer identity or action permission."
+          },
           "review_eligibility": {
             "$ref": "#/components/schemas/ReviewEligibility"
+          },
+          "artifact_role_findings": {
+            "type": "array",
+            "maxItems": 15,
+            "items": {
+              "$ref": "#/components/schemas/ArtifactRoleEvidenceFinding"
+            }
+          },
+          "code": {
+            "type": "string",
+            "description": "Stable rejection code, including OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE and DUPLICATE_COMPARISON_OPTION_ID."
           }
         },
         "additionalProperties": true
@@ -73981,7 +74310,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-07.engine-contract.1"
+    "deployment_revision": "2026-10-07.engine-contract.2"
   },
   "response_contract_version": "2026-05-01.v1"
 }
