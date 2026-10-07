@@ -22,7 +22,7 @@ Use the [MCP integration guide](https://africanmarketos.com/docs/mcp-integration
 
 mvr_first_call and mvr_guided_preflight accept root argument fields. The later five-tool steps use arguments.payload. These supported shapes are intentionally preserved for existing clients. When continuation_disposition is call_now, use mcp_next_call.name and mcp_next_call.arguments unchanged. This carries the workflow_id, workflow_expires_at, context and evidence forward. Add transport metadata beside name and arguments; do not put it inside the payload.
 
-At await_input, ask for the missing input or evidence. At terminal, stop. mcp_next_call is null at a pause by design. evidence_recovery explains how the client can resubmit its complete corrected pack; it is not an executable automatic retry. The two-hour ID is operational context, not a stored evidence session or authorization token.
+At await_input, ask for the missing input or evidence. At terminal, stop. mcp_next_call is null at a pause by design. evidence_recovery is not an executable automatic retry. Licensed bound workflows restart mvr_first_call with the complete corrected case; their exact, expiring, single-use workflow_continuation cannot be edited or replayed. Public sandbox IDs remain operational context, not stored evidence sessions or authorization tokens. Neither form grants execution authority.
 
 Read result.structuredContent for tool data; outputSchema describes that object, not the whole JSON-RPC envelope. The text content is a compact presentation summary.
 
