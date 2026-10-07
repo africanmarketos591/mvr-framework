@@ -4,7 +4,7 @@
   "title": "African Market OS-MVR API public preflight evidence item",
   "type": "object",
   "additionalProperties": true,
-  "description": "A caller-declared, consented and redacted evidence item. No required fields at intake: incomplete items receive correction feedback. Passing coverage never verifies truth, permission or readiness.",
+  "description": "A caller-declared, consented and redacted evidence item. No required fields at intake: incomplete items receive correction feedback. Explicit artifact_role, evidence_role, source_role, record_role and content_role declarations admit only original_source_record, independent_evaluation or human_attestation; other declared roles are rejected with ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Omission remains supported for legacy items. Passing coverage never verifies truth, permission or readiness.",
   "properties": {
     "id": {
       "type": "string",
@@ -20,7 +20,7 @@
     },
     "source_class": {
       "type": "string",
-      "description": "Origin label, for example entity_reported, regulator_published, structured_field_research, operational_data or counterparty_reference. Not a claim of independence."
+      "description": "Origin label, for example entity_reported, regulator_published, structured_field_research, operational_data or counterparty_reference. model_inferred is not source evidence and is rejected with ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Never relabel it to pass. Origin is not a claim of independence."
     },
     "evidence_origin": {
       "type": "string",
@@ -55,8 +55,43 @@
       "description": "Compatibility alias for source_date; conflicting supplied dates require correction."
     },
     "geography": {
-      "type": "string",
-      "description": "Source country name/code or broader geographic description. Known country conflicts are flagged; local applicability is not authenticated."
+      "type": [
+        "string",
+        "object"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Declared source country, not the target country."
+        },
+        "city": {
+          "type": "string",
+          "description": "Declared source city."
+        },
+        "region": {
+          "type": "string",
+          "description": "Declared source region."
+        },
+        "town_or_zone": {
+          "type": "string",
+          "description": "Declared source town or zone."
+        },
+        "district": {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "Nonblank declared source district, not verified local coverage."
+        },
+        "districts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "description": "Declared source districts, each a nonblank string. An empty array is allowed. Not verified fieldwork or representative coverage."
+        }
+      },
+      "description": "Source country name/code or broader description, or an object with country, city, region and town_or_zone strings, a nonblank district string and a districts array of nonblank strings (empty allowed). Known country conflicts, including conflicting evidence_geography.country, are flagged; local applicability is not authenticated."
     },
     "evidence_geography": {
       "type": "object",
@@ -73,6 +108,23 @@
         "region": {
           "type": "string",
           "description": "Declared source region."
+        },
+        "town_or_zone": {
+          "type": "string",
+          "description": "Declared source town or zone."
+        },
+        "district": {
+          "type": "string",
+          "pattern": "\\S",
+          "description": "Nonblank declared source district, not verified local coverage."
+        },
+        "districts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "description": "Declared source districts, each a nonblank string. An empty array is allowed. Not verified fieldwork or representative coverage."
         }
       }
     },

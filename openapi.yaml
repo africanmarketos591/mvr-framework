@@ -37578,8 +37578,8 @@
     },
     "/v1/retailer-credit": {
       "post": {
-        "summary": "FAIL-CLOSED both profiles - requires MVR_CREDIT_MODEL KV and structured_values.credit_reliability_score, guardian_vouching, shelf_velocity (0-100). Full MVR core-dimension structured_values can be submitted; legacy fields are derived when possible. Advisory/readiness output only; not autonomous credit approval.",
-        "description": "Retailer credit readiness calculation using retailer evidence. Advisory/readiness output only; not autonomous credit approval.",
+        "summary": "FAIL-CLOSED both profiles - requires MVR_CREDIT_MODEL KV and structured_values.credit_reliability_score, guardian_vouching, shelf_velocity (0-100). Full MVR core-dimension structured_values can be submitted; legacy fields are derived when possible. Heuristic index only: probability_of_default, grade, score_confidence and recommended_credit_limit_usd are null, including with an approved coefficient manifest.",
+        "description": "Heuristic retailer readiness index only. Default probability, underwriting grade, score confidence and credit limit are null: coefficient manifests do not establish outcome validation.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/retailer-credit",
         "x-mvr-maturity": "release_candidate",
@@ -37602,10 +37602,64 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful response",
+            "description": "Heuristic readiness, not underwriting. Null means not estimated, never zero risk or a declined credit decision.",
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "score": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "probability_of_default": {
+                      "type": "number",
+                      "nullable": true,
+                      "enum": [
+                        null
+                      ]
+                    },
+                    "grade": {
+                      "type": "string",
+                      "nullable": true,
+                      "enum": [
+                        null
+                      ]
+                    },
+                    "score_confidence": {
+                      "type": "string",
+                      "nullable": true,
+                      "enum": [
+                        null
+                      ]
+                    },
+                    "recommended_credit_limit_usd": {
+                      "type": "number",
+                      "nullable": true,
+                      "enum": [
+                        null
+                      ]
+                    },
+                    "not_a_prediction": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ]
+                    },
+                    "can_be_used_as_evidence": {
+                      "type": "boolean",
+                      "enum": [
+                        false
+                      ]
+                    }
+                  }
+                }
               }
             }
           },
@@ -38446,8 +38500,8 @@
     },
     "/v1/legacy/retailer-credit": {
       "post": {
-        "summary": "Legacy alias for /v1/retailer-credit with the same fail-closed calibration and advisory-only semantics.",
-        "description": "Legacy alias for retailer credit readiness calculation using retailer evidence.",
+        "summary": "Legacy alias for /v1/retailer-credit with the same fail-closed coefficient gates and null default probability, grade, confidence and limit.",
+        "description": "Legacy alias for retailer readiness; default probability, underwriting grade, score confidence and credit limit are null.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/legacy/retailer-credit",
         "x-mvr-maturity": "release_candidate",
@@ -38470,10 +38524,64 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful response",
+            "description": "Heuristic readiness only; null credit outputs mean not estimated.",
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "score": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "probability_of_default": {
+                      "type": "number",
+                      "nullable": true,
+                      "enum": [
+                        null
+                      ]
+                    },
+                    "grade": {
+                      "type": "string",
+                      "nullable": true,
+                      "enum": [
+                        null
+                      ]
+                    },
+                    "score_confidence": {
+                      "type": "string",
+                      "nullable": true,
+                      "enum": [
+                        null
+                      ]
+                    },
+                    "recommended_credit_limit_usd": {
+                      "type": "number",
+                      "nullable": true,
+                      "enum": [
+                        null
+                      ]
+                    },
+                    "not_a_prediction": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ]
+                    },
+                    "can_be_used_as_evidence": {
+                      "type": "boolean",
+                      "enum": [
+                        false
+                      ]
+                    }
+                  }
+                }
               }
             }
           },
@@ -42714,6 +42822,17 @@
                                 },
                                 "city": {
                                   "type": "string"
+                                },
+                                "district": {
+                                  "type": "string",
+                                  "pattern": "\\S"
+                                },
+                                "districts": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string",
+                                    "pattern": "\\S"
+                                  }
                                 },
                                 "town_or_zone": {
                                   "type": "string"
@@ -55230,8 +55349,8 @@
     },
     "/v1/narrative-risk-scan": {
       "post": {
-        "summary": "Quantify rumor, narrative, and contagion risk using lawful evidence while avoiding exact crisis-date prediction.",
-        "description": "Rumor/narrative warning surface with historical-correlation framing only; no exact crisis-date predictions.",
+        "summary": "Heuristic narrative-risk triage using lawful evidence; historical accuracy and outcome correlation are not estimated.",
+        "description": "Heuristic narrative warning surface only. Historical accuracy and outcome correlation are not estimated; evidence density is not outcome validation.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/narrative-risk-scan",
         "x-mvr-maturity": "provisional",
@@ -55921,6 +56040,17 @@
                       "city": {
                         "type": "string"
                       },
+                      "district": {
+                        "type": "string",
+                        "pattern": "\\S"
+                      },
+                      "districts": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "\\S"
+                        }
+                      },
                       "town_or_zone": {
                         "type": "string"
                       },
@@ -55961,6 +56091,17 @@
                       },
                       "city": {
                         "type": "string"
+                      },
+                      "district": {
+                        "type": "string",
+                        "pattern": "\\S"
+                      },
+                      "districts": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "\\S"
+                        }
                       },
                       "town_or_zone": {
                         "type": "string"
@@ -56804,7 +56945,7 @@
     },
     "/v1/relational-stress-index": {
       "post": {
-        "summary": "Produce an early-warning social-capital stress signal with historical-correlation framing and fog-of-war fallback.",
+        "summary": "Produce a nonauthorizing heuristic stress index for exploratory triage; historical accuracy and default probability are not estimated.",
         "description": "Early-warning stress indicator with dynamic fog-of-war fallback; it must not predict unrest as certainty.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/relational-stress-index",
@@ -58292,8 +58433,8 @@
     },
     "/v1/trust-credit-readiness": {
       "post": {
-        "summary": "Return an advisory relational credit-readiness signal and rPoD input without autonomous underwriting.",
-        "description": "Advisory rPoD signal for bank risk models. It must never approve, deny, or price credit autonomously. Break-glass access requires incident justification and compliance alerting.",
+        "summary": "Return a nonauthorizing heuristic relational readiness signal; default probability is not estimated without outcome validation.",
+        "description": "Heuristic readiness triage only; no default probability is estimated. It must never approve, deny, or price credit autonomously. Break-glass access requires incident justification and compliance alerting.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/trust-credit-readiness",
         "x-mvr-maturity": "provisional",
@@ -58322,10 +58463,38 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful response",
+            "description": "Nonauthorizing heuristic readiness. Relational default probability is not estimated, even with an approved coefficient manifest.",
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "relational_probability_of_default_rPoD": {
+                      "type": "number",
+                      "nullable": true,
+                      "enum": [
+                        null
+                      ]
+                    },
+                    "not_a_prediction": {
+                      "type": "boolean",
+                      "enum": [
+                        true
+                      ]
+                    },
+                    "can_be_used_as_evidence": {
+                      "type": "boolean",
+                      "enum": [
+                        false
+                      ]
+                    }
+                  }
+                }
               }
             }
           },
@@ -59911,6 +60080,17 @@
                       },
                       "city": {
                         "type": "string"
+                      },
+                      "district": {
+                        "type": "string",
+                        "pattern": "\\S"
+                      },
+                      "districts": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "\\S"
+                        }
                       },
                       "town_or_zone": {
                         "type": "string"
@@ -61545,6 +61725,17 @@
                       },
                       "city": {
                         "type": "string"
+                      },
+                      "district": {
+                        "type": "string",
+                        "pattern": "\\S"
+                      },
+                      "districts": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "\\S"
+                        }
                       },
                       "town_or_zone": {
                         "type": "string"
@@ -67298,6 +67489,17 @@
                       "city": {
                         "type": "string"
                       },
+                      "district": {
+                        "type": "string",
+                        "pattern": "\\S"
+                      },
+                      "districts": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "\\S"
+                        }
+                      },
                       "town_or_zone": {
                         "type": "string"
                       },
@@ -68112,6 +68314,17 @@
                             },
                             "city": {
                               "type": "string"
+                            },
+                            "district": {
+                              "type": "string",
+                              "pattern": "\\S"
+                            },
+                            "districts": {
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "pattern": "\\S"
+                              }
                             },
                             "town_or_zone": {
                               "type": "string"
@@ -69354,6 +69567,29 @@
                   "intercept_interview"
                 ]
               },
+              "interview_mode": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "collector_relationship": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "enumerator_count": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "interview_duration_minutes": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMinimum": true
+              },
+              "fieldwork_window_minutes": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMinimum": true
+              },
               "population_size": {
                 "type": "integer",
                 "minimum": 1
@@ -69442,9 +69678,9 @@
               "third_party_evaluation",
               "retail_audit",
               "telemetry_internal",
-              "media_reported",
-              "model_inferred"
-            ]
+              "media_reported"
+            ],
+            "description": "Source-evidence classes only. Model-inferred artifacts are context and are rejected with ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE."
           },
           "source_grade": {
             "type": "string",
@@ -69898,11 +70134,22 @@
               "city": {
                 "type": "string"
               },
+              "district": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "districts": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                }
+              },
               "town_or_zone": {
                 "type": "string"
               }
             },
-            "description": "Use a supported ISO country code, not a country name. The item country is the source geography, not an assertion of target-market fit."
+            "description": "Use a supported ISO country code, not a country name. Explicit districts declare source coverage, not authenticity or representativeness. Do not relabel geography to match the decision."
           },
           "geography": {
             "anyOf": [
@@ -69911,6 +70158,19 @@
               },
               {
                 "type": "object",
+                "properties": {
+                  "district": {
+                    "type": "string",
+                    "pattern": "\\S"
+                  },
+                  "districts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  }
+                },
                 "additionalProperties": true
               }
             ]
@@ -70579,6 +70839,17 @@
               },
               "city": {
                 "type": "string"
+              },
+              "district": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "districts": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "\\S"
+                }
               },
               "town_or_zone": {
                 "type": "string"
@@ -71552,6 +71823,17 @@
           },
           "city": {
             "type": "string"
+          },
+          "district": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "districts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            }
           },
           "town_or_zone": {
             "type": "string"
@@ -74310,7 +74592,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-07.engine-contract.2"
+    "deployment_revision": "2026-10-07.engine-contract.3"
   },
   "response_contract_version": "2026-05-01.v1"
 }
