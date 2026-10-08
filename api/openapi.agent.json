@@ -42834,6 +42834,14 @@
                                     "pattern": "\\S"
                                   }
                                 },
+                                "decision_scope_level": {
+                                  "type": "string",
+                                  "enum": [
+                                    "country",
+                                    "subnational"
+                                  ],
+                                  "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
+                                },
                                 "town_or_zone": {
                                   "type": "string"
                                 },
@@ -56051,6 +56059,14 @@
                           "pattern": "\\S"
                         }
                       },
+                      "decision_scope_level": {
+                        "type": "string",
+                        "enum": [
+                          "country",
+                          "subnational"
+                        ],
+                        "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
+                      },
                       "town_or_zone": {
                         "type": "string"
                       },
@@ -56102,6 +56118,14 @@
                           "type": "string",
                           "pattern": "\\S"
                         }
+                      },
+                      "decision_scope_level": {
+                        "type": "string",
+                        "enum": [
+                          "country",
+                          "subnational"
+                        ],
+                        "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
                       },
                       "town_or_zone": {
                         "type": "string"
@@ -60092,6 +60116,14 @@
                           "pattern": "\\S"
                         }
                       },
+                      "decision_scope_level": {
+                        "type": "string",
+                        "enum": [
+                          "country",
+                          "subnational"
+                        ],
+                        "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
+                      },
                       "town_or_zone": {
                         "type": "string"
                       },
@@ -61736,6 +61768,14 @@
                           "type": "string",
                           "pattern": "\\S"
                         }
+                      },
+                      "decision_scope_level": {
+                        "type": "string",
+                        "enum": [
+                          "country",
+                          "subnational"
+                        ],
+                        "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
                       },
                       "town_or_zone": {
                         "type": "string"
@@ -67500,6 +67540,14 @@
                           "pattern": "\\S"
                         }
                       },
+                      "decision_scope_level": {
+                        "type": "string",
+                        "enum": [
+                          "country",
+                          "subnational"
+                        ],
+                        "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
+                      },
                       "town_or_zone": {
                         "type": "string"
                       },
@@ -68325,6 +68373,14 @@
                                 "type": "string",
                                 "pattern": "\\S"
                               }
+                            },
+                            "decision_scope_level": {
+                              "type": "string",
+                              "enum": [
+                                "country",
+                                "subnational"
+                              ],
+                              "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
                             },
                             "town_or_zone": {
                               "type": "string"
@@ -69541,7 +69597,74 @@
           },
           "collection_context": {
             "type": "object",
+            "additionalProperties": true,
+            "description": "Source-grounded collection declarations, not source authentication. Unknown facts must remain missing; do not invent values to pass. Field decision use requires source modality, collector relationship, interview mode, source-document identity and an explicit parent-source list. Individual face-to-face/telephone collection also requires staffing, duration, total available minutes per collector and sample size. Independent verification labels require a separate reviewer relationship; persisted review is still checked separately.",
             "properties": {
+              "source_modality": {
+                "type": "string",
+                "enum": [
+                  "direct_observation",
+                  "documentary",
+                  "secondary_summary",
+                  "unknown"
+                ]
+              },
+              "collector_relationship": {
+                "type": "string",
+                "enum": [
+                  "independent",
+                  "employee",
+                  "company_staff",
+                  "internal",
+                  "contractor",
+                  "partner",
+                  "self_collected",
+                  "unknown"
+                ],
+                "pattern": "\\S"
+              },
+              "reviewer_relationship": {
+                "type": "string",
+                "enum": [
+                  "independent",
+                  "employee",
+                  "company_staff",
+                  "internal",
+                  "contractor",
+                  "partner",
+                  "self_collected",
+                  "unknown"
+                ]
+              },
+              "interview_mode": {
+                "type": "string",
+                "enum": [
+                  "face_to_face",
+                  "telephone",
+                  "online",
+                  "focus_group",
+                  "group_interview",
+                  "observation",
+                  "administrative_record",
+                  "unknown"
+                ],
+                "pattern": "\\S"
+              },
+              "enumerator_count": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "interview_duration_minutes": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMinimum": true
+              },
+              "fieldwork_window_minutes": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMinimum": true
+              },
               "sample_size": {
                 "type": "integer",
                 "minimum": 1
@@ -69566,29 +69689,6 @@
                   "expert_opinion",
                   "intercept_interview"
                 ]
-              },
-              "interview_mode": {
-                "type": "string",
-                "pattern": "\\S"
-              },
-              "collector_relationship": {
-                "type": "string",
-                "pattern": "\\S"
-              },
-              "enumerator_count": {
-                "type": "integer",
-                "minimum": 1,
-                "maximum": 9007199254740991
-              },
-              "interview_duration_minutes": {
-                "type": "number",
-                "minimum": 0,
-                "exclusiveMinimum": true
-              },
-              "fieldwork_window_minutes": {
-                "type": "number",
-                "minimum": 0,
-                "exclusiveMinimum": true
               },
               "population_size": {
                 "type": "integer",
@@ -70851,6 +70951,14 @@
                   "pattern": "\\S"
                 }
               },
+              "decision_scope_level": {
+                "type": "string",
+                "enum": [
+                  "country",
+                  "subnational"
+                ],
+                "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
+              },
               "town_or_zone": {
                 "type": "string"
               },
@@ -71834,6 +71942,14 @@
               "type": "string",
               "pattern": "\\S"
             }
+          },
+          "decision_scope_level": {
+            "type": "string",
+            "enum": [
+              "country",
+              "subnational"
+            ],
+            "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
           },
           "town_or_zone": {
             "type": "string"
@@ -74592,7 +74708,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-07.engine-contract.3"
+    "deployment_revision": "2026-10-08.engine-contract.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }

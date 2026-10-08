@@ -160,6 +160,7 @@
     "provenance_ledger": {
       "type": "object",
       "additionalProperties": true,
+      "description": "Field evidence needs source_doc_id and an explicit parent_source_ids array (empty allowed). Unknown lineage stays incomplete, not invented.",
       "properties": {
         "source_doc_id": {
           "type": "string",
@@ -186,6 +187,10 @@
             "type": "string"
           }
         },
+        "source_family": {
+          "type": "string",
+          "description": "Declared source family; distinct labels do not prove independence."
+        },
         "synthetic_fields": {
           "type": "array",
           "items": {
@@ -194,6 +199,98 @@
           "description": "Source-reference fields that were generated rather than observed; these do not establish lineage."
         }
       }
+    },
+    "collection_context": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Source-grounded collection declarations, not source authentication. Unknown facts must remain missing; do not invent values to pass. Field decision use requires source modality, collector relationship, interview mode, source-document identity and an explicit parent-source list. Individual face-to-face/telephone collection also requires staffing, duration, total available minutes per collector and sample size. Independent verification labels require a separate reviewer relationship; persisted review is still checked separately.",
+      "properties": {
+        "source_modality": {
+          "type": "string",
+          "enum": [
+            "direct_observation",
+            "documentary",
+            "secondary_summary",
+            "unknown"
+          ]
+        },
+        "collector_relationship": {
+          "type": "string",
+          "enum": [
+            "independent",
+            "employee",
+            "company_staff",
+            "internal",
+            "contractor",
+            "partner",
+            "self_collected",
+            "unknown"
+          ]
+        },
+        "reviewer_relationship": {
+          "type": "string",
+          "enum": [
+            "independent",
+            "employee",
+            "company_staff",
+            "internal",
+            "contractor",
+            "partner",
+            "self_collected",
+            "unknown"
+          ]
+        },
+        "interview_mode": {
+          "type": "string",
+          "enum": [
+            "face_to_face",
+            "telephone",
+            "online",
+            "focus_group",
+            "group_interview",
+            "observation",
+            "administrative_record",
+            "unknown"
+          ]
+        },
+        "enumerator_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "interview_duration_minutes": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "fieldwork_window_minutes": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Total available collection minutes per collector across the entire period, not daily or team-person-minutes."
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      }
+    },
+    "sample_size": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991,
+      "description": "Actual sample size; required for individual face-to-face/telephone interviews, not invented for documentary evidence."
+    },
+    "survey_payload": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "sample_size": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      },
+      "description": "Existing sample_size alias; all supplied sample-size aliases must agree."
     },
     "load_bearing": {
       "type": "boolean",
