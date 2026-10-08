@@ -30086,14 +30086,56 @@
                       "country": {
                         "type": "string"
                       },
-                      "sector": {
+                      "region": {
                         "type": "string"
                       },
                       "city": {
                         "type": "string"
                       },
+                      "district": {
+                        "type": "string",
+                        "pattern": "\\S"
+                      },
+                      "districts": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "\\S"
+                        }
+                      },
+                      "decision_scope_level": {
+                        "type": "string",
+                        "enum": [
+                          "country",
+                          "subnational"
+                        ],
+                        "description": "Explicit decision extent. Alternatively supply district(s). Subnational scope also requires local geography. Do not relabel or widen the decision to pass."
+                      },
                       "town_or_zone": {
                         "type": "string"
+                      },
+                      "micro_context": {
+                        "type": "string"
+                      },
+                      "corridor": {
+                        "type": "string"
+                      },
+                      "sector": {
+                        "type": "string"
+                      },
+                      "analysis_date": {
+                        "type": "string"
+                      },
+                      "geo_match_tolerance": {
+                        "type": "string",
+                        "enum": [
+                          "strict",
+                          "same_city",
+                          "region",
+                          "country"
+                        ],
+                        "default": "strict",
+                        "description": "Declare the actual decision geography. Do not widen it to obtain a verdict."
                       }
                     },
                     "additionalProperties": true
@@ -69504,7 +69546,7 @@
       "EvidenceItem": {
         "type": "object",
         "additionalProperties": true,
-        "description": "Extensible source metadata. Unknown item-level field names receive non-blocking input_interpretation notices on successful licensed evidence responses; acceptance is not proof that a control was evaluated. Suggested names require checking source facts and are never applied automatically. Nested open metadata is not recursively classified by this notice mechanism.",
+        "description": "Extensible source metadata. Unknown item-level field names receive non-blocking input_interpretation notices on successful licensed evidence responses; acceptance is not proof that a control was evaluated. Suggested names require checking source facts and are never applied automatically. Nested open metadata is not recursively classified by this notice mechanism. Recovery: Codes: FIELD_PROVENANCE_REQUIRED, FIELD_PROVENANCE_CONFLICT, FIELDWORK_CAPACITY_CONTRADICTION, SOURCE_INDEPENDENCE_CONTRADICTION, SOURCE_VERIFICATION_CONTRADICTION, FIELD_SOURCE_MODALITY_CONFLICT, DECISION_GEOGRAPHY_SCOPE_REQUIRED, DECISION_SCOPE_REQUIRED, DECISION_SCOPE_REVIEW_REQUIRED, DECISION_SCOPE_CROSS_CHECK_LIMIT, SOURCE_EXTRACTION_INVALID, SOURCE_EXTRACTION_REFERENCE_CONFLICT, ADVERSE_SOURCE_REVIEW_REQUIRED, INVALID_CLAIM_INPUT, OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Correct indexed evidence_input_feedback/evidence_fit paths and missing_fields against originals. INVALID_CLAIM_INPUT is HTTP 422 on claim-consuming REST routes; correct root or decision_result claim/citation paths in details/validation_errors without deleting adverse evidence. Never invent or relabel facts. Explicit adverse states need review, not approved support. These checks do not authenticate sources or authorize action. Recovery: /docs/mcp-integration.md.",
         "x-compatible-item-field-names": [
           "provenance",
           "privacy",
@@ -69575,7 +69617,9 @@
           },
           "sample_size": {
             "type": "integer",
-            "minimum": 1
+            "minimum": 1,
+            "maximum": 9007199254740991,
+            "description": "Actual sample for collector-administered evidence, including groups. Sample aliases must agree; never invent counts for documentary or self-administered sources."
           },
           "population_size": {
             "type": "integer",
@@ -69598,7 +69642,7 @@
           "collection_context": {
             "type": "object",
             "additionalProperties": true,
-            "description": "Source-grounded collection declarations, not source authentication. Unknown facts must remain missing; do not invent values to pass. Field decision use requires source modality, collector relationship, interview mode, source-document identity and an explicit parent-source list. Individual face-to-face/telephone collection also requires staffing, duration, total available minutes per collector and sample size. Independent verification labels require a separate reviewer relationship; persisted review is still checked separately.",
+            "description": "Source-grounded collection declarations, not source authentication. Unknown facts must remain missing; do not invent values to pass. Field decision use requires source modality, collector relationship, interview mode, source-document identity and an explicit parent-source list. Collector-administered modes require staffing, duration, available minutes per collector and sample size. Group modes additionally require session_count, participants_per_session, session_duration_minutes and collectors_per_session, never inferred from an individual interview duration. Online, observation and administrative_record modes require collection_administration; self-administered online and automated observation/record sources do not need invented collector capacity. Explicit public/documentary origins are not caller fieldwork solely because evidence_type is survey; conflicting explicit field origins still block. Independent verification labels require a separate reviewer relationship; persisted review is still checked separately.",
             "properties": {
               "source_modality": {
                 "type": "string",
@@ -69650,6 +69694,16 @@
                 ],
                 "pattern": "\\S"
               },
+              "collection_administration": {
+                "type": "string",
+                "enum": [
+                  "collector_administered",
+                  "self_administered",
+                  "automated",
+                  "unknown"
+                ],
+                "description": "Source-grounded administration, required for online, observation and administrative_record modes. self_administered is supported for online; automated for observation or administrative_record. Face-to-face, telephone and group modes are collector-administered and cannot opt out."
+              },
               "enumerator_count": {
                 "type": "integer",
                 "minimum": 1,
@@ -69657,17 +69711,170 @@
               },
               "interview_duration_minutes": {
                 "type": "number",
-                "minimum": 0,
-                "exclusiveMinimum": true
+                "exclusiveMinimum": true,
+                "description": "Collector time per individual interview or per observed/processed sample record for collector-administered non-group modes.",
+                "minimum": 0
               },
               "fieldwork_window_minutes": {
                 "type": "number",
-                "minimum": 0,
-                "exclusiveMinimum": true
+                "exclusiveMinimum": true,
+                "description": "Total available collection minutes per collector across the entire period, not daily or team-person-minutes.",
+                "minimum": 0
+              },
+              "session_count": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991,
+                "description": "Actual number of group sessions in the source records."
+              },
+              "participants_per_session": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991,
+                "description": "Source-grounded maximum participants in any session. Sample size cannot exceed session_count times this bound; no default group size is assumed."
+              },
+              "session_duration_minutes": {
+                "type": "number",
+                "exclusiveMinimum": true,
+                "description": "Source-recorded duration of each group session in this declaration, not an alias for individual interview duration.",
+                "minimum": 0
+              },
+              "collectors_per_session": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991,
+                "description": "Collectors required concurrently for each group session, drawn from enumerator_count. No default facilitator count is assumed."
               },
               "sample_size": {
                 "type": "integer",
-                "minimum": 1
+                "minimum": 1,
+                "maximum": 9007199254740991
+              },
+              "source_extraction": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source_ref",
+                  "fields"
+                ],
+                "description": "Optional caller-supplied second reading of source facts for conflict comparison only. Not independently authenticated; cannot supply missing primary declarations or establish source authenticity.",
+                "properties": {
+                  "source_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 512
+                  },
+                  "fields": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "source_modality": {
+                        "type": "string",
+                        "enum": [
+                          "direct_observation",
+                          "documentary",
+                          "secondary_summary",
+                          "unknown"
+                        ]
+                      },
+                      "collector_relationship": {
+                        "type": "string",
+                        "enum": [
+                          "independent",
+                          "employee",
+                          "company_staff",
+                          "internal",
+                          "contractor",
+                          "partner",
+                          "self_collected",
+                          "unknown"
+                        ]
+                      },
+                      "reviewer_relationship": {
+                        "type": "string",
+                        "enum": [
+                          "independent",
+                          "employee",
+                          "company_staff",
+                          "internal",
+                          "contractor",
+                          "partner",
+                          "self_collected",
+                          "unknown"
+                        ]
+                      },
+                      "interview_mode": {
+                        "type": "string",
+                        "enum": [
+                          "face_to_face",
+                          "telephone",
+                          "online",
+                          "focus_group",
+                          "group_interview",
+                          "observation",
+                          "administrative_record",
+                          "unknown"
+                        ]
+                      },
+                      "collection_administration": {
+                        "type": "string",
+                        "enum": [
+                          "collector_administered",
+                          "self_administered",
+                          "automated",
+                          "unknown"
+                        ],
+                        "description": "Source-grounded administration, required for online, observation and administrative_record modes. self_administered is supported for online; automated for observation or administrative_record. Face-to-face, telephone and group modes are collector-administered and cannot opt out."
+                      },
+                      "enumerator_count": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991
+                      },
+                      "interview_duration_minutes": {
+                        "type": "number",
+                        "exclusiveMinimum": true,
+                        "description": "Collector time per individual interview or per observed/processed sample record for collector-administered non-group modes.",
+                        "minimum": 0
+                      },
+                      "fieldwork_window_minutes": {
+                        "type": "number",
+                        "exclusiveMinimum": true,
+                        "description": "Total available collection minutes per collector across the entire period, not daily or team-person-minutes.",
+                        "minimum": 0
+                      },
+                      "session_count": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991,
+                        "description": "Actual number of group sessions in the source records."
+                      },
+                      "participants_per_session": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991,
+                        "description": "Source-grounded maximum participants in any session. Sample size cannot exceed session_count times this bound; no default group size is assumed."
+                      },
+                      "session_duration_minutes": {
+                        "type": "number",
+                        "exclusiveMinimum": true,
+                        "description": "Source-recorded duration of each group session in this declaration, not an alias for individual interview duration.",
+                        "minimum": 0
+                      },
+                      "collectors_per_session": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991,
+                        "description": "Collectors required concurrently for each group session, drawn from enumerator_count. No default facilitator count is assumed."
+                      },
+                      "sample_size": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 9007199254740991
+                      }
+                    }
+                  }
+                }
               },
               "collection_tool": {
                 "type": "string",
@@ -69914,7 +70121,8 @@
               "mixed",
               "corporate_telemetry",
               "platform_telemetry"
-            ]
+            ],
+            "description": "Explicit public documentary survey tables do not require caller fieldwork metadata or become direct field coverage. Contradictory explicit field origins still require reconciliation."
           },
           "collection_method": {
             "type": "string",
@@ -73307,7 +73515,7 @@
           },
           "code": {
             "type": "string",
-            "description": "Stable rejection code, including OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE and DUPLICATE_COMPARISON_OPTION_ID."
+            "description": "Codes: FIELD_PROVENANCE_REQUIRED, FIELD_PROVENANCE_CONFLICT, FIELDWORK_CAPACITY_CONTRADICTION, SOURCE_INDEPENDENCE_CONTRADICTION, SOURCE_VERIFICATION_CONTRADICTION, FIELD_SOURCE_MODALITY_CONFLICT, DECISION_GEOGRAPHY_SCOPE_REQUIRED, DECISION_SCOPE_REQUIRED, DECISION_SCOPE_REVIEW_REQUIRED, DECISION_SCOPE_CROSS_CHECK_LIMIT, SOURCE_EXTRACTION_INVALID, SOURCE_EXTRACTION_REFERENCE_CONFLICT, ADVERSE_SOURCE_REVIEW_REQUIRED, INVALID_CLAIM_INPUT, OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Correct indexed evidence_input_feedback/evidence_fit paths and missing_fields against originals. INVALID_CLAIM_INPUT is HTTP 422 on claim-consuming REST routes; correct root or decision_result claim/citation paths in details/validation_errors without deleting adverse evidence. Never invent or relabel facts. Explicit adverse states need review, not approved support. These checks do not authenticate sources or authorize action. Recovery: /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
           },
           "calibration_disposition": {
             "$ref": "#/components/schemas/CalibrationDisposition"
@@ -73377,7 +73585,7 @@
           },
           "code": {
             "type": "string",
-            "description": "Stable rejection code, including OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE and DUPLICATE_COMPARISON_OPTION_ID."
+            "description": "Codes: FIELD_PROVENANCE_REQUIRED, FIELD_PROVENANCE_CONFLICT, FIELDWORK_CAPACITY_CONTRADICTION, SOURCE_INDEPENDENCE_CONTRADICTION, SOURCE_VERIFICATION_CONTRADICTION, FIELD_SOURCE_MODALITY_CONFLICT, DECISION_GEOGRAPHY_SCOPE_REQUIRED, DECISION_SCOPE_REQUIRED, DECISION_SCOPE_REVIEW_REQUIRED, DECISION_SCOPE_CROSS_CHECK_LIMIT, SOURCE_EXTRACTION_INVALID, SOURCE_EXTRACTION_REFERENCE_CONFLICT, ADVERSE_SOURCE_REVIEW_REQUIRED, INVALID_CLAIM_INPUT, OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Correct indexed evidence_input_feedback/evidence_fit paths and missing_fields against originals. INVALID_CLAIM_INPUT is HTTP 422 on claim-consuming REST routes; correct root or decision_result claim/citation paths in details/validation_errors without deleting adverse evidence. Never invent or relabel facts. Explicit adverse states need review, not approved support. These checks do not authenticate sources or authorize action. Recovery: /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
           },
           "message": {
             "type": "string"
@@ -73538,7 +73746,7 @@
           },
           "code": {
             "type": "string",
-            "description": "Stable rejection code, including OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE and DUPLICATE_COMPARISON_OPTION_ID."
+            "description": "Codes: FIELD_PROVENANCE_REQUIRED, FIELD_PROVENANCE_CONFLICT, FIELDWORK_CAPACITY_CONTRADICTION, SOURCE_INDEPENDENCE_CONTRADICTION, SOURCE_VERIFICATION_CONTRADICTION, FIELD_SOURCE_MODALITY_CONFLICT, DECISION_GEOGRAPHY_SCOPE_REQUIRED, DECISION_SCOPE_REQUIRED, DECISION_SCOPE_REVIEW_REQUIRED, DECISION_SCOPE_CROSS_CHECK_LIMIT, SOURCE_EXTRACTION_INVALID, SOURCE_EXTRACTION_REFERENCE_CONFLICT, ADVERSE_SOURCE_REVIEW_REQUIRED, INVALID_CLAIM_INPUT, OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Correct indexed evidence_input_feedback/evidence_fit paths and missing_fields against originals. INVALID_CLAIM_INPUT is HTTP 422 on claim-consuming REST routes; correct root or decision_result claim/citation paths in details/validation_errors without deleting adverse evidence. Never invent or relabel facts. Explicit adverse states need review, not approved support. These checks do not authenticate sources or authorize action. Recovery: /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
           }
         },
         "additionalProperties": true
@@ -74708,7 +74916,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-08.engine-contract.1"
+    "deployment_revision": "2026-10-08.engine-contract.2"
   },
   "response_contract_version": "2026-05-01.v1"
 }

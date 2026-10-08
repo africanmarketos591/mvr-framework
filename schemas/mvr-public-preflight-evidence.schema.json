@@ -24,11 +24,11 @@
     },
     "evidence_origin": {
       "type": "string",
-      "description": "Alias for source_class. Source-class precedence: source_class, evidence_origin, source_family, then evidence_type."
+      "description": "Declared source origin. Explicit public/documentary sources are not caller fieldwork solely because evidence_type is survey. Conflicting explicit field origins still block; never relabel to pass."
     },
     "source_family": {
       "type": "string",
-      "description": "Compatibility origin label; source_class takes precedence."
+      "description": "Compatibility origin label. Explicit field/public conflicts, including provenance_ledger.source_family, require reconciliation; one label cannot erase another."
     },
     "stakeholder_class": {
       "type": "string",
@@ -203,7 +203,7 @@
     "collection_context": {
       "type": "object",
       "additionalProperties": true,
-      "description": "Source-grounded collection declarations, not source authentication. Unknown facts must remain missing; do not invent values to pass. Field decision use requires source modality, collector relationship, interview mode, source-document identity and an explicit parent-source list. Individual face-to-face/telephone collection also requires staffing, duration, total available minutes per collector and sample size. Independent verification labels require a separate reviewer relationship; persisted review is still checked separately.",
+      "description": "Source-grounded collection declarations, not source authentication. Unknown facts must remain missing; do not invent values to pass. Field decision use requires source modality, collector relationship, interview mode, source-document identity and an explicit parent-source list. Collector-administered modes require staffing, duration, available minutes per collector and sample size. Group modes additionally require session_count, participants_per_session, session_duration_minutes and collectors_per_session, never inferred from an individual interview duration. Online, observation and administrative_record modes require collection_administration; self-administered online and automated observation/record sources do not need invented collector capacity. Explicit public/documentary origins are not caller fieldwork solely because evidence_type is survey; conflicting explicit field origins still block. Independent verification labels require a separate reviewer relationship; persisted review is still checked separately.",
       "properties": {
         "source_modality": {
           "type": "string",
@@ -253,6 +253,16 @@
             "unknown"
           ]
         },
+        "collection_administration": {
+          "type": "string",
+          "enum": [
+            "collector_administered",
+            "self_administered",
+            "automated",
+            "unknown"
+          ],
+          "description": "Source-grounded administration, required for online, observation and administrative_record modes. self_administered is supported for online; automated for observation or administrative_record. Face-to-face, telephone and group modes are collector-administered and cannot opt out."
+        },
         "enumerator_count": {
           "type": "integer",
           "minimum": 1,
@@ -260,17 +270,164 @@
         },
         "interview_duration_minutes": {
           "type": "number",
-          "exclusiveMinimum": 0
+          "exclusiveMinimum": 0,
+          "description": "Collector time per individual interview or per observed/processed sample record for collector-administered non-group modes."
         },
         "fieldwork_window_minutes": {
           "type": "number",
           "exclusiveMinimum": 0,
           "description": "Total available collection minutes per collector across the entire period, not daily or team-person-minutes."
         },
+        "session_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "description": "Actual number of group sessions in the source records."
+        },
+        "participants_per_session": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "description": "Source-grounded maximum participants in any session. Sample size cannot exceed session_count times this bound; no default group size is assumed."
+        },
+        "session_duration_minutes": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Source-recorded duration of each group session in this declaration, not an alias for individual interview duration."
+        },
+        "collectors_per_session": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991,
+          "description": "Collectors required concurrently for each group session, drawn from enumerator_count. No default facilitator count is assumed."
+        },
         "sample_size": {
           "type": "integer",
           "minimum": 1,
           "maximum": 9007199254740991
+        },
+        "source_extraction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_ref",
+            "fields"
+          ],
+          "description": "Optional caller-supplied second reading of source facts for conflict comparison only. Not independently authenticated; cannot supply missing primary declarations or establish source authenticity.",
+          "properties": {
+            "source_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "fields": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "source_modality": {
+                  "type": "string",
+                  "enum": [
+                    "direct_observation",
+                    "documentary",
+                    "secondary_summary",
+                    "unknown"
+                  ]
+                },
+                "collector_relationship": {
+                  "type": "string",
+                  "enum": [
+                    "independent",
+                    "employee",
+                    "company_staff",
+                    "internal",
+                    "contractor",
+                    "partner",
+                    "self_collected",
+                    "unknown"
+                  ]
+                },
+                "reviewer_relationship": {
+                  "type": "string",
+                  "enum": [
+                    "independent",
+                    "employee",
+                    "company_staff",
+                    "internal",
+                    "contractor",
+                    "partner",
+                    "self_collected",
+                    "unknown"
+                  ]
+                },
+                "interview_mode": {
+                  "type": "string",
+                  "enum": [
+                    "face_to_face",
+                    "telephone",
+                    "online",
+                    "focus_group",
+                    "group_interview",
+                    "observation",
+                    "administrative_record",
+                    "unknown"
+                  ]
+                },
+                "collection_administration": {
+                  "type": "string",
+                  "enum": [
+                    "collector_administered",
+                    "self_administered",
+                    "automated",
+                    "unknown"
+                  ],
+                  "description": "Source-grounded administration, required for online, observation and administrative_record modes. self_administered is supported for online; automated for observation or administrative_record. Face-to-face, telephone and group modes are collector-administered and cannot opt out."
+                },
+                "enumerator_count": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "interview_duration_minutes": {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "description": "Collector time per individual interview or per observed/processed sample record for collector-administered non-group modes."
+                },
+                "fieldwork_window_minutes": {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "description": "Total available collection minutes per collector across the entire period, not daily or team-person-minutes."
+                },
+                "session_count": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991,
+                  "description": "Actual number of group sessions in the source records."
+                },
+                "participants_per_session": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991,
+                  "description": "Source-grounded maximum participants in any session. Sample size cannot exceed session_count times this bound; no default group size is assumed."
+                },
+                "session_duration_minutes": {
+                  "type": "number",
+                  "exclusiveMinimum": 0,
+                  "description": "Source-recorded duration of each group session in this declaration, not an alias for individual interview duration."
+                },
+                "collectors_per_session": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991,
+                  "description": "Collectors required concurrently for each group session, drawn from enumerator_count. No default facilitator count is assumed."
+                },
+                "sample_size": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -278,7 +435,7 @@
       "type": "integer",
       "minimum": 1,
       "maximum": 9007199254740991,
-      "description": "Actual sample size; required for individual face-to-face/telephone interviews, not invented for documentary evidence."
+      "description": "Actual sample size; required for collector-administered modes, including groups. Group sample cannot exceed session_count times participants_per_session. All supplied aliases must agree; never invent a sample for documentary or self-administered evidence."
     },
     "survey_payload": {
       "type": "object",
