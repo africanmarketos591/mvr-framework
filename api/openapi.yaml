@@ -3086,8 +3086,8 @@
     },
     "/v1/review-room/{room_id}/synthesis": {
       "get": {
-        "summary": "Summarize review-room voting, challenges, and pending evidence requests.",
-        "description": "Summarize review-room voting, challenges, and pending evidence requests.",
+        "summary": "Summarize review-room voting, challenges, and evidence requests; supply the creation project_id query for a project-scoped room.",
+        "description": "Summarize review-room voting, challenges, and evidence requests; supply the creation project_id query for a project-scoped room.",
         "parameters": [
           {
             "name": "room_id",
@@ -3096,6 +3096,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Use the same project_id used at room creation. Required to locate a project-scoped room; omit only for an unscoped room. room_id alone does not search across projects, and omission can return not_found."
           }
         ],
         "x-mvr-registry-route": "/v1/review-room/:room_id/synthesis",
@@ -3862,13 +3872,13 @@
     },
     "/v1/cascade-runs": {
       "post": {
-        "summary": "Run cascade impact scans for regulatory shocks, evidence expiry, and market events.",
-        "description": "Cascade impact scan runner. Production requires durable run storage and lifecycle webhook/outbox monitoring.",
+        "summary": "Evaluate one exact stored watchlist; previews do not persist domain state. No dependency propagation, source verification or entity verdict.",
+        "description": "Exact active stored-watchlist rules only. No dependency propagation or entity transitions. Preview performs no domain writes or idempotency replay; authentication, accounting and security logs still apply. Durable non-preview POST requires Idempotency-Key and production durable run storage.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/cascade-runs",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
-          "async_orchestration",
+          "exact_watchlist_evaluation",
           "requires_kv",
           "plan_gated",
           "board_safe_supported"
@@ -3892,6 +3902,20 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CascadeRunResponse"
+                }
               }
             }
           },
@@ -3900,12 +3924,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -3915,12 +3953,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -3930,12 +3982,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -3945,12 +4011,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -3960,12 +4040,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -3975,16 +4069,41 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
           }
+        },
+        "x-mvr-idempotency-condition": {
+          "required_when": "durable_non_preview_post",
+          "ignored_when": [
+            "simulate=true",
+            "demo_mode=true",
+            "authenticated_sandbox",
+            "authenticated_strict_trial"
+          ],
+          "preview_persistence": "none",
+          "accounting_and_security_logs": "still_apply"
         },
         "requestBody": {
           "required": true,
@@ -3992,6 +4111,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "additionalProperties": true,
                 "properties": {
                   "output_mode": {
                     "type": "string",
@@ -4009,115 +4129,241 @@
                       "strict_calibrated"
                     ]
                   },
-                  "subject": {
-                    "$ref": "#/components/schemas/UtilitySubject"
-                  },
-                  "market_scope": {
-                    "$ref": "#/components/schemas/UtilityMarketScope"
-                  },
-                  "target_market": {
-                    "$ref": "#/components/schemas/UtilityMarketScope"
-                  },
-                  "entity_archetype": {
-                    "type": "string"
-                  },
-                  "category": {
-                    "type": "string"
+                  "completion_webhook_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "pattern": "^https://",
+                    "description": "HTTPS public hostname only; runtime rejects local/private destinations and unsafe redirects."
                   },
                   "country": {
                     "type": "string"
                   },
-                  "sector": {
-                    "type": "string"
-                  },
-                  "entity_name": {
+                  "entity_archetype": {
                     "type": "string"
                   },
                   "project_id": {
-                    "type": "string"
-                  },
-                  "analysis_date": {
                     "type": "string",
-                    "description": "ISO calendar date or timestamp."
-                  },
-                  "analysis_timezone": {
-                    "type": "string"
-                  },
-                  "evidence_pack": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/EvidenceItem"
-                    }
-                  },
-                  "compiled_pack": {
-                    "$ref": "#/components/schemas/UtilityCompiledPack"
-                  },
-                  "cascade_run_id": {
-                    "type": "string"
-                  },
-                  "run_id": {
-                    "type": "string"
-                  },
-                  "trigger_event": {
-                    "type": "string"
-                  },
-                  "trigger": {
-                    "type": "string"
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
                   },
                   "watchlist_id": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
                   },
                   "watchlist_ref": {
-                    "type": "string"
-                  },
-                  "scope": {
                     "anyOf": [
                       {
-                        "type": "string"
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120,
+                        "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
                       },
                       {
                         "type": "object",
-                        "additionalProperties": true,
-                        "description": "Caller-supplied extension metadata; no additional fields are interpreted by this contract."
+                        "additionalProperties": false,
+                        "properties": {
+                          "project_id": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 120,
+                            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                          },
+                          "watchlist_id": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 120,
+                            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                          }
+                        }
                       }
                     ]
                   },
-                  "scheduled_scan": {
+                  "cascade_run_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                  },
+                  "run_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                  },
+                  "trigger": {
+                    "type": "string",
+                    "enum": [
+                      "school_fees_window",
+                      "harvest_inflow",
+                      "harvest_outflow",
+                      "pre_election_hoarding",
+                      "post_election_normalisation",
+                      "religious_fasting",
+                      "religious_feasting",
+                      "market_day_cycle",
+                      "salary_cycle_peak",
+                      "salary_cycle_trough",
+                      "flooding_disruption",
+                      "drought_period",
+                      "festive_season",
+                      "fuel_shortage",
+                      "lab_window",
+                      "formalization_wave",
+                      "regulatory_shock",
+                      "evidence_staleness",
+                      "evidence_expiry",
+                      "scheduled_scan"
+                    ]
+                  },
+                  "trigger_event": {
+                    "type": "string",
+                    "enum": [
+                      "school_fees_window",
+                      "harvest_inflow",
+                      "harvest_outflow",
+                      "pre_election_hoarding",
+                      "post_election_normalisation",
+                      "religious_fasting",
+                      "religious_feasting",
+                      "market_day_cycle",
+                      "salary_cycle_peak",
+                      "salary_cycle_trough",
+                      "flooding_disruption",
+                      "drought_period",
+                      "festive_season",
+                      "fuel_shortage",
+                      "lab_window",
+                      "formalization_wave",
+                      "regulatory_shock",
+                      "evidence_staleness",
+                      "evidence_expiry",
+                      "scheduled_scan"
+                    ]
+                  },
+                  "market_scope": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "country": {
+                        "type": "string",
+                        "pattern": "\\S"
+                      }
+                    }
+                  },
+                  "simulate": {
                     "type": "boolean"
                   },
                   "demo_mode": {
                     "type": "boolean"
                   },
-                  "simulate": {
+                  "scheduled_scan": {
                     "type": "boolean"
                   },
-                  "entity": {
-                    "type": "string"
-                  },
                   "current_scores": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "number",
-                      "minimum": 0,
-                      "maximum": 100
-                    }
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 100
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "dimensions": {
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 100
+                            }
+                          },
+                          "executive": {
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 100
+                            }
+                          }
+                        },
+                        "anyOf": [
+                          {
+                            "required": [
+                              "dimensions"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "executive"
+                            ]
+                          }
+                        ],
+                        "additionalProperties": true
+                      }
+                    ]
                   },
                   "previous_scores": {
-                    "type": "object",
-                    "additionalProperties": {
-                      "type": "number",
-                      "minimum": 0,
-                      "maximum": 100
-                    }
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 100
+                        }
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "dimensions": {
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 100
+                            }
+                          },
+                          "executive": {
+                            "type": "object",
+                            "additionalProperties": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 100
+                            }
+                          }
+                        },
+                        "anyOf": [
+                          {
+                            "required": [
+                              "dimensions"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "executive"
+                            ]
+                          }
+                        ],
+                        "additionalProperties": true
+                      }
+                    ]
                   },
                   "active_events": {
                     "type": "array",
+                    "maxItems": 100,
                     "items": {
                       "type": "object",
+                      "required": [
+                        "event_type",
+                        "status"
+                      ],
                       "properties": {
-                        "type": {
-                          "type": "string"
-                        },
                         "event_type": {
                           "type": "string",
                           "enum": [
@@ -4141,71 +4387,169 @@
                             "evidence_staleness"
                           ]
                         },
-                        "label": {
-                          "type": "string"
-                        },
-                        "risk": {
-                          "type": "string"
-                        },
-                        "severity": {
-                          "type": "string"
-                        },
-                        "confidence": {
-                          "anyOf": [
-                            {
-                              "type": "number"
-                            },
-                            {
-                              "type": "string"
-                            }
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "active",
+                            "inactive"
                           ]
-                        },
-                        "freshness_date": {
-                          "type": "string",
-                          "description": "ISO calendar date or timestamp."
-                        },
-                        "observed_at": {
-                          "type": "string",
-                          "description": "ISO calendar date or timestamp."
-                        },
-                        "signal_date": {
-                          "type": "string",
-                          "description": "ISO calendar date or timestamp."
-                        },
-                        "created_at": {
-                          "type": "string",
-                          "description": "ISO calendar date or timestamp."
-                        },
-                        "source_period_end": {
-                          "type": "string",
-                          "description": "ISO calendar date or timestamp."
-                        },
-                        "source": {
-                          "type": "string"
-                        },
-                        "impact_score": {
-                          "type": "number",
-                          "minimum": 0,
-                          "maximum": 100
-                        },
-                        "intensity": {
-                          "type": "number",
-                          "minimum": 0,
-                          "maximum": 1
                         }
                       },
                       "additionalProperties": true
                     }
-                  },
-                  "completion_webhook_url": {
-                    "type": "string",
-                    "format": "uri",
-                    "pattern": "^https://",
-                    "description": "HTTPS public hostname only; runtime rejects local/private destinations and unsafe redirects."
                   }
                 },
-                "additionalProperties": true,
-                "description": "Requires a trigger, scope or explicit scheduled_scan/demo flag. Scans stored active watchlists, filtered by country/archetype; watchlist_id/ref currently signal intake, not exact watchlist filtering. Simulated alerts require explicit demo_mode or simulate=true."
+                "allOf": [
+                  {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "project_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "watchlist_ref"
+                        ],
+                        "properties": {
+                          "watchlist_ref": {
+                            "type": "object",
+                            "required": [
+                              "project_id"
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "watchlist_id"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "watchlist_ref"
+                        ],
+                        "properties": {
+                          "watchlist_ref": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 120,
+                                "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+                              },
+                              {
+                                "type": "object",
+                                "required": [
+                                  "watchlist_id"
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "snapshot_id"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "snapshot_ref"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "decision_snapshot_id"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "decision_id"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "decision_check_id"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "evidence_id"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "evidence_ref"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "evidence_refs"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "authority_id"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "authority_ref"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "authority_refs"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "dependencies"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "dependency_graph"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "entity"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "entity_id"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "entity_name"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "subject"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "scope"
+                      ]
+                    }
+                  ]
+                },
+                "description": "Evaluates one exact active stored watchlist in the authenticated tenant/workspace/project, not a dependency graph, revocation or entity transition. project_id and watchlist_id must resolve from top-level fields or watchlist_ref; duplicate selectors and run-ID aliases must agree exactly. Country/archetype qualifiers must match the stored record. A trigger filters stored rules and never manufactures evidence; evidence_expiry aliases evidence_staleness. Caller scores/events require simulate=true, demo_mode=true or authenticated sandbox/strict-trial preview context. Scores must be actual finite 0-100 numbers. Preview returns simulation_preview only when a stored rule triggers; otherwise needs_review with no fabricated alerts. Preview and GET are no-store and never persist domain inputs/results, run records, idempotency receipts, jobs, webhooks or sinks; supplied Idempotency-Key is ignored. Authentication, policy/rate/usage accounting and metadata-only security logs still run; durable-object reads may initialize scope metadata. Durable non-preview POST requires Idempotency-Key and uses stored operator inputs. Production durable runs require configured durable storage. No route grants execution or verifies source authenticity or external authority."
               }
             }
           }
@@ -4214,8 +4558,8 @@
     },
     "/v1/cascade-runs/{run_id}": {
       "get": {
-        "summary": "Retrieve cascade run state.",
-        "description": "Cascade run retrieval surface.",
+        "summary": "Read a retained exact-watchlist run without writes; legacy records require revalidation and never establish current authority.",
+        "description": "Read-only no-store retrieval. Legacy runs require revalidation; no source truth, external authority or execution permission is established.",
         "parameters": [
           {
             "name": "run_id",
@@ -4229,7 +4573,7 @@
         "x-mvr-registry-route": "/v1/cascade-runs/:run_id",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
-          "async_orchestration",
+          "exact_watchlist_evaluation",
           "requires_kv",
           "plan_gated",
           "board_safe_supported"
@@ -4253,6 +4597,20 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CascadeRunResponse"
+                }
               }
             }
           },
@@ -4261,12 +4619,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -4276,12 +4648,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -4291,12 +4677,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -4306,12 +4706,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -4321,12 +4735,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -4336,12 +4764,26 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              },
+              "Cache-Control": {
+                "description": "No cascade preview or retrieval caching; also emitted on durable runs.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "no-store, max-age=0"
               }
             },
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/CascadeRunResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -14013,7 +14455,7 @@
     },
     "/v1/watchlist": {
       "post": {
-        "summary": "Create, list, update, delete, or evaluate market watch rules.",
+        "summary": "Manage market watch rules. renew_scheduled_execution_authority (legacy renew_authority) renews the credential reference for existing scheduled rules, not external institutional authority.",
         "description": "Deterministic watch rules only. Notifications require a delivery worker, signing, retries, and delivery logs.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/watchlist",
@@ -14042,6 +14484,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatchlistResponse"
+                }
               }
             }
           },
@@ -14164,7 +14613,7 @@
         }
       },
       "get": {
-        "summary": "Create, list, update, delete, or evaluate market watch rules.",
+        "summary": "Manage market watch rules. renew_scheduled_execution_authority (legacy renew_authority) renews the credential reference for existing scheduled rules, not external institutional authority.",
         "description": "Deterministic watch rules only. Notifications require a delivery worker, signing, retries, and delivery logs.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/watchlist",
@@ -14193,6 +14642,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WatchlistResponse"
+                }
               }
             }
           },
@@ -23124,8 +23580,8 @@
     },
     "/v1/approval-workflow": {
       "post": {
-        "summary": "Record approval workflow events such as evidence reviewed, evidence approved, board pack locked, and decision released.",
-        "description": "Record approval workflow events such as evidence reviewed, evidence approved, board pack locked, and decision released.",
+        "summary": "Record target-bound approval annotations. Event names do not lock, release, attest source truth or grant execution authority.",
+        "description": "Record target-bound approval annotations. Event names do not lock, release, attest source truth or grant execution authority.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/approval-workflow",
         "x-mvr-maturity": "release_candidate",
@@ -26972,8 +27428,8 @@
     },
     "/v1/decision-snapshot/lock": {
       "post": {
-        "summary": "Lock an auditable decision snapshot so it becomes immutable for governance review.",
-        "description": "Lock an auditable decision snapshot so it becomes immutable for governance review.",
+        "summary": "Preserve an exact snapshot hash/revision with a machine-only receipt; no human attestation or execution authority.",
+        "description": "Preserve an exact snapshot hash/revision with a machine-only receipt; no human attestation or execution authority.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/decision-snapshot/lock",
         "x-mvr-maturity": "release_candidate",
@@ -27114,54 +27570,40 @@
                     "type": "string",
                     "minLength": 1
                   },
+                  "snapshot_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "Exact snapshot_hash returned by create/get; never the decision-check response_hash."
+                  },
+                  "expected_revision": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Exact revision returned with snapshot_hash."
+                  },
                   "decision_id": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "description": "Optional consistency check, not a substitute for snapshot_id."
                   },
                   "safe_harbor_days": {
                     "type": "integer",
                     "minimum": 0,
                     "maximum": 365
                   },
-                  "locked_by": {
-                    "type": "string"
-                  },
                   "human_review_acknowledged": {
-                    "type": "boolean"
-                  },
-                  "human_review_acknowledgement": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "properties": {
-                      "acknowledged": {
-                        "type": "boolean"
-                      },
-                      "acknowledged_by": {
-                        "type": "string"
-                      },
-                      "acknowledged_at": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "scope": {
-                        "type": "string"
-                      }
-                    }
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ],
+                    "description": "Optional false only. True or an acknowledgement/attestation object is forbidden; caller assertions are not human standing."
                   }
                 },
-                "anyOf": [
-                  {
-                    "required": [
-                      "snapshot_id"
-                    ]
-                  },
-                  {
-                    "required": [
-                      "decision_id"
-                    ]
-                  }
+                "required": [
+                  "snapshot_id",
+                  "snapshot_hash",
+                  "expected_revision"
                 ],
-                "description": "Locks an existing server-bound snapshot in this tenant/workspace. Requires matching persisted decision_check_id and response_hash, unchanged server material, a non-null verdict, non-zero evaluated evidence count and Idempotency-Key. Acknowledgement is recorded, not fabricated: absent human acknowledgement adds a reliance warning. Abstentions without a verdict or evidence cannot lock; retain their decision-check audit response instead. Locking is not execution authorization, consent or outcome enrollment. Never invent acknowledgement on the user's behalf."
+                "description": "Requires Idempotency-Key, an authenticated credential with a server-provisioned principal and permitted lifecycle role, and the durable transaction adapter. An API key or caller-supplied role is not a verified human. Lock preserves unchanged server-bound material and increments revision; stale hash/revision returns conflict (409), missing binding invalid_input (422), unavailable durable storage 503. Persisted abstained/refused/refusal states may receive a non_authorizing_terminal_record even without a verdict or evaluated evidence; request-supplied terminal claims cannot qualify. Other locks require a verdict and non-empty evaluated evidence. A machine_snapshot_lock or terminal receipt always has human_attested, reliance_authorized and execution_authorized false. Human claims fail closed with HUMAN_ATTESTATION_UNAVAILABLE (403). Legacy unversioned records must be recreated. GET/create/lock retain snapshot_id, snapshot_hash, revision and lock_receipt at root in full/compact client_safe/board_safe; draft lock_receipt is null. No receipt verifies human standing, source truth or execution permission."
               }
             }
           }
@@ -27382,7 +27824,7 @@
     },
     "/v1/correction-log": {
       "post": {
-        "summary": "Record or list corrections, amendments, and post-decision clarifications while preserving original hashes.",
+        "summary": "Record append-only corrections or list a bounded scoped page with exact snapshot, decision, or correction filters; original hashes are preserved.",
         "description": "Append-only correction log. It records corrections and amendments without rewriting locked decisions.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/correction-log",
@@ -27414,6 +27856,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CorrectionLogResponse"
+                }
               }
             }
           },
@@ -27532,29 +27981,33 @@
                     ]
                   },
                   "limit": {
-                    "anyOf": [
-                      {
-                        "type": "number"
-                      },
-                      {
-                        "type": "string"
-                      }
-                    ]
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200,
+                    "default": 50,
+                    "description": "Workspace storage page size before filtering, not a requested number of matches. Runtime clamps parsed values to 1-200."
                   },
                   "cursor": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Opaque workspace-page continuation. Preserve filters and limit; an empty filtered page may still have a continuation. No reverse or complete-history guarantee."
                   },
                   "action": {
                     "type": "string"
                   },
                   "snapshot_id": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "\\S",
+                    "description": "Trimmed exact correction-record filter, ANDed with other selectors; not a fuzzy entity lookup."
                   },
                   "decision_id": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "\\S",
+                    "description": "Trimmed exact correction-record filter, ANDed with other selectors; not a fuzzy entity lookup."
                   },
                   "original_snapshot_id": {
-                    "type": "string"
+                    "type": "string",
+                    "pattern": "\\S",
+                    "description": "Trimmed exact alias of snapshot_id; supplying both requires equality."
                   },
                   "correction_reason": {
                     "type": "string"
@@ -27684,19 +28137,84 @@
                   },
                   "created_by": {
                     "type": "string"
+                  },
+                  "correction_id": {
+                    "type": "string",
+                    "pattern": "\\S",
+                    "description": "Trimmed exact correction lookup in authenticated tenant/workspace, ANDed with any other filters; cursor and limit do not paginate this lookup."
                   }
                 },
                 "additionalProperties": true,
-                "description": "action=list reads scoped history. Recording requires snapshot/decision identifier and a reason of at least 12 characters. Original records and hashes are preserved."
+                "description": "GET or action=list reads one bounded tenant/workspace correction page. Optional snapshot_id, original_snapshot_id, decision_id and correction_id are trimmed non-empty exact identifiers; combined filters are ANDed and both snapshot aliases must agree. correction_id uses a direct scoped lookup with no continuation; other filters apply to a workspace scan page, so zero matches may still have a cursor. Keep identical filters and limit while following cursor until list_complete; correction_count is only this page. filters_applied and pagination_scope explain the result. Non-list POST records a correction and needs a snapshot/decision target plus a reason of at least 12 characters; this does not rewrite original records or hashes."
               }
             }
           }
         }
       },
       "get": {
-        "summary": "Record or list corrections, amendments, and post-decision clarifications while preserving original hashes.",
+        "summary": "Record append-only corrections or list a bounded scoped page with exact snapshot, decision, or correction filters; original hashes are preserved.",
         "description": "Append-only correction log. It records corrections and amendments without rewriting locked decisions.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "snapshot_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "description": "Trimmed exact correction-record filter, ANDed with other selectors; not a fuzzy entity lookup."
+          },
+          {
+            "name": "original_snapshot_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "description": "Trimmed exact alias of snapshot_id; supplying both requires equality."
+          },
+          {
+            "name": "decision_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "description": "Trimmed exact correction-record filter, ANDed with other selectors; not a fuzzy entity lookup."
+          },
+          {
+            "name": "correction_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "\\S"
+            },
+            "description": "Trimmed exact correction lookup in authenticated tenant/workspace, ANDed with any other filters; cursor and limit do not paginate this lookup."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 200,
+              "default": 50
+            },
+            "description": "Workspace storage page size before filtering, not a requested number of matches. Runtime clamps parsed values to 1-200."
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Opaque workspace-page continuation. Preserve filters and limit; an empty filtered page may still have a continuation. No reverse or complete-history guarantee."
+          }
+        ],
         "x-mvr-registry-route": "/v1/correction-log",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -27726,6 +28244,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CorrectionLogResponse"
+                }
               }
             }
           },
@@ -29746,6 +30271,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecisionSnapshotResponse"
+                }
+              }
             }
           },
           "400": {
@@ -31415,6 +31947,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CapabilitiesResponse"
+                }
               }
             }
           },
@@ -46797,8 +47336,8 @@
     },
     "/v1/evidence-audit": {
       "post": {
-        "summary": "Modality-aware evidence audit. Field packs are checked for fabrication signatures; public packs are checked for provenance traceability, contradiction, and observed-to-proxy integrity.",
-        "description": "Audit evidence packs for provenance, telemetry, public-document, and fieldwork anomaly risks.",
+        "summary": "Heuristic numeric field/default anomaly checks and declared-public metadata checks; telemetry-only structure summary. Not documentary truth or source verification.",
+        "description": "Heuristic numeric field/default anomaly checks and declared-public metadata checks; telemetry-only structure summary, not documentary truth.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/evidence-audit",
         "x-mvr-maturity": "release_candidate",
@@ -46825,6 +47364,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvidenceAuditResponse"
+                }
               }
             }
           },
@@ -46898,7 +47444,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RequestErrorResponse"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RequestErrorResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/EvidenceAuditResponse"
+                    }
+                  ]
                 }
               }
             }
@@ -46963,7 +47516,12 @@
                         },
                         "structured_values": {
                           "type": "object",
-                          "additionalProperties": true
+                          "additionalProperties": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100
+                          },
+                          "description": "Only actual finite numeric observations; no strings, booleans, nulls, arrays or nested objects. At least one property is required for items selected into the numeric anomaly branch, not for public metadata-only items."
                         },
                         "provenance_ledger": {
                           "type": "object",
@@ -46978,9 +47536,17 @@
                         },
                         "claim": {
                           "type": "string"
+                        },
+                        "public_metrics": {
+                          "type": "object",
+                          "additionalProperties": true,
+                          "description": "Canonical public metrics retain their registry-defined types, including booleans. They are not interchangeable with field structured_values."
                         }
                       },
-                      "description": "Evidence envelope. Context compilation permits incomplete items; other utility routes apply the current profile-dependent evidence validator. This schema does not certify provenance, freshness, privacy, or decision eligibility."
+                      "description": "Evidence envelope. Context compilation permits incomplete items; other utility routes apply the current profile-dependent evidence validator. This schema does not certify provenance, freshness, privacy, or decision eligibility.",
+                      "x-numeric-audit-item-schema": {
+                        "$ref": "#/components/schemas/NumericEvidenceAuditItem"
+                      }
                     },
                     "minItems": 1,
                     "maxItems": 500
@@ -47000,7 +47566,7 @@
                 "required": [
                   "evidence_pack"
                 ],
-                "description": "Requires 1-500 evidence_pack items. compiled_pack is not a substitute for this handler. Shared utility evidence validation still applies. Advisory audit is heuristic anomaly/provenance analysis, not proof of fraud or truth. strict_calibrated returns insufficient_calibration because no certified anomaly model is provided."
+                "description": "Requires 1-500 evidence_pack items; compiled_pack is not a substitute. Shared EvidenceItem normalization and validation run first. Numeric anomaly detection selects field_research items, or the whole pack only when no public, field or telemetry lane exists. Every selected item needs a normalized non-blank id and a non-array structured_values object with at least one finite number; any invalid selected item rejects the request without partial results. Public items receive declared-metadata/canonical-metric consistency checks, not source verification. Telemetry-only receives a structure summary; telemetry is not audited when public or field items exist. Unclassified items alongside a recognized lane are not audited. assessment_scope identifies branch indices and whether an audit ran. Never invent scores, coerce documentary text or relabel evidence to pass validation. strict_calibrated returns HTTP 422 insufficient_calibration; additional evidence does not supply the absent certified anomaly model."
               }
             }
           }
@@ -55023,7 +55589,7 @@
     },
     "/v1/export": {
       "post": {
-        "summary": "Convert report, decision, or evidence payloads into JSON, markdown, docx-ready, pdf-ready, slides-ready, or CSV-ready structures.",
+        "summary": "Export a verified persisted decision reference or an evidence-register-only presentation. No authored verdict, new authority, historical scope relabeling or binary file generation.",
         "description": "Returns JSON/Markdown/CSV or pdf-ready/docx-ready/slides-ready structures; it does not generate binary files.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/export",
@@ -55162,7 +55728,6 @@
               "schema": {
                 "type": "object",
                 "additionalProperties": true,
-                "description": "Exports supplied artifacts under output controls. Additional caller context is accepted for compatibility but is not a new evidence source or authorization.",
                 "properties": {
                   "format": {
                     "type": "string",
@@ -55188,7 +55753,8 @@
                     "type": "array",
                     "items": {
                       "type": "object"
-                    }
+                    },
+                    "maxItems": 500
                   },
                   "compiled_pack": {
                     "type": "object",
@@ -55256,7 +55822,72 @@
                     },
                     "additionalProperties": false
                   }
-                }
+                },
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/PresentationReference"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "evidence_register"
+                    ],
+                    "properties": {
+                      "evidence_register": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        },
+                        "maxItems": 500
+                      }
+                    },
+                    "not": {
+                      "anyOf": [
+                        {
+                          "required": [
+                            "report_pack"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "decision_room"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "decision_result"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "decision_check_id"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "snapshot_id"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "response_hash"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "semantic_decision_hash"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "verdict"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "description": "Historical presentation only: supply a tenant/workspace-scoped persisted decision_check_id and its matching response_hash, or a governed snapshot_id backed by verified server lineage. The server ignores source-authored verdicts, prose and permissions. All supplied references must agree; semantic_decision_hash, when supplied, must match. Supplied project, subject/entity and market/country must match the historical assessment and cannot relabel it. Nested compatibility references are inspected only in named decision containers, at most five levels deep. Successful presentation grants no current reliance or execution; fresh evaluation remains required. Export additionally accepts evidence_register as at most 500 object rows, never an object, scalar or nested array row. Evidence-only content wraps rows under source_assertions.evidence_register with source_material_status=unverified_caller_assertions and source_authenticity_verified=false; canonical blocked boundaries belong to the envelope, never to caller rows. Any capability/use-looking row fields remain untrusted assertions. csv_evidence_register emits only string id, stakeholder_class, evidence_origin and freshness_date values. Explicit empty, null, whitespace-padded or malformed reference IDs/hashes are HTTP 422, never absence or fallback. Hashes identify retained server material, not source truth or a newly signed export receipt."
               }
             }
           }
@@ -62937,8 +63568,8 @@
     },
     "/v1/evidence-run": {
       "post": {
-        "summary": "Agentic evidence run orchestration across entity resolution, completeness, decision readiness, gap planning, and leak scanning.",
-        "description": "Agentic evidence run orchestration across entity resolution, completeness, decision readiness, gap planning, and leak scanning.",
+        "summary": "Evidence planning orchestration. REST requires Idempotency-Key when persist_tasks=true; the governed MCP tool always requires idempotency_key.",
+        "description": "Evidence planning orchestration. REST requires Idempotency-Key when persist_tasks=true; the governed MCP tool always requires idempotency_key. REST requires Idempotency-Key only when persist_tasks=true. The governed MCP tool is conservatively classified state-mutating and always requires idempotency_key, including planning-only calls. These are distinct transport contracts; no unconditional REST requirement is implied.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/evidence-run",
         "x-mvr-maturity": "release_candidate",
@@ -63058,6 +63689,10 @@
               }
             }
           }
+        },
+        "x-mvr-idempotency-condition": {
+          "rest_required_when": "persist_tasks=true",
+          "governed_mcp_required": true
         },
         "requestBody": {
           "required": true,
@@ -67905,7 +68540,7 @@
     },
     "/v1/market-profile/{country}": {
       "get": {
-        "summary": "Return country-level market context including regulatory environment, sector benchmarks, and entry signal summary.",
+        "summary": "Return unverified country planning context. Static values are unsourced template priors, not decision evidence; configured means coverage, not verification.",
         "description": "Country-level market context. Use /v1/regulatory-radar and /v1/benchmark-check for archetype-specific analysis.",
         "parameters": [
           {
@@ -67942,6 +68577,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketProfileResponse"
+                }
               }
             }
           },
@@ -68040,7 +68682,7 @@
     },
     "/v1/market-profile/{country}/{zone}": {
       "get": {
-        "summary": "Return sub-national market context for supported African deployment zones including agent density, market-day cadence, guardian type, informal economy intensity, and channel implications.",
+        "summary": "Return unverified country and zone planning context with datum provenance boundaries. Static priors have unknown sources, as-of dates and uncertainty; not decision evidence.",
         "description": "Static first-pass zone profile for deployment planning; verify with fresh field evidence before city/town launch decisions.",
         "parameters": [
           {
@@ -68086,6 +68728,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MarketProfileResponse"
+                }
               }
             }
           },
@@ -68456,7 +69105,7 @@
     },
     "/v1/deployment-zone-selector": {
       "post": {
-        "summary": "Rank sub-national zones for market or product deployment using static zone profiles, submitted MVR scores, expansion stage, and guardian/channel risk.",
+        "summary": "Heuristic zone planning ranks from unsourced static priors and unverified submitted scores. Includes prior provenance; not live market evidence or launch authorization.",
         "description": "Ranks supported zones using static zone priors and submitted scores. Treat as deployment planning, not board-safe authorization.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/deployment-zone-selector",
@@ -68486,6 +69135,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeploymentZonePlanningResponse"
+                }
               }
             }
           },
@@ -72641,7 +73297,7 @@
     },
     "/v1/narrative-report": {
       "post": {
-        "summary": "Generate a structured narrative report shell from a decision result for rendering by an external document engine.",
+        "summary": "Present a verified persisted decision reference without relabeling historical scope. Source-authored verdicts are ignored; no current reliance or execution permission.",
         "description": "Structured narrative report shell for an external document renderer. Use /v1/export for full export structures.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/narrative-report",
@@ -72777,7 +73433,15 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductReportRequest"
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {},
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/PresentationReference"
+                  }
+                ],
+                "description": "Historical presentation only: supply a tenant/workspace-scoped persisted decision_check_id and its matching response_hash, or a governed snapshot_id backed by verified server lineage. The server ignores source-authored verdicts, prose and permissions. All supplied references must agree; semantic_decision_hash, when supplied, must match. Supplied project, subject/entity and market/country must match the historical assessment and cannot relabel it. Nested compatibility references are inspected only in named decision containers, at most five levels deep. Successful presentation grants no current reliance or execution; fresh evaluation remains required. Export additionally accepts evidence_register as at most 500 object rows, never an object, scalar or nested array row. Evidence-only content wraps rows under source_assertions.evidence_register with source_material_status=unverified_caller_assertions and source_authenticity_verified=false; canonical blocked boundaries belong to the envelope, never to caller rows. Any capability/use-looking row fields remain untrusted assertions. csv_evidence_register emits only string id, stakeholder_class, evidence_origin and freshness_date values. Explicit empty, null, whitespace-padded or malformed reference IDs/hashes are HTTP 422, never absence or fallback. Hashes identify retained server material, not source truth or a newly signed export receipt."
               }
             }
           }
@@ -76390,6 +77054,237 @@
         },
         "additionalProperties": true
       },
+      "DeploymentZonePrior": {
+        "type": "object",
+        "properties": {
+          "contract": {
+            "type": "string",
+            "enum": [
+              "deployment-zone-prior@1"
+            ]
+          },
+          "data_role": {
+            "type": "string",
+            "enum": [
+              "template_prior"
+            ]
+          },
+          "data_origin": {
+            "type": "string",
+            "enum": [
+              "static_template"
+            ]
+          },
+          "applies_to": {
+            "type": "string"
+          },
+          "geography": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "source_status": {
+            "type": "string",
+            "enum": [
+              "unknown"
+            ]
+          },
+          "source_references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "as_of_status": {
+            "type": "string",
+            "enum": [
+              "unknown"
+            ]
+          },
+          "as_of": {
+            "type": "string",
+            "nullable": true
+          },
+          "uncertainty_status": {
+            "type": "string",
+            "enum": [
+              "unknown"
+            ]
+          },
+          "uncertainty": {
+            "type": "number",
+            "nullable": true
+          },
+          "refresh_state": {
+            "type": "string",
+            "enum": [
+              "unknown"
+            ]
+          },
+          "can_be_used_as_evidence": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "decision_scoring_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "static_readiness_prior": {
+            "type": "number"
+          },
+          "static_risk_inputs": {
+            "type": "object",
+            "properties": {
+              "smartphone_pct": {
+                "type": "number"
+              },
+              "agent_density_per_1000": {
+                "type": "number"
+              },
+              "informal_economy_pct": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      },
+      "DeploymentZonePlanningResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "assessment_scope": {
+            "type": "object",
+            "properties": {
+              "contract": {
+                "type": "string",
+                "enum": [
+                  "deployment-zone-planning@1"
+                ]
+              },
+              "ranking_kind": {
+                "type": "string",
+                "enum": [
+                  "heuristic_planning_only"
+                ]
+              },
+              "uses_static_priors": {
+                "type": "boolean",
+                "enum": [
+                  true
+                ]
+              },
+              "source_verification": {
+                "type": "string",
+                "enum": [
+                  "not_performed"
+                ]
+              },
+              "can_be_used_as_evidence": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "decision_scoring_eligible": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "submitted_scores_status": {
+                "type": "string"
+              },
+              "score_formula": {
+                "type": "string"
+              },
+              "submitted_score_dimensions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "entry_mode_and_risk_basis": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "source_limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deployment_zones": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "zone_id": {
+                  "type": "string"
+                },
+                "mvr_readiness_score": {
+                  "type": "number"
+                },
+                "prior_provenance": {
+                  "$ref": "#/components/schemas/DeploymentZonePrior"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "recommended_sequence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "zone_id": {
+                  "type": "string"
+                },
+                "rank": {
+                  "type": "integer"
+                },
+                "mvr_readiness_score": {
+                  "type": "number"
+                },
+                "prior_provenance": {
+                  "$ref": "#/components/schemas/DeploymentZonePrior"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "zone_profiles": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "prior_provenance": {
+                  "$ref": "#/components/schemas/DeploymentZonePrior"
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      },
       "AnalysisUse": {
         "type": "object",
         "required": [
@@ -77165,6 +78060,172 @@
             "enum": [
               false
             ]
+          },
+          "decision_continuity": {
+            "type": "object",
+            "properties": {
+              "record_role": {
+                "type": "string",
+                "enum": [
+                  "historical_assessment"
+                ]
+              },
+              "current_reliance_authorized": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "fresh_evaluation_required": {
+                "type": "boolean",
+                "enum": [
+                  true
+                ]
+              },
+              "evaluated_at": {
+                "type": "string",
+                "nullable": true
+              },
+              "decision_check_id": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "additionalProperties": true
+          },
+          "narrative_report": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "market": {
+                "type": "string"
+              },
+              "verdict_summary": {
+                "type": "string",
+                "nullable": true
+              },
+              "sections": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              },
+              "rendering_note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "format": {
+            "type": "string"
+          },
+          "export_class": {
+            "type": "string"
+          },
+          "content": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "source_assertions": {
+                    "type": "object",
+                    "properties": {
+                      "evidence_register": {
+                        "type": "array",
+                        "maxItems": 500,
+                        "items": {
+                          "type": "object",
+                          "properties": {},
+                          "additionalProperties": true
+                        },
+                        "description": "Untrusted caller-authored rows, never canonical AMOS verdict, capability or output-use fields."
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "source_material_status": {
+                    "type": "string",
+                    "enum": [
+                      "unverified_caller_assertions"
+                    ]
+                  },
+                  "source_authenticity_verified": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "action_authorization": {
+                    "$ref": "#/components/schemas/ActionAuthorizationBoundary"
+                  },
+                  "output_use_authorization": {
+                    "$ref": "#/components/schemas/AnalysisUse"
+                  },
+                  "execution_authorization_state": {
+                    "type": "string",
+                    "enum": [
+                      "not_authorized"
+                    ]
+                  },
+                  "human_review_required": {
+                    "type": "boolean"
+                  }
+                },
+                "additionalProperties": true
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "Object envelope, or markdown wrapping that JSON; never a top-level caller row array. Evidence-only rows are namespaced under source_assertions, unverified and non-authorizing. Canonical blocked boundaries belong to the envelope and are not injected into rows. Ready formats are structures, not binary files. No new source truth, verdict, scope, reliance permission or signature is issued."
+          },
+          "csv_evidence_register": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "stakeholder_class": {
+                  "type": "string"
+                },
+                "evidence_origin": {
+                  "type": "string"
+                },
+                "freshness_date": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Lossy projection of string-valued allowlisted fields only, not verified evidence or a canonical authority surface."
+          },
+          "export_ready_only": {
+            "type": "boolean"
+          },
+          "file_generation": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "renderer_required": {
+            "type": "boolean"
           }
         },
         "additionalProperties": true,
@@ -77531,6 +78592,185 @@
       "DecisionSnapshotResponse": {
         "type": "object",
         "properties": {
+          "code": {
+            "type": "string"
+          },
+          "snapshot_hash": {
+            "type": "string",
+            "nullable": true,
+            "pattern": "^[a-f0-9]{64}$",
+            "description": "Exact current snapshot material binding. Null on unversioned legacy records; not the decision-check response hash."
+          },
+          "revision": {
+            "type": "integer",
+            "nullable": true,
+            "minimum": 1,
+            "description": "Versioned create starts at 1; lock increments once. Null on unversioned legacy records."
+          },
+          "lock_receipt": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "machine_snapshot_lock",
+                  "non_authorizing_terminal_record",
+                  "unverified_legacy_lock_record"
+                ]
+              },
+              "source_snapshot_hash": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "source_revision": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "terminal_state": {
+                "type": "string",
+                "nullable": true,
+                "enum": [
+                  "abstained",
+                  "refused",
+                  "refusal",
+                  null
+                ]
+              },
+              "actor": {
+                "type": "object",
+                "properties": {
+                  "principal_id": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "identity_source": {
+                    "type": "string"
+                  },
+                  "role_source": {
+                    "type": "string"
+                  },
+                  "human_attested": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  }
+                },
+                "additionalProperties": true
+              },
+              "human_attested": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "reliance_authorized": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "execution_authorized": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              }
+            },
+            "additionalProperties": true,
+            "nullable": true,
+            "description": "Null on drafts. Machine preservation only, never human attestation, reliance permission or execution capability."
+          },
+          "human_review_acknowledgement": {
+            "type": "object",
+            "properties": {
+              "acknowledged": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "acknowledged_by": {
+                "type": "string",
+                "nullable": true,
+                "enum": [
+                  null
+                ]
+              },
+              "acknowledged_at": {
+                "type": "string",
+                "nullable": true,
+                "enum": [
+                  null
+                ]
+              },
+              "status": {
+                "type": "string"
+              },
+              "policy": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "human_attestation_status": {
+            "type": "string",
+            "enum": [
+              "not_attested",
+              "unverified_legacy_claim"
+            ]
+          },
+          "immutable_snapshot_hash": {
+            "type": "string",
+            "nullable": true
+          },
+          "public_receipt_hash": {
+            "type": "string",
+            "nullable": true
+          },
+          "record_signature": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "reliance_warning": {
+            "type": "string"
+          },
+          "unverified_legacy_claims": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true,
+            "description": "Historical caller assertions, not attestations. Preserved only under this nonauthorizing namespace."
+          },
+          "snapshot_view_projection": {
+            "type": "object",
+            "properties": {
+              "canonical_record_unchanged": {
+                "type": "boolean",
+                "enum": [
+                  true
+                ]
+              },
+              "original_receipt_hashes_preserved": {
+                "type": "boolean",
+                "enum": [
+                  true
+                ]
+              },
+              "canonical_hash_recomputable_from_view": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
           "confidence_semantics": {
             "type": "object",
             "required": [
@@ -77671,6 +78911,185 @@
           "decision_snapshot": {
             "type": "object",
             "properties": {
+              "code": {
+                "type": "string"
+              },
+              "snapshot_hash": {
+                "type": "string",
+                "nullable": true,
+                "pattern": "^[a-f0-9]{64}$",
+                "description": "Exact current snapshot material binding. Null on unversioned legacy records; not the decision-check response hash."
+              },
+              "revision": {
+                "type": "integer",
+                "nullable": true,
+                "minimum": 1,
+                "description": "Versioned create starts at 1; lock increments once. Null on unversioned legacy records."
+              },
+              "lock_receipt": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "machine_snapshot_lock",
+                      "non_authorizing_terminal_record",
+                      "unverified_legacy_lock_record"
+                    ]
+                  },
+                  "source_snapshot_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "source_revision": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "terminal_state": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      "abstained",
+                      "refused",
+                      "refusal",
+                      null
+                    ]
+                  },
+                  "actor": {
+                    "type": "object",
+                    "properties": {
+                      "principal_id": {
+                        "type": "string"
+                      },
+                      "role": {
+                        "type": "string"
+                      },
+                      "identity_source": {
+                        "type": "string"
+                      },
+                      "role_source": {
+                        "type": "string"
+                      },
+                      "human_attested": {
+                        "type": "boolean",
+                        "enum": [
+                          false
+                        ]
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "human_attested": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "reliance_authorized": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "execution_authorized": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  }
+                },
+                "additionalProperties": true,
+                "nullable": true,
+                "description": "Null on drafts. Machine preservation only, never human attestation, reliance permission or execution capability."
+              },
+              "human_review_acknowledgement": {
+                "type": "object",
+                "properties": {
+                  "acknowledged": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "acknowledged_by": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      null
+                    ]
+                  },
+                  "acknowledged_at": {
+                    "type": "string",
+                    "nullable": true,
+                    "enum": [
+                      null
+                    ]
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "policy": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
+              "human_attestation_status": {
+                "type": "string",
+                "enum": [
+                  "not_attested",
+                  "unverified_legacy_claim"
+                ]
+              },
+              "immutable_snapshot_hash": {
+                "type": "string",
+                "nullable": true
+              },
+              "public_receipt_hash": {
+                "type": "string",
+                "nullable": true
+              },
+              "record_signature": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              "reliance_warning": {
+                "type": "string"
+              },
+              "unverified_legacy_claims": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true,
+                "description": "Historical caller assertions, not attestations. Preserved only under this nonauthorizing namespace."
+              },
+              "snapshot_view_projection": {
+                "type": "object",
+                "properties": {
+                  "canonical_record_unchanged": {
+                    "type": "boolean",
+                    "enum": [
+                      true
+                    ]
+                  },
+                  "original_receipt_hashes_preserved": {
+                    "type": "boolean",
+                    "enum": [
+                      true
+                    ]
+                  },
+                  "canonical_hash_recomputable_from_view": {
+                    "type": "boolean",
+                    "enum": [
+                      false
+                    ]
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": true
+              },
               "response_hash": {
                 "type": "string",
                 "nullable": true
@@ -77730,7 +79149,33 @@
             "type": "boolean"
           }
         },
-        "additionalProperties": true
+        "additionalProperties": true,
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "status",
+                "snapshot_id"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "ok",
+                    "created"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "snapshot_hash",
+                "revision",
+                "lock_receipt"
+              ]
+            }
+          }
+        ],
+        "description": "Create/get/lock expose root lifecycle fields even when nested decision_snapshot is redacted or omitted in compact output. GET is a projection: legacy acknowledgement claims are namespaced and unverified without rewriting canonical history or original receipt hashes; a projected legacy view cannot recompute that historical hash."
       },
       "CalibrationReadinessResponse": {
         "type": "object",
@@ -77898,6 +79343,1254 @@
               }
             },
             "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      },
+      "PresentationReferenceWithRootHash": {
+        "type": "object",
+        "properties": {
+          "decision_check_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
+          "response_hash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "semantic_decision_hash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "snapshot_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          }
+        },
+        "additionalProperties": true,
+        "anyOf": [
+          {
+            "required": [
+              "decision_check_id"
+            ]
+          },
+          {
+            "required": [
+              "snapshot_id"
+            ]
+          },
+          {
+            "required": [
+              "decision_result"
+            ],
+            "properties": {
+              "decision_result": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "mvr_result"
+            ],
+            "properties": {
+              "mvr_result": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "decision_room"
+            ],
+            "properties": {
+              "decision_room": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "decision_table"
+            ],
+            "properties": {
+              "decision_table": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "decision_snapshot"
+            ],
+            "properties": {
+              "decision_snapshot": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "report_pack"
+            ],
+            "properties": {
+              "report_pack": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "content"
+            ],
+            "properties": {
+              "content": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "final_result"
+            ],
+            "properties": {
+              "final_result": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "release_check"
+            ],
+            "properties": {
+              "release_check": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "red_team"
+            ],
+            "properties": {
+              "red_team": {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            }
+          },
+          {
+            "required": [
+              "outputs"
+            ],
+            "properties": {
+              "outputs": {
+                "type": "object",
+                "required": [
+                  "decision_check"
+                ],
+                "properties": {
+                  "decision_check": {
+                    "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "outputs"
+            ],
+            "properties": {
+              "outputs": {
+                "type": "object",
+                "required": [
+                  "decision_room"
+                ],
+                "properties": {
+                  "decision_room": {
+                    "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "outputs"
+            ],
+            "properties": {
+              "outputs": {
+                "type": "object",
+                "required": [
+                  "release_check"
+                ],
+                "properties": {
+                  "release_check": {
+                    "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "outputs"
+            ],
+            "properties": {
+              "outputs": {
+                "type": "object",
+                "required": [
+                  "red_team"
+                ],
+                "properties": {
+                  "red_team": {
+                    "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "description": "Compatibility reference tree only when the request root supplies response_hash. Runtime checks every discovered reference against the same persisted decision; never use this component alone as a request contract."
+      },
+      "PresentationReference": {
+        "type": "object",
+        "properties": {
+          "decision_check_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
+          "response_hash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "semantic_decision_hash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "snapshot_id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          }
+        },
+        "additionalProperties": true,
+        "anyOf": [
+          {
+            "required": [
+              "decision_check_id",
+              "response_hash"
+            ]
+          },
+          {
+            "required": [
+              "snapshot_id"
+            ]
+          },
+          {
+            "required": [
+              "response_hash"
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PresentationReferenceWithRootHash"
+              }
+            ]
+          },
+          {
+            "required": [
+              "decision_result"
+            ],
+            "properties": {
+              "decision_result": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "mvr_result"
+            ],
+            "properties": {
+              "mvr_result": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "decision_room"
+            ],
+            "properties": {
+              "decision_room": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "decision_table"
+            ],
+            "properties": {
+              "decision_table": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "decision_snapshot"
+            ],
+            "properties": {
+              "decision_snapshot": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "report_pack"
+            ],
+            "properties": {
+              "report_pack": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "content"
+            ],
+            "properties": {
+              "content": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "final_result"
+            ],
+            "properties": {
+              "final_result": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "release_check"
+            ],
+            "properties": {
+              "release_check": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "red_team"
+            ],
+            "properties": {
+              "red_team": {
+                "$ref": "#/components/schemas/PresentationReference"
+              }
+            }
+          },
+          {
+            "required": [
+              "outputs"
+            ],
+            "properties": {
+              "outputs": {
+                "type": "object",
+                "required": [
+                  "decision_check"
+                ],
+                "properties": {
+                  "decision_check": {
+                    "$ref": "#/components/schemas/PresentationReference"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "outputs"
+            ],
+            "properties": {
+              "outputs": {
+                "type": "object",
+                "required": [
+                  "decision_room"
+                ],
+                "properties": {
+                  "decision_room": {
+                    "$ref": "#/components/schemas/PresentationReference"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "outputs"
+            ],
+            "properties": {
+              "outputs": {
+                "type": "object",
+                "required": [
+                  "release_check"
+                ],
+                "properties": {
+                  "release_check": {
+                    "$ref": "#/components/schemas/PresentationReference"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "outputs"
+            ],
+            "properties": {
+              "outputs": {
+                "type": "object",
+                "required": [
+                  "red_team"
+                ],
+                "properties": {
+                  "red_team": {
+                    "$ref": "#/components/schemas/PresentationReference"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "description": "Reference syntax is not proof of validity. Runtime resolves retained tenant/workspace server lineage and verifies all IDs/hashes and historical scope. Nested IDs may inherit response_hash only from the request root; a hash on an intermediate wrapper cannot authorize its descendants. Only named containers through depth five are searched. Source-authored conclusions never satisfy the contract. Every supplied ID must be a non-blank trimmed string; internal spaces are allowed. Resolved snapshot_id and persisted decision_check_id must exactly equal the supplied IDs, so storage-key normalization cannot alias another record. Every supplied hash a 64-character lowercase hex string, even when another valid reference exists; explicit empty/null/malformed fields reject with HTTP 422 rather than falling back. Only an absent nested response_hash may inherit the request-root hash."
+      },
+      "CascadeRunResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "simulation_preview",
+              "needs_review",
+              "invalid_input",
+              "not_found",
+              "forbidden",
+              "system_unavailable",
+              "conflict"
+            ]
+          },
+          "code": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "cascade_contract": {
+            "type": "string",
+            "enum": [
+              "watchlist_evaluation_v1"
+            ]
+          },
+          "evaluation_scope": {
+            "type": "string",
+            "enum": [
+              "stored_watchlist_rules_only"
+            ]
+          },
+          "governed_state_changed": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "execution_authorized": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "simulation": {
+            "type": "boolean"
+          },
+          "trigger_event": {
+            "type": "string"
+          },
+          "run_id": {
+            "type": "string"
+          },
+          "cascade_run_id": {
+            "type": "string"
+          },
+          "run_status": {
+            "type": "string"
+          },
+          "persistence": {
+            "type": "string",
+            "enum": [
+              "none",
+              "kv",
+              "durable_object"
+            ]
+          },
+          "durability": {
+            "type": "string"
+          },
+          "alerts_note": {
+            "type": "string"
+          },
+          "alerts_generated": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "watchlist_cascade_alert"
+                  ]
+                },
+                "project_id": {
+                  "type": "string"
+                },
+                "watchlist_id": {
+                  "type": "string"
+                },
+                "watchlist_revision": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "basis": {
+                  "type": "string",
+                  "enum": [
+                    "stored_watchlist_rule_evaluation"
+                  ]
+                },
+                "evaluation_inputs_basis": {
+                  "type": "string",
+                  "enum": [
+                    "simulation_inputs_unverified",
+                    "stored_operator_inputs_unverified"
+                  ]
+                },
+                "evaluation_inputs_hash": {
+                  "type": "string"
+                },
+                "before_hash": {
+                  "type": "string"
+                },
+                "after_hash": {
+                  "type": "string"
+                },
+                "hash_scope": {
+                  "type": "string",
+                  "enum": [
+                    "stored_watchlist_record"
+                  ]
+                },
+                "triggered_rules": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": true
+                  }
+                },
+                "governed_state_changed": {
+                  "type": "boolean",
+                  "enum": [
+                    false
+                  ]
+                },
+                "source_authenticity_verified": {
+                  "type": "boolean",
+                  "enum": [
+                    false
+                  ]
+                },
+                "external_authority_verified": {
+                  "type": "boolean",
+                  "enum": [
+                    false
+                  ]
+                },
+                "execution_authorized": {
+                  "type": "boolean",
+                  "enum": [
+                    false
+                  ]
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true,
+        "description": "Point-in-time exact stored-rule evaluation, never dependency propagation or an entity verdict. Preview status is simulation_preview, persistence=none, durability=non_durable_preview. Empty/no-trigger results are needs_review, not proof that no dependencies exist. Legacy records return code=cascade_revalidation_required, empty alerts and no persistence; they are not replayed as valid governed runs. Domain state and execution flags remain false. The response projection retains explicit code/boundary fields only, not arbitrary internal error details."
+      },
+      "NumericEvidenceAuditItem": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "structured_values"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "structured_values": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            }
+          }
+        },
+        "description": "Post-normalization numeric-branch contract only. Runtime additionally rejects non-finite numbers. Does not apply to canonical public metrics or make documentary material numeric evidence."
+      },
+      "EvidenceAuditScope": {
+        "type": "object",
+        "properties": {
+          "contract": {
+            "type": "string",
+            "enum": [
+              "evidence-audit-input@1"
+            ]
+          },
+          "anomaly_detection_modality": {
+            "type": "string",
+            "enum": [
+              "numeric_structured_values_only"
+            ]
+          },
+          "numeric_requirement": {
+            "type": "string"
+          },
+          "public_osint_scope": {
+            "type": "string"
+          },
+          "corporate_telemetry_scope": {
+            "type": "string"
+          },
+          "documentary_truth_assessed": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "source_authenticity_verified": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "strict_calibrated_available": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "partial_results_supported": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "audit_performed": {
+            "type": "boolean"
+          },
+          "numeric_audit_item_indices": {
+            "type": "array",
+            "maxItems": 500,
+            "uniqueItems": true,
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 499
+            },
+            "description": "Zero-based original evidence_pack indices selected for this branch. Selection is not proof that an audit ran: inspect audit_performed."
+          },
+          "metadata_only_item_indices": {
+            "type": "array",
+            "maxItems": 500,
+            "uniqueItems": true,
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 499
+            },
+            "description": "Zero-based original evidence_pack indices selected for this branch. Selection is not proof that an audit ran: inspect audit_performed."
+          },
+          "not_audited_item_indices": {
+            "type": "array",
+            "maxItems": 500,
+            "uniqueItems": true,
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 499
+            },
+            "description": "Zero-based original evidence_pack indices selected for this branch. Selection is not proof that an audit ran: inspect audit_performed."
+          },
+          "usage_boundary": {
+            "type": "string"
+          },
+          "validation_error_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "validation_errors_truncated": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      },
+      "EvidenceAuditErrorDetail": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "AUDIT_PACK_SIZE",
+              "AUDIT_ITEM_OBJECT",
+              "AUDIT_ITEM_ID_REQUIRED",
+              "AUDIT_NUMERIC_VALUES_REQUIRED",
+              "AUDIT_VALUE_NOT_FINITE_NUMBER"
+            ]
+          },
+          "item_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 499
+          },
+          "item_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "field": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "code",
+          "field"
+        ],
+        "description": "Handler diagnostics, capped at 20. AUDIT_PACK_SIZE is pack-level and omits item fields/message. Shared gateway validation can instead return its existing string diagnostics."
+      },
+      "EvidenceAuditResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "$ref": "#/components/schemas/EvidenceAuditErrorDetail"
+            }
+          },
+          "assessment_scope": {
+            "$ref": "#/components/schemas/EvidenceAuditScope"
+          },
+          "source_limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "disclaimer": {
+            "type": "string"
+          },
+          "evidence_modality": {
+            "type": "string"
+          },
+          "fabrication_risk_score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Heuristic anomaly risk, never a truth probability, source authentication, or fraud finding."
+          },
+          "fabrication_risk_level": {
+            "type": "string"
+          },
+          "flags_detected": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "flags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          },
+          "calibration_status": {
+            "type": "string"
+          },
+          "model_source": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MarketDataUsageBoundary": {
+        "type": "object",
+        "properties": {
+          "contract": {
+            "type": "string",
+            "enum": [
+              "market-context@1"
+            ]
+          },
+          "data_role": {
+            "type": "string",
+            "enum": [
+              "template_prior",
+              "unverified_stored_context",
+              "not_configured"
+            ]
+          },
+          "geography": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "additionalProperties": true
+          },
+          "can_be_used_as_evidence": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "decision_scoring_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "allowed_use": {
+            "type": "string",
+            "enum": [
+              "planning_context_only"
+            ]
+          },
+          "forbidden_uses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_verification": {
+            "type": "string",
+            "enum": [
+              "not_performed"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      },
+      "MarketDatumMetadata": {
+        "type": "object",
+        "properties": {
+          "data_role": {
+            "type": "string",
+            "enum": [
+              "template_prior",
+              "unverified_stored_context"
+            ]
+          },
+          "data_origin": {
+            "type": "string",
+            "enum": [
+              "static_template",
+              "stored_profile"
+            ]
+          },
+          "geography": {
+            "type": "object",
+            "properties": {
+              "country": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "additionalProperties": true
+          },
+          "source_status": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "not_verified"
+            ]
+          },
+          "source_references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "Null: this route has not established underlying source references. Supplied stored declarations are not attested."
+          },
+          "as_of_status": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "not_verified"
+            ]
+          },
+          "as_of": {
+            "type": "string",
+            "nullable": true
+          },
+          "uncertainty_status": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "not_verified"
+            ]
+          },
+          "uncertainty": {
+            "type": "number",
+            "nullable": true,
+            "description": "Null: no quantified uncertainty established; not zero uncertainty."
+          },
+          "refresh_state": {
+            "type": "string",
+            "enum": [
+              "unknown"
+            ]
+          },
+          "can_be_used_as_evidence": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "decision_scoring_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          }
+        },
+        "additionalProperties": true
+      },
+      "MarketZoneContext": {
+        "type": "object",
+        "properties": {
+          "can_be_used_as_evidence": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "decision_scoring_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "usage_boundary": {
+            "$ref": "#/components/schemas/MarketDataUsageBoundary"
+          },
+          "datum_metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MarketDatumMetadata"
+            },
+            "description": "Metadata keyed by returned datum; country baseline dimensions use mvr_baseline.<dimension>. Metadata for a grouped datum applies to its contents."
+          },
+          "zone_name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "nullable": true,
+        "description": "Static template values only; raw numeric values are retained for compatibility, not offered as decision evidence."
+      },
+      "MarketProfileContext": {
+        "type": "object",
+        "properties": {
+          "can_be_used_as_evidence": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "decision_scoring_eligible": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "usage_boundary": {
+            "$ref": "#/components/schemas/MarketDataUsageBoundary"
+          },
+          "datum_metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MarketDatumMetadata"
+            },
+            "description": "Metadata keyed by returned datum; country baseline dimensions use mvr_baseline.<dimension>. Metadata for a grouped datum applies to its contents."
+          },
+          "country": {
+            "type": "string"
+          },
+          "configured": {
+            "type": "boolean",
+            "description": "Library coverage only, not factual verification or currentness."
+          },
+          "available_zones": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "zone_profile": {
+            "$ref": "#/components/schemas/MarketZoneContext"
+          },
+          "related_routes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "MarketProfileResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "library_configured": {
+            "type": "boolean",
+            "description": "Presence of configured library data; not source verification."
+          },
+          "market_profile": {
+            "$ref": "#/components/schemas/MarketProfileContext"
+          },
+          "zone_profile": {
+            "$ref": "#/components/schemas/MarketZoneContext"
+          },
+          "available_zones": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "response_meta": {
+            "type": "object",
+            "properties": {
+              "deployment_revision": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      },
+      "CapabilitiesResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "deployment_revision": {
+            "type": "string",
+            "description": "Serving deployment identifier from DEPLOYMENT_REVISION, not a capability entitlement or calibration claim."
+          },
+          "release_version": {
+            "type": "string"
+          },
+          "release_channel": {
+            "type": "string"
+          },
+          "response_meta": {
+            "type": "object",
+            "properties": {
+              "deployment_revision": {
+                "type": "string"
+              },
+              "model_version": {
+                "type": "string"
+              },
+              "cache_validator": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      },
+      "CorrectionLogResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "correction_id": {
+            "type": "string"
+          },
+          "corrections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "correction_id": {
+                  "type": "string"
+                },
+                "snapshot_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "decision_id": {
+                  "type": "string",
+                  "nullable": true
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "correction_count": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Matches in this page or exact lookup, not total history."
+          },
+          "filters_applied": {
+            "type": "object",
+            "properties": {
+              "snapshot_id": {
+                "type": "string"
+              },
+              "decision_id": {
+                "type": "string"
+              },
+              "correction_id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "pagination_scope": {
+            "type": "string",
+            "enum": [
+              "exact_record",
+              "workspace_scan_page"
+            ]
+          },
+          "cursor": {
+            "type": "string",
+            "nullable": true
+          },
+          "list_complete": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      },
+      "WatchlistResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "watchlist": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "watchlists": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": true
+            }
+          },
+          "renewal_preview": {
+            "type": "object",
+            "properties": {
+              "scheduled_execution": {
+                "type": "string",
+                "enum": [
+                  "existing_watchlist_rules_only"
+                ]
+              },
+              "delivery_scope": {
+                "type": "string"
+              },
+              "revision": {
+                "type": "integer"
+              },
+              "preview_expires_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "additionalProperties": true
+          },
+          "preview_hash": {
+            "type": "string"
+          },
+          "scheduled_credential_reference_changed": {
+            "type": "boolean",
+            "description": "True only when the existing scheduler credential reference was rewritten; false on renewal preview. Not an external authority grant."
+          },
+          "authority_changed": {
+            "type": "boolean",
+            "deprecated": true,
+            "description": "Legacy alias of scheduled_credential_reference_changed. Change to the stored scheduler credential reference only, never external institutional authority, consent, evidence truth, or permission to execute a business decision."
+          },
+          "migration_status": {
+            "type": "string"
           }
         },
         "additionalProperties": true
@@ -78377,6 +81070,7 @@
       },
       "WatchlistRequest": {
         "type": "object",
+        "description": "Manage scoped watch configuration, not external institutional authority. Canonical action renew_scheduled_execution_authority (deprecated alias renew_authority) renews the current tenant credential reference used to run existing scheduled rules and authorized subscriptions. It does not change rule scope, renew consent/licences, attest evidence or authorize a business action. Renewal requires durable runtime, a renewable tenant credential and owner/admin/org_admin/security_admin role. First obtain renewal_preview; then confirm its unchanged, unexpired preview_hash/preview_expires_at and expected_revision with confirm_renewal=true. Preview validity is 15 minutes. The renewal mutation requires Idempotency-Key. Do not interpret authority_changed=true as external authority renewal.",
         "properties": {
           "action": {
             "type": "string",
@@ -78387,6 +81081,11 @@
               "delete",
               "evaluate",
               "renewal_preview",
+              "renew_scheduled_execution_authority",
+              "renew_authority"
+            ],
+            "description": "renew_authority is deprecated; use renew_scheduled_execution_authority. Both renew the scheduler credential reference only; renewal_preview is read-only.",
+            "x-deprecated-values": [
               "renew_authority"
             ]
           },
@@ -78400,7 +81099,8 @@
             "type": "string"
           },
           "expected_revision": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Current stored revision for update or confirmed renewal."
           },
           "preview_hash": {
             "type": "string"
@@ -78415,16 +81115,180 @@
           "watched_dimensions": {
             "type": "array",
             "items": {
-              "type": "string"
-            }
+              "type": "string",
+              "enum": [
+                "permission",
+                "trust",
+                "belonging",
+                "embeddedness",
+                "reciprocity",
+                "cultural_fit",
+                "guardian_strength",
+                "continuity",
+                "channel_permission",
+                "infrastructural_intimacy",
+                "absence_sensitivity",
+                "narrative_looping",
+                "whispered_credibility",
+                "fractal_trust",
+                "cultural_calibration"
+              ]
+            },
+            "description": "Canonical MVR dimensions from the same ALL_DIMS domain used by the handler. evidence_freshness is not a dimension; evidence_staleness is a market_event trigger, not proof of expiry."
           },
           "trigger_rules": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/WatchlistTriggerRule"
+            }
+          },
+          "patch": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "watched_dimensions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "permission",
+                    "trust",
+                    "belonging",
+                    "embeddedness",
+                    "reciprocity",
+                    "cultural_fit",
+                    "guardian_strength",
+                    "continuity",
+                    "channel_permission",
+                    "infrastructural_intimacy",
+                    "absence_sensitivity",
+                    "narrative_looping",
+                    "whispered_credibility",
+                    "fractal_trust",
+                    "cultural_calibration"
+                  ]
+                }
+              },
+              "trigger_rules": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/WatchlistTriggerRule"
+                }
+              }
             }
           }
         }
+      },
+      "WatchlistTriggerRule": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "dimension_below",
+              "dimension_drop",
+              "market_event"
+            ]
+          },
+          "dimension": {
+            "type": "string",
+            "enum": [
+              "permission",
+              "trust",
+              "belonging",
+              "embeddedness",
+              "reciprocity",
+              "cultural_fit",
+              "guardian_strength",
+              "continuity",
+              "channel_permission",
+              "infrastructural_intimacy",
+              "absence_sensitivity",
+              "narrative_looping",
+              "whispered_credibility",
+              "fractal_trust",
+              "cultural_calibration"
+            ]
+          },
+          "threshold": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "threshold_delta": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "event_type": {
+            "type": "string",
+            "enum": [
+              "school_fees_window",
+              "harvest_inflow",
+              "harvest_outflow",
+              "pre_election_hoarding",
+              "post_election_normalisation",
+              "religious_fasting",
+              "religious_feasting",
+              "market_day_cycle",
+              "salary_cycle_peak",
+              "salary_cycle_trough",
+              "flooding_disruption",
+              "drought_period",
+              "festive_season",
+              "fuel_shortage",
+              "lab_window",
+              "formalization_wave",
+              "regulatory_shock",
+              "evidence_staleness"
+            ]
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "type",
+              "dimension",
+              "threshold"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "dimension_below"
+                ]
+              }
+            }
+          },
+          {
+            "required": [
+              "type",
+              "dimension",
+              "threshold_delta"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "dimension_drop"
+                ]
+              }
+            }
+          },
+          {
+            "required": [
+              "type",
+              "event_type"
+            ],
+            "properties": {
+              "type": {
+                "enum": [
+                  "market_event"
+                ]
+              }
+            }
+          }
+        ],
+        "description": "Uses the canonical dimension and event domains of validateWatchlistTriggerRules. An event rule evaluates submitted/stored event context; it does not establish live evidence, expiry or revocation."
       },
       "SchemaDiffRequest": {
         "type": "object",
@@ -78528,7 +81392,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-11.engine-contract.1"
+    "deployment_revision": "2026-10-11.engine-contract.2"
   },
   "response_contract_version": "2026-05-01.v1"
 }
