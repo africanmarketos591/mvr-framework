@@ -8674,6 +8674,28 @@
         "responses": {
           "200": {
             "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportJobResponse"
+                }
+              }
+            },
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            }
+          },
+          "201": {
+            "description": "Governed historical artifact created; no execution capability.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportJobResponse"
+                }
+              }
+            },
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
@@ -8815,171 +8837,57 @@
                     ]
                   },
                   "title": {
-                    "type": "string"
+                    "type": "string",
+                    "deprecated": true,
+                    "description": "Ignored. The server sets the historical-record title; caller titles cannot imply approval."
                   },
                   "project_id": {
                     "type": "string"
                   },
+                  "decision_check_id": {
+                    "type": "string",
+                    "pattern": "^DCHK-[A-Za-z0-9-]{1,100}$"
+                  },
+                  "response_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "semantic_decision_hash": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "snapshot_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
                   "decision_snapshot_id": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                   },
                   "payload_ref": {
                     "type": "object",
                     "properties": {
                       "decision_snapshot_id": {
-                        "type": "string"
+                        "type": "string",
+                        "minLength": 1
                       }
                     },
-                    "additionalProperties": true
-                  },
-                  "content": {
-                    "description": "Inline content to redact and render; scalar, array or object JSON is accepted. It is never fetched as a URL or executed.",
-                    "nullable": true,
-                    "anyOf": [
-                      {
-                        "type": "string"
-                      },
-                      {
-                        "type": "number"
-                      },
-                      {
-                        "type": "boolean"
-                      },
-                      {
-                        "type": "object",
-                        "additionalProperties": true,
-                        "description": "Caller-supplied extension metadata; no additional fields are interpreted by this contract."
-                      },
-                      {
-                        "type": "array",
-                        "items": {
-                          "anyOf": [
-                            {
-                              "type": "string"
-                            },
-                            {
-                              "type": "number"
-                            },
-                            {
-                              "type": "boolean"
-                            },
-                            {
-                              "type": "object",
-                              "additionalProperties": true,
-                              "description": "Caller-supplied extension metadata; no additional fields are interpreted by this contract."
-                            }
-                          ]
-                        }
-                      }
+                    "additionalProperties": false,
+                    "required": [
+                      "decision_snapshot_id"
                     ]
                   },
-                  "report_pack": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "description": "Caller-supplied extension metadata; no additional fields are interpreted by this contract."
-                  },
-                  "decision_result": {
-                    "$ref": "#/components/schemas/UtilityDecisionInput"
-                  },
-                  "source_payload": {
-                    "description": "Inline content to redact and render; scalar, array or object JSON is accepted. It is never fetched as a URL or executed.",
-                    "nullable": true,
-                    "anyOf": [
-                      {
-                        "type": "string"
-                      },
-                      {
-                        "type": "number"
-                      },
-                      {
-                        "type": "boolean"
-                      },
-                      {
-                        "type": "object",
-                        "additionalProperties": true,
-                        "description": "Caller-supplied extension metadata; no additional fields are interpreted by this contract."
-                      },
-                      {
-                        "type": "array",
-                        "items": {
-                          "anyOf": [
-                            {
-                              "type": "string"
-                            },
-                            {
-                              "type": "number"
-                            },
-                            {
-                              "type": "boolean"
-                            },
-                            {
-                              "type": "object",
-                              "additionalProperties": true,
-                              "description": "Caller-supplied extension metadata; no additional fields are interpreted by this contract."
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  },
-                  "evidence_register": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/EvidenceItem"
-                    }
-                  },
-                  "compiled_pack": {
-                    "$ref": "#/components/schemas/UtilityCompiledPack"
-                  },
-                  "board_pack": {
-                    "type": "object",
-                    "additionalProperties": true,
-                    "description": "Caller-supplied extension metadata; no additional fields are interpreted by this contract."
-                  },
-                  "narrative_report": {
-                    "description": "Inline content to redact and render; scalar, array or object JSON is accepted. It is never fetched as a URL or executed.",
-                    "nullable": true,
-                    "anyOf": [
-                      {
-                        "type": "string"
-                      },
-                      {
-                        "type": "number"
-                      },
-                      {
-                        "type": "boolean"
-                      },
-                      {
-                        "type": "object",
-                        "additionalProperties": true,
-                        "description": "Caller-supplied extension metadata; no additional fields are interpreted by this contract."
-                      },
-                      {
-                        "type": "array",
-                        "items": {
-                          "anyOf": [
-                            {
-                              "type": "string"
-                            },
-                            {
-                              "type": "number"
-                            },
-                            {
-                              "type": "boolean"
-                            },
-                            {
-                              "type": "object",
-                              "additionalProperties": true,
-                              "description": "Caller-supplied extension metadata; no additional fields are interpreted by this contract."
-                            }
-                          ]
-                        }
-                      }
-                    ]
+                  "response_detail": {
+                    "type": "string",
+                    "enum": [
+                      "full",
+                      "compact"
+                    ],
+                    "description": "Shared response-envelope detail control. Must agree with X-Response-Detail and any response_detail query parameter; never a source reference or execution permission."
                   }
                 },
-                "additionalProperties": true,
-                "description": "Delete requires job_id. Create requires inline exportable content or tenant-owned decision_snapshot_id (also under payload_ref). Unresolved file/URL references are not sources. Projected render request is capped at 240000 bytes; output expires after 24 hours.",
+                "additionalProperties": false,
+                "description": "Delete requires job_id. Create requires a tenant/workspace-owned persisted decision_check_id plus matching response_hash, or a governed snapshot_id/decision_snapshot_id (also under payload_ref). Inline caller content, verdicts and permissions are rejected in every profile. This is historical decision support, never current clearance or source/institution verification. The artifact carries a dominant BLOCKED execution boundary in every format. Retrieval rechecks lineage and expiry; pre-boundary exports require regeneration. Projected render request is capped at 240000 bytes; output expires after 24 hours.",
                 "anyOf": [
                   {
                     "required": [
@@ -9005,42 +8913,13 @@
                     "anyOf": [
                       {
                         "required": [
-                          "content"
+                          "decision_check_id",
+                          "response_hash"
                         ]
                       },
                       {
                         "required": [
-                          "report_pack"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "decision_result"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "source_payload"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "evidence_register"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "compiled_pack"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "board_pack"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "narrative_report"
+                          "snapshot_id"
                         ]
                       },
                       {
@@ -9097,6 +8976,13 @@
         "responses": {
           "200": {
             "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportJobResponse"
+                }
+              }
+            },
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
@@ -9231,6 +9117,32 @@
         "responses": {
           "200": {
             "description": "Successful response",
+            "content": {
+              "application/pdf": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "text/markdown": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            },
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
@@ -9294,6 +9206,21 @@
                 "schema": {
                   "$ref": "#/components/schemas/RequestErrorResponse"
                 }
+              }
+            }
+          },
+          "410": {
+            "description": "Legacy or expired export requires regeneration; bytes are not returned.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            },
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
               }
             }
           },
@@ -51027,8 +50954,132 @@
     "/v1/admin/runtime-control": {
       "get": {
         "summary": "Operator-only durable scheduler accounting and isolated no-delivery canary.",
-        "description": "Operator-only durable scheduler accounting and isolated no-delivery canary.",
-        "parameters": [],
+        "description": "Operator-only durable scheduler accounting and isolated no-delivery canary. Inventory is GET with action=integration_inventory; retirement is POST with action=integration_retire. Operator access is required. Retirement operation_id is a target-workspace-scoped idempotency key independent of the optional HTTP header. Reuse original preconditions on retries; matching replay returns duplicate=true, changed reuse returns 409 runtime_integration_operation_conflict. No historical action is replayed and no past effect is recalled.",
+        "parameters": [
+          {
+            "name": "action",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "integration_inventory"
+              ]
+            },
+            "description": "GET integration inventory. Omit action for existing scheduler inspection; integration_retire and scheduler_canary require POST."
+          },
+          {
+            "name": "target_tenant_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$"
+            },
+            "description": "Required when action=integration_inventory. Target tenant for operator-only inspection."
+          },
+          {
+            "name": "target_workspace_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$"
+            },
+            "description": "Required when action=integration_inventory. Target workspace; no cross-workspace job search."
+          },
+          {
+            "name": "family",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "webhook",
+                "sink"
+              ]
+            },
+            "description": "Required when action=integration_inventory. Selects subscription records, not the workspace-wide retained job projection."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 40,
+              "default": 20
+            },
+            "description": "Per-source page limit, not a combined integration count; the union can contain up to twice this many integrations."
+          },
+          {
+            "name": "legacy_cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1100
+            },
+            "description": "Opaque independent legacy subscription continuation. Preserve scope and family; do not substitute another source cursor."
+          },
+          {
+            "name": "canonical_cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1100
+            },
+            "description": "Opaque independent canonical subscription continuation. Preserve scope and family; do not substitute another source cursor."
+          },
+          {
+            "name": "jobs_cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1100
+            },
+            "description": "Independent retained-job continuation in this workspace. Jobs are scanned before filtering, so an empty jobs page can still have a continuation."
+          },
+          {
+            "name": "canary_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Scheduler inspection only; not an integration inventory cursor or retirement permission."
+          },
+          {
+            "name": "cycle",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Scheduler inspection only; not an integration inventory cursor or retirement permission."
+          },
+          {
+            "name": "job_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Scheduler inspection only; not an integration inventory cursor or retirement permission."
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Scheduler inspection only; not an integration inventory cursor or retirement permission."
+          }
+        ],
         "x-mvr-registry-route": "/v1/admin/runtime-control",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -51051,6 +51102,20 @@
         "responses": {
           "200": {
             "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/IntegrationInventoryResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/RuntimeSchedulerResponse"
+                    }
+                  ]
+                }
+              }
+            },
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
@@ -51090,6 +51155,30 @@
           "404": {
             "description": "Not found",
             "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Integration action used the wrong HTTP method. No mutation is performed.",
+            "headers": {
+              "Allow": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "GET",
+                    "POST"
+                  ]
+                }
+              },
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
@@ -51151,7 +51240,7 @@
       },
       "post": {
         "summary": "Operator-only durable scheduler accounting and isolated no-delivery canary.",
-        "description": "Operator-only durable scheduler accounting and isolated no-delivery canary.",
+        "description": "Operator-only durable scheduler accounting and isolated no-delivery canary. Inventory is GET with action=integration_inventory; retirement is POST with action=integration_retire. Operator access is required. Retirement operation_id is a target-workspace-scoped idempotency key independent of the optional HTTP header. Reuse original preconditions on retries; matching replay returns duplicate=true, changed reuse returns 409 runtime_integration_operation_conflict. No historical action is replayed and no past effect is recalled.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/admin/runtime-control",
         "x-mvr-maturity": "release_candidate",
@@ -51175,6 +51264,20 @@
         "responses": {
           "200": {
             "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/IntegrationRetirementResponse"
+                    },
+                    {
+                      "$ref": "#/components/schemas/RuntimeSchedulerResponse"
+                    }
+                  ]
+                }
+              }
+            },
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
@@ -51214,6 +51317,30 @@
           "404": {
             "description": "Not found",
             "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Integration action used the wrong HTTP method. No mutation is performed.",
+            "headers": {
+              "Allow": {
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "GET",
+                    "POST"
+                  ]
+                }
+              },
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
@@ -51272,6 +51399,13 @@
             }
           }
         },
+        "x-mvr-operation-idempotency": {
+          "required_for": "integration_retire",
+          "scope": "target_tenant_id + target_workspace_id across families",
+          "same_operation_replay": "original result with duplicate=true",
+          "changed_reuse": "409 runtime_integration_operation_conflict",
+          "http_header_substitute": false
+        },
         "requestBody": {
           "required": true,
           "content": {
@@ -51298,7 +51432,8 @@
                   "action": {
                     "type": "string",
                     "enum": [
-                      "scheduler_canary"
+                      "scheduler_canary",
+                      "integration_retire"
                     ]
                   },
                   "canary_id": {
@@ -51314,10 +51449,58 @@
                   },
                   "cursor": {
                     "type": "string"
+                  },
+                  "target_tenant_id": {
+                    "type": "string"
+                  },
+                  "target_workspace_id": {
+                    "type": "string"
+                  },
+                  "family": {
+                    "type": "string",
+                    "enum": [
+                      "webhook",
+                      "sink"
+                    ]
+                  },
+                  "integration_id": {
+                    "type": "string"
+                  },
+                  "operation_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+                    "description": "Required body UUID for retirement, scoped to the target tenant/workspace across families. Distinct from optional HTTP Idempotency-Key, which cannot replace it. Retry with the same operation_id, action, scope, family, integration_id, trimmed reason and ORIGINAL expected version/hashes. Matching stored receipt returns the original result with duplicate=true without rechecking current state. Changed reuse returns HTTP 409 runtime_integration_operation_conflict; do not change the ID to bypass a conflict or uncertain result."
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 20,
+                    "maxLength": 500
+                  },
+                  "expected_canonical_version": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Original inventory version; preserve on retries, including after retirement advances the version."
+                  },
+                  "expected_canonical_hash": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "Original inventory canonical hash, or null for no current canonical value. Preserve on retries."
+                  },
+                  "expected_legacy_hash": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "pattern": "^[a-f0-9]{64}$",
+                    "description": "Original inventory legacy hash, or null for no legacy record. Preserve on retries."
                   }
                 },
                 "additionalProperties": true,
-                "description": "Omitted action inspects scheduler state. scheduler_canary requires POST, canary_id and renewable operator authority; external effects are suppressed. job_id must belong to the selected cycle.",
+                "description": "Operator-only POST scheduler/retirement contract. Omitted action inspects scheduler state. integration_inventory is GET-only with query parameters, never a POST action. Retirement requires exact inventory hashes/version and a body operation_id, atomically preserves private before-images and its receipt in canonical storage, and leaves legacy KV unchanged. No automatic notification fanout, historical job retry or external send; already claimed effects cannot be recalled.",
                 "allOf": [
                   {
                     "anyOf": [
@@ -51338,6 +51521,59 @@
                       {
                         "required": [
                           "canary_id"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "not": {
+                          "required": [
+                            "action"
+                          ],
+                          "properties": {
+                            "action": {
+                              "enum": [
+                                "integration_retire"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "target_tenant_id",
+                          "target_workspace_id",
+                          "family"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "anyOf": [
+                      {
+                        "not": {
+                          "required": [
+                            "action"
+                          ],
+                          "properties": {
+                            "action": {
+                              "enum": [
+                                "integration_retire"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "required": [
+                          "integration_id",
+                          "operation_id",
+                          "reason",
+                          "expected_canonical_version",
+                          "expected_canonical_hash",
+                          "expected_legacy_hash"
                         ]
                       }
                     ]
@@ -77334,8 +77570,18 @@
           "permitted_uses": {
             "type": "array",
             "items": {
-              "type": "string"
-            }
+              "type": "string",
+              "enum": [
+                "internal_review",
+                "working_draft",
+                "internal_planning",
+                "planning",
+                "pilot_design",
+                "board_reporting",
+                "internal_backtest_evaluation"
+              ]
+            },
+            "description": "Document/analysis handling only. Launch, pilot execution, payment and other external actions are never output uses."
           },
           "execution_permission": {
             "type": "boolean",
@@ -77879,8 +78125,18 @@
               "permitted_uses": {
                 "type": "array",
                 "items": {
-                  "type": "string"
-                }
+                  "type": "string",
+                  "enum": [
+                    "internal_review",
+                    "working_draft",
+                    "internal_planning",
+                    "planning",
+                    "pilot_design",
+                    "board_reporting",
+                    "internal_backtest_evaluation"
+                  ]
+                },
+                "description": "Document/analysis handling only. Launch, pilot execution, payment and other external actions are never output uses."
               },
               "execution_permission": {
                 "type": "boolean",
@@ -77918,8 +78174,10 @@
               "action_headline": {
                 "type": "string",
                 "enum": [
-                  "NOT YET"
-                ]
+                  "NOT YET",
+                  "NOT APPLICABLE"
+                ],
+                "description": "NOT APPLICABLE means the declared task is outside MVR scope, not that the underlying action is approved."
               },
               "human_review_required": {
                 "type": "boolean"
@@ -77983,8 +78241,18 @@
               "authorized_use": {
                 "type": "array",
                 "items": {
-                  "type": "string"
-                }
+                  "type": "string",
+                  "enum": [
+                    "internal_review",
+                    "working_draft",
+                    "internal_planning",
+                    "planning",
+                    "pilot_design",
+                    "board_reporting",
+                    "internal_backtest_evaluation"
+                  ]
+                },
+                "description": "Document/analysis handling only. Launch, pilot execution, payment and other external actions are never output uses."
               }
             },
             "additionalProperties": true
@@ -79376,6 +79644,775 @@
           }
         },
         "additionalProperties": true
+      },
+      "ArtifactBoundary": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "contract",
+          "headline",
+          "notice",
+          "source_kind",
+          "decision_check_id",
+          "response_hash",
+          "execution_authorized",
+          "capability_issued",
+          "current_reliance_authorized",
+          "source_authenticity_verified",
+          "signer_standing_verified",
+          "revocation_checked"
+        ],
+        "properties": {
+          "contract": {
+            "type": "string",
+            "enum": [
+              "mvr-artifact-boundary@2"
+            ]
+          },
+          "headline": {
+            "type": "string",
+            "enum": [
+              "BLOCKED: NO EXECUTION PERMISSION"
+            ]
+          },
+          "notice": {
+            "type": "string",
+            "enum": [
+              "Historical decision support only. Source claims and institutional authority are not verified by this export. Current reliance requires fresh evaluation and independent authority."
+            ]
+          },
+          "source_kind": {
+            "type": "string",
+            "enum": [
+              "persisted_decision_check"
+            ]
+          },
+          "decision_check_id": {
+            "type": "string",
+            "pattern": "^DCHK-[A-Za-z0-9-]{1,100}$"
+          },
+          "response_hash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "execution_authorized": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "capability_issued": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "current_reliance_authorized": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "source_authenticity_verified": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "signer_standing_verified": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "revocation_checked": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          }
+        },
+        "description": "Non-authorizing historical artifact boundary. Not a signed permission receipt or proof of source truth, issuer standing, current reliance or revocation checking."
+      },
+      "IntegrationInventoryResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok"
+            ]
+          },
+          "scope": {
+            "type": "object",
+            "properties": {
+              "tenant_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$"
+              },
+              "workspace_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$"
+              }
+            },
+            "required": [
+              "tenant_id",
+              "workspace_id"
+            ],
+            "additionalProperties": false
+          },
+          "family": {
+            "type": "string",
+            "enum": [
+              "webhook",
+              "sink"
+            ]
+          },
+          "integrations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$"
+                },
+                "family": {
+                  "type": "string",
+                  "enum": [
+                    "webhook",
+                    "sink"
+                  ]
+                },
+                "canonical_present": {
+                  "type": "boolean"
+                },
+                "canonical_active_value": {
+                  "type": "boolean",
+                  "description": "A non-null canonical value exists; this does not mean status=active or authorize delivery."
+                },
+                "canonical_version": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "canonical_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$",
+                  "nullable": true
+                },
+                "legacy_hash": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$",
+                  "nullable": true
+                },
+                "legacy_present": {
+                  "type": "boolean"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "canonical_status": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "legacy_status": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "project_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "destination": {
+                  "type": "object",
+                  "properties": {
+                    "hostname": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "protocol": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "credentials_in_url": {
+                      "type": "boolean"
+                    },
+                    "has_query": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "hostname",
+                    "protocol",
+                    "credentials_in_url",
+                    "has_query"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Destination metadata only. No full URL, path, query value or URL credential value is returned."
+                },
+                "effective_delivery_mode": {
+                  "type": "string",
+                  "description": "Configured/default mode only, not a successful delivery or credential check. Sink default is simulated."
+                },
+                "configured_auth_fields": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Matching configuration field names only, never their secret/token/header values."
+                },
+                "signing_key_id": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "credential_usability": {
+                  "type": "string",
+                  "enum": [
+                    "not_proven_by_inventory"
+                  ]
+                },
+                "created_at": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "current_delivery_eligibility": {
+                  "type": "string",
+                  "enum": [
+                    "requires_live_credential_project_event_and_effect_checks",
+                    "blocked_without_active_canonical_subscription"
+                  ],
+                  "description": "Active canonical state is necessary, not sufficient: current credential, project, event and effect-claim checks still apply."
+                }
+              },
+              "required": [
+                "id",
+                "family",
+                "canonical_present",
+                "canonical_active_value",
+                "canonical_version",
+                "canonical_hash",
+                "legacy_hash",
+                "legacy_present",
+                "status",
+                "canonical_status",
+                "legacy_status",
+                "project_id",
+                "destination",
+                "effective_delivery_mode",
+                "configured_auth_fields",
+                "signing_key_id",
+                "credential_usability",
+                "created_at",
+                "current_delivery_eligibility"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 80
+          },
+          "legacy_page": {
+            "type": "object",
+            "properties": {
+              "cursor": {
+                "type": "string",
+                "nullable": true
+              },
+              "complete": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "cursor",
+              "complete"
+            ],
+            "additionalProperties": false
+          },
+          "canonical_page": {
+            "type": "object",
+            "properties": {
+              "cursor": {
+                "type": "string",
+                "nullable": true
+              },
+              "complete": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "cursor",
+              "complete"
+            ],
+            "additionalProperties": false
+          },
+          "jobs": {
+            "type": "object",
+            "properties": {
+              "jobs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "kind": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "family": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "subscription_id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "authority_present": {
+                      "type": "boolean"
+                    },
+                    "source_route": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "source_method": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "attempts": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "due_at": {
+                      "type": "number",
+                      "description": "Unix epoch milliseconds."
+                    },
+                    "updated_at": {
+                      "type": "number",
+                      "description": "Unix epoch milliseconds."
+                    },
+                    "effect": {
+                      "type": "object",
+                      "properties": {
+                        "policy": {
+                          "type": "string",
+                          "enum": [
+                            "idempotent",
+                            "review_on_uncertain"
+                          ]
+                        },
+                        "outcome": {
+                          "type": "string",
+                          "enum": [
+                            "unknown",
+                            "accepted",
+                            "rejected"
+                          ]
+                        },
+                        "first_started_at": {
+                          "type": "number",
+                          "description": "Unix epoch milliseconds."
+                        },
+                        "safe_until": {
+                          "type": "number",
+                          "description": "Unix epoch milliseconds."
+                        }
+                      },
+                      "required": [
+                        "policy",
+                        "outcome",
+                        "first_started_at",
+                        "safe_until"
+                      ],
+                      "additionalProperties": false,
+                      "description": "Retained local effect marker, not independent receiver confirmation or proof that a prior effect can be recalled.",
+                      "nullable": true
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "kind",
+                    "status",
+                    "family",
+                    "subscription_id",
+                    "authority_present",
+                    "source_route",
+                    "source_method",
+                    "effect"
+                  ],
+                  "additionalProperties": false,
+                  "description": "Redacted retained delivery/fanout job metadata only; payloads, authority values and credentials are omitted. Timing/attempt fields may be absent on historical records."
+                },
+                "maxItems": 40
+              },
+              "cursor": {
+                "type": "string",
+                "nullable": true
+              },
+              "list_complete": {
+                "type": "boolean"
+              },
+              "scanned_jobs": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 40
+              },
+              "scope": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "jobs",
+              "cursor",
+              "list_complete",
+              "scanned_jobs",
+              "scope"
+            ],
+            "additionalProperties": false,
+            "description": "Workspace-wide retained delivery/fanout projection, not filtered by the selected subscription family. A missing retained job is not proof that no past external effect occurred. Inventory does not enqueue or retry jobs."
+          },
+          "complete_inventory": {
+            "type": "boolean",
+            "description": "True only when all three source pages are complete; not an atomic or historical-completeness guarantee."
+          },
+          "snapshot_semantics": {
+            "type": "string"
+          },
+          "external_actions_executed": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "credential_values_exposed": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "scope",
+          "family",
+          "integrations",
+          "legacy_page",
+          "canonical_page",
+          "jobs",
+          "complete_inventory",
+          "snapshot_semantics",
+          "external_actions_executed",
+          "credential_values_exposed"
+        ],
+        "additionalProperties": true,
+        "description": "Successful operator-only GET integration_inventory result. Bounded sequential observation, not an atomic cross-store snapshot. Retirement rereads hashes and canonical versions. No registration, permission grant, external send, historical replay or queue mutation is performed; credential usability remains unproven. Additional top-level fields may be added by the shared response envelope."
+      },
+      "IntegrationRetirementResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok"
+            ]
+          },
+          "scope": {
+            "type": "object",
+            "properties": {
+              "tenant_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$"
+              },
+              "workspace_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$"
+              }
+            },
+            "required": [
+              "tenant_id",
+              "workspace_id"
+            ],
+            "additionalProperties": false
+          },
+          "family": {
+            "type": "string",
+            "enum": [
+              "webhook",
+              "sink"
+            ]
+          },
+          "integration_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,119}$"
+          },
+          "operation_id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+            "description": "Required body operation_id, scoped to the target tenant/workspace across integration families. It is distinct from the optional HTTP Idempotency-Key header; that header cannot replace it. Retry with the same operation_id, action, scope, family, integration_id, trimmed reason and ORIGINAL expected_canonical_version/expected_canonical_hash/expected_legacy_hash. While the stored operation receipt exists, matching replay returns its original result with duplicate=true without rechecking current integration state; changed reuse returns HTTP 409 runtime_integration_operation_conflict. Do not refresh preconditions or change the operation ID to bypass a conflict or uncertain result."
+          },
+          "canonical_status": {
+            "type": "string",
+            "enum": [
+              "retired"
+            ]
+          },
+          "canonical_version": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "retired_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "history_preserved": {
+            "type": "boolean",
+            "enum": [
+              true
+            ],
+            "description": "Private canonical and legacy before-images and the operation receipt are committed with retirement in one canonical transaction. The private before-images are not returned here. Legacy KV is not part of that transaction."
+          },
+          "legacy_record_deleted": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "external_actions_executed": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "historical_actions_replayed": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "prior_effect_recalled": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "enforcement": {
+            "type": "string",
+            "description": "Future effect claims require current active canonical state. Already claimed or completed external effects cannot be recalled."
+          },
+          "duplicate": {
+            "type": "boolean",
+            "enum": [
+              true
+            ],
+            "description": "Present only for matching replay of a stored operation receipt; omitted on the initial successful retirement."
+          }
+        },
+        "required": [
+          "status",
+          "scope",
+          "family",
+          "integration_id",
+          "operation_id",
+          "canonical_status",
+          "canonical_version",
+          "retired_at",
+          "history_preserved",
+          "legacy_record_deleted",
+          "external_actions_executed",
+          "historical_actions_replayed",
+          "prior_effect_recalled",
+          "enforcement"
+        ],
+        "additionalProperties": true,
+        "description": "Successful operator-only POST integration_retire receipt. Retires canonical state and preserves private history without deleting legacy KV, registering or activating an integration, issuing permission, enqueueing delivery or retrying historical jobs. Matching operation replay returns the original receipt, not a fresh current-state observation. Additional top-level fields may be added by the shared response envelope."
+      },
+      "RuntimeSchedulerResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "cycle": {
+            "type": "string"
+          },
+          "canary_id": {
+            "type": "string"
+          },
+          "scheduler": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "runtime_job": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "runtime_jobs": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "invocation": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "completion": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "accounting": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "external_effects_suppressed": {
+            "type": "boolean"
+          },
+          "natural_invocation_observed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true,
+        "anyOf": [
+          {
+            "required": [
+              "cycle"
+            ]
+          },
+          {
+            "required": [
+              "canary_id"
+            ]
+          }
+        ]
+      },
+      "ExportJobResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "job_id": {
+            "type": "string"
+          },
+          "job_status": {
+            "type": "string"
+          },
+          "job": {
+            "type": "object",
+            "properties": {
+              "job_id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "schema": {
+                "type": "string"
+              },
+              "source_kind": {
+                "type": "string"
+              },
+              "source_ref": {
+                "type": "string"
+              },
+              "artifact_boundary": {
+                "$ref": "#/components/schemas/ArtifactBoundary"
+              },
+              "download_url": {
+                "type": "string",
+                "nullable": true
+              },
+              "file_generation": {
+                "type": "boolean"
+              },
+              "expires_at": {
+                "type": "string"
+              },
+              "source_sha256": {
+                "type": "string"
+              },
+              "artifact_sha256": {
+                "type": "string"
+              },
+              "render_spec_sha256": {
+                "type": "string"
+              },
+              "mime_type": {
+                "type": "string"
+              },
+              "byte_length": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": true
+          },
+          "artifact_boundary": {
+            "$ref": "#/components/schemas/ArtifactBoundary"
+          },
+          "source_kind": {
+            "type": "string",
+            "enum": [
+              "persisted_decision_check"
+            ]
+          },
+          "source_ref": {
+            "type": "string"
+          },
+          "download_url": {
+            "type": "string",
+            "nullable": true
+          },
+          "file_generation": {
+            "type": "boolean"
+          },
+          "expires_at": {
+            "type": "string"
+          },
+          "source_sha256": {
+            "type": "string"
+          },
+          "artifact_sha256": {
+            "type": "string"
+          },
+          "render_spec_sha256": {
+            "type": "string"
+          },
+          "mime_type": {
+            "type": "string"
+          },
+          "byte_length": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "get_is_read_only": {
+            "type": "boolean"
+          },
+          "artifact_access_revoked": {
+            "type": "boolean"
+          },
+          "source_deleted": {
+            "type": "boolean"
+          },
+          "provenance_note": {
+            "type": "string"
+          },
+          "action_authorization": {
+            "$ref": "#/components/schemas/ActionAuthorizationBoundary"
+          }
+        },
+        "additionalProperties": true,
+        "description": "Governed historical export only. Creation returns 201; deletion 200 preserves the source. Status retrieval is read-only. Legacy/expired jobs return requires_regeneration with no download URL; their artifact URL returns 410. Unknown or inaccessible jobs return 404; changed/missing source lineage rejects retrieval. No export authorizes an action."
       },
       "PresentationReferenceWithRootHash": {
         "type": "object",
@@ -81422,7 +82459,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-18.integration-governance.2"
+    "deployment_revision": "2026-10-18.export-trust.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
