@@ -11432,6 +11432,15 @@
                 "type": "object",
                 "additionalProperties": true,
                 "properties": {
+                  "subject": {
+                    "type": "object",
+                    "additionalProperties": true
+                  },
+                  "decision_question": {
+                    "type": "string",
+                    "maxLength": 2000,
+                    "description": "Exact recorded decision question when using attestation_refs."
+                  },
                   "evidence_pack": {
                     "type": "array",
                     "items": {
@@ -12116,10 +12125,6 @@
                     },
                     "description": "Canonical compiled-pack lanes, with legacy container aliases accepted by utility normalization. Unknown keys are not evidence lanes. collectEvidencePack prefers evidence_pack, even when it is empty, over compiled_pack."
                   },
-                  "subject": {
-                    "type": "object",
-                    "additionalProperties": true
-                  },
                   "market_scope": {
                     "type": "object",
                     "additionalProperties": true
@@ -12257,6 +12262,43 @@
                   },
                   "workflow_expires_at": {
                     "type": "string"
+                  },
+                  "attestation_refs": {
+                    "type": "array",
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "attestation_id",
+                        "tenant_id",
+                        "workspace_id",
+                        "reference_secret"
+                      ],
+                      "properties": {
+                        "attestation_id": {
+                          "type": "string",
+                          "pattern": "^ATT-[a-f0-9]{64}$"
+                        },
+                        "tenant_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "workspace_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "reference_secret": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$",
+                          "writeOnly": true,
+                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                        }
+                      }
+                    },
+                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
                   }
                 },
                 "description": "Compiles incomplete or complete context without requiring evidence, subject, country or requested_use. Market precedence: market_context, market_scope, target_market, subject. Use precedence: requested_use, decision_use, output_use. Empty input returns verification_required. Supplied containers and evidence field types are validated before normalization, and a supplied analysis_date must be a real ISO date or datetime. Full decision evidence requirements are not imposed on incomplete items; sentiment, freshness and corroboration remain inference limits, not authorization.",
@@ -12424,6 +12466,12 @@
                       "strict_calibrated"
                     ]
                   },
+                  "subject": {
+                    "$ref": "#/components/schemas/UtilitySubject"
+                  },
+                  "decision_question": {
+                    "type": "string"
+                  },
                   "evidence_pack": {
                     "type": "array",
                     "items": {
@@ -12432,9 +12480,6 @@
                   },
                   "compiled_pack": {
                     "$ref": "#/components/schemas/UtilityCompiledPack"
-                  },
-                  "subject": {
-                    "$ref": "#/components/schemas/UtilitySubject"
                   },
                   "market_scope": {
                     "$ref": "#/components/schemas/UtilityMarketScope"
@@ -12569,6 +12614,43 @@
                   "workflow_expires_at": {
                     "type": "string"
                   },
+                  "attestation_refs": {
+                    "type": "array",
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "attestation_id",
+                        "tenant_id",
+                        "workspace_id",
+                        "reference_secret"
+                      ],
+                      "properties": {
+                        "attestation_id": {
+                          "type": "string",
+                          "pattern": "^ATT-[a-f0-9]{64}$"
+                        },
+                        "tenant_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "workspace_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "reference_secret": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$",
+                          "writeOnly": true,
+                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                        }
+                      }
+                    },
+                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                  },
                   "category": {
                     "type": "string"
                   },
@@ -12668,9 +12750,6 @@
                     "type": "string"
                   },
                   "name": {
-                    "type": "string"
-                  },
-                  "decision_question": {
                     "type": "string"
                   },
                   "question": {
@@ -13908,6 +13987,14 @@
                       "strict_calibrated"
                     ]
                   },
+                  "subject": {
+                    "$ref": "#/components/schemas/UtilitySubject"
+                  },
+                  "decision_question": {
+                    "type": "string",
+                    "maxLength": 2000,
+                    "description": "Exact recorded decision question when using attestation_refs."
+                  },
                   "evidence_pack": {
                     "type": "array",
                     "items": {
@@ -13916,9 +14003,6 @@
                   },
                   "compiled_pack": {
                     "$ref": "#/components/schemas/UtilityCompiledPack"
-                  },
-                  "subject": {
-                    "$ref": "#/components/schemas/UtilitySubject"
                   },
                   "market_scope": {
                     "$ref": "#/components/schemas/UtilityMarketScope"
@@ -14054,6 +14138,43 @@
                   },
                   "workflow_expires_at": {
                     "type": "string"
+                  },
+                  "attestation_refs": {
+                    "type": "array",
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "attestation_id",
+                        "tenant_id",
+                        "workspace_id",
+                        "reference_secret"
+                      ],
+                      "properties": {
+                        "attestation_id": {
+                          "type": "string",
+                          "pattern": "^ATT-[a-f0-9]{64}$"
+                        },
+                        "tenant_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "workspace_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "reference_secret": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$",
+                          "writeOnly": true,
+                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                        }
+                      }
+                    },
+                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
                   },
                   "category": {
                     "type": "string"
@@ -32381,6 +32502,11 @@
                     },
                     "additionalProperties": true
                   },
+                  "decision_question": {
+                    "type": "string",
+                    "maxLength": 2000,
+                    "description": "Exact recorded decision question when using attestation_refs."
+                  },
                   "market_scope": {
                     "type": "object",
                     "properties": {
@@ -32673,6 +32799,43 @@
                   },
                   "town_or_zone": {
                     "type": "string"
+                  },
+                  "attestation_refs": {
+                    "type": "array",
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "attestation_id",
+                        "tenant_id",
+                        "workspace_id",
+                        "reference_secret"
+                      ],
+                      "properties": {
+                        "attestation_id": {
+                          "type": "string",
+                          "pattern": "^ATT-[a-f0-9]{64}$"
+                        },
+                        "tenant_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "workspace_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "reference_secret": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$",
+                          "writeOnly": true,
+                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                        }
+                      }
+                    },
+                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
                   }
                 },
                 "description": "Keyless, non-authorizing activation input. Supply the context available; unknown top-level fields fail closed so agent integrations detect contract drift."
@@ -33152,6 +33315,16 @@
                 "type": "object",
                 "additionalProperties": true,
                 "properties": {
+                  "subject": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "description": "Exact recorded subject context when using attestation_refs."
+                  },
+                  "decision_question": {
+                    "type": "string",
+                    "maxLength": 2000,
+                    "description": "Exact recorded decision question when using attestation_refs."
+                  },
                   "query": {
                     "type": "string",
                     "minLength": 1
@@ -33188,6 +33361,43 @@
                   },
                   "url": {
                     "type": "string"
+                  },
+                  "attestation_refs": {
+                    "type": "array",
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "attestation_id",
+                        "tenant_id",
+                        "workspace_id",
+                        "reference_secret"
+                      ],
+                      "properties": {
+                        "attestation_id": {
+                          "type": "string",
+                          "pattern": "^ATT-[a-f0-9]{64}$"
+                        },
+                        "tenant_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "workspace_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "reference_secret": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$",
+                          "writeOnly": true,
+                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                        }
+                      }
+                    },
+                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
                   }
                 },
                 "anyOf": [
@@ -33358,6 +33568,51 @@
                 },
                 "additionalProperties": true,
                 "properties": {
+                  "subject": {
+                    "type": "object"
+                  },
+                  "decision_question": {
+                    "type": "string",
+                    "maxLength": 2000,
+                    "description": "Exact recorded decision question when using attestation_refs."
+                  },
+                  "attestation_refs": {
+                    "type": "array",
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "attestation_id",
+                        "tenant_id",
+                        "workspace_id",
+                        "reference_secret"
+                      ],
+                      "properties": {
+                        "attestation_id": {
+                          "type": "string",
+                          "pattern": "^ATT-[a-f0-9]{64}$"
+                        },
+                        "tenant_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "workspace_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "reference_secret": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$",
+                          "writeOnly": true,
+                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                        }
+                      }
+                    },
+                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                  },
                   "claims": {
                     "type": "array",
                     "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
@@ -33514,9 +33769,6 @@
                       "market_entry"
                     ],
                     "description": "Use a canonical case type. market_entry is an accepted compatibility alias for greenfield_entry and is disclosed as the original input in internal audit metadata."
-                  },
-                  "subject": {
-                    "type": "object"
                   },
                   "market_scope": {
                     "type": "object"
@@ -45318,6 +45570,43 @@
                             ]
                           },
                           "properties": {
+                            "attestation_refs": {
+                              "type": "array",
+                              "maxItems": 3,
+                              "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                  "attestation_id",
+                                  "tenant_id",
+                                  "workspace_id",
+                                  "reference_secret"
+                                ],
+                                "properties": {
+                                  "attestation_id": {
+                                    "type": "string",
+                                    "pattern": "^ATT-[a-f0-9]{64}$"
+                                  },
+                                  "tenant_id": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 200
+                                  },
+                                  "workspace_id": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 200
+                                  },
+                                  "reference_secret": {
+                                    "type": "string",
+                                    "pattern": "^[a-f0-9]{64}$",
+                                    "writeOnly": true,
+                                    "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                                  }
+                                }
+                              },
+                              "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                            },
                             "claims": {
                               "type": "array",
                               "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
@@ -64090,6 +64379,43 @@
                       "strict_calibrated"
                     ]
                   },
+                  "attestation_refs": {
+                    "type": "array",
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "attestation_id",
+                        "tenant_id",
+                        "workspace_id",
+                        "reference_secret"
+                      ],
+                      "properties": {
+                        "attestation_id": {
+                          "type": "string",
+                          "pattern": "^ATT-[a-f0-9]{64}$"
+                        },
+                        "tenant_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "workspace_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "reference_secret": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$",
+                          "writeOnly": true,
+                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                        }
+                      }
+                    },
+                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                  },
                   "claims": {
                     "type": "array",
                     "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
@@ -68249,6 +68575,478 @@
         }
       }
     },
+    "/v1/reviewer-attestations": {
+      "post": {
+        "summary": "Create, inspect or withdraw an account-linked, explicitly shared, case-bound reviewer assertion. Not source verification, scoring evidence or action permission. Creation is idempotent by operation_id, not an HTTP replay receipt.",
+        "description": "Create, inspect or withdraw an account-linked, explicitly shared, case-bound reviewer assertion. Not source verification, scoring evidence or action permission. Creation is idempotent by operation_id, not an HTTP replay receipt.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/reviewer-attestations",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "rbac_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "validateReviewerAttestation",
+          "status": "registry_metadata_enforced_by_shared_gateway"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewerAttestationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "action"
+                ],
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "create",
+                      "get",
+                      "revoke"
+                    ]
+                  },
+                  "operation_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "^[a-zA-Z0-9_-]+$"
+                  },
+                  "attestation_id": {
+                    "type": "string",
+                    "pattern": "^ATT-[a-f0-9]{64}$"
+                  },
+                  "preflight_context": {
+                    "type": "object",
+                    "required": [
+                      "subject",
+                      "market_scope",
+                      "decision_question"
+                    ],
+                    "additionalProperties": true,
+                    "properties": {
+                      "subject": {
+                        "type": "object"
+                      },
+                      "market_scope": {
+                        "type": "object"
+                      },
+                      "decision_question": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 2000
+                      }
+                    }
+                  },
+                  "reviewer_name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160
+                  },
+                  "reviewer_relationship": {
+                    "type": "string",
+                    "enum": [
+                      "self",
+                      "internal",
+                      "external",
+                      "unknown"
+                    ]
+                  },
+                  "claim": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                  },
+                  "statement": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2000
+                  },
+                  "relationship": {
+                    "type": "string",
+                    "enum": [
+                      "supports",
+                      "qualifies",
+                      "contradicts",
+                      "context_only"
+                    ]
+                  },
+                  "source_records": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 20,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "source_ref",
+                        "locator"
+                      ],
+                      "properties": {
+                        "source_ref": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "locator": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 300
+                        },
+                        "source_sha256": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$"
+                        }
+                      }
+                    }
+                  },
+                  "reviewed_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "expires_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "residual_gaps": {
+                    "type": "array",
+                    "maxItems": 20,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    }
+                  },
+                  "reference_secret": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "writeOnly": true,
+                    "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                  },
+                  "share_redacted_with_reference_holders": {
+                    "const": true
+                  },
+                  "original_records_examined": {
+                    "const": true
+                  },
+                  "redacted_no_personal_data": {
+                    "const": true
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  }
+                },
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "action": {
+                          "const": "create"
+                        }
+                      }
+                    },
+                    "then": {
+                      "required": [
+                        "operation_id",
+                        "preflight_context",
+                        "reviewer_name",
+                        "reviewer_relationship",
+                        "claim",
+                        "statement",
+                        "relationship",
+                        "source_records",
+                        "reviewed_at",
+                        "expires_at",
+                        "residual_gaps",
+                        "reference_secret",
+                        "share_redacted_with_reference_holders",
+                        "original_records_examined",
+                        "redacted_no_personal_data"
+                      ]
+                    }
+                  },
+                  {
+                    "if": {
+                      "properties": {
+                        "action": {
+                          "enum": [
+                            "get",
+                            "revoke"
+                          ]
+                        }
+                      }
+                    },
+                    "then": {
+                      "required": [
+                        "attestation_id"
+                      ]
+                    }
+                  },
+                  {
+                    "if": {
+                      "properties": {
+                        "action": {
+                          "const": "revoke"
+                        }
+                      }
+                    },
+                    "then": {
+                      "required": [
+                        "reason"
+                      ]
+                    }
+                  }
+                ],
+                "description": "Account-linked, explicitly shared reviewer assertion. Idempotency is keyed by operation_id, principal and workspace; different content at the same operation_id conflicts. No human identity, professional standing, source truth, independence, score or external-action permission is established. No source documents are uploaded. Existing individually assigned account provisioning and API terms still apply."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/reviewer-attestations/contract": {
+      "get": {
+        "summary": "Discover the lightweight reviewer assertion workflow, account requirements and non-authorizing boundaries.",
+        "description": "Discover the lightweight reviewer assertion workflow, account requirements and non-authorizing boundaries.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/reviewer-attestations/contract",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewerAttestationContract"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/category-playbook/{entity_archetype}": {
       "get": {
         "summary": "Return category-specific evidence requirements, risk map, telemetry sources, board questions, and failure modes.",
@@ -71990,6 +72788,43 @@
                       "strict_calibrated"
                     ]
                   },
+                  "attestation_refs": {
+                    "type": "array",
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "attestation_id",
+                        "tenant_id",
+                        "workspace_id",
+                        "reference_secret"
+                      ],
+                      "properties": {
+                        "attestation_id": {
+                          "type": "string",
+                          "pattern": "^ATT-[a-f0-9]{64}$"
+                        },
+                        "tenant_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "workspace_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "reference_secret": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$",
+                          "writeOnly": true,
+                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                        }
+                      }
+                    },
+                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                  },
                   "claims": {
                     "type": "array",
                     "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
@@ -72829,6 +73664,43 @@
                     "items": {
                       "type": "object",
                       "properties": {
+                        "attestation_refs": {
+                          "type": "array",
+                          "maxItems": 3,
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "attestation_id",
+                              "tenant_id",
+                              "workspace_id",
+                              "reference_secret"
+                            ],
+                            "properties": {
+                              "attestation_id": {
+                                "type": "string",
+                                "pattern": "^ATT-[a-f0-9]{64}$"
+                              },
+                              "tenant_id": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 200
+                              },
+                              "workspace_id": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 200
+                              },
+                              "reference_secret": {
+                                "type": "string",
+                                "pattern": "^[a-f0-9]{64}$",
+                                "writeOnly": true,
+                                "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                              }
+                            }
+                          },
+                          "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                        },
                         "claims": {
                           "type": "array",
                           "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
@@ -75600,6 +76472,43 @@
           ]
         },
         "properties": {
+          "attestation_refs": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "attestation_id",
+                "tenant_id",
+                "workspace_id",
+                "reference_secret"
+              ],
+              "properties": {
+                "attestation_id": {
+                  "type": "string",
+                  "pattern": "^ATT-[a-f0-9]{64}$"
+                },
+                "tenant_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "workspace_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "reference_secret": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$",
+                  "writeOnly": true,
+                  "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                }
+              }
+            },
+            "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+          },
           "claims": {
             "type": "array",
             "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
@@ -79923,6 +80832,111 @@
         },
         "description": "Non-authorizing historical artifact boundary. Not a signed permission receipt or proof of source truth, issuer standing, current reliance or revocation checking."
       },
+      "ReviewerAttestationResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "recorded",
+              "ok",
+              "revoked",
+              "forbidden",
+              "not_found",
+              "invalid_input",
+              "conflict",
+              "system_unavailable"
+            ]
+          },
+          "code": {
+            "type": "string"
+          },
+          "attestation": {
+            "type": "object",
+            "properties": {
+              "attestation_id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "active",
+                  "revoked",
+                  "expired"
+                ]
+              },
+              "content_sha256": {
+                "type": "string"
+              },
+              "context_sha256": {
+                "type": "string"
+              },
+              "account_link_authenticated": {
+                "type": "boolean"
+              },
+              "human_presence_verified": {
+                "const": false
+              },
+              "professional_licence_verified": {
+                "const": false
+              },
+              "source_authenticity_verified": {
+                "const": false
+              },
+              "scoring_eligible": {
+                "const": false
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            },
+            "additionalProperties": true
+          },
+          "idempotent_replay": {
+            "type": "boolean"
+          },
+          "reference_scope": {
+            "type": "object",
+            "properties": {
+              "tenant_id": {
+                "type": "string"
+              },
+              "workspace_id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "reference_secret_returned": {
+            "const": false
+          },
+          "execution_authorized": {
+            "const": false
+          }
+        },
+        "additionalProperties": true
+      },
+      "ReviewerAttestationContract": {
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "const": "mvr.reviewer-attestation/1"
+          },
+          "authenticated_account_required": {
+            "const": true
+          },
+          "examiner_engagement_required": {
+            "const": false
+          },
+          "execution_authorized": {
+            "const": false
+          },
+          "scoring_eligible": {
+            "const": false
+          }
+        },
+        "additionalProperties": true
+      },
       "IntegrationInventoryResponse": {
         "type": "object",
         "properties": {
@@ -82648,7 +83662,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-18.intake-reliability.1"
+    "deployment_revision": "2026-10-18.reviewer-attestation.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
