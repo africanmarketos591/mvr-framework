@@ -8876,6 +8876,14 @@
                     "required": [
                       "decision_snapshot_id"
                     ]
+                  },
+                  "response_detail": {
+                    "type": "string",
+                    "enum": [
+                      "full",
+                      "compact"
+                    ],
+                    "description": "Shared response-envelope detail control. Must agree with X-Response-Detail and any response_detail query parameter; never a source reference or execution permission."
                   }
                 },
                 "additionalProperties": false,
@@ -80162,7 +80170,7 @@
             "enum": [
               true
             ],
-            "description": "Private canonical and legacy before-images and the operation receipt are committed with retirement in one canonical transaction; they are not returned here. Legacy KV is not part of that transaction."
+            "description": "Private canonical and legacy before-images and the operation receipt are committed with retirement in one canonical transaction. The private before-images are not returned here. Legacy KV is not part of that transaction."
           },
           "legacy_record_deleted": {
             "type": "boolean",
