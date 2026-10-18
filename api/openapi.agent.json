@@ -207,6 +207,129 @@
     "abstention": "Scope-limited abstentions are returned when localized claims are unsupported by direct field evidence."
   },
   "paths": {
+    "/v1/ontology": {
+      "get": {
+        "summary": "Compact evidence enum catalogue with field paths, aliases and source-preserving intake guidance. Public and sandbox accessible; no source authentication or action permission.",
+        "description": "Compact evidence enum catalogue with field paths, aliases and source-preserving intake guidance. Public and sandbox accessible; no source authentication or action permission.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/ontology",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvidenceOntologyResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/schema": {
       "get": {
         "summary": "Full profile documentation including strict_calibrated requirements, frontend enums, and terminal_templates (see JSON body key terminal_templates).",
@@ -11363,7 +11486,8 @@
                         }
                       },
                       "description": "Evidence envelope. Context compilation permits incomplete items; other utility routes apply the current profile-dependent evidence validator. This schema does not certify provenance, freshness, privacy, or decision eligibility."
-                    }
+                    },
+                    "maxItems": 500
                   },
                   "compiled_pack": {
                     "type": "object",
@@ -12141,7 +12265,8 @@
                     "evidence_pack",
                     "compiled_pack"
                   ]
-                }
+                },
+                "x-max-total-evidence-items": 500
               }
             }
           }
@@ -33224,6 +33349,7 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "x-max-total-evidence-items": 500,
                 "not": {
                   "required": [
                     "evidence_pack",
@@ -33506,6 +33632,7 @@
                   },
                   "evidence_pack": {
                     "type": "array",
+                    "maxItems": 500,
                     "items": {
                       "$ref": "#/components/schemas/EvidenceItem"
                     }
@@ -77320,6 +77447,68 @@
         },
         "additionalProperties": true
       },
+      "EvidenceOntologyResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok"
+            ]
+          },
+          "contract_version": {
+            "type": "string",
+            "enum": [
+              "mvr-evidence-ontology@1"
+            ]
+          },
+          "deployment_revision": {
+            "type": "string"
+          },
+          "release_version": {
+            "type": "string"
+          },
+          "field_enums": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "aliases": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "intake_contracts": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "classification_guidance": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "boundary": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "status",
+          "contract_version",
+          "deployment_revision",
+          "release_version",
+          "field_enums",
+          "aliases",
+          "intake_contracts",
+          "classification_guidance",
+          "boundary"
+        ]
+      },
       "DeploymentZonePrior": {
         "type": "object",
         "properties": {
@@ -82459,7 +82648,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-18.export-trust.1"
+    "deployment_revision": "2026-10-18.intake-reliability.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
