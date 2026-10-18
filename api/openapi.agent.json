@@ -12294,11 +12294,11 @@
                           "type": "string",
                           "pattern": "^[a-f0-9]{64}$",
                           "writeOnly": true,
-                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                          "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                         }
                       }
                     },
-                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                    "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   }
                 },
                 "description": "Compiles incomplete or complete context without requiring evidence, subject, country or requested_use. Market precedence: market_context, market_scope, target_market, subject. Use precedence: requested_use, decision_use, output_use. Empty input returns verification_required. Supplied containers and evidence field types are validated before normalization, and a supplied analysis_date must be a real ISO date or datetime. Full decision evidence requirements are not imposed on incomplete items; sentiment, freshness and corroboration remain inference limits, not authorization.",
@@ -12645,11 +12645,11 @@
                           "type": "string",
                           "pattern": "^[a-f0-9]{64}$",
                           "writeOnly": true,
-                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                          "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                         }
                       }
                     },
-                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                    "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   },
                   "category": {
                     "type": "string"
@@ -14170,11 +14170,11 @@
                           "type": "string",
                           "pattern": "^[a-f0-9]{64}$",
                           "writeOnly": true,
-                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                          "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                         }
                       }
                     },
-                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                    "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   },
                   "category": {
                     "type": "string"
@@ -32831,11 +32831,11 @@
                           "type": "string",
                           "pattern": "^[a-f0-9]{64}$",
                           "writeOnly": true,
-                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                          "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                         }
                       }
                     },
-                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                    "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   }
                 },
                 "description": "Keyless, non-authorizing activation input. Supply the context available; unknown top-level fields fail closed so agent integrations detect contract drift."
@@ -33393,11 +33393,11 @@
                           "type": "string",
                           "pattern": "^[a-f0-9]{64}$",
                           "writeOnly": true,
-                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                          "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                         }
                       }
                     },
-                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                    "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   }
                 },
                 "anyOf": [
@@ -33607,11 +33607,11 @@
                           "type": "string",
                           "pattern": "^[a-f0-9]{64}$",
                           "writeOnly": true,
-                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                          "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                         }
                       }
                     },
-                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                    "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   },
                   "claims": {
                     "type": "array",
@@ -45601,11 +45601,11 @@
                                     "type": "string",
                                     "pattern": "^[a-f0-9]{64}$",
                                     "writeOnly": true,
-                                    "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                                    "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                                   }
                                 }
                               },
-                              "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                              "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                             },
                             "claims": {
                               "type": "array",
@@ -64410,11 +64410,11 @@
                           "type": "string",
                           "pattern": "^[a-f0-9]{64}$",
                           "writeOnly": true,
-                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                          "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                         }
                       }
                     },
-                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                    "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   },
                   "claims": {
                     "type": "array",
@@ -68839,7 +68839,7 @@
                     "type": "string",
                     "pattern": "^[a-f0-9]{64}$",
                     "writeOnly": true,
-                    "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                    "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                   },
                   "share_redacted_with_reference_holders": {
                     "const": true
@@ -72819,11 +72819,11 @@
                           "type": "string",
                           "pattern": "^[a-f0-9]{64}$",
                           "writeOnly": true,
-                          "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                          "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                         }
                       }
                     },
-                    "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                    "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   },
                   "claims": {
                     "type": "array",
@@ -73695,11 +73695,11 @@
                                 "type": "string",
                                 "pattern": "^[a-f0-9]{64}$",
                                 "writeOnly": true,
-                                "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                                "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                               }
                             }
                           },
-                          "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+                          "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                         },
                         "claims": {
                           "type": "array",
@@ -76503,11 +76503,11 @@
                   "type": "string",
                   "pattern": "^[a-f0-9]{64}$",
                   "writeOnly": true,
-                  "description": "256-bit client-generated random bearer secret. Keep out of URLs, logs, prompts, exports and reports. Grants access only to an explicitly shared, case-bound redacted attestation."
+                  "description": "256-bit random bearer secret. Keep host-private, out of URLs/logs/prompts/exports; grants shared context, not authority."
                 }
               }
             },
-            "description": "Optional current, consented, case-bound reviewer context. Never source verification, scoring evidence, gap clearance or permission. The complete subject, market_scope and decision_question must match the recorded preflight_context exactly."
+            "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
           },
           "claims": {
             "type": "array",
