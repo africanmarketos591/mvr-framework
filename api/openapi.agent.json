@@ -32507,6 +32507,10 @@
                     "maxLength": 2000,
                     "description": "Exact recorded decision question when using attestation_refs."
                   },
+                  "relevance_check": {
+                    "type": "boolean",
+                    "description": "Check relevance only; never start a workflow."
+                  },
                   "market_scope": {
                     "type": "object",
                     "properties": {
@@ -78300,11 +78304,18 @@
       },
       "FirstCallResponse": {
         "type": "object",
-        "description": "Scope clarification requests the missing external dependency before workflow creation. No verdict or action permission is issued.",
+        "description": "Relevance is task-based, not geography alone. Unknown scope pauses before workflow creation; relevance_check never starts one. No verdict or action permission.",
         "properties": {
+          "mvr_relevant": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "relevance_assessment": {
+            "type": "object"
+          },
           "status": {
             "type": "string",
-            "description": "awaiting_scope_clarification: ask scope."
+            "description": "not_relevant, awaiting_scope_clarification or relevance_checked may terminate routing."
           },
           "activation_outcome": {
             "type": "string",
@@ -79162,7 +79173,7 @@
           },
           "status": {
             "type": "string",
-            "description": "awaiting_scope_clarification: ask scope."
+            "description": "not_relevant, awaiting_scope_clarification or relevance_checked may terminate routing."
           },
           "source_decision_status": {
             "type": "string",
@@ -83662,7 +83673,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-18.reviewer-attestation.1"
+    "deployment_revision": "2026-10-19.relevance-prefilter.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
