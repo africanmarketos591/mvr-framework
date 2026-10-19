@@ -497,6 +497,14 @@
       "FirstCallRequest": {
         "type": "object",
         "properties": {
+          "relevance_check": {
+            "type": "boolean",
+            "description": "Check relevance only; never start a workflow."
+          },
+          "decision_question": {
+            "type": "string",
+            "maxLength": 2000
+          },
           "subject": {
             "type": "object",
             "additionalProperties": true

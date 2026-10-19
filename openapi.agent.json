@@ -11439,7 +11439,7 @@
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact recorded decision question when using attestation_refs."
+                    "description": "Exact decision_question recorded for attestation_refs."
                   },
                   "evidence_pack": {
                     "type": "array",
@@ -13993,7 +13993,7 @@
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact recorded decision question when using attestation_refs."
+                    "description": "Exact decision_question recorded for attestation_refs."
                   },
                   "evidence_pack": {
                     "type": "array",
@@ -32505,7 +32505,11 @@
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact recorded decision question when using attestation_refs."
+                    "description": "Exact decision_question recorded for attestation_refs."
+                  },
+                  "relevance_check": {
+                    "type": "boolean",
+                    "description": "Check relevance only; never start a workflow."
                   },
                   "market_scope": {
                     "type": "object",
@@ -32838,7 +32842,7 @@
                     "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   }
                 },
-                "description": "Keyless, non-authorizing activation input. Supply the context available; unknown top-level fields fail closed so agent integrations detect contract drift."
+                "description": "Keyless, non-authorizing first-call context; unknown top-level fields are rejected."
               }
             }
           }
@@ -33318,12 +33322,12 @@
                   "subject": {
                     "type": "object",
                     "additionalProperties": true,
-                    "description": "Exact recorded subject context when using attestation_refs."
+                    "description": "Exact subject recorded for attestation_refs."
                   },
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact recorded decision question when using attestation_refs."
+                    "description": "Exact decision_question recorded for attestation_refs."
                   },
                   "query": {
                     "type": "string",
@@ -33574,7 +33578,7 @@
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact recorded decision question when using attestation_refs."
+                    "description": "Exact decision_question recorded for attestation_refs."
                   },
                   "attestation_refs": {
                     "type": "array",
@@ -78300,11 +78304,18 @@
       },
       "FirstCallResponse": {
         "type": "object",
-        "description": "Scope clarification requests the missing external dependency before workflow creation. No verdict or action permission is issued.",
+        "description": "Relevance is task-based, not geography alone. Unknown scope pauses before workflow creation; relevance_check never starts one. No verdict or action permission.",
         "properties": {
+          "mvr_relevant": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "relevance_assessment": {
+            "type": "object"
+          },
           "status": {
             "type": "string",
-            "description": "awaiting_scope_clarification: ask scope."
+            "description": "not_relevant, awaiting_scope_clarification or relevance_checked may terminate routing."
           },
           "activation_outcome": {
             "type": "string",
@@ -79162,7 +79173,7 @@
           },
           "status": {
             "type": "string",
-            "description": "awaiting_scope_clarification: ask scope."
+            "description": "not_relevant, awaiting_scope_clarification or relevance_checked may terminate routing."
           },
           "source_decision_status": {
             "type": "string",
@@ -83662,7 +83673,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-18.reviewer-attestation.1"
+    "deployment_revision": "2026-10-19.relevance-prefilter.2"
   },
   "response_contract_version": "2026-05-01.v1"
 }
