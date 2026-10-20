@@ -32607,6 +32607,44 @@
                     "type": "boolean",
                     "description": "Check relevance only; never start a workflow."
                   },
+                  "review_notes": {
+                    "type": "array",
+                    "maxItems": 8,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "text"
+                      ],
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 800
+                        },
+                        "source_ref": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "observed_at": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "country": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        }
+                      }
+                    },
+                    "description": "Optional redacted, unverified descriptions. Missing metadata stays unknown. Never converted to scoring evidence."
+                  },
+                  "review_notes_redacted": {
+                    "type": "boolean",
+                    "const": true
+                  },
                   "market_scope": {
                     "type": "object",
                     "properties": {
@@ -69309,8 +69347,8 @@
     },
     "/v1/review-cases": {
       "post": {
-        "summary": "Create lightweight review cases, link current scoped statements, prepare and recheck internal review packets. No external-action or evidence-truth authority.",
-        "description": "Create lightweight review cases, link current scoped statements, prepare and recheck internal review packets. No external-action or evidence-truth authority.",
+        "summary": "Create scoped review cases and internal planning workflows; link statements and recheck artifacts. Explicit evaluation grants are isolated. No external-action or evidence-truth authority.",
+        "description": "Create scoped review cases and internal planning workflows; link statements and recheck artifacts. Explicit evaluation grants are isolated. No external-action or evidence-truth authority.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/review-cases",
         "x-mvr-maturity": "release_candidate",
@@ -69448,6 +69486,40 @@
                   "action"
                 ],
                 "properties": {
+                  "workplan_id": {
+                    "type": "string",
+                    "pattern": "^RW-[a-f0-9]{64}$"
+                  },
+                  "plan_kind": {
+                    "type": "string",
+                    "enum": [
+                      "internal_pilot_design",
+                      "evidence_collection_design"
+                    ]
+                  },
+                  "expected_plan_revision": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 30
+                  },
+                  "internal_only_acknowledged": {
+                    "const": true
+                  },
+                  "step_id": {
+                    "type": "string",
+                    "enum": [
+                      "scope_and_hypothesis",
+                      "measures_and_limits",
+                      "source_and_permission_plan",
+                      "privacy_and_consent_plan",
+                      "human_review_and_release_plan"
+                    ]
+                  },
+                  "step_text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1600
+                  },
                   "action": {
                     "type": "string",
                     "enum": [
@@ -69457,7 +69529,11 @@
                       "unlink_attestation",
                       "prepare_packet",
                       "get_packet",
-                      "withdraw"
+                      "withdraw",
+                      "open_workplan",
+                      "get_workplan",
+                      "record_plan_step",
+                      "finalize_workplan"
                     ]
                   },
                   "operation_id": {
@@ -69546,6 +69622,12 @@
                         "INCOMPLETE_STUDY_INVENTORY",
                         "REVIEW_CONTRADICTION",
                         "REVIEW_DEPENDENCY_INACTIVE",
+                        "EVIDENCE_REQUIRED",
+                        "SOURCE_METADATA_INCOMPLETE",
+                        "STAKEHOLDER_COVERAGE_INCOMPLETE",
+                        "DECISION_CONTEXT_INCOMPLETE",
+                        "EVIDENCE_INPUT_INVALID",
+                        "EVIDENCE_FRESHNESS_UNRESOLVED",
                         "UNCLASSIFIED_RESIDUAL_RISK"
                       ]
                     }
@@ -69606,7 +69688,7 @@
                     "pattern": "^RP-[a-f0-9]{64}$"
                   }
                 },
-                "description": "Case-bound internal review preparation. Notes remain unverified. Account attestations can satisfy a procedural recorded-review prerequisite, not evidence truth, licence, financial or external-action requirements. An internal packet is historical, not a permission receipt."
+                "description": "Case-bound internal review and planning. Planning tasks can be completed; factual, professional-standing and external-action gaps remain separate. Notes and planning answers remain unverified. Historical artifacts are not current permission receipts."
               }
             }
           }
@@ -79478,6 +79560,36 @@
           },
           "not_a_verdict": {
             "type": "boolean"
+          },
+          "residual_risk_register": {
+            "$ref": "#/components/schemas/ResidualRiskRegister"
+          },
+          "review_intake": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "item_count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 8
+              },
+              "missing_metadata_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "evidence_items_created": {
+                "const": 0
+              },
+              "scoring_eligible": {
+                "const": false
+              },
+              "source_authenticity_verified": {
+                "const": false
+              }
+            },
+            "additionalProperties": true
           }
         },
         "additionalProperties": true
@@ -80768,6 +80880,36 @@
           },
           "renderer_required": {
             "type": "boolean"
+          },
+          "residual_risk_register": {
+            "$ref": "#/components/schemas/ResidualRiskRegister"
+          },
+          "review_intake": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "item_count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 8
+              },
+              "missing_metadata_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "evidence_items_created": {
+                "const": 0
+              },
+              "scoring_eligible": {
+                "const": false
+              },
+              "source_authenticity_verified": {
+                "const": false
+              }
+            },
+            "additionalProperties": true
           }
         },
         "additionalProperties": true,
@@ -80962,6 +81104,36 @@
           "code": {
             "type": "string",
             "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. HTTP 422: details/validation_errors. Fix missing_fields; never invent or erase adverse facts. Checks do not authenticate sources or authorize action. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
+          },
+          "residual_risk_register": {
+            "$ref": "#/components/schemas/ResidualRiskRegister"
+          },
+          "review_intake": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "item_count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 8
+              },
+              "missing_metadata_count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "evidence_items_created": {
+                "const": 0
+              },
+              "scoring_eligible": {
+                "const": false
+              },
+              "source_authenticity_verified": {
+                "const": false
+              }
+            },
+            "additionalProperties": true
           }
         },
         "additionalProperties": true
@@ -82090,7 +82262,7 @@
             "const": "mvr.review-progress/1"
           },
           "policy_version": {
-            "const": "internal-review-preparation/1"
+            "const": "internal-review-preparation/2"
           },
           "case_id": {
             "type": "string"
@@ -82099,7 +82271,8 @@
             "type": "string",
             "enum": [
               "internal_review",
-              "sandbox_evaluation"
+              "sandbox_evaluation",
+              "account_evaluation"
             ]
           },
           "case_revision": {
@@ -82200,6 +82373,76 @@
             "additionalProperties": true,
             "nullable": true
           },
+          "bounded_next_actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "internal_pilot_design",
+                    "evidence_collection_design"
+                  ]
+                },
+                "method": {
+                  "const": "POST"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "request": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": true
+                },
+                "permission_scope": {
+                  "const": "internal_planning_workflow_only"
+                },
+                "external_action_authorized": {
+                  "const": false
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "review_resolution": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "conflicting_attestation_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "inactive_attestation_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instructions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "factual_gaps_closed": {
+                "type": "array",
+                "maxItems": 0,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "numeric_credibility_weights_used": {
+                "const": false
+              }
+            },
+            "additionalProperties": true
+          },
           "continuation_disposition": {
             "type": "string",
             "enum": [
@@ -82257,7 +82500,8 @@
             "type": "string",
             "enum": [
               "internal_review",
-              "sandbox_evaluation"
+              "sandbox_evaluation",
+              "account_evaluation"
             ]
           },
           "content": {
@@ -82344,6 +82588,44 @@
           },
           "external_action_authorized": {
             "const": false
+          },
+          "workplan": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              "usable": {
+                "type": "boolean"
+              },
+              "current_state_checked": {
+                "const": true
+              },
+              "missing_steps": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "invalidation_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "historical_versions_preserved": {
+                "const": true
+              },
+              "completed_planning_is_not_business_approval": {
+                "const": true
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            },
+            "additionalProperties": true
           }
         },
         "additionalProperties": true
@@ -82355,7 +82637,7 @@
             "const": "mvr.review-progress/1"
           },
           "policy_version": {
-            "const": "internal-review-preparation/1"
+            "const": "internal-review-preparation/2"
           },
           "request_schema": {
             "type": "object",
@@ -82382,6 +82664,16 @@
               },
               "additionalProperties": true
             }
+          },
+          "internal_planning": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "automatic_invalidation": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
           },
           "execution_authorized": {
             "const": false
@@ -84392,6 +84684,65 @@
         },
         "additionalProperties": true
       },
+      "ResidualRiskRegister": {
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "const": "mvr.residual-risk-register/1"
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "reported_checks_only",
+              "outside_declared_mvr_scope"
+            ]
+          },
+          "taxonomy_url": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string",
+                  "enum": [
+                    "open",
+                    "recorded_review_satisfied"
+                  ]
+                },
+                "source_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "complete_risk_inventory": {
+            "const": false
+          },
+          "omitted_risks_unknown": {
+            "const": true
+          },
+          "underlying_decision_unchanged": {
+            "const": true
+          },
+          "evidence_gap_closure": {
+            "const": false
+          },
+          "execution_authorized": {
+            "const": false
+          }
+        },
+        "additionalProperties": true
+      },
       "EvidenceCompilerRequest": {
         "type": "object",
         "properties": {
@@ -85189,7 +85540,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-20.review-progress.2"
+    "deployment_revision": "2026-10-20.review-workflow.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
