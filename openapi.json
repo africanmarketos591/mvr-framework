@@ -11439,7 +11439,7 @@
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact decision_question recorded for attestation_refs."
+                    "description": "Exact recorded decision_question."
                   },
                   "evidence_pack": {
                     "type": "array",
@@ -12299,6 +12299,38 @@
                       }
                     },
                     "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
+                  },
+                  "review_case_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "case_id",
+                      "tenant_id",
+                      "workspace_id",
+                      "reference_secret"
+                    ],
+                    "properties": {
+                      "case_id": {
+                        "type": "string",
+                        "pattern": "^RC-[a-f0-9]{64}$"
+                      },
+                      "tenant_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "workspace_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "reference_secret": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    },
+                    "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
                   }
                 },
                 "description": "Compiles incomplete or complete context without requiring evidence, subject, country or requested_use. Market precedence: market_context, market_scope, target_market, subject. Use precedence: requested_use, decision_use, output_use. Empty input returns verification_required. Supplied containers and evidence field types are validated before normalization, and a supplied analysis_date must be a real ISO date or datetime. Full decision evidence requirements are not imposed on incomplete items; sentiment, freshness and corroboration remain inference limits, not authorization.",
@@ -12650,6 +12682,38 @@
                       }
                     },
                     "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
+                  },
+                  "review_case_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "case_id",
+                      "tenant_id",
+                      "workspace_id",
+                      "reference_secret"
+                    ],
+                    "properties": {
+                      "case_id": {
+                        "type": "string",
+                        "pattern": "^RC-[a-f0-9]{64}$"
+                      },
+                      "tenant_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "workspace_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "reference_secret": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    },
+                    "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
                   },
                   "category": {
                     "type": "string"
@@ -13993,7 +14057,7 @@
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact decision_question recorded for attestation_refs."
+                    "description": "Exact recorded decision_question."
                   },
                   "evidence_pack": {
                     "type": "array",
@@ -14175,6 +14239,38 @@
                       }
                     },
                     "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
+                  },
+                  "review_case_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "case_id",
+                      "tenant_id",
+                      "workspace_id",
+                      "reference_secret"
+                    ],
+                    "properties": {
+                      "case_id": {
+                        "type": "string",
+                        "pattern": "^RC-[a-f0-9]{64}$"
+                      },
+                      "tenant_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "workspace_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "reference_secret": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    },
+                    "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
                   },
                   "category": {
                     "type": "string"
@@ -32505,7 +32601,7 @@
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact decision_question recorded for attestation_refs."
+                    "description": "Exact recorded decision_question."
                   },
                   "relevance_check": {
                     "type": "boolean",
@@ -32840,6 +32936,38 @@
                       }
                     },
                     "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
+                  },
+                  "review_case_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "case_id",
+                      "tenant_id",
+                      "workspace_id",
+                      "reference_secret"
+                    ],
+                    "properties": {
+                      "case_id": {
+                        "type": "string",
+                        "pattern": "^RC-[a-f0-9]{64}$"
+                      },
+                      "tenant_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "workspace_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "reference_secret": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    },
+                    "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
                   }
                 },
                 "description": "Keyless, non-authorizing first-call context; unknown top-level fields are rejected."
@@ -33322,12 +33450,12 @@
                   "subject": {
                     "type": "object",
                     "additionalProperties": true,
-                    "description": "Exact subject recorded for attestation_refs."
+                    "description": "Exact subject recorded for private reviewer references."
                   },
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact decision_question recorded for attestation_refs."
+                    "description": "Exact recorded decision_question."
                   },
                   "query": {
                     "type": "string",
@@ -33402,6 +33530,38 @@
                       }
                     },
                     "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
+                  },
+                  "review_case_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "case_id",
+                      "tenant_id",
+                      "workspace_id",
+                      "reference_secret"
+                    ],
+                    "properties": {
+                      "case_id": {
+                        "type": "string",
+                        "pattern": "^RC-[a-f0-9]{64}$"
+                      },
+                      "tenant_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "workspace_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "reference_secret": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    },
+                    "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
                   }
                 },
                 "anyOf": [
@@ -33578,7 +33738,7 @@
                   "decision_question": {
                     "type": "string",
                     "maxLength": 2000,
-                    "description": "Exact decision_question recorded for attestation_refs."
+                    "description": "Exact recorded decision_question."
                   },
                   "attestation_refs": {
                     "type": "array",
@@ -33616,6 +33776,38 @@
                       }
                     },
                     "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
+                  },
+                  "review_case_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "case_id",
+                      "tenant_id",
+                      "workspace_id",
+                      "reference_secret"
+                    ],
+                    "properties": {
+                      "case_id": {
+                        "type": "string",
+                        "pattern": "^RC-[a-f0-9]{64}$"
+                      },
+                      "tenant_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "workspace_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "reference_secret": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    },
+                    "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
                   },
                   "claims": {
                     "type": "array",
@@ -45610,6 +45802,38 @@
                                 }
                               },
                               "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
+                            },
+                            "review_case_ref": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "case_id",
+                                "tenant_id",
+                                "workspace_id",
+                                "reference_secret"
+                              ],
+                              "properties": {
+                                "case_id": {
+                                  "type": "string",
+                                  "pattern": "^RC-[a-f0-9]{64}$"
+                                },
+                                "tenant_id": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 200
+                                },
+                                "workspace_id": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 200
+                                },
+                                "reference_secret": {
+                                  "type": "string",
+                                  "pattern": "^[a-f0-9]{64}$",
+                                  "writeOnly": true
+                                }
+                              },
+                              "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
                             },
                             "claims": {
                               "type": "array",
@@ -64420,6 +64644,38 @@
                     },
                     "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   },
+                  "review_case_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "case_id",
+                      "tenant_id",
+                      "workspace_id",
+                      "reference_secret"
+                    ],
+                    "properties": {
+                      "case_id": {
+                        "type": "string",
+                        "pattern": "^RC-[a-f0-9]{64}$"
+                      },
+                      "tenant_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "workspace_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "reference_secret": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    },
+                    "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
+                  },
                   "claims": {
                     "type": "array",
                     "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
@@ -69051,6 +69307,789 @@
         }
       }
     },
+    "/v1/review-cases": {
+      "post": {
+        "summary": "Create lightweight review cases, link current scoped statements, prepare and recheck internal review packets. No external-action or evidence-truth authority.",
+        "description": "Create lightweight review cases, link current scoped statements, prepare and recheck internal review packets. No external-action or evidence-truth authority.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/review-cases",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "rbac_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewCaseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "action"
+                ],
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "create",
+                      "get",
+                      "link_attestation",
+                      "unlink_attestation",
+                      "prepare_packet",
+                      "get_packet",
+                      "withdraw"
+                    ]
+                  },
+                  "operation_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "^[A-Za-z0-9_-]+$"
+                  },
+                  "case_id": {
+                    "type": "string",
+                    "pattern": "^RC-[a-f0-9]{64}$"
+                  },
+                  "expected_revision": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "preflight_context": {
+                    "type": "object",
+                    "required": [
+                      "subject",
+                      "market_scope",
+                      "decision_question"
+                    ],
+                    "properties": {
+                      "subject": {
+                        "type": "object"
+                      },
+                      "market_scope": {
+                        "type": "object"
+                      },
+                      "decision_question": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 2000
+                      }
+                    },
+                    "additionalProperties": true
+                  },
+                  "notes": {
+                    "type": "array",
+                    "maxItems": 8,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "text"
+                      ],
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 800
+                        },
+                        "source_ref": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "observed_at": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        },
+                        "country": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200
+                        }
+                      }
+                    }
+                  },
+                  "risk_codes": {
+                    "type": "array",
+                    "maxItems": 12,
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "SOURCE_RECORD_REVIEW_MISSING",
+                        "SOURCE_AUTHENTICITY_UNVERIFIED",
+                        "CLAIM_TRUTH_UNVERIFIED",
+                        "ATTESTOR_STANDING_UNVERIFIED",
+                        "DECISION_SCOPE_UNVERIFIED",
+                        "MISSING_GUARDIAN_PERMISSION",
+                        "UNVERIFIED_REPAYMENT_CAPACITY",
+                        "WRONG_GEOGRAPHY_TRANSFER",
+                        "INCOMPLETE_STUDY_INVENTORY",
+                        "REVIEW_CONTRADICTION",
+                        "REVIEW_DEPENDENCY_INACTIVE",
+                        "UNCLASSIFIED_RESIDUAL_RISK"
+                      ]
+                    }
+                  },
+                  "reference_secret": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$",
+                    "writeOnly": true
+                  },
+                  "share_redacted_with_reference_holders": {
+                    "const": true
+                  },
+                  "redacted_no_personal_data": {
+                    "const": true
+                  },
+                  "attestation_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "attestation_id",
+                      "tenant_id",
+                      "workspace_id",
+                      "reference_secret"
+                    ],
+                    "properties": {
+                      "attestation_id": {
+                        "type": "string",
+                        "pattern": "^ATT-[a-f0-9]{64}$"
+                      },
+                      "tenant_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "workspace_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "reference_secret": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    }
+                  },
+                  "attestation_id": {
+                    "type": "string",
+                    "pattern": "^ATT-[a-f0-9]{64}$"
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  },
+                  "packet_id": {
+                    "type": "string",
+                    "pattern": "^RP-[a-f0-9]{64}$"
+                  }
+                },
+                "description": "Case-bound internal review preparation. Notes remain unverified. Account attestations can satisfy a procedural recorded-review prerequisite, not evidence truth, licence, financial or external-action requirements. An internal packet is historical, not a permission receipt."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/review-cases/contract": {
+      "get": {
+        "summary": "Discover the bounded review workflow, residual-risk taxonomy, current-state checks and input schema.",
+        "description": "Discover the bounded review workflow, residual-risk taxonomy, current-state checks and input schema.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/review-cases/contract",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewCaseContract"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/review-sandbox": {
+      "post": {
+        "summary": "Issue or use short-lived isolated synthetic reviewer sessions. Never a production identity or credential.",
+        "description": "Issue or use short-lived isolated synthetic reviewer sessions. Never a production identity or credential.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/review-sandbox",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewSandboxResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "action",
+                      "synthetic_only",
+                      "acknowledge_no_identity_verification"
+                    ],
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "issue"
+                        ]
+                      },
+                      "synthetic_only": {
+                        "type": "boolean",
+                        "enum": [
+                          true
+                        ],
+                        "description": "Use only synthetic, non-personal fixtures; do not submit real evidence."
+                      },
+                      "acknowledge_no_identity_verification": {
+                        "type": "boolean",
+                        "enum": [
+                          true
+                        ],
+                        "description": "The session establishes no real identity, qualification, standing or production authority."
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "action",
+                      "session_id",
+                      "session_token",
+                      "target",
+                      "request"
+                    ],
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "call"
+                        ]
+                      },
+                      "session_id": {
+                        "type": "string",
+                        "pattern": "^RS-[a-f0-9]{32}$"
+                      },
+                      "session_token": {
+                        "type": "string",
+                        "pattern": "^rsb_[a-f0-9]{64}$",
+                        "writeOnly": true
+                      },
+                      "target": {
+                        "type": "string",
+                        "enum": [
+                          "attestation",
+                          "case"
+                        ]
+                      },
+                      "request": {
+                        "type": "object",
+                        "additionalProperties": true,
+                        "description": "Request for the selected handler, subject to its ordinary validation and synthetic session limits."
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "action",
+                      "session_id",
+                      "session_token"
+                    ],
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "close"
+                        ]
+                      },
+                      "session_id": {
+                        "type": "string",
+                        "pattern": "^RS-[a-f0-9]{32}$"
+                      },
+                      "session_token": {
+                        "type": "string",
+                        "pattern": "^rsb_[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/review-sandbox/contract": {
+      "get": {
+        "summary": "Discover isolated synthetic reviewer evaluation sessions.",
+        "description": "Discover isolated synthetic reviewer evaluation sessions.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/review-sandbox/contract",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReviewSandboxContract"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/category-playbook/{entity_archetype}": {
       "get": {
         "summary": "Return category-specific evidence requirements, risk map, telemetry sources, board questions, and failure modes.",
@@ -72829,6 +73868,38 @@
                     },
                     "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
                   },
+                  "review_case_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "case_id",
+                      "tenant_id",
+                      "workspace_id",
+                      "reference_secret"
+                    ],
+                    "properties": {
+                      "case_id": {
+                        "type": "string",
+                        "pattern": "^RC-[a-f0-9]{64}$"
+                      },
+                      "tenant_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "workspace_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200
+                      },
+                      "reference_secret": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    },
+                    "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
+                  },
                   "claims": {
                     "type": "array",
                     "description": "Optional explicit target claims and source-specific support links. Reuses the governed claim-audit vocabulary. Public links are caller declarations, never authenticated reviewer attestations.",
@@ -73704,6 +74775,38 @@
                             }
                           },
                           "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
+                        },
+                        "review_case_ref": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "case_id",
+                            "tenant_id",
+                            "workspace_id",
+                            "reference_secret"
+                          ],
+                          "properties": {
+                            "case_id": {
+                              "type": "string",
+                              "pattern": "^RC-[a-f0-9]{64}$"
+                            },
+                            "tenant_id": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 200
+                            },
+                            "workspace_id": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 200
+                            },
+                            "reference_secret": {
+                              "type": "string",
+                              "pattern": "^[a-f0-9]{64}$",
+                              "writeOnly": true
+                            }
+                          },
+                          "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
                         },
                         "claims": {
                           "type": "array",
@@ -75074,7 +76177,7 @@
       "EvidenceItem": {
         "type": "object",
         "additionalProperties": true,
-        "description": "Extensible source metadata. Unknown item-level field names receive non-blocking input_interpretation notices on successful licensed evidence responses; acceptance is not proof that a control was evaluated. Suggested names require checking source facts and are never applied automatically. Nested open metadata is not recursively classified by this notice mechanism. Recovery: Codes: FIELD_PROVENANCE_REQUIRED, FIELD_PROVENANCE_CONFLICT, FIELDWORK_CAPACITY_CONTRADICTION, SOURCE_INDEPENDENCE_CONTRADICTION, SOURCE_VERIFICATION_CONTRADICTION, FIELD_SOURCE_MODALITY_CONFLICT, DECISION_GEOGRAPHY_SCOPE_REQUIRED, DECISION_SCOPE_REQUIRED, DECISION_SCOPE_REVIEW_REQUIRED, DECISION_SCOPE_CROSS_CHECK_LIMIT, SOURCE_EXTRACTION_INVALID, SOURCE_EXTRACTION_REFERENCE_CONFLICT, ADVERSE_SOURCE_REVIEW_REQUIRED, INVALID_CLAIM_INPUT, OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Correct indexed evidence_input_feedback/evidence_fit paths and missing_fields against originals. INVALID_CLAIM_INPUT is HTTP 422 on claim-consuming REST routes; correct root or decision_result claim/citation paths in details/validation_errors without deleting adverse evidence. Never invent or relabel facts. Explicit adverse states need review, not approved support. These checks do not authenticate sources or authorize action. Recovery: /docs/mcp-integration.md.",
+        "description": "Extensible source metadata. Unknown item-level field names receive non-blocking input_interpretation notices on successful licensed evidence responses; acceptance is not proof that a control was evaluated. Suggested names require checking source facts and are never applied automatically. Nested open metadata is not recursively classified by this notice mechanism. Recovery: Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. HTTP 422: details/validation_errors. Fix missing_fields; never invent or erase adverse facts. Checks do not authenticate sources or authorize action. /docs/mcp-integration.md.",
         "x-compatible-item-field-names": [
           "provenance",
           "privacy",
@@ -76512,6 +77615,38 @@
               }
             },
             "description": "Case-bound reviewer assertions, not proof, scoring or permission. Keep bearer references host-private; reattach only for the same case."
+          },
+          "review_case_ref": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "case_id",
+              "tenant_id",
+              "workspace_id",
+              "reference_secret"
+            ],
+            "properties": {
+              "case_id": {
+                "type": "string",
+                "pattern": "^RC-[a-f0-9]{64}$"
+              },
+              "tenant_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "workspace_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "reference_secret": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$",
+                "writeOnly": true
+              }
+            },
+            "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
           },
           "claims": {
             "type": "array",
@@ -79417,7 +80552,7 @@
           },
           "code": {
             "type": "string",
-            "description": "Codes: FIELD_PROVENANCE_REQUIRED, FIELD_PROVENANCE_CONFLICT, FIELDWORK_CAPACITY_CONTRADICTION, SOURCE_INDEPENDENCE_CONTRADICTION, SOURCE_VERIFICATION_CONTRADICTION, FIELD_SOURCE_MODALITY_CONFLICT, DECISION_GEOGRAPHY_SCOPE_REQUIRED, DECISION_SCOPE_REQUIRED, DECISION_SCOPE_REVIEW_REQUIRED, DECISION_SCOPE_CROSS_CHECK_LIMIT, SOURCE_EXTRACTION_INVALID, SOURCE_EXTRACTION_REFERENCE_CONFLICT, ADVERSE_SOURCE_REVIEW_REQUIRED, INVALID_CLAIM_INPUT, OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Correct indexed evidence_input_feedback/evidence_fit paths and missing_fields against originals. INVALID_CLAIM_INPUT is HTTP 422 on claim-consuming REST routes; correct root or decision_result claim/citation paths in details/validation_errors without deleting adverse evidence. Never invent or relabel facts. Explicit adverse states need review, not approved support. These checks do not authenticate sources or authorize action. Recovery: /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
+            "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. HTTP 422: details/validation_errors. Fix missing_fields; never invent or erase adverse facts. Checks do not authenticate sources or authorize action. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
           },
           "calibration_disposition": {
             "$ref": "#/components/schemas/CalibrationDisposition"
@@ -79653,7 +80788,7 @@
           },
           "code": {
             "type": "string",
-            "description": "Codes: FIELD_PROVENANCE_REQUIRED, FIELD_PROVENANCE_CONFLICT, FIELDWORK_CAPACITY_CONTRADICTION, SOURCE_INDEPENDENCE_CONTRADICTION, SOURCE_VERIFICATION_CONTRADICTION, FIELD_SOURCE_MODALITY_CONFLICT, DECISION_GEOGRAPHY_SCOPE_REQUIRED, DECISION_SCOPE_REQUIRED, DECISION_SCOPE_REVIEW_REQUIRED, DECISION_SCOPE_CROSS_CHECK_LIMIT, SOURCE_EXTRACTION_INVALID, SOURCE_EXTRACTION_REFERENCE_CONFLICT, ADVERSE_SOURCE_REVIEW_REQUIRED, INVALID_CLAIM_INPUT, OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Correct indexed evidence_input_feedback/evidence_fit paths and missing_fields against originals. INVALID_CLAIM_INPUT is HTTP 422 on claim-consuming REST routes; correct root or decision_result claim/citation paths in details/validation_errors without deleting adverse evidence. Never invent or relabel facts. Explicit adverse states need review, not approved support. These checks do not authenticate sources or authorize action. Recovery: /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers. HTTP 409 IDEMPOTENCY_CONTEXT_MISMATCH means the original receipt has an old, unknown or changed deployment/response context; it takes precedence over request hash differences. IDEMPOTENCY_REQUEST_MISMATCH means the same context has different payload or hashed request metadata (including User-Agent). Neither re-executes the operation. Reconcile the original request and retain its Idempotency-Key; never change keys to bypass a conflict."
+            "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. HTTP 422: details/validation_errors. Fix missing_fields; never invent or erase adverse facts. Checks do not authenticate sources or authorize action. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers. HTTP 409 IDEMPOTENCY_CONTEXT_MISMATCH means the original receipt has an old, unknown or changed deployment/response context; it takes precedence over request hash differences. IDEMPOTENCY_REQUEST_MISMATCH means the same context has different payload or hashed request metadata (including User-Agent). Neither re-executes the operation. Reconcile the original request and retain its Idempotency-Key; never change keys to bypass a conflict."
           },
           "message": {
             "type": "string"
@@ -79826,7 +80961,7 @@
           },
           "code": {
             "type": "string",
-            "description": "Codes: FIELD_PROVENANCE_REQUIRED, FIELD_PROVENANCE_CONFLICT, FIELDWORK_CAPACITY_CONTRADICTION, SOURCE_INDEPENDENCE_CONTRADICTION, SOURCE_VERIFICATION_CONTRADICTION, FIELD_SOURCE_MODALITY_CONFLICT, DECISION_GEOGRAPHY_SCOPE_REQUIRED, DECISION_SCOPE_REQUIRED, DECISION_SCOPE_REVIEW_REQUIRED, DECISION_SCOPE_CROSS_CHECK_LIMIT, SOURCE_EXTRACTION_INVALID, SOURCE_EXTRACTION_REFERENCE_CONFLICT, ADVERSE_SOURCE_REVIEW_REQUIRED, INVALID_CLAIM_INPUT, OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY, ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. Correct indexed evidence_input_feedback/evidence_fit paths and missing_fields against originals. INVALID_CLAIM_INPUT is HTTP 422 on claim-consuming REST routes; correct root or decision_result claim/citation paths in details/validation_errors without deleting adverse evidence. Never invent or relabel facts. Explicit adverse states need review, not approved support. These checks do not authenticate sources or authorize action. Recovery: /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
+            "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. HTTP 422: details/validation_errors. Fix missing_fields; never invent or erase adverse facts. Checks do not authenticate sources or authorize action. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
           }
         },
         "additionalProperties": true
@@ -80943,6 +82078,387 @@
             "const": false
           },
           "scoring_eligible": {
+            "const": false
+          }
+        },
+        "additionalProperties": true
+      },
+      "ReviewProgress": {
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "const": "mvr.review-progress/1"
+          },
+          "policy_version": {
+            "const": "internal-review-preparation/1"
+          },
+          "case_id": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "internal_review",
+              "sandbox_evaluation"
+            ]
+          },
+          "case_revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "context_sha256": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "withdrawn",
+              "bounded_review_ready",
+              "awaiting_review",
+              "review_unavailable"
+            ]
+          },
+          "procedure": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "distinct_supporting_accounts": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "verified_independent_people": {
+                "const": 0
+              }
+            },
+            "additionalProperties": true
+          },
+          "residual_risks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "state": {
+                  "const": "open"
+                },
+                "closure": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "attestation_id": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "expires_at": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "bounded_next_action": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "const": "prepare_internal_review_packet"
+              },
+              "method": {
+                "const": "POST"
+              },
+              "path": {
+                "type": "string"
+              },
+              "request": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              "permission_scope": {
+                "const": "internal_document_preparation_only"
+              },
+              "external_action_authorized": {
+                "const": false
+              }
+            },
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "continuation_disposition": {
+            "type": "string",
+            "enum": [
+              "bounded_action_available",
+              "await_input"
+            ]
+          },
+          "checked_at": {
+            "type": "string"
+          },
+          "valid_until": {
+            "type": "string"
+          },
+          "basis_sha256": {
+            "type": "string"
+          },
+          "current_state_required": {
+            "const": true
+          },
+          "execution_authorized": {
+            "const": false
+          },
+          "external_action_authorized": {
+            "const": false
+          },
+          "scoring_eligible": {
+            "const": false
+          },
+          "source_authenticity_verified": {
+            "const": false
+          },
+          "professional_standing_verified": {
+            "const": false
+          }
+        },
+        "additionalProperties": true
+      },
+      "ReviewCaseResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "case_id": {
+            "type": "string"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "internal_review",
+              "sandbox_evaluation"
+            ]
+          },
+          "content": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "content_sha256": {
+            "type": "string"
+          },
+          "review_progress": {
+            "$ref": "#/components/schemas/ReviewProgress"
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "revision": {
+                  "type": "integer"
+                },
+                "event": {
+                  "type": "string"
+                },
+                "at": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "packet": {
+            "type": "object",
+            "properties": {
+              "document": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "basis_sha256": {
+                "type": "string"
+              },
+              "valid_until": {
+                "type": "string"
+              },
+              "usable": {
+                "type": "boolean"
+              },
+              "current_state_checked": {
+                "const": true
+              },
+              "signature_present": {
+                "const": false
+              },
+              "integrity_is_not_identity_proof": {
+                "const": true
+              }
+            },
+            "additionalProperties": true
+          },
+          "idempotent_replay": {
+            "type": "boolean"
+          },
+          "reference_scope": {
+            "type": "object",
+            "properties": {
+              "tenant_id": {
+                "type": "string"
+              },
+              "workspace_id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          },
+          "reference_secret_returned": {
+            "const": false
+          },
+          "execution_authorized": {
+            "const": false
+          },
+          "external_action_authorized": {
+            "const": false
+          }
+        },
+        "additionalProperties": true
+      },
+      "ReviewCaseContract": {
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "const": "mvr.review-progress/1"
+          },
+          "policy_version": {
+            "const": "internal-review-preparation/1"
+          },
+          "request_schema": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "risk_taxonomy": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "closure": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "execution_authorized": {
+            "const": false
+          }
+        },
+        "additionalProperties": true
+      },
+      "ReviewSandboxResponse": {
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "const": "mvr.review-sandbox/1"
+          },
+          "status": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "http_status": {
+            "type": "integer"
+          },
+          "session_id": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "string"
+          },
+          "credentials": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "result": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "evaluation_only": {
+            "const": true
+          },
+          "synthetic": {
+            "const": true
+          },
+          "identity_verified": {
+            "const": false
+          },
+          "production_authority": {
+            "const": false
+          },
+          "execution_authorized": {
+            "const": false
+          }
+        },
+        "additionalProperties": true
+      },
+      "ReviewSandboxContract": {
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "const": "mvr.review-sandbox/1"
+          },
+          "request_schema": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          },
+          "evaluation_only": {
+            "const": true
+          },
+          "identity_verified": {
+            "const": false
+          },
+          "production_authority": {
+            "const": false
+          },
+          "execution_authorized": {
             "const": false
           }
         },
@@ -83673,7 +85189,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-19.relevance-prefilter.2"
+    "deployment_revision": "2026-10-20.review-progress.2"
   },
   "response_contract_version": "2026-05-01.v1"
 }
