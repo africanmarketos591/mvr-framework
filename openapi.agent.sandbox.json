@@ -543,6 +543,71 @@
             "type": "boolean",
             "const": true
           },
+          "draft_request": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "claims"
+            ],
+            "description": "Optional caller-authored mapping request. Zero-based evidence_pack indexes; at most 40 links total and 8000 text characters across the intake. Missing mappings stay unresolved. No authority or source verification.",
+            "properties": {
+              "claims": {
+                "type": "array",
+                "maxItems": 20,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "text",
+                    "sources"
+                  ],
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 8000,
+                      "pattern": "\\S"
+                    },
+                    "sources": {
+                      "type": "array",
+                      "maxItems": 40,
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "evidence_index",
+                          "relationship",
+                          "locator"
+                        ],
+                        "properties": {
+                          "evidence_index": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 39
+                          },
+                          "relationship": {
+                            "type": "string",
+                            "enum": [
+                              "direct_support",
+                              "qualifies",
+                              "contradicts",
+                              "context_only"
+                            ]
+                          },
+                          "locator": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 8000,
+                            "pattern": "\\S"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
           "subject": {
             "type": "object",
             "additionalProperties": true

@@ -48,11 +48,38 @@
     },
     "source_date": {
       "type": "string",
-      "description": "Declared source date, YYYY-MM-DD or ISO timestamp with timezone. Date validity and age can be checked; the source and current applicability remain unverified."
+      "minLength": 4,
+      "maxLength": 32,
+      "description": "Declared source date at its actual precision: YYYY, YYYY-MM, YYYY-MM-DD, or ISO timestamp with seconds and timezone (up to 6 fractional digits). Years 0001-9999; real calendar dates only. Partial dates describe inclusive calendar bounds, never an invented day. Source truth and current applicability remain unverified."
     },
     "freshness_date": {
       "type": "string",
-      "description": "Compatibility alias for source_date; conflicting supplied dates require correction."
+      "minLength": 4,
+      "maxLength": 32,
+      "description": "Compatibility alias for source_date, at the same declared precision. Exact dates/timestamps may name the same analysis-calendar day; conflicting aliases require correction. No source truth is established."
+    },
+    "source_date_range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "earliest",
+        "latest"
+      ],
+      "properties": {
+        "earliest": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 32,
+          "description": "Declared source date at its actual precision: YYYY, YYYY-MM, YYYY-MM-DD, or ISO timestamp with seconds and timezone (up to 6 fractional digits). Years 0001-9999; real calendar dates only. Partial dates describe inclusive calendar bounds, never an invented day. Source truth and current applicability remain unverified."
+        },
+        "latest": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 32,
+          "description": "Declared source date at its actual precision: YYYY, YYYY-MM, YYYY-MM-DD, or ISO timestamp with seconds and timezone (up to 6 fractional digits). Years 0001-9999; real calendar dates only. Partial dates describe inclusive calendar bounds, never an invented day. Source truth and current applicability remain unverified."
+        }
+      },
+      "description": "Optional inclusive declared bounds, usable without source_date. Both endpoints must have the same precision and be ordered. Every supplied source_date/freshness_date must contain the whole range; an exact timestamp cannot be widened. Aliases must agree before narrowing. Unknown dates are not clipped to the analysis date. Bounds are declarations, not source verification."
     },
     "geography": {
       "type": [

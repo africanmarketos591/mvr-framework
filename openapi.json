@@ -32645,6 +32645,71 @@
                     "type": "boolean",
                     "const": true
                   },
+                  "draft_request": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "claims"
+                    ],
+                    "description": "Optional caller-authored mapping request. Zero-based evidence_pack indexes; at most 40 links total and 8000 text characters across the intake. Missing mappings stay unresolved. No authority or source verification.",
+                    "properties": {
+                      "claims": {
+                        "type": "array",
+                        "maxItems": 20,
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "text",
+                            "sources"
+                          ],
+                          "properties": {
+                            "text": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 8000,
+                              "pattern": "\\S"
+                            },
+                            "sources": {
+                              "type": "array",
+                              "maxItems": 40,
+                              "items": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                  "evidence_index",
+                                  "relationship",
+                                  "locator"
+                                ],
+                                "properties": {
+                                  "evidence_index": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 39
+                                  },
+                                  "relationship": {
+                                    "type": "string",
+                                    "enum": [
+                                      "direct_support",
+                                      "qualifies",
+                                      "contradicts",
+                                      "context_only"
+                                    ]
+                                  },
+                                  "locator": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "maxLength": 8000,
+                                    "pattern": "\\S"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
                   "market_scope": {
                     "type": "object",
                     "properties": {
@@ -69628,6 +69693,8 @@
                         "DECISION_CONTEXT_INCOMPLETE",
                         "EVIDENCE_INPUT_INVALID",
                         "EVIDENCE_FRESHNESS_UNRESOLVED",
+                        "CLAIM_LINKAGE_UNRESOLVED",
+                        "EVIDENCE_FIT_UNRESOLVED",
                         "UNCLASSIFIED_RESIDUAL_RISK"
                       ]
                     }
@@ -76320,7 +76387,32 @@
           },
           "source_date": {
             "type": "string",
-            "description": "Real ISO date or timestamp with timezone. This records source age; it does not replace the collection/freshness date required for typed scoring."
+            "minLength": 4,
+            "maxLength": 32,
+            "description": "Declared source date at its actual precision: YYYY, YYYY-MM, YYYY-MM-DD, or ISO timestamp with seconds and timezone (up to 6 fractional digits). Years 0001-9999; real calendar dates only. Partial dates describe inclusive calendar bounds, never an invented day. Source truth and current applicability remain unverified. Metadata only: typed scoring still requires an exact freshness date and excludes partial-date or range-bearing items."
+          },
+          "source_date_range": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "earliest",
+              "latest"
+            ],
+            "properties": {
+              "earliest": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32,
+                "description": "Declared source date at its actual precision: YYYY, YYYY-MM, YYYY-MM-DD, or ISO timestamp with seconds and timezone (up to 6 fractional digits). Years 0001-9999; real calendar dates only. Partial dates describe inclusive calendar bounds, never an invented day. Source truth and current applicability remain unverified."
+              },
+              "latest": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 32,
+                "description": "Declared source date at its actual precision: YYYY, YYYY-MM, YYYY-MM-DD, or ISO timestamp with seconds and timezone (up to 6 fractional digits). Years 0001-9999; real calendar dates only. Partial dates describe inclusive calendar bounds, never an invented day. Source truth and current applicability remain unverified."
+              }
+            },
+            "description": "Optional inclusive declared bounds, usable without source_date. Both endpoints must have the same precision and be ordered. Every supplied source_date/freshness_date must contain the whole range; an exact timestamp cannot be widened. Aliases must agree before narrowing. Unknown dates are not clipped to the analysis date. Bounds are declarations, not source verification."
           },
           "source_url": {
             "type": "string"
@@ -79590,6 +79682,9 @@
               }
             },
             "additionalProperties": true
+          },
+          "action_boundary": {
+            "$ref": "#/components/schemas/PreflightActionBoundary"
           }
         },
         "additionalProperties": true
@@ -80910,6 +81005,9 @@
               }
             },
             "additionalProperties": true
+          },
+          "action_boundary": {
+            "$ref": "#/components/schemas/PreflightActionBoundary"
           }
         },
         "additionalProperties": true,
@@ -81134,6 +81232,9 @@
               }
             },
             "additionalProperties": true
+          },
+          "action_boundary": {
+            "$ref": "#/components/schemas/PreflightActionBoundary"
           }
         },
         "additionalProperties": true
@@ -84739,9 +84840,403 @@
           },
           "execution_authorized": {
             "const": false
+          },
+          "registry_version": {
+            "type": "string"
+          },
+          "assessed_domains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "unassessed_domains_unknown": {
+            "const": true
+          },
+          "case_basis": {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "string"
+              },
+              "case_revision": {
+                "type": "integer"
+              },
+              "basis_sha256": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true,
+            "nullable": true
+          },
+          "instances": {
+            "type": "array",
+            "maxItems": 40,
+            "items": {
+              "type": "object",
+              "properties": {
+                "residual_id": {
+                  "type": "string"
+                },
+                "risk_code": {
+                  "type": "string"
+                },
+                "scope_ref": {
+                  "type": "string"
+                },
+                "disposition": {
+                  "type": "string",
+                  "enum": [
+                    "open",
+                    "procedural_requirement_recorded"
+                  ]
+                },
+                "evidence_path": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "claim_ref": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "requirements_ref": {
+                  "type": "string"
+                },
+                "proof_reference": {
+                  "type": "null"
+                },
+                "verification_method": {
+                  "type": "null"
+                },
+                "source_valid_until": {
+                  "type": "null"
+                },
+                "allowed_action_ceiling": {
+                  "const": "internal_planning_only"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "instances_truncated": {
+            "type": "boolean"
+          },
+          "factual_closure_available": {
+            "const": false
           }
         },
         "additionalProperties": true
+      },
+      "PreflightActionBoundary": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "contract_version",
+          "decision_state",
+          "next_safe_action",
+          "stop",
+          "allowed_effects",
+          "forbidden_effects",
+          "max_capital_commitment_usd",
+          "external_contact_allowed",
+          "customer_launch_allowed",
+          "revalidate_before_effect",
+          "historical_output_is_not_current_permission",
+          "execution_authorized",
+          "external_action_authorized",
+          "capability_issued"
+        ],
+        "properties": {
+          "contract_version": {
+            "const": "mvr.preflight-action-boundary/1"
+          },
+          "decision_state": {},
+          "next_safe_action": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "availability",
+              "required_host_inputs",
+              "handoff_source"
+            ],
+            "properties": {
+              "type": {},
+              "availability": {},
+              "required_host_inputs": {},
+              "handoff_source": {}
+            }
+          },
+          "stop": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "required",
+              "applies_to",
+              "analytical_chain_required",
+              "reason_codes",
+              "unknown_risks_remain"
+            ],
+            "properties": {
+              "required": {
+                "const": true
+              },
+              "applies_to": {
+                "const": "all_consequential_external_actions"
+              },
+              "analytical_chain_required": {},
+              "reason_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "unknown_risks_remain": {
+                "const": true
+              }
+            }
+          },
+          "allowed_effects": {},
+          "forbidden_effects": {
+            "const": [
+              "spend",
+              "external_contact",
+              "contract",
+              "customer_launch",
+              "pilot_execution",
+              "payment",
+              "deployment"
+            ]
+          },
+          "max_capital_commitment_usd": {
+            "const": 0
+          },
+          "external_contact_allowed": {
+            "const": false
+          },
+          "customer_launch_allowed": {
+            "const": false
+          },
+          "revalidate_before_effect": {
+            "const": true
+          },
+          "historical_output_is_not_current_permission": {
+            "const": true
+          },
+          "execution_authorized": {
+            "const": false
+          },
+          "external_action_authorized": {
+            "const": false
+          },
+          "capability_issued": {
+            "const": false
+          }
+        },
+        "oneOf": [
+          {
+            "properties": {
+              "decision_state": {
+                "enum": [
+                  "assessment_in_progress"
+                ]
+              },
+              "allowed_effects": {
+                "const": [
+                  "read_only_assessment"
+                ]
+              },
+              "next_safe_action": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "continue_evidence_assessment"
+                    ]
+                  },
+                  "availability": {
+                    "const": "exact_server_handoff"
+                  },
+                  "required_host_inputs": {
+                    "const": []
+                  },
+                  "handoff_source": {
+                    "const": "mcp_next_call"
+                  }
+                }
+              },
+              "stop": {
+                "properties": {
+                  "analytical_chain_required": {
+                    "const": false
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "decision_state": {
+                "enum": [
+                  "abstain_pending_evidence",
+                  "assessment_completed"
+                ]
+              },
+              "allowed_effects": {
+                "const": [
+                  "versioned_internal_plan"
+                ]
+              },
+              "next_safe_action": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "evidence_collection_design",
+                      "internal_pilot_design"
+                    ]
+                  },
+                  "availability": {
+                    "const": "authenticated_case_handoff"
+                  },
+                  "required_host_inputs": {
+                    "const": [
+                      "current_case",
+                      "expected_revision",
+                      "operation_id"
+                    ]
+                  },
+                  "handoff_source": {
+                    "const": "review_progress.bounded_next_actions"
+                  }
+                }
+              },
+              "stop": {
+                "properties": {
+                  "analytical_chain_required": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "decision_state": {
+                "enum": [
+                  "outside_declared_mvr_scope"
+                ]
+              },
+              "allowed_effects": {
+                "const": []
+              },
+              "next_safe_action": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "ordinary_task_outside_mvr"
+                    ]
+                  },
+                  "availability": {
+                    "const": "routing_only_not_permission"
+                  },
+                  "required_host_inputs": {
+                    "const": []
+                  },
+                  "handoff_source": {
+                    "const": null
+                  }
+                }
+              },
+              "stop": {
+                "properties": {
+                  "analytical_chain_required": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "decision_state": {
+                "enum": [
+                  "blocked_invalid_or_unavailable"
+                ]
+              },
+              "allowed_effects": {
+                "const": []
+              },
+              "next_safe_action": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "correct_input_or_restore_current_state"
+                    ]
+                  },
+                  "availability": {
+                    "const": "blocked"
+                  },
+                  "required_host_inputs": {
+                    "const": [
+                      "valid_input_and_current_state"
+                    ]
+                  },
+                  "handoff_source": {
+                    "const": null
+                  }
+                }
+              },
+              "stop": {
+                "properties": {
+                  "analytical_chain_required": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "decision_state": {
+                "enum": [
+                  "abstain_pending_evidence",
+                  "assessment_completed"
+                ]
+              },
+              "allowed_effects": {
+                "const": [
+                  "local_internal_draft"
+                ]
+              },
+              "next_safe_action": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "internal_evidence_plan"
+                    ]
+                  },
+                  "availability": {
+                    "const": "draft_only_no_external_effect"
+                  },
+                  "required_host_inputs": {
+                    "const": [
+                      "human_review_of_unknowns"
+                    ]
+                  },
+                  "handoff_source": {
+                    "const": null
+                  }
+                }
+              },
+              "stop": {
+                "properties": {
+                  "analytical_chain_required": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          }
+        ]
       },
       "EvidenceCompilerRequest": {
         "type": "object",
@@ -85540,7 +86035,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-20.review-workflow.1"
+    "deployment_revision": "2026-10-20.intake-contract.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
