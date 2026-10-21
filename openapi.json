@@ -64256,7 +64256,7 @@
     "/v1/webhooks/register": {
       "post": {
         "summary": "Register signed webhook subscriptions for Evidence OS alert events and delivery-worker dispatch.",
-        "description": "Canonical webhook registration route. Registers signed subscriptions and dispatches matching Evidence OS events on a best-effort worker path when MVR_WEBHOOKS is configured; production-grade retries and dead-lettering still require delivery infrastructure.",
+        "description": "Canonical webhook registration route. Registers signed subscriptions. With the durable runtime enabled (production), matching events, including review_dependency_withdrawn, review_case_withdrawn and review_case_basis_changed, are queued in a durable outbox and delivered with mvr.delivery/2 HMAC signatures over timestamp, event ID, delivery ID and attempt, with bounded retry or reconciliation review. Receivers must verify signatures within 300 seconds and deduplicate by event and delivery ID. A 2xx response is the acknowledgement. Events are hints, never authority: executors must refetch current case, packet and permission state before any effect. Maturity stays provisional until a production end-to-end delivery acceptance test is recorded.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/webhooks/register",
         "x-mvr-maturity": "provisional",
@@ -64445,6 +64445,12 @@
                         "async_run_completed",
                         "cascade_run_completed",
                         "watchlist_scheduled_review",
+                        "review_dependency_withdrawn",
+                        "review_case_withdrawn",
+                        "review_case_basis_changed",
+                        "review.dependency_withdrawn",
+                        "review_case.withdrawn",
+                        "review_case.basis_changed",
                         "task.created",
                         "evidence.review_required",
                         "watchlist.triggered",
@@ -64483,6 +64489,12 @@
                         "async_run_completed",
                         "cascade_run_completed",
                         "watchlist_scheduled_review",
+                        "review_dependency_withdrawn",
+                        "review_case_withdrawn",
+                        "review_case_basis_changed",
+                        "review.dependency_withdrawn",
+                        "review_case.withdrawn",
+                        "review_case.basis_changed",
                         "task.created",
                         "evidence.review_required",
                         "watchlist.triggered",
@@ -69682,6 +69694,7 @@
                         "ATTESTOR_STANDING_UNVERIFIED",
                         "DECISION_SCOPE_UNVERIFIED",
                         "MISSING_GUARDIAN_PERMISSION",
+                        "PERMISSION_STATUS_UNASSESSED",
                         "UNVERIFIED_REPAYMENT_CAPACITY",
                         "WRONG_GEOGRAPHY_TRANSFER",
                         "INCOMPLETE_STUDY_INVENTORY",
@@ -79685,6 +79698,51 @@
           },
           "action_boundary": {
             "$ref": "#/components/schemas/PreflightActionBoundary"
+          },
+          "evidence_authentication_status": {
+            "enum": [
+              "not_authenticated"
+            ]
+          },
+          "authenticated_verified_count": {
+            "const": 0
+          },
+          "evidence_authentication_basis": {
+            "type": "string"
+          },
+          "caller_declared_verified_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "declared_completeness_gate_passed": {
+            "type": "boolean"
+          },
+          "verified_evidence_count_semantics": {
+            "type": "string"
+          },
+          "evidence_gate_passed_semantics": {
+            "type": "string"
+          },
+          "recommendation_scope": {
+            "type": "string"
+          },
+          "external_use_ceiling": {
+            "type": "object",
+            "required": [
+              "external_use_allowed",
+              "capability_issued"
+            ],
+            "properties": {
+              "external_use_allowed": {
+                "const": false
+              },
+              "capability_issued": {
+                "const": false
+              },
+              "max_capital_commitment_usd": {
+                "const": 0
+              }
+            }
           }
         },
         "additionalProperties": true
@@ -81008,6 +81066,51 @@
           },
           "action_boundary": {
             "$ref": "#/components/schemas/PreflightActionBoundary"
+          },
+          "evidence_authentication_status": {
+            "enum": [
+              "not_authenticated"
+            ]
+          },
+          "authenticated_verified_count": {
+            "const": 0
+          },
+          "evidence_authentication_basis": {
+            "type": "string"
+          },
+          "caller_declared_verified_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "declared_completeness_gate_passed": {
+            "type": "boolean"
+          },
+          "verified_evidence_count_semantics": {
+            "type": "string"
+          },
+          "evidence_gate_passed_semantics": {
+            "type": "string"
+          },
+          "recommendation_scope": {
+            "type": "string"
+          },
+          "external_use_ceiling": {
+            "type": "object",
+            "required": [
+              "external_use_allowed",
+              "capability_issued"
+            ],
+            "properties": {
+              "external_use_allowed": {
+                "const": false
+              },
+              "capability_issued": {
+                "const": false
+              },
+              "max_capital_commitment_usd": {
+                "const": 0
+              }
+            }
           }
         },
         "additionalProperties": true,
@@ -81235,6 +81338,51 @@
           },
           "action_boundary": {
             "$ref": "#/components/schemas/PreflightActionBoundary"
+          },
+          "evidence_authentication_status": {
+            "enum": [
+              "not_authenticated"
+            ]
+          },
+          "authenticated_verified_count": {
+            "const": 0
+          },
+          "evidence_authentication_basis": {
+            "type": "string"
+          },
+          "caller_declared_verified_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "declared_completeness_gate_passed": {
+            "type": "boolean"
+          },
+          "verified_evidence_count_semantics": {
+            "type": "string"
+          },
+          "evidence_gate_passed_semantics": {
+            "type": "string"
+          },
+          "recommendation_scope": {
+            "type": "string"
+          },
+          "external_use_ceiling": {
+            "type": "object",
+            "required": [
+              "external_use_allowed",
+              "capability_issued"
+            ],
+            "properties": {
+              "external_use_allowed": {
+                "const": false
+              },
+              "capability_issued": {
+                "const": false
+              },
+              "max_capital_commitment_usd": {
+                "const": 0
+              }
+            }
           }
         },
         "additionalProperties": true
@@ -86035,7 +86183,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-20.intake-contract.1"
+    "deployment_revision": "2026-10-21.authority-ceiling.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
