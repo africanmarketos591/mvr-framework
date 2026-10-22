@@ -1,0 +1,98 @@
+[
+  {
+    "kind": "capability_verification",
+    "verification_id": "VR-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "capability_id": "lab-capability",
+    "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "decision": "allow",
+    "deny_reasons": [],
+    "effect_id": "lab-effect",
+    "requested_effect_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "reliance": "lab_fixture_only",
+    "valid_until": "2026-10-23T01:00:00.000Z",
+    "sequence": 1,
+    "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "recorded_at": "2026-10-23T00:00:00.000Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sha256": "286e3ffb3bcb32d5b97f6bcfeb3aaad912480bbf99445c10f7190ba73a4d3804",
+    "signature": {
+      "standard": "MVR-RECEIPT-SIG-V1",
+      "status": "signed",
+      "algorithm": "Ed25519",
+      "key_id": "AMOS-PUBLIC-LAB-TEST-ONLY",
+      "signature_b64": "Ll+QmNNaxkzbV6ZmC29buoSKVDWLC9s1hsm0PUfMg3K+HjBdInjJKIYha6Oo+RIcKEj3/7a1oODcmKDXBRecDQ=="
+    }
+  },
+  {
+    "kind": "capability_verification",
+    "verification_id": "VR-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "capability_id": "lab-capability",
+    "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "decision": "deny",
+    "deny_reasons": [
+      "CAPABILITY_REVOKED"
+    ],
+    "effect_id": "lab-effect",
+    "requested_effect_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "reliance": "lab_fixture_only",
+    "valid_until": "2026-10-23T01:00:00.000Z",
+    "sequence": 2,
+    "prev_sha256": "286e3ffb3bcb32d5b97f6bcfeb3aaad912480bbf99445c10f7190ba73a4d3804",
+    "recorded_at": "2026-10-23T00:00:00.000Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sha256": "ba848bdf5cd93f15d420c1c63ff3fa224f2d15a924635d4b508e9fe7798e764e",
+    "signature": {
+      "standard": "MVR-RECEIPT-SIG-V1",
+      "status": "signed",
+      "algorithm": "Ed25519",
+      "key_id": "AMOS-PUBLIC-LAB-TEST-ONLY",
+      "signature_b64": "6C+7TnAPDfTKozNI84LwJZYihh57XLARhOcEzdJxSyjV59I+kZIBcKETAu49xsUaFE/aICJeyqpRRDYKlaXsBg=="
+    }
+  },
+  {
+    "kind": "revocation",
+    "target_kind": "capability",
+    "target_id": "lab-capability",
+    "revoked_by_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "operation_id": "lab-revoke",
+    "sequence": 3,
+    "prev_sha256": "ba848bdf5cd93f15d420c1c63ff3fa224f2d15a924635d4b508e9fe7798e764e",
+    "recorded_at": "2026-10-23T00:00:00.000Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sha256": "a87b89cada810b383718347d320014ebb7c6f32c052fa2781216b059ed391c91",
+    "signature": {
+      "standard": "MVR-RECEIPT-SIG-V1",
+      "status": "signed",
+      "algorithm": "Ed25519",
+      "key_id": "AMOS-PUBLIC-LAB-TEST-ONLY",
+      "signature_b64": "puqaaio9UVH5ArEB2PKLOqrJ7C8sKsdJE5311hT6fdwu2DP1W/s07uA/F5PS5zPClFm3KtuPBOn6g7IhhoghAA=="
+    }
+  },
+  {
+    "kind": "effect_report",
+    "verification_id": "VR-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "capability_id": "lab-capability",
+    "effect_id": "lab-effect",
+    "outcome": "not_attempted",
+    "external_ref_sha256": null,
+    "reported_after_valid_until": false,
+    "sequence": 4,
+    "prev_sha256": "a87b89cada810b383718347d320014ebb7c6f32c052fa2781216b059ed391c91",
+    "recorded_at": "2026-10-23T00:00:00.000Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sha256": "2ed6a88811a530ce65f117475e9d90a9b00a9ebfeafc6bda2ac006be53627ee6",
+    "signature": {
+      "standard": "MVR-RECEIPT-SIG-V1",
+      "status": "signed",
+      "algorithm": "Ed25519",
+      "key_id": "AMOS-PUBLIC-LAB-TEST-ONLY",
+      "signature_b64": "TU7cFBT+JV8RhTzr3Ut3v1BPaa7itZsbj/zLArodakW3OpQlBkbop9NeAEku8GFL6jai1RHC0qLZo9K7O+v6Aw=="
+    }
+  }
+]

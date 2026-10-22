@@ -81,7 +81,7 @@ Recommended machine contract:
 - Use `https://africanmarketos.com/api/openapi.json` only when you need the full enterprise route catalog.
 - Canonical public MCP endpoint: `https://africanmarketos.com/mcp/preflight` (five keyless read-only tools).
 - OpenAI compatibility MCP endpoint: `https://africanmarketos.com/mcp` (seven public tools; preserve this route for the submitted app).
-- Licensed production MCP endpoint: `https://africanmarketos.com/mcp/runtime` (the same five tool names as preflight; provider-issued key required).
+- Licensed production MCP endpoint: `https://africanmarketos.com/mcp/runtime` (five analysis tools plus mvr_authority_operation for governed authority, review, receipt and executor operations; provider-issued key required).
 - Full expert sandbox endpoint: `https://africanmarketos.com/mcp/full` (not the default registry profile and not the licensed runtime).
 - Official MCP Registry server name: `io.github.africanmarketos591/mvr-api`.
 - MCP Registry lookup: `https://registry.modelcontextprotocol.io/v0/servers?search=io.github.africanmarketos591%2Fmvr-api`.
