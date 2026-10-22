@@ -1,0 +1,482 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "prev_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "signature": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "status": {
+                  "const": "unsigned"
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "\\S"
+                },
+                "standard": {
+                  "const": "MVR-RECEIPT-SIG-V1"
+                },
+                "key_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 128
+                },
+                "registry_url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "required": [
+                "status",
+                "reason"
+              ]
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "standard": {
+                  "const": "MVR-RECEIPT-SIG-V1"
+                },
+                "status": {
+                  "const": "signed"
+                },
+                "algorithm": {
+                  "const": "Ed25519"
+                },
+                "key_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "\\S"
+                },
+                "registry_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "signature_b64": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9+/]{86}==$"
+                }
+              },
+              "required": [
+                "standard",
+                "status",
+                "algorithm",
+                "key_id",
+                "signature_b64"
+              ]
+            }
+          ]
+        },
+        "lab_fixture": {
+          "type": "boolean"
+        },
+        "production_authority": {
+          "const": false
+        },
+        "kind": {
+          "const": "capability_verification"
+        },
+        "verification_id": {
+          "type": "string",
+          "pattern": "^VR-[a-f0-9]{48}$"
+        },
+        "capability_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+        },
+        "case_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "allow",
+            "deny"
+          ]
+        },
+        "deny_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "maxItems": 100
+        },
+        "effect_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "\\S"
+        },
+        "requested_effect_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "executor_principal_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "reliance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "valid_until": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "sequence",
+        "prev_sha256",
+        "recorded_at",
+        "sha256",
+        "signature",
+        "kind",
+        "verification_id",
+        "capability_id",
+        "case_id",
+        "decision",
+        "deny_reasons",
+        "effect_id",
+        "requested_effect_sha256",
+        "executor_principal_sha256",
+        "reliance",
+        "valid_until"
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "prev_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "signature": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "status": {
+                  "const": "unsigned"
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "\\S"
+                },
+                "standard": {
+                  "const": "MVR-RECEIPT-SIG-V1"
+                },
+                "key_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 128
+                },
+                "registry_url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "required": [
+                "status",
+                "reason"
+              ]
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "standard": {
+                  "const": "MVR-RECEIPT-SIG-V1"
+                },
+                "status": {
+                  "const": "signed"
+                },
+                "algorithm": {
+                  "const": "Ed25519"
+                },
+                "key_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "\\S"
+                },
+                "registry_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "signature_b64": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9+/]{86}==$"
+                }
+              },
+              "required": [
+                "standard",
+                "status",
+                "algorithm",
+                "key_id",
+                "signature_b64"
+              ]
+            }
+          ]
+        },
+        "lab_fixture": {
+          "type": "boolean"
+        },
+        "production_authority": {
+          "const": false
+        },
+        "kind": {
+          "const": "effect_report"
+        },
+        "verification_id": {
+          "type": "string",
+          "pattern": "^VR-[a-f0-9]{48}$"
+        },
+        "capability_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+        },
+        "effect_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "\\S"
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "succeeded",
+            "failed",
+            "not_attempted"
+          ]
+        },
+        "external_ref_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reported_after_valid_until": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "sequence",
+        "prev_sha256",
+        "recorded_at",
+        "sha256",
+        "signature",
+        "kind",
+        "verification_id",
+        "capability_id",
+        "effect_id",
+        "outcome",
+        "external_ref_sha256",
+        "reported_after_valid_until"
+      ]
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "prev_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "signature": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "status": {
+                  "const": "unsigned"
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "\\S"
+                },
+                "standard": {
+                  "const": "MVR-RECEIPT-SIG-V1"
+                },
+                "key_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 128
+                },
+                "registry_url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "required": [
+                "status",
+                "reason"
+              ]
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "standard": {
+                  "const": "MVR-RECEIPT-SIG-V1"
+                },
+                "status": {
+                  "const": "signed"
+                },
+                "algorithm": {
+                  "const": "Ed25519"
+                },
+                "key_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "\\S"
+                },
+                "registry_url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "signature_b64": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9+/]{86}==$"
+                }
+              },
+              "required": [
+                "standard",
+                "status",
+                "algorithm",
+                "key_id",
+                "signature_b64"
+              ]
+            }
+          ]
+        },
+        "lab_fixture": {
+          "type": "boolean"
+        },
+        "production_authority": {
+          "const": false
+        },
+        "kind": {
+          "const": "revocation"
+        },
+        "target_kind": {
+          "type": "string",
+          "enum": [
+            "anchor",
+            "credential",
+            "source_record",
+            "closure",
+            "capability"
+          ]
+        },
+        "target_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+        },
+        "revoked_by_principal_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "operation_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "sequence",
+        "prev_sha256",
+        "recorded_at",
+        "sha256",
+        "signature",
+        "kind",
+        "target_kind",
+        "target_id",
+        "revoked_by_principal_sha256",
+        "operation_id"
+      ]
+    }
+  ]
+}

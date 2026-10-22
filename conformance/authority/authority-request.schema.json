@@ -1,0 +1,1690 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "action"
+  ],
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": [
+        "register_anchor",
+        "revoke_anchor",
+        "vet_anchor",
+        "register_credential",
+        "revoke_credential",
+        "register_source_record",
+        "revoke_source_record",
+        "close_residual",
+        "revoke_closure",
+        "register_capability",
+        "revoke_capability",
+        "verify_capability",
+        "record_effect",
+        "get",
+        "trace"
+      ]
+    },
+    "operation_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120,
+      "pattern": "^[A-Za-z0-9_-]+$"
+    },
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "mvr.authority-anchor/1"
+        },
+        "anchor_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+        },
+        "anchor_role": {
+          "type": "string",
+          "enum": [
+            "institution_authority",
+            "standing_issuer",
+            "source_issuer"
+          ]
+        },
+        "organization_ref": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "\\S"
+        },
+        "organization_name_declared": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "\\S"
+        },
+        "public_key_spki_b64": {
+          "type": "string",
+          "pattern": "^MCowBQYDK2VwAyEA[A-Za-z0-9+/]{42}[AEIMQUYcgkosw048]=$"
+        },
+        "jurisdictions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "minItems": 1,
+          "maxItems": 20
+        },
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "lab_fixture",
+            "institution_key_ceremony"
+          ]
+        },
+        "ceremony_record_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "not_before": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+        },
+        "not_after": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+        }
+      },
+      "required": [
+        "type",
+        "anchor_id",
+        "anchor_role",
+        "organization_ref",
+        "organization_name_declared",
+        "public_key_spki_b64",
+        "jurisdictions",
+        "provenance",
+        "not_before",
+        "not_after"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "provenance": {
+                "const": "institution_key_ceremony"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "ceremony_record_sha256"
+            ]
+          }
+        }
+      ]
+    },
+    "possession_signature_b64": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9+/]{86}==$"
+    },
+    "document": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "mvr.reviewer-standing/1"
+            },
+            "credential_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "issuer_anchor_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "subject_principal_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "reviewer_display_name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "\\S"
+            },
+            "organization_ref": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120,
+              "pattern": "\\S"
+            },
+            "role_title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "\\S"
+            },
+            "competence": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "residual_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "SOURCE_AUTHENTICITY_UNVERIFIED",
+                      "CLAIM_TRUTH_UNVERIFIED",
+                      "PERMISSION_STATUS_UNASSESSED",
+                      "MISSING_GUARDIAN_PERMISSION",
+                      "UNVERIFIED_REPAYMENT_CAPACITY",
+                      "WRONG_GEOGRAPHY_TRANSFER",
+                      "INCOMPLETE_STUDY_INVENTORY",
+                      "ATTESTOR_STANDING_UNVERIFIED",
+                      "DECISION_SCOPE_UNVERIFIED",
+                      "UNCLASSIFIED_RESIDUAL_RISK"
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 20
+                },
+                "jurisdictions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{2}$"
+                  },
+                  "minItems": 1,
+                  "maxItems": 20
+                }
+              },
+              "required": [
+                "residual_codes",
+                "jurisdictions"
+              ]
+            },
+            "independence": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "relationship_to_subject": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "employee",
+                    "contractor",
+                    "shareholder",
+                    "family",
+                    "adviser",
+                    "other"
+                  ]
+                },
+                "conflicts_declared": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "pattern": "\\S"
+                  },
+                  "minItems": 0,
+                  "maxItems": 10
+                },
+                "declared_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+                }
+              },
+              "required": [
+                "relationship_to_subject",
+                "conflicts_declared",
+                "declared_at"
+              ]
+            },
+            "delegation": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "mode": {
+                  "type": "string",
+                  "enum": [
+                    "issuer_direct",
+                    "delegated"
+                  ]
+                },
+                "delegated_from_credential_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                },
+                "max_further_delegation": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "mode",
+                "max_further_delegation"
+              ],
+              "oneOf": [
+                {
+                  "properties": {
+                    "mode": {
+                      "const": "issuer_direct"
+                    }
+                  },
+                  "not": {
+                    "required": [
+                      "delegated_from_credential_id"
+                    ]
+                  }
+                },
+                {
+                  "properties": {
+                    "mode": {
+                      "const": "delegated"
+                    }
+                  },
+                  "required": [
+                    "delegated_from_credential_id"
+                  ]
+                }
+              ]
+            },
+            "not_before": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+            },
+            "not_after": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+            }
+          },
+          "required": [
+            "type",
+            "credential_id",
+            "issuer_anchor_id",
+            "subject_principal_sha256",
+            "reviewer_display_name",
+            "organization_ref",
+            "role_title",
+            "competence",
+            "independence",
+            "delegation",
+            "not_before",
+            "not_after"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "mvr.source-authentication/1"
+            },
+            "record_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "issuer_anchor_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "record_kind": {
+              "type": "string",
+              "enum": [
+                "source_authenticity",
+                "registry_extract",
+                "permission_record",
+                "observation_record",
+                "financial_record",
+                "custodian_inventory"
+              ]
+            },
+            "source_doc_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "\\S"
+            },
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "jurisdiction": {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$"
+            },
+            "statement": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500,
+              "pattern": "\\S"
+            },
+            "valid_from": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+            },
+            "valid_until": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+            }
+          },
+          "required": [
+            "type",
+            "record_id",
+            "issuer_anchor_id",
+            "record_kind",
+            "source_doc_id",
+            "source_sha256",
+            "jurisdiction",
+            "statement",
+            "valid_from",
+            "valid_until"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "const": "mvr.action-capability/1"
+            },
+            "capability_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "issuer_anchor_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "tenant_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "\\S"
+            },
+            "workspace_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "\\S"
+            },
+            "case_id": {
+              "type": "string",
+              "pattern": "^RC-[a-f0-9]{64}$"
+            },
+            "basis": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "required_closures": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "residual_code": {
+                        "type": "string",
+                        "enum": [
+                          "SOURCE_AUTHENTICITY_UNVERIFIED",
+                          "CLAIM_TRUTH_UNVERIFIED",
+                          "PERMISSION_STATUS_UNASSESSED",
+                          "MISSING_GUARDIAN_PERMISSION",
+                          "UNVERIFIED_REPAYMENT_CAPACITY",
+                          "WRONG_GEOGRAPHY_TRANSFER",
+                          "INCOMPLETE_STUDY_INVENTORY",
+                          "ATTESTOR_STANDING_UNVERIFIED",
+                          "DECISION_SCOPE_UNVERIFIED",
+                          "UNCLASSIFIED_RESIDUAL_RISK"
+                        ]
+                      },
+                      "closure_id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                      }
+                    },
+                    "required": [
+                      "residual_code",
+                      "closure_id"
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 12
+                },
+                "accepted_open_residuals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Z_]{3,60}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 30
+                },
+                "minimum_closure_assurance": {
+                  "type": "string",
+                  "enum": [
+                    "lab_fixture",
+                    "tenant_declared",
+                    "independent_authenticated"
+                  ]
+                }
+              },
+              "required": [
+                "required_closures",
+                "accepted_open_residuals",
+                "minimum_closure_assurance"
+              ]
+            },
+            "actor": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "executor_principal_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "executor_principal_sha256"
+              ]
+            },
+            "action": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "effect_type": {
+                  "type": "string",
+                  "enum": [
+                    "create_draft_record",
+                    "send_evidence_request",
+                    "schedule_meeting",
+                    "contact_counterparty",
+                    "publish_document",
+                    "commit_spend"
+                  ]
+                },
+                "resource_scope": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "system": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80,
+                      "pattern": "\\S"
+                    },
+                    "resource_type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80,
+                      "pattern": "\\S"
+                    },
+                    "resource_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 120,
+                      "pattern": "\\S"
+                    },
+                    "resource_id_prefix": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 120,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "system",
+                    "resource_type"
+                  ]
+                },
+                "amount_minor": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "max_amount_minor": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "currency": {
+                  "type": "string",
+                  "pattern": "^[A-Z]{3}$"
+                },
+                "max_uses": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "external_contact_allowed": {
+                  "type": "boolean"
+                },
+                "counterparty_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "effect_type",
+                "resource_scope",
+                "max_amount_minor",
+                "currency",
+                "max_uses",
+                "external_contact_allowed"
+              ],
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "effect_type": {
+                        "enum": [
+                          "contact_counterparty",
+                          "send_evidence_request",
+                          "schedule_meeting"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "external_contact_allowed": {
+                        "const": true
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "human_authorization": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "approver_ref_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "approved_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "institution_signature",
+                    "dual_control_signature"
+                  ]
+                }
+              },
+              "required": [
+                "approver_ref_sha256",
+                "approved_at",
+                "method"
+              ]
+            },
+            "not_before": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+            },
+            "not_after": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+            }
+          },
+          "required": [
+            "type",
+            "capability_id",
+            "issuer_anchor_id",
+            "tenant_id",
+            "workspace_id",
+            "case_id",
+            "basis",
+            "actor",
+            "action",
+            "human_authorization",
+            "not_before",
+            "not_after"
+          ]
+        }
+      ]
+    },
+    "signature_b64": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9+/]{86}==$"
+    },
+    "revocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "mvr.revocation/1"
+        },
+        "target_kind": {
+          "type": "string",
+          "enum": [
+            "credential",
+            "source_record",
+            "capability"
+          ]
+        },
+        "target_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+        },
+        "revoked_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "type",
+        "target_kind",
+        "target_id",
+        "revoked_at",
+        "reason"
+      ]
+    },
+    "revocation_signature_b64": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9+/]{86}==$"
+    },
+    "reason": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "target_tenant_id": {
+      "type": "string"
+    },
+    "target_workspace_id": {
+      "type": "string"
+    },
+    "anchor_id": {
+      "type": "string"
+    },
+    "vetting_basis": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^RC-[a-f0-9]{64}$"
+    },
+    "residual_code": {
+      "type": "string"
+    },
+    "scope_ref": {
+      "type": "string"
+    },
+    "credential_id": {
+      "type": "string"
+    },
+    "source_record_ids": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "statement": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "expires_at": {
+      "type": "string"
+    },
+    "closure_id": {
+      "type": "string"
+    },
+    "capability_id": {
+      "type": "string"
+    },
+    "requested_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "effect_id",
+        "effect_type",
+        "resource",
+        "amount_minor",
+        "currency"
+      ],
+      "properties": {
+        "effect_id": {
+          "type": "string"
+        },
+        "effect_type": {
+          "type": "string",
+          "enum": [
+            "create_draft_record",
+            "send_evidence_request",
+            "schedule_meeting",
+            "contact_counterparty",
+            "publish_document",
+            "commit_spend"
+          ]
+        },
+        "resource": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "system": {
+              "type": "string"
+            },
+            "resource_type": {
+              "type": "string"
+            },
+            "resource_id": {
+              "type": "string"
+            }
+          }
+        },
+        "amount_minor": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "currency": {
+          "type": "string"
+        },
+        "external_contact": {
+          "type": "boolean"
+        },
+        "counterparty_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "verification_id": {
+      "type": "string"
+    },
+    "effect_id": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "succeeded",
+        "failed",
+        "not_attempted"
+      ]
+    },
+    "external_ref_sha256": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "anchor",
+        "credential",
+        "source_record",
+        "closure",
+        "capability_status"
+      ]
+    },
+    "id": {
+      "type": "string"
+    }
+  },
+  "description": "Institution-signed authority checked by AMOS. AMOS never issues authority; verify_capability answers current validity for one exact effect.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "register_anchor"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "anchor",
+          "possession_signature_b64"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "revoke_anchor"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "anchor_id",
+          "reason"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "vet_anchor"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "anchor_id",
+          "target_tenant_id",
+          "target_workspace_id",
+          "vetting_basis"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "register_credential"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "document",
+          "signature_b64"
+        ],
+        "properties": {
+          "document": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "const": "mvr.reviewer-standing/1"
+              },
+              "credential_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+              },
+              "issuer_anchor_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+              },
+              "subject_principal_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "reviewer_display_name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "\\S"
+              },
+              "organization_ref": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120,
+                "pattern": "\\S"
+              },
+              "role_title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "\\S"
+              },
+              "competence": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "residual_codes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "SOURCE_AUTHENTICITY_UNVERIFIED",
+                        "CLAIM_TRUTH_UNVERIFIED",
+                        "PERMISSION_STATUS_UNASSESSED",
+                        "MISSING_GUARDIAN_PERMISSION",
+                        "UNVERIFIED_REPAYMENT_CAPACITY",
+                        "WRONG_GEOGRAPHY_TRANSFER",
+                        "INCOMPLETE_STUDY_INVENTORY",
+                        "ATTESTOR_STANDING_UNVERIFIED",
+                        "DECISION_SCOPE_UNVERIFIED",
+                        "UNCLASSIFIED_RESIDUAL_RISK"
+                      ]
+                    },
+                    "minItems": 1,
+                    "maxItems": 20
+                  },
+                  "jurisdictions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[A-Z]{2}$"
+                    },
+                    "minItems": 1,
+                    "maxItems": 20
+                  }
+                },
+                "required": [
+                  "residual_codes",
+                  "jurisdictions"
+                ]
+              },
+              "independence": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "relationship_to_subject": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "employee",
+                      "contractor",
+                      "shareholder",
+                      "family",
+                      "adviser",
+                      "other"
+                    ]
+                  },
+                  "conflicts_declared": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "\\S"
+                    },
+                    "minItems": 0,
+                    "maxItems": 10
+                  },
+                  "declared_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+                  }
+                },
+                "required": [
+                  "relationship_to_subject",
+                  "conflicts_declared",
+                  "declared_at"
+                ]
+              },
+              "delegation": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "issuer_direct",
+                      "delegated"
+                    ]
+                  },
+                  "delegated_from_credential_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                  },
+                  "max_further_delegation": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                },
+                "required": [
+                  "mode",
+                  "max_further_delegation"
+                ],
+                "oneOf": [
+                  {
+                    "properties": {
+                      "mode": {
+                        "const": "issuer_direct"
+                      }
+                    },
+                    "not": {
+                      "required": [
+                        "delegated_from_credential_id"
+                      ]
+                    }
+                  },
+                  {
+                    "properties": {
+                      "mode": {
+                        "const": "delegated"
+                      }
+                    },
+                    "required": [
+                      "delegated_from_credential_id"
+                    ]
+                  }
+                ]
+              },
+              "not_before": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+              },
+              "not_after": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+              }
+            },
+            "required": [
+              "type",
+              "credential_id",
+              "issuer_anchor_id",
+              "subject_principal_sha256",
+              "reviewer_display_name",
+              "organization_ref",
+              "role_title",
+              "competence",
+              "independence",
+              "delegation",
+              "not_before",
+              "not_after"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "register_source_record"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "document",
+          "signature_b64"
+        ],
+        "properties": {
+          "document": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "const": "mvr.source-authentication/1"
+              },
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+              },
+              "issuer_anchor_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+              },
+              "record_kind": {
+                "type": "string",
+                "enum": [
+                  "source_authenticity",
+                  "registry_extract",
+                  "permission_record",
+                  "observation_record",
+                  "financial_record",
+                  "custodian_inventory"
+                ]
+              },
+              "source_doc_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "\\S"
+              },
+              "source_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "jurisdiction": {
+                "type": "string",
+                "pattern": "^[A-Z]{2}$"
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500,
+                "pattern": "\\S"
+              },
+              "valid_from": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+              },
+              "valid_until": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+              }
+            },
+            "required": [
+              "type",
+              "record_id",
+              "issuer_anchor_id",
+              "record_kind",
+              "source_doc_id",
+              "source_sha256",
+              "jurisdiction",
+              "statement",
+              "valid_from",
+              "valid_until"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "register_capability"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "document",
+          "signature_b64"
+        ],
+        "properties": {
+          "document": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "const": "mvr.action-capability/1"
+              },
+              "capability_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+              },
+              "issuer_anchor_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+              },
+              "tenant_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "\\S"
+              },
+              "workspace_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "\\S"
+              },
+              "case_id": {
+                "type": "string",
+                "pattern": "^RC-[a-f0-9]{64}$"
+              },
+              "basis": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "required_closures": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "residual_code": {
+                          "type": "string",
+                          "enum": [
+                            "SOURCE_AUTHENTICITY_UNVERIFIED",
+                            "CLAIM_TRUTH_UNVERIFIED",
+                            "PERMISSION_STATUS_UNASSESSED",
+                            "MISSING_GUARDIAN_PERMISSION",
+                            "UNVERIFIED_REPAYMENT_CAPACITY",
+                            "WRONG_GEOGRAPHY_TRANSFER",
+                            "INCOMPLETE_STUDY_INVENTORY",
+                            "ATTESTOR_STANDING_UNVERIFIED",
+                            "DECISION_SCOPE_UNVERIFIED",
+                            "UNCLASSIFIED_RESIDUAL_RISK"
+                          ]
+                        },
+                        "closure_id": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                        }
+                      },
+                      "required": [
+                        "residual_code",
+                        "closure_id"
+                      ]
+                    },
+                    "minItems": 1,
+                    "maxItems": 12
+                  },
+                  "accepted_open_residuals": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[A-Z_]{3,60}$"
+                    },
+                    "minItems": 0,
+                    "maxItems": 30
+                  },
+                  "minimum_closure_assurance": {
+                    "type": "string",
+                    "enum": [
+                      "lab_fixture",
+                      "tenant_declared",
+                      "independent_authenticated"
+                    ]
+                  }
+                },
+                "required": [
+                  "required_closures",
+                  "accepted_open_residuals",
+                  "minimum_closure_assurance"
+                ]
+              },
+              "actor": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "executor_principal_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  }
+                },
+                "required": [
+                  "executor_principal_sha256"
+                ]
+              },
+              "action": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "effect_type": {
+                    "type": "string",
+                    "enum": [
+                      "create_draft_record",
+                      "send_evidence_request",
+                      "schedule_meeting",
+                      "contact_counterparty",
+                      "publish_document",
+                      "commit_spend"
+                    ]
+                  },
+                  "resource_scope": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "system": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80,
+                        "pattern": "\\S"
+                      },
+                      "resource_type": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80,
+                        "pattern": "\\S"
+                      },
+                      "resource_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120,
+                        "pattern": "\\S"
+                      },
+                      "resource_id_prefix": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120,
+                        "pattern": "\\S"
+                      }
+                    },
+                    "required": [
+                      "system",
+                      "resource_type"
+                    ]
+                  },
+                  "amount_minor": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "max_amount_minor": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "currency": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$"
+                  },
+                  "max_uses": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100
+                  },
+                  "external_contact_allowed": {
+                    "type": "boolean"
+                  },
+                  "counterparty_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "effect_type",
+                  "resource_scope",
+                  "max_amount_minor",
+                  "currency",
+                  "max_uses",
+                  "external_contact_allowed"
+                ],
+                "allOf": [
+                  {
+                    "if": {
+                      "properties": {
+                        "effect_type": {
+                          "enum": [
+                            "contact_counterparty",
+                            "send_evidence_request",
+                            "schedule_meeting"
+                          ]
+                        }
+                      }
+                    },
+                    "then": {
+                      "properties": {
+                        "external_contact_allowed": {
+                          "const": true
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "human_authorization": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "approver_ref_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "approved_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+                  },
+                  "method": {
+                    "type": "string",
+                    "enum": [
+                      "institution_signature",
+                      "dual_control_signature"
+                    ]
+                  }
+                },
+                "required": [
+                  "approver_ref_sha256",
+                  "approved_at",
+                  "method"
+                ]
+              },
+              "not_before": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+              },
+              "not_after": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+              }
+            },
+            "required": [
+              "type",
+              "capability_id",
+              "issuer_anchor_id",
+              "tenant_id",
+              "workspace_id",
+              "case_id",
+              "basis",
+              "actor",
+              "action",
+              "human_authorization",
+              "not_before",
+              "not_after"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "revoke_credential"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "id",
+          "reason"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "revoke_source_record"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "id",
+          "reason"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "revoke_capability"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "capability_id",
+          "reason"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "close_residual"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "case_id",
+          "residual_code",
+          "scope_ref",
+          "credential_id",
+          "source_record_ids",
+          "statement",
+          "expires_at"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "revoke_closure"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "closure_id",
+          "reason"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "verify_capability"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "capability_id",
+          "requested_effect"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "record_effect"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "verification_id",
+          "effect_id",
+          "outcome"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "get"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "kind",
+          "id"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "trace"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "capability_id"
+        ]
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "revocation"
+        ]
+      },
+      "then": {
+        "required": [
+          "revocation_signature_b64"
+        ]
+      }
+    }
+  ]
+}

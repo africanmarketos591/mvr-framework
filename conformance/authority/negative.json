@@ -1,0 +1,1843 @@
+[
+  {
+    "name": "anchor missing type",
+    "schema_name": "anchor",
+    "document": {
+      "anchor_id": "lab-anchor",
+      "anchor_role": "institution_authority",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "organization_name_declared": "Public synthetic fixture only",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "jurisdictions": [
+        "UG"
+      ],
+      "provenance": "lab_fixture",
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor missing anchor_id",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_role": "institution_authority",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "organization_name_declared": "Public synthetic fixture only",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "jurisdictions": [
+        "UG"
+      ],
+      "provenance": "lab_fixture",
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor missing anchor_role",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_id": "lab-anchor",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "organization_name_declared": "Public synthetic fixture only",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "jurisdictions": [
+        "UG"
+      ],
+      "provenance": "lab_fixture",
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor missing organization_ref",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_id": "lab-anchor",
+      "anchor_role": "institution_authority",
+      "organization_name_declared": "Public synthetic fixture only",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "jurisdictions": [
+        "UG"
+      ],
+      "provenance": "lab_fixture",
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor missing organization_name_declared",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_id": "lab-anchor",
+      "anchor_role": "institution_authority",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "jurisdictions": [
+        "UG"
+      ],
+      "provenance": "lab_fixture",
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor missing public_key_spki_b64",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_id": "lab-anchor",
+      "anchor_role": "institution_authority",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "organization_name_declared": "Public synthetic fixture only",
+      "jurisdictions": [
+        "UG"
+      ],
+      "provenance": "lab_fixture",
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor missing jurisdictions",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_id": "lab-anchor",
+      "anchor_role": "institution_authority",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "organization_name_declared": "Public synthetic fixture only",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "provenance": "lab_fixture",
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor missing provenance",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_id": "lab-anchor",
+      "anchor_role": "institution_authority",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "organization_name_declared": "Public synthetic fixture only",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "jurisdictions": [
+        "UG"
+      ],
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor missing not_before",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_id": "lab-anchor",
+      "anchor_role": "institution_authority",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "organization_name_declared": "Public synthetic fixture only",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "jurisdictions": [
+        "UG"
+      ],
+      "provenance": "lab_fixture",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor missing not_after",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_id": "lab-anchor",
+      "anchor_role": "institution_authority",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "organization_name_declared": "Public synthetic fixture only",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "jurisdictions": [
+        "UG"
+      ],
+      "provenance": "lab_fixture",
+      "not_before": "2026-10-23T00:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor unknown field",
+    "schema_name": "anchor",
+    "document": {
+      "type": "mvr.authority-anchor/1",
+      "anchor_id": "lab-anchor",
+      "anchor_role": "institution_authority",
+      "organization_ref": "AMOS-LAB-ONLY",
+      "organization_name_declared": "Public synthetic fixture only",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "jurisdictions": [
+        "UG"
+      ],
+      "provenance": "lab_fixture",
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z",
+      "unexpected": true
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing type",
+    "schema_name": "standing",
+    "document": {
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing credential_id",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing issuer_anchor_id",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing subject_principal_sha256",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing reviewer_display_name",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing organization_ref",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing role_title",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing competence",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing independence",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing delegation",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing not_before",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing missing not_after",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing unknown field",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z",
+      "unexpected": true
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "standing signature tamper",
+    "schema_name": "standing",
+    "document": {
+      "type": "mvr.reviewer-standing/1",
+      "credential_id": "lab-standing",
+      "issuer_anchor_id": "lab-standing-issuer",
+      "subject_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_display_name": "Synthetic lab reviewer",
+      "organization_ref": "LAB-REVIEWER",
+      "role_title": "Lab test only",
+      "competence": {
+        "residual_codes": [
+          "SOURCE_AUTHENTICITY_UNVERIFIED"
+        ],
+        "jurisdictions": [
+          "UG"
+        ]
+      },
+      "independence": {
+        "relationship_to_subject": "none",
+        "conflicts_declared": [],
+        "declared_at": "2026-10-23T00:00:00.000Z"
+      },
+      "delegation": {
+        "mode": "issuer_direct",
+        "max_further_delegation": 0
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "document_type": "mvr.reviewer-standing/1",
+    "signature_b64": "AtOPHEde7Gc3nLZyGOCxegHcQJRt+w6tcVhDVyMk8AXv3MwsqvB2FllraT4fD8a4grkI9Tqyh2Ap+Yb4qU52AA==",
+    "expected_schema_valid": true,
+    "expected_signature_valid": false
+  },
+  {
+    "name": "source missing type",
+    "schema_name": "source",
+    "document": {
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source missing record_id",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source missing issuer_anchor_id",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source missing record_kind",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source missing source_doc_id",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source missing source_sha256",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source missing jurisdiction",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source missing statement",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source missing valid_from",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source missing valid_until",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source unknown field",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z",
+      "unexpected": true
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "source signature tamper",
+    "schema_name": "source",
+    "document": {
+      "type": "mvr.source-authentication/1",
+      "record_id": "lab-source",
+      "issuer_anchor_id": "lab-source-issuer",
+      "record_kind": "source_authenticity",
+      "source_doc_id": "LAB-DOC-1",
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "jurisdiction": "UG",
+      "statement": "Synthetic lab record only; no real source authenticated.",
+      "valid_from": "2026-10-23T00:00:00.000Z",
+      "valid_until": "2026-10-23T01:00:00.000Z"
+    },
+    "document_type": "mvr.source-authentication/1",
+    "signature_b64": "Aiydu9Szw48uoX0tKwrACl6P54x2blcSNiSM2cN5H9jXY7g61qWwRpj7S9/TBgRh7uWuxcA4MInwF1a7S5pnBg==",
+    "expected_schema_valid": true,
+    "expected_signature_valid": false
+  },
+  {
+    "name": "capability missing type",
+    "schema_name": "capability",
+    "document": {
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing capability_id",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing issuer_anchor_id",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing tenant_id",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing workspace_id",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing case_id",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing basis",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing actor",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing action",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing human_authorization",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing not_before",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability missing not_after",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability unknown field",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z",
+      "unexpected": true
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "capability signature tamper",
+    "schema_name": "capability",
+    "document": {
+      "type": "mvr.action-capability/1",
+      "capability_id": "lab-capability",
+      "issuer_anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "basis": {
+        "required_closures": [
+          {
+            "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "closure_id": "lab-closure"
+          }
+        ],
+        "accepted_open_residuals": [],
+        "minimum_closure_assurance": "lab_fixture"
+      },
+      "actor": {
+        "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "action": {
+        "effect_type": "create_draft_record",
+        "resource_scope": {
+          "system": "lab",
+          "resource_type": "draft",
+          "resource_id": "LAB-ONLY"
+        },
+        "amount_minor": 0,
+        "max_amount_minor": 0,
+        "currency": "UGX",
+        "max_uses": 1,
+        "external_contact_allowed": false,
+        "counterparty_ref": "lab"
+      },
+      "human_authorization": {
+        "approver_ref_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "approved_at": "2026-10-23T00:00:00.000Z",
+        "method": "institution_signature"
+      },
+      "not_before": "2026-10-23T00:00:00.000Z",
+      "not_after": "2026-10-23T01:00:00.000Z"
+    },
+    "document_type": "mvr.action-capability/1",
+    "signature_b64": "Ar7t0GmBpO1zHfSOA+KJa2eSsrED7GqJxA2yuuNxevRgSv9XYtOYiUF3y1K67TivWPICu4Uu+ls6DQGWXhZrDw==",
+    "expected_schema_valid": true,
+    "expected_signature_valid": false
+  },
+  {
+    "name": "revocation missing type",
+    "schema_name": "revocation",
+    "document": {
+      "target_kind": "capability",
+      "target_id": "lab-capability",
+      "revoked_at": "2026-10-23T00:00:00.000Z",
+      "reason": "Synthetic revocation test"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "revocation missing target_kind",
+    "schema_name": "revocation",
+    "document": {
+      "type": "mvr.revocation/1",
+      "target_id": "lab-capability",
+      "revoked_at": "2026-10-23T00:00:00.000Z",
+      "reason": "Synthetic revocation test"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "revocation missing target_id",
+    "schema_name": "revocation",
+    "document": {
+      "type": "mvr.revocation/1",
+      "target_kind": "capability",
+      "revoked_at": "2026-10-23T00:00:00.000Z",
+      "reason": "Synthetic revocation test"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "revocation missing revoked_at",
+    "schema_name": "revocation",
+    "document": {
+      "type": "mvr.revocation/1",
+      "target_kind": "capability",
+      "target_id": "lab-capability",
+      "reason": "Synthetic revocation test"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "revocation missing reason",
+    "schema_name": "revocation",
+    "document": {
+      "type": "mvr.revocation/1",
+      "target_kind": "capability",
+      "target_id": "lab-capability",
+      "revoked_at": "2026-10-23T00:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "revocation unknown field",
+    "schema_name": "revocation",
+    "document": {
+      "type": "mvr.revocation/1",
+      "target_kind": "capability",
+      "target_id": "lab-capability",
+      "revoked_at": "2026-10-23T00:00:00.000Z",
+      "reason": "Synthetic revocation test",
+      "unexpected": true
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "revocation signature tamper",
+    "schema_name": "revocation",
+    "document": {
+      "type": "mvr.revocation/1",
+      "target_kind": "capability",
+      "target_id": "lab-capability",
+      "revoked_at": "2026-10-23T00:00:00.000Z",
+      "reason": "Synthetic revocation test"
+    },
+    "document_type": "mvr.revocation/1",
+    "signature_b64": "AbGlD4fLAP/KucsTeSH0w87O7E5E/RMrwSCPp330NRozZCkjaxcbUD1qNX6Md7jVM2gE0KPJ5jwr/9mG/9gvCg==",
+    "expected_schema_valid": true,
+    "expected_signature_valid": false
+  },
+  {
+    "name": "closure missing case_id",
+    "schema_name": "closure",
+    "document": {
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "scope_ref": "source:LAB-DOC-1",
+      "credential_id": "lab-standing",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic closure record",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "closed_at": "2026-10-23T00:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure missing residual_code",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "scope_ref": "source:LAB-DOC-1",
+      "credential_id": "lab-standing",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic closure record",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "closed_at": "2026-10-23T00:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure missing scope_ref",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "credential_id": "lab-standing",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic closure record",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "closed_at": "2026-10-23T00:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure missing credential_id",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "scope_ref": "source:LAB-DOC-1",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic closure record",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "closed_at": "2026-10-23T00:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure missing source_record_ids",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "scope_ref": "source:LAB-DOC-1",
+      "credential_id": "lab-standing",
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic closure record",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "closed_at": "2026-10-23T00:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure missing reviewer_principal_sha256",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "scope_ref": "source:LAB-DOC-1",
+      "credential_id": "lab-standing",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "statement": "Synthetic closure record",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "closed_at": "2026-10-23T00:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure missing statement",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "scope_ref": "source:LAB-DOC-1",
+      "credential_id": "lab-standing",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "closed_at": "2026-10-23T00:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure missing expires_at",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "scope_ref": "source:LAB-DOC-1",
+      "credential_id": "lab-standing",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic closure record",
+      "closed_at": "2026-10-23T00:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure missing closed_at",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "scope_ref": "source:LAB-DOC-1",
+      "credential_id": "lab-standing",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic closure record",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure missing case_context_sha256",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "scope_ref": "source:LAB-DOC-1",
+      "credential_id": "lab-standing",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic closure record",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "closed_at": "2026-10-23T00:00:00.000Z"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "closure unknown field",
+    "schema_name": "closure",
+    "document": {
+      "case_id": "RC-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "residual_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "scope_ref": "source:LAB-DOC-1",
+      "credential_id": "lab-standing",
+      "source_record_ids": [
+        "lab-source"
+      ],
+      "reviewer_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "statement": "Synthetic closure record",
+      "expires_at": "2026-10-23T01:00:00.000Z",
+      "closed_at": "2026-10-23T00:00:00.000Z",
+      "case_context_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "unexpected": true
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor_possession missing type",
+    "schema_name": "anchor_possession",
+    "document": {
+      "anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "operation_id": "lab-register-anchor"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor_possession missing anchor_id",
+    "schema_name": "anchor_possession",
+    "document": {
+      "type": "mvr.anchor-possession/1",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "operation_id": "lab-register-anchor"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor_possession missing tenant_id",
+    "schema_name": "anchor_possession",
+    "document": {
+      "type": "mvr.anchor-possession/1",
+      "anchor_id": "lab-anchor",
+      "workspace_id": "lab-test",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "operation_id": "lab-register-anchor"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor_possession missing workspace_id",
+    "schema_name": "anchor_possession",
+    "document": {
+      "type": "mvr.anchor-possession/1",
+      "anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "operation_id": "lab-register-anchor"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor_possession missing public_key_spki_b64",
+    "schema_name": "anchor_possession",
+    "document": {
+      "type": "mvr.anchor-possession/1",
+      "anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "operation_id": "lab-register-anchor"
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor_possession missing operation_id",
+    "schema_name": "anchor_possession",
+    "document": {
+      "type": "mvr.anchor-possession/1",
+      "anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M="
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor_possession unknown field",
+    "schema_name": "anchor_possession",
+    "document": {
+      "type": "mvr.anchor-possession/1",
+      "anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "operation_id": "lab-register-anchor",
+      "unexpected": true
+    },
+    "expected_schema_valid": false
+  },
+  {
+    "name": "anchor_possession signature tamper",
+    "schema_name": "anchor_possession",
+    "document": {
+      "type": "mvr.anchor-possession/1",
+      "anchor_id": "lab-anchor",
+      "tenant_id": "lab-conformance",
+      "workspace_id": "lab-test",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEAOxEI/AscDeV/na7uQocHpxiAbeAjIp552hud82SW1+M=",
+      "operation_id": "lab-register-anchor"
+    },
+    "document_type": "mvr.anchor-possession/1",
+    "signature_b64": "AOggcwIK1FYxQNziAliIHfBq18IW9WXO49UrUxCEKU9TZ2Q9HK2oY3PSALSk6TH2KvisGZPOrwlB/ib4BfPTAw==",
+    "expected_schema_valid": true,
+    "expected_signature_valid": false
+  }
+]
