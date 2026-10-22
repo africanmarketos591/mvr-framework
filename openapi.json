@@ -64448,9 +64448,13 @@
                         "review_dependency_withdrawn",
                         "review_case_withdrawn",
                         "review_case_basis_changed",
+                        "authority_capability_revoked",
+                        "authority_dependency_revoked",
                         "review.dependency_withdrawn",
                         "review_case.withdrawn",
                         "review_case.basis_changed",
+                        "authority.capability_revoked",
+                        "authority.dependency_revoked",
                         "task.created",
                         "evidence.review_required",
                         "watchlist.triggered",
@@ -64492,9 +64496,13 @@
                         "review_dependency_withdrawn",
                         "review_case_withdrawn",
                         "review_case_basis_changed",
+                        "authority_capability_revoked",
+                        "authority_dependency_revoked",
                         "review.dependency_withdrawn",
                         "review_case.withdrawn",
                         "review_case.basis_changed",
+                        "authority.capability_revoked",
+                        "authority.dependency_revoked",
                         "task.created",
                         "evidence.review_required",
                         "watchlist.triggered",
@@ -69769,6 +69777,573 @@
                   }
                 },
                 "description": "Case-bound internal review and planning. Planning tasks can be completed; factual, professional-standing and external-action gaps remain separate. Notes and planning answers remain unverified. Historical artifacts are not current permission receipts."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/authority-chain": {
+      "post": {
+        "summary": "Institution-signed authority checked by AMOS: register keys, reviewer standing and source records; close one residual at a time; register institution capabilities; verify a capability for one exact effect immediately before execution; record outcomes. AMOS never issues authority.",
+        "description": "Institution-signed authority checked by AMOS: register keys, reviewer standing and source records; close one residual at a time; register institution capabilities; verify a capability for one exact effect immediately before execution; record outcomes. AMOS never issues authority.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/authority-chain",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "rbac_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityChainResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "action"
+                ],
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "register_anchor",
+                      "revoke_anchor",
+                      "vet_anchor",
+                      "register_credential",
+                      "revoke_credential",
+                      "register_source_record",
+                      "revoke_source_record",
+                      "close_residual",
+                      "revoke_closure",
+                      "register_capability",
+                      "revoke_capability",
+                      "verify_capability",
+                      "record_effect",
+                      "get",
+                      "trace"
+                    ]
+                  },
+                  "operation_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "^[A-Za-z0-9_-]+$"
+                  },
+                  "anchor": {
+                    "type": "object"
+                  },
+                  "possession_signature_b64": {
+                    "type": "string"
+                  },
+                  "document": {
+                    "type": "object"
+                  },
+                  "signature_b64": {
+                    "type": "string"
+                  },
+                  "revocation": {
+                    "type": "object"
+                  },
+                  "revocation_signature_b64": {
+                    "type": "string"
+                  },
+                  "reason": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "target_tenant_id": {
+                    "type": "string"
+                  },
+                  "target_workspace_id": {
+                    "type": "string"
+                  },
+                  "anchor_id": {
+                    "type": "string"
+                  },
+                  "vetting_basis": {
+                    "type": "string",
+                    "maxLength": 500
+                  },
+                  "case_id": {
+                    "type": "string",
+                    "pattern": "^RC-[a-f0-9]{64}$"
+                  },
+                  "residual_code": {
+                    "type": "string"
+                  },
+                  "scope_ref": {
+                    "type": "string"
+                  },
+                  "credential_id": {
+                    "type": "string"
+                  },
+                  "source_record_ids": {
+                    "type": "array",
+                    "maxItems": 5,
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "statement": {
+                    "type": "string",
+                    "maxLength": 1000
+                  },
+                  "expires_at": {
+                    "type": "string"
+                  },
+                  "closure_id": {
+                    "type": "string"
+                  },
+                  "capability_id": {
+                    "type": "string"
+                  },
+                  "requested_effect": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "effect_id",
+                      "effect_type",
+                      "resource",
+                      "amount_minor",
+                      "currency"
+                    ],
+                    "properties": {
+                      "effect_id": {
+                        "type": "string"
+                      },
+                      "effect_type": {
+                        "type": "string",
+                        "enum": [
+                          "create_draft_record",
+                          "send_evidence_request",
+                          "schedule_meeting",
+                          "contact_counterparty",
+                          "publish_document",
+                          "commit_spend"
+                        ]
+                      },
+                      "resource": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "system": {
+                            "type": "string"
+                          },
+                          "resource_type": {
+                            "type": "string"
+                          },
+                          "resource_id": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "amount_minor": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "currency": {
+                        "type": "string"
+                      },
+                      "external_contact": {
+                        "type": "boolean"
+                      },
+                      "counterparty_ref": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "verification_id": {
+                    "type": "string"
+                  },
+                  "effect_id": {
+                    "type": "string"
+                  },
+                  "outcome": {
+                    "type": "string",
+                    "enum": [
+                      "succeeded",
+                      "failed",
+                      "not_attempted"
+                    ]
+                  },
+                  "external_ref_sha256": {
+                    "type": "string"
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "anchor",
+                      "credential",
+                      "source_record",
+                      "closure",
+                      "capability_status"
+                    ]
+                  },
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "description": "Institution-signed authority checked by AMOS. AMOS never issues authority; verify_capability answers current validity for one exact effect."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/field-contract": {
+      "get": {
+        "summary": "Published field contract: deprecated authority-related names, their declared replacements, the opt-in header and the sunset date.",
+        "description": "Published field contract: deprecated authority-related names, their declared replacements, the opt-in header and the sunset date.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/field-contract",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/authority-chain/contract": {
+      "get": {
+        "summary": "Discover the authority chain: who signs what, trust tiers, closure and capability rules, receipts and revocation.",
+        "description": "Discover the authority chain: who signs what, trust tiers, closure and capability rules, receipts and revocation.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/authority-chain/contract",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityChainContract"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
               }
             }
           }
@@ -79701,11 +80276,13 @@
           },
           "evidence_authentication_status": {
             "enum": [
-              "not_authenticated"
+              "not_authenticated",
+              "partially_authenticated"
             ]
           },
           "authenticated_verified_count": {
-            "const": 0
+            "type": "integer",
+            "minimum": 0
           },
           "evidence_authentication_basis": {
             "type": "string"
@@ -81069,11 +81646,13 @@
           },
           "evidence_authentication_status": {
             "enum": [
-              "not_authenticated"
+              "not_authenticated",
+              "partially_authenticated"
             ]
           },
           "authenticated_verified_count": {
-            "const": 0
+            "type": "integer",
+            "minimum": 0
           },
           "evidence_authentication_basis": {
             "type": "string"
@@ -81341,11 +81920,13 @@
           },
           "evidence_authentication_status": {
             "enum": [
-              "not_authenticated"
+              "not_authenticated",
+              "partially_authenticated"
             ]
           },
           "authenticated_verified_count": {
-            "const": 0
+            "type": "integer",
+            "minimum": 0
           },
           "evidence_authentication_basis": {
             "type": "string"
@@ -82568,7 +83149,11 @@
                   "type": "string"
                 },
                 "state": {
-                  "const": "open"
+                  "type": "string",
+                  "enum": [
+                    "open",
+                    "closed"
+                  ]
                 },
                 "closure": {
                   "type": "string"
@@ -82681,9 +83266,32 @@
               },
               "factual_gaps_closed": {
                 "type": "array",
-                "maxItems": 0,
+                "maxItems": 40,
                 "items": {
-                  "type": "string"
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "scope_ref": {
+                      "type": "string"
+                    },
+                    "assurance": {
+                      "type": "string",
+                      "enum": [
+                        "lab_fixture",
+                        "tenant_declared",
+                        "independent_authenticated"
+                      ]
+                    },
+                    "closure_id": {
+                      "type": "string"
+                    },
+                    "expires_at": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": true
                 }
               },
               "numeric_credibility_weights_used": {
@@ -82725,6 +83333,59 @@
           },
           "professional_standing_verified": {
             "const": false
+          },
+          "residual_closures": {
+            "type": "array",
+            "maxItems": 40,
+            "items": {
+              "type": "object",
+              "properties": {
+                "closure_id": {
+                  "type": "string"
+                },
+                "residual_code": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "scope_ref": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "usable": {
+                  "type": "boolean"
+                },
+                "assurance": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "expires_at": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "reasons": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "authenticated_sources": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source_doc_id": {
+                        "type": "string"
+                      },
+                      "tier": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": true
+                  }
+                }
+              },
+              "additionalProperties": true
+            }
           }
         },
         "additionalProperties": true
@@ -82875,6 +83536,106 @@
               }
             },
             "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      },
+      "AuthorityChainResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "http_status": {
+            "type": "integer"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "allow",
+              "deny"
+            ]
+          },
+          "deny_reasons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verification_id": {
+            "type": "string"
+          },
+          "valid_until": {
+            "type": "string",
+            "nullable": true
+          },
+          "reliance": {
+            "type": "string",
+            "nullable": true,
+            "enum": [
+              "lab_fixture_only",
+              "institution_signed",
+              null
+            ]
+          },
+          "receipt": {
+            "type": "object",
+            "properties": {
+              "sequence": {
+                "type": "integer"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "prev_sha256": {
+                "type": "string"
+              },
+              "signature": {
+                "type": "object",
+                "properties": {},
+                "additionalProperties": true
+              }
+            },
+            "additionalProperties": true
+          },
+          "issued_by_amos": {
+            "const": false
+          },
+          "amos_authorization": {
+            "const": false
+          },
+          "authority_source": {
+            "const": "institution_signature_only"
+          },
+          "real_world_identity_verified_by_amos": {
+            "const": false
+          }
+        },
+        "additionalProperties": true
+      },
+      "AuthorityChainContract": {
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "const": "mvr.authority-chain/1"
+          },
+          "route": {
+            "const": "/v1/authority-chain"
+          },
+          "closure_assurance": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "issued_by_amos": {
+            "const": false
+          },
+          "amos_authorization": {
+            "const": false
           }
         },
         "additionalProperties": true
@@ -84961,7 +85722,17 @@
                   "type": "string",
                   "enum": [
                     "open",
-                    "recorded_review_satisfied"
+                    "recorded_review_satisfied",
+                    "closed"
+                  ]
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "open",
+                    "procedural_requirement_recorded",
+                    "resolved",
+                    "accepted_by_accountable_owner"
                   ]
                 },
                 "source_codes": {
@@ -85036,7 +85807,9 @@
                   "type": "string",
                   "enum": [
                     "open",
-                    "procedural_requirement_recorded"
+                    "procedural_requirement_recorded",
+                    "resolved",
+                    "accepted_by_accountable_owner"
                   ]
                 },
                 "evidence_path": {
@@ -85051,13 +85824,16 @@
                   "type": "string"
                 },
                 "proof_reference": {
-                  "type": "null"
+                  "type": "string",
+                  "nullable": true
                 },
                 "verification_method": {
-                  "type": "null"
+                  "type": "string",
+                  "nullable": true
                 },
                 "source_valid_until": {
-                  "type": "null"
+                  "type": "string",
+                  "nullable": true
                 },
                 "allowed_action_ceiling": {
                   "const": "internal_planning_only"
@@ -85070,7 +85846,7 @@
             "type": "boolean"
           },
           "factual_closure_available": {
-            "const": false
+            "type": "boolean"
           }
         },
         "additionalProperties": true
@@ -86183,7 +86959,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-21.authority-ceiling.1"
+    "deployment_revision": "2026-10-22.authority-chain.2"
   },
   "response_contract_version": "2026-05-01.v1"
 }
