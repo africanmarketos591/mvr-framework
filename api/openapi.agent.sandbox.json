@@ -1,5 +1,10 @@
 {
   "openapi": "3.1.0",
+  "x-mvr-field-contract": {
+    "default": "authority-fields/2",
+    "legacy_opt_in": "authority-fields/1",
+    "legacy_sunset": "2027-01-21T00:00:00Z"
+  },
   "info": {
     "title": "MVR API - Canonical Five-Step Agent Preflight",
     "version": "6.32.0",
