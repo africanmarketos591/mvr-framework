@@ -21,10 +21,20 @@
     "policy_version": "mvr-agent-preflight-policy@2026-08-08.2",
     "calibration_version": "v6.32.0-framework-provisional",
     "calibration_scope": "Public framework-provisional default. Licensed runtime calibration is resolved by profile, sector, geography, and active manifest; verify through /v1/calibration-health.",
-    "deployment_revision": "2026-10-21.authority-ceiling.1",
+    "deployment_revision": "2026-10-22.authority-chain.2",
     "deployment_provider_revision": "Recorded in release evidence after deployment; not self-embedded because a provider revision is created by the deployment itself.",
     "host_recipe_version": "2026-08-20.1",
-    "checkout_contract_version": "2026-07-29.1"
+    "checkout_contract_version": "2026-07-29.1",
+    "contract_versions": {
+      "authority_chain": "mvr.authority-chain/1",
+      "field_contract": "mvr.field-contract/1",
+      "field_contract_default": "authority-fields/1",
+      "relevance_classifier": "mvr-ordinary-task@2",
+      "risk_taxonomy": "mvr.risk-taxonomy/3",
+      "external_use_ceiling": "mvr.external-use-ceiling/1",
+      "internal_work_products": "mvr.internal-work-products/1",
+      "market_insight_brief": "mvr.market-insight-brief/1"
+    }
   },
   "policy_modes": {
     "advisory_selection": {
