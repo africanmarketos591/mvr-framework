@@ -57,3 +57,9 @@ It never retries an effect. `executeInternalArtifact` saves typed internal draft
 ## What this does not establish
 
 AMOS checks signatures and current state. It does not verify the real-world organization behind a key unless that key is platform-vetted. It does not inspect original documents, and it does not grant legal, regulatory, credit or investment approval. Receipts are signed with the AMOS receipt key only after its key ceremony; until then they are hash-chained and marked `unsigned`.
+
+## Exact scope and default fields (2026-10-22)
+
+The signed action may include `amount_minor` and `resource_scope.resource_id` for exact equality. They supplement the existing ceiling and optional prefix. Verification returns every signed action constraint; the reference executor checks contact and counterparty restrictions too. See [the contract changelog](changelog-2026-10-22-authority-contracts.md).
+
+`authority-fields/2` is now the default. Explicit version 1 requests remain supported only until the sunset 2027-01-21T00:00:00Z.

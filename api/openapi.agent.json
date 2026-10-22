@@ -1,5 +1,10 @@
 {
   "openapi": "3.0.0",
+  "x-mvr-field-contract": {
+    "default": "authority-fields/2",
+    "legacy_opt_in": "authority-fields/1",
+    "legacy_sunset": "2027-01-21T00:00:00Z"
+  },
   "info": {
     "title": "MVR Core API - Full Expert Catalogue",
     "version": "v6.32.0",
@@ -69570,6 +69575,169 @@
                 "required": [
                   "action"
                 ],
+                "oneOf": [
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "create"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "operation_id",
+                      "preflight_context",
+                      "reference_secret",
+                      "share_redacted_with_reference_holders",
+                      "redacted_no_personal_data"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "get"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "link_attestation"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "unlink_attestation"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "prepare_packet"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "get_packet"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "withdraw"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "open_workplan"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "get_workplan"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "record_plan_step"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "finalize_workplan"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  }
+                ],
                 "properties": {
                   "workplan_id": {
                     "type": "string",
@@ -69644,10 +69812,50 @@
                     ],
                     "properties": {
                       "subject": {
-                        "type": "object"
+                        "type": "object",
+                        "anyOf": [
+                          {
+                            "required": [
+                              "entity_name"
+                            ]
+                          },
+                          {
+                            "required": [
+                              "entity_id"
+                            ]
+                          }
+                        ],
+                        "properties": {
+                          "entity_name": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 300
+                          },
+                          "entity_id": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 300
+                          },
+                          "entity_archetype": {
+                            "type": "string",
+                            "description": "Optional for creating a review case; supply for downstream assessment."
+                          }
+                        },
+                        "additionalProperties": true
                       },
                       "market_scope": {
-                        "type": "object"
+                        "type": "object",
+                        "required": [
+                          "country"
+                        ],
+                        "properties": {
+                          "country": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 100
+                          }
+                        },
+                        "additionalProperties": true
                       },
                       "decision_question": {
                         "type": "string",
@@ -86959,7 +87167,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-22.authority-chain.3"
+    "deployment_revision": "2026-10-22.authority-chain.4"
   },
   "response_contract_version": "2026-05-01.v1"
 }

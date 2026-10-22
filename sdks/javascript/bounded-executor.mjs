@@ -41,8 +41,13 @@ function withinScope(scope, requested) {
   if (!object(scope) || !object(scope.resource_scope)) return false;
   const resource = requested.resource;
   return scope.effect_type === requested.effect_type
-    && requested.amount_minor <= scope.max_amount_minor && scope.currency === requested.currency
+    && Number.isSafeInteger(scope.max_amount_minor) && requested.amount_minor <= scope.max_amount_minor && scope.currency === requested.currency
+    && (scope.amount_minor === undefined || requested.amount_minor === scope.amount_minor)
+    && (requested.external_contact === undefined || typeof requested.external_contact === 'boolean')
+    && (requested.external_contact !== true || scope.external_contact_allowed === true)
+    && (scope.counterparty_ref === undefined || requested.counterparty_ref === scope.counterparty_ref)
     && resource.system === scope.resource_scope.system && resource.resource_type === scope.resource_scope.resource_type
+    && (scope.resource_scope.resource_id === undefined || resource.resource_id === scope.resource_scope.resource_id)
     && (scope.resource_scope.resource_id_prefix === undefined || typeof resource.resource_id === "string" && resource.resource_id.startsWith(scope.resource_scope.resource_id_prefix));
 }
 

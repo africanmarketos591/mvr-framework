@@ -1,0 +1,48 @@
+{
+  "contract": "mvr.field-contract/1",
+  "url": "https://africanmarketos.com/v1/field-contract",
+  "versions": [
+    "authority-fields/1",
+    "authority-fields/2"
+  ],
+  "default_version": {
+    "before_sunset": "authority-fields/2",
+    "from_sunset": "authority-fields/2"
+  },
+  "deprecated_at": "2026-10-21T00:00:00Z",
+  "sunset_at": "2027-01-21T00:00:00Z",
+  "select": "Version 2 is the default on REST and MCP. Send X-MVR-Field-Contract: authority-fields/1 only for legacy compatibility until the sunset 2027-01-21T00:00:00Z.",
+  "deprecated_fields": [
+    {
+      "field": "verified_evidence_count",
+      "replacement": "caller_declared_verified_count",
+      "meaning": "Items whose caller label says verified. Not authentication."
+    },
+    {
+      "field": "evidence_gate_passed",
+      "replacement": "declared_completeness_gate_passed",
+      "meaning": "Structural coverage of caller declarations. Not review, authentication or permission."
+    },
+    {
+      "field": "verified_evidence_count_semantics",
+      "replacement": null,
+      "meaning": "Explanatory note for the deprecated alias; dropped in version 2."
+    },
+    {
+      "field": "evidence_gate_passed_semantics",
+      "replacement": null,
+      "meaning": "Explanatory note for the deprecated alias; dropped in version 2."
+    }
+  ],
+  "authentication_field": "authenticated_verified_count counts only sources authenticated through a current closure with platform-vetted issuers. No caller label changes it.",
+  "signals": [
+    "Deprecation and Sunset HTTP headers (RFC 9745, RFC 8594) while a deprecated name is present",
+    "X-MVR-Field-Contract response header naming the version applied"
+  ],
+  "hashing": "Response hashes are computed before this projection; under version 2 they cover the version 1 field names.",
+  "deployment_revision": "2026-10-22.authority-chain.4",
+  "response_meta": {
+    "deployment_revision": "2026-10-22.authority-chain.4"
+  },
+  "response_contract_version": "2026-05-01.v1"
+}
