@@ -29,3 +29,13 @@ for branch in request['allOf'][:-1]:
     assert not Draft202012Validator(request).is_valid({'action': action}), action
     count += 1
 print(f'PASS: {count} document, receipt and action-specific request schema checks')
+
+responses = read('authority-responses.schema.json')
+Draft202012Validator.check_schema(responses)
+for row in read('authority-response-examples.json'):
+    Draft202012Validator(responses, format_checker=FormatChecker()).validate(row['response'])
+    assert row['response']['action'] == row['action']
+    assert row['classification'] == 'illustrative_response_not_authority'
+    if row['response'].get('receipt'):
+        assert row['response']['receipt']['signature']['status'] == 'unsigned'
+print('PASS: discriminated response examples; unsigned and illustrative, never authority')

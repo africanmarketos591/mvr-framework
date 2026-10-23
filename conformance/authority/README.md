@@ -1,5 +1,7 @@
 # Authority conformance
 
+The [positive five-stage MCP fixture](POSITIVE-MCP.md) persists authorized review events and carries protected references unchanged through all five calls. Its strict-profile success permits only listed output uses; it issues no external capability. The [owner-controlled execution contract](../../docs/owner-controlled-execution.md) separately defines the inactive live-test preparation and its remaining activation proofs. `authority-responses.schema.json` and `authority-response-examples.json` publish action-discriminated responses; examples are illustrative and unsigned.
+
 Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.
 
 This is AMOS lab verification with synthetic fixtures. It is not independent review, identity verification, authenticated real-world standing, source verification or production authority. Ordinary production signing remains disabled until the named-person key ceremony.

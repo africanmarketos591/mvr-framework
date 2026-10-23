@@ -1,0 +1,33 @@
+# Boundary closure: evidence and remaining activation proofs
+
+This work separates engineering tests from externally established authority. A passing internal test can establish an implementation property. It cannot establish a person's institutional office, an authentic local relationship or an institution's delegation. Useful advisory work does not require those broader claims, but consequential execution does.
+
+| Feedback requirement | Implemented evidence | Remaining proof |
+| --- | --- | --- |
+| Restrictive text versus direct support | Bounded English warning, scan-limit review requirement, explicit negative-form controls, no legal-truth assertion | Additional language/domain calibration; developer rerun with original inputs |
+| Exact reviewed source state | Persisted review binding and signed issuer-state/2 review; hash/clause/locator/claim/relationship/subject/action/geography/validity/standing/model/extractor mutations invalidate reliance | Real source examination and authenticated reviewer standing for production cases |
+| Positive MCP fixture | Nine persisted lab reviews; protected references; five unmodified handoffs; listed output uses only; replay rejected | Reproduction against the deployed revision and an independent environment |
+| Contracts | Conditional idempotency in runtime, REST and MCP; action-discriminated authority responses and examples | Exact-release public synchronization and deployment validation |
+| Signing ceremony | Named owner policy role recorded as declaration; disabled managed-KMS adapter; fresh signed account-token and durable approval primitives | Actual technical administrator, provisioned service identities/key, IAM evidence, reviewed manifest and live owner approval |
+| Accountable institution and independent issuer/reviewer | No institution or independence invented; non-lab capability use denies without a separately provisioned current registry | Auditable identity, role, delegation, jurisdiction, revocation authority and independent onboarding |
+| Permission state | Lab permission/prohibition, conditions, expiry, scope, supersession, dependency/standing revocation and serialization tests | Verified production principals; no production issuer state enabled by declaration |
+| Action ontology | Immutable versioned action descriptors, legacy aliases, exact signed action matching, extension validation | Separately governed executors for each supported consequential action |
+| Typed conditions | Predicates, required hashed evidence/closures, resolver credentials, signed satisfaction/waiver receipts; current dependency checks | Real accountable resolver and authentic evidence for each production resolution |
+| Harmless owner execution | Fixed-target Drive adapter with narrow-scope token checks, independent readback interface, immutable intent, no blind write retries | Live owner authentication, consent, actual scope/IAM tests, provider write/readback and signed execution receipt |
+| Commit-time revocation | Receiver-owned artifact, approval consumption and receipt share one fenced transaction; revocation race tested | Google Drive cannot share this transaction; remote in-flight completion remains an explicit boundary |
+| Operations | Quantified proposed objectives, local outage/partition/lost-ack/replay/race tests | Production latency/availability data, operational notification measurements and actual backup/restore drill |
+
+The fixture is synthetic, with stipulated facts and lab calibration prerequisites. The owner experiment is owner-operated, not independent validation or two-person authorization. Unavailable original developer payloads do not block reconstructed failure tests, but those reconstructions must not be called exact reproductions.
+
+## Assessment of the proposed value features
+
+- **Minimum decisive review:** prioritize explicit blockers and reused current reviews first. Do not claim that unreviewed evidence cannot change a result without a decision-specific sensitivity proof: contradictions, geography, provenance and dependencies can make evidence effects non-monotonic. A minimum-subset optimizer and measured analyst-time savings are not established by this release.
+- **Permission transitions:** exact versioned issuer state and supersession are implemented. Approval in principle cannot become launch permission merely by changing a prompt or relationship label. A new scoped assertion, review and current dependencies are required.
+- **External authority adapters:** a registry integration must report retrieval time, issuer identity, signature/registry verification, effective scope and revocation checks. A fetched web page or an institution's name is insufficient. No unsupported regulator adapter or institution is claimed as onboarded.
+- **Dependency propagation:** fresh checks reread current credentials, source records, closures and issuer state. Historical receipts remain historical. Notification is an acceleration mechanism, not permission, and complete push delivery for every issuer-state transition is not claimed.
+- **Opportunity preservation:** existing internal workplans provide bounded planning steps. Holds should name the actual blocker and minimum closure artifact; an issuer/reviewer or SLA must remain unassigned when none exists. This release does not invent owners, deadlines, monetary opportunity cost or conversion measurements.
+- **Decision-specific diagnostics:** absent operating telemetry is no longer requested solely because a generic proxy lane was named. The diagnostic identifies the operational claim requiring it; otherwise applicability is unestablished. This changes remediation guidance, not the underlying permission gate.
+- **Native review:** authenticated server-side review events replace caller-supplied approval flags as the basis of reliance. A fully deployed original-page reviewer interface remains separate work; the synthetic MCP fixture is not human review UX validation.
+- **Counterfactual reporting:** existing rule, scope and dependency diagnostics can explain a changed boundary. A pre-AMOS model proposal must actually be captured to support a before/after claim. Estimated exposure and opportunity cost must be absent or explicitly unestimated unless a defensible input/model supports them. This release does not claim causal savings from fabricated counterfactuals.
+
+Public historical evaluation, internal adversarial testing and bounded owner experiments can support progressively wider use. Production institutional authority remains a different evidence level, not a prerequisite to every useful diagnostic and not a property software can manufacture.
