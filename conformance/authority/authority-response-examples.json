@@ -1,0 +1,297 @@
+[
+  {
+    "action": "register_anchor",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "register_anchor",
+      "status": "registered",
+      "anchor": {
+        "anchor_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "vet_anchor",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "vet_anchor",
+      "status": "platform_vetted",
+      "anchor": {
+        "anchor_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "revoke_anchor",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "revoke_anchor",
+      "status": "revoked",
+      "kind": "anchor",
+      "id": "LAB-EXAMPLE",
+      "receipt": {
+        "sequence": 1,
+        "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-23T00:00:00Z",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "signature": {
+          "status": "unsigned",
+          "reason": "Illustrative unsigned example; no authority"
+        },
+        "kind": "revocation",
+        "target_kind": "anchor",
+        "target_id": "LAB-EXAMPLE",
+        "revoked_by_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "operation_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "register_credential",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "register_credential",
+      "status": "registered",
+      "credential": {
+        "credential_id": "LAB-EXAMPLE",
+        "usable": false,
+        "reasons": []
+      }
+    }
+  },
+  {
+    "action": "register_source_record",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "register_source_record",
+      "status": "registered",
+      "source_record": {
+        "record_id": "LAB-EXAMPLE",
+        "usable": false,
+        "reasons": []
+      }
+    }
+  },
+  {
+    "action": "register_issuer_state",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "register_issuer_state",
+      "status": "registered",
+      "issuer_state": {
+        "record_id": "LAB-EXAMPLE",
+        "state": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "revoke_credential",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "revoke_credential",
+      "status": "revoked",
+      "kind": "credential",
+      "id": "LAB-EXAMPLE",
+      "receipt": {
+        "sequence": 1,
+        "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-23T00:00:00Z",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "signature": {
+          "status": "unsigned",
+          "reason": "Illustrative unsigned example; no authority"
+        },
+        "kind": "revocation",
+        "target_kind": "credential",
+        "target_id": "LAB-EXAMPLE",
+        "revoked_by_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "operation_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "revoke_source_record",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "revoke_source_record",
+      "status": "revoked",
+      "kind": "source_record",
+      "id": "LAB-EXAMPLE",
+      "receipt": {
+        "sequence": 1,
+        "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-23T00:00:00Z",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "signature": {
+          "status": "unsigned",
+          "reason": "Illustrative unsigned example; no authority"
+        },
+        "kind": "revocation",
+        "target_kind": "source_record",
+        "target_id": "LAB-EXAMPLE",
+        "revoked_by_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "operation_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "close_residual",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "close_residual",
+      "status": "closed",
+      "closure": {
+        "closure_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "revoke_closure",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "revoke_closure",
+      "status": "revoked",
+      "kind": "closure",
+      "id": "LAB-EXAMPLE",
+      "receipt": {
+        "sequence": 1,
+        "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-23T00:00:00Z",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "signature": {
+          "status": "unsigned",
+          "reason": "Illustrative unsigned example; no authority"
+        },
+        "kind": "revocation",
+        "target_kind": "closure",
+        "target_id": "LAB-EXAMPLE",
+        "revoked_by_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "operation_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "register_capability",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "register_capability",
+      "status": "registered",
+      "capability": {
+        "capability_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "revoke_capability",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "revoke_capability",
+      "status": "revoked",
+      "kind": "capability",
+      "id": "LAB-EXAMPLE",
+      "receipt": {
+        "sequence": 1,
+        "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-23T00:00:00Z",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "signature": {
+          "status": "unsigned",
+          "reason": "Illustrative unsigned example; no authority"
+        },
+        "kind": "revocation",
+        "target_kind": "capability",
+        "target_id": "LAB-EXAMPLE",
+        "revoked_by_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "operation_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "verify_capability",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "verify_capability",
+      "status": "verified",
+      "decision": "deny",
+      "deny_reasons": [
+        "ILLUSTRATIVE_NOT_AUTHORITY"
+      ],
+      "verification_id": "LAB-EXAMPLE",
+      "capability_id": "LAB-EXAMPLE",
+      "valid_until": null,
+      "reliance": null,
+      "receipt": {
+        "sequence": 1,
+        "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-23T00:00:00Z",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "signature": {
+          "status": "unsigned",
+          "reason": "Illustrative unsigned example; no authority"
+        },
+        "kind": "capability_verification",
+        "verification_id": "VR-000000000000000000000000000000000000000000000000",
+        "capability_id": "LAB-EXAMPLE",
+        "case_id": null,
+        "decision": "deny",
+        "deny_reasons": [],
+        "effect_id": "LAB-EXAMPLE",
+        "requested_effect_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "executor_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "reliance": null,
+        "valid_until": null
+      }
+    }
+  },
+  {
+    "action": "record_effect",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "record_effect",
+      "status": "recorded",
+      "verification_id": "LAB-EXAMPLE",
+      "outcome": "succeeded",
+      "reported_after_valid_until": false,
+      "receipt": {
+        "sequence": 1,
+        "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-23T00:00:00Z",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "signature": {
+          "status": "unsigned",
+          "reason": "Illustrative unsigned example; no authority"
+        },
+        "kind": "effect_report",
+        "verification_id": "VR-000000000000000000000000000000000000000000000000",
+        "capability_id": "LAB-EXAMPLE",
+        "effect_id": "LAB-EXAMPLE",
+        "outcome": "succeeded",
+        "external_ref_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "reported_after_valid_until": false
+      }
+    }
+  },
+  {
+    "action": "get",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "get",
+      "status": "ok",
+      "anchor": {
+        "anchor_id": "LAB-EXAMPLE"
+      }
+    }
+  },
+  {
+    "action": "trace",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "trace",
+      "status": "ok",
+      "capability_id": "LAB-EXAMPLE",
+      "currently_valid": false,
+      "reasons": [],
+      "reliance": null
+    }
+  }
+]

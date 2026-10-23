@@ -1,0 +1,718 @@
+{
+  "subject": {
+    "entity_name": "Umucyo StockLink Rwanda Ltd",
+    "country": "RW",
+    "entity_archetype": "fintech_lending",
+    "category": "non-deposit-taking inventory finance",
+    "entity_type": "company"
+  },
+  "market_scope": {
+    "country": "RW",
+    "sector": "inventory finance for independent neighborhood grocers",
+    "city": "Kigali",
+    "decision_scope_level": "subnational",
+    "districts": [
+      "Gasabo",
+      "Kicukiro",
+      "Nyarugenge"
+    ]
+  },
+  "entity_name": "Umucyo StockLink Rwanda Ltd",
+  "country": "RW",
+  "sector": "non-deposit-taking inventory finance",
+  "entity_archetype": "fintech_lending",
+  "decision_context": "Public-safe constructed closed-world evaluation. All facts are stipulated for this test and concern fictional entities. The requested output is advice for internal pilot design and board reporting only; it cannot release funds, grant credit, enrol a grocer, certify a licence, or authorize execution. Every numeric MVR dimension below is the stated result of its identified instrument, on a 0-100 scale, with observed provenance. Source and review labels remain caller declarations rather than AMOS authentication.",
+  "use_case": "Assess whether the supplied public, local relational, guardian, partner and operating evidence supports recommending the exact bounded pilot while preserving all exclusions and human underwriting.",
+  "analysis_date": "2026-09-14T12:20:00+03:00",
+  "analysis_timezone": "Africa/Kigali",
+  "context_freshness_window_days": 45,
+  "target_claim": "The stipulated evidence supports recommending the exact bounded Umucyo StockLink pilot now for human board approval.",
+  "target_use": "internal planning, bounded pilot design, and board reporting",
+  "claims": [
+    {
+      "claim_id": "USL-CLAIM-READY",
+      "claim": "The stipulated evidence supports recommending the exact bounded Umucyo StockLink pilot now for human board approval.",
+      "support_links": [
+        {
+          "claim_id": "USL-CLAIM-READY",
+          "evidence_id": "USL-E01",
+          "relationship": "direct_support",
+          "locator": "REG-RW-001 active-status and licence-scope fields"
+        },
+        {
+          "claim_id": "USL-CLAIM-READY",
+          "evidence_id": "USL-E02",
+          "relationship": "direct_support",
+          "locator": "AUD-RW-002 operating-history and portfolio table"
+        },
+        {
+          "claim_id": "USL-CLAIM-READY",
+          "evidence_id": "USL-E03",
+          "relationship": "direct_support",
+          "locator": "SUR-RW-003 weighted grocer findings table"
+        },
+        {
+          "claim_id": "USL-CLAIM-READY",
+          "evidence_id": "USL-E04",
+          "relationship": "direct_support",
+          "locator": "SUR-RW-004 wholesaler findings table"
+        },
+        {
+          "claim_id": "USL-CLAIM-READY",
+          "evidence_id": "USL-E05",
+          "relationship": "direct_support",
+          "locator": "SUR-RW-005 payment-agent findings table"
+        },
+        {
+          "claim_id": "USL-CLAIM-READY",
+          "evidence_id": "USL-E06",
+          "relationship": "direct_support",
+          "locator": "SUR-RW-006 guardian findings table"
+        },
+        {
+          "claim_id": "USL-CLAIM-READY",
+          "evidence_id": "USL-E07",
+          "relationship": "direct_support",
+          "locator": "AUTH-RW-007 decision and exact action schedule"
+        },
+        {
+          "claim_id": "USL-CLAIM-READY",
+          "evidence_id": "USL-E08",
+          "relationship": "direct_support",
+          "locator": "BANK-RW-008 executed scope and stop-control clauses"
+        },
+        {
+          "claim_id": "USL-CLAIM-READY",
+          "evidence_id": "USL-E09",
+          "relationship": "direct_support",
+          "locator": "TEL-RW-009 30-day active-retention extract"
+        }
+      ]
+    }
+  ],
+  "evidence_pack": [
+    {
+      "evidence_id": "USL-E01",
+      "claim": "The fictional regulator-registry fixture records Umucyo StockLink as active for the bounded product and Kigali scope on the analysis date.",
+      "load_bearing": true,
+      "source_date": "2026-09-06",
+      "source_doc_id": "REG-RW-001",
+      "evidence_type": "public_filing",
+      "entity_archetype": "fintech_lending",
+      "source_class": "regulator_published",
+      "source_grade": "A",
+      "stakeholder_class": "regulator",
+      "guardian_tier": "macro_regulator",
+      "evidence_origin": "public_osint",
+      "collection_method": "direct",
+      "source_confidence": "high",
+      "verification_status": "independently_verified",
+      "freshness_date": "2026-09-06",
+      "evidence_geography": {
+        "country": "RW",
+        "region": "Kigali City",
+        "city": "Kigali"
+      },
+      "public_metric_scope": "entity_scale",
+      "public_metric_registry": "fintech_lending",
+      "public_metric_period_end": "2026-09-06",
+      "public_metrics": {
+        "regulatory_authorization_status": true,
+        "date_first_licensed": "2020-02-15",
+        "license_category": "non-deposit-taking lender"
+      },
+      "human_reviewed": true,
+      "review_status": "approved",
+      "reviewed_by": "Closed-world evaluation panel",
+      "reviewed_at": "2026-09-07",
+      "provenance_ledger": {
+        "source_family": "regulator_licensing",
+        "source_doc_id": "REG-RW-001",
+        "source_locator": "active-status and licence-scope fields",
+        "extraction_method": "human",
+        "extraction_confidence": 0.99,
+        "compiler_stage": "closed_world_direct_submission"
+      },
+      "privacy_envelope": {
+        "contains_pii": false,
+        "contains_sensitive_personal_data": false,
+        "consent_basis": "not_applicable",
+        "retention_class": "1y",
+        "redaction_status": "minimized",
+        "safe_for_modeling": true
+      }
+    },
+    {
+      "evidence_id": "USL-E02",
+      "claim": "A separately collected fictional audited public-report fixture records a sustained operating and portfolio history through 2026-08-31.",
+      "load_bearing": true,
+      "source_date": "2026-09-01",
+      "source_doc_id": "AUD-RW-002",
+      "evidence_type": "public_filing",
+      "entity_archetype": "fintech_lending",
+      "source_class": "independently_audited",
+      "source_grade": "A",
+      "stakeholder_class": "investor_board",
+      "evidence_origin": "public_osint",
+      "collection_method": "direct",
+      "source_confidence": "high",
+      "verification_status": "independently_verified",
+      "freshness_date": "2026-09-01",
+      "evidence_geography": {
+        "country": "RW",
+        "region": "Kigali City",
+        "city": "Kigali"
+      },
+      "public_metric_scope": "entity_scale",
+      "public_metric_registry": "fintech_lending",
+      "public_metric_period_end": "2026-08-31",
+      "public_metrics": {
+        "years_of_public_reporting": 6,
+        "years_in_operation": 7,
+        "active_borrowers_mn": 0.085,
+        "loan_book_local_bn": 48,
+        "repayment_rate_pct": 98.4,
+        "portfolio_at_risk_30_pct": 1.6,
+        "repeat_borrower_rate_pct": 74,
+        "service_uptime_pct": 99.9
+      },
+      "human_reviewed": true,
+      "review_status": "approved",
+      "reviewed_by": "Closed-world evaluation panel",
+      "reviewed_at": "2026-09-07",
+      "provenance_ledger": {
+        "source_family": "official_corporate",
+        "source_doc_id": "AUD-RW-002",
+        "source_locator": "operating-history and portfolio table",
+        "extraction_method": "human",
+        "extraction_confidence": 0.98,
+        "compiler_stage": "closed_world_direct_submission"
+      },
+      "privacy_envelope": {
+        "contains_pii": false,
+        "contains_sensitive_personal_data": false,
+        "consent_basis": "not_applicable",
+        "retention_class": "1y",
+        "redaction_status": "minimized",
+        "safe_for_modeling": true
+      }
+    },
+    {
+      "evidence_id": "USL-E03",
+      "claim": "A probability sample of 240 eligible Kigali grocers records strong trust, permission, belonging, reciprocity, cultural fit and channel acceptance for only the bounded pilot.",
+      "load_bearing": true,
+      "source_date": "2026-09-04",
+      "source_doc_id": "SUR-RW-003",
+      "sample_size": 240,
+      "population_size": 2400,
+      "population_definition": "All 2,400 independently listed eligible neighborhood grocers in the specified Kigali districts",
+      "sampling_method": "probability",
+      "collection_context": {
+        "sample_size": 240,
+        "collection_tool": "survey_platform_verified",
+        "population_size": 2400,
+        "population_definition": "All 2,400 independently listed eligible neighborhood grocers in the specified Kigali districts",
+        "sampling_method": "probability",
+        "source_modality": "direct_observation",
+        "collector_relationship": "independent",
+        "reviewer_relationship": "independent",
+        "interview_mode": "face_to_face",
+        "enumerator_count": 4,
+        "interview_duration_minutes": 20,
+        "fieldwork_window_minutes": 2400
+      },
+      "evidence_type": "survey",
+      "entity_archetype": "fintech_lending",
+      "source_class": "probability_sample_survey",
+      "source_grade": "A",
+      "stakeholder_class": "retailer",
+      "evidence_origin": "field_research",
+      "collection_method": "survey_platform_verified",
+      "source_confidence": "high",
+      "verification_status": "independently_verified",
+      "freshness_date": "2026-09-04",
+      "evidence_geography": {
+        "country": "RW",
+        "region": "Kigali City",
+        "city": "Kigali",
+        "districts": [
+          "Gasabo",
+          "Kicukiro",
+          "Nyarugenge"
+        ]
+      },
+      "structured_values": {
+        "trust": 86,
+        "permission": 89,
+        "belonging": 82,
+        "reciprocity": 84,
+        "cultural_fit": 88,
+        "channel_permission": 90
+      },
+      "structured_values_provenance": {
+        "trust": "observed",
+        "permission": "observed",
+        "belonging": "observed",
+        "reciprocity": "observed",
+        "cultural_fit": "observed",
+        "channel_permission": "observed"
+      },
+      "survey_payload": {
+        "survey_name": "Kigali Eligible Grocer Probability Study",
+        "population_definition": "All 2,400 independently listed eligible neighborhood grocers in the specified Kigali districts",
+        "sample_frame": "Evaluator-frozen registry of 2,400 eligible grocers",
+        "sampling_method": "probability",
+        "sample_size": 240,
+        "effective_sample_size": 228,
+        "response_rate_pct": 81
+      },
+      "human_reviewed": true,
+      "review_status": "approved",
+      "reviewed_by": "Closed-world evaluation panel",
+      "reviewed_at": "2026-09-07",
+      "provenance_ledger": {
+        "source_family": "grocer_probability_study_2026",
+        "source_doc_id": "SUR-RW-003",
+        "source_locator": "weighted grocer findings table",
+        "extraction_method": "human",
+        "extraction_confidence": 0.98,
+        "compiler_stage": "closed_world_direct_submission",
+        "parent_source_ids": []
+      },
+      "privacy_envelope": {
+        "contains_pii": false,
+        "contains_sensitive_personal_data": false,
+        "consent_basis": "consent",
+        "retention_class": "90d",
+        "redaction_status": "aggregated",
+        "safe_for_modeling": true
+      }
+    },
+    {
+      "evidence_id": "USL-E04",
+      "claim": "A separate probability sample of 120 approved wholesalers records strong trust, reciprocity, embeddedness, continuity and channel permission for direct supplier payment under the stated caps.",
+      "load_bearing": true,
+      "source_date": "2026-09-04",
+      "source_doc_id": "SUR-RW-004",
+      "sample_size": 120,
+      "population_size": 360,
+      "population_definition": "All 360 independently listed wholesalers eligible for the bounded Kigali pilot",
+      "sampling_method": "probability",
+      "collection_context": {
+        "sample_size": 120,
+        "collection_tool": "survey_platform_verified",
+        "population_size": 360,
+        "population_definition": "All 360 independently listed wholesalers eligible for the bounded Kigali pilot",
+        "sampling_method": "probability",
+        "source_modality": "direct_observation",
+        "collector_relationship": "independent",
+        "reviewer_relationship": "independent",
+        "interview_mode": "face_to_face",
+        "enumerator_count": 4,
+        "interview_duration_minutes": 20,
+        "fieldwork_window_minutes": 2400
+      },
+      "evidence_type": "survey",
+      "entity_archetype": "fintech_lending",
+      "source_class": "probability_sample_survey",
+      "source_grade": "A",
+      "stakeholder_class": "supplier",
+      "evidence_origin": "field_research",
+      "collection_method": "survey_platform_verified",
+      "source_confidence": "high",
+      "verification_status": "independently_verified",
+      "freshness_date": "2026-09-04",
+      "evidence_geography": {
+        "country": "RW",
+        "region": "Kigali City",
+        "city": "Kigali",
+        "districts": [
+          "Gasabo",
+          "Kicukiro",
+          "Nyarugenge"
+        ]
+      },
+      "structured_values": {
+        "trust": 88,
+        "reciprocity": 86,
+        "embeddedness": 83,
+        "continuity": 85,
+        "channel_permission": 87
+      },
+      "structured_values_provenance": {
+        "trust": "observed",
+        "reciprocity": "observed",
+        "embeddedness": "observed",
+        "continuity": "observed",
+        "channel_permission": "observed"
+      },
+      "survey_payload": {
+        "survey_name": "Kigali Eligible Wholesaler Probability Study",
+        "population_definition": "All 360 independently listed wholesalers eligible for the bounded Kigali pilot",
+        "sample_frame": "Evaluator-frozen registry of 360 eligible wholesalers",
+        "sampling_method": "probability",
+        "sample_size": 120,
+        "effective_sample_size": 114,
+        "response_rate_pct": 84
+      },
+      "human_reviewed": true,
+      "review_status": "approved",
+      "reviewed_by": "Closed-world evaluation panel",
+      "reviewed_at": "2026-09-07",
+      "provenance_ledger": {
+        "source_family": "wholesaler_probability_study_2026",
+        "source_doc_id": "SUR-RW-004",
+        "source_locator": "wholesaler findings table",
+        "extraction_method": "human",
+        "extraction_confidence": 0.98,
+        "compiler_stage": "closed_world_direct_submission",
+        "parent_source_ids": []
+      },
+      "privacy_envelope": {
+        "contains_pii": false,
+        "contains_sensitive_personal_data": false,
+        "consent_basis": "consent",
+        "retention_class": "90d",
+        "redaction_status": "aggregated",
+        "safe_for_modeling": true
+      }
+    },
+    {
+      "evidence_id": "USL-E05",
+      "claim": "A distinct probability sample of 120 payment agents records strong trust, permission, channel acceptance and continuity for the existing collection rails used by the bounded pilot.",
+      "load_bearing": true,
+      "source_date": "2026-09-03",
+      "source_doc_id": "SUR-RW-005",
+      "sample_size": 120,
+      "population_size": 410,
+      "population_definition": "All 410 independently listed active payment agents serving the specified Kigali districts",
+      "sampling_method": "probability",
+      "collection_context": {
+        "sample_size": 120,
+        "collection_tool": "survey_platform_verified",
+        "population_size": 410,
+        "population_definition": "All 410 independently listed active payment agents serving the specified Kigali districts",
+        "sampling_method": "probability",
+        "source_modality": "direct_observation",
+        "collector_relationship": "independent",
+        "reviewer_relationship": "independent",
+        "interview_mode": "face_to_face",
+        "enumerator_count": 4,
+        "interview_duration_minutes": 20,
+        "fieldwork_window_minutes": 2400
+      },
+      "evidence_type": "survey",
+      "entity_archetype": "fintech_lending",
+      "source_class": "probability_sample_survey",
+      "source_grade": "A",
+      "stakeholder_class": "mobile_money_agent",
+      "evidence_origin": "field_research",
+      "collection_method": "survey_platform_verified",
+      "source_confidence": "high",
+      "verification_status": "independently_verified",
+      "freshness_date": "2026-09-03",
+      "evidence_geography": {
+        "country": "RW",
+        "region": "Kigali City",
+        "city": "Kigali",
+        "districts": [
+          "Gasabo",
+          "Kicukiro",
+          "Nyarugenge"
+        ]
+      },
+      "structured_values": {
+        "trust": 85,
+        "permission": 87,
+        "channel_permission": 91,
+        "continuity": 86
+      },
+      "structured_values_provenance": {
+        "trust": "observed",
+        "permission": "observed",
+        "channel_permission": "observed",
+        "continuity": "observed"
+      },
+      "survey_payload": {
+        "survey_name": "Kigali Payment-Agent Probability Study",
+        "population_definition": "All 410 independently listed active payment agents serving the specified Kigali districts",
+        "sample_frame": "Evaluator-frozen registry of 410 active payment agents",
+        "sampling_method": "probability",
+        "sample_size": 120,
+        "effective_sample_size": 116,
+        "response_rate_pct": 86
+      },
+      "human_reviewed": true,
+      "review_status": "approved",
+      "reviewed_by": "Closed-world evaluation panel",
+      "reviewed_at": "2026-09-07",
+      "provenance_ledger": {
+        "source_family": "payment_agent_probability_study_2026",
+        "source_doc_id": "SUR-RW-005",
+        "source_locator": "payment-agent findings table",
+        "extraction_method": "human",
+        "extraction_confidence": 0.98,
+        "compiler_stage": "closed_world_direct_submission",
+        "parent_source_ids": []
+      },
+      "privacy_envelope": {
+        "contains_pii": false,
+        "contains_sensitive_personal_data": false,
+        "consent_basis": "consent",
+        "retention_class": "90d",
+        "redaction_status": "aggregated",
+        "safe_for_modeling": true
+      }
+    },
+    {
+      "evidence_id": "USL-E06",
+      "claim": "A distinct probability sample of 100 eligible market-association and district-committee representatives records strong permission, guardian strength, belonging, embeddedness and cultural fit for only the bounded action.",
+      "load_bearing": true,
+      "source_date": "2026-09-03",
+      "source_doc_id": "SUR-RW-006",
+      "sample_size": 100,
+      "population_size": 145,
+      "population_definition": "All 145 independently listed market-association and district-committee representatives relevant to the specified Kigali districts",
+      "sampling_method": "probability",
+      "collection_context": {
+        "sample_size": 100,
+        "collection_tool": "survey_platform_verified",
+        "population_size": 145,
+        "population_definition": "All 145 independently listed market-association and district-committee representatives relevant to the specified Kigali districts",
+        "sampling_method": "probability",
+        "source_modality": "direct_observation",
+        "collector_relationship": "independent",
+        "reviewer_relationship": "independent",
+        "interview_mode": "face_to_face",
+        "enumerator_count": 4,
+        "interview_duration_minutes": 20,
+        "fieldwork_window_minutes": 2400
+      },
+      "evidence_type": "survey",
+      "entity_archetype": "fintech_lending",
+      "source_class": "probability_sample_survey",
+      "source_grade": "A",
+      "stakeholder_class": "community_guardian",
+      "guardian_tier": "meso_community",
+      "evidence_origin": "field_research",
+      "collection_method": "survey_platform_verified",
+      "source_confidence": "high",
+      "verification_status": "independently_verified",
+      "freshness_date": "2026-09-03",
+      "evidence_geography": {
+        "country": "RW",
+        "region": "Kigali City",
+        "city": "Kigali",
+        "districts": [
+          "Gasabo",
+          "Kicukiro",
+          "Nyarugenge"
+        ]
+      },
+      "structured_values": {
+        "permission": 91,
+        "guardian_strength": 89,
+        "belonging": 84,
+        "embeddedness": 86,
+        "cultural_fit": 90
+      },
+      "structured_values_provenance": {
+        "permission": "observed",
+        "guardian_strength": "observed",
+        "belonging": "observed",
+        "embeddedness": "observed",
+        "cultural_fit": "observed"
+      },
+      "survey_payload": {
+        "survey_name": "Kigali Local-Guardian Probability Study",
+        "population_definition": "All 145 independently listed market-association and district-committee representatives relevant to the specified Kigali districts",
+        "sample_frame": "Evaluator-frozen registry of 145 relevant representatives",
+        "sampling_method": "probability",
+        "sample_size": 100,
+        "effective_sample_size": 96,
+        "response_rate_pct": 91
+      },
+      "human_reviewed": true,
+      "review_status": "approved",
+      "reviewed_by": "Closed-world evaluation panel",
+      "reviewed_at": "2026-09-07",
+      "provenance_ledger": {
+        "source_family": "guardian_probability_study_2026",
+        "source_doc_id": "SUR-RW-006",
+        "source_locator": "guardian findings table",
+        "extraction_method": "human",
+        "extraction_confidence": 0.98,
+        "compiler_stage": "closed_world_direct_submission",
+        "parent_source_ids": []
+      },
+      "privacy_envelope": {
+        "contains_pii": false,
+        "contains_sensitive_personal_data": false,
+        "consent_basis": "consent",
+        "retention_class": "90d",
+        "redaction_status": "aggregated",
+        "safe_for_modeling": true
+      }
+    },
+    {
+      "evidence_id": "USL-E07",
+      "claim": "The fictional competent regulator's signed 2026-09-06 decision on the exact pilot is recorded at AUTH-RW-007; its stipulated source-to-target relationship is supplied in USL-CLAIM-READY.",
+      "load_bearing": true,
+      "source_date": "2026-09-06",
+      "source_doc_id": "AUTH-RW-007",
+      "evidence_type": "admin_data",
+      "entity_archetype": "fintech_lending",
+      "source_class": "regulator_published",
+      "source_grade": "A",
+      "stakeholder_class": "regulator",
+      "guardian_tier": "macro_regulator",
+      "evidence_origin": "public_osint",
+      "collection_method": "direct",
+      "source_confidence": "high",
+      "verification_status": "independently_verified",
+      "freshness_date": "2026-09-06",
+      "evidence_geography": {
+        "country": "RW",
+        "region": "Kigali City",
+        "city": "Kigali"
+      },
+      "temporal": {
+        "expired": false
+      },
+      "admin_data_payload": {
+        "collection_authority": "fictional competent regulator fixture",
+        "record_kind": "exact-pilot decision record",
+        "decision_date": "2026-09-06",
+        "scope": "90 days, 80 Kigali grocers, RWF 500,000 individual and RWF 40,000,000 aggregate caps",
+        "valid_through": "2027-01-15"
+      },
+      "human_reviewed": true,
+      "review_status": "approved",
+      "reviewed_by": "Closed-world evaluation panel",
+      "reviewed_at": "2026-09-07",
+      "provenance_ledger": {
+        "source_family": "regulator_decision_record",
+        "source_doc_id": "AUTH-RW-007",
+        "source_locator": "decision and exact action schedule",
+        "extraction_method": "human",
+        "extraction_confidence": 0.99,
+        "compiler_stage": "closed_world_direct_submission"
+      },
+      "privacy_envelope": {
+        "contains_pii": false,
+        "contains_sensitive_personal_data": false,
+        "consent_basis": "not_applicable",
+        "retention_class": "1y",
+        "redaction_status": "minimized",
+        "safe_for_modeling": true
+      }
+    },
+    {
+      "evidence_id": "USL-E08",
+      "claim": "A separately reviewed executed settlement-bank agreement binds direct supplier payment, reconciliation, redress, named owners and every declared stop condition for only the exact pilot.",
+      "load_bearing": true,
+      "source_date": "2026-09-05",
+      "source_doc_id": "BANK-RW-008",
+      "evidence_type": "admin_data",
+      "entity_archetype": "fintech_lending",
+      "source_class": "independently_audited",
+      "source_grade": "A",
+      "stakeholder_class": "bank_lender",
+      "evidence_origin": "mixed",
+      "collection_method": "direct",
+      "source_confidence": "high",
+      "verification_status": "independently_verified",
+      "freshness_date": "2026-09-05",
+      "evidence_geography": {
+        "country": "RW",
+        "region": "Kigali City",
+        "city": "Kigali"
+      },
+      "admin_data_payload": {
+        "collection_authority": "closed-world contract review panel",
+        "record_kind": "executed settlement-bank agreement",
+        "scope": "exact bounded pilot",
+        "direct_supplier_payment": true,
+        "human_underwriting_required": true,
+        "stop_conditions_incorporated": true
+      },
+      "human_reviewed": true,
+      "review_status": "approved",
+      "reviewed_by": "Closed-world evaluation panel",
+      "reviewed_at": "2026-09-07",
+      "provenance_ledger": {
+        "source_family": "settlement_bank_contract",
+        "source_doc_id": "BANK-RW-008",
+        "source_locator": "executed scope and stop-control clauses",
+        "extraction_method": "human",
+        "extraction_confidence": 0.99,
+        "compiler_stage": "closed_world_direct_submission"
+      },
+      "privacy_envelope": {
+        "contains_pii": false,
+        "contains_sensitive_personal_data": false,
+        "consent_basis": "contract",
+        "retention_class": "7y",
+        "redaction_status": "minimized",
+        "safe_for_modeling": true
+      }
+    },
+    {
+      "evidence_id": "USL-E09",
+      "claim": "Aggregated same-market product telemetry from a prior no-credit usability trial records 87 percent 30-day active retention across 320 consenting grocer accounts; it is operating proxy evidence, not field truth or proof of credit performance.",
+      "load_bearing": true,
+      "source_date": "2026-09-05",
+      "source_doc_id": "TEL-RW-009",
+      "evidence_type": "telemetry",
+      "entity_archetype": "fintech_lending",
+      "source_class": "telemetry_internal",
+      "source_grade": "B",
+      "stakeholder_class": "customer",
+      "evidence_origin": "corporate_telemetry",
+      "collection_method": "database_aggregation",
+      "source_confidence": "high",
+      "verification_status": "document_supported",
+      "freshness_date": "2026-09-05",
+      "evidence_geography": {
+        "country": "RW",
+        "region": "Kigali City",
+        "city": "Kigali"
+      },
+      "behavioral_values": {
+        "30_day_active_retention_percent": 87
+      },
+      "payload": {
+        "evaluator_name": "Closed-world telemetry review panel",
+        "evaluation_date": "2026-09-05",
+        "methodology": "Deterministic aggregation of the stipulated no-credit usability-trial ledger.",
+        "source_system": "fictional product event ledger",
+        "period_start": "2026-07-01",
+        "period_end": "2026-08-31",
+        "aggregation_method": "account-level deterministic 30-day retention query",
+        "coverage_universe": "320 consenting Kigali grocer trial accounts"
+      },
+      "human_reviewed": true,
+      "review_status": "approved",
+      "reviewed_by": "Closed-world evaluation panel",
+      "reviewed_at": "2026-09-07",
+      "provenance_ledger": {
+        "source_family": "product_event_ledger",
+        "source_doc_id": "TEL-RW-009",
+        "source_locator": "30-day active-retention extract",
+        "extraction_method": "deterministic_parser",
+        "extraction_confidence": 0.99,
+        "compiler_stage": "closed_world_direct_submission"
+      },
+      "privacy_envelope": {
+        "contains_pii": false,
+        "contains_sensitive_personal_data": false,
+        "consent_basis": "consent",
+        "retention_class": "90d",
+        "redaction_status": "aggregated",
+        "safe_for_modeling": true
+      }
+    }
+  ],
+  "decision_question": "What bounded internal planning and board-reporting use does this proprietary lab fixture support?",
+  "intended_action": "Prepare a bounded internal planning and board-reporting draft; no external effect."
+}
