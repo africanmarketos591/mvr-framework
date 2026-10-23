@@ -1,0 +1,54 @@
+{
+  "profile": "strict_calibrated",
+  "fixture_type": "proprietary lab fixtures",
+  "input": {
+    "subject": {
+      "entity_name": "Proprietary lab fixtures venture",
+      "entity_archetype": "fintech_lending"
+    },
+    "market_scope": {
+      "country": "UG",
+      "decision_scope_level": "country"
+    },
+    "decision_question": "Review stakeholder permission before a Uganda pilot.",
+    "evidence_pack": [
+      {
+        "id": "LAB-1",
+        "claim": "A lab retailer reports interest; permission remains unverified.",
+        "evidence_type": "interview",
+        "source_class": "structured_field_research",
+        "collection_method": "interview",
+        "structured_values": {
+          "trust": 60
+        },
+        "privacy_envelope": {
+          "contains_pii": false,
+          "contains_sensitive_personal_data": false,
+          "consent_basis": "not_applicable",
+          "retention_class": "session_only",
+          "redaction_status": "aggregated",
+          "safe_for_modeling": true
+        },
+        "stakeholder_class": "retailer",
+        "verification_status": "unverified",
+        "freshness_date": "2026-10-22",
+        "evidence_geography": {
+          "country": "UG"
+        }
+      }
+    ]
+  },
+  "five_stage_order": [
+    "mvr_first_call",
+    "mvr_entity_resolve",
+    "mvr_evidence_completeness",
+    "mvr_context_compile",
+    "mvr_decision_check"
+  ],
+  "expected_executed_stages": [
+    "mvr_first_call",
+    "mvr_entity_resolve",
+    "mvr_evidence_completeness"
+  ],
+  "expected_stop": "Evidence completeness; stages four and five are deliberately not invoked."
+}

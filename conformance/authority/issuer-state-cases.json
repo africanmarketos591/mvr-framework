@@ -1,0 +1,22 @@
+{
+  "classification": "AMOS lab verification",
+  "original_developer_payloads": false,
+  "cases": [
+    {
+      "name": "Mbarara lab distributor",
+      "region": "Mbarara",
+      "prose": "Mbarara City Health Office directs the distributor to cease distribution of the product immediately.",
+      "caller_relationship": "direct_support",
+      "expected_prose_adverse_detected": false,
+      "expected_signed_state": "prohibited"
+    },
+    {
+      "name": "Education lab programme",
+      "region": "Kampala",
+      "prose": "The regulator orders Education Lab not to enrol participants or collect deposits for the pilot.",
+      "caller_relationship": "direct_support",
+      "expected_prose_adverse_detected": true,
+      "expected_signed_state": "prohibited"
+    }
+  ]
+}
