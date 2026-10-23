@@ -1363,7 +1363,19 @@
       "post": {
         "summary": "Create or list asynchronous run shells for deterministic MVR workflow execution (GET lists recent runs for the tenant workspace).",
         "description": "Durable async run creation/listing surface. Production requires dedicated async storage and atomic idempotency locking.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/runs",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -1928,7 +1940,19 @@
       "post": {
         "summary": "Create or list evidence assembly runs with explicit authorization limits for public OSINT-only output.",
         "description": "Evidence-run creation/listing; production must persist run shells and outputs durably.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/evidence-runs",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -2550,7 +2574,19 @@
       "post": {
         "summary": "Alias for creating an evidence-run from minimal operator context.",
         "description": "Alias for evidence-run creation from minimal operator context. It inherits evidence-run storage, idempotency, and authorization gates.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/auto-evaluate",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -2777,7 +2813,19 @@
       "post": {
         "summary": "Create a governed review room for approval, challenge, annotation, and evidence requests.",
         "description": "Create a governed review room for approval, challenge, annotation, and evidence requests.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/review-room/create",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -3362,7 +3410,19 @@
       "post": {
         "summary": "Register native enterprise sinks: Slack, Teams, email, Salesforce, Jira, or webhook (HTTPS url + optional secret_ref).",
         "description": "Register native enterprise sinks: Slack, Teams, email, Salesforce, Jira, or webhook (HTTPS url + optional secret_ref).",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/sinks/register",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -4002,7 +4062,19 @@
       "post": {
         "summary": "Evaluate one exact stored watchlist; previews do not persist domain state. No dependency propagation, source verification or entity verdict.",
         "description": "Exact active stored-watchlist rules only. No dependency propagation or entity transitions. Preview performs no domain writes or idempotency replay; authentication, accounting and security logs still apply. Durable non-preview POST requires Idempotency-Key and production durable run storage.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/cascade-runs",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -7299,7 +7371,19 @@
       "post": {
         "summary": "Create an asynchronous CFO risk bridge run for larger or messy multi-sector financial packs.",
         "description": "Create an asynchronous CFO risk bridge run for larger or messy multi-sector financial packs.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/cfo-risk-bridge",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -8780,7 +8864,19 @@
       "post": {
         "summary": "Create governed asynchronous export jobs for report, evidence, and decision payloads.",
         "description": "Create governed asynchronous export jobs for report, evidence, and decision payloads.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/export-jobs",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -12356,7 +12452,19 @@
       "post": {
         "summary": "Create a first-class Action Room that turns a decision question, context passport, evidence gaps, tasks, and next steps into a persistent work object.",
         "description": "Creates persistent work rooms around a decision question, context passport, evidence gaps, tasks, and checkbacks. It organizes action; it does not create a decision verdict.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/action-room/create",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -13465,6 +13573,17 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
           }
         ],
         "x-mvr-registry-route": "/v1/action-room/:room_id/tasks",
@@ -13721,6 +13840,17 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
           }
         ],
         "x-mvr-registry-route": "/v1/action-room/:room_id/complete-step",
@@ -13908,6 +14038,17 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
           }
         ],
         "x-mvr-registry-route": "/v1/action-room/:room_id/update-passport",
@@ -14731,7 +14872,19 @@
       "post": {
         "summary": "Manage market watch rules. renew_scheduled_execution_authority (legacy renew_authority) renews the credential reference for existing scheduled rules, not external institutional authority.",
         "description": "Deterministic watch rules only. Notifications require a delivery worker, signing, retries, and delivery logs.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/watchlist",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -22076,7 +22229,19 @@
       "post": {
         "summary": "Compatibility route for a consented observation tied to an existing prospective enrollment. Direct self-asserted outcome records are rejected.",
         "description": "Compatibility entrypoint for submitting a consented outcome observation against an existing prospective outcome-ledger enrollment.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/outcome-feedback",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -22447,7 +22612,19 @@
       "post": {
         "summary": "Prospectively enroll a receipt-bound MVR decision, record a bounded outcome observation, inspect tenant-scoped status, or withdraw and delete the enrollment.",
         "description": "Prospectively enroll a receipt-bound MVR decision, record bounded outcome observations, inspect tenant-scoped status, or withdraw the enrollment.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/outcome-ledger",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -22848,7 +23025,19 @@
       "post": {
         "summary": "Queue or inspect calibration review items derived from outcome feedback and backtest cases.",
         "description": "Queue or inspect calibration review items derived from outcome feedback and backtest cases.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/calibration-review",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -23125,7 +23314,19 @@
       "post": {
         "summary": "Submit a backtest case candidate for governed calibration review. Requires Idempotency-Key.",
         "description": "Submit a backtest case candidate for governed calibration review. Requires Idempotency-Key.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/backtest-case/submit",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -23584,7 +23785,19 @@
       "post": {
         "summary": "Create or list project collaborator records in tenant-scoped collaboration state.",
         "description": "Create or list project collaborator records in tenant-scoped collaboration state.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/project-collaborators",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -23856,7 +24069,19 @@
       "post": {
         "summary": "Record target-bound approval annotations. Event names do not lock, release, attest source truth or grant execution authority.",
         "description": "Record target-bound approval annotations. Event names do not lock, release, attest source truth or grant execution authority.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/approval-workflow",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -24131,7 +24356,19 @@
       "post": {
         "summary": "Create or list tenant-scoped project comments attached to evidence, reports, or decisions.",
         "description": "Create or list tenant-scoped project comments attached to evidence, reports, or decisions.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/comments",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -26583,7 +26820,19 @@
       "post": {
         "summary": "Create an auditable decision snapshot with hashes, schema version, policy snapshot, verdict, and evidence summary.",
         "description": "Create an auditable decision snapshot with hashes, schema version, policy snapshot, verdict, and evidence summary.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/decision-snapshot/create",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -27704,7 +27953,19 @@
       "post": {
         "summary": "Preserve an exact snapshot hash/revision with a machine-only receipt; no human attestation or execution authority.",
         "description": "Preserve an exact snapshot hash/revision with a machine-only receipt; no human attestation or execution authority.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/decision-snapshot/lock",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -27888,7 +28149,19 @@
       "post": {
         "summary": "Append an amendment to a locked decision snapshot without rewriting the original hash or original decision record.",
         "description": "Appends a correction/amendment linked to a decision snapshot while preserving the original snapshot hash.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/decision-snapshot/amendment",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -28100,7 +28373,19 @@
       "post": {
         "summary": "Record append-only corrections or list a bounded scoped page with exact snapshot, decision, or correction filters; original hashes are preserved.",
         "description": "Append-only correction log. It records corrections and amendments without rewriting locked decisions.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/correction-log",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -28625,7 +28910,19 @@
       "post": {
         "summary": "Report a governance, data-quality, privacy, or safety incident linked to a route, decision snapshot, evidence item, or report output.",
         "description": "Records governance, data-quality, safety, or privacy incidents for review. It does not mutate decisions.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/incident/report",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -28860,7 +29157,19 @@
       "post": {
         "summary": "Review, update, or list governance incidents and route them to correction-log or decision-snapshot amendment when needed.",
         "description": "Reviews/list incidents and links remediation to correction-log or snapshot amendment when needed.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/incident/review",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -29445,7 +29754,19 @@
       "post": {
         "summary": "POST: create snapshot (returns snapshot_id). GET: list tenant snapshots (?limit=&cursor=).",
         "description": "POST: create snapshot (returns snapshot_id). GET: list tenant snapshots (?limit=&cursor=).",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/decision-snapshot",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -50475,7 +50796,19 @@
       "post": {
         "summary": "Ingest live African market events into MVR_EVENTS KV so subsequent decision-checks can auto-populate liquidity context. Requires event_admin, ops_admin, or policy_admin role and Idempotency-Key. Valid event_type values: school_fees_window, harvest_inflow, harvest_outflow, pre_election_hoarding, post_election_normalisation, religious_fasting, religious_feasting, market_day_cycle, salary_cycle_peak, salary_cycle_trough, flooding_disruption, drought_period, festive_season, fuel_shortage, lab_window, formalization_wave, regulatory_shock, evidence_staleness. Lightweight payloads may use intensity/signal_date/notes; conservative governance defaults are filled.",
         "description": "Ingest operator-approved African market events into tenant-scoped event context. Requires Idempotency-Key. Valid event_type values: school_fees_window, harvest_inflow, harvest_outflow, pre_election_hoarding, post_election_normalisation, religious_fasting, religious_feasting, market_day_cycle, salary_cycle_peak, salary_cycle_trough, flooding_disruption, drought_period, festive_season, fuel_shortage, lab_window, formalization_wave, regulatory_shock, evidence_staleness. Lightweight payloads may supply intensity, signal_date, and notes; conservative governance defaults are filled when omitted.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/ingest-event",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -60260,7 +60593,19 @@
       "post": {
         "summary": "Create a consented field-signal request with privacy rules and external payout approval requirements.",
         "description": "Creates consented field-signal request records; payouts require external approval and are never executed by the Worker.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/field-signal/request",
         "x-mvr-maturity": "provisional",
         "x-mvr-labels": [
@@ -61154,7 +61499,19 @@
       "post": {
         "summary": "Receive field-signal responses as pending-review evidence candidates with respondent trust weighting.",
         "description": "Submitted signals remain pending review and are not board-safe evidence until compiled and approved.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/field-signal/submit",
         "x-mvr-maturity": "provisional",
         "x-mvr-labels": [
@@ -64262,7 +64619,19 @@
       "post": {
         "summary": "Register signed webhook subscriptions for Evidence OS alert events and delivery-worker dispatch.",
         "description": "Canonical webhook registration route. Registers signed subscriptions. With the durable runtime enabled (production), matching events, including review_dependency_withdrawn, review_case_withdrawn and review_case_basis_changed, are queued in a durable outbox and delivered with mvr.delivery/2 HMAC signatures over timestamp, event ID, delivery ID and attempt, with bounded retry or reconciliation review. Receivers must verify signatures within 300 seconds and deduplicate by event and delivery ID. A 2xx response is the acknowledgement. Events are hints, never authority: executors must refetch current case, packet and permission state before any effect. Maturity stays provisional until a production end-to-end delivery acceptance test is recorded.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/webhooks/register",
         "x-mvr-maturity": "provisional",
         "x-mvr-labels": [
@@ -65714,7 +66083,19 @@
       "post": {
         "summary": "Persist evidence collection tasks generated by gap plans or evidence-run orchestration. Requires Idempotency-Key.",
         "description": "Persist evidence collection tasks generated by gap plans or evidence-run orchestration. Requires Idempotency-Key.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/tasks/create",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -66352,7 +66733,19 @@
       "post": {
         "summary": "Update evidence task status, assignment, priority, or review metadata.",
         "description": "Update evidence task status, assignment, priority, or review metadata.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/tasks/update",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -66556,7 +66949,19 @@
       "post": {
         "summary": "Persist project-level market context, evidence references, task counts, and last verdict summaries without storing raw sensitive evidence. Requires Idempotency-Key.",
         "description": "Persist project-level market context, evidence references, task counts, and last verdict summaries without storing raw sensitive evidence. Requires Idempotency-Key.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/project-memory/upsert",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -67403,6 +67808,17 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
           }
         ],
         "x-mvr-registry-route": "/v1/runtime-jobs/:job_id/retry",
@@ -67414,7 +67830,7 @@
           "name": "validateRuntimeJobRetry",
           "status": "registry_metadata_enforced_by_shared_gateway"
         },
-        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-key-required": true,
         "security": [
           {
             "ApiKeyAuth": []
@@ -67941,7 +68357,19 @@
       "post": {
         "summary": "Record human review decisions for evidence items and return strict eligibility metadata. Requires Idempotency-Key.",
         "description": "Record human review decisions for evidence items and return strict eligibility metadata. Requires Idempotency-Key.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 8,
+              "maxLength": 128
+            },
+            "description": "Reuse the original key and request when reconciling a retry."
+          }
+        ],
         "x-mvr-registry-route": "/v1/evidence-review",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [
@@ -70141,6 +70569,7 @@
                       "register_credential",
                       "revoke_credential",
                       "register_source_record",
+                      "register_issuer_state",
                       "revoke_source_record",
                       "close_residual",
                       "revoke_closure",
@@ -70787,6 +71216,121 @@
                           "not_before",
                           "not_after"
                         ]
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "type",
+                          "record_id",
+                          "issuer_anchor_id",
+                          "case_id",
+                          "subject",
+                          "action",
+                          "geography",
+                          "state",
+                          "valid_from",
+                          "valid_until",
+                          "conditions",
+                          "supersedes",
+                          "statement"
+                        ],
+                        "properties": {
+                          "type": {
+                            "const": "mvr.issuer-state/1"
+                          },
+                          "record_id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                          },
+                          "issuer_anchor_id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                          },
+                          "case_id": {
+                            "type": "string",
+                            "pattern": "^RC-[a-f0-9]{64}$"
+                          },
+                          "subject": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 200
+                          },
+                          "action": {
+                            "type": "string",
+                            "enum": [
+                              "create_draft_record",
+                              "send_evidence_request",
+                              "schedule_meeting",
+                              "contact_counterparty",
+                              "publish_document",
+                              "commit_spend"
+                            ]
+                          },
+                          "geography": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "required": [
+                              "country",
+                              "region"
+                            ],
+                            "properties": {
+                              "country": {
+                                "type": "string",
+                                "pattern": "^[A-Z]{2}$"
+                              },
+                              "region": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "maxLength": 200
+                              }
+                            }
+                          },
+                          "state": {
+                            "type": "string",
+                            "enum": [
+                              "permitted",
+                              "prohibited",
+                              "conditional",
+                              "revoked"
+                            ]
+                          },
+                          "valid_from": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "valid_until": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "conditions": {
+                            "type": "array",
+                            "maxItems": 20,
+                            "items": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 200
+                            }
+                          },
+                          "supersedes": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "statement": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 1000
+                          }
+                        }
                       }
                     ]
                   },
@@ -71802,6 +72346,142 @@
                   },
                   {
                     "if": {
+                      "properties": {
+                        "action": {
+                          "const": "register_issuer_state"
+                        }
+                      },
+                      "required": [
+                        "action"
+                      ]
+                    },
+                    "then": {
+                      "required": [
+                        "operation_id",
+                        "document",
+                        "signature_b64"
+                      ],
+                      "properties": {
+                        "document": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "type",
+                            "record_id",
+                            "issuer_anchor_id",
+                            "case_id",
+                            "subject",
+                            "action",
+                            "geography",
+                            "state",
+                            "valid_from",
+                            "valid_until",
+                            "conditions",
+                            "supersedes",
+                            "statement"
+                          ],
+                          "properties": {
+                            "type": {
+                              "const": "mvr.issuer-state/1"
+                            },
+                            "record_id": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                            },
+                            "issuer_anchor_id": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                            },
+                            "case_id": {
+                              "type": "string",
+                              "pattern": "^RC-[a-f0-9]{64}$"
+                            },
+                            "subject": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 200
+                            },
+                            "action": {
+                              "type": "string",
+                              "enum": [
+                                "create_draft_record",
+                                "send_evidence_request",
+                                "schedule_meeting",
+                                "contact_counterparty",
+                                "publish_document",
+                                "commit_spend"
+                              ]
+                            },
+                            "geography": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "country",
+                                "region"
+                              ],
+                              "properties": {
+                                "country": {
+                                  "type": "string",
+                                  "pattern": "^[A-Z]{2}$"
+                                },
+                                "region": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ],
+                                  "maxLength": 200
+                                }
+                              }
+                            },
+                            "state": {
+                              "type": "string",
+                              "enum": [
+                                "permitted",
+                                "prohibited",
+                                "conditional",
+                                "revoked"
+                              ]
+                            },
+                            "valid_from": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "valid_until": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "conditions": {
+                              "type": "array",
+                              "maxItems": 20,
+                              "items": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 200
+                              }
+                            },
+                            "supersedes": {
+                              "anyOf": [
+                                {
+                                  "type": "string",
+                                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "statement": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 1000
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "if": {
                       "required": [
                         "revocation"
                       ]
@@ -72433,6 +73113,28 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityConformanceResponse"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Disposable lab session issued; credentials returned once.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityConformanceResponse"
+                }
+              }
             }
           },
           "400": {
@@ -72642,7 +73344,18 @@
       "get": {
         "summary": "Public ephemeral lab verification keys; no private material or production authority.",
         "description": "Public ephemeral lab verification keys; no private material or production authority.",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^AC-[a-f0-9]{32}$"
+            },
+            "description": "Ephemeral lab session identifier."
+          }
+        ],
         "x-mvr-registry-route": "/v1/authority-conformance/keys",
         "x-mvr-maturity": "release_candidate",
         "x-mvr-labels": [],
@@ -72658,6 +73371,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityConformanceKeysResponse"
+                }
               }
             }
           },
@@ -72783,6 +73503,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityConformanceReceiverResponse"
+                }
               }
             }
           },
@@ -72978,6 +73705,13 @@
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
               }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityConformanceContractResponse"
+                }
+              }
             }
           },
           "400": {
@@ -73093,6 +73827,13 @@
             "headers": {
               "Server-Timing": {
                 "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorityReceiptVerificationResponse"
+                }
               }
             }
           },
@@ -79921,7 +80662,7 @@
       "EvidenceItem": {
         "type": "object",
         "additionalProperties": true,
-        "description": "Extensible source metadata. Unknown item-level field names receive non-blocking input_interpretation notices on successful licensed evidence responses; acceptance is not proof that a control was evaluated. Suggested names require checking source facts and are never applied automatically. Nested open metadata is not recursively classified by this notice mechanism. Recovery: Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. 422: details/validation_errors; fix missing_fields. Never invent facts. No source authentication or action authority. /docs/mcp-integration.md.",
+        "description": "Extensible source metadata. Unknown item-level field names receive non-blocking input_interpretation notices on successful licensed evidence responses; acceptance is not proof that a control was evaluated. Suggested names require checking source facts and are never applied automatically. Nested open metadata is not recursively classified by this notice mechanism. Recovery: Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. HTTP 422: details/validation_errors; fix missing_fields. Never invent facts. These codes do not authenticate sources or authorize action. /docs/mcp-integration.md.",
         "x-compatible-item-field-names": [
           "provenance",
           "privacy",
@@ -84401,7 +85142,7 @@
           },
           "code": {
             "type": "string",
-            "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. 422: details/validation_errors; fix missing_fields. Never invent facts. No source authentication or action authority. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
+            "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. HTTP 422: details/validation_errors; fix missing_fields. Never invent facts. These codes do not authenticate sources or authorize action. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
           },
           "calibration_disposition": {
             "$ref": "#/components/schemas/CalibrationDisposition"
@@ -84717,7 +85458,7 @@
           },
           "code": {
             "type": "string",
-            "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. 422: details/validation_errors; fix missing_fields. Never invent facts. No source authentication or action authority. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers. HTTP 409 IDEMPOTENCY_CONTEXT_MISMATCH means the original receipt has an old, unknown or changed deployment/response context; it takes precedence over request hash differences. IDEMPOTENCY_REQUEST_MISMATCH means the same context has different payload or hashed request metadata (including User-Agent). Neither re-executes the operation. Reconcile the original request and retain its Idempotency-Key; never change keys to bypass a conflict."
+            "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. HTTP 422: details/validation_errors; fix missing_fields. Never invent facts. These codes do not authenticate sources or authorize action. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers. HTTP 409 IDEMPOTENCY_CONTEXT_MISMATCH means the original receipt has an old, unknown or changed deployment/response context; it takes precedence over request hash differences. IDEMPOTENCY_REQUEST_MISMATCH means the same context has different payload or hashed request metadata (including User-Agent). Neither re-executes the operation. Reconcile the original request and retain its Idempotency-Key; never change keys to bypass a conflict."
           },
           "message": {
             "type": "string"
@@ -84890,7 +85631,7 @@
           },
           "code": {
             "type": "string",
-            "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. 422: details/validation_errors; fix missing_fields. Never invent facts. No source authentication or action authority. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
+            "description": "Codes: FIELD_PROVENANCE_REQUIRED,FIELD_PROVENANCE_CONFLICT,FIELDWORK_CAPACITY_CONTRADICTION,SOURCE_INDEPENDENCE_CONTRADICTION,SOURCE_VERIFICATION_CONTRADICTION,FIELD_SOURCE_MODALITY_CONFLICT,DECISION_GEOGRAPHY_SCOPE_REQUIRED,DECISION_SCOPE_REQUIRED,DECISION_SCOPE_REVIEW_REQUIRED,DECISION_SCOPE_CROSS_CHECK_LIMIT,SOURCE_EXTRACTION_INVALID,SOURCE_EXTRACTION_REFERENCE_CONFLICT,ADVERSE_SOURCE_REVIEW_REQUIRED,INVALID_CLAIM_INPUT,OUTPUT_RECEIPT_NOT_REQUEST_AUTHORITY,ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE. HTTP 422: details/validation_errors; fix missing_fields. Never invent facts. These codes do not authenticate sources or authorize action. /docs/mcp-integration.md. Also DUPLICATE_COMPARISON_OPTION_ID for colliding comparison identifiers."
           },
           "residual_risk_register": {
             "$ref": "#/components/schemas/ResidualRiskRegister"
@@ -89169,6 +89910,840 @@
           }
         ]
       },
+      "AuthorityConformanceKeysResponse": {
+        "type": "object",
+        "properties": {
+          "lab_fixture": {
+            "type": "boolean"
+          },
+          "production_authority": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "keys": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key_id": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "active",
+                    "retired",
+                    "revoked"
+                  ]
+                },
+                "lab_fixture": {
+                  "type": "boolean"
+                },
+                "public_key_spki_b64": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "boundary": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "lab_fixture",
+          "production_authority",
+          "keys"
+        ]
+      },
+      "AuthorityConformanceReceiverResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "acknowledged"
+            ]
+          },
+          "event_id": {
+            "type": "string"
+          },
+          "duplicate": {
+            "type": "boolean"
+          },
+          "signature_verified": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
+          "http_status": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "status",
+          "event_id",
+          "duplicate",
+          "signature_verified"
+        ]
+      },
+      "AuthorityReceiptVerificationResponse": {
+        "type": "object",
+        "properties": {
+          "valid": {
+            "type": "boolean"
+          },
+          "hash_valid": {
+            "type": "boolean"
+          },
+          "signature_verified": {
+            "type": "boolean"
+          },
+          "chain_link_verified": {
+            "type": "boolean"
+          },
+          "chronology_verified": {
+            "type": "boolean"
+          },
+          "production_authority": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "execution_authorized": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "nullable": true
+          },
+          "key_id": {
+            "type": "string"
+          },
+          "key_status": {
+            "type": "string"
+          },
+          "lab_fixture": {
+            "type": "boolean"
+          },
+          "boundary": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "valid",
+          "hash_valid",
+          "signature_verified",
+          "chain_link_verified",
+          "chronology_verified",
+          "production_authority",
+          "execution_authorized",
+          "reason"
+        ]
+      },
+      "AuthorityConformanceContractResponse": {
+        "type": "object",
+        "properties": {
+          "contract_version": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "POST"
+            ]
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "request_schema": {
+            "type": "object",
+            "properties": {
+              "oneOf": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "properties": {
+                      "type": "object",
+                      "properties": {},
+                      "additionalProperties": true
+                    },
+                    "required": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            },
+            "additionalProperties": true
+          },
+          "session_validity_seconds": {
+            "type": "integer"
+          },
+          "maximum_calls": {
+            "type": "integer"
+          },
+          "principals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "roles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "production_authority": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "execution_authorized": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "contract_version",
+          "endpoint",
+          "method",
+          "actions",
+          "request_schema"
+        ]
+      },
+      "AuthorityConformanceResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "http_status": {
+            "type": "integer"
+          },
+          "contract_version": {
+            "type": "string"
+          },
+          "lab_fixture": {
+            "type": "boolean"
+          },
+          "evaluation_only": {
+            "type": "boolean"
+          },
+          "production_authority": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "execution_authorized": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "session_id": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tenant_id": {
+            "type": "string"
+          },
+          "workspace_id": {
+            "type": "string"
+          },
+          "max_calls": {
+            "type": "integer"
+          },
+          "calls_remaining": {
+            "type": "integer"
+          },
+          "credentials": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "session_token": {
+                  "type": "string",
+                  "description": "Returned once. Store only in host credentials."
+                },
+                "roles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "principal_sha256": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "receipt_registry": {
+            "$ref": "#/components/schemas/AuthorityConformanceKeysResponse"
+          },
+          "receipt": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "sequence": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "prev_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "recorded_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "signature": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "status": {
+                            "const": "unsigned"
+                          },
+                          "reason": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 200,
+                            "pattern": "\\S"
+                          },
+                          "standard": {
+                            "const": "MVR-RECEIPT-SIG-V1"
+                          },
+                          "key_id": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "maxLength": 128
+                          },
+                          "registry_url": {
+                            "type": "string",
+                            "format": "uri"
+                          }
+                        },
+                        "required": [
+                          "status",
+                          "reason"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "standard": {
+                            "const": "MVR-RECEIPT-SIG-V1"
+                          },
+                          "status": {
+                            "const": "signed"
+                          },
+                          "algorithm": {
+                            "const": "Ed25519"
+                          },
+                          "key_id": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 128,
+                            "pattern": "\\S"
+                          },
+                          "registry_url": {
+                            "type": "string",
+                            "format": "uri"
+                          },
+                          "signature_b64": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9+/]{86}==$"
+                          }
+                        },
+                        "required": [
+                          "standard",
+                          "status",
+                          "algorithm",
+                          "key_id",
+                          "signature_b64"
+                        ]
+                      }
+                    ]
+                  },
+                  "lab_fixture": {
+                    "type": "boolean"
+                  },
+                  "production_authority": {
+                    "const": false
+                  },
+                  "kind": {
+                    "const": "capability_verification"
+                  },
+                  "verification_id": {
+                    "type": "string",
+                    "pattern": "^VR-[a-f0-9]{48}$"
+                  },
+                  "capability_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                  },
+                  "case_id": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "allow",
+                      "deny"
+                    ]
+                  },
+                  "deny_reasons": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "\\S"
+                    },
+                    "minItems": 0,
+                    "maxItems": 100
+                  },
+                  "effect_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "\\S"
+                  },
+                  "requested_effect_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "executor_principal_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "reliance": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "valid_until": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "sequence",
+                  "prev_sha256",
+                  "recorded_at",
+                  "sha256",
+                  "signature",
+                  "kind",
+                  "verification_id",
+                  "capability_id",
+                  "case_id",
+                  "decision",
+                  "deny_reasons",
+                  "effect_id",
+                  "requested_effect_sha256",
+                  "executor_principal_sha256",
+                  "reliance",
+                  "valid_until"
+                ]
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "sequence": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "prev_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "recorded_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "signature": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "status": {
+                            "const": "unsigned"
+                          },
+                          "reason": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 200,
+                            "pattern": "\\S"
+                          },
+                          "standard": {
+                            "const": "MVR-RECEIPT-SIG-V1"
+                          },
+                          "key_id": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "maxLength": 128
+                          },
+                          "registry_url": {
+                            "type": "string",
+                            "format": "uri"
+                          }
+                        },
+                        "required": [
+                          "status",
+                          "reason"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "standard": {
+                            "const": "MVR-RECEIPT-SIG-V1"
+                          },
+                          "status": {
+                            "const": "signed"
+                          },
+                          "algorithm": {
+                            "const": "Ed25519"
+                          },
+                          "key_id": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 128,
+                            "pattern": "\\S"
+                          },
+                          "registry_url": {
+                            "type": "string",
+                            "format": "uri"
+                          },
+                          "signature_b64": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9+/]{86}==$"
+                          }
+                        },
+                        "required": [
+                          "standard",
+                          "status",
+                          "algorithm",
+                          "key_id",
+                          "signature_b64"
+                        ]
+                      }
+                    ]
+                  },
+                  "lab_fixture": {
+                    "type": "boolean"
+                  },
+                  "production_authority": {
+                    "const": false
+                  },
+                  "kind": {
+                    "const": "effect_report"
+                  },
+                  "verification_id": {
+                    "type": "string",
+                    "pattern": "^VR-[a-f0-9]{48}$"
+                  },
+                  "capability_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                  },
+                  "effect_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "\\S"
+                  },
+                  "outcome": {
+                    "type": "string",
+                    "enum": [
+                      "succeeded",
+                      "failed",
+                      "not_attempted"
+                    ]
+                  },
+                  "external_ref_sha256": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "reported_after_valid_until": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "sequence",
+                  "prev_sha256",
+                  "recorded_at",
+                  "sha256",
+                  "signature",
+                  "kind",
+                  "verification_id",
+                  "capability_id",
+                  "effect_id",
+                  "outcome",
+                  "external_ref_sha256",
+                  "reported_after_valid_until"
+                ]
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "sequence": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "prev_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "recorded_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "signature": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "status": {
+                            "const": "unsigned"
+                          },
+                          "reason": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 200,
+                            "pattern": "\\S"
+                          },
+                          "standard": {
+                            "const": "MVR-RECEIPT-SIG-V1"
+                          },
+                          "key_id": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "maxLength": 128
+                          },
+                          "registry_url": {
+                            "type": "string",
+                            "format": "uri"
+                          }
+                        },
+                        "required": [
+                          "status",
+                          "reason"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "standard": {
+                            "const": "MVR-RECEIPT-SIG-V1"
+                          },
+                          "status": {
+                            "const": "signed"
+                          },
+                          "algorithm": {
+                            "const": "Ed25519"
+                          },
+                          "key_id": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 128,
+                            "pattern": "\\S"
+                          },
+                          "registry_url": {
+                            "type": "string",
+                            "format": "uri"
+                          },
+                          "signature_b64": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9+/]{86}==$"
+                          }
+                        },
+                        "required": [
+                          "standard",
+                          "status",
+                          "algorithm",
+                          "key_id",
+                          "signature_b64"
+                        ]
+                      }
+                    ]
+                  },
+                  "lab_fixture": {
+                    "type": "boolean"
+                  },
+                  "production_authority": {
+                    "const": false
+                  },
+                  "kind": {
+                    "const": "revocation"
+                  },
+                  "target_kind": {
+                    "type": "string",
+                    "enum": [
+                      "anchor",
+                      "credential",
+                      "source_record",
+                      "closure",
+                      "capability"
+                    ]
+                  },
+                  "target_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                  },
+                  "revoked_by_principal_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "operation_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "sequence",
+                  "prev_sha256",
+                  "recorded_at",
+                  "sha256",
+                  "signature",
+                  "kind",
+                  "target_kind",
+                  "target_id",
+                  "revoked_by_principal_sha256",
+                  "operation_id"
+                ]
+              }
+            ]
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "allow",
+              "deny"
+            ]
+          },
+          "deny_reasons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verification_id": {
+            "type": "string"
+          },
+          "capability_id": {
+            "type": "string"
+          },
+          "valid_until": {
+            "type": "string",
+            "nullable": true
+          },
+          "outcome": {
+            "type": "string",
+            "enum": [
+              "succeeded",
+              "failed",
+              "not_attempted"
+            ]
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "status",
+          "contract_version",
+          "lab_fixture",
+          "production_authority",
+          "execution_authorized"
+        ],
+        "description": "Issue returns 201 and one-time credentials; call returns the selected authority/review/delivery result plus lab boundaries; close returns closed. Delegated result fields follow the target operation schema."
+      },
       "EvidenceCompilerRequest": {
         "type": "object",
         "properties": {
@@ -89966,7 +91541,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-23.authority-chain.1"
+    "deployment_revision": "2026-10-23.host-contracts.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }

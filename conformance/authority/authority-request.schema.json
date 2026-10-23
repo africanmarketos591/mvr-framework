@@ -15,6 +15,7 @@
         "register_credential",
         "revoke_credential",
         "register_source_record",
+        "register_issuer_state",
         "revoke_source_record",
         "close_residual",
         "revoke_closure",
@@ -661,6 +662,121 @@
             "not_before",
             "not_after"
           ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "record_id",
+            "issuer_anchor_id",
+            "case_id",
+            "subject",
+            "action",
+            "geography",
+            "state",
+            "valid_from",
+            "valid_until",
+            "conditions",
+            "supersedes",
+            "statement"
+          ],
+          "properties": {
+            "type": {
+              "const": "mvr.issuer-state/1"
+            },
+            "record_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "issuer_anchor_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "case_id": {
+              "type": "string",
+              "pattern": "^RC-[a-f0-9]{64}$"
+            },
+            "subject": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "action": {
+              "type": "string",
+              "enum": [
+                "create_draft_record",
+                "send_evidence_request",
+                "schedule_meeting",
+                "contact_counterparty",
+                "publish_document",
+                "commit_spend"
+              ]
+            },
+            "geography": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "country",
+                "region"
+              ],
+              "properties": {
+                "country": {
+                  "type": "string",
+                  "pattern": "^[A-Z]{2}$"
+                },
+                "region": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 200
+                }
+              }
+            },
+            "state": {
+              "type": "string",
+              "enum": [
+                "permitted",
+                "prohibited",
+                "conditional",
+                "revoked"
+              ]
+            },
+            "valid_from": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "valid_until": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "conditions": {
+              "type": "array",
+              "maxItems": 20,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            },
+            "supersedes": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "statement": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          }
         }
       ]
     },
@@ -1672,6 +1788,142 @@
         "required": [
           "capability_id"
         ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "register_issuer_state"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "document",
+          "signature_b64"
+        ],
+        "properties": {
+          "document": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "record_id",
+              "issuer_anchor_id",
+              "case_id",
+              "subject",
+              "action",
+              "geography",
+              "state",
+              "valid_from",
+              "valid_until",
+              "conditions",
+              "supersedes",
+              "statement"
+            ],
+            "properties": {
+              "type": {
+                "const": "mvr.issuer-state/1"
+              },
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+              },
+              "issuer_anchor_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+              },
+              "case_id": {
+                "type": "string",
+                "pattern": "^RC-[a-f0-9]{64}$"
+              },
+              "subject": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "action": {
+                "type": "string",
+                "enum": [
+                  "create_draft_record",
+                  "send_evidence_request",
+                  "schedule_meeting",
+                  "contact_counterparty",
+                  "publish_document",
+                  "commit_spend"
+                ]
+              },
+              "geography": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "country",
+                  "region"
+                ],
+                "properties": {
+                  "country": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{2}$"
+                  },
+                  "region": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "maxLength": 200
+                  }
+                }
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "permitted",
+                  "prohibited",
+                  "conditional",
+                  "revoked"
+                ]
+              },
+              "valid_from": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "valid_until": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "conditions": {
+                "type": "array",
+                "maxItems": 20,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              },
+              "supersedes": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1000
+              }
+            }
+          }
+        }
       }
     },
     {
