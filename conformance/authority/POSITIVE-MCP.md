@@ -37,7 +37,8 @@ reviewer needs reviewer and attestor roles. Distinct credentials are not proof
 of distinct or independent humans. Both are lab principals.
 
 The local acceptance suite uses the repository's pinned private calibration
-fixture bundle and its existing relaxed strict-calibration test setting. Those
+fixture bundle and the canonical durable runtime. Normal strict infrastructure
+checks remain enabled; the relaxed strict-calibration setting is absent. These
 are lab prerequisites, not production calibration evidence. An environment
 without sufficient calibration must fail this positive test. The advisory
 profile is separately checked as a negative control for formal output-use
