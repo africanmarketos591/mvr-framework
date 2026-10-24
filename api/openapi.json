@@ -79368,6 +79368,107 @@
                       "operation_id",
                       "expected_revision"
                     ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "get_review_tools"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "case_id"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "set_review_model"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "expected_tools_revision",
+                      "review_model",
+                      "redacted_no_personal_data",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "record_review_observation"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "expected_tools_revision",
+                      "review_observation",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "record_hold_event"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "expected_tools_revision",
+                      "hold_event",
+                      "redacted_no_personal_data",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "capture_review_proposal"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "expected_tools_revision",
+                      "proposal_text",
+                      "proposal_model_ref",
+                      "redacted_no_personal_data",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "compare_review_decision"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "action",
+                      "expected_tools_revision",
+                      "case_id",
+                      "operation_id",
+                      "expected_revision"
+                    ]
                   }
                 ],
                 "properties": {
@@ -79405,6 +79506,89 @@
                     "minLength": 1,
                     "maxLength": 1600
                   },
+                  "expected_tools_revision": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 60
+                  },
+                  "review_model": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "description": "Explicit Boolean planning model; at most eight referenced facts. scope must equal the case context_sha256. Exact source bindings required; no fact truth or permission is conferred."
+                  },
+                  "review_observation": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "fact_id",
+                      "value"
+                    ],
+                    "properties": {
+                      "fact_id": {
+                        "type": "string",
+                        "maxLength": 80
+                      },
+                      "value": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "hold_event": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "id",
+                      "type"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      "type": {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      "blocker": {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      "closure_artifact": {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      "owner_ref": {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      "deadline": {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      "deadline_commitment_ref": {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      "evidence_ref": {
+                        "type": "string",
+                        "maxLength": 1000
+                      },
+                      "reason": {
+                        "type": "string",
+                        "maxLength": 1000
+                      }
+                    }
+                  },
+                  "proposal_text": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 8000
+                  },
+                  "proposal_model_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1000
+                  },
                   "action": {
                     "type": "string",
                     "enum": [
@@ -79418,7 +79602,13 @@
                       "open_workplan",
                       "get_workplan",
                       "record_plan_step",
-                      "finalize_workplan"
+                      "finalize_workplan",
+                      "get_review_tools",
+                      "set_review_model",
+                      "record_review_observation",
+                      "record_hold_event",
+                      "capture_review_proposal",
+                      "compare_review_decision"
                     ]
                   },
                   "operation_id": {
@@ -106033,7 +106223,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-24.boundary-closure.1"
+    "deployment_revision": "2026-10-24.hosted-review.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }
