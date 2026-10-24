@@ -1,0 +1,267 @@
+{
+  "classification": "synthetic demonstration, not a live AMOS decision",
+  "first": {
+    "contract_version": "amos.local-review-workbench/1",
+    "model_sha256": "a215404d2a9d6b14741c69a9f03bf353369dd493ebd7755f7b48c04d6d5e258e",
+    "checked_at": "2026-10-24T09:00:00Z",
+    "status": "review_required",
+    "model_outcome": null,
+    "next_review": "condition",
+    "minimum_worst_case_review_cost": 3,
+    "worst_case_review_count": 3,
+    "enumerated_completions": 8,
+    "ranking": [
+      {
+        "fact_id": "condition",
+        "cost": 1,
+        "decisive_pairs": 1,
+        "completion_pairs": 4,
+        "worst_case_remaining_cost": 3
+      },
+      {
+        "fact_id": "permission",
+        "cost": 1,
+        "decisive_pairs": 1,
+        "completion_pairs": 4,
+        "worst_case_remaining_cost": 3
+      },
+      {
+        "fact_id": "prohibition",
+        "cost": 1,
+        "decisive_pairs": 1,
+        "completion_pairs": 4,
+        "worst_case_remaining_cost": 3
+      }
+    ],
+    "ranking_is_probability": false,
+    "stale_observations": [],
+    "minimum_observation_certificate": null,
+    "irrelevant_within_current_model": [
+      "context_0",
+      "context_1",
+      "context_2",
+      "context_3",
+      "context_4",
+      "context_5",
+      "context_6",
+      "context_7",
+      "context_8",
+      "context_9",
+      "context_10",
+      "context_11",
+      "context_12",
+      "context_13",
+      "context_14",
+      "context_15",
+      "context_16",
+      "context_17",
+      "context_18",
+      "context_19",
+      "context_20"
+    ],
+    "stop_reviewing_within_model": false,
+    "unknown_omitted_risks_remain": true,
+    "human_time_savings_measured": false,
+    "execution_authorized": false,
+    "institutional_authority_verified": false,
+    "scoring_eligible": false,
+    "classification": "local declared-model analysis; not an AMOS permission receipt"
+  },
+  "after": {
+    "contract_version": "amos.local-review-workbench/1",
+    "model_sha256": "a215404d2a9d6b14741c69a9f03bf353369dd493ebd7755f7b48c04d6d5e258e",
+    "checked_at": "2026-10-24T09:00:00Z",
+    "status": "stable_within_declared_model",
+    "model_outcome": false,
+    "next_review": null,
+    "minimum_worst_case_review_cost": 0,
+    "worst_case_review_count": 0,
+    "enumerated_completions": 4,
+    "ranking": [
+      {
+        "fact_id": "condition",
+        "cost": 1,
+        "decisive_pairs": 0,
+        "completion_pairs": 2,
+        "worst_case_remaining_cost": 1
+      },
+      {
+        "fact_id": "permission",
+        "cost": 1,
+        "decisive_pairs": 0,
+        "completion_pairs": 2,
+        "worst_case_remaining_cost": 1
+      }
+    ],
+    "ranking_is_probability": false,
+    "stale_observations": [],
+    "minimum_observation_certificate": {
+      "fact_ids": [
+        "prohibition"
+      ],
+      "cost": 1
+    },
+    "irrelevant_within_current_model": [
+      "permission",
+      "condition",
+      "context_0",
+      "context_1",
+      "context_2",
+      "context_3",
+      "context_4",
+      "context_5",
+      "context_6",
+      "context_7",
+      "context_8",
+      "context_9",
+      "context_10",
+      "context_11",
+      "context_12",
+      "context_13",
+      "context_14",
+      "context_15",
+      "context_16",
+      "context_17",
+      "context_18",
+      "context_19",
+      "context_20"
+    ],
+    "stop_reviewing_within_model": true,
+    "unknown_omitted_risks_remain": true,
+    "human_time_savings_measured": false,
+    "execution_authorized": false,
+    "institutional_authority_verified": false,
+    "scoring_eligible": false,
+    "classification": "local declared-model analysis; not an AMOS permission receipt"
+  },
+  "holds": {
+    "contract_version": "amos.local-review-workbench/1",
+    "checked_at": "2026-10-24T09:00:00Z",
+    "journal_head": "a4e4eb5712469fb4e6e855964c955ced8b924ab771c35014cba235b56ce6bdd4",
+    "expected_head_checked": true,
+    "holds": [
+      {
+        "id": "permission",
+        "status": "open",
+        "opened_at": "2026-10-20T00:00:00Z",
+        "episode_started_at": "2026-10-20T00:00:00Z",
+        "blocker": "Current scoped permission is missing.",
+        "minimum_closure_artifact": "Original permission with exact action, geography, validity and competent issuer.",
+        "owner_ref": null,
+        "deadline": null,
+        "deadline_commitment_ref": null,
+        "total_hold_ms": 378000000,
+        "closure_refs": [],
+        "current_hold_age_ms": 378000000,
+        "overdue": false,
+        "closure_is_declared_not_verified": true,
+        "narrowest_available_work": {
+          "action": "prepare_local_closure_checklist",
+          "effect": "local_draft_only",
+          "external_action_authorized": false
+        }
+      },
+      {
+        "id": "source",
+        "status": "open",
+        "opened_at": "2026-10-20T01:00:00Z",
+        "episode_started_at": "2026-10-23T00:00:00Z",
+        "blocker": "Original clause needs examination.",
+        "minimum_closure_artifact": "Hash-bound clause review and accountable resolver reference.",
+        "owner_ref": "synthetic:reviewer",
+        "deadline": null,
+        "deadline_commitment_ref": null,
+        "total_hold_ms": 288000000,
+        "closure_refs": [
+          {
+            "evidence_ref": "synthetic:review-observation",
+            "resolver_ref": "synthetic:reviewer",
+            "at": "2026-10-22T00:00:00Z"
+          }
+        ],
+        "reason": "Original source changed; re-examination required.",
+        "current_hold_age_ms": 118800000,
+        "overdue": false,
+        "closure_is_declared_not_verified": true,
+        "narrowest_available_work": {
+          "action": "prepare_local_closure_checklist",
+          "effect": "local_draft_only",
+          "external_action_authorized": false
+        }
+      }
+    ],
+    "metrics": {
+      "total": 2,
+      "open": 2,
+      "closed": 0,
+      "abandoned": 0,
+      "closure_events": 1,
+      "reopen_events": 1,
+      "current_closure_fraction": 0,
+      "unassigned": 1,
+      "overdue": 0
+    },
+    "opportunity_cost": {
+      "status": "unestimated",
+      "amount": null
+    },
+    "integrity_is_not_authentication": true,
+    "execution_authorized": false,
+    "institutional_authority_verified": false,
+    "scoring_eligible": false,
+    "classification": "local declared-model analysis; not an AMOS permission receipt"
+  },
+  "comparison": {
+    "kind": "decision-comparison",
+    "payload": {
+      "contract_version": "amos.local-review-workbench/1",
+      "request_id": "synthetic-request-1",
+      "scope": "UG internal planning example",
+      "action": "Prepare internal draft",
+      "proposal_sha256": "fcf71a628ecd0bdd7e037ed829743009a1b2c89ffec3174ffc4cac34f9a479fb",
+      "decision_sha256": "9dce4c5b2aea123ce3ee4257d2e5622e93e128ee50bbef4e3b1a085c725a601b",
+      "before": {
+        "request_id": "synthetic-request-1",
+        "scope": "UG internal planning example",
+        "action": "Prepare internal draft",
+        "model_ref": "synthetic-model/1",
+        "proposal": "Proceed with the proposed external activity.",
+        "captured_at": "2026-10-24T08:00:00Z"
+      },
+      "after": {
+        "request_id": "synthetic-request-1",
+        "scope": "UG internal planning example",
+        "action": "Prepare internal draft",
+        "decided_at": "2026-10-24T08:01:00Z",
+        "disposition": "hold",
+        "final_proposal": "Prepare an internal closure checklist; external activity remains gated.",
+        "receipt_ref": "synthetic:decision-receipt-1",
+        "causes": [
+          {
+            "rule_id": "synthetic-permission-required",
+            "state_ref": "synthetic:missing-permission",
+            "explanation": "The declared model has no current permission observation."
+          }
+        ]
+      },
+      "proposal_changed": true,
+      "external_effect_gated": true,
+      "exposure_moved": {
+        "status": "unestimated",
+        "amount": null
+      },
+      "opportunity_cost": {
+        "status": "unestimated",
+        "amount": null
+      },
+      "capture_chronology": "caller_declared; hash cannot prove capture occurred before the decision",
+      "causes": "supplied decision references; not independently verified by this tool",
+      "integrity_is_not_authentication": true,
+      "execution_authorized": false,
+      "institutional_authority_verified": false,
+      "scoring_eligible": false,
+      "classification": "local declared-model analysis; not an AMOS permission receipt"
+    },
+    "sha256": "eec493a3f898c92cb76adbd6a9551174c03f56e4ce148dc2e54e571488aec8eb"
+  }
+}
