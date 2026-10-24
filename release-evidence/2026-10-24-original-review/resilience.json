@@ -1,0 +1,40 @@
+{
+  "native": {
+    "passed": true,
+    "checks": 26,
+    "case_id": "RC-da14ad4fe4abac2376fdf95ceaf016af8a26ade304bacb722e8ab6537de236cd",
+    "dimensions_invalidated": [
+      "document_sha256",
+      "locator",
+      "claim",
+      "relationship",
+      "subject",
+      "action",
+      "geography",
+      "valid_from",
+      "valid_until",
+      "reviewer_standing_ref",
+      "model_version",
+      "extractor_version"
+    ],
+    "revocation_read_ms": 52,
+    "classification": "proprietary generated test data; reconstructed scenarios, not developer payload reproduction",
+    "original_bytes_preserved": true,
+    "restrictions_force_further_review": true
+  },
+  "restart_recovery_ms": 969,
+  "persisted_original_and_revocation_survive_restart": true,
+  "runtime": "workerd with persisted SQLite durable objects",
+  "network": "denied in fixture",
+  "measurement_scope": "Single local acceptance sample, not a production latency percentile or SLA",
+  "objectives": {
+    "stale_allow_commits": 0,
+    "revocation": "Unusable on next successful authoritative read",
+    "local_restart_recovery_target_ms": 30000,
+    "public_register_deadline_ms": 5000,
+    "availability_monthly_target": 0.995,
+    "availability_measured": false,
+    "push_notification_delivery_guarantee": false,
+    "external_google_drive_atomic_revocation": false
+  }
+}
