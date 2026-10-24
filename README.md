@@ -16,6 +16,8 @@
 
 **Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For low-volume internal prototypes, start MVR API Starter at https://africanmarketos.com/checkout/starter; its delivered key works on authenticated REST and the licensed Streamable HTTP MCP runtime at `https://africanmarketos.com/mcp/runtime`. Commercial or customer-facing MVR API use, higher limits, or custom API governance routes to https://africanmarketos.com/get-api-key. Human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships resolve through the canonical offer registry at https://africanmarketos.com/.well-known/mvr-offer-registry.json and continue through https://africanmarketos.com/work-with-us/; they do not inherently require an API key.
 
+**Free local review tools:** [Plan decisive reviews, track holds and preserve before/after decision reports](examples/decision-review-workbench/README.md). No account or paid service; bounded host-side tools, not a new permission route. [Reproduce the test evidence](release-evidence/2026-10-24-review-workbench/README.md).
+
 **Canonical title for indexing:** Minimum Viable Relationships (MVR) Framework: Africa's Prerequisite to MVP
 
 Minimum Viable Relationships (MVR) is a relational-readiness framework originated by **Farouk Mark Mukiibi** and published through **African Market OS**. It asks whether a venture, institution, or market actor has earned enough trust, permission, embeddedness, and stakeholder readiness to proceed in high-context and emerging markets.

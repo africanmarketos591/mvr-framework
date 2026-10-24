@@ -1,0 +1,39 @@
+{
+  "contract_version": "amos.review-workbench-evidence/1",
+  "classification": "public synthetic implementation tests; no live provider effect",
+  "source_sha256": {
+    "examples/decision-review-workbench/core.mjs": "c3b30b617047502087293f1bcca289e173abec2af3cab01d7cc7ed604cc79bdd",
+    "examples/decision-review-workbench/review.mjs": "f8ba47d313cdd8aa319b8e3f405c45ad60415a3840a2096eb6dff564c3964496",
+    "examples/decision-review-workbench/holds.mjs": "e2b3aec210944ed6fbb8c9db9c5d5d8cc9ef2a03de6f65ca9d5b96aaf2984392",
+    "examples/decision-review-workbench/counterfactual.mjs": "b265854b528eeca5aad6bfe9be7fd9c3a0916250884e72ab0298018505475c0b",
+    "examples/decision-review-workbench/cli.mjs": "66625afd53805a52e8626798531a4f9b4b72b4c07af72415c4f51321f616fd75",
+    "examples/decision-review-workbench/fixtures.mjs": "2aa2fd5df30705701f08979726879a3caf00ae303c7aa8de1dd37f7905345864",
+    "examples/decision-review-workbench/test.mjs": "2ae19b0aa375a5f0733d2f4723373ce3a0eba6d57139cf1a15ee930a68d4225b",
+    "examples/decision-review-workbench/demo.mjs": "033e8046c3d393fd08398df7719d49928b4345e8b836590dab6adb6c26821527",
+    "examples/decision-review-workbench/demo.html": "c0e75a3ceac28fe8961ddd2a0f0c9438a838230a77c6846720c9f34fa4afed4f",
+    "examples/decision-review-workbench/demo-output.json": "a150a8bf97a42d843da0ce0062baa6f6bdd8f9472eb61bc1dc44fe0caf74e2d8",
+    "examples/decision-review-workbench/README.md": "986a011f25f2311627df29e5983b2dfdf041358f312a7fe89d8400825340494b",
+    ".github/workflows/review-workbench.yml": "faae81178cd2f71605e9fa8b73ec1beba3e91f69a9cd9791ec18f063a907c091",
+    "release-evidence/2026-10-24-review-workbench/verify.mjs": "742c7b9cd3aa36428f3d45c952ab2488f2984fcc85df3332ba1bc8ab7187b9a6"
+  },
+  "tests": {
+    "passed": true,
+    "test_groups": 9,
+    "exhaustive_oracle_cases": 6912,
+    "classification": "synthetic implementation tests; no external authority or effects",
+    "fixture_sha256": "a215404d2a9d6b14741c69a9f03bf353369dd493ebd7755f7b48c04d6d5e258e"
+  },
+  "demo": {
+    "passed": true,
+    "mode": "verified",
+    "files": [
+      "demo-output.json",
+      "demo.html"
+    ],
+    "external_effect": false
+  },
+  "external_authority_verified": false,
+  "production_deployment": false,
+  "human_time_savings_measured": false,
+  "paid_resources_required": false
+}

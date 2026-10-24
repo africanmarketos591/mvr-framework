@@ -1,0 +1,270 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>AMOS local review workbench — synthetic demonstration</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f7f9;color:#183044;font:16px/1.55 system-ui,sans-serif}main{max-width:1100px;margin:auto;padding:40px 24px}h1{font-size:38px;line-height:1.15;margin:10px 0 20px}h2{font-size:23px;margin-top:0}h3{font-size:16px}.eyebrow{color:#096f70;font-weight:750;letter-spacing:.08em;font-size:13px}.notice{border-left:4px solid #b77710;background:#fff5df;padding:15px 20px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}.card,section{background:white;border:1px solid #d5e1e8;border-radius:12px;padding:24px}.number{font-size:36px;font-weight:750;color:#096f70}.muted{color:#516778;font-size:14px}section{margin:20px 0}table{width:100%;border-collapse:collapse}th,td{text-align:left;border-bottom:1px solid #dae3e8;padding:12px 8px;vertical-align:top;font-size:14px}th{color:#516778}.split{display:grid;grid-template-columns:1fr 1fr;gap:20px}.tag{display:inline-block;background:#e8f4f3;color:#08615d;padding:3px 10px;border-radius:20px;font-size:13px;font-weight:650}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6f8;padding:16px;font-size:12px;max-height:440px;overflow:auto}summary{cursor:pointer;color:#096f70;font-weight:650;padding:10px 0}footer{margin:28px 0;color:#516778;font-size:13px}@media(max-width:700px){.grid,.split{grid-template-columns:1fr}h1{font-size:29px}section{padding:16px}.table{overflow:auto}}
+</style><main><div class="eyebrow">AFRICAN MARKET OS · LOCAL REVIEW TOOLS</div><h1>Review what can change the decision.</h1><p>Find the next useful review, track what is holding work up, and preserve what changed after a decision check.</p><p class="notice"><strong>Synthetic demonstration.</strong> This runs locally without an API key or paid service. Declared observations are not authenticated reviews. No output grants permission or proves institutional authority.</p>
+<div class="grid"><div class="card"><div class="number">3 of 24</div><strong>Facts referenced by this rule</strong><p class="muted">21 context items cannot change this declared Boolean model. Unknown omitted risks remain.</p></div><div class="card"><div class="number">1</div><strong>Observation in the stop certificate</strong><p class="muted">The declared prohibition makes the model false regardless of the other two outcomes.</p></div><div class="card"><div class="number">2</div><strong>Open holds</strong><p class="muted">One unassigned; one reopened after its source changed. No deadline was invented.</p></div></div>
+<section><h2>1. Minimum decisive review</h2><div class="split"><div><span class="tag">Before review</span><p>Worst-case review cost: <strong>3 units</strong> across three facts. All eight possible combinations were evaluated.</p><p class="muted">Cost units are supplied planning weights, not measured analyst minutes or probabilities.</p></div><div><span class="tag">After one declared observation</span><p>Prohibition = true. Model outcome = <strong>false</strong>. Further reviews cannot change this model outcome under the current bindings.</p><p class="muted">A source, rule, scope, validity or reviewer-binding change requires a new evaluation.</p></div></div><details><summary>Inspect the exact review plan and stop certificate</summary><pre>{
+  &quot;first&quot;: {
+    &quot;contract_version&quot;: &quot;amos.local-review-workbench/1&quot;,
+    &quot;model_sha256&quot;: &quot;a215404d2a9d6b14741c69a9f03bf353369dd493ebd7755f7b48c04d6d5e258e&quot;,
+    &quot;checked_at&quot;: &quot;2026-10-24T09:00:00Z&quot;,
+    &quot;status&quot;: &quot;review_required&quot;,
+    &quot;model_outcome&quot;: null,
+    &quot;next_review&quot;: &quot;condition&quot;,
+    &quot;minimum_worst_case_review_cost&quot;: 3,
+    &quot;worst_case_review_count&quot;: 3,
+    &quot;enumerated_completions&quot;: 8,
+    &quot;ranking&quot;: [
+      {
+        &quot;fact_id&quot;: &quot;condition&quot;,
+        &quot;cost&quot;: 1,
+        &quot;decisive_pairs&quot;: 1,
+        &quot;completion_pairs&quot;: 4,
+        &quot;worst_case_remaining_cost&quot;: 3
+      },
+      {
+        &quot;fact_id&quot;: &quot;permission&quot;,
+        &quot;cost&quot;: 1,
+        &quot;decisive_pairs&quot;: 1,
+        &quot;completion_pairs&quot;: 4,
+        &quot;worst_case_remaining_cost&quot;: 3
+      },
+      {
+        &quot;fact_id&quot;: &quot;prohibition&quot;,
+        &quot;cost&quot;: 1,
+        &quot;decisive_pairs&quot;: 1,
+        &quot;completion_pairs&quot;: 4,
+        &quot;worst_case_remaining_cost&quot;: 3
+      }
+    ],
+    &quot;ranking_is_probability&quot;: false,
+    &quot;stale_observations&quot;: [],
+    &quot;minimum_observation_certificate&quot;: null,
+    &quot;irrelevant_within_current_model&quot;: [
+      &quot;context_0&quot;,
+      &quot;context_1&quot;,
+      &quot;context_2&quot;,
+      &quot;context_3&quot;,
+      &quot;context_4&quot;,
+      &quot;context_5&quot;,
+      &quot;context_6&quot;,
+      &quot;context_7&quot;,
+      &quot;context_8&quot;,
+      &quot;context_9&quot;,
+      &quot;context_10&quot;,
+      &quot;context_11&quot;,
+      &quot;context_12&quot;,
+      &quot;context_13&quot;,
+      &quot;context_14&quot;,
+      &quot;context_15&quot;,
+      &quot;context_16&quot;,
+      &quot;context_17&quot;,
+      &quot;context_18&quot;,
+      &quot;context_19&quot;,
+      &quot;context_20&quot;
+    ],
+    &quot;stop_reviewing_within_model&quot;: false,
+    &quot;unknown_omitted_risks_remain&quot;: true,
+    &quot;human_time_savings_measured&quot;: false,
+    &quot;execution_authorized&quot;: false,
+    &quot;institutional_authority_verified&quot;: false,
+    &quot;scoring_eligible&quot;: false,
+    &quot;classification&quot;: &quot;local declared-model analysis; not an AMOS permission receipt&quot;
+  },
+  &quot;after&quot;: {
+    &quot;contract_version&quot;: &quot;amos.local-review-workbench/1&quot;,
+    &quot;model_sha256&quot;: &quot;a215404d2a9d6b14741c69a9f03bf353369dd493ebd7755f7b48c04d6d5e258e&quot;,
+    &quot;checked_at&quot;: &quot;2026-10-24T09:00:00Z&quot;,
+    &quot;status&quot;: &quot;stable_within_declared_model&quot;,
+    &quot;model_outcome&quot;: false,
+    &quot;next_review&quot;: null,
+    &quot;minimum_worst_case_review_cost&quot;: 0,
+    &quot;worst_case_review_count&quot;: 0,
+    &quot;enumerated_completions&quot;: 4,
+    &quot;ranking&quot;: [
+      {
+        &quot;fact_id&quot;: &quot;condition&quot;,
+        &quot;cost&quot;: 1,
+        &quot;decisive_pairs&quot;: 0,
+        &quot;completion_pairs&quot;: 2,
+        &quot;worst_case_remaining_cost&quot;: 1
+      },
+      {
+        &quot;fact_id&quot;: &quot;permission&quot;,
+        &quot;cost&quot;: 1,
+        &quot;decisive_pairs&quot;: 0,
+        &quot;completion_pairs&quot;: 2,
+        &quot;worst_case_remaining_cost&quot;: 1
+      }
+    ],
+    &quot;ranking_is_probability&quot;: false,
+    &quot;stale_observations&quot;: [],
+    &quot;minimum_observation_certificate&quot;: {
+      &quot;fact_ids&quot;: [
+        &quot;prohibition&quot;
+      ],
+      &quot;cost&quot;: 1
+    },
+    &quot;irrelevant_within_current_model&quot;: [
+      &quot;permission&quot;,
+      &quot;condition&quot;,
+      &quot;context_0&quot;,
+      &quot;context_1&quot;,
+      &quot;context_2&quot;,
+      &quot;context_3&quot;,
+      &quot;context_4&quot;,
+      &quot;context_5&quot;,
+      &quot;context_6&quot;,
+      &quot;context_7&quot;,
+      &quot;context_8&quot;,
+      &quot;context_9&quot;,
+      &quot;context_10&quot;,
+      &quot;context_11&quot;,
+      &quot;context_12&quot;,
+      &quot;context_13&quot;,
+      &quot;context_14&quot;,
+      &quot;context_15&quot;,
+      &quot;context_16&quot;,
+      &quot;context_17&quot;,
+      &quot;context_18&quot;,
+      &quot;context_19&quot;,
+      &quot;context_20&quot;
+    ],
+    &quot;stop_reviewing_within_model&quot;: true,
+    &quot;unknown_omitted_risks_remain&quot;: true,
+    &quot;human_time_savings_measured&quot;: false,
+    &quot;execution_authorized&quot;: false,
+    &quot;institutional_authority_verified&quot;: false,
+    &quot;scoring_eligible&quot;: false,
+    &quot;classification&quot;: &quot;local declared-model analysis; not an AMOS permission receipt&quot;
+  }
+}</pre></details></section>
+<section><h2>2. Preserve useful work during a hold</h2><p>Available work: prepare a local closure checklist. External activity stays gated. Closure records are declarations with evidence references, not independently verified facts.</p><div class="table"><table><thead><tr><th>Blocker</th><th>Minimum closure artifact</th><th>Owner / deadline</th><th>Current hold age</th></tr></thead><tbody><tr><td>Current scoped permission is missing.</td><td>Original permission with exact action, geography, validity and competent issuer.</td><td>Unassigned<br>No current commitment</td><td>105 hours</td></tr><tr><td>Original clause needs examination.</td><td>Hash-bound clause review and accountable resolver reference.</td><td>synthetic:reviewer<br>No current commitment</td><td>33 hours</td></tr></tbody></table></div><details><summary>Inspect hold history, ageing and reopening metrics</summary><pre>{
+  &quot;contract_version&quot;: &quot;amos.local-review-workbench/1&quot;,
+  &quot;checked_at&quot;: &quot;2026-10-24T09:00:00Z&quot;,
+  &quot;journal_head&quot;: &quot;a4e4eb5712469fb4e6e855964c955ced8b924ab771c35014cba235b56ce6bdd4&quot;,
+  &quot;expected_head_checked&quot;: true,
+  &quot;holds&quot;: [
+    {
+      &quot;id&quot;: &quot;permission&quot;,
+      &quot;status&quot;: &quot;open&quot;,
+      &quot;opened_at&quot;: &quot;2026-10-20T00:00:00Z&quot;,
+      &quot;episode_started_at&quot;: &quot;2026-10-20T00:00:00Z&quot;,
+      &quot;blocker&quot;: &quot;Current scoped permission is missing.&quot;,
+      &quot;minimum_closure_artifact&quot;: &quot;Original permission with exact action, geography, validity and competent issuer.&quot;,
+      &quot;owner_ref&quot;: null,
+      &quot;deadline&quot;: null,
+      &quot;deadline_commitment_ref&quot;: null,
+      &quot;total_hold_ms&quot;: 378000000,
+      &quot;closure_refs&quot;: [],
+      &quot;current_hold_age_ms&quot;: 378000000,
+      &quot;overdue&quot;: false,
+      &quot;closure_is_declared_not_verified&quot;: true,
+      &quot;narrowest_available_work&quot;: {
+        &quot;action&quot;: &quot;prepare_local_closure_checklist&quot;,
+        &quot;effect&quot;: &quot;local_draft_only&quot;,
+        &quot;external_action_authorized&quot;: false
+      }
+    },
+    {
+      &quot;id&quot;: &quot;source&quot;,
+      &quot;status&quot;: &quot;open&quot;,
+      &quot;opened_at&quot;: &quot;2026-10-20T01:00:00Z&quot;,
+      &quot;episode_started_at&quot;: &quot;2026-10-23T00:00:00Z&quot;,
+      &quot;blocker&quot;: &quot;Original clause needs examination.&quot;,
+      &quot;minimum_closure_artifact&quot;: &quot;Hash-bound clause review and accountable resolver reference.&quot;,
+      &quot;owner_ref&quot;: &quot;synthetic:reviewer&quot;,
+      &quot;deadline&quot;: null,
+      &quot;deadline_commitment_ref&quot;: null,
+      &quot;total_hold_ms&quot;: 288000000,
+      &quot;closure_refs&quot;: [
+        {
+          &quot;evidence_ref&quot;: &quot;synthetic:review-observation&quot;,
+          &quot;resolver_ref&quot;: &quot;synthetic:reviewer&quot;,
+          &quot;at&quot;: &quot;2026-10-22T00:00:00Z&quot;
+        }
+      ],
+      &quot;reason&quot;: &quot;Original source changed; re-examination required.&quot;,
+      &quot;current_hold_age_ms&quot;: 118800000,
+      &quot;overdue&quot;: false,
+      &quot;closure_is_declared_not_verified&quot;: true,
+      &quot;narrowest_available_work&quot;: {
+        &quot;action&quot;: &quot;prepare_local_closure_checklist&quot;,
+        &quot;effect&quot;: &quot;local_draft_only&quot;,
+        &quot;external_action_authorized&quot;: false
+      }
+    }
+  ],
+  &quot;metrics&quot;: {
+    &quot;total&quot;: 2,
+    &quot;open&quot;: 2,
+    &quot;closed&quot;: 0,
+    &quot;abandoned&quot;: 0,
+    &quot;closure_events&quot;: 1,
+    &quot;reopen_events&quot;: 1,
+    &quot;current_closure_fraction&quot;: 0,
+    &quot;unassigned&quot;: 1,
+    &quot;overdue&quot;: 0
+  },
+  &quot;opportunity_cost&quot;: {
+    &quot;status&quot;: &quot;unestimated&quot;,
+    &quot;amount&quot;: null
+  },
+  &quot;integrity_is_not_authentication&quot;: true,
+  &quot;execution_authorized&quot;: false,
+  &quot;institutional_authority_verified&quot;: false,
+  &quot;scoring_eligible&quot;: false,
+  &quot;classification&quot;: &quot;local declared-model analysis; not an AMOS permission receipt&quot;
+}</pre></details></section>
+<section><h2>3. Preserve the proposal and explain the change</h2><div class="split"><div><h3>Captured proposal</h3><p>Proceed with the proposed external activity.</p></div><div><h3>Declared decision · HOLD</h3><p>Prepare an internal closure checklist; external activity remains gated.</p></div></div><p><strong>Recorded cause:</strong> The declared model has no current permission observation.</p><p class="muted">Exposure moved: unestimated. Opportunity cost: unestimated. Hashes detect a mismatch against retained bytes; they do not prove capture time, identity or the truth of supplied causes.</p><details><summary>Inspect the comparison and its hash bindings</summary><pre>{
+  &quot;kind&quot;: &quot;decision-comparison&quot;,
+  &quot;payload&quot;: {
+    &quot;contract_version&quot;: &quot;amos.local-review-workbench/1&quot;,
+    &quot;request_id&quot;: &quot;synthetic-request-1&quot;,
+    &quot;scope&quot;: &quot;UG internal planning example&quot;,
+    &quot;action&quot;: &quot;Prepare internal draft&quot;,
+    &quot;proposal_sha256&quot;: &quot;fcf71a628ecd0bdd7e037ed829743009a1b2c89ffec3174ffc4cac34f9a479fb&quot;,
+    &quot;decision_sha256&quot;: &quot;9dce4c5b2aea123ce3ee4257d2e5622e93e128ee50bbef4e3b1a085c725a601b&quot;,
+    &quot;before&quot;: {
+      &quot;request_id&quot;: &quot;synthetic-request-1&quot;,
+      &quot;scope&quot;: &quot;UG internal planning example&quot;,
+      &quot;action&quot;: &quot;Prepare internal draft&quot;,
+      &quot;model_ref&quot;: &quot;synthetic-model/1&quot;,
+      &quot;proposal&quot;: &quot;Proceed with the proposed external activity.&quot;,
+      &quot;captured_at&quot;: &quot;2026-10-24T08:00:00Z&quot;
+    },
+    &quot;after&quot;: {
+      &quot;request_id&quot;: &quot;synthetic-request-1&quot;,
+      &quot;scope&quot;: &quot;UG internal planning example&quot;,
+      &quot;action&quot;: &quot;Prepare internal draft&quot;,
+      &quot;decided_at&quot;: &quot;2026-10-24T08:01:00Z&quot;,
+      &quot;disposition&quot;: &quot;hold&quot;,
+      &quot;final_proposal&quot;: &quot;Prepare an internal closure checklist; external activity remains gated.&quot;,
+      &quot;receipt_ref&quot;: &quot;synthetic:decision-receipt-1&quot;,
+      &quot;causes&quot;: [
+        {
+          &quot;rule_id&quot;: &quot;synthetic-permission-required&quot;,
+          &quot;state_ref&quot;: &quot;synthetic:missing-permission&quot;,
+          &quot;explanation&quot;: &quot;The declared model has no current permission observation.&quot;
+        }
+      ]
+    },
+    &quot;proposal_changed&quot;: true,
+    &quot;external_effect_gated&quot;: true,
+    &quot;exposure_moved&quot;: {
+      &quot;status&quot;: &quot;unestimated&quot;,
+      &quot;amount&quot;: null
+    },
+    &quot;opportunity_cost&quot;: {
+      &quot;status&quot;: &quot;unestimated&quot;,
+      &quot;amount&quot;: null
+    },
+    &quot;capture_chronology&quot;: &quot;caller_declared; hash cannot prove capture occurred before the decision&quot;,
+    &quot;causes&quot;: &quot;supplied decision references; not independently verified by this tool&quot;,
+    &quot;integrity_is_not_authentication&quot;: true,
+    &quot;execution_authorized&quot;: false,
+    &quot;institutional_authority_verified&quot;: false,
+    &quot;scoring_eligible&quot;: false,
+    &quot;classification&quot;: &quot;local declared-model analysis; not an AMOS permission receipt&quot;
+  },
+  &quot;sha256&quot;: &quot;eec493a3f898c92cb76adbd6a9551174c03f56e4ce148dc2e54e571488aec8eb&quot;
+}</pre></details></section><footer>Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.<br>Local planning tools only. The hosted AMOS scoring and permission services are separate. No network requests, trackers or external assets.</footer></main></html>
