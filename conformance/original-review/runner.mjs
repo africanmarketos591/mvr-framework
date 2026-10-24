@@ -1,0 +1,28 @@
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+export async function runOriginalReviewAcceptance(call){
+const owner='owner',reviewer='reviewer',invoke=(body,who=owner)=>call(body,who);
+let last=await invoke({action:'create',operation_id:crypto.randomUUID(),preflight_context:{subject:{entity_name:'Proprietary Mbarara test'},market_scope:{country:'UG'},decision_question:'Internal review of proposed operation in Mbarara'},reference_secret:'a'.repeat(64),share_redacted_with_reference_holders:true,redacted_no_personal_data:true});
+assert.equal(last.status,'ok');let revision=0,checks=0;
+const body=(action,fields={})=>({action,case_id:last.case_id,expected_revision:last.revision,expected_tools_revision:revision,operation_id:crypto.randomUUID(),...fields});
+async function mutate(action,fields,who=owner){const r=await invoke(body(action,fields),who);assert.equal(r.status,'ok',JSON.stringify(r));revision=r.review_tools.revision;last=r;checks++;return r.review_tools;}
+const original='Mbarara: the operator must not launch without final approval.\r\nEducation appraisal may proceed internally.\n😀';
+const sha=createHash('sha256').update(original).digest('hex');
+await mutate('register_review_document',{original_document:{name:'proprietary-case.txt',text:original,provenance:'proprietary_generated_test_data'},redacted_no_personal_data:true});
+assert.equal(last.review_tools.documents[0].sha256,sha);assert.equal(last.review_tools.documents[0].text,original);
+const end=original.indexOf('\r'),binding={document_sha256:sha,locator:'utf16:0:'+end,claim:'Launch is permitted',relationship:'direct_support',subject:'Proprietary Mbarara test',action:'Launch',geography:'UG-Mbarara',valid_from:new Date(Date.now()-1000).toISOString(),valid_until:new Date(Date.now()+600000).toISOString(),reviewer_standing_ref:'test-role-not-institutional',model_version:'proprietary/1',extractor_version:'manual/1'};
+const model={model_id:'passage',version:'1',scope:last.review_progress.context_sha256,facts:[{id:'passage',label:'Launch permitted',cost:1,binding}],rule:{fact:'passage'}};
+await mutate('set_review_model',{review_model:model,redacted_no_personal_data:true});
+const review={document_sha256:sha,fact_id:'passage',start:0,end,clause_text:original.slice(0,end),disposition:'approve',note:'Proprietary generated adverse example'};
+for(const change of [{start:1},{clause_text:'Permission granted.'},{document_sha256:'b'.repeat(64)},{reviewer_account_ref:'forged'},{end:-1},{start:0.5}]){const r=await invoke(body('review_document_clause',{clause_review:{...review,...change}}),reviewer);assert.notEqual(r.status,'ok',JSON.stringify(change));checks++;}
+assert.notEqual((await invoke(body('review_document_clause',{clause_review:review}))).status,'ok');checks++;
+const accepted=await mutate('review_document_clause',{clause_review:review},reviewer);const receipt=accepted.clause_reviews[0];assert.equal(receipt.payload.warning,'DECLARED_RELATIONSHIP_TEXT_CONFLICT');assert.equal(receipt.payload.requires_further_review,true);assert.equal(receipt.payload.reviewer_account_ref,accepted.history.at(-1).account_ref);assert(receipt.payload.reviewer_roles.includes('attestor'));assert.notEqual(receipt.payload.reviewer_account_ref,accepted.documents[0].account_ref);assert.equal(receipt.current,true);assert.equal(accepted.review_plan.stop_reviewing_within_model,false);assert.equal(accepted.review_plan.status,'original_passage_review_unresolved');assert.equal(accepted.usable,false);assert.equal(accepted.review_observations.length,0);assert.equal(accepted.execution_authorized,false);
+for(const dimension of Object.keys(binding)){const changed=structuredClone(model);changed.facts[0].binding[dimension]=dimension==='document_sha256'?'c'.repeat(64):dimension==='valid_from'?new Date(Date.now()-5000).toISOString():dimension==='valid_until'?new Date(Date.now()+500000).toISOString():binding[dimension]+' changed';await mutate('set_review_model',{review_model:changed,redacted_no_personal_data:true});assert.equal(last.review_tools.clause_reviews[0].current,false,dimension);}
+await mutate('set_review_model',{review_model:model,redacted_no_personal_data:true});assert.equal(last.review_tools.clause_reviews[0].current,false,'Restoring old values must not revive old review');
+// Equal revisions compete; retrying a committed operation cannot duplicate original content.
+const race=body('register_review_document',{original_document:{name:'race.txt',text:'Proprietary race test',provenance:'proprietary_generated_test_data'},redacted_no_personal_data:true});
+const competitor={...race,operation_id:crypto.randomUUID()};const pair=await Promise.all([invoke(race),invoke(competitor)]);assert.equal(pair.filter(x=>x.status==='ok').length,1);checks++;
+const retry=await invoke(pair[0].status==='ok'?race:competitor);assert.equal(retry.status,'ok');assert.equal(retry.review_tools.documents.length,2);checks++;
+const started=performance.now();const withdrawn=await invoke({action:'withdraw',reason:'Completed proprietary test',case_id:last.case_id,expected_revision:last.revision,operation_id:crypto.randomUUID()});assert.equal(withdrawn.status,'ok');const read=await invoke({action:'get_review_tools',case_id:last.case_id});assert.equal(read.review_tools.clause_reviews[0].current,false);assert.equal(read.review_tools.usable,false);checks++;
+return {passed:true,checks,case_id:last.case_id,dimensions_invalidated:Object.keys(binding),revocation_read_ms:Math.round(performance.now()-started),classification:'proprietary generated test data; reconstructed scenarios, not developer payload reproduction',original_bytes_preserved:true,restrictions_force_further_review:true};
+}

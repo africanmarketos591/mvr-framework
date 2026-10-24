@@ -1,0 +1,54 @@
+{
+  "source_head": "d5cfaa6079266f63793b0b69c79b33619a4d5fb6",
+  "observed_at": "2026-10-24T21:01:27.352Z",
+  "original_rest_checks": 26,
+  "original_mcp_checks": 26,
+  "original_evaluation_checks": 26,
+  "existing_hosted_checks_per_surface": 24,
+  "worker_regression_passed": 156,
+  "worker_regression_failed": 0,
+  "authority_mutants_killed": 14,
+  "lifecycle_programs_passed": 149,
+  "encoding_regression": "Initial local run detected invalid UTF-8 page text; fixed and calibration regression plus remaining lifecycle programs reran successfully. Final release CI executes the entire suite.",
+  "register_failure_tests": {
+    "passed": true,
+    "checks": 16,
+    "classification": "proprietary generated test data",
+    "fixed_host": true,
+    "no_authority_inference": true,
+    "timeout_measured_ms": 46
+  },
+  "historical_source_cases": 1,
+  "positive_education_cases": 1,
+  "real_source_expiry_denied": true,
+  "unauthenticated_denied": true,
+  "cross_workspace_denied": true,
+  "durable_runtime_checks": 16,
+  "failure_observability_checks": 16,
+  "npm_vulnerabilities": 0,
+  "classification": "Proprietary generated test data, explicit public historical excerpt, operator-observed local engineering results; not independent market validation",
+  "register_workerd": {
+    "passed": true,
+    "runtime": "workerd",
+    "positive_fixed_host_retrieval": true,
+    "redirect_refused_without_following": true,
+    "outage_unavailable": true,
+    "external_network": "disabled; deterministic service fixture",
+    "classification": "proprietary generated test data"
+  },
+  "resolved_prepublication_failures": [
+    "Invalid UTF-8 page source detected by calibration integrity check; repaired before successful release CI.",
+    "Initial hosted registry lookup safely returned unavailable because workerd rejects redirect:error. Replaced with manual handling that refuses redirects, added actual-runtime tests, and advanced the release revision."
+  ],
+  "local_run_scope": "Incremental local regression results; final exact source and full suite are bound by deployment CI.",
+  "browser_selection_helpers": {
+    "passed": true,
+    "cases": 4,
+    "windows_crlf": true,
+    "bare_cr": true,
+    "unicode_surrogate_pair": true,
+    "utf8_bom": true,
+    "stale_display_rejected": true,
+    "source": "Actual shipped hosted browser helpers"
+  }
+}
