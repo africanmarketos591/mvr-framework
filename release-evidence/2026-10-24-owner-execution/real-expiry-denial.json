@@ -1,0 +1,17 @@
+{
+  "type": "amos.real-expired-approval-denial/1",
+  "request_id": "9bc620d5-4f47-418e-b4fc-928a3c6db27a",
+  "tested_at": "2026-10-24T08:22:55.748Z",
+  "approval_expires_at": "2026-10-24T07:56:50.879Z",
+  "approval_sha256": "c061351041cd4dafa2a4f57c41e80a316f6e6453abef21d07d4f09007aab0210",
+  "original_signature_verified_with_current_provider_key": true,
+  "non_temporal_admission_fields_valid": true,
+  "clock": "actual wall clock; no override",
+  "approval_bytes_modified": false,
+  "fresh_store_excludes_replay_or_revocation_as_denial_cause": true,
+  "expired_approval_admission_rejected": true,
+  "authorization_record_created": false,
+  "external_effect_attempted": false,
+  "passed": true,
+  "limit": "Tests real expired signed approval at local admission; no expired request is sent to Google Drive."
+}

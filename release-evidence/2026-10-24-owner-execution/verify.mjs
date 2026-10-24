@@ -16,13 +16,14 @@ export async function verifyReceipt(receipt,jwk){
  }catch{return false;}
 }
 const [manifest,receipt,summary,snapshot]=await Promise.all(['manifest.json','execution-receipt.json','evidence-summary.json','public-key-snapshot.json'].map(read));
-const expected=['engineering-acceptance.json','evidence-summary.json','execution-receipt.json','prior-deployed-boundary-acceptance.json','public-key-snapshot.json'];assert.deepEqual(Object.keys(manifest.files).sort(),expected);
+const expected=['engineering-acceptance.json','evidence-summary.json','execution-receipt.json','prior-deployed-boundary-acceptance.json','public-key-snapshot.json','real-expiry-denial.json'];assert.deepEqual(Object.keys(manifest.files).sort(),expected);
 for(const name of expected){const bytes=await readFile(new URL(name,import.meta.url));assert.equal(hash(bytes),manifest.files[name],name+' digest');assert(!/(ya29\.|Bearer |-----BEGIN|"(?:access_token|refresh_token|client_secret|id_token|owner_subject|credential_id|assertion|private_key)"\s*:)/.test(bytes.toString()),'Credential-shaped data');}
 assert.equal(snapshot.service_account,serviceAccount);assert.equal(snapshot.provider_discovery_url,provider);assert.equal(snapshot.key_id,receipt.key_id);
 assert(await verifyReceipt(receipt,snapshot.public_key_jwk),'Archived public-key signature check failed');
 assert.equal(hash(summary.artifact_content),receipt.document.artifact_sha256);
 assert.equal(summary.request_id,receipt.document.request_id);
 assert.equal(summary.private_approval_sha256,receipt.document.approval_sha256);
+const expiry=await read('real-expiry-denial.json');assert.equal(expiry.approval_sha256,receipt.document.approval_sha256);assert.equal(expiry.passed,true);assert.equal(expiry.approval_bytes_modified,false);assert.equal(expiry.external_effect_attempted,false);assert(Date.parse(expiry.tested_at)>Date.parse(expiry.approval_expires_at));
 for(const field of ['production_authority_enabled','independent_institutional_standing_verified','two_person_authorization','adversarial_process_isolation','remote_atomic_commit_protocol','live_expiry_test'])assert.equal(summary.boundaries[field],false,field+' unsupported claim');
 let negative=0;
 for(const change of [r=>r.document.artifact_sha256='0'.repeat(64),r=>r.document.denials.replay=false,r=>r.document.request_id+='altered',r=>r.algorithm='none',r=>r.key_id=r.key_id.replace(serviceAccount,'attacker@example.com'),r=>r.signature_b64='AAAA']){const bad=structuredClone(receipt);change(bad);assert.equal(await verifyReceipt(bad,snapshot.public_key_jwk),false);negative++;}

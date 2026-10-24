@@ -16,6 +16,8 @@ The approval service retained the signing credential and approval database; exec
 
 The actual folder and file were created using reserved IDs, read back by separate processes and checked for exact owner, parent, names, request/manifest references and content hash. The signed receipt binds the private approval hash and readback evidence. Local revocation and replay denial passed. The original provider-token propagation observation was missed and is not rewritten as success: a separate no-write grant performed the measured before/revoke/HTTP-401 check.
 
+The unchanged real signed approval was also tested after its actual expiry against an empty admission store. Its signature and non-temporal fields still verified, but admission was denied and no record was created. This isolates expiry from replay/revocation; no expired provider write was attempted.
+
 An online SQLite backup of both actual lab databases was restored to isolated copies. Integrity, exact records, consumed-approval rejection and revoked-dispatch rejection passed. No live database was moved. This closes a local recovery drill, not offsite disaster recovery or production reliability validation.
 
 ## Production isolation prerequisites and reproduction contract
