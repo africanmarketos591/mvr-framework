@@ -14,7 +14,7 @@ This surface routes evidence requirements and abstention checks. It does not ret
 
 For keyless tool-level evaluation use the five-tool public MCP endpoint at
 `https://africanmarketos.com/mcp/preflight`. Licensed tenants may use either
-authenticated REST or the five-tool Streamable HTTP MCP runtime at
+authenticated REST or the licensed Streamable HTTP MCP runtime at
 `https://africanmarketos.com/mcp/runtime`. The A2A endpoint itself remains a
 public, stateless, non-verdict preflight and does not accept a licensed key in
 message parts.

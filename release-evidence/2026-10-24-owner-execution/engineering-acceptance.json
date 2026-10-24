@@ -1,0 +1,127 @@
+{
+  "classification": "local implementation tests; no independent institution or live provider effects",
+  "started_at": "2026-10-24T08:05:11.212Z",
+  "results": [
+    {
+      "test": "scripts/test-declared-text-conflict.mjs",
+      "source_sha256": "c12b7848cda72bb5ab942315a6a836dd3efe5ed51b2c3e32ee88ea1dc9987878",
+      "passed": true,
+      "elapsed_ms": 3512
+    },
+    {
+      "test": "scripts/test-source-state-review-binding.mjs",
+      "source_sha256": "08a78dcb8d19cebcf89aa9b7f7ed4210a06f32c48d45b9a1d831d8d57a879b62",
+      "passed": true,
+      "elapsed_ms": 685
+    },
+    {
+      "test": "scripts/test-positive-protected-mcp.mjs",
+      "source_sha256": "2204a5ebbb44779a17508a81574027f5e7428824ea41b6351548830847c558d4",
+      "passed": true,
+      "elapsed_ms": 5143
+    },
+    {
+      "test": "scripts/test-authority-response-contracts.mjs",
+      "source_sha256": "027450366e3b58fba41fe47cff860538e557c1a81bd12b86d84f59f2f272e80f",
+      "passed": true,
+      "elapsed_ms": 2723
+    },
+    {
+      "test": "scripts/test-conditional-idempotency-contract.mjs",
+      "source_sha256": "92bb41455bb2c62b84b93ad060f9a63dcad2b0cbd36264eb0d0a7f20976c7172",
+      "passed": true,
+      "elapsed_ms": 1859
+    },
+    {
+      "test": "scripts/test-action-ontology.mjs",
+      "source_sha256": "b074328f362f1ead3c773888afd4cfd94278562d8c7b22561bb36e313d33a2ff",
+      "passed": true,
+      "elapsed_ms": 185
+    },
+    {
+      "test": "scripts/test-condition-predicates.mjs",
+      "source_sha256": "c4ebba4fad9a11f2664196a13010f6b939109a35fa98877d6a3fce9308f36f11",
+      "passed": true,
+      "elapsed_ms": 166
+    },
+    {
+      "test": "scripts/test-reviewed-issuer-state.mjs",
+      "source_sha256": "702327f9561a97ea1ffc4ae1e29750cb989f63f022c7388851f57bc22d03df7c",
+      "passed": true,
+      "elapsed_ms": 3247
+    },
+    {
+      "test": "scripts/test-boundary-route-inventory.mjs",
+      "source_sha256": "1c245686c13fa52bdbd6cb05f5039ec4803f36cd077016b7d01dc3a4c391896a",
+      "passed": true,
+      "elapsed_ms": 1269
+    },
+    {
+      "test": "scripts/test-owner-approval.mjs",
+      "source_sha256": "b61a45054d5a247d99f91865492a8071df000961192e65b518e1e7599d085dba",
+      "passed": true,
+      "elapsed_ms": 357
+    },
+    {
+      "test": "scripts/test-iam-signing.mjs",
+      "source_sha256": "20e428061839498cc0066a9835fd09dc043bd0c6f5bc882a391d823436dcccca",
+      "passed": true,
+      "elapsed_ms": 308
+    },
+    {
+      "test": "scripts/test-iam-receipts.mjs",
+      "source_sha256": "1c8e0ab15ba080a5ff9d43826713ce1658d82827c6456c309c6905baed93e2e3",
+      "passed": true,
+      "elapsed_ms": 379
+    },
+    {
+      "test": "scripts/test-owner-lab-oauth.mjs",
+      "source_sha256": "cf23fc6cd9623f23118f108f190e5900a84c5af0c2e192e935b3c338872996e1",
+      "passed": true,
+      "elapsed_ms": 320
+    },
+    {
+      "test": "scripts/test-owner-lab-loopback.mjs",
+      "source_sha256": "c7f59ff79670dd232e776a77dcb472aa1945a448def9ea084d8b631f933e294e",
+      "passed": true,
+      "elapsed_ms": 425
+    },
+    {
+      "test": "scripts/test-owner-lab-store.mjs",
+      "source_sha256": "f571916ad49a8fcde27f0c65e9665271c64a2afe1a675d359c7eb5a6eec7298c",
+      "passed": true,
+      "elapsed_ms": 167
+    },
+    {
+      "test": "scripts/test-owner-lab-fence.mjs",
+      "source_sha256": "194fa86bf83a4a583c73b952bf5ab1f6685bf73e53cdcbb33ceaaf5090bd5efc",
+      "passed": true,
+      "elapsed_ms": 207,
+      "reverified_at": "2026-10-24T08:09:43.278Z",
+      "additional_controls": [
+        "different request IDs competing for one resource",
+        "uncertain resource reservation survives restart"
+      ]
+    },
+    {
+      "test": "scripts/test-owner-lab-start-page.mjs",
+      "source_sha256": "70fb25419d8dae3cb0575d4a3010c3b44922c4fa3df346c1be7f94153593b37c",
+      "passed": true,
+      "elapsed_ms": 379
+    },
+    {
+      "test": "scripts/owner-lab/test-step-up.mjs",
+      "source_sha256": "96aa764c49af18a1200d918e048a2f01b52558f47b14f6974d4c43221af26818",
+      "passed": true,
+      "elapsed_ms": 1267
+    },
+    {
+      "test": "scripts/owner-lab/test-drive-operation.mjs",
+      "source_sha256": "5f782aa42bdc9484e9b6e022a4d215b69d470ab85c98677d37fb86d106775f24",
+      "passed": true,
+      "elapsed_ms": 204
+    }
+  ],
+  "completed_at": "2026-10-24T08:05:34.055Z",
+  "passed": true
+}

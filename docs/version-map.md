@@ -31,7 +31,7 @@ Every integration should preserve these fields separately:
 | `core_api_version` | `v6.32.0` | Protected Worker/API runtime. |
 | `mcp_protocol_versions` | `2026-07-28`; `2025-11-25`; `2025-06-18` | Supported Streamable HTTP MCP contracts: stateless modern requests plus both initialize-based compatibility versions. |
 | `mcp_contract_version` | `mvr-mcp@2026-08-12.1` | Public and licensed MCP schemas, discovery metadata, and transport contract. |
-| `tool_profile_version` | `consumer-7+preflight-5+guided-1+licensed-runtime-6@2026-10-23.1` | MCP family: seven-tool compatibility, five-tool keyless preflight, and five-tool licensed runtime. The registry still publishes only the keyless preflight. |
+| `tool_profile_version` | `consumer-7+preflight-5+guided-1+licensed-runtime-6@2026-10-23.1` | MCP family: seven-tool compatibility, five-tool keyless preflight, and six-tool licensed runtime (five analysis tools plus governed authority operations). The registry still publishes only the keyless preflight. |
 | `sdk_version` | `typescript@6.32.4;python@6.32.4` | Current published SDK lines, kept distinct by language. |
 | `policy_version` | `mvr-agent-preflight-policy@2026-08-08.2` | Host-policy middleware, selection boundary, and distinct API-versus-human-service routing. |
 | `calibration_version` | `v6.32.0-framework-provisional` | Public default; licensed calibration is resolved by active profile and manifests. |

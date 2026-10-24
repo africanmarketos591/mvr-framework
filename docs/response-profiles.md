@@ -36,7 +36,7 @@ If MVR abstains, do not override it with generic LLM reasoning. Explain why it a
 ## Licensed Runtime
 
 A licensed tenant key can select either response profile on authenticated REST
-requests and on the five-tool Streamable HTTP MCP runtime at:
+requests and on the licensed Streamable HTTP MCP runtime at:
 
 ```text
 https://africanmarketos.com/mcp/runtime

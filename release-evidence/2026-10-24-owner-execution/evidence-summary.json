@@ -1,0 +1,79 @@
+{
+  "schema": "amos.public-owner-execution-evidence/1",
+  "classification": "owner-operated live engineering evidence; not independent validation",
+  "attribution": "Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.",
+  "request_id": "9bc620d5-4f47-418e-b4fc-928a3c6db27a",
+  "executed_at": "2026-10-24T07:53:01.936Z",
+  "accountable_policy_custodian": "Farouk Mark Mukiibi, declared AMOS founder/operator",
+  "technical_key_custody": "Google IAM managed signing infrastructure; owner account controls IAM policy; no separately appointed independent key administrator",
+  "approval_profile": "google-signed-account-plus-webauthn-uv/1",
+  "public_receipt": "execution-receipt.json",
+  "private_approval_sha256": "c061351041cd4dafa2a4f57c41e80a316f6e6453abef21d07d4f09007aab0210",
+  "private_manifest_sha256": "feef9ff41a1f16251a70a54944d997d4c867f400171dc8c8c48b66b57edd9284",
+  "artifact_content": "AMOS owner-controlled execution test. No personal, financial, client or confidential information.\n",
+  "operator_evidence_audit": {
+    "passed": true,
+    "checks": {
+      "passkey_signature": true,
+      "one_use_approval": true,
+      "exact_intent": true,
+      "exact_manifest": true,
+      "managed_approval_signature": true,
+      "managed_execution_signature": true,
+      "approval_bound_to_passkey": true,
+      "receipt_bound_to_approval": true,
+      "receipt_bound_to_operations": true,
+      "execution_recorded": true,
+      "durable_revocation": true,
+      "reported_denials": true,
+      "project_oauth_revocation_accepted": true,
+      "provider_revocation_observed": true,
+      "exact_readback": true
+    },
+    "disclosure": "Passkey assertion, owner account subject, full approval, database contents and credential configurations are withheld. Public verification authenticates the published execution receipt, not all private approval evidence."
+  },
+  "revocation": {
+    "gateway": {
+      "elapsed_ms": 1,
+      "in_flight_reconciliation_required": false,
+      "revocation_effective": true
+    },
+    "provider": {
+      "http_status": 401,
+      "observed_denial_after_ms": 1022,
+      "revocation_requested_at": "2026-10-24T07:56:15.022Z",
+      "completed_at": "2026-10-24T07:56:16.044Z",
+      "separate_read_only_grant": true,
+      "sample_count": 1,
+      "not_a_production_slo": true,
+      "original_execution_token_propagation_observed": false
+    }
+  },
+  "recovery": {
+    "passed": true,
+    "started_at": "2026-10-24T08:02:05.010Z",
+    "completed_at": "2026-10-24T08:02:05.073Z",
+    "checks": {
+      "consumed_approval_still_unusable": true,
+      "revoked_dispatch_still_denied": true,
+      "receipt_binding_preserved": true,
+      "no_live_provider_effect": true
+    },
+    "live_databases_moved": false,
+    "provider_operations": 0,
+    "scope": "Actual local owner-lab records restored to isolated copies; not offsite disaster recovery"
+  },
+  "boundaries": {
+    "billing_enabled": false,
+    "production_authority_enabled": false,
+    "independent_institutional_standing_verified": false,
+    "two_person_authorization": false,
+    "adversarial_process_isolation": false,
+    "provider_folder_only_oauth_scope": false,
+    "remote_atomic_commit_protocol": false,
+    "independent_human_validation": false,
+    "live_expiry_test": false,
+    "expiry_test_classification": "local fixtures",
+    "public_preflight_read_only": true
+  }
+}
