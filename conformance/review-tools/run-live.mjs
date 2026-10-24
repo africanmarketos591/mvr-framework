@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import {writeFileSync} from 'node:fs';
+import {runHostedReviewToolsAcceptance} from './runner.mjs';
+const revision='2026-10-24.hosted-review.1',origin='https://africanmarketos.com';
+assert(process.argv.includes('--confirm-isolated-evaluation'),'This creates bounded generated-data review records. Supply --confirm-isolated-evaluation to run.');
+const oi=process.argv.indexOf('--output'),output=oi<0?null:process.argv[oi+1];
+let calls=0,session=null,closed=false;
+async function post(body){assert(++calls<=55,'Local request budget exceeded');const response=await fetch(origin+'/v1/review-sandbox',{method:'POST',redirect:'error',signal:AbortSignal.timeout(30000),headers:{'Content-Type':'application/json','X-MVR-Expected-Deployment-Revision':revision},body:JSON.stringify(body)});return{status:response.status,body:await response.json()};}
+const v=await(await fetch(origin+'/.well-known/mvr-version.json',{redirect:'error',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache'}})).json();assert.equal(v.deployment_revision,revision,'Expected hosted release is not deployed');
+const page=await fetch(origin+'/review-workbench/',{redirect:'error',signal:AbortSignal.timeout(20000)});assert.equal(page.status,200);assert(page.headers.get('content-type').startsWith('text/html'));assert.equal(page.headers.get('cache-control'),'no-store');assert(page.headers.get('content-security-policy').includes("connect-src 'self'"));assert(!(await page.text()).includes('amos-webmcp.js'));
+const contract=await(await fetch(origin+'/v1/review-cases/contract',{redirect:'error',signal:AbortSignal.timeout(20000)})).json();assert.equal(contract.deployment_revision,revision);for(const action of ['get_review_tools','set_review_model','record_review_observation','record_hold_event','capture_review_proposal','compare_review_decision'])assert(contract.actions.includes(action),action);
+const anonymous=await fetch(origin+'/v1/review-cases',{method:'POST',redirect:'error',signal:AbortSignal.timeout(20000),headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'get_review_tools',case_id:'RC-'+'a'.repeat(64)})});assert.equal(anonymous.status,401);
+try{
+  const issued=await post({action:'issue',synthetic_only:true,acknowledge_no_identity_verification:true});assert.equal(issued.status,201,'Evaluation issuance failed');assert.equal(issued.body.status,'issued');session=issued.body;
+  const result=await runHostedReviewToolsAcceptance(async(request,role='owner')=>(await post({action:'call',session_id:session.session_id,session_token:session.credentials[role==='reviewer'?'reviewer_a':role==='other'?'reviewer_b':'creator'].session_token,target:'case',request})).body);
+  const revoked=await post({action:'close',session_id:session.session_id,session_token:session.credentials.creator.session_token});assert.equal(revoked.body.status,'closed');closed=true;
+  const denied=await post({action:'call',session_id:session.session_id,session_token:session.credentials.creator.session_token,target:'case',request:{action:'get_review_tools',case_id:result.case_id}});assert.equal(denied.status,401);assert.equal(denied.body.code,'REVIEW_SANDBOX_SESSION_REVOKED');
+  const report={...result,deployment_revision:revision,observed_at:new Date().toISOString(),transport:'live hosted isolated review evaluation',evaluation_requests:calls,page_html_and_policy_verified:true,published_actions_verified:6,anonymous_production_access_denied:anonymous.status,session_closed:true,post_close_denial:{http_status:denied.status,code:denied.body.code},production_account_identity_verified:false,credentials_published:false};
+  if(output)writeFileSync(output,JSON.stringify(report,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(report));
+}finally{if(session&&!closed){const r=await post({action:'close',session_id:session.session_id,session_token:session.credentials.creator.session_token});assert.equal(r.body.status,'closed','Evaluation cleanup failed');}session=null;}

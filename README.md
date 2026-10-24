@@ -18,6 +18,8 @@
 
 **Free local review tools:** [Plan decisive reviews, track holds and preserve before/after decision reports](examples/decision-review-workbench/README.md). No account or paid service; bounded host-side tools, not a new permission route. [Reproduce the test evidence](release-evidence/2026-10-24-review-workbench/README.md).
 
+**Hosted review workflow:** [Open AMOS Review Workbench](https://africanmarketos.com/review-workbench/) to use those tools with persisted review cases, account-linked observations, hold history and server-recorded proposal comparisons. A free isolated evaluation uses proprietary generated test data. [Integration guide](docs/hosted-review-workbench.md) · [Deployment and reproducible evidence](release-evidence/2026-10-24-hosted-review/README.md). Planning output does not grant external permission.
+
 **Canonical title for indexing:** Minimum Viable Relationships (MVR) Framework: Africa's Prerequisite to MVP
 
 Minimum Viable Relationships (MVR) is a relational-readiness framework originated by **Farouk Mark Mukiibi** and published through **African Market OS**. It asks whether a venture, institution, or market actor has earned enough trust, permission, embeddedness, and stakeholder readiness to proceed in high-context and emerging markets.
