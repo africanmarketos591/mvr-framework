@@ -2,7 +2,7 @@
 
 Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.
 
-Release target: `2026-10-24.hosted-review.2`. The hosted workbench uses the existing authenticated review-case route and isolated evaluation service. All new infrastructure requirements are zero; no paid provider or billing activation is introduced.
+Release target: `2026-10-24.hosted-review.3`. The hosted workbench uses the existing authenticated review-case route and isolated evaluation service. All new infrastructure requirements are zero; no paid provider or billing activation is introduced.
 
 ## Six workstreams and acceptance
 
