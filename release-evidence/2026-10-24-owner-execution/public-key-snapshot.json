@@ -1,0 +1,22 @@
+{
+  "schema": "amos.owner-lab-public-key-snapshot/1",
+  "purpose": "Historical execution receipt verification only; never execution authorization",
+  "snapshot_at": "2026-10-24T07:53:03.394Z",
+  "service_account": "execution-receipt@amos-owner-lab-20261024.iam.gserviceaccount.com",
+  "provider_discovery_url": "https://www.googleapis.com/service_accounts/v1/metadata/jwk/execution-receipt@amos-owner-lab-20261024.iam.gserviceaccount.com",
+  "key_id": "projects/-/serviceAccounts/execution-receipt@amos-owner-lab-20261024.iam.gserviceaccount.com/keys/9dee2f738157782bd58010843adda886a300a0c0",
+  "public_key_jwk": {
+    "key_ops": [
+      "verify"
+    ],
+    "ext": true,
+    "alg": "RS256",
+    "kty": "RSA",
+    "n": "ypxdGtIuU3qpOdJNe_dUval_kQn520YEI9m2g3D1LrNbI94UzwPjdY4c7GkofaiqeNMaCo5AGe3uBYE-FHsPVQxGHspcE8hmn_EJcsu-BWVCtXpwtDI_ZrYKLTwQ3D0qvN_y_nfm9dn0dzuv094kcELi2H8CQ6yy17WoA-wygapmJiHA0Ps1IZFLjV4idqWnOjm1xBuMdmX4sDn2syz5gP_imzPS2D7VclGXB0kb_NbN1xHp60W8jo_1SjLNfl2g0akveRIifmWNAP31UK7BPgFNlng2xMUl0OHWf1XtFO-CQwkHAFPPUHiu3hfFa-NO33wx7vZaG1CI6ezYBoRiAw",
+    "e": "AQAB"
+  },
+  "status_at_capture": "provider-published",
+  "current_status": "must_query_provider; snapshot is not a current revocation registry",
+  "signing_grant_not_after": "2026-10-24T15:00:00Z",
+  "owner_lab_only": true
+}

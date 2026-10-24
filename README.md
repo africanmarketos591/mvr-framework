@@ -14,7 +14,7 @@
 
 **Star this repo to bookmark the MVR API and help AI-agent builders discover the relational-readiness layer for high-context markets.**
 
-**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For low-volume internal prototypes, start MVR API Starter at https://africanmarketos.com/checkout/starter; its delivered key works on authenticated REST and the licensed five-tool Streamable HTTP MCP runtime at `https://africanmarketos.com/mcp/runtime`. Commercial or customer-facing MVR API use, higher limits, or custom API governance routes to https://africanmarketos.com/get-api-key. Human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships resolve through the canonical offer registry at https://africanmarketos.com/.well-known/mvr-offer-registry.json and continue through https://africanmarketos.com/work-with-us/; they do not inherently require an API key.
+**Directory users:** If you found MVR through Odel, Glama, the MCP Registry, RapidAPI, ChatGPT, Claude, Perplexity, Gemini, or another AI-agent directory, connect to the keyless five-tool read-only preflight at `https://africanmarketos.com/mcp/preflight`. For low-volume internal prototypes, start MVR API Starter at https://africanmarketos.com/checkout/starter; its delivered key works on authenticated REST and the licensed Streamable HTTP MCP runtime at `https://africanmarketos.com/mcp/runtime`. Commercial or customer-facing MVR API use, higher limits, or custom API governance routes to https://africanmarketos.com/get-api-key. Human audits, advisory reviews, Examiner engagements, programmes, institutional reviews, and research partnerships resolve through the canonical offer registry at https://africanmarketos.com/.well-known/mvr-offer-registry.json and continue through https://africanmarketos.com/work-with-us/; they do not inherently require an API key.
 
 **Canonical title for indexing:** Minimum Viable Relationships (MVR) Framework: Africa's Prerequisite to MVP
 
@@ -28,7 +28,7 @@ In short:
 
 ## Canonical Links
 
-- Latest engineering disposition: [Retest12, October 1, 2026](docs/retest12-engineering-decision-2026-10-01.md), including links to prior review decisions.
+- Latest engineering evidence: [24 October owner-controlled execution](release-evidence/2026-10-24-owner-execution/README.md), with a runnable signature verifier, [gap ledger](docs/boundary-closure-evidence.md), and explicit production/institutional limits. Earlier disposition: [Retest12](docs/retest12-engineering-decision-2026-10-01.md).
 
 - Framework home: https://africanmarketos.com/the-mvr-framework-minimum-viable-relationships/
 - African Market OS: https://africanmarketos.com/

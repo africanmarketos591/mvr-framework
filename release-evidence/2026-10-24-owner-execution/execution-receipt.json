@@ -1,0 +1,50 @@
+{
+  "document": {
+    "approval_key_id": "projects/-/serviceAccounts/owner-approval@amos-owner-lab-20261024.iam.gserviceaccount.com/keys/7763e5acfcc806fb17c5b173c3ac2deeb2a94a42",
+    "approval_ref": "5c05362f-a1f0-40e1-9c47-7d784f72b52e",
+    "approval_sha256": "c061351041cd4dafa2a4f57c41e80a316f6e6453abef21d07d4f09007aab0210",
+    "artifact_id": "1QvghicqRphFeKXwS8QES6wEi_r1GUp8e",
+    "artifact_sha256": "cef4bcfd31ceb0c85bf0e6de26990b02a74fb089491a526b7101db6472bd3079",
+    "denials": {
+      "modified_action": true,
+      "modified_content": true,
+      "modified_resource": true,
+      "replay": true,
+      "revoked": true,
+      "unauthorized": true
+    },
+    "execution_result": "created_and_readback_verified",
+    "folder_id": "1PhUQFKYidpZ4y8AKcKsWAvCXP8XRTEWD",
+    "gateway_revocation": {
+      "elapsed_ms": 1,
+      "in_flight_reconciliation_required": false,
+      "revocation_effective": true
+    },
+    "manifest_sha256": "feef9ff41a1f16251a70a54944d997d4c867f400171dc8c8c48b66b57edd9284",
+    "operations_sha256": "c25c51436d039fdf45145002f423eb4d1e791d5335e3b49e71b5d67a5ba31588",
+    "request_id": "9bc620d5-4f47-418e-b4fc-928a3c6db27a",
+    "timestamp": "2026-10-24T07:53:01.936Z",
+    "type": "amos.owner-drive-execution-receipt/1"
+  },
+  "key_id": "projects/-/serviceAccounts/execution-receipt@amos-owner-lab-20261024.iam.gserviceaccount.com/keys/9dee2f738157782bd58010843adda886a300a0c0",
+  "algorithm": "RS256",
+  "signature_b64": "S1Y7iHWGKK+zpSH9jn3cJTL9k240uFQHbd/bgSScyIEbD6C7FwAo0EQq7mUI2VUng2KgLQrqkcjlbB8yqIMICpNB1q7lvtMOK3UnQIVYPRvhSaL/6Aaa2SOa0Ka/NK+19P63hcSu5hATQAO8lKZDza6GHGjBjyOY21EqIy8U36nmjOSYZi0LNMqtGXjCG81xETheFwwBatu0RTGXT13PnOdhP/oqPTB1OWHXPzxLYk5gzEn/6Zkyd+Q1A0r5XlI6XJOuEDCII7yKfd9KyKjmx3W/ITuifD3kjC4aGjTmTmGj0rznZ8tjzk6c4XTn2PGzflGkzAfha0K4ipZ+HICBHA==",
+  "managed_provider": "google_iam_credentials",
+  "signature_verified": true,
+  "verification_evidence": {
+    "service_account": "execution-receipt@amos-owner-lab-20261024.iam.gserviceaccount.com",
+    "key_id": "9dee2f738157782bd58010843adda886a300a0c0",
+    "public_key_jwk": {
+      "key_ops": [
+        "verify"
+      ],
+      "ext": true,
+      "alg": "RS256",
+      "kty": "RSA",
+      "n": "ypxdGtIuU3qpOdJNe_dUval_kQn520YEI9m2g3D1LrNbI94UzwPjdY4c7GkofaiqeNMaCo5AGe3uBYE-FHsPVQxGHspcE8hmn_EJcsu-BWVCtXpwtDI_ZrYKLTwQ3D0qvN_y_nfm9dn0dzuv094kcELi2H8CQ6yy17WoA-wygapmJiHA0Ps1IZFLjV4idqWnOjm1xBuMdmX4sDn2syz5gP_imzPS2D7VclGXB0kb_NbN1xHp60W8jo_1SjLNfl2g0akveRIifmWNAP31UK7BPgFNlng2xMUl0OHWf1XtFO-CQwkHAFPPUHiu3hfFa-NO33wx7vZaG1CI6ezYBoRiAw",
+      "e": "AQAB"
+    },
+    "retrieved_from": "https://www.googleapis.com/service_accounts/v1/metadata/jwk/execution-receipt@amos-owner-lab-20261024.iam.gserviceaccount.com",
+    "retrieved_at": "2026-10-24T07:53:03.394Z"
+  }
+}
