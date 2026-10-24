@@ -29,8 +29,12 @@ A separate **read-only** grant then read the existing artifact, requested revoca
 
 An online SQLite backup of the actual lab approval and execution records was restored to isolated copies. Integrity and exact state checks passed; the consumed approval remained unusable and revoked dispatch remained denied. No live database was moved and no provider operation was performed. This proves local recovery behavior, not offsite disaster recovery.
 
+After the actual approval expired, its unchanged managed signature was reverified against Google's current public key. All non-temporal admission fields matched. A fresh empty admission store rejected it using the actual wall clock and created no authorization record. The empty store excludes replay or prior revocation as the rejection cause. `real-expiry-denial.json` records this operator-run expiry check against the real approval. No expired write was sent to Drive.
+
+After the live run, resource fencing was also hardened: separate request IDs cannot reserve the same creation resource, and an uncertain outcome retains that reservation across restart. This enhancement passed local competing-request tests; it is not retroactively claimed as part of the earlier live trace.
+
 ## What remains outside this proof
 
-Independent institutional office/delegation, independent reviewer standing, production authority onboarding, adversarial workload isolation, provider-enforced folder-only OAuth, atomic remote commit/revocation, a live expiry-denial experiment and production reliability statistics remain unestablished. Expiry, race, outage and partition behavior have local fixture tests. A valid signature authenticates bytes under a key; it does not establish the truth or authority of every underlying claim.
+Independent institutional office/delegation, independent reviewer standing, production authority onboarding, adversarial workload isolation, provider-enforced folder-only OAuth, atomic remote commit/revocation and production reliability statistics remain unestablished. Race, outage and partition behavior have local fixture tests. Expiry denial was tested at the local admission gate with the real expired approval; no provider expiry-write experiment is claimed. A valid signature authenticates bytes under a key; it does not establish the truth or authority of every underlying claim.
 
 For the gap ledger and permitted adoption levels, see [boundary closure evidence](../../docs/boundary-closure-evidence.md) and [owner-controlled execution](../../docs/owner-controlled-execution.md).

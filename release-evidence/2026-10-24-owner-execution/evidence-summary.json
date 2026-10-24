@@ -75,5 +75,14 @@
     "live_expiry_test": false,
     "expiry_test_classification": "local fixtures",
     "public_preflight_read_only": true
+  },
+  "real_expired_approval_gate_test": {
+    "passed": true,
+    "tested_at": "2026-10-24T08:22:55.748Z",
+    "approval_expires_at": "2026-10-24T07:56:50.879Z",
+    "unchanged_real_signature_verified": true,
+    "fresh_store_excludes_replay_and_revocation": true,
+    "provider_write_attempted": false,
+    "classification": "Operator-run admission test against actual expired approval; not a provider expiry test"
   }
 }
