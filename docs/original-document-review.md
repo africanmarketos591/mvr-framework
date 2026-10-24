@@ -2,7 +2,7 @@
 
 Minimum Viable Relationships (MVR), originated by Farouk Mark Mukiibi, African Market OS.
 
-Release target: `2026-10-24.hosted-review.3`. The hosted workbench uses the existing authenticated review-case route and isolated evaluation service. All new infrastructure requirements are zero; no paid provider or billing activation is introduced.
+Release target: `2026-10-24.hosted-review.4`. The hosted workbench uses the existing authenticated review-case route and isolated evaluation service. All new infrastructure requirements are zero; no paid provider or billing activation is introduced.
 
 ## Six workstreams and acceptance
 
@@ -18,6 +18,8 @@ Release target: `2026-10-24.hosted-review.3`. The hosted workbench uses the exis
 ## Using the workbench
 
 Open `/review-workbench/`, connect an existing case or start an isolated evaluation, and confirm redaction before uploading. Supported originals are `.txt` and `.md` files encoded in UTF-8, at most 12,000 bytes. The page preserves BOM and line endings. The server hashes the text's exact UTF-8 bytes. A text extraction from PDF is not the original PDF and must not be represented as one. Public source excerpts are explicitly excerpts.
+
+Plain-language summaries expose unresolved restrictions, historical reviews, issuer/dependency state and remaining checks. Exact JSON receipts remain available in expandable details.
 
 Select a passage, enter the claim, relationship, subject, action, geography, validity and declared standing/model/extractor references, then bind it. The guided form creates one planning fact; advanced Boolean models can contain up to eight referenced facts. Review the passage and record an approval, rejection or qualification with a reason. The authenticated server supplies reviewer account, roles and timestamp. No integrator-supplied approval flag establishes authority.
 

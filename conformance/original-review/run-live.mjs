@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {writeFileSync} from 'node:fs';
 import {runOriginalReviewAcceptance} from './runner.mjs';
-const revision='2026-10-24.hosted-review.3',origin='https://africanmarketos.com';
+const revision='2026-10-24.hosted-review.4',origin='https://africanmarketos.com';
 assert(process.argv.includes('--confirm-isolated-evaluation'),'This creates bounded generated-data review records. Supply --confirm-isolated-evaluation to run.');
 const oi=process.argv.indexOf('--output'),output=oi<0?null:process.argv[oi+1];
 let calls=0,session=null,closed=false;
