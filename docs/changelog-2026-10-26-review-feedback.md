@@ -27,6 +27,10 @@ Fixes and additions from an outside review. Each item was reproduced first; the 
   - Standalone constructors build the documents.
 - **[Adversarial suite](../conformance/authority/README.md#adversarial-suite).** Two lab sessions attack each other across cross-session isolation, confused deputy, replay, altered receipts, races and secret exposure. Run it live with `node conformance/authority/run-adversarial.mjs`. AMOS CI also runs it against nine weakened engines, which all fail, and runs a two-tenant API-key isolation test.
 - **[Live canary](../conformance/canary/README.md).** A read-only production check runs every six hours, and the adversarial suite runs weekly.
+- **[Frozen same-input comparison](../conformance/frozen-comparison/README.md).**
+  - A preregistered protocol and a harness freeze an operator's cases, the AMOS revision and the scoring rule by hash before either arm runs.
+  - The harness records AMOS's output per case, refuses any later change or any decision made after its outcome, and applies a fixed rule: fewer bad approvals by exact McNemar test, a margin on unnecessary holds, and a margin on time.
+  - The comparison itself still needs an operator and real outcomes.
 
 ## Unchanged boundaries
 
