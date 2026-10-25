@@ -1,4 +1,6 @@
-# Changelog: 2026-10-25.permission-path.1
+# Changelog: 2026-10-25.permission-path.2
+
+`2026-10-25.permission-path.1` was deployed at 12:35 UTC on 25 October and replaced by `.2` the same day. The licensed live check found that keys using the `client_safe` output mode got `status: ok` from `check_permission`, `commit_effect`, `record_effect` and the outcome ledger actions without their result fields (`permission_position`, `dependency_graph`, `commit_id`, `committed_at`, `commit_valid_until`, `commit_time_check_performed`, `outcome_entry`, `review_outcome_ledger`), because the per-route output allowlists predated these actions. The filter removed fields only and changed no decision; the isolated evaluation route was unaffected. `.2` passes these fields, plus `action` and `issuer_state`, which the published authority contract already declared. All release evidence is from `.2`.
 
 ## Added
 
@@ -13,6 +15,8 @@
 
 - Wording that conditions or withdraws permission now also includes "cannot", "unless", "provided that", "conditional on/upon", "suspended", "not approved" and "pending approval" when labelled as direct support. These passages need further review.
 - Conformance package: request and response schemas, examples and signed receipt fixtures include the two new actions and the commit receipt. The committed-executor harness shows a revocation between verification and commit stopping the effect.
+- Workbench: when a passage bind finished, the page moved keyboard focus back to the read-only original, so a reviewer already typing a note lost the rest of it and the review was rejected. The selection is still restored; focus now moves only when nothing else has it.
+- `schemas/mvr-mcp-profile-outputs.json` is regenerated: the published copy lacked the `permission_position` declarations that production already served. Worker CI now fails when any Worker-served public contract file (version, MCP output profiles, field contract, authority documents and receipts) differs from the public copy.
 - `schemas/authority-documents.json` had not been regenerated since 23 October, so it lacked the `issuer-state/2` and condition-resolution document schemas that production already served. It is regenerated from the Worker in this release.
 
 ## Unchanged boundaries

@@ -1,6 +1,6 @@
 {
   "contract": "mvr.mcp-profile-outputs/1",
-  "deployment_revision": "2026-10-25.permission-path.1",
+  "deployment_revision": "2026-10-25.permission-path.2",
   "default_field_contract": "authority-fields/2",
   "legacy_sunset": "2027-01-21T00:00:00Z",
   "unconstrained_legacy_tools": [
@@ -114,6 +114,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -1202,6 +1246,50 @@
           "response_meta": {
             "type": "object"
           },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
+          },
           "action_boundary": {
             "type": "object",
             "additionalProperties": false,
@@ -2220,6 +2308,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -3276,6 +3408,50 @@
           "response_meta": {
             "type": "object"
           },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
+          },
           "action_boundary": {
             "type": "object",
             "additionalProperties": false,
@@ -4298,6 +4474,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -5335,6 +5555,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -6488,6 +6752,50 @@
           "response_meta": {
             "type": "object"
           },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
+          },
           "action_boundary": {
             "type": "object",
             "additionalProperties": false,
@@ -7694,6 +8002,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -8966,6 +9318,50 @@
           "response_meta": {
             "type": "object"
           },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
+          },
           "action_boundary": {
             "type": "object",
             "additionalProperties": false,
@@ -10204,6 +10600,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -11457,6 +11897,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -12770,6 +13254,50 @@
           "response_meta": {
             "type": "object"
           },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
+          },
           "action_boundary": {
             "type": "object",
             "additionalProperties": false,
@@ -13853,6 +14381,50 @@
           "response_meta": {
             "type": "object"
           },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
+          },
           "action_boundary": {
             "type": "object",
             "additionalProperties": false,
@@ -14908,6 +15480,50 @@
           "response_meta": {
             "type": "object"
           },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
+          },
           "action_boundary": {
             "type": "object",
             "additionalProperties": false,
@@ -15930,6 +16546,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -16967,6 +17627,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -18109,6 +18813,50 @@
           },
           "response_meta": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",
@@ -19478,6 +20226,50 @@
           },
           "commercial_next_step": {
             "type": "object"
+          },
+          "permission_position": {
+            "type": "object",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "properties": {
+              "contract_version": {
+                "const": "mvr.permission-position/1"
+              },
+              "scope": {
+                "const": "analysis_output"
+              },
+              "tier": {
+                "enum": [
+                  "prohibited",
+                  "not_permitted",
+                  "planning_only",
+                  "not_applicable"
+                ]
+              },
+              "analysis_use_status": {
+                "type": "string"
+              },
+              "narrowest_allowed_now": {
+                "type": "array"
+              },
+              "blocking_gates": {
+                "type": "array"
+              },
+              "all_listed_gates_must_clear": {
+                "type": "boolean"
+              },
+              "cannot_change_the_claim_review": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "external_effects": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            }
           },
           "action_boundary": {
             "type": "object",

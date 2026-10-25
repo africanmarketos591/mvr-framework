@@ -19,8 +19,9 @@ try{
   const authority=(await get('/v1/authority-chain/contract')).body;
   check('authority contract publishes check_permission, commit_effect and six permission levels',!!authority.actions.check_permission&&!!authority.actions.commit_effect&&authority.permission_position.tiers.length===6);
   const mcp=await fetch(origin+'/mcp',{method:'POST',redirect:'error',signal:AbortSignal.timeout(30000),headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'tools/call',params:{name:'mvr_first_call',arguments:{subject:{entity_name:'AMOS lab retailer',entity_archetype:'retail'},market_scope:{country:'UG',decision_scope_level:'country'},decision_question:'Should we pilot distribution through lab retailers?'}}})});
-  const answer=(await mcp.json()).result?.structuredContent?.answer;
-  check('public first-call answer carries an analysis-level permission position',answer?.permission_position?.contract_version==='mvr.permission-position/1'&&answer.permission_position.execution_authorized===false,answer?.permission_position?.tier);
+  // MCP tool results carry the analysis-level position at the top of structuredContent (there is no answer wrapper).
+  const position=(await mcp.json()).result?.structuredContent?.permission_position;
+  check('public first-call result carries an analysis-level permission position',position?.contract_version==='mvr.permission-position/1'&&position.scope==='analysis_output'&&position.execution_authorized===false,position?.tier);
   const issued=await sandbox({action:'issue',synthetic_only:true,acknowledge_no_identity_verification:true});check('evaluation issued',issued.status===201&&issued.body.status==='issued',issued.body.code);session=issued.body;
   const call=async(request,role='creator')=>(await sandbox({action:'call',session_id:session.session_id,session_token:session.credentials[role].session_token,target:'case',request})).body;
   let last=await call({action:'create',operation_id:crypto.randomUUID(),preflight_context:{subject:{entity_name:'Proprietary lab programme operator'},market_scope:{country:'UG'},decision_question:'Internal review of a staged lab disbursement'},reference_secret:'c'.repeat(64),share_redacted_with_reference_holders:true,redacted_no_personal_data:true});
