@@ -1,0 +1,52 @@
+name: Live canary
+# Read-only every six hours: production must serve the newest published release, the published client contract,
+# the issuer-state vector bindings, tamper-rejecting receipt verification, credential refusals and safe headers.
+# Weekly: the adversarial authority suite against production in two isolated lab sessions (harmless lab drafts).
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+    - cron: '47 4 * * 1'
+  workflow_dispatch:
+    inputs:
+      adversarial:
+        description: 'Also run the live adversarial suite (uses two lab sessions)'
+        type: boolean
+        default: false
+concurrency:
+  group: live-canary
+  cancel-in-progress: false
+jobs:
+  canary:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24.11.0'
+      - name: Read-only production canary
+        run: |
+          node conformance/canary/canary.mjs --output canary.json
+      - name: Summary
+        if: always()
+        run: |
+          if [ -f canary.json ]; then node -e "const r=require('./canary.json');console.log('## Live canary: '+(r.passed?'passed':'FAILED')+'\n\nServing '+r.served_revisions.join(', ')+'; newest release '+r.expected_revision+'\n');for(const c of r.checks)console.log('- '+(c.passed?'pass':'**fail**')+': '+c.name);for(const f of r.failures)console.log('\n> '+f.name+': '+f.error)" >> "$GITHUB_STEP_SUMMARY"; fi
+  adversarial:
+    if: github.event.schedule == '47 4 * * 1' || inputs.adversarial == true
+    needs: canary
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24.11.0'
+      - name: Live adversarial authority suite
+        run: |
+          node conformance/authority/run-adversarial.mjs --output adversarial.json
+      - name: Summary
+        if: always()
+        run: |
+          if [ -f adversarial.json ]; then node -e "const r=require('./adversarial.json');console.log('## Live adversarial suite: '+(r.passed?'passed':'FAILED')+' on '+r.revision+'\n');for(const [k,v] of Object.entries(r.categories))console.log('- '+k+': '+v+' attacks refused or contained')" >> "$GITHUB_STEP_SUMMARY"; fi

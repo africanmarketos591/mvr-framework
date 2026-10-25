@@ -1,0 +1,33 @@
+name: Issuer state v2 reproducibility
+# The separate Python implementation must reproduce every published vector (offline, standard library only).
+permissions:
+  contents: read
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'conformance/issuer-state-v2/**'
+      - '.github/workflows/issuer-state-v2.yml'
+  pull_request:
+    paths:
+      - 'conformance/issuer-state-v2/**'
+      - '.github/workflows/issuer-state-v2.yml'
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - run: python3 -I conformance/issuer-state-v2/check.py
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24.11.0'
+      - name: Constructors reproduce every preimage
+        run: |
+          node --input-type=module -e "
+          import fs from 'node:fs';import assert from 'node:assert/strict';
+          const c=await import('./conformance/issuer-state-v2/constructors.mjs');
+          const v=JSON.parse(fs.readFileSync('conformance/issuer-state-v2/vectors.json','utf8'));
+          for(const p of v.preimages){const input=p.input_path.reduce((x,k)=>x[k],v);assert.equal(c.PREIMAGES[p.constructor](input),p.preimage,p.constructor);assert.equal(await c.sha256Hex(p.preimage),p.sha256);}
+          for(const [name,k] of Object.entries(v.keys))assert.equal((await c.signerFromSeed(k.seed_hex)).public_key_spki_b64,k.public_key_spki_b64,name);
+          console.log('constructors: '+v.preimages.length+' preimages and '+Object.keys(v.keys).length+' keys reproduced');"

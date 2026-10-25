@@ -2,9 +2,16 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {runAuthorityConformance} from './conformance-runner.mjs';
+import {pathToFileURL} from 'node:url';
+import path from 'node:path';
 const args=process.argv.slice(2),base=args.includes('--base')?args[args.indexOf('--base')+1]:'https://africanmarketos.com';
 const origin=new URL(base);assert.equal(origin.protocol,'https:');assert.equal(origin.pathname,'/');assert(!origin.username&&!origin.password&&!origin.search&&!origin.hash);
 const output=args.includes('--output')?args[args.indexOf('--output')+1]:null;
+// --receiver ./my-receiver.mjs tests your own customer receiver (export createCommitReceiver or default) with real lab commits.
+const receiverPath=args.includes('--receiver')?args[args.indexOf('--receiver')+1]:null;
+const receiverModule=receiverPath?await import(pathToFileURL(path.resolve(receiverPath)).href):null;
+const createReceiver=receiverModule?(receiverModule.createCommitReceiver||receiverModule.default):undefined;
+if(receiverPath)assert.equal(typeof createReceiver,'function','--receiver must export createCommitReceiver or a default factory');
 let revision=null,session,publicVerifications=0;
 const verifiedKinds=new Set();
 async function post(path,body){
@@ -22,7 +29,7 @@ try{
      const denied=await post('/v1/authority-receipts/verify',{receipt:tampered,lab_session_id:session.session_id,allow_lab_keys:true});publicVerifications++;assert.equal(denied.valid,false,'Tampered receipt accepted');
    }
    return result;
- });
+ },{createReceiver});
  const report={...result,revision,public_receipt_verification_requests:publicVerifications,completed_at:new Date().toISOString(),base:origin.origin,credential_cleanup:'Session closed and next use rejected. Tokens are never written to the report.'};
  if(output)fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n',{flag:'wx'});
  console.log(JSON.stringify(report,null,2));
