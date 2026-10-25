@@ -1,0 +1,34 @@
+{
+ "flags": {
+  "state_banner": true,
+  "salt_masked": true,
+  "participants_hash_matches_node": true,
+  "line_hidden_by_default": true,
+  "precheck_refusal_plain": true,
+  "run_disabled_without_precheck": true,
+  "only_same_origin_resources_loaded": true,
+  "third_party_attempts_blocked_by_csp": true,
+  "names_never_sent": true,
+  "phone_no_horizontal_scroll": true,
+  "no_page_errors": true
+ },
+ "page_errors": [],
+ "requests": [
+  "https://africanmarketos.com/key-ceremony/",
+  "https://africanmarketos.com/v1/key-ceremony/status",
+  "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+  "https://africanmarketos.com/v1/key-ceremony"
+ ],
+ "loaded": [
+  "https://africanmarketos.com",
+  "https://africanmarketos.com",
+  "https://africanmarketos.com"
+ ],
+ "blocked": [
+  {
+   "origin": "https://static.cloudflareinsights.com",
+   "reason": "csp"
+  }
+ ],
+ "passed": true
+}
