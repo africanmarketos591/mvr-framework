@@ -1,0 +1,19 @@
+{
+ "passed": true,
+ "implementation": "Python standard library, written from SPEC.md; no AMOS code",
+ "vectors": "amos.issuer-state-v2-vectors/1",
+ "steps": 98,
+ "checks": {
+  "canonical_json": 12,
+  "public_keys": 9,
+  "preimages": 22,
+  "digests": 49,
+  "signatures": 112,
+  "registrations": 49,
+  "evaluations": 32,
+  "verification_reasons": 12,
+  "verification_decisions": 24,
+  "revocations": 5
+ },
+ "failures": []
+}

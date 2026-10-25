@@ -1,0 +1,92 @@
+{
+ "classification": "AMOS lab verification of the harness on proprietary example cases; no decisions or outcomes exist, so nothing is scored",
+ "manifest": {
+  "format": "amos.frozen-comparison/1",
+  "frozen_at": "2026-10-25T22:58:33.102Z",
+  "amos_revision": "2026-10-26.review-feedback.1",
+  "protocol_sha256": "d31ec84d2845b21b5912c5872b8ed3bf1285410f144eaa423bf18508f0f1f701",
+  "case_count": 3,
+  "cases": [
+   {
+    "case_ref": "EXAMPLE-001",
+    "sha256": "1c6b42124e73574abd75b3729984233d044f92ef46b49c3fd5c40ec154b37bed"
+   },
+   {
+    "case_ref": "EXAMPLE-002",
+    "sha256": "21929ec275ec38794a309ae287413be3068267f149b1abc600d22def65db34fe"
+   },
+   {
+    "case_ref": "EXAMPLE-003",
+    "sha256": "d59796b2f59983ce528f907ca78934b4bf5cea3a8af518b6fe8b7aa74ccbbec6"
+   }
+  ],
+  "set_sha256": "1263b977e1fa6ede1024715ef83e621134dfaf0f40535bdec48c76435de20d93",
+  "boundary": "Freezing fixes inputs and the scoring rule; it proves nothing about outcomes."
+ },
+ "amos_arm": {
+  "format": "amos.frozen-comparison/1",
+  "arm": "B_context",
+  "set_sha256": "1263b977e1fa6ede1024715ef83e621134dfaf0f40535bdec48c76435de20d93",
+  "amos_revision": "2026-10-26.review-feedback.1",
+  "records": [
+   {
+    "case_ref": "EXAMPLE-001",
+    "case_sha256": "1c6b42124e73574abd75b3729984233d044f92ef46b49c3fd5c40ec154b37bed",
+    "review_case_id": "RC-bda5397dc66a1076c6929f7b0f10dca9943f682e9d17ca8c3b274610f3d05e6c",
+    "served_revision": "2026-10-26.review-feedback.1",
+    "recorded_at": "2026-10-25T22:58:37.757Z",
+    "permission_tier": "planning_only",
+    "open_residuals": [
+     "ATTESTOR_STANDING_UNVERIFIED",
+     "CLAIM_TRUTH_UNVERIFIED",
+     "DECISION_SCOPE_UNVERIFIED",
+     "INCOMPLETE_STUDY_INVENTORY",
+     "SOURCE_AUTHENTICITY_UNVERIFIED",
+     "SOURCE_RECORD_REVIEW_MISSING"
+    ],
+    "bounded_next_action": null,
+    "response_sha256": "ef578edc51a9d8bd48beaadbc0b3674205ace1b41a13d46f4083ffe32f837df8",
+    "is_a_decision": false
+   },
+   {
+    "case_ref": "EXAMPLE-002",
+    "case_sha256": "21929ec275ec38794a309ae287413be3068267f149b1abc600d22def65db34fe",
+    "review_case_id": "RC-1b87657ef575131079982107c4ef937e5f461b6c8e4681adafb4223c5bc617bd",
+    "served_revision": "2026-10-26.review-feedback.1",
+    "recorded_at": "2026-10-25T22:58:38.760Z",
+    "permission_tier": "planning_only",
+    "open_residuals": [
+     "ATTESTOR_STANDING_UNVERIFIED",
+     "CLAIM_TRUTH_UNVERIFIED",
+     "DECISION_SCOPE_UNVERIFIED",
+     "INCOMPLETE_STUDY_INVENTORY",
+     "SOURCE_AUTHENTICITY_UNVERIFIED",
+     "SOURCE_RECORD_REVIEW_MISSING"
+    ],
+    "bounded_next_action": null,
+    "response_sha256": "6dc236f216d28b313038269b2a35adbd120e5a11a950d7814dc2106c2e5c6115",
+    "is_a_decision": false
+   },
+   {
+    "case_ref": "EXAMPLE-003",
+    "case_sha256": "d59796b2f59983ce528f907ca78934b4bf5cea3a8af518b6fe8b7aa74ccbbec6",
+    "review_case_id": "RC-201355424d74c1a95269ec29e3dd1b5c404e5f4b5d1bfe2980ea54cdc8206c84",
+    "served_revision": "2026-10-26.review-feedback.1",
+    "recorded_at": "2026-10-25T22:58:39.975Z",
+    "permission_tier": "planning_only",
+    "open_residuals": [
+     "ATTESTOR_STANDING_UNVERIFIED",
+     "CLAIM_TRUTH_UNVERIFIED",
+     "DECISION_SCOPE_UNVERIFIED",
+     "INCOMPLETE_STUDY_INVENTORY",
+     "SOURCE_AUTHENTICITY_UNVERIFIED",
+     "SOURCE_RECORD_REVIEW_MISSING"
+    ],
+    "bounded_next_action": null,
+    "response_sha256": "fcbb71666e37a79c33840b32e4bf807485388570aba51d98a0838c78a91d5144",
+    "is_a_decision": false
+   }
+  ],
+  "route": "isolated evaluation /v1/review-sandbox"
+ }
+}

@@ -1,0 +1,618 @@
+{
+  "head": "83798cc5da4e2ad41f6610d3365f5e9342975c84",
+  "environment": "Windows 10, Node v24.11.0, temporary files on D:",
+  "commands": 253,
+  "total": 253,
+  "passed": true,
+  "failed": [],
+  "minutes": 19,
+  "review_feedback_suites": [
+    {
+      "command": "node scripts/test-authority-chain-http.mjs",
+      "exit": 0,
+      "elapsed_ms": 2883
+    },
+    {
+      "command": "node scripts/test-authority-contract-fixes.mjs",
+      "exit": 0,
+      "elapsed_ms": 4045
+    },
+    {
+      "command": "node scripts/test-authority-conformance.mjs",
+      "exit": 0,
+      "elapsed_ms": 5725
+    },
+    {
+      "command": "node scripts/test-review-opportunity-preservation.mjs",
+      "exit": 0,
+      "elapsed_ms": 1068
+    },
+    {
+      "command": "node scripts/test-review-economics.mjs",
+      "exit": 0,
+      "elapsed_ms": 684
+    },
+    {
+      "command": "node scripts/test-review-contract-clean-room.mjs",
+      "exit": 0,
+      "elapsed_ms": 4807
+    },
+    {
+      "command": "node scripts/generate-governance-client.mjs --check",
+      "exit": 0,
+      "elapsed_ms": 895
+    },
+    {
+      "command": "node scripts/test-receiver-kit.mjs",
+      "exit": 0,
+      "elapsed_ms": 13781
+    },
+    {
+      "command": "node scripts/test-authority-adversarial.mjs",
+      "exit": 0,
+      "elapsed_ms": 15338
+    },
+    {
+      "command": "node scripts/test-authority-cross-tenant.mjs",
+      "exit": 0,
+      "elapsed_ms": 1006
+    },
+    {
+      "command": "node scripts/test-issuer-state-vectors.mjs",
+      "exit": 0,
+      "elapsed_ms": 44640
+    }
+  ],
+  "suite_reports": {
+    "node scripts/test-authority-chain-http.mjs": null,
+    "node scripts/test-authority-contract-fixes.mjs": null,
+    "node scripts/test-authority-conformance.mjs": {
+      "passed": true,
+      "checks": [
+        "issue four lab principals",
+        "create isolated case",
+        "register institution_authority",
+        "register standing_issuer",
+        "register source_issuer",
+        "lab trust promotion denied",
+        "register standing one",
+        "register source one",
+        "close one residual one",
+        "read current residuals one",
+        "register harmless capability one",
+        "register signed lab prohibition",
+        "verify deny",
+        "signed issuer supersession",
+        "verify allow",
+        "record harmless outcome",
+        "verify deny",
+        "verify deny",
+        "verify deny",
+        "verify deny",
+        "verify deny",
+        "verify deny",
+        "six independent effect mutations denied",
+        "harmless executor fresh checks, outage, cached-answer avoidance and observed verify-to-effect race",
+        "verify deny",
+        "register source two",
+        "close one residual two",
+        "read current residuals two",
+        "register harmless capability two",
+        "read permission position",
+        "read permission for another amount",
+        "commit-time check stops an effect revoked after verification",
+        "read permission after revocation",
+        "verify deny",
+        "register standing two",
+        "close one residual three",
+        "read current residuals three",
+        "register harmless capability three",
+        "verify allow",
+        "revoke closure",
+        "verify deny",
+        "close one residual four",
+        "read current residuals four",
+        "register harmless capability four",
+        "verify allow",
+        "read current residuals receiver",
+        "register harmless capability receiver",
+        "receiver verification",
+        "receiver commit",
+        "receiver verification",
+        "receiver commit",
+        "receiver verification",
+        "receiver commit",
+        "receiver verification",
+        "receiver commit",
+        "receiver verification",
+        "receiver commit",
+        "receiver verification before revocation",
+        "revoke between verification and commit",
+        "commit after revocation",
+        "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none",
+        "read current residuals four-b",
+        "register harmless capability four-b",
+        "verify allow",
+        "record contradiction",
+        "get link revision",
+        "link contradiction",
+        "verify deny",
+        "withdraw lab contradiction",
+        "unlink contradiction",
+        "read current residuals five",
+        "register harmless capability five",
+        "verify allow",
+        "get withdrawal revision",
+        "withdraw case",
+        "verify deny",
+        "allow, deny, revocation and effect receipt signatures and chain links verified offline",
+        "reconcile delivery journal",
+        "reconcile missed notifications from durable journal",
+        "production outbox retry, lost acknowledgement, HMAC verification, deduplication and journal reconciliation"
+      ],
+      "requests": 89,
+      "receipt_kinds": [
+        "deny",
+        "allow",
+        "effect_report",
+        "revocation",
+        "commit"
+      ],
+      "executor_harness": {
+        "classification": "AMOS lab verification",
+        "effect": "in-process draft counter",
+        "fresh_verification_each_attempt": true,
+        "outage_executed": false,
+        "previous_allow_not_reused": true,
+        "next_verification_after_revocation": "deny",
+        "verification_answers": [
+          "allow",
+          "allow",
+          "deny"
+        ],
+        "post_verification_race_observed": true,
+        "post_verification_race_closed": false,
+        "customer_receiver_tested": false,
+        "boundary": "Without commit_effect the distributed verify-to-effect gap remains. Customer executors need a shared transaction, resource fencing or equivalent receiver enforcement; a notification and an unexpired allow are insufficient."
+      },
+      "committed_executor_harness": {
+        "classification": "AMOS lab verification",
+        "effect": "in-process draft counter",
+        "commit_decisions": [
+          "commit",
+          "deny"
+        ],
+        "revocation_between_verify_and_commit": "effect not performed",
+        "post_verification_race_closed_up_to_commit": true,
+        "remaining_gap": "After commit_effect returns, a revocation cannot recall the effect. The window is bounded by commit_valid_until (15 seconds at most) and the effect system should accept each commit_id once.",
+        "customer_receiver_tested": false
+      },
+      "receiver_kit": {
+        "effect_system_calls": 5,
+        "classification": "AMOS lab verification; receiver in-process; harmless draft ledger",
+        "receiver_under_test": "reference receiver (receiver.mjs)",
+        "customer_receiver_tested": true,
+        "valid_commits": 4,
+        "effects_performed": 4,
+        "scenarios": [
+          {
+            "name": "valid commit",
+            "expected_new_effects": 1,
+            "new_effects": 1,
+            "expected_attempts": 1,
+            "attempts": 1,
+            "outcome": "performed"
+          },
+          {
+            "name": "replay of the same commit",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 0,
+            "attempts": 0,
+            "outcome": "already_performed"
+          },
+          {
+            "name": "broadened amount",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 0,
+            "attempts": 0,
+            "outcome": "RECEIVER_EFFECT_MISMATCH"
+          },
+          {
+            "name": "different resource",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 0,
+            "attempts": 0,
+            "outcome": "RECEIVER_EFFECT_MISMATCH"
+          },
+          {
+            "name": "different effect id",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 0,
+            "attempts": 0,
+            "outcome": "RECEIVER_EFFECT_MISMATCH"
+          },
+          {
+            "name": "altered receipt (window extended)",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 0,
+            "attempts": 0,
+            "outcome": "RECEIVER_RECEIPT_INVALID"
+          },
+          {
+            "name": "delivered after the commit window",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 0,
+            "attempts": 0,
+            "outcome": "RECEIVER_COMMIT_EXPIRED"
+          },
+          {
+            "name": "expired commit redelivered in time",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 0,
+            "attempts": 0,
+            "outcome": "RECEIVER_ABANDONED"
+          },
+          {
+            "name": "transient failure",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 1,
+            "attempts": 1,
+            "outcome": "RECEIVER_EFFECT_FAILED_RETRYABLE"
+          },
+          {
+            "name": "retry within the window",
+            "expected_new_effects": 1,
+            "new_effects": 1,
+            "expected_attempts": 1,
+            "attempts": 1,
+            "outcome": "performed"
+          },
+          {
+            "name": "crash after the effect",
+            "expected_new_effects": 1,
+            "new_effects": 1,
+            "expected_attempts": 1,
+            "attempts": 1,
+            "outcome": "RECEIVER_EFFECT_FAILED_RETRYABLE"
+          },
+          {
+            "name": "redelivery reconciles, no duplicate",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 0,
+            "attempts": 0,
+            "outcome": "already_performed"
+          },
+          {
+            "name": "two concurrent deliveries",
+            "expected_new_effects": 1,
+            "new_effects": 1,
+            "expected_attempts": 1,
+            "attempts": 1,
+            "outcome": [
+              "performed",
+              "already_performed"
+            ]
+          },
+          {
+            "name": "revoked between verification and commit",
+            "expected_new_effects": 0,
+            "new_effects": 0,
+            "expected_attempts": 0,
+            "attempts": 0,
+            "outcome": "RECEIVER_NOT_COMMITTED"
+          }
+        ],
+        "passed": true
+      },
+      "delivery": {
+        "status": "ok",
+        "delivery": "production_durable_outbox",
+        "events": [
+          {
+            "event_id": "LAB-EVT-e4b17f3a3bac00af4de6314af3fe5f1e7a6a1cc103bfb88a168cc63b3677cacf",
+            "event_type": "authority_dependency_revoked",
+            "receipt_sha256": "e4b17f3a3bac00af4de6314af3fe5f1e7a6a1cc103bfb88a168cc63b3677cacf",
+            "job_status": "completed",
+            "attempts": 3,
+            "receiver": {
+              "accepted": true,
+              "signature_verified": true,
+              "requests": 3,
+              "duplicate_count": 1,
+              "first_attempt_rejected": true,
+              "acknowledgement_loss_simulated": true
+            },
+            "reconciliation": "none"
+          },
+          {
+            "event_id": "LAB-EVT-c6ce4fc587b919650c83c64276a8b1dfedaa88e624b85f0381042c1414de198a",
+            "event_type": "authority_dependency_revoked",
+            "receipt_sha256": "c6ce4fc587b919650c83c64276a8b1dfedaa88e624b85f0381042c1414de198a",
+            "job_status": "completed",
+            "attempts": 3,
+            "receiver": {
+              "accepted": true,
+              "signature_verified": true,
+              "requests": 3,
+              "duplicate_count": 1,
+              "first_attempt_rejected": true,
+              "acknowledgement_loss_simulated": true
+            },
+            "reconciliation": "none"
+          },
+          {
+            "event_id": "LAB-EVT-9778cfb86a7a40ebb35fce1e38d7e34521faa612122862b0911f8c48b05016f2",
+            "event_type": "authority_dependency_revoked",
+            "receipt_sha256": "9778cfb86a7a40ebb35fce1e38d7e34521faa612122862b0911f8c48b05016f2",
+            "job_status": "completed",
+            "attempts": 3,
+            "receiver": {
+              "accepted": true,
+              "signature_verified": true,
+              "requests": 3,
+              "duplicate_count": 1,
+              "first_attempt_rejected": true,
+              "acknowledgement_loss_simulated": true
+            },
+            "reconciliation": "none"
+          },
+          {
+            "event_id": "LAB-EVT-ee31b4684e611df67b5f934f6047d5973cb87cebfcb636bec5c6ffd08e77ca3e",
+            "event_type": "authority_capability_revoked",
+            "receipt_sha256": "ee31b4684e611df67b5f934f6047d5973cb87cebfcb636bec5c6ffd08e77ca3e",
+            "job_status": "completed",
+            "attempts": 3,
+            "receiver": {
+              "accepted": true,
+              "signature_verified": true,
+              "requests": 3,
+              "duplicate_count": 1,
+              "first_attempt_rejected": true,
+              "acknowledgement_loss_simulated": true
+            },
+            "reconciliation": "none"
+          }
+        ],
+        "reconciliation_policy": "Read the durable event journal and receiver acknowledgements; retry only terminal safe failures. Re-verification is mandatory even when no notification arrives.",
+        "execution_authorized": false,
+        "http_status": 200,
+        "contract_version": "mvr.authority-conformance/1",
+        "lab_fixture": true,
+        "evaluation_only": true,
+        "synthetic": true,
+        "identity_verified": false,
+        "human_presence_verified": false,
+        "legal_identity_verified": false,
+        "professional_licence_verified": false,
+        "issuer_standing_verified": false,
+        "delegation_verified": false,
+        "reviewer_independence_verified": false,
+        "source_authenticity_verified": false,
+        "production_authority": false,
+        "calls_remaining": 74,
+        "deployment_revision": "2026-10-26.review-feedback.1",
+        "response_meta": {
+          "deployment_revision": "2026-10-26.review-feedback.1"
+        },
+        "response_contract_version": "2026-05-01.v1"
+      },
+      "classification": "AMOS lab verification; no independent standing or external effect",
+      "receiver_requests": 12
+    },
+    "node scripts/test-review-opportunity-preservation.mjs": {
+      "passed": true,
+      "checks": 7,
+      "classification": "proprietary lab fixtures"
+    },
+    "node scripts/test-review-economics.mjs": {
+      "passed": true,
+      "checks": 4,
+      "classification": "proprietary lab fixtures; declared minutes and costs"
+    },
+    "node scripts/test-review-contract-clean-room.mjs": {
+      "passed": true,
+      "steps": 9,
+      "client": "sdks/javascript/governance-client.mjs (generated from the live contract)",
+      "routes": [
+        "licensed client_safe",
+        "isolated evaluation"
+      ],
+      "requests_validated": 18,
+      "responses_validated": 18,
+      "field_parity": "identical",
+      "validator": "Python jsonschema Draft 2020-12",
+      "classification": "proprietary lab fixtures"
+    },
+    "node scripts/generate-governance-client.mjs --check": {
+      "passed": true,
+      "mode": "check",
+      "operations": 12,
+      "types": 31,
+      "bytes": {
+        "js": 6080,
+        "dts": 49625
+      }
+    },
+    "node scripts/test-receiver-kit.mjs": {
+      "passed": true,
+      "reference": "passes",
+      "mutants": 6,
+      "killed": 6,
+      "results": [
+        {
+          "label": "reference receiver",
+          "outcome": "passes"
+        },
+        {
+          "label": "receipt signature and fields",
+          "outcome": "killed"
+        },
+        {
+          "label": "exact committed effect",
+          "outcome": "killed"
+        },
+        {
+          "label": "commit window",
+          "outcome": "killed"
+        },
+        {
+          "label": "commit decision",
+          "outcome": "killed"
+        },
+        {
+          "label": "once-only claim",
+          "outcome": "killed"
+        },
+        {
+          "label": "reconciliation before retry",
+          "outcome": "killed"
+        }
+      ],
+      "classification": "proprietary lab fixtures; real in-process AMOS commits"
+    },
+    "node scripts/test-authority-adversarial.mjs": {
+      "passed": true,
+      "sessions": 2,
+      "requests": 123,
+      "categories": {
+        "cross_tenant": 9,
+        "confused_deputy": 7,
+        "replay": 4,
+        "altered_receipt": 1,
+        "race": 4,
+        "secret_export": 4
+      },
+      "mutants": 9,
+      "killed": 9,
+      "outcomes": {
+        "second commit of one verification": "killed: Expected values to be strictly equal:",
+        "operation id conflict ignored": "killed: changed body under the same operation id must be refused: {\"status\":\"registered\",\"idempotent_replay\":false,\"http_status\"",
+        "max_uses not enforced": "killed: allowed 3 of 4: [\"allow\",\"allow\",\"allow\",\"AUTHORITY_CONFORMANCE_STORAGE_UNAVAILABLE\"]",
+        "executor binding not enforced": "killed: Expected values to be strictly equal:",
+        "broadened commit accepted": "killed: broadened commit must be refused: {\"status\":\"checked\",\"decision\":\"commit\",\"commit_id\":\"CM-c312069b140e98decb3fe928c07235",
+        "capability revocation not applied": "killed: foreign capability revoke must be refused: {\"status\":\"revoked\",\"kind\":\"capability\",\"id\":\"lab-capability-a-only\",\"revocat",
+        "capability scope not enforced": "killed: foreign-scope capability must be refused: {\"status\":\"registered\",\"capability\":{\"capability_id\":\"lab-capability-foreign-s",
+        "revoked credential restored by replay": "killed: Expected values to be strictly equal:",
+        "refusal echoes the request": "killed: engine echoed request content"
+      },
+      "classification": "AMOS lab verification; proprietary lab fixtures; harmless lab drafts only; not independent review"
+    },
+    "node scripts/test-authority-cross-tenant.mjs": {
+      "passed": true,
+      "tests": 8,
+      "results": [
+        "B cannot read or act on A's case",
+        "B sees nothing of A's records and cannot revoke them",
+        "the same anchor id resolves to each tenant's own key",
+        "a capability naming another tenant is refused",
+        "a tenant security admin without operator access cannot vet another tenant's anchor",
+        "scope cannot be injected through headers or the body",
+        "operation ids are scoped per tenant",
+        "nothing tenant B received contains tenant A material"
+      ],
+      "responses_scanned": 13,
+      "classification": "AMOS lab verification; two API-key tenants on one Worker; proprietary lab fixtures"
+    },
+    "node scripts/test-issuer-state-vectors.mjs": {
+      "passed": true,
+      "vectors_current": true,
+      "python_checks": {
+        "canonical_json": 12,
+        "public_keys": 9,
+        "preimages": 22,
+        "digests": 49,
+        "signatures": 112,
+        "registrations": 49,
+        "evaluations": 32,
+        "verification_reasons": 12,
+        "verification_decisions": 24,
+        "revocations": 5
+      },
+      "mutants": 15,
+      "mutants_killed": 15,
+      "constructors_rebuilt_documents": 23,
+      "classification": "proprietary lab fixtures; separate implementation written by AMOS, not an independent party"
+    }
+  },
+  "python_release_checks": {
+    "private_head": "83798cc5da4e2ad41f6610d3365f5e9342975c84",
+    "sbom_source_commit": "e7c1634020dc785ab3bb4ae842bdf3883ddebdc0",
+    "public_head": "2c49cbc0ded2fd86a8f688726f5745abdb719462",
+    "public_tree_clean": true,
+    "deployment_revision": "2026-10-26.review-feedback.1",
+    "checked_at": "2026-10-25T22:43:40.774Z",
+    "passed": true,
+    "checks": [
+      {
+        "repo": "private",
+        "command": "python scripts/validate_cyclonedx_sbom.py --expected-source-sha e7c1634020dc785ab3bb4ae842bdf3883ddebdc0 --verify-release-chain",
+        "exit": 0,
+        "last_line": "{\"status\": \"valid\", \"schema\": \"CycloneDX 1.5 draft-07\", \"serial_number\": \"urn:uuid:43f1d912-c4b6-8148-9bb7-e7e4a54c6d6e\", \"source_sha\": \"e7c1634020dc785ab3bb4ae842bdf3883ddebdc0\", \"deployment_revision\": \"2026-10-26.review-feedback.1\", \"components\": 96}"
+      },
+      {
+        "repo": "private",
+        "command": "python scripts/test_cyclonedx_offline.py",
+        "exit": 0,
+        "last_line": "4/4 offline SBOM checks passed"
+      },
+      {
+        "repo": "private",
+        "command": "node scripts/generate-release-sbom.mjs --source-sha e7c1634020dc785ab3bb4ae842bdf3883ddebdc0 --deployment-revision 2026-10-26.review-feedback.1 (then byte comparison)",
+        "exit": 0,
+        "last_line": "regenerated SBOM byte-identical to the committed file"
+      },
+      {
+        "repo": "private",
+        "command": "python scripts/validate_partnership_readiness_schema.py",
+        "exit": 0,
+        "last_line": "{\"status\": \"valid\", \"schema\": \"https://africanmarketos.com/schemas/partnership-readiness-scorecard.schema.json\", \"scorecard\": \"partnership-readiness-scorecard-2026-08-03.json\"}"
+      },
+      {
+        "repo": "private",
+        "command": "python scripts/validate_founder_self_registry_schema.py",
+        "exit": 0,
+        "last_line": "Founder Self schema PASS: Draft 2020-12 registry contract is valid."
+      },
+      {
+        "repo": "public",
+        "command": "python scripts/sync_mcp_version_contract.py --check",
+        "exit": 0,
+        "last_line": "MCP version contract: PASS"
+      },
+      {
+        "repo": "public",
+        "command": "python scripts/validate_mcp_public_contract.py",
+        "exit": 0,
+        "last_line": "MCP public contract: PASS (local)"
+      },
+      {
+        "repo": "public",
+        "command": "python scripts/validate_workflow_pinning.py",
+        "exit": 0,
+        "last_line": "workflow pinning validation passed (22 workflows)"
+      },
+      {
+        "repo": "public",
+        "command": "python conformance/authority/validate-fixtures.py",
+        "exit": 0,
+        "last_line": "PASS: discriminated response examples; unsigned and illustrative, never authority"
+      },
+      {
+        "repo": "public",
+        "command": "C:\\Program Files\\nodejs\\node.exe conformance/authority/verify-fixtures.mjs",
+        "exit": 0,
+        "last_line": "PASS: 20 signed fixture, canonicalization and receipt checks; public lab key only."
+      }
+    ]
+  },
+  "classification": "AMOS lab verification on the operator machine; GitHub Actions CI is linked in deployment.json"
+}

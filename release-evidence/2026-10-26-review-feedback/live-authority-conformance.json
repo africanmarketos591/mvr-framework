@@ -1,0 +1,346 @@
+{
+  "passed": true,
+  "checks": [
+    "issue four lab principals",
+    "create isolated case",
+    "register institution_authority",
+    "register standing_issuer",
+    "register source_issuer",
+    "lab trust promotion denied",
+    "register standing one",
+    "register source one",
+    "close one residual one",
+    "read current residuals one",
+    "register harmless capability one",
+    "register signed lab prohibition",
+    "verify deny",
+    "signed issuer supersession",
+    "verify allow",
+    "record harmless outcome",
+    "verify deny",
+    "verify deny",
+    "verify deny",
+    "verify deny",
+    "verify deny",
+    "verify deny",
+    "six independent effect mutations denied",
+    "harmless executor fresh checks, outage, cached-answer avoidance and observed verify-to-effect race",
+    "verify deny",
+    "register source two",
+    "close one residual two",
+    "read current residuals two",
+    "register harmless capability two",
+    "read permission position",
+    "read permission for another amount",
+    "commit-time check stops an effect revoked after verification",
+    "read permission after revocation",
+    "verify deny",
+    "register standing two",
+    "close one residual three",
+    "read current residuals three",
+    "register harmless capability three",
+    "verify allow",
+    "revoke closure",
+    "verify deny",
+    "close one residual four",
+    "read current residuals four",
+    "register harmless capability four",
+    "verify allow",
+    "read current residuals receiver",
+    "register harmless capability receiver",
+    "receiver verification",
+    "receiver commit",
+    "receiver verification",
+    "receiver commit",
+    "receiver verification",
+    "receiver commit",
+    "receiver verification",
+    "receiver commit",
+    "receiver verification",
+    "receiver commit",
+    "receiver verification before revocation",
+    "revoke between verification and commit",
+    "commit after revocation",
+    "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none",
+    "read current residuals four-b",
+    "register harmless capability four-b",
+    "verify allow",
+    "record contradiction",
+    "get link revision",
+    "link contradiction",
+    "verify deny",
+    "withdraw lab contradiction",
+    "unlink contradiction",
+    "read current residuals five",
+    "register harmless capability five",
+    "verify allow",
+    "get withdrawal revision",
+    "withdraw case",
+    "verify deny",
+    "allow, deny, revocation and effect receipt signatures and chain links verified offline",
+    "reconcile delivery journal",
+    "reconcile missed notifications from durable journal",
+    "production outbox retry, lost acknowledgement, HMAC verification, deduplication and journal reconciliation"
+  ],
+  "requests": 89,
+  "receipt_kinds": [
+    "deny",
+    "allow",
+    "effect_report",
+    "revocation",
+    "commit"
+  ],
+  "executor_harness": {
+    "classification": "AMOS lab verification",
+    "effect": "in-process draft counter",
+    "fresh_verification_each_attempt": true,
+    "outage_executed": false,
+    "previous_allow_not_reused": true,
+    "next_verification_after_revocation": "deny",
+    "verification_answers": [
+      "allow",
+      "allow",
+      "deny"
+    ],
+    "post_verification_race_observed": true,
+    "post_verification_race_closed": false,
+    "customer_receiver_tested": false,
+    "boundary": "Without commit_effect the distributed verify-to-effect gap remains. Customer executors need a shared transaction, resource fencing or equivalent receiver enforcement; a notification and an unexpired allow are insufficient."
+  },
+  "committed_executor_harness": {
+    "classification": "AMOS lab verification",
+    "effect": "in-process draft counter",
+    "commit_decisions": [
+      "commit",
+      "deny"
+    ],
+    "revocation_between_verify_and_commit": "effect not performed",
+    "post_verification_race_closed_up_to_commit": true,
+    "remaining_gap": "After commit_effect returns, a revocation cannot recall the effect. The window is bounded by commit_valid_until (15 seconds at most) and the effect system should accept each commit_id once.",
+    "customer_receiver_tested": false
+  },
+  "receiver_kit": {
+    "effect_system_calls": 5,
+    "classification": "AMOS lab verification; receiver in-process; harmless draft ledger",
+    "receiver_under_test": "reference receiver (receiver.mjs)",
+    "customer_receiver_tested": true,
+    "valid_commits": 4,
+    "effects_performed": 4,
+    "scenarios": [
+      {
+        "name": "valid commit",
+        "expected_new_effects": 1,
+        "new_effects": 1,
+        "expected_attempts": 1,
+        "attempts": 1,
+        "outcome": "performed"
+      },
+      {
+        "name": "replay of the same commit",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 0,
+        "attempts": 0,
+        "outcome": "already_performed"
+      },
+      {
+        "name": "broadened amount",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 0,
+        "attempts": 0,
+        "outcome": "RECEIVER_EFFECT_MISMATCH"
+      },
+      {
+        "name": "different resource",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 0,
+        "attempts": 0,
+        "outcome": "RECEIVER_EFFECT_MISMATCH"
+      },
+      {
+        "name": "different effect id",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 0,
+        "attempts": 0,
+        "outcome": "RECEIVER_EFFECT_MISMATCH"
+      },
+      {
+        "name": "altered receipt (window extended)",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 0,
+        "attempts": 0,
+        "outcome": "RECEIVER_RECEIPT_INVALID"
+      },
+      {
+        "name": "delivered after the commit window",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 0,
+        "attempts": 0,
+        "outcome": "RECEIVER_COMMIT_EXPIRED"
+      },
+      {
+        "name": "expired commit redelivered in time",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 0,
+        "attempts": 0,
+        "outcome": "RECEIVER_ABANDONED"
+      },
+      {
+        "name": "transient failure",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 1,
+        "attempts": 1,
+        "outcome": "RECEIVER_EFFECT_FAILED_RETRYABLE"
+      },
+      {
+        "name": "retry within the window",
+        "expected_new_effects": 1,
+        "new_effects": 1,
+        "expected_attempts": 1,
+        "attempts": 1,
+        "outcome": "performed"
+      },
+      {
+        "name": "crash after the effect",
+        "expected_new_effects": 1,
+        "new_effects": 1,
+        "expected_attempts": 1,
+        "attempts": 1,
+        "outcome": "RECEIVER_EFFECT_FAILED_RETRYABLE"
+      },
+      {
+        "name": "redelivery reconciles, no duplicate",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 0,
+        "attempts": 0,
+        "outcome": "already_performed"
+      },
+      {
+        "name": "two concurrent deliveries",
+        "expected_new_effects": 1,
+        "new_effects": 1,
+        "expected_attempts": 1,
+        "attempts": 1,
+        "outcome": [
+          "performed",
+          "already_performed"
+        ]
+      },
+      {
+        "name": "revoked between verification and commit",
+        "expected_new_effects": 0,
+        "new_effects": 0,
+        "expected_attempts": 0,
+        "attempts": 0,
+        "outcome": "RECEIVER_NOT_COMMITTED"
+      }
+    ],
+    "passed": true
+  },
+  "delivery": {
+    "status": "ok",
+    "delivery": "production_durable_outbox",
+    "events": [
+      {
+        "event_id": "LAB-EVT-95c528338534255a636e9cb654b9b2ce019346602e1ed067ba637db36417b7c1",
+        "event_type": "authority_dependency_revoked",
+        "receipt_sha256": "95c528338534255a636e9cb654b9b2ce019346602e1ed067ba637db36417b7c1",
+        "job_status": "completed",
+        "attempts": 3,
+        "receiver": {
+          "accepted": true,
+          "signature_verified": true,
+          "requests": 3,
+          "duplicate_count": 1,
+          "first_attempt_rejected": true,
+          "acknowledgement_loss_simulated": true
+        },
+        "reconciliation": "none"
+      },
+      {
+        "event_id": "LAB-EVT-7bb152f3fc3f21afb7d0f2b3656ec4ca75a5e0b0a31fdf0e6b46de1687227bd5",
+        "event_type": "authority_dependency_revoked",
+        "receipt_sha256": "7bb152f3fc3f21afb7d0f2b3656ec4ca75a5e0b0a31fdf0e6b46de1687227bd5",
+        "job_status": "completed",
+        "attempts": 3,
+        "receiver": {
+          "accepted": true,
+          "signature_verified": true,
+          "requests": 3,
+          "duplicate_count": 1,
+          "first_attempt_rejected": true,
+          "acknowledgement_loss_simulated": true
+        },
+        "reconciliation": "none"
+      },
+      {
+        "event_id": "LAB-EVT-53841255d97470b05c48d6718e61b5232fd2fca76126847e84cda9e2da15e191",
+        "event_type": "authority_dependency_revoked",
+        "receipt_sha256": "53841255d97470b05c48d6718e61b5232fd2fca76126847e84cda9e2da15e191",
+        "job_status": "completed",
+        "attempts": 3,
+        "receiver": {
+          "accepted": true,
+          "signature_verified": true,
+          "requests": 3,
+          "duplicate_count": 1,
+          "first_attempt_rejected": true,
+          "acknowledgement_loss_simulated": true
+        },
+        "reconciliation": "none"
+      },
+      {
+        "event_id": "LAB-EVT-f370228e6ab906e24665ae85e26ec2aa168ee3be46622b5e88c21b55e25e1b8f",
+        "event_type": "authority_capability_revoked",
+        "receipt_sha256": "f370228e6ab906e24665ae85e26ec2aa168ee3be46622b5e88c21b55e25e1b8f",
+        "job_status": "completed",
+        "attempts": 3,
+        "receiver": {
+          "accepted": true,
+          "signature_verified": true,
+          "requests": 3,
+          "duplicate_count": 1,
+          "first_attempt_rejected": true,
+          "acknowledgement_loss_simulated": true
+        },
+        "reconciliation": "none"
+      }
+    ],
+    "reconciliation_policy": "Read the durable event journal and receiver acknowledgements; retry only terminal safe failures. Re-verification is mandatory even when no notification arrives.",
+    "execution_authorized": false,
+    "http_status": 200,
+    "contract_version": "mvr.authority-conformance/1",
+    "lab_fixture": true,
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "calls_remaining": 74,
+    "deployment_revision": "2026-10-26.review-feedback.1",
+    "response_meta": {
+      "deployment_revision": "2026-10-26.review-feedback.1"
+    },
+    "response_contract_version": "2026-05-01.v1"
+  },
+  "classification": "AMOS lab verification; no independent standing or external effect",
+  "revision": "2026-10-26.review-feedback.1",
+  "public_receipt_verification_requests": 10,
+  "completed_at": "2026-10-25T22:50:03.358Z",
+  "base": "https://africanmarketos.com",
+  "credential_cleanup": "Session closed and next use rejected. Tokens are never written to the report."
+}
