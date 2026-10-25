@@ -43,9 +43,20 @@ try{
   const queries=[{adapter:'gleif-parent/1',id:'5493001KJTIIGC8Y1R12'},{adapter:'ror-org/1',id:'03dbr7087'},{adapter:'crossref-doi/1',id:'10.1016/S0140-6736(97)11096-0'},{adapter:'worldbank-project/1',id:'P173296'},{adapter:'eu-vies-vat/1',id:'IE6388047V',expected_name:'Google Ireland Limited'},{adapter:'sec-edgar/1',id:'320193'}];
   r=await mutate('lookup_public_register',{register_lei:'9845004RABFFAE62FB64'});
   for(const q of queries)r=await mutate('lookup_public_register',{register_query:q});
-  const snaps=r.review_tools.public_register_snapshots;report.registers=snaps.map(s=>({adapter:s.adapter_version,status:s.status,reason:s.reason||null,response_sha256:s.response_sha256||null,retrieved_at:s.retrieved_at||s.checked_at}));
+  // Public registers are outside AMOS's control. An unavailable one must fail closed (coded reason, no data);
+  // it is retried once after a pause, and the first attempt stays in the report.
+  const view=s=>({adapter:s.adapter_version,status:s.status,reason:s.reason||null,response_sha256:s.response_sha256||null,retrieved_at:s.retrieved_at||s.checked_at});
+  const first=r.review_tools.public_register_snapshots.map(view),unavailable=r.review_tools.public_register_snapshots.filter(s=>s.status!=='retrieved');
+  check('an unavailable register fails closed with a coded reason and no data',unavailable.every(s=>/^REGISTER_[A-Z_]+$/.test(s.reason||'')&&!s.response_sha256&&s.execution_authorized===false),unavailable.map(view));
+  report.register_retries=[];
+  if(unavailable.length){await new Promise(done=>setTimeout(done,5000));
+    for(const s of unavailable){const q=s.adapter_version==='gleif-lei/1'?{register_lei:'9845004RABFFAE62FB64'}:{register_query:queries.find(x=>x.adapter===s.adapter_version)};r=await mutate('lookup_public_register',q);
+      const latest=r.review_tools.public_register_snapshots.at(-1);report.register_retries.push({adapter:s.adapter_version,first_reason:s.reason,retry:view(latest)});}}
+  const all=r.review_tools.public_register_snapshots,latest=[...new Map(all.map(s=>[s.adapter_version,s])).values()];
+  report.registers_first_attempt=first;report.registers=latest.map(view);
+  const snaps=latest;
   check('all seven public register adapters retrieved live from the Worker',snaps.length===7&&snaps.every(s=>s.status==='retrieved'),report.registers);
-  check('no register snapshot claims authority',snaps.every(s=>s.execution_authorized===false&&s.delegation_verified===false&&s.institutional_authority_verified===false));
+  check('no register snapshot claims authority, including unavailable ones',all.every(s=>s.execution_authorized===false&&s.delegation_verified===false&&s.institutional_authority_verified===false));
   check('Crossref records the Retraction Watch retraction',snaps.find(s=>s.adapter_version==='crossref-doi/1')?.retraction_notice_recorded===true);
   const vies=snaps.find(s=>s.adapter_version==='eu-vies-vat/1');check('VIES stores validity and a name match, not the name',vies?.vat_valid===true&&vies.registered_name_matches_expected===true&&!JSON.stringify(vies).toUpperCase().includes('GORDON HOUSE'));
   const outcome=await call({action:'record_case_outcome',case_id:last.case_id,operation_id:crypto.randomUUID(),case_outcome:{outcome:'held_then_cleared',observed_at:new Date().toISOString(),reviewer_minutes:20}});
