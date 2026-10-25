@@ -1,6 +1,6 @@
 # Permission path
 
-Release `2026-10-25.permission-path.2`. AMOS answers one question for a proposed effect: for this exact actor, action, place, amount and time, which permission level applies now, what is still allowed, and what is the smallest set of accountable acts that would change the answer. AMOS never issues authority. Every answer is a current reading of records that institutions signed and reviewers recorded.
+Release `2026-10-25.permission-path.3`. AMOS answers one question for a proposed effect: for this exact actor, action, place, amount and time, which permission level applies now, what is still allowed, and what is the smallest set of accountable acts that would change the answer. AMOS never issues authority. Every answer is a current reading of records that institutions signed and reviewers recorded.
 
 ## Permission levels
 
@@ -31,7 +31,7 @@ In production, institution-signed capabilities also need AMOS production authori
 
 Every review case now carries `review_progress.permission_position`: the level without a specific effect, what may proceed internally, and what unlocks external permission.
 
-The five decision routes (`first-call`, `entity-resolve`, `evidence-completeness`, `context/compile`, `decision-check`, plus the release checks) add `answer.permission_position` at the analysis level. It lists every gate that blocks (`claim_review`, `evidence_fit`, `abstention`, `release_hold`, `evidence_completeness`), all of which must clear. For the claim gate it names the decisive reviews (the exact evidence-to-claim links and the act each needs) and the evidence items that cannot change that gate because no claim uses them. External effects are not evaluated there; use `check_permission`. Over MCP the same object is at `structuredContent.permission_position` of the tool result; the compact `/mcp/preflight` and `/mcp/guided` profiles leave it out to stay within their response budget.
+The five decision routes (`first-call`, `entity-resolve`, `evidence-completeness`, `context/compile`, `decision-check`, plus the release checks) add `answer.permission_position` at the analysis level. It lists every gate that blocks (`claim_review`, `evidence_fit`, `abstention`, `release_hold`, `evidence_completeness`), all of which must clear. For the claim gate it names the decisive reviews: every item that holds the gate (an unreviewed or qualifying link under governed review; under declared review an unlinked item, an invalid link, declared counterevidence, an adverse source or stance) and the act that clears it. `cannot_change_the_claim_review` lists the other evidence items: reviewing them cannot clear the gate, though it can add a blocker. It is omitted when a decisive review names no evidence item (for example a claim with no evidence yet), because then any item might matter. External effects are not evaluated there; use `check_permission`. Over MCP the same object is at `structuredContent.permission_position` of the tool result; the compact `/mcp/preflight` and `/mcp/guided` profiles leave it out to stay within their response budget.
 
 ## Commit-time check: `commit_effect`
 

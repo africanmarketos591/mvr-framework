@@ -1,6 +1,6 @@
 {
   "contract": "mvr.mcp-profile-outputs/1",
-  "deployment_revision": "2026-10-25.permission-path.2",
+  "deployment_revision": "2026-10-25.permission-path.3",
   "default_field_contract": "authority-fields/2",
   "legacy_sunset": "2027-01-21T00:00:00Z",
   "unconstrained_legacy_tools": [
@@ -117,7 +117,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -1248,7 +1248,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -2311,7 +2311,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -3410,7 +3410,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -4477,7 +4477,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -5558,7 +5558,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -6754,7 +6754,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -8005,7 +8005,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -9320,7 +9320,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -10603,7 +10603,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -11900,7 +11900,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -13256,7 +13256,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -14383,7 +14383,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -15482,7 +15482,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -16549,7 +16549,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -17630,7 +17630,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -18816,7 +18816,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
@@ -20229,7 +20229,7 @@
           },
           "permission_position": {
             "type": "object",
-            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate and evidence that cannot change it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
+            "description": "Analysis-level permission position: level, what may proceed internally, every blocking gate (all must clear), decisive reviews for the claim gate (each item holding it and the act that clears it) and the evidence whose review cannot clear it. External effects are evaluated only by /v1/authority-chain check_permission. Never execution permission.",
             "properties": {
               "contract_version": {
                 "const": "mvr.permission-position/1"
