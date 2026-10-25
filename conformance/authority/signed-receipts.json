@@ -94,5 +94,30 @@
       "key_id": "AMOS-PUBLIC-LAB-TEST-ONLY",
       "signature_b64": "TU7cFBT+JV8RhTzr3Ut3v1BPaa7itZsbj/zLArodakW3OpQlBkbop9NeAEku8GFL6jai1RHC0qLZo9K7O+v6Aw=="
     }
+  },
+  {
+    "kind": "effect_commit",
+    "commit_id": "CM-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "verification_id": "VR-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "capability_id": "lab-capability",
+    "effect_id": "lab-effect",
+    "requested_effect_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-10-23T01:00:00.000Z",
+    "executor_principal_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "sequence": 5,
+    "prev_sha256": "2ed6a88811a530ce65f117475e9d90a9b00a9ebfeafc6bda2ac006be53627ee6",
+    "recorded_at": "2026-10-23T00:00:00.000Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sha256": "f11132d0e45bf6ba41c4e6c1c7b70afb93d1fd88c5a3e888125f71a3172046f2",
+    "signature": {
+      "standard": "MVR-RECEIPT-SIG-V1",
+      "status": "signed",
+      "algorithm": "Ed25519",
+      "key_id": "AMOS-PUBLIC-LAB-TEST-ONLY",
+      "signature_b64": "JcVPzKsomndXAggPkznXDxRqzUs1DgE8c7wQj7grgI86D/gZTzABHP/4pzMCI4oZEsgl7HyuWHtmJ254xilFAw=="
+    }
   }
 ]

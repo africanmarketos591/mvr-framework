@@ -1,12 +1,12 @@
 import assert from 'node:assert/strict';
 import {writeFileSync} from 'node:fs';
 import {runOriginalReviewAcceptance} from './runner.mjs';
-const revision='2026-10-24.hosted-review.4',origin='https://africanmarketos.com';
+const origin='https://africanmarketos.com',ri=process.argv.indexOf('--expected-revision'),expectedRevision=ri<0?null:process.argv[ri+1];
 assert(process.argv.includes('--confirm-isolated-evaluation'),'This creates bounded generated-data review records. Supply --confirm-isolated-evaluation to run.');
 const oi=process.argv.indexOf('--output'),output=oi<0?null:process.argv[oi+1];
 let calls=0,session=null,closed=false;
 async function post(body){assert(++calls<=55,'Local request budget exceeded');const response=await fetch(origin+'/v1/review-sandbox',{method:'POST',redirect:'error',signal:AbortSignal.timeout(30000),headers:{'Content-Type':'application/json','X-MVR-Expected-Deployment-Revision':revision},body:JSON.stringify(body)});return{status:response.status,body:await response.json()};}
-const v=await(await fetch(origin+'/.well-known/mvr-version.json',{redirect:'error',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache'}})).json();assert.equal(v.deployment_revision,revision,'Expected hosted release is not deployed');
+const v=await(await fetch(origin+'/.well-known/mvr-version.json',{redirect:'error',signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache'}})).json();const revision=v.deployment_revision;if(expectedRevision)assert.equal(revision,expectedRevision,'Expected hosted release is not deployed');
 const page=await fetch(origin+'/review-workbench/',{redirect:'error',signal:AbortSignal.timeout(20000)});assert.equal(page.status,200);assert(page.headers.get('content-type').startsWith('text/html'));assert.equal(page.headers.get('cache-control'),'no-store');assert(page.headers.get('content-security-policy').includes("connect-src 'self'"));assert(!(await page.text()).includes('amos-webmcp.js'));
 const contract=await(await fetch(origin+'/v1/review-cases/contract',{redirect:'error',signal:AbortSignal.timeout(20000)})).json();assert.equal(contract.deployment_revision,revision);for(const action of ['register_review_document','review_document_clause','lookup_public_register','get_review_tools','set_review_model','record_review_observation','record_hold_event','capture_review_proposal','compare_review_decision'])assert(contract.actions.includes(action),action);
 const anonymous=await fetch(origin+'/v1/review-cases',{method:'POST',redirect:'error',signal:AbortSignal.timeout(20000),headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'get_review_tools',case_id:'RC-'+'a'.repeat(64)})});assert.equal(anonymous.status,401);

@@ -1487,6 +1487,10 @@
             },
             "reported_after_valid_until": {
               "type": "boolean"
+            },
+            "commit_id": {
+              "type": "string",
+              "pattern": "^CM-[a-f0-9]{48}$"
             }
           },
           "required": [
@@ -1704,6 +1708,329 @@
         "currently_valid",
         "reasons",
         "reliance"
+      ],
+      "additionalProperties": true
+    },
+    {
+      "type": "object",
+      "properties": {
+        "action": {
+          "const": "commit_effect"
+        },
+        "status": {
+          "enum": [
+            "checked",
+            "already_committed"
+          ]
+        },
+        "decision": {
+          "enum": [
+            "commit",
+            "deny",
+            "already_committed"
+          ]
+        },
+        "verification_id": {
+          "type": "string"
+        },
+        "commit_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "commit_valid_until": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "deny_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "receipt": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "prev_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "recorded_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "signature": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "status": {
+                      "const": "unsigned"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "\\S"
+                    },
+                    "standard": {
+                      "const": "MVR-RECEIPT-SIG-V1"
+                    },
+                    "key_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 128
+                    },
+                    "registry_url": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "reason"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "standard": {
+                      "const": "MVR-RECEIPT-SIG-V1"
+                    },
+                    "status": {
+                      "const": "signed"
+                    },
+                    "algorithm": {
+                      "const": "Ed25519"
+                    },
+                    "key_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 128,
+                      "pattern": "\\S"
+                    },
+                    "registry_url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "signature_b64": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9+/]{86}==$"
+                    }
+                  },
+                  "required": [
+                    "standard",
+                    "status",
+                    "algorithm",
+                    "key_id",
+                    "signature_b64"
+                  ]
+                }
+              ]
+            },
+            "lab_fixture": {
+              "type": "boolean"
+            },
+            "production_authority": {
+              "const": false
+            },
+            "kind": {
+              "const": "effect_commit"
+            },
+            "commit_id": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^CM-[a-f0-9]{48}$"
+            },
+            "verification_id": {
+              "type": "string",
+              "pattern": "^VR-[a-f0-9]{48}$"
+            },
+            "capability_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "effect_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120,
+              "pattern": "\\S"
+            },
+            "requested_effect_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "decision": {
+              "type": "string",
+              "enum": [
+                "commit",
+                "deny"
+              ]
+            },
+            "deny_reasons": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "\\S"
+              },
+              "minItems": 0,
+              "maxItems": 100
+            },
+            "commit_valid_until": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "executor_principal_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "sequence",
+            "prev_sha256",
+            "recorded_at",
+            "sha256",
+            "signature",
+            "kind",
+            "commit_id",
+            "verification_id",
+            "capability_id",
+            "effect_id",
+            "requested_effect_sha256",
+            "decision",
+            "deny_reasons",
+            "commit_valid_until",
+            "executor_principal_sha256"
+          ]
+        }
+      },
+      "required": [
+        "action",
+        "status",
+        "decision",
+        "verification_id",
+        "commit_id",
+        "commit_valid_until"
+      ],
+      "additionalProperties": true
+    },
+    {
+      "type": "object",
+      "properties": {
+        "action": {
+          "const": "check_permission"
+        },
+        "status": {
+          "enum": [
+            "ok"
+          ]
+        },
+        "permission_position": {
+          "type": "object",
+          "properties": {
+            "contract_version": {
+              "const": "mvr.permission-position/1"
+            },
+            "tier": {
+              "enum": [
+                "prohibited",
+                "not_permitted",
+                "planning_only",
+                "conditionally_permitted",
+                "permitted_up_to_ceiling",
+                "fully_permitted"
+              ]
+            },
+            "institution_capability_covers_effect": {
+              "type": "boolean"
+            },
+            "narrowest_allowed_now": {
+              "type": "array"
+            },
+            "blocked": {
+              "type": "array"
+            },
+            "closure_path": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "minimum_accountable_acts": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "acts": {
+                  "type": "array"
+                }
+              },
+              "required": [
+                "status",
+                "minimum_accountable_acts",
+                "acts"
+              ],
+              "additionalProperties": true
+            },
+            "execution_authorized": {
+              "const": false
+            }
+          },
+          "required": [
+            "contract_version",
+            "tier",
+            "institution_capability_covers_effect",
+            "narrowest_allowed_now",
+            "blocked",
+            "closure_path",
+            "execution_authorized"
+          ],
+          "additionalProperties": true
+        },
+        "dependency_graph": {
+          "type": "object",
+          "properties": {
+            "nodes": {
+              "type": "array"
+            },
+            "edges": {
+              "type": "array"
+            }
+          },
+          "required": [
+            "nodes",
+            "edges"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "action",
+        "status",
+        "permission_position",
+        "dependency_graph"
       ],
       "additionalProperties": true
     }
@@ -3192,6 +3519,10 @@
             },
             "reported_after_valid_until": {
               "type": "boolean"
+            },
+            "commit_id": {
+              "type": "string",
+              "pattern": "^CM-[a-f0-9]{48}$"
             }
           },
           "required": [
@@ -3409,6 +3740,329 @@
         "currently_valid",
         "reasons",
         "reliance"
+      ],
+      "additionalProperties": true
+    },
+    "commit_effect": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "const": "commit_effect"
+        },
+        "status": {
+          "enum": [
+            "checked",
+            "already_committed"
+          ]
+        },
+        "decision": {
+          "enum": [
+            "commit",
+            "deny",
+            "already_committed"
+          ]
+        },
+        "verification_id": {
+          "type": "string"
+        },
+        "commit_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "commit_valid_until": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "deny_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "receipt": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sequence": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "prev_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "recorded_at": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "signature": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "status": {
+                      "const": "unsigned"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "\\S"
+                    },
+                    "standard": {
+                      "const": "MVR-RECEIPT-SIG-V1"
+                    },
+                    "key_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 128
+                    },
+                    "registry_url": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "reason"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "standard": {
+                      "const": "MVR-RECEIPT-SIG-V1"
+                    },
+                    "status": {
+                      "const": "signed"
+                    },
+                    "algorithm": {
+                      "const": "Ed25519"
+                    },
+                    "key_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 128,
+                      "pattern": "\\S"
+                    },
+                    "registry_url": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "signature_b64": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9+/]{86}==$"
+                    }
+                  },
+                  "required": [
+                    "standard",
+                    "status",
+                    "algorithm",
+                    "key_id",
+                    "signature_b64"
+                  ]
+                }
+              ]
+            },
+            "lab_fixture": {
+              "type": "boolean"
+            },
+            "production_authority": {
+              "const": false
+            },
+            "kind": {
+              "const": "effect_commit"
+            },
+            "commit_id": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^CM-[a-f0-9]{48}$"
+            },
+            "verification_id": {
+              "type": "string",
+              "pattern": "^VR-[a-f0-9]{48}$"
+            },
+            "capability_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+            },
+            "effect_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120,
+              "pattern": "\\S"
+            },
+            "requested_effect_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "decision": {
+              "type": "string",
+              "enum": [
+                "commit",
+                "deny"
+              ]
+            },
+            "deny_reasons": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "\\S"
+              },
+              "minItems": 0,
+              "maxItems": 100
+            },
+            "commit_valid_until": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "executor_principal_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "sequence",
+            "prev_sha256",
+            "recorded_at",
+            "sha256",
+            "signature",
+            "kind",
+            "commit_id",
+            "verification_id",
+            "capability_id",
+            "effect_id",
+            "requested_effect_sha256",
+            "decision",
+            "deny_reasons",
+            "commit_valid_until",
+            "executor_principal_sha256"
+          ]
+        }
+      },
+      "required": [
+        "action",
+        "status",
+        "decision",
+        "verification_id",
+        "commit_id",
+        "commit_valid_until"
+      ],
+      "additionalProperties": true
+    },
+    "check_permission": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "const": "check_permission"
+        },
+        "status": {
+          "enum": [
+            "ok"
+          ]
+        },
+        "permission_position": {
+          "type": "object",
+          "properties": {
+            "contract_version": {
+              "const": "mvr.permission-position/1"
+            },
+            "tier": {
+              "enum": [
+                "prohibited",
+                "not_permitted",
+                "planning_only",
+                "conditionally_permitted",
+                "permitted_up_to_ceiling",
+                "fully_permitted"
+              ]
+            },
+            "institution_capability_covers_effect": {
+              "type": "boolean"
+            },
+            "narrowest_allowed_now": {
+              "type": "array"
+            },
+            "blocked": {
+              "type": "array"
+            },
+            "closure_path": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "minimum_accountable_acts": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "acts": {
+                  "type": "array"
+                }
+              },
+              "required": [
+                "status",
+                "minimum_accountable_acts",
+                "acts"
+              ],
+              "additionalProperties": true
+            },
+            "execution_authorized": {
+              "const": false
+            }
+          },
+          "required": [
+            "contract_version",
+            "tier",
+            "institution_capability_covers_effect",
+            "narrowest_allowed_now",
+            "blocked",
+            "closure_path",
+            "execution_authorized"
+          ],
+          "additionalProperties": true
+        },
+        "dependency_graph": {
+          "type": "object",
+          "properties": {
+            "nodes": {
+              "type": "array"
+            },
+            "edges": {
+              "type": "array"
+            }
+          },
+          "required": [
+            "nodes",
+            "edges"
+          ],
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "action",
+        "status",
+        "permission_position",
+        "dependency_graph"
       ],
       "additionalProperties": true
     }

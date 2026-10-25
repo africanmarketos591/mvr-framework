@@ -1,0 +1,50 @@
+{
+  "classification": "Server-generated receipt from a local AMOS lab run; proprietary lab fixture; no real reviewer or authority",
+  "payload": {
+    "document_sha256": "ad4c6eff16c948fca6316415b62f6b7128cc0d85ddbfff63ca6ae9687a68475f",
+    "fact_id": "passage",
+    "start": 139,
+    "end": 226,
+    "clause_text": "Tranche 2 (UGX 45,000,000) may be released only if the field audit is signed and dated.",
+    "disposition": "qualify",
+    "note": "Conditional release: the audit condition must be met first.",
+    "locator": "utf16:139:226",
+    "original_format": "pdf",
+    "pdf_pages": [
+      1
+    ],
+    "extracted_text_sha256": "b95ae84fc2a1cc3e9c0c16520f45f62015f38f2dc081f6b06d542ef6a4e41ecb",
+    "extractor": "amos-pdf-text/1",
+    "binding": {
+      "document_sha256": "ad4c6eff16c948fca6316415b62f6b7128cc0d85ddbfff63ca6ae9687a68475f",
+      "locator": "utf16:139:226",
+      "claim": "Tranche 2 may be released",
+      "relationship": "direct_support",
+      "subject": "Proprietary lab programme operator",
+      "action": "Release tranche 2",
+      "geography": "UG",
+      "valid_from": "2026-10-25T06:38:30.341Z",
+      "valid_until": "2026-10-25T06:48:31.341Z",
+      "reviewer_standing_ref": "test-role-not-institutional",
+      "model_version": "proprietary/1",
+      "extractor_version": "amos-pdf-text/1"
+    },
+    "model_sha256": "d168269352daeffd519c77dd1af439ac34dcc3af79585a870c6b0ac1461088d1",
+    "model_revision": 2,
+    "case_basis_sha256": "4852b293ae4688b1fb1b7d1c6ed9c9fcd01d0475dc0e400b9f0ee595028051ee",
+    "reviewer_account_ref": "lab-reviewer",
+    "reviewer_roles": [
+      "attestor"
+    ],
+    "reviewed_at": "2026-10-25T06:38:31.358Z",
+    "warning": "DECLARED_RELATIONSHIP_TEXT_CONFLICT",
+    "requires_further_review": true,
+    "account_control_is_not_standing": true,
+    "legal_truth_asserted": false,
+    "execution_authorized": false
+  },
+  "sha256": "1b7714a9d8c9437c9e969f4e629598ea6d44774b605a847a1e189b42f91c0154",
+  "current": true,
+  "authorizes_fact_observation": false,
+  "independent_standing_verified": false
+}
