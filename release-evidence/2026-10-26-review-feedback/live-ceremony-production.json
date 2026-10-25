@@ -1,0 +1,84 @@
+{
+  "revision": "2026-10-26.review-feedback.1",
+  "classification": "AMOS lab verification against production; no ceremony run; nothing created",
+  "started_at": "2026-10-25T22:55:19.793Z",
+  "checks": [
+    {
+      "name": "production serves the release",
+      "passed": true,
+      "detail": "2026-10-26.review-feedback.1"
+    },
+    {
+      "name": "contract published with rate limits, refusals and custody",
+      "passed": true
+    },
+    {
+      "name": "no ceremony yet: lock not started, no binding, registry not configured",
+      "passed": true,
+      "detail": {
+        "ceremony": "not_started",
+        "registry": "not_configured_until_key_ceremony",
+        "binding": {
+          "present": false
+        }
+      }
+    },
+    {
+      "name": "registry has no key",
+      "passed": true
+    },
+    {
+      "name": "ceremony page served with a strict CSP, no-store and noindex",
+      "passed": true,
+      "detail": "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
+    },
+    {
+      "name": "page masks the token and salt and loads nothing from elsewhere",
+      "passed": true
+    },
+    {
+      "name": "proof endpoint reports no key and signs nothing",
+      "passed": true,
+      "detail": "signing_key_not_configured"
+    },
+    {
+      "name": "proof endpoint refuses a malformed nonce",
+      "passed": true
+    },
+    {
+      "name": "the Worker's real call to Cloudflare refuses an invalid token",
+      "passed": true,
+      "detail": "KEY_CEREMONY_TOKEN_INVALID"
+    },
+    {
+      "name": "a run with an invalid token is refused before anything happens",
+      "passed": true,
+      "detail": "KEY_CEREMONY_TOKEN_INVALID"
+    },
+    {
+      "name": "unknown fields are refused",
+      "passed": true
+    },
+    {
+      "name": "oversized bodies are refused",
+      "passed": true
+    },
+    {
+      "name": "state unchanged after the refusals",
+      "passed": true
+    },
+    {
+      "name": "the independent public verifier reports no key yet",
+      "passed": true
+    }
+  ],
+  "status": {
+    "ceremony": "not_started",
+    "registry": "not_configured_until_key_ceremony",
+    "binding": {
+      "present": false
+    }
+  },
+  "passed": true,
+  "completed_at": "2026-10-25T22:55:23.830Z"
+}

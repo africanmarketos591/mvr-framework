@@ -17,3 +17,7 @@ For a permitted state, the reviewed relationship must be `direct_support`; obvio
 Conditions are typed `all_references_current`, `amount_at_most` or `within_time_window` predicates. Each names exact evidence/closure hashes and an accountable resolver credential. Satisfaction or an explicitly permitted waiver requires a signed, expiring receipt bound to the exact condition and issuer scope. A waiver cannot revive revoked evidence. Missing/duplicate/expired receipts, unavailable dependencies and inactive resolver standing hold the case. Version 1 free-text conditions never clear themselves.
 
 The action catalogue exposes immutable namespaced versions and preserves the six legacy identifiers. An action identifier does not create an executor or confer authority; a separate approved adapter must implement the action. Version 2 requires an exact action match to the case and enforces its ceiling at capability verification. Both state versions currently remain lab-only. No production issuer is activated merely by declaring an affiliation or recording operator vetting.
+
+## Reproduce it
+
+[`conformance/issuer-state-v2/`](../conformance/issuer-state-v2/) publishes every version 2 rule in order, 98 engine-generated vectors with published lab keys, and a separate Python implementation that reproduces each hash, signature, registration, evaluation and allow/deny result. Run `python conformance/issuer-state-v2/check.py`.

@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
 import {runExecutorRevocationHarness,runCommittedRevocationHarness} from './executor-revocation-harness.mjs';
+import {runReceiverConformance} from '../receiver-kit/scenarios.mjs';
 import {webcrypto,createHash,randomBytes} from 'node:crypto';
 import {canonicalJson,verifyAuthorityReceipt} from '../../sdks/javascript/authority-receipts.mjs';
 const hash=v=>createHash('sha256').update(v).digest('hex');
 const signBytes=(type,doc)=>new TextEncoder().encode(`MVR-AUTHORITY-V1\n${type}\n${canonicalJson(doc)}`);
-export async function runAuthorityConformance(transport){
+export async function runAuthorityConformance(transport,{createReceiver}={}){
  const checks=[];let count=0,n=0,session,head={sequence:0,sha256:'0'.repeat(64)};const receiptKinds=new Set();
  const op=label=>label+'-'+(++n);
  const send=async body=>{count++;const value=await transport(body);if(session)for(const c of Object.values(session.credentials))assert(!JSON.stringify(value).includes(c.session_token),'A lab credential leaked');if(value.receipt){const verified=await verifyAuthorityReceipt(value.receipt,{registry:session.receipt_registry,previousHead:head,allowLabKeys:true});assert.equal(verified.valid,true,'Offline receipt: '+verified.reason);assert.equal(verified.lab_fixture,true);head={sequence:value.receipt.sequence,sha256:value.receipt.sha256};receiptKinds.add(value.receipt.decision||value.receipt.kind);}return value;};
@@ -51,6 +52,12 @@ export async function runAuthorityConformance(transport){
   await verify({},'deny');
   await registerCredential('two');await closeResidual('three');await registerCapability('three');await verify();good(await chain('reviewer',{action:'revoke_closure',closure_id:closureId,reason:'Proprietary lab revocation'}),'revoke closure');await verify({},'deny');
   await closeResidual('four');await registerCapability('four');await verify();
+  // Customer receiver kit: real AMOS commits delivered to the reference customer-side receiver.
+  await registerCapability('receiver');
+  const commitFresh=async()=>{const requested_effect={...effect,effect_id:op('receiver')};const v=good(await chain('executor',{action:'verify_capability',capability_id:capabilityId,requested_effect}),'receiver verification');assert.equal(v.decision,'allow',JSON.stringify(v.deny_reasons));const c=good(await chain('executor',{action:'commit_effect',verification_id:v.verification_id,effect_id:requested_effect.effect_id,requested_effect}),'receiver commit');assert.equal(c.decision,'commit');return {receipt:c.receipt,requested_effect};};
+  const commitAfterRevocation=async()=>{const requested_effect={...effect,effect_id:op('receiver-revoked')};const v=good(await chain('executor',{action:'verify_capability',capability_id:capabilityId,requested_effect}),'receiver verification before revocation');assert.equal(v.decision,'allow');good(await chain('institution',{action:'revoke_capability',capability_id:capabilityId,reason:'Proprietary lab: revoke between verification and commit'}),'revoke between verification and commit');const c=good(await chain('executor',{action:'commit_effect',verification_id:v.verification_id,effect_id:requested_effect.effect_id,requested_effect}),'commit after revocation');return {receipt:c.receipt,requested_effect};};
+  const receiverKit=await runReceiverConformance({registry:session.receipt_registry,allowLabKeys:true,commitFresh,commitAfterRevocation,...(createReceiver?{createReceiver}:{})});checks.push('customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none');
+  await registerCapability('four-b');await verify();
   const attestationSecret=randomBytes(32).toString('hex');
   const contradiction=good(await call('reviewer','attestation',{action:'create',operation_id:op('contradiction'),preflight_context:context,reviewer_name:'AMOS Lab reviewer',reviewer_relationship:'external',claim:'Proprietary lab evidence is disputed',statement:'Proprietary lab contradiction test only; no real source or person.',relationship:'contradicts',source_records:[{source_ref:'LAB-DOC-1',locator:'Proprietary lab fixture',source_sha256:hash('proprietary lab record')}],reviewed_at:from,expires_at:until,residual_gaps:['Proprietary lab contradiction'],reference_secret:attestationSecret,share_redacted_with_reference_holders:true,original_records_examined:true,redacted_no_personal_data:true}),'record contradiction');
   const beforeLink=good(await call('institution','case',{action:'get',case_id:caseId}),'get link revision');
@@ -63,14 +70,14 @@ export async function runAuthorityConformance(transport){
   let delivery;
   for(let poll=0;poll<55;poll++){
     delivery=good(await call('executor','delivery',{action:'status'}),'reconcile delivery journal');
-    if(delivery.events.length===3&&delivery.events.every(e=>e.job_status==='completed'&&e.receiver?.accepted&&e.receiver.signature_verified&&e.receiver.first_attempt_rejected&&e.receiver.acknowledgement_loss_simulated&&e.receiver.duplicate_count>=1&&e.attempts>=3))break;
+    if(delivery.events.length===4&&delivery.events.every(e=>e.job_status==='completed'&&e.receiver?.accepted&&e.receiver.signature_verified&&e.receiver.first_attempt_rejected&&e.receiver.acknowledgement_loss_simulated&&e.receiver.duplicate_count>=1&&e.attempts>=3))break;
     await new Promise(resolve=>setTimeout(resolve,2000));
   }
-  assert.equal(delivery.events.length,3,'Three revocation events must exist');
+  assert.equal(delivery.events.length,4,'Four revocation events must exist (source record, credential, closure, and the receiver kit capability)');
   assert(delivery.events.every(e=>e.job_status==='completed'&&e.receiver?.accepted&&e.receiver.signature_verified&&e.receiver.first_attempt_rejected&&e.receiver.acknowledgement_loss_simulated&&e.receiver.duplicate_count>=1&&e.attempts>=3),'Durable delivery retry/deduplication evidence incomplete');
   const reconciled=good(await call('executor','delivery',{action:'reconcile'}),'reconcile missed notifications from durable journal');assert(reconciled.events.every(e=>e.reconciliation==='none'));
   checks.push('production outbox retry, lost acknowledgement, HMAC verification, deduplication and journal reconciliation');
-  return {passed:true,checks,requests:count+2,receipt_kinds:[...receiptKinds],executor_harness:executorHarness,committed_executor_harness:committedHarness,delivery:reconciled,classification:'AMOS lab verification; no independent standing or external effect'};
+  return {passed:true,checks,requests:count+2,receipt_kinds:[...receiptKinds],executor_harness:executorHarness,committed_executor_harness:committedHarness,receiver_kit:receiverKit,delivery:reconciled,classification:'AMOS lab verification; no independent standing or external effect'};
  }finally{
   if(session){const closed=await send({action:'close',session_id:session.session_id,session_token:session.credentials.institution.session_token});assert.equal(closed.status,'closed','Session cleanup failed');const denied=await send({action:'call',session_id:session.session_id,session_token:session.credentials.executor.session_token,target:'authority',request:{action:'get',kind:'anchor',id:'lab-institution'}});assert.equal(denied.http_status,401,'Closed lab session remained usable');}
  }

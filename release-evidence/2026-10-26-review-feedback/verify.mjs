@@ -1,0 +1,37 @@
+// Verifies the published review-feedback release evidence: file hashes and every claim the README makes.
+// Usage: node release-evidence/2026-10-26-review-feedback/verify.mjs
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+const dir = new URL('./', import.meta.url), read = name => fs.readFileSync(new URL(name, dir));
+const sha = (name, bytes) => createHash('sha256').update(/\.(json|md|mjs)$/.test(name) ? Buffer.from(bytes.toString('utf8').replace(/\r\n/g, '\n')) : bytes).digest('hex');
+const manifest = JSON.parse(read('manifest.json'));
+for (const f of manifest.files) assert.equal(sha(f.path, read(f.path)), f.sha256, 'Hash mismatch: ' + f.path);
+const j = name => JSON.parse(read(name)), revision = manifest.deployment_revision;
+const deployment = j('deployment.json'), local = j('local-acceptance.json');
+assert.equal(deployment.deployment_revision, revision); assert.equal(deployment.provider_bytes_match, true); assert.equal(deployment.bindings_unchanged, true); assert.equal(deployment.renderer_unchanged, true);
+assert.equal(local.passed, true); assert.equal(local.commands, local.total); assert.equal(local.head, deployment.source_head, 'Local acceptance ran on the deployed source'); assert.equal(local.python_release_checks.passed, true);
+assert(local.review_feedback_suites.length >= 11 && local.review_feedback_suites.every(s => s.exit === 0), 'The review-feedback suites ran and passed');
+const report = part => Object.entries(local.suite_reports).find(([command]) => command.includes(part))?.[1];
+assert.equal(report('test-authority-adversarial').killed, 9, 'Nine weakened engines fail the adversarial suite');
+assert.equal(report('test-receiver-kit').killed, 6, 'Six broken receivers fail the receiver kit');
+const vectors = report('test-issuer-state-vectors'); assert.equal(vectors.mutants_killed, vectors.mutants); assert(vectors.mutants >= 15 && vectors.constructors_rebuilt_documents >= 15);
+const licensed = j('live-licensed.json'); assert.equal(licensed.passed, true); assert.equal(licensed.revision, revision);
+assert(licensed.checks.filter(c => c.name.startsWith('licensed clean room')).length >= 6 && licensed.checks.every(c => c.passed), 'Licensed clean-room flow passed');
+assert(licensed.checks.some(c => c.name === 'licensed client_safe review responses keep evidence_gap_closure' && c.passed));
+const evaluation = j('live-clean-room-evaluation.json'); assert.equal(evaluation.passed, true); assert.equal(evaluation.session_closed, true); assert.equal(evaluation.revision, revision);
+const conformance = j('live-authority-conformance.json'); assert.equal(conformance.passed, true); assert.equal(conformance.revision, revision); assert.equal(conformance.receiver_kit?.passed, true, 'Receiver kit passed live');
+const adversarial = j('live-adversarial.json'); assert.equal(adversarial.passed, true); assert.equal(adversarial.revision, revision); assert.equal(adversarial.sessions, 2); assert.deepEqual(adversarial.skipped, []);
+for (const category of ['cross_tenant', 'confused_deputy', 'replay', 'altered_receipt', 'race', 'secret_export']) assert(adversarial.categories[category] >= 1, category);
+const canary = j('live-canary.json'); assert.equal(canary.passed, true); assert.equal(canary.expected_revision, revision); assert.deepEqual(canary.served_revisions, [revision]);
+const issuer = j('issuer-state-v2-check.json'); assert.equal(issuer.passed, true); assert(issuer.checks.signatures >= 100 && issuer.checks.registrations >= 45 && issuer.checks.evaluations >= 30 && issuer.checks.verification_decisions >= 20);
+const frozen = j('frozen-comparison-live.json'); assert.equal(frozen.manifest.amos_revision, revision); assert.equal(frozen.amos_arm.records.length, frozen.manifest.case_count); assert(frozen.amos_arm.records.every(r => r.is_a_decision === false && r.served_revision === revision), 'AMOS records are context, never decisions');
+assert.equal(j('live-release-gate.json').authority_leaks.length, 0); assert.equal(j('live-release-gate.json').protective_failures.length, 0);
+assert.equal(j('live-permission-path.json').passed, true); assert.equal(j('live-original-review.json').passed, true);
+const ceremony = j('live-ceremony-production.json'); assert.equal(ceremony.passed, true); assert.equal(ceremony.revision, revision); assert.equal(ceremony.status.ceremony, 'not_started', 'No ceremony has run');
+const page = j('page-check-production.json'); assert(page.passed && Object.values(page.flags).every(Boolean) && page.flags.framing_denied_by_csp_and_legacy_header === true, 'Ceremony page and its framing headers');
+const shape = j('production-api-shape.json'); assert.equal(shape.newest_version_is_deployed, true); assert.deepEqual(shape.receipt_key_secrets_present, []);
+const all = manifest.files.filter(f => f.path.endsWith('.json')).map(f => read(f.path).toString('utf8')).join('\n');
+assert(!/"execution_authorized":\s*true/.test(all) && !/"external_action_authorized":\s*true/.test(all), 'No evidence file claims authorization');
+assert(!/PRIVATE KEY-----|MC4CAQAw/.test(all), 'No private key material');
+console.log(JSON.stringify({passed:true, revision, files:manifest.files.length, classification:'AMOS lab verification; not independent review'}));
