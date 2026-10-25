@@ -1,0 +1,146 @@
+{
+  "passed": true,
+  "checks": 26,
+  "case_id": "RC-81f77b22d77dd54c01b50a41ed563364aef5a37dfe406868efd0b3ec59725cf5",
+  "dimensions_invalidated": [
+    "document_sha256",
+    "locator",
+    "claim",
+    "relationship",
+    "subject",
+    "action",
+    "geography",
+    "valid_from",
+    "valid_until",
+    "reviewer_standing_ref",
+    "model_version",
+    "extractor_version"
+  ],
+  "revocation_read_ms": 1932,
+  "classification": "proprietary generated test data; reconstructed scenarios, not developer payload reproduction",
+  "original_bytes_preserved": true,
+  "restrictions_force_further_review": true,
+  "original_evidence": {
+    "document": {
+      "name": "proprietary-case.txt",
+      "provenance": "proprietary_generated_test_data",
+      "registered_at": "2026-10-25T13:57:30.433Z",
+      "account_ref": "evaluation-c2f38ad19657cd711714b0c20ad66d4c",
+      "original_authenticity_verified": false,
+      "text": "Mbarara: the operator must not launch without final approval.\r\nEducation appraisal may proceed internally.\n😀",
+      "sha256": "5da50c67db2e8012f5be1778a4681cb9854fa99e871fffb4c09a39694e454fc2",
+      "byte_length": 111,
+      "encoding": "UTF-8"
+    },
+    "model": {
+      "model_id": "passage",
+      "version": "1",
+      "scope": "4011a67c4c5c646b0ba70c98d135e6121f7863ec8659b0bad24f5450c1b3f4c2",
+      "facts": [
+        {
+          "id": "passage",
+          "label": "Launch permitted",
+          "cost": 1,
+          "binding": {
+            "document_sha256": "5da50c67db2e8012f5be1778a4681cb9854fa99e871fffb4c09a39694e454fc2",
+            "locator": "utf16:0:61",
+            "claim": "Launch is permitted",
+            "relationship": "direct_support",
+            "subject": "Proprietary Mbarara test",
+            "action": "Launch",
+            "geography": "UG-Mbarara",
+            "valid_from": "2026-10-25T13:57:29.949Z",
+            "valid_until": "2026-10-25T14:07:30.951Z",
+            "reviewer_standing_ref": "test-role-not-institutional",
+            "model_version": "proprietary/1",
+            "extractor_version": "manual/1"
+          }
+        }
+      ],
+      "rule": {
+        "fact": "passage"
+      }
+    },
+    "receipt": {
+      "payload": {
+        "document_sha256": "5da50c67db2e8012f5be1778a4681cb9854fa99e871fffb4c09a39694e454fc2",
+        "fact_id": "passage",
+        "start": 0,
+        "end": 61,
+        "clause_text": "Mbarara: the operator must not launch without final approval.",
+        "disposition": "approve",
+        "note": "Proprietary generated adverse example",
+        "locator": "utf16:0:61",
+        "binding": {
+          "document_sha256": "5da50c67db2e8012f5be1778a4681cb9854fa99e871fffb4c09a39694e454fc2",
+          "locator": "utf16:0:61",
+          "claim": "Launch is permitted",
+          "relationship": "direct_support",
+          "subject": "Proprietary Mbarara test",
+          "action": "Launch",
+          "geography": "UG-Mbarara",
+          "valid_from": "2026-10-25T13:57:29.949Z",
+          "valid_until": "2026-10-25T14:07:30.951Z",
+          "reviewer_standing_ref": "test-role-not-institutional",
+          "model_version": "proprietary/1",
+          "extractor_version": "manual/1"
+        },
+        "model_sha256": "ad4fe5049b3df63d8d16d003523de1aee5e5955445e893afcb01c359299c5d55",
+        "model_revision": 2,
+        "case_basis_sha256": "263e1c62da2545753280bc3963b9c182cd341302b3eb2ab41b58668181579685",
+        "reviewer_account_ref": "evaluation-b722c40093ef895bc47d8871eb0d44d6",
+        "reviewer_roles": [
+          "attestor"
+        ],
+        "reviewed_at": "2026-10-25T13:57:41.855Z",
+        "warning": "DECLARED_RELATIONSHIP_TEXT_CONFLICT",
+        "requires_further_review": true,
+        "account_control_is_not_standing": true,
+        "legal_truth_asserted": false,
+        "execution_authorized": false
+      },
+      "sha256": "70f492a226851767a839bae56ae62a00691000131e87cfbff712ac059d7b5f1a",
+      "current": true,
+      "authorizes_fact_observation": false,
+      "independent_standing_verified": false
+    },
+    "reliance": "Historical isolated-evaluation receipt; case subsequently withdrawn and evaluation revoked. No real reviewer identity or authority.",
+    "current_on_final_read": false
+  },
+  "public_registry_snapshot": {
+    "adapter_version": "gleif-lei/1",
+    "status": "retrieved",
+    "lei": "9845004RABFFAE62FB64",
+    "url": "https://api.gleif.org/api/v1/lei-records/9845004RABFFAE62FB64",
+    "requested_at": "2026-10-25T13:58:06.504Z",
+    "retrieved_at": "2026-10-25T13:58:06.789Z",
+    "response_sha256": "3fd40f4fdbce1311b212239ceddbe2406ccc539ce8468609a6161c9a41013195",
+    "provenance": "public_source",
+    "legal_name": "CMM GLOBAL LIMITED",
+    "jurisdiction": "UG",
+    "entity_status": "ACTIVE",
+    "registration_status": "ISSUED",
+    "last_update": "2026-10-06T08:15:30Z",
+    "next_renewal": "2027-10-06T08:15:33Z",
+    "registration_authority_id": "RA000566",
+    "verification": "HTTPS retrieval from fixed GLEIF host; no document signature verified",
+    "institutional_authority_verified": false,
+    "delegation_verified": false,
+    "execution_authorized": false,
+    "reliance": "Historical reference snapshot only. Refresh at use; no permission or revocation authority inferred."
+  },
+  "deployment_revision": "2026-10-25.permission-path.3",
+  "observed_at": "2026-10-25T13:58:07.716Z",
+  "transport": "live hosted isolated review evaluation",
+  "evaluation_requests": 34,
+  "page_html_and_policy_verified": true,
+  "published_actions_verified": 9,
+  "anonymous_production_access_denied": 401,
+  "session_closed": true,
+  "post_close_denial": {
+    "http_status": 401,
+    "code": "REVIEW_SANDBOX_SESSION_REVOKED"
+  },
+  "production_account_identity_verified": false,
+  "credentials_published": false
+}

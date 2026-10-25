@@ -1,0 +1,32 @@
+{
+  "extractor": "amos-pdf-text/1",
+  "purpose": "Robustness of the extractor on real PDFs kept on the operator machine. Only aggregate statistics are recorded; no file names, text or content left the machine.",
+  "observed_at": "2026-10-25T06:51:56.103Z",
+  "files": 58,
+  "extracted": 55,
+  "refused": 3,
+  "refusal_codes": {
+    "PDF_TEXT_LAYER_MISSING": 3
+  },
+  "pages_extracted": 290,
+  "glyphs_extracted": 765956,
+  "unmapped_glyphs": 0,
+  "producer_counts": {
+    "LibreOffice": 32,
+    "ReportLab": 1,
+    "Microsoft Print to PDF, scanned image (refused)": 2,
+    "not declared in plain text": 6,
+    "iText": 9,
+    "LibreOffice (development build)": 2,
+    "Skia/PDF (Chromium)": 2,
+    "EPSON Scan (refused)": 1,
+    "iLovePDF": 2,
+    "PDFium": 1
+  },
+  "extraction_ms": {
+    "median": 111,
+    "p90": 264,
+    "max": 1060
+  },
+  "runtime": "Node v24.11.0 on Windows; Worker runtime equivalence is checked separately on fixtures"
+}

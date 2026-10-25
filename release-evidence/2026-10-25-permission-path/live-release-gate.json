@@ -1,0 +1,232 @@
+{
+  "gate": "behavioural release gate",
+  "target": "production",
+  "cases": 20,
+  "authority_leaks": [],
+  "protective_failures": [],
+  "baseline_changes": [],
+  "baseline_written": false,
+  "observed": {
+    "01_no_paid_orders": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "activation_ready",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "assessment_in_progress",
+      "next_safe_action": "continue_evidence_assessment",
+      "mvr_relevant": true
+    },
+    "02_school_permissions_missing": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "activation_ready",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "assessment_in_progress",
+      "next_safe_action": "continue_evidence_assessment",
+      "mvr_relevant": true
+    },
+    "03_unknown_ghana_entity": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "context_received_unverified",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "assessment_in_progress",
+      "next_safe_action": "continue_evidence_assessment",
+      "mvr_relevant": null
+    },
+    "04_unstructured_labels": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "activation_ready",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "assessment_in_progress",
+      "next_safe_action": "continue_evidence_assessment",
+      "mvr_relevant": true
+    },
+    "05_uganda_history_for_kenya": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "partial",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": null
+    },
+    "06_ai_prediction_as_source": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": true,
+      "status": "rejected_input",
+      "code": "ARTIFACT_ROLE_NOT_SOURCE_EVIDENCE",
+      "recommendation": null,
+      "decision_state": "blocked_invalid_or_unavailable",
+      "next_safe_action": "correct_input_or_restore_current_state",
+      "mvr_relevant": null
+    },
+    "07_future_dated_source": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "partial",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": null
+    },
+    "08_mixed_declarations": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "blocked_missing_evidence",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": null
+    },
+    "09_instruction_in_claim": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "evidence_routing",
+      "code": null,
+      "recommendation": "abstain_pending_evidence",
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": null
+    },
+    "10_incomplete_records": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "evidence_routing",
+      "code": null,
+      "recommendation": "abstain_pending_evidence",
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": null
+    },
+    "11_perfect_self_scores": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "evidence_routing",
+      "code": null,
+      "recommendation": "abstain_pending_evidence",
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": null
+    },
+    "12_caller_authored_verdict": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "evidence_routing",
+      "code": null,
+      "recommendation": "abstain_pending_evidence",
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": null
+    },
+    "13_claimed_verified_references": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "partial",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": null
+    },
+    "14_caller_reviewer_state": {
+      "http": 200,
+      "rpc_error": -32602,
+      "is_error": false,
+      "status": null,
+      "code": -32602,
+      "recommendation": null,
+      "decision_state": null,
+      "next_safe_action": null,
+      "mvr_relevant": null
+    },
+    "15_nairobi_insights": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "insight_brief",
+      "code": null,
+      "recommendation": null,
+      "decision_state": null,
+      "next_safe_action": null,
+      "mvr_relevant": null
+    },
+    "16_bounded_next_action": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "evidence_routing",
+      "code": null,
+      "recommendation": "abstain_pending_evidence",
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": null
+    },
+    "17_forged_authentication_count": {
+      "http": 422,
+      "rpc_error": null,
+      "is_error": false,
+      "status": null,
+      "code": "CALLER_SUPPLIED_INTERNAL_FIELDS",
+      "recommendation": null,
+      "decision_state": null,
+      "next_safe_action": null,
+      "mvr_relevant": null
+    },
+    "18_rest_decision_abstains": {
+      "http": 422,
+      "rpc_error": null,
+      "is_error": false,
+      "status": null,
+      "code": null,
+      "recommendation": null,
+      "decision_state": null,
+      "next_safe_action": null,
+      "mvr_relevant": null
+    },
+    "19_relevance_negative_csv": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "not_relevant",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "outside_declared_mvr_scope",
+      "next_safe_action": "ordinary_task_outside_mvr",
+      "mvr_relevant": false
+    },
+    "20_relevance_positive": {
+      "http": 200,
+      "rpc_error": null,
+      "is_error": false,
+      "status": "awaiting_required_context",
+      "code": null,
+      "recommendation": null,
+      "decision_state": "abstain_pending_evidence",
+      "next_safe_action": "internal_evidence_plan",
+      "mvr_relevant": true
+    }
+  },
+  "generated_at": "2026-10-25T13:54:57.171Z"
+}
