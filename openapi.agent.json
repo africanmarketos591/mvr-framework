@@ -85415,6 +85415,408 @@
         }
       }
     },
+    "/v1/key-ceremony": {
+      "post": {
+        "summary": "Made-in-Cloudflare receipt key ceremony: precheck, run once, confirm token deletion, or recover an interrupted run. The Cloudflare API token in the body is the authority; it is never stored. Grants no permission.",
+        "description": "Made-in-Cloudflare receipt key ceremony: precheck, run once, confirm token deletion, or recover an interrupted run. The Cloudflare API token in the body is the authority; it is never stored. Grants no permission.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/key-ceremony",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-policy": {
+          "mode": "not_required"
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "action"
+                ],
+                "properties": {
+                  "action": {
+                    "enum": [
+                      "precheck",
+                      "run",
+                      "check_token",
+                      "recover_interrupted"
+                    ]
+                  },
+                  "ceremony_id": {
+                    "type": "string",
+                    "pattern": "^KC-AMOS-RECEIPT-20[0-9]{2}-[0-9]{2}$"
+                  },
+                  "key_id": {
+                    "type": "string",
+                    "pattern": "^amos-receipt-ed25519-20[0-9]{2}-[0-9]{2}$"
+                  },
+                  "participants_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "cloudflare_api_token": {
+                    "type": "string",
+                    "minLength": 30,
+                    "maxLength": 200,
+                    "writeOnly": true
+                  },
+                  "confirm_witnesses_present": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/key-ceremony/status": {
+      "get": {
+        "summary": "Public state of the receipt key ceremony, the signed birth record and its verification, and the private key binding metadata (never the key).",
+        "description": "Public state of the receipt key ceremony, the signed birth record and its verification, and the private key binding metadata (never the key).",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/key-ceremony/status",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-policy": {
+          "mode": "not_required"
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/key-ceremony/contract": {
+      "get": {
+        "summary": "How the made-in-Cloudflare receipt key ceremony works, its refusals and custody.",
+        "description": "How the made-in-Cloudflare receipt key ceremony works, its refusals and custody.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/key-ceremony/contract",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-policy": {
+          "mode": "not_required"
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/review-sandbox/contract": {
       "get": {
         "summary": "Discover isolated synthetic reviewer evaluation sessions.",
@@ -107556,7 +107958,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-25.permission-path.3"
+    "deployment_revision": "2026-10-25.key-ceremony.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }

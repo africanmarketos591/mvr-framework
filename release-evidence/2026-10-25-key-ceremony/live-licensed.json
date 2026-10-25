@@ -1,0 +1,573 @@
+{
+ "revision": "2026-10-25.key-ceremony.1",
+ "classification": "AMOS lab verification; disposable lab keys; proprietary lab fixtures; no independent review",
+ "started_at": "2026-10-25T17:22:52.415Z",
+ "checks": [
+  {
+   "name": "protected handoff unchanged: full_advisory",
+   "passed": true
+  },
+  {
+   "name": "positive five-stage handoff: full_advisory",
+   "passed": true
+  },
+  {
+   "name": "protected handoff unchanged: strict_calibrated",
+   "passed": true
+  },
+  {
+   "name": "positive five-stage handoff: strict_calibrated",
+   "passed": true
+  },
+  {
+   "name": "licensed case created with planning-only position",
+   "passed": true
+  },
+  {
+   "name": "licensed PDF registration (WPS producer)",
+   "passed": true
+  },
+  {
+   "name": "check_permission through the MCP authority operation",
+   "passed": true,
+   "detail": {
+    "tier": "planning_only",
+    "structured_keys": [
+     "status",
+     "response_meta",
+     "idempotent_replay",
+     "issued_by_amos",
+     "amos_authorization",
+     "authority_source",
+     "real_world_identity_verified_by_amos",
+     "action",
+     "permission_position",
+     "dependency_graph",
+     "response_contract_version",
+     "action_authorization",
+     "output_use_authorization",
+     "analysis_use",
+     "action_capability",
+     "execution_authorization_state",
+     "human_review_required",
+     "answer",
+     "residual_risk_register",
+     "action_boundary",
+     "evidence_authentication_status",
+     "authenticated_verified_count",
+     "evidence_authentication_basis",
+     "external_use_ceiling",
+     "internal_work_products",
+     "stable_content_hash",
+     "cite",
+     "response_hash",
+     "mvr_response_receipt",
+     "diagnostics"
+    ]
+   }
+  },
+  {
+   "name": "licensed REST check_permission keeps action, position and dependency graph",
+   "passed": true,
+   "detail": {
+    "keys": [
+     "status",
+     "response_meta",
+     "idempotent_replay",
+     "issued_by_amos",
+     "amos_authorization",
+     "authority_source",
+     "real_world_identity_verified_by_amos",
+     "action",
+     "permission_position",
+     "dependency_graph",
+     "response_contract_version",
+     "action_authorization",
+     "output_use_authorization",
+     "analysis_use",
+     "action_capability",
+     "execution_authorization_state",
+     "human_review_required",
+     "answer",
+     "residual_risk_register",
+     "action_boundary",
+     "evidence_authentication_status",
+     "authenticated_verified_count",
+     "evidence_authentication_basis",
+     "external_use_ceiling",
+     "internal_work_products",
+     "stable_content_hash",
+     "cite",
+     "response_hash"
+    ]
+   }
+  },
+  {
+   "name": "MCP authority text within 4500",
+   "passed": true
+  },
+  {
+   "name": "authority get_contract lists check_permission example and both new response branches",
+   "passed": true
+  },
+  {
+   "name": "another tenant cannot read the permission position",
+   "passed": true,
+   "detail": {
+    "status": "not_found",
+    "response_meta": {
+     "model_version": "v6.32.0",
+     "evaluated_at": "2026-10-25T17:27:00.273Z",
+     "response_profile": "full_advisory",
+     "calibration_attestation": "full_advisory: standard utility response.",
+     "registry_snapshot_id": "v6.32.0:registry",
+     "policy_snapshot_id": "v6.32.0:policy",
+     "release_channel": "stable",
+     "deployment_revision": "2026-10-25.key-ceremony.1",
+     "output_mode": "client_safe",
+     "extraction_guard": {
+      "active": true,
+      "route": "/v1/authority-chain",
+      "public_precision": "native_precision_for_internal_full",
+      "deterministic": true,
+      "risk_level": "low",
+      "risk_signals": [],
+      "policy": "The API returns bounded verdicts and rounded public/client-safe scores while keeping engine logic, calibration assets, and private labels server-side.",
+      "no_training": true,
+      "reverse_engineering_allowed": false
+     }
+    },
+    "code": "AUTHORITY_CASE_NOT_FOUND",
+    "http_status": 404,
+    "issued_by_amos": false,
+    "amos_authorization": false,
+    "authority_source": "institution_signature_only",
+    "real_world_identity_verified_by_amos": false,
+    "response_contract_version": "2026-05-01.v1",
+    "action_authorization": {
+     "contract": "mvr-action-boundary@1",
+     "decision": "BLOCKED",
+     "capability_issued": false,
+     "execution_authorized": false,
+     "reason": "AMOS provides decision support, not an execution authorization capability. Obtain current authority and accountable signoffs outside this API before acting.",
+     "source_authenticity_verified": false,
+     "signer_standing_verified": false,
+     "revocation_checked": false,
+     "signature": null
+    },
+    "output_use_authorization": {
+     "status": "not_assessed",
+     "permitted_uses": [],
+     "legacy_status_meaning": "decision_authorization.status describes bounded output use only, never action permission.",
+     "execution_permission": false
+    },
+    "analysis_use": {
+     "status": "not_assessed",
+     "permitted_uses": [],
+     "execution_permission": false
+    },
+    "action_capability": {
+     "status": "not_issued",
+     "reason": "AMOS provides decision support, not an execution authorization capability. Obtain current authority and accountable signoffs outside this API before acting.",
+     "capability_issued": false,
+     "execution_authorized": false
+    },
+    "execution_authorization_state": "not_authorized",
+    "human_review_required": false,
+    "answer": {
+     "format": "mvr_answer_v1",
+     "route": "/v1/authority-chain",
+     "summary": "Processing status: not_found. No decision recommendation or execution permission is issued.",
+     "recommendation": null,
+     "processing_status": "not_found",
+     "action_headline": "NOT YET",
+     "action_authorization": {
+      "contract": "mvr-action-boundary@1",
+      "decision": "BLOCKED",
+      "capability_issued": false,
+      "execution_authorized": false,
+      "reason": "AMOS provides decision support, not an execution authorization capability. Obtain current authority and accountable signoffs outside this API before acting.",
+      "source_authenticity_verified": false,
+      "signer_standing_verified": false,
+      "revocation_checked": false,
+      "signature": null
+     },
+     "output_use_authorization": {
+      "status": "not_assessed",
+      "permitted_uses": [],
+      "legacy_status_meaning": "decision_authorization.status describes bounded output use only, never action permission.",
+      "execution_permission": false
+     },
+     "analysis_use": {
+      "status": "not_assessed",
+      "permitted_uses": [],
+      "execution_permission": false
+     },
+     "action_capability": {
+      "status": "not_issued",
+      "reason": "AMOS provides decision support, not an execution authorization capability. Obtain current authority and accountable signoffs outside this API before acting.",
+      "capability_issued": false,
+      "execution_authorized": false
+     },
+     "execution_authorization_state": "not_authorized",
+     "confidence": null,
+     "bounded_output_use_status": "not_assessed",
+     "authorization_status": null,
+     "authorization_status_deprecated": true,
+     "authorization_status_scope": "Legacy bounded output use only; action_authorization is the execution boundary.",
+     "use_boundary": "MVR outputs are evidence-governed decision support. They are not autonomous credit, investment, legal, regulatory, or procurement approval.",
+     "human_review_required": false,
+     "not_authorized_for": []
+    },
+    "residual_risk_register": {
+     "contract_version": "mvr.residual-risk-register/1",
+     "registry_version": "mvr.risk-taxonomy/3",
+     "scope": "reported_checks_only",
+     "taxonomy_url": "/v1/review-cases/contract",
+     "assessed_domains": [],
+     "unassessed_domains_unknown": true,
+     "case_basis": null,
+     "items": [
+      {
+       "code": "PERMISSION_STATUS_UNASSESSED",
+       "state": "open",
+       "status": "open",
+       "closure_requirement": "competent_authority_permission_assessment",
+       "required_resolver_role": "competent_accountable_verifier",
+       "scope_ref": "current_assessment"
+      },
+      {
+       "code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+       "state": "open",
+       "status": "open",
+       "closure_requirement": "external_source_verification",
+       "required_resolver_role": "competent_accountable_verifier",
+       "scope_ref": "current_assessment"
+      }
+     ],
+     "instances": [],
+     "instances_truncated": false,
+     "factual_closure_available": false,
+     "omitted_risks_unknown": true,
+     "complete_risk_inventory": false,
+     "underlying_decision_unchanged": true,
+     "evidence_gap_closure": false,
+     "execution_authorized": false
+    },
+    "action_boundary": {
+     "contract_version": "mvr.preflight-action-boundary/1",
+     "decision_state": "blocked_invalid_or_unavailable",
+     "next_safe_action": {
+      "type": "correct_input_or_restore_current_state",
+      "availability": "blocked",
+      "required_host_inputs": [
+       "valid_input_and_current_state"
+      ],
+      "handoff_source": null
+     },
+     "stop": {
+      "required": true,
+      "applies_to": "all_consequential_external_actions",
+      "analytical_chain_required": true,
+      "reason_codes": [
+       "PERMISSION_STATUS_UNASSESSED",
+       "SOURCE_AUTHENTICITY_UNVERIFIED",
+       "RISK_INVENTORY_INCOMPLETE"
+      ],
+      "unknown_risks_remain": true
+     },
+     "allowed_effects": [],
+     "forbidden_effects": [
+      "spend",
+      "external_contact",
+      "contract",
+      "customer_launch",
+      "pilot_execution",
+      "payment",
+      "deployment"
+     ],
+     "max_capital_commitment_usd": 0,
+     "external_contact_allowed": false,
+     "customer_launch_allowed": false,
+     "revalidate_before_effect": true,
+     "historical_output_is_not_current_permission": true,
+     "execution_authorized": false,
+     "external_action_authorized": false,
+     "capability_issued": false
+    },
+    "evidence_authentication_status": "not_authenticated",
+    "authenticated_verified_count": 0,
+    "evidence_authentication_basis": "Labels, completeness and review notes are declarations; no source is authenticated.",
+    "external_use_ceiling": {
+     "contract_version": "mvr.external-use-ceiling/1",
+     "external_use_allowed": false,
+     "max_capital_commitment_usd": 0,
+     "external_contact_allowed": false,
+     "customer_launch_allowed": false,
+     "source_authenticity_verified": false,
+     "evidence_gap_closure": false,
+     "capability_issued": false,
+     "current_authority_receipt": null,
+     "required_before_external_effect": [
+      "source_authenticity_verified",
+      "evidence_gap_closure",
+      "action_boundary.capability_issued",
+      "current_authority_receipt"
+     ],
+     "basis": "Internal drafts and read-only assessment only."
+    },
+    "stable_content_hash": "f6ebffd2718cae0c5d54ba207d3694c1e188cb9eb35c04ccb1a0f1dc52730ed9",
+    "cite": {
+     "format": "mvr_cite_v1",
+     "route": "/v1/authority-chain",
+     "citation_policy": "For public citation, prefer snapshot-backed public_receipt_hash receipts when present. Do not cite sampled logs or internal diagnostics.",
+     "preferred_hash_kind": null,
+     "verification_status": "error_response_not_registered_as_verifiable_receipt",
+     "public_receipt_hash": null,
+     "immutable_receipt_hash": null,
+     "verification_url": null,
+     "stable_content_hash": "f6ebffd2718cae0c5d54ba207d3694c1e188cb9eb35c04ccb1a0f1dc52730ed9",
+     "response_hash_header": "X-Response-Hash",
+     "public_snapshot_note": "For durable public verification, create or cite a decision snapshot. Response hashes are request receipts; snapshots are preferred for external publication."
+    },
+    "response_hash": "8a3ca7db71e3ba0271cba33cb7f971c3fc0de3bec863d9ae18050ec1161fc7bc"
+   }
+  },
+  {
+   "name": "licensed outcome ledger records and reports",
+   "passed": true,
+   "detail": {
+    "outcome": [
+     "status",
+     "response_meta",
+     "case_id",
+     "outcome_entry",
+     "review_outcome_ledger",
+     "idempotent_replay",
+     "execution_authorized",
+     "external_action_authorized",
+     "scoring_eligible",
+     "source_authenticity_verified",
+     "professional_standing_verified",
+     "legal_identity_verified",
+     "response_contract_version",
+     "action_authorization",
+     "output_use_authorization",
+     "analysis_use",
+     "action_capability",
+     "execution_authorization_state",
+     "human_review_required",
+     "answer",
+     "residual_risk_register",
+     "action_boundary",
+     "evidence_authentication_status",
+     "authenticated_verified_count",
+     "evidence_authentication_basis",
+     "external_use_ceiling",
+     "internal_work_products",
+     "stable_content_hash",
+     "cite",
+     "response_hash"
+    ],
+    "ledger": [
+     "status",
+     "response_meta",
+     "review_outcome_ledger",
+     "execution_authorized",
+     "external_action_authorized",
+     "scoring_eligible",
+     "source_authenticity_verified",
+     "professional_standing_verified",
+     "legal_identity_verified",
+     "response_contract_version",
+     "action_authorization",
+     "output_use_authorization",
+     "analysis_use",
+     "action_capability",
+     "execution_authorization_state",
+     "human_review_required",
+     "answer",
+     "residual_risk_register",
+     "action_boundary",
+     "evidence_authentication_status",
+     "authenticated_verified_count",
+     "evidence_authentication_basis",
+     "external_use_ceiling",
+     "internal_work_products",
+     "stable_content_hash",
+     "cite",
+     "response_hash"
+    ]
+   }
+  },
+  {
+   "name": "ledger isolated per tenant",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "name": "licensed analysis position lists the claim gate with decisive reviews",
+   "passed": true,
+   "detail": {
+    "tier": "not_permitted",
+    "analysis_use_status": "not_permitted",
+    "gates": [
+     "claim_review"
+    ],
+    "decisive_reviews": 1,
+    "cannot_change": {
+     "evidence_ids": [
+      "USL-E01",
+      "USL-E02",
+      "USL-E03",
+      "USL-E04",
+      "USL-E05",
+      "USL-E06",
+      "USL-E07",
+      "USL-E08",
+      "USL-E09"
+     ],
+     "count": 9,
+     "reason": "Only the items named in decisive_reviews hold the claim-review gate, so reviewing these other items cannot clear it. Reviewing them can still add a blocker, for example by finding a contradiction."
+    }
+   }
+  },
+  {
+   "name": "the unlinked item holding the declared claim gate is a decisive review with its act",
+   "passed": true,
+   "detail": [
+    {
+     "evidence_id": "LAB-UNLINKED-1",
+     "path": "/evidence_pack/9",
+     "load_bearing": false,
+     "reasons": [
+      "missing_source_claim_link"
+     ],
+     "act": "Link this item to the claim it supports (support_links or evidence_refs), or remove it from the pack."
+    }
+   ]
+  },
+  {
+   "name": "items listed as unable to clear the claim gate exclude every decisive item",
+   "passed": true,
+   "detail": {
+    "evidence_ids": [
+     "USL-E01",
+     "USL-E02",
+     "USL-E03",
+     "USL-E04",
+     "USL-E05",
+     "USL-E06",
+     "USL-E07",
+     "USL-E08",
+     "USL-E09"
+    ],
+    "count": 9,
+    "reason": "Only the items named in decisive_reviews hold the claim-review gate, so reviewing these other items cannot clear it. Reviewing them can still add a blocker, for example by finding a contradiction."
+   }
+  }
+ ],
+ "findings": [],
+ "credentials": [
+  {
+   "role": "creator",
+   "key_hash": "key:9ca1ee4b85ff97547bab8dd519627caf7362bef281e738331d9dc1b6004ce4a4",
+   "provider_status": "revoked",
+   "revocation_observed": true
+  },
+  {
+   "role": "reviewer",
+   "key_hash": "key:5885f35882f6152965d222038cef83e937477acc58214a6f1049797a34c50a25",
+   "provider_status": "revoked",
+   "revocation_observed": true
+  },
+  {
+   "role": "other_tenant",
+   "key_hash": "key:1619a47dc201f7003520e5a907917a5488c084300be19af37738f86c2ebd2012",
+   "provider_status": "revoked",
+   "revocation_observed": true
+  }
+ ],
+ "cleanup_errors": [],
+ "protected": [
+  {
+   "profile": "full_advisory",
+   "stages": [
+    "mvr_first_call",
+    "mvr_entity_resolve",
+    "mvr_evidence_completeness"
+   ]
+  },
+  {
+   "profile": "strict_calibrated",
+   "stages": [
+    "mvr_first_call",
+    "mvr_entity_resolve",
+    "mvr_evidence_completeness"
+   ]
+  }
+ ],
+ "positive": [
+  {
+   "profile": "full_advisory",
+   "stages": [
+    "mvr_first_call",
+    "mvr_entity_resolve",
+    "mvr_evidence_completeness",
+    "mvr_context_compile",
+    "mvr_decision_check"
+   ],
+   "analysis_use": {
+    "status": "not_permitted",
+    "permitted_uses": [],
+    "execution_permission": false
+   }
+  },
+  {
+   "profile": "strict_calibrated",
+   "stages": [
+    "mvr_first_call",
+    "mvr_entity_resolve",
+    "mvr_evidence_completeness",
+    "mvr_context_compile",
+    "mvr_decision_check"
+   ],
+   "analysis_use": {
+    "status": "permitted_for_listed_uses_only",
+    "permitted_uses": [
+     "internal_planning",
+     "pilot_design",
+     "board_reporting"
+    ],
+    "execution_permission": false
+   }
+  }
+ ],
+ "analysis_position": {
+  "tier": "not_permitted",
+  "analysis_use_status": "not_permitted",
+  "gates": [
+   "claim_review"
+  ],
+  "decisive_reviews": 1,
+  "cannot_change": {
+   "evidence_ids": [
+    "USL-E01",
+    "USL-E02",
+    "USL-E03",
+    "USL-E04",
+    "USL-E05",
+    "USL-E06",
+    "USL-E07",
+    "USL-E08",
+    "USL-E09"
+   ],
+   "count": 9,
+   "reason": "Only the items named in decisive_reviews hold the claim-review gate, so reviewing these other items cannot clear it. Reviewing them can still add a blocker, for example by finding a contradiction."
+  }
+ },
+ "functional_checks_completed": true,
+ "requests": 82,
+ "completed_at": "2026-10-25T17:27:11.930Z",
+ "passed": true
+}
