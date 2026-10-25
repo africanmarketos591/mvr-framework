@@ -293,5 +293,45 @@
       "reasons": [],
       "reliance": null
     }
+  },
+  {
+    "action": "commit_effect",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "commit_effect",
+      "status": "checked",
+      "decision": "deny",
+      "verification_id": "LAB-EXAMPLE",
+      "commit_id": null,
+      "commit_valid_until": null,
+      "deny_reasons": [
+        "ILLUSTRATIVE_NOT_AUTHORITY"
+      ]
+    }
+  },
+  {
+    "action": "check_permission",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "check_permission",
+      "status": "ok",
+      "permission_position": {
+        "contract_version": "mvr.permission-position/1",
+        "tier": "planning_only",
+        "institution_capability_covers_effect": false,
+        "narrowest_allowed_now": [],
+        "blocked": [],
+        "closure_path": {
+          "status": "available",
+          "minimum_accountable_acts": 1,
+          "acts": []
+        },
+        "execution_authorized": false
+      },
+      "dependency_graph": {
+        "nodes": [],
+        "edges": []
+      }
+    }
   }
 ]

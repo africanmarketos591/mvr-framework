@@ -1,0 +1,41 @@
+{
+  "current": "2026-10-25.permission-path.3",
+  "superseded": [
+    {
+      "deployment_revision": "2026-10-25.permission-path.1",
+      "source_head": "36162b2882784741155065da3ee3d4a5ea0ce21a",
+      "provider_version_id": "caa4ee44-27cc-4feb-9c30-00f3983c26ae",
+      "provider_deployment_id": "7f520b65-9745-4f04-977f-46a4d0dfea90",
+      "deployed_at": "2026-10-25T12:35:28.742Z",
+      "found_by": "live-licensed check (superseded-permission-path-1-live-licensed.json)",
+      "failed_licensed_checks": [
+        "check_permission through the MCP authority operation"
+      ],
+      "licensed_error": "Cannot read properties of undefined (reading 'metrics')",
+      "finding": "Licensed keys using the client_safe output mode got status ok from check_permission, commit_effect, record_effect and the outcome ledger actions without their result fields; the per-route output allowlists predated these actions. Fields were removed; no decision changed. The isolated evaluation route was unaffected.",
+      "fix_commit": "4fd2addb",
+      "fix_test": "scripts/test-authority-chain-http.mjs: every declared response field survives the licensed filter, and the actions return their fields over HTTP with a client_safe key",
+      "other_live_checks_passed": {
+        "release_gate_leaks": 0,
+        "authority_conformance": true,
+        "permission_path": true,
+        "original_review": true
+      }
+    },
+    {
+      "deployment_revision": "2026-10-25.permission-path.2",
+      "source_head": "47ed7290ea6dfecf06c8b9a49f61ccc9c3a14389",
+      "provider_version_id": "94c1cb62-ec91-479b-b25d-f9a382957b2a",
+      "provider_deployment_id": "8f7febc7-7a3d-4c3d-b3f8-f9dc8f3b8ded",
+      "deployed_at": "2026-10-25T13:16:58.747Z",
+      "found_by": "live-licensed check (superseded-permission-path-2-live-licensed.json)",
+      "failed_licensed_checks": [
+        "licensed analysis position lists the claim gate with decisive reviews"
+      ],
+      "licensed_error": null,
+      "finding": "A declared claim review held only by an evidence item no claim linked to gave an analysis position with no decisive review, a note that a licensed workspace was needed, and that item listed as unable to change the gate.",
+      "fix_commit": "3e8ee671 (source commit before the SBOM binding)",
+      "fix_test": "scripts/test-answer-permission-position.mjs: real engine with a licensed key; the unlinked item is decisive and never listed as unable to clear the gate"
+    }
+  ]
+}

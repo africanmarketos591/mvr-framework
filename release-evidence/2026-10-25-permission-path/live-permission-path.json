@@ -1,0 +1,312 @@
+{
+  "revision": "2026-10-25.permission-path.3",
+  "started_at": "2026-10-25T13:59:27.598Z",
+  "classification": "AMOS lab verification through the isolated evaluation route; proprietary lab fixtures plus real public register data",
+  "checks": [
+    {
+      "name": "review contract lists outcome ledger actions",
+      "passed": true
+    },
+    {
+      "name": "review contract publishes PDF extractor and seven register adapters",
+      "passed": true
+    },
+    {
+      "name": "authority contract publishes check_permission, commit_effect and six permission levels",
+      "passed": true
+    },
+    {
+      "name": "public first-call result carries an analysis-level permission position",
+      "passed": true,
+      "detail": "planning_only"
+    },
+    {
+      "name": "evaluation issued",
+      "passed": true
+    },
+    {
+      "name": "case created",
+      "passed": true
+    },
+    {
+      "name": "case-level permission position is planning only",
+      "passed": true,
+      "detail": {
+        "contract_version": "mvr.permission-position/1",
+        "scope": "case_without_specific_effect",
+        "tier": "planning_only",
+        "narrowest_allowed_now": [
+          {
+            "scope": "internal",
+            "uses": [
+              "evidence_collection_design"
+            ]
+          }
+        ],
+        "to_reach_external_permission": {
+          "status": "requires_institution_capability",
+          "open_residuals": [
+            "SOURCE_RECORD_REVIEW_MISSING",
+            "SOURCE_AUTHENTICITY_UNVERIFIED",
+            "CLAIM_TRUTH_UNVERIFIED",
+            "ATTESTOR_STANDING_UNVERIFIED",
+            "DECISION_SCOPE_UNVERIFIED",
+            "INCOMPLETE_STUDY_INVENTORY"
+          ],
+          "fewest_acts": 1,
+          "fewest_acts_description": "One institution-signed capability for an exact effect that accepts the open residuals; or independent closures of each residual plus that capability.",
+          "exact_check": "Call /v1/authority-chain action check_permission with case_id and requested_effect for an exact answer."
+        },
+        "execution_authorized": false,
+        "external_action_authorized": false,
+        "amos_issued_authority": false
+      }
+    },
+    {
+      "name": "original PDF registered by its exact bytes",
+      "passed": true
+    },
+    {
+      "name": "server extraction contains the passage",
+      "passed": true
+    },
+    {
+      "name": "passage bound",
+      "passed": true
+    },
+    {
+      "name": "passage review recorded with page span and conditional-wording warning",
+      "passed": true
+    },
+    {
+      "name": "live receipt verified independently from the original PDF",
+      "passed": true,
+      "detail": {
+        "valid": true,
+        "reason": null,
+        "checks": {
+          "document_sha256": true,
+          "extractor": true,
+          "extracted_text_sha256": true,
+          "exact_passage": true,
+          "locator": true,
+          "pages": true
+        },
+        "pages": [
+          1
+        ],
+        "scope": "Confirms the bytes, the extracted text and the exact passage. It does not confirm the interpretation, the reviewer's standing, the document's authenticity or any permission."
+      }
+    },
+    {
+      "name": "an unavailable register fails closed with a coded reason and no data",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "all seven public register adapters retrieved live from the Worker",
+      "passed": true,
+      "detail": [
+        {
+          "adapter": "gleif-lei/1",
+          "status": "retrieved",
+          "reason": null,
+          "response_sha256": "3fd40f4fdbce1311b212239ceddbe2406ccc539ce8468609a6161c9a41013195",
+          "retrieved_at": "2026-10-25T13:59:44.882Z"
+        },
+        {
+          "adapter": "gleif-parent/1",
+          "status": "retrieved",
+          "reason": null,
+          "response_sha256": "9ad8e74a3c5947eb8d6ae71c7b1ca0955cdee091f697f846448912f94a6679ba",
+          "retrieved_at": "2026-10-25T13:59:46.948Z"
+        },
+        {
+          "adapter": "ror-org/1",
+          "status": "retrieved",
+          "reason": null,
+          "response_sha256": "ced2e218edb07199665fa6ca199600bc5e64b7125985c289d59ad091c7556b72",
+          "retrieved_at": "2026-10-25T13:59:49.310Z"
+        },
+        {
+          "adapter": "crossref-doi/1",
+          "status": "retrieved",
+          "reason": null,
+          "response_sha256": "be105c63f0ca941459945e974a0d28b618d6583afa6f4b3883e2eb93f964ecab",
+          "retrieved_at": "2026-10-25T13:59:51.491Z"
+        },
+        {
+          "adapter": "worldbank-project/1",
+          "status": "retrieved",
+          "reason": null,
+          "response_sha256": "b1f21fae81b6289bd4c40446fe18429dcc444f073733de6e4f52a255f49f291a",
+          "retrieved_at": "2026-10-25T13:59:53.775Z"
+        },
+        {
+          "adapter": "eu-vies-vat/1",
+          "status": "retrieved",
+          "reason": null,
+          "response_sha256": "5367204a3798c596eef2a5322b600db341b1862eb8b53bef9c27a6c7baa46358",
+          "retrieved_at": "2026-10-25T13:59:57.517Z"
+        },
+        {
+          "adapter": "sec-edgar/1",
+          "status": "retrieved",
+          "reason": null,
+          "response_sha256": "5891cf875f690e38f26ca628f7091184c9d73ca34ca7646b9cecd5013aeac4ab",
+          "retrieved_at": "2026-10-25T14:00:00.032Z"
+        }
+      ]
+    },
+    {
+      "name": "no register snapshot claims authority, including unavailable ones",
+      "passed": true
+    },
+    {
+      "name": "Crossref records the Retraction Watch retraction",
+      "passed": true
+    },
+    {
+      "name": "VIES stores validity and a name match, not the name",
+      "passed": true
+    },
+    {
+      "name": "outcome recorded with server state",
+      "passed": true
+    },
+    {
+      "name": "workspace ledger reports metrics with honest labels",
+      "passed": true
+    },
+    {
+      "name": "evaluation closed",
+      "passed": true
+    },
+    {
+      "name": "access refused after close",
+      "passed": true,
+      "detail": "REVIEW_SANDBOX_SESSION_REVOKED"
+    }
+  ],
+  "pdf": {
+    "document_sha256": "ad4c6eff16c948fca6316415b62f6b7128cc0d85ddbfff63ca6ae9687a68475f",
+    "extracted_text_sha256": "b95ae84fc2a1cc3e9c0c16520f45f62015f38f2dc081f6b06d542ef6a4e41ecb",
+    "page_count": 2,
+    "receipt_sha256": "613064545bb50060d2b6cfe96aa8e011c0310259fc5e1cbe43e1977c0c33611b",
+    "independent_verification": {
+      "document_sha256": true,
+      "extractor": true,
+      "extracted_text_sha256": true,
+      "exact_passage": true,
+      "locator": true,
+      "pages": true
+    }
+  },
+  "register_retries": [],
+  "registers_first_attempt": [
+    {
+      "adapter": "gleif-lei/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "3fd40f4fdbce1311b212239ceddbe2406ccc539ce8468609a6161c9a41013195",
+      "retrieved_at": "2026-10-25T13:59:44.882Z"
+    },
+    {
+      "adapter": "gleif-parent/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "9ad8e74a3c5947eb8d6ae71c7b1ca0955cdee091f697f846448912f94a6679ba",
+      "retrieved_at": "2026-10-25T13:59:46.948Z"
+    },
+    {
+      "adapter": "ror-org/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "ced2e218edb07199665fa6ca199600bc5e64b7125985c289d59ad091c7556b72",
+      "retrieved_at": "2026-10-25T13:59:49.310Z"
+    },
+    {
+      "adapter": "crossref-doi/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "be105c63f0ca941459945e974a0d28b618d6583afa6f4b3883e2eb93f964ecab",
+      "retrieved_at": "2026-10-25T13:59:51.491Z"
+    },
+    {
+      "adapter": "worldbank-project/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "b1f21fae81b6289bd4c40446fe18429dcc444f073733de6e4f52a255f49f291a",
+      "retrieved_at": "2026-10-25T13:59:53.775Z"
+    },
+    {
+      "adapter": "eu-vies-vat/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "5367204a3798c596eef2a5322b600db341b1862eb8b53bef9c27a6c7baa46358",
+      "retrieved_at": "2026-10-25T13:59:57.517Z"
+    },
+    {
+      "adapter": "sec-edgar/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "5891cf875f690e38f26ca628f7091184c9d73ca34ca7646b9cecd5013aeac4ab",
+      "retrieved_at": "2026-10-25T14:00:00.032Z"
+    }
+  ],
+  "registers": [
+    {
+      "adapter": "gleif-lei/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "3fd40f4fdbce1311b212239ceddbe2406ccc539ce8468609a6161c9a41013195",
+      "retrieved_at": "2026-10-25T13:59:44.882Z"
+    },
+    {
+      "adapter": "gleif-parent/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "9ad8e74a3c5947eb8d6ae71c7b1ca0955cdee091f697f846448912f94a6679ba",
+      "retrieved_at": "2026-10-25T13:59:46.948Z"
+    },
+    {
+      "adapter": "ror-org/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "ced2e218edb07199665fa6ca199600bc5e64b7125985c289d59ad091c7556b72",
+      "retrieved_at": "2026-10-25T13:59:49.310Z"
+    },
+    {
+      "adapter": "crossref-doi/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "be105c63f0ca941459945e974a0d28b618d6583afa6f4b3883e2eb93f964ecab",
+      "retrieved_at": "2026-10-25T13:59:51.491Z"
+    },
+    {
+      "adapter": "worldbank-project/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "b1f21fae81b6289bd4c40446fe18429dcc444f073733de6e4f52a255f49f291a",
+      "retrieved_at": "2026-10-25T13:59:53.775Z"
+    },
+    {
+      "adapter": "eu-vies-vat/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "5367204a3798c596eef2a5322b600db341b1862eb8b53bef9c27a6c7baa46358",
+      "retrieved_at": "2026-10-25T13:59:57.517Z"
+    },
+    {
+      "adapter": "sec-edgar/1",
+      "status": "retrieved",
+      "reason": null,
+      "response_sha256": "5891cf875f690e38f26ca628f7091184c9d73ca34ca7646b9cecd5013aeac4ab",
+      "retrieved_at": "2026-10-25T14:00:00.032Z"
+    }
+  ],
+  "passed": true,
+  "requests": 16,
+  "completed_at": "2026-10-25T14:00:04.096Z",
+  "credentials_published": false
+}

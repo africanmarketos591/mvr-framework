@@ -1,0 +1,175 @@
+{
+  "head": "3e8ee6712d9e098119bc16d936c597929da343ca",
+  "ci_head": "3e8ee6712d9e098119bc16d936c597929da343ca",
+  "environment": "Windows 10, Node v24.11.0, temporary files on D:",
+  "commands": 241,
+  "total": 241,
+  "passed": true,
+  "failed": [],
+  "minutes": 19,
+  "new_suites": [
+    {
+      "command": "node scripts/test-permission-path.mjs",
+      "exit": 0,
+      "elapsed_ms": 1870
+    },
+    {
+      "command": "node scripts/test-answer-permission-position.mjs",
+      "exit": 0,
+      "elapsed_ms": 1008
+    },
+    {
+      "command": "node scripts/test-pdf-text.mjs",
+      "exit": 0,
+      "elapsed_ms": 3787
+    },
+    {
+      "command": "node scripts/test-pdf-text-workerd.mjs",
+      "exit": 0,
+      "elapsed_ms": 5941
+    },
+    {
+      "command": "node scripts/test-original-review-pdf.mjs",
+      "exit": 0,
+      "elapsed_ms": 1566
+    },
+    {
+      "command": "node scripts/test-pdf-text-public-copy.mjs",
+      "exit": 0,
+      "elapsed_ms": 1498
+    },
+    {
+      "command": "node external_audit/mvr-framework/conformance/original-review/pdf/test.mjs",
+      "exit": 0,
+      "elapsed_ms": 1242
+    },
+    {
+      "command": "node scripts/test-review-outcome-ledger.mjs",
+      "exit": 0,
+      "elapsed_ms": 1068
+    }
+  ],
+  "python_release_checks": {
+    "private_head": "3e8ee6712d9e098119bc16d936c597929da343ca",
+    "sbom_source_commit": "99e17b7b870c8b70273556c038cfd9c90c185eb3",
+    "public_head": "abf5eb994e3f61845211632c6d16925d58961971",
+    "public_tree_clean": true,
+    "deployment_revision": "2026-10-25.permission-path.3",
+    "checked_at": "2026-10-25T13:47:42.355Z",
+    "passed": true,
+    "checks": [
+      {
+        "repo": "private",
+        "command": "python scripts/validate_cyclonedx_sbom.py --expected-source-sha 99e17b7b870c8b70273556c038cfd9c90c185eb3 --verify-release-chain",
+        "exit": 0,
+        "last_line": "{\"status\": \"valid\", \"schema\": \"CycloneDX 1.5 draft-07\", \"serial_number\": \"urn:uuid:ecafafaf-5d68-8725-b752-6ca8e29036d8\", \"source_sha\": \"99e17b7b870c8b70273556c038cfd9c90c185eb3\", \"deployment_revision\": \"2026-10-25.permission-path.3\", \"components\": 96}"
+      },
+      {
+        "repo": "private",
+        "command": "python scripts/test_cyclonedx_offline.py",
+        "exit": 0,
+        "last_line": "4/4 offline SBOM checks passed"
+      },
+      {
+        "repo": "private",
+        "command": "node scripts/generate-release-sbom.mjs --source-sha 99e17b7b870c8b70273556c038cfd9c90c185eb3 --deployment-revision 2026-10-25.permission-path.3 (then byte comparison)",
+        "exit": 0,
+        "last_line": "regenerated SBOM byte-identical to the committed file"
+      },
+      {
+        "repo": "private",
+        "command": "python scripts/validate_partnership_readiness_schema.py",
+        "exit": 0,
+        "last_line": "{\"status\": \"valid\", \"schema\": \"https://africanmarketos.com/schemas/partnership-readiness-scorecard.schema.json\", \"scorecard\": \"partnership-readiness-scorecard-2026-08-03.json\"}"
+      },
+      {
+        "repo": "private",
+        "command": "python scripts/validate_founder_self_registry_schema.py",
+        "exit": 0,
+        "last_line": "Founder Self schema PASS: Draft 2020-12 registry contract is valid."
+      },
+      {
+        "repo": "public",
+        "command": "python scripts/sync_mcp_version_contract.py --check",
+        "exit": 0,
+        "last_line": "MCP version contract: PASS"
+      },
+      {
+        "repo": "public",
+        "command": "python scripts/validate_mcp_public_contract.py",
+        "exit": 0,
+        "last_line": "MCP public contract: PASS (local)"
+      },
+      {
+        "repo": "public",
+        "command": "python scripts/validate_workflow_pinning.py",
+        "exit": 0,
+        "last_line": "workflow pinning validation passed (16 workflows)"
+      },
+      {
+        "repo": "public",
+        "command": "python conformance/authority/validate-fixtures.py",
+        "exit": 0,
+        "last_line": "PASS: discriminated response examples; unsigned and illustrative, never authority"
+      },
+      {
+        "repo": "public",
+        "command": "C:\\Program Files\\nodejs\\node.exe conformance/authority/verify-fixtures.mjs",
+        "exit": 0,
+        "last_line": "PASS: 20 signed fixture, canonicalization and receipt checks; public lab key only."
+      }
+    ]
+  },
+  "browser": {
+    "head": "3e8ee6712d9e098119bc16d936c597929da343ca",
+    "flags": {
+      "pdf_registered": true,
+      "extractor_prefilled": true,
+      "pdf_passage_review": true,
+      "registers_from_picker": true,
+      "vies_name_not_shown": true,
+      "permission_panel": true,
+      "exact_effect_evaluation_notice": true,
+      "outcome_ledger": true,
+      "mobile_no_horizontal_scroll": true,
+      "evaluation_closed": true,
+      "no_page_errors": true
+    },
+    "page_errors": [],
+    "register_debug": [
+      {
+        "a": "worldbank-project/1",
+        "s": "retrieved",
+        "r": null
+      },
+      {
+        "a": "crossref-doi/1",
+        "s": "retrieved",
+        "r": null
+      },
+      {
+        "a": "eu-vies-vat/1",
+        "s": "retrieved",
+        "r": null
+      }
+    ],
+    "width_debug": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "innerWidth": 390,
+      "bodyScroll": 390
+    },
+    "overflow_debug": [],
+    "passed": true
+  },
+  "browser_focus_regression": {
+    "flags": {},
+    "page_errors": [],
+    "note_after_typing": "Conditional release; the audit must be signed first.",
+    "note_intact": true,
+    "focus_after_bind": "reviewNote",
+    "selection_restored": true,
+    "scenario": "bind request delayed 1.2 s while the reviewer types the note"
+  },
+  "classification": "AMOS lab verification on the operator machine; GitHub Actions CI is linked in deployment.json"
+}

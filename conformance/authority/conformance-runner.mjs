@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {runExecutorRevocationHarness} from './executor-revocation-harness.mjs';
+import {runExecutorRevocationHarness,runCommittedRevocationHarness} from './executor-revocation-harness.mjs';
 import {webcrypto,createHash,randomBytes} from 'node:crypto';
 import {canonicalJson,verifyAuthorityReceipt} from '../../sdks/javascript/authority-receipts.mjs';
 const hash=v=>createHash('sha256').update(v).digest('hex');
@@ -42,7 +42,13 @@ export async function runAuthorityConformance(transport){
   const allowed=await verify();good(await chain('executor',{action:'record_effect',verification_id:allowed.verification_id,effect_id:allowed.requested_effect.effect_id,outcome:'not_attempted'}),'record harmless outcome');
   for(const mutation of [{amount_minor:1},{currency:'KES'},{effect_type:'publish_document'},{resource:{...effect.resource,resource_id:'LAB-OTHER'}},{external_contact:true},{counterparty_ref:'other'}])await verify(mutation,'deny');checks.push('six independent effect mutations denied');
   const executorHarness=await runExecutorRevocationHarness({capability_id:capabilityId,effect,verify:request=>chain('executor',{action:'verify_capability',...request}),recordEffect:request=>chain('executor',{action:'record_effect',...request}),revoke:()=>chain('source_issuer',{action:'revoke_source_record',id:sourceId,reason:'Proprietary lab fixture revocation race'})});checks.push('harmless executor fresh checks, outage, cached-answer avoidance and observed verify-to-effect race');await verify({},'deny');
-  await registerSource('two');await closeResidual('two');await registerCapability('two');await verify();good(await chain('institution',{action:'revoke_credential',id:credentialId,reason:'Proprietary lab revocation'}),'revoke credential');await verify({},'deny');
+  await registerSource('two');await closeResidual('two');await registerCapability('two');
+  const position=good(await call('institution','authority',{action:'check_permission',case_id:caseId,requested_effect:{...effect,effect_id:op('position')}}),'read permission position');
+  assert.equal(position.permission_position.tier,'fully_permitted',JSON.stringify(position.permission_position.blocked));assert.equal(position.permission_position.lab_fixture_only,true);assert.equal(position.permission_position.execution_authorized,false);
+  const ceiling=good(await call('institution','authority',{action:'check_permission',case_id:caseId,requested_effect:{...effect,effect_id:op('position'),amount_minor:1}}),'read permission for another amount');assert.equal(ceiling.permission_position.tier,'conditionally_permitted');assert(ceiling.permission_position.closure_path.acts.some(a=>a.act==='reduce_amount_or_issue_capability'));
+  const committedHarness=await runCommittedRevocationHarness({capability_id:capabilityId,effect,verify:request=>chain('executor',{action:'verify_capability',...request}),commitEffect:request=>chain('executor',{action:'commit_effect',...request}),recordEffect:request=>chain('executor',{action:'record_effect',...request}),revoke:()=>chain('institution',{action:'revoke_credential',id:credentialId,reason:'Proprietary lab revocation between verify and commit'})});checks.push('commit-time check stops an effect revoked after verification');
+  const after=good(await call('institution','authority',{action:'check_permission',case_id:caseId,requested_effect:{...effect,effect_id:op('position')}}),'read permission after revocation');assert.equal(after.permission_position.tier,'conditionally_permitted');assert(after.permission_position.closure_path.acts.length>=1);
+  await verify({},'deny');
   await registerCredential('two');await closeResidual('three');await registerCapability('three');await verify();good(await chain('reviewer',{action:'revoke_closure',closure_id:closureId,reason:'Proprietary lab revocation'}),'revoke closure');await verify({},'deny');
   await closeResidual('four');await registerCapability('four');await verify();
   const attestationSecret=randomBytes(32).toString('hex');
@@ -53,7 +59,7 @@ export async function runAuthorityConformance(transport){
   good(await call('reviewer','case',{action:'unlink_attestation',operation_id:op('unlink'),case_id:caseId,expected_revision:linked.revision,attestation_id:contradiction.attestation.attestation_id,reason:'Remove synthetic fixture after denial test'}),'unlink contradiction');
   await registerCapability('five');await verify();
   const current=good(await call('institution','case',{action:'get',case_id:caseId}),'get withdrawal revision');good(await call('institution','case',{action:'withdraw',operation_id:op('withdraw'),case_id:caseId,expected_revision:current.revision,reason:'Proprietary lab withdrawal'}),'withdraw case');await verify({},'deny');
-  assert.deepEqual([...receiptKinds].sort(),['allow','deny','effect_report','revocation']);checks.push('allow, deny, revocation and effect receipt signatures and chain links verified offline');
+  assert.deepEqual([...receiptKinds].sort(),['allow','commit','deny','effect_report','revocation']);checks.push('allow, deny, revocation and effect receipt signatures and chain links verified offline');
   let delivery;
   for(let poll=0;poll<55;poll++){
     delivery=good(await call('executor','delivery',{action:'status'}),'reconcile delivery journal');
@@ -64,7 +70,7 @@ export async function runAuthorityConformance(transport){
   assert(delivery.events.every(e=>e.job_status==='completed'&&e.receiver?.accepted&&e.receiver.signature_verified&&e.receiver.first_attempt_rejected&&e.receiver.acknowledgement_loss_simulated&&e.receiver.duplicate_count>=1&&e.attempts>=3),'Durable delivery retry/deduplication evidence incomplete');
   const reconciled=good(await call('executor','delivery',{action:'reconcile'}),'reconcile missed notifications from durable journal');assert(reconciled.events.every(e=>e.reconciliation==='none'));
   checks.push('production outbox retry, lost acknowledgement, HMAC verification, deduplication and journal reconciliation');
-  return {passed:true,checks,requests:count+2,receipt_kinds:[...receiptKinds],executor_harness:executorHarness,delivery:reconciled,classification:'AMOS lab verification; no independent standing or external effect'};
+  return {passed:true,checks,requests:count+2,receipt_kinds:[...receiptKinds],executor_harness:executorHarness,committed_executor_harness:committedHarness,delivery:reconciled,classification:'AMOS lab verification; no independent standing or external effect'};
  }finally{
   if(session){const closed=await send({action:'close',session_id:session.session_id,session_token:session.credentials.institution.session_token});assert.equal(closed.status,'closed','Session cleanup failed');const denied=await send({action:'call',session_id:session.session_id,session_token:session.credentials.executor.session_token,target:'authority',request:{action:'get',kind:'anchor',id:'lab-institution'}});assert.equal(denied.http_status,401,'Closed lab session remained usable');}
  }

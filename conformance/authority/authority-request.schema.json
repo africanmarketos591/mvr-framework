@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -21,9 +22,11 @@
         "register_capability",
         "revoke_capability",
         "verify_capability",
+        "commit_effect",
         "record_effect",
         "get",
-        "trace"
+        "trace",
+        "check_permission"
       ]
     },
     "operation_id": {
@@ -1487,6 +1490,11 @@
     },
     "id": {
       "type": "string"
+    },
+    "geography": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}(-[A-Z0-9]{1,8})?$",
+      "description": "check_permission only: ISO 3166 code compared with the case market scope."
     }
   },
   "description": "Institution-signed authority checked by AMOS. AMOS never issues authority; verify_capability answers current validity for one exact effect.",
@@ -2302,6 +2310,44 @@
           "verification_id",
           "effect_id",
           "outcome"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "commit_effect"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "operation_id",
+          "verification_id",
+          "effect_id",
+          "requested_effect"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "check_permission"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      },
+      "then": {
+        "required": [
+          "case_id",
+          "requested_effect"
         ]
       }
     },

@@ -1,0 +1,46 @@
+{
+  "extractor": "amos-pdf-text/1",
+  "classification": "proprietary lab fixtures generated from lab-disbursement-conditions.html by two PDF producers",
+  "fixtures": {
+    "lab-disbursement-conditions-skia.pdf": {
+      "producer": "Skia/PDF (headless Chromium print)",
+      "document_sha256": "ad4c6eff16c948fca6316415b62f6b7128cc0d85ddbfff63ca6ae9687a68475f",
+      "extracted_text_sha256": "b95ae84fc2a1cc3e9c0c16520f45f62015f38f2dc081f6b06d542ef6a4e41ecb",
+      "page_count": 2,
+      "pages": [
+        {
+          "page": 1,
+          "start": 0,
+          "end": 304
+        },
+        {
+          "page": 2,
+          "start": 306,
+          "end": 359
+        }
+      ],
+      "glyph_count": 354,
+      "unmapped_glyph_count": 0
+    },
+    "lab-disbursement-conditions-wps.pdf": {
+      "producer": "WPS Office export",
+      "document_sha256": "166ffbfab302a8f865f9633f848825b9793d8553763fd674fb756239afe0385a",
+      "extracted_text_sha256": "002e9a76a2e3cadb51a5194a2a79229c9db80125088aee60d7fd2fce00eacafb",
+      "page_count": 2,
+      "pages": [
+        {
+          "page": 1,
+          "start": 0,
+          "end": 304
+        },
+        {
+          "page": 2,
+          "start": 306,
+          "end": 359
+        }
+      ],
+      "glyph_count": 302,
+      "unmapped_glyph_count": 0
+    }
+  }
+}
