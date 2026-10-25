@@ -1,0 +1,60 @@
+{
+  "standard": "MVR-RECEIPT-SIG-V1",
+  "issuer": "https://africanmarketos.com",
+  "active_key_id": "amos-receipt-ed25519-2026-99",
+  "keys": [
+    {
+      "key_id": "amos-receipt-ed25519-2026-99",
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "algorithm": "Ed25519",
+      "use": "receipt_signature_verification",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEA45P4ozmzRMpOFqMaWvDWI5sWcbTu+pceOkWGxa+Ynmo=",
+      "status": "active",
+      "created_at": "2026-10-25T14:50:50Z",
+      "not_before": "2026-10-25T14:50:50Z",
+      "rotation_due_at": "2027-10-25T14:50:50Z",
+      "public_key_fingerprint_sha256": "e49f4721292e10287b46b0cb5f3b6ae2eeaff935b784d04c9715ac85ddaf778a",
+      "custody": "generated inside the Cloudflare Worker; the private key exists only as a non-extractable Cloudflare secret_key binding"
+    }
+  ],
+  "activation_status": "active_after_key_ceremony",
+  "custody_boundary": "Private keys must live only in Cloudflare Workers Secrets when activated. No private signing key is embedded in Worker source, public discovery files, reports, or client payloads.",
+  "signature_payload": "UTF-8 bytes of: MVR-RECEIPT-V1\\n{key_id}\\n{immutable_audit_hash}",
+  "verification_note": "Configured signatures can be verified against this registry. V1 authenticates only key ID and immutable hash, not independent signing time, human attestation, or execution permission.",
+  "key_ceremony": {
+    "status": "recorded",
+    "method": "made_in_cloudflare",
+    "evidence_basis": "key_generated_inside_cloudflare_worker_birth_record_signed_by_the_key; attendance is evidenced by the signed paper record and sworn declarations, not by this registry",
+    "ceremony_id": "KC-AMOS-RECEIPT-2026-99",
+    "ceremony_at": "2026-10-25T14:50:50Z",
+    "participants_hash": "5555555555555555555555555555555555555555555555555555555555555555",
+    "birth_record": {
+      "type": "mvr.receipt-key-birth/1",
+      "ceremony_id": "KC-AMOS-RECEIPT-2026-99",
+      "key_id": "amos-receipt-ed25519-2026-99",
+      "algorithm": "Ed25519",
+      "public_key_spki_b64": "MCowBQYDK2VwAyEA45P4ozmzRMpOFqMaWvDWI5sWcbTu+pceOkWGxa+Ynmo=",
+      "public_key_fingerprint_sha256": "e49f4721292e10287b46b0cb5f3b6ae2eeaff935b784d04c9715ac85ddaf778a",
+      "participants_sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+      "generated_at": "2026-10-25T14:50:50Z",
+      "not_before": "2026-10-25T14:50:50Z",
+      "rotation_due_at": "2027-10-25T14:50:50Z",
+      "generated_in": "cloudflare_worker",
+      "worker_script": "lab-worker",
+      "deployment_revision": "lab-revision",
+      "deployed_version_before": "lab-v1",
+      "private_key_destination": "cloudflare_secret_key_binding:MVR_RECEIPT_SIGNING_PRIVATE_KEY",
+      "private_key_returned_to_caller": false,
+      "cloudflare_token_id_sha256": "3ae7603edce8c5495887362c3b748b1706c2694a447034f2c126d8a750fc23ae",
+      "statement": "Generated inside the Cloudflare Worker named above and stored only as a non-extractable secret_key binding. No person, device or AI agent received the private key. This record proves possession of the key and its ceremony metadata, not who attended: the signed paper record and sworn declarations do that."
+    },
+    "birth_signature_b64": "ztP4eRM4BoOJN4guhYpy/nK0p25k39SL2cuNkU+K3ftSmpSjAYvfcVw7Js7NK7t1LqKAgS6n5t3+1r7jBFT7CQ==",
+    "birth_record_signature_payload": "UTF-8 bytes of \"MVR-RECEIPT-KEY-BIRTH-V1\\n\" + canonical JSON of birth_record (keys sorted, no spaces), signed with this key",
+    "status_url": "https://africanmarketos.com/v1/key-ceremony/status",
+    "proof_url": "https://africanmarketos.com/.well-known/mvr-signing-key-proof?nonce={32 lowercase hex}",
+    "private_key_custody": "Generated inside the Worker and stored only as a non-extractable Cloudflare secret_key binding: code can ask Cloudflare to sign with it but cannot read it back. Never given to a person, device or AI agent.",
+    "public_key_source": "Ceremony record written by the Worker at generation",
+    "rotation_policy": "dual-key rotation target every 12 months or immediately after suspected compromise"
+  }
+}
