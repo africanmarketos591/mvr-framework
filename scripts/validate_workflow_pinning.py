@@ -20,7 +20,7 @@ APPROVED_ACTION_COMMITS = {
     "actions/checkout": "08c6903cd8c0fde910a37f88322edcfb5dd907a8",  # v5.0.0
     "actions/setup-node": "a0853c24544627f65ddf259abe73b1d18a591444",  # v5.0.0
     "actions/setup-python": "a26af69be951a213d495a4c3e4e4022e16d87065",  # v5.6.0
-    "pypa/gh-action-pypi-publish": "a892a5a61159132606e93a2fa6f4358831b04d26",  # v1.14.2
+    "pypa/gh-action-pypi-publish": "dc37677b2e1c63e2034f94d8a5b11f265b73ba33",  # v1.14.2
 }
 
 

@@ -49,6 +49,7 @@ on:
       - "scripts/validate_outcome_calibration_contract.py"
       - "scripts/validate_outcome_first_cohort.py"
       - "scripts/validate_workflow_pinning.py"
+      - "scripts/verify_action_pins_upstream.py"
       - ".github/workflows/**"
       - "reference-agents/mvr-market-entry-preflight/**"
       - ".github/workflows/mcp-contract-sanity.yml"
@@ -86,6 +87,7 @@ on:
       - "scripts/validate_outcome_calibration_contract.py"
       - "scripts/validate_outcome_first_cohort.py"
       - "scripts/validate_workflow_pinning.py"
+      - "scripts/verify_action_pins_upstream.py"
       - ".github/workflows/**"
       - ".github/workflows/mcp-contract-sanity.yml"
 
@@ -121,6 +123,10 @@ jobs:
         run: python scripts/validate_public_claim_integrity.py
       - name: Reject mutable workflow dependencies
         run: python scripts/validate_workflow_pinning.py
+      - name: Verify approved action pins are upstream commits
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/verify_action_pins_upstream.py
 
   live-canary:
     if: github.event_name == 'workflow_dispatch' && inputs.validate_live
