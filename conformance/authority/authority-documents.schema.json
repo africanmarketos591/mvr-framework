@@ -1770,6 +1770,88 @@
           "minItems": 1,
           "maxItems": 80
         },
+        "standing_assertions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "credential_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{2,119}$"
+              },
+              "asserted_by_anchor_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "asserted_by_organization_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "verification": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "\\S"
+              },
+              "trust_tier": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "usable": {
+                "type": "boolean"
+              },
+              "not_after": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{3})?Z$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "credential_sha256": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "supports_effect": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "credential_id",
+              "asserted_by_anchor_id",
+              "asserted_by_organization_ref",
+              "verification",
+              "trust_tier",
+              "usable",
+              "not_after",
+              "credential_sha256",
+              "supports_effect"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
         "revocation": {
           "type": "object",
           "additionalProperties": false,
@@ -1823,6 +1905,7 @@
         "deny_reasons",
         "effect_state",
         "dependencies",
+        "standing_assertions",
         "revocation",
         "requested_by_principal_sha256",
         "execution_authorized",

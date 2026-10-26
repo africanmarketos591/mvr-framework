@@ -51,6 +51,8 @@ export async function verifyPermissionStatement(receipt,{registry,expectedEffect
   // Dependencies: every dependency the statement names must still have been current at its own end time.
   if(!Array.isArray(s.dependencies)||!s.dependencies.some(d=>d?.kind==='capability'))reasons.push('DEPENDENCIES_MISSING');
   else for(const d of s.dependencies)if(d?.valid_until&&Date.parse(d.valid_until)<=now)reasons.push('DEPENDENCY_EXPIRED:'+d.kind+':'+d.id);
+  // Standing: who asserted each reviewer's standing, and until when. Every assertion must have been usable and still current.
+  for(const a of Array.isArray(s.standing_assertions)?s.standing_assertions:[]){if(a?.usable!==true)reasons.push('STANDING_UNUSABLE:'+a?.credential_id);if(a?.not_after&&Date.parse(a.not_after)<=now)reasons.push('STANDING_EXPIRED:'+a?.credential_id);}
   if(s.execution_authorized!==false||s.amos_issued_authority!==false)reasons.push('BOUNDARY_FIELDS_INVALID');
   // Revocation: a statement reflects revocations up to issued_at only. A commit made after it re-reads every dependency.
   if(requireCommit){

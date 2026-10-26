@@ -104,6 +104,8 @@ export async function runFavourablePath(transport,{now=()=>Date.now()}={}){
   const registry=session.receipt_registry;
   let verdict=await verifyPermissionStatement(statement.receipt,{registry,allowLabKeys:true,expectedEffect:effects.draft,expectedExecutorPrincipalSha256:P('executor'),country:'UG'});
   check(statement.coverage==='covered'&&verdict.valid&&verdict.effect_state==='positive','offline verifier accepts the statement for exactly this effect',verdict.reasons);
+  const asserted=statement.statement.standing_assertions?.find(x=>x.credential_id===designationId);
+  check(asserted&&asserted.asserted_by_anchor_id==='lab-standing'&&asserted.usable===true&&asserted.not_after&&asserted.supports_effect==='create_draft_record','the statement says who asserted the reviewer’s standing, how it was checked, when it ends and which effect rests on it',asserted);
   check(!(await verifyPermissionStatement(statement.receipt,{registry,allowLabKeys:true,expectedEffect:{...effects.draft,amount_minor:1}})).valid,'the verifier refuses a broadened effect');
   const tampered=structuredClone(statement.receipt);tampered.statement.requested_effect.resource.resource_id='LAB-OTHER';
   check(!(await verifyPermissionStatement(tampered,{registry,allowLabKeys:true,expectedEffect:tampered.statement.requested_effect})).valid,'the verifier refuses an altered statement');
