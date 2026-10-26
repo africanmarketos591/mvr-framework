@@ -180,7 +180,7 @@
    "constructor": "issuer_state_document",
    "input_path": [
     "steps",
-    31,
+    32,
     "input",
     "document"
    ],
@@ -191,7 +191,7 @@
    "constructor": "issuer_state_signing_payload",
    "input_path": [
     "steps",
-    31,
+    32,
     "input",
     "document"
    ],
@@ -202,7 +202,7 @@
    "constructor": "assertion",
    "input_path": [
     "steps",
-    31,
+    32,
     "input",
     "document"
    ],
@@ -213,7 +213,7 @@
    "constructor": "review_signing_payload",
    "input_path": [
     "steps",
-    31,
+    32,
     "input",
     "document"
    ],
@@ -224,7 +224,7 @@
    "constructor": "condition",
    "input_path": [
     "steps",
-    31,
+    32,
     "input",
     "document"
    ],
@@ -235,7 +235,7 @@
    "constructor": "condition_scope",
    "input_path": [
     "steps",
-    31,
+    32,
     "input",
     "document"
    ],
@@ -246,7 +246,7 @@
    "constructor": "condition_resolution_signing_payload",
    "input_path": [
     "steps",
-    31,
+    32,
     "input",
     "document"
    ],
@@ -2079,6 +2079,12 @@
     "status": "conflict",
     "http_status": 409,
     "code": "ISSUER_STATE_CASE_ACTION_MISMATCH",
+    "detail": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.payment.initiate@1",
+     "same_action_by_alias": false,
+     "fix": "Use the identical action identifier in the case intended_action and the signed issuer state."
+    },
     "issued_by_amos": false,
     "amos_authorization": false,
     "authority_source": "institution_signature_only",
@@ -2087,11 +2093,97 @@
   },
   {
    "step": 17,
-   "name": "A state whose country is a one-element array is refused",
+   "name": "A state naming a legacy alias of the intended action is refused",
    "categories": [
     "tamper"
    ],
    "at": "2026-11-02T08:17:00.000Z",
+   "op": "register",
+   "case": "A",
+   "input": {
+    "document": {
+     "type": "mvr.issuer-state/2",
+     "record_id": "vector-A-alias",
+     "issuer_anchor_id": "vector-source-issuer",
+     "case_id": "RC-226cd89c1ff00ffd448dd5d472c04c0f88e43b20bd4adac436f4cc262ae4ada5",
+     "subject": "Vector Lab Kampala",
+     "action": "commit_spend",
+     "geography": {
+      "country": "UG",
+      "region": "Kampala"
+     },
+     "state": "permitted",
+     "valid_from": "2026-11-02T08:00:00.000Z",
+     "valid_until": "2026-11-02T20:00:00.000Z",
+     "conditions": [],
+     "supersedes": "vector-A-permit-1",
+     "statement": "Proprietary lab fixture for the issuer-state/2 vectors.",
+     "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+     "ceiling": {
+      "amount_minor": 1000,
+      "currency": "UGX"
+     },
+     "source_review": {
+      "document": {
+       "type": "mvr.issuer-state-review/1",
+       "assertion_sha256": "a1bcb75636a0a58dd8dc85f2caa7b28e8ec4b0902851fecc7a01433a0a6358d9",
+       "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+       "clause_text": "Proprietary lab fixture: the lab may commit one bounded spend of at most UGX 1,000.",
+       "clause_locator": "page 1, clause 1",
+       "target_claim": "The lab may perform the stated bounded action.",
+       "relationship": "direct_support",
+       "reviewer_credential_id": "vector-review-standing",
+       "standing_sha256": "e08df4a0a77f017b80d651a0f5fdebba4e6a52b0cb05169ef33f748a27e88851",
+       "reviewed_at": "2026-11-02T08:00:00.000Z",
+       "valid_until": "2026-11-03T08:00:00.000Z",
+       "extractor_name": "lab-original-text",
+       "extractor_version": "1",
+       "model_version": "human-reading/1",
+       "runtime_model_version": "v6.32.0"
+      },
+      "signature_b64": "/Lx/oQPAvbma14o40cHZ7PfJepzHBf80EQitMt2p4cZcmR7bnhqVejLjrpY6rFo3I+dgm+dSbtaW4dfyVZ9DBw=="
+     },
+     "condition_receipts": []
+    },
+    "signature_b64": "fb1kMuoTdjPuS8zxdb2xAzFb5f7Wje2WiIwnlN+B0a0azuz/u2V7tMKhxRVpHjptZxCbLacBp88kVfRI0HTfBQ=="
+   },
+   "signers": {
+    "document": "source-issuer",
+    "review": "reviewer",
+    "receipts": []
+   },
+   "digests": {
+    "document_sha256": "cf79bfbc2c735cd485df0015914a197a9105d184a30600b06e9f391162572fe8",
+    "signing_payload_sha256": "1175e2c6fba123bf94a189bb72f2897c386c4f1b0f650f8ecae25903214dc0ca",
+    "assertion_sha256": "a1bcb75636a0a58dd8dc85f2caa7b28e8ec4b0902851fecc7a01433a0a6358d9",
+    "scope_sha256": "cf79bfbc2c735cd485df0015914a197a9105d184a30600b06e9f391162572fe8",
+    "condition_sha256": [],
+    "review_signing_payload_sha256": "7cdc046621595c10cf753226482de88d6508f589617788a47798e4a706376aed",
+    "receipt_signing_payload_sha256": []
+   },
+   "expected": {
+    "status": "conflict",
+    "http_status": 409,
+    "code": "ISSUER_STATE_CASE_ACTION_MISMATCH",
+    "detail": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "commit_spend",
+     "same_action_by_alias": true,
+     "fix": "Use the identical action identifier in the case intended_action and the signed issuer state."
+    },
+    "issued_by_amos": false,
+    "amos_authorization": false,
+    "authority_source": "institution_signature_only",
+    "real_world_identity_verified_by_amos": false
+   }
+  },
+  {
+   "step": 18,
+   "name": "A state whose country is a one-element array is refused",
+   "categories": [
+    "tamper"
+   ],
+   "at": "2026-11-02T08:18:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -2168,12 +2260,12 @@
    }
   },
   {
-   "step": 18,
+   "step": 19,
    "name": "A state whose case id is a one-element array is refused",
    "categories": [
     "tamper"
    ],
-   "at": "2026-11-02T08:18:00.000Z",
+   "at": "2026-11-02T08:19:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -2250,12 +2342,12 @@
    }
   },
   {
-   "step": 19,
+   "step": 20,
    "name": "A state whose original document hash is a one-element array is refused",
    "categories": [
     "tamper"
    ],
-   "at": "2026-11-02T08:19:00.000Z",
+   "at": "2026-11-02T08:20:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -2334,13 +2426,13 @@
    }
   },
   {
-   "step": 20,
+   "step": 21,
    "name": "A condition whose currency is a one-element array is refused",
    "categories": [
     "tamper",
     "condition"
    ],
-   "at": "2026-11-02T08:20:00.000Z",
+   "at": "2026-11-02T08:21:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -2437,12 +2529,12 @@
    }
   },
   {
-   "step": 21,
+   "step": 22,
    "name": "A new record that does not name the current head is refused",
    "categories": [
     "supersession"
    ],
-   "at": "2026-11-02T08:21:00.000Z",
+   "at": "2026-11-02T08:22:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -2517,13 +2609,13 @@
    }
   },
   {
-   "step": 22,
+   "step": 23,
    "name": "A different document under an existing record id is refused",
    "categories": [
     "supersession",
     "tamper"
    ],
-   "at": "2026-11-02T08:22:00.000Z",
+   "at": "2026-11-02T08:23:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -2598,12 +2690,12 @@
    }
   },
   {
-   "step": 23,
+   "step": 24,
    "name": "A signed prohibition supersedes the permission",
    "categories": [
     "supersession"
    ],
-   "at": "2026-11-02T08:23:00.000Z",
+   "at": "2026-11-02T08:24:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -2684,12 +2776,12 @@
    }
   },
   {
-   "step": 24,
+   "step": 25,
    "name": "A prohibition blocks",
    "categories": [
     "supersession"
    ],
-   "at": "2026-11-02T08:24:00.000Z",
+   "at": "2026-11-02T08:25:00.000Z",
    "op": "evaluate",
    "case": "A",
    "expected": {
@@ -2730,17 +2822,17 @@
    }
   },
   {
-   "step": 25,
+   "step": 26,
    "name": "A spend under a prohibition is denied",
    "categories": [
     "supersession"
    ],
-   "at": "2026-11-02T08:25:00.000Z",
+   "at": "2026-11-02T08:26:00.000Z",
    "op": "effect",
    "case": "A",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-25",
+     "effect_id": "vector-effect-26",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -2770,12 +2862,12 @@
    }
   },
   {
-   "step": 26,
+   "step": 27,
    "name": "A replay of the old permission is idempotent and does not restore it",
    "categories": [
     "supersession"
    ],
-   "at": "2026-11-02T08:26:00.000Z",
+   "at": "2026-11-02T08:27:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -2854,12 +2946,12 @@
    }
   },
   {
-   "step": 27,
+   "step": 28,
    "name": "A head is still the prohibition after the replay",
    "categories": [
     "supersession"
    ],
-   "at": "2026-11-02T08:27:00.000Z",
+   "at": "2026-11-02T08:28:00.000Z",
    "op": "evaluate",
    "case": "A",
    "expected": {
@@ -2900,13 +2992,13 @@
    }
   },
   {
-   "step": 28,
+   "step": 29,
    "name": "A permission supersedes the prohibition",
    "categories": [
     "supersession",
     "positive"
    ],
-   "at": "2026-11-02T08:28:00.000Z",
+   "at": "2026-11-02T08:29:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -2987,18 +3079,18 @@
    }
   },
   {
-   "step": 29,
+   "step": 30,
    "name": "A spend under the new permission is allowed",
    "categories": [
     "supersession",
     "positive"
    ],
-   "at": "2026-11-02T08:29:00.000Z",
+   "at": "2026-11-02T08:30:00.000Z",
    "op": "effect",
    "case": "A",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-29",
+     "effect_id": "vector-effect-30",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -3019,12 +3111,12 @@
    }
   },
   {
-   "step": 30,
+   "step": 31,
    "name": "A signed revocation supersedes the permission",
    "categories": [
     "supersession"
    ],
-   "at": "2026-11-02T08:30:00.000Z",
+   "at": "2026-11-02T08:31:00.000Z",
    "op": "register",
    "case": "A",
    "input": {
@@ -3105,17 +3197,17 @@
    }
   },
   {
-   "step": 31,
+   "step": 32,
    "name": "A spend under a revoked state is denied",
    "categories": [
     "supersession"
    ],
-   "at": "2026-11-02T08:31:00.000Z",
+   "at": "2026-11-02T08:32:00.000Z",
    "op": "effect",
    "case": "A",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-31",
+     "effect_id": "vector-effect-32",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -3145,13 +3237,13 @@
    }
   },
   {
-   "step": 32,
+   "step": 33,
    "name": "B conditional state with one signed receipt registers",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T08:32:00.000Z",
+   "at": "2026-11-02T08:33:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -3269,13 +3361,13 @@
    }
   },
   {
-   "step": 33,
+   "step": 34,
    "name": "B satisfied condition does not block",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T08:33:00.000Z",
+   "at": "2026-11-02T08:34:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -3346,18 +3438,18 @@
    }
   },
   {
-   "step": 34,
+   "step": 35,
    "name": "B spend under a satisfied condition is allowed",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T08:34:00.000Z",
+   "at": "2026-11-02T08:35:00.000Z",
    "op": "effect",
    "case": "B",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-34",
+     "effect_id": "vector-effect-35",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -3378,12 +3470,12 @@
    }
   },
   {
-   "step": 35,
+   "step": 36,
    "name": "B conditional state without a receipt registers",
    "categories": [
     "condition"
    ],
-   "at": "2026-11-02T08:35:00.000Z",
+   "at": "2026-11-02T08:36:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -3482,12 +3574,12 @@
    }
   },
   {
-   "step": 36,
+   "step": 37,
    "name": "B missing receipt blocks",
    "categories": [
     "condition"
    ],
-   "at": "2026-11-02T08:36:00.000Z",
+   "at": "2026-11-02T08:37:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -3554,17 +3646,17 @@
    }
   },
   {
-   "step": 37,
+   "step": 38,
    "name": "B spend with an unresolved condition is denied",
    "categories": [
     "condition"
    ],
-   "at": "2026-11-02T08:37:00.000Z",
+   "at": "2026-11-02T08:38:00.000Z",
    "op": "effect",
    "case": "B",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-37",
+     "effect_id": "vector-effect-38",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -3594,12 +3686,12 @@
    }
   },
   {
-   "step": 38,
+   "step": 39,
    "name": "B duplicate receipts register",
    "categories": [
     "condition"
    ],
-   "at": "2026-11-02T08:38:00.000Z",
+   "at": "2026-11-02T08:39:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -3733,12 +3825,12 @@
    }
   },
   {
-   "step": 39,
+   "step": 40,
    "name": "B duplicate receipts block",
    "categories": [
     "condition"
    ],
-   "at": "2026-11-02T08:39:00.000Z",
+   "at": "2026-11-02T08:40:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -3805,13 +3897,13 @@
    }
   },
   {
-   "step": 40,
+   "step": 41,
    "name": "B receipt bound to another state registers",
    "categories": [
     "condition",
     "tamper"
    ],
-   "at": "2026-11-02T08:40:00.000Z",
+   "at": "2026-11-02T08:41:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -3929,13 +4021,13 @@
    }
   },
   {
-   "step": 41,
+   "step": 42,
    "name": "B receipt for another scope blocks",
    "categories": [
     "condition",
     "tamper"
    ],
-   "at": "2026-11-02T08:41:00.000Z",
+   "at": "2026-11-02T08:42:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -4002,13 +4094,13 @@
    }
   },
   {
-   "step": 42,
+   "step": 43,
    "name": "B amount condition below the ceiling registers",
    "categories": [
     "condition",
     "ceiling"
    ],
-   "at": "2026-11-02T08:42:00.000Z",
+   "at": "2026-11-02T08:43:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -4128,13 +4220,13 @@
    }
   },
   {
-   "step": 43,
+   "step": 44,
    "name": "B amount condition below the ceiling blocks even with a satisfied receipt",
    "categories": [
     "condition",
     "ceiling"
    ],
-   "at": "2026-11-02T08:43:00.000Z",
+   "at": "2026-11-02T08:44:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -4203,13 +4295,13 @@
    }
   },
   {
-   "step": 44,
+   "step": 45,
    "name": "B amount condition equal to the ceiling registers",
    "categories": [
     "condition",
     "ceiling"
    ],
-   "at": "2026-11-02T08:44:00.000Z",
+   "at": "2026-11-02T08:45:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -4329,13 +4421,13 @@
    }
   },
   {
-   "step": 45,
+   "step": 46,
    "name": "B amount condition equal to the ceiling is satisfied",
    "categories": [
     "condition",
     "ceiling"
    ],
-   "at": "2026-11-02T08:45:00.000Z",
+   "at": "2026-11-02T08:46:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -4408,12 +4500,12 @@
    }
   },
   {
-   "step": 46,
+   "step": 47,
    "name": "B waiver of a non-waivable condition registers",
    "categories": [
     "waiver"
    ],
-   "at": "2026-11-02T08:46:00.000Z",
+   "at": "2026-11-02T08:47:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -4533,12 +4625,12 @@
    }
   },
   {
-   "step": 47,
+   "step": 48,
    "name": "B unauthorized waiver blocks",
    "categories": [
     "waiver"
    ],
-   "at": "2026-11-02T08:47:00.000Z",
+   "at": "2026-11-02T08:48:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -4607,12 +4699,12 @@
    }
   },
   {
-   "step": 48,
+   "step": 49,
    "name": "B authorized waiver registers",
    "categories": [
     "waiver"
    ],
-   "at": "2026-11-02T08:48:00.000Z",
+   "at": "2026-11-02T08:49:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -4732,12 +4824,12 @@
    }
   },
   {
-   "step": 49,
+   "step": 50,
    "name": "B authorized waiver satisfies the condition",
    "categories": [
     "waiver"
    ],
-   "at": "2026-11-02T08:49:00.000Z",
+   "at": "2026-11-02T08:50:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -4810,17 +4902,17 @@
    }
   },
   {
-   "step": 50,
+   "step": 51,
    "name": "B spend under a waived condition is allowed",
    "categories": [
     "waiver"
    ],
-   "at": "2026-11-02T08:50:00.000Z",
+   "at": "2026-11-02T08:51:00.000Z",
    "op": "effect",
    "case": "B",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-50",
+     "effect_id": "vector-effect-51",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -4841,13 +4933,13 @@
    }
   },
   {
-   "step": 51,
+   "step": 52,
    "name": "B receipt signed by the wrong key registers",
    "categories": [
     "condition",
     "tamper"
    ],
-   "at": "2026-11-02T08:51:00.000Z",
+   "at": "2026-11-02T08:52:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -4965,13 +5057,13 @@
    }
   },
   {
-   "step": 52,
+   "step": 53,
    "name": "B receipt with an invalid resolver signature blocks",
    "categories": [
     "condition",
     "tamper"
    ],
-   "at": "2026-11-02T08:52:00.000Z",
+   "at": "2026-11-02T08:53:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -5038,13 +5130,13 @@
    }
   },
   {
-   "step": 53,
+   "step": 54,
    "name": "B receipt living longer than one day registers",
    "categories": [
     "condition",
     "expiry"
    ],
-   "at": "2026-11-02T08:53:00.000Z",
+   "at": "2026-11-02T08:54:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -5162,13 +5254,13 @@
    }
   },
   {
-   "step": 54,
+   "step": 55,
    "name": "B over-long receipt blocks",
    "categories": [
     "condition",
     "expiry"
    ],
-   "at": "2026-11-02T08:54:00.000Z",
+   "at": "2026-11-02T08:55:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -5235,13 +5327,13 @@
    }
   },
   {
-   "step": 55,
+   "step": 56,
    "name": "B two satisfied conditions register",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T08:55:00.000Z",
+   "at": "2026-11-02T08:56:00.000Z",
    "op": "register",
    "case": "B",
    "input": {
@@ -5393,13 +5485,13 @@
    }
   },
   {
-   "step": 56,
+   "step": 57,
    "name": "B two satisfied conditions do not block",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T08:56:00.000Z",
+   "at": "2026-11-02T08:57:00.000Z",
    "op": "evaluate",
    "case": "B",
    "expected": {
@@ -5496,13 +5588,13 @@
    }
   },
   {
-   "step": 57,
+   "step": 58,
    "name": "C time-window condition registers",
    "categories": [
     "condition",
     "expiry"
    ],
-   "at": "2026-11-02T08:57:00.000Z",
+   "at": "2026-11-02T08:58:00.000Z",
    "op": "register",
    "case": "C",
    "input": {
@@ -5622,13 +5714,13 @@
    }
   },
   {
-   "step": 58,
+   "step": 59,
    "name": "C before the window opens the condition is false",
    "categories": [
     "condition",
     "expiry"
    ],
-   "at": "2026-11-02T08:58:00.000Z",
+   "at": "2026-11-02T08:59:00.000Z",
    "op": "evaluate",
    "case": "C",
    "expected": {
@@ -5697,13 +5789,13 @@
    }
   },
   {
-   "step": 59,
+   "step": 60,
    "name": "D closure-referenced condition with a delegated resolver registers",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T08:59:00.000Z",
+   "at": "2026-11-02T09:00:00.000Z",
    "op": "register",
    "case": "D",
    "input": {
@@ -5821,13 +5913,13 @@
    }
   },
   {
-   "step": 60,
+   "step": 61,
    "name": "D delegated resolver and current closure satisfy the condition",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T09:00:00.000Z",
+   "at": "2026-11-02T09:01:00.000Z",
    "op": "evaluate",
    "case": "D",
    "expected": {
@@ -5898,12 +5990,12 @@
    }
   },
   {
-   "step": 61,
+   "step": 62,
    "name": "D referenced closure is revoked",
    "categories": [
     "dependency-revocation"
    ],
-   "at": "2026-11-02T09:01:00.000Z",
+   "at": "2026-11-02T09:02:00.000Z",
    "op": "revoke",
    "target": {
     "kind": "closure",
@@ -5914,12 +6006,12 @@
    }
   },
   {
-   "step": 62,
+   "step": 63,
    "name": "D revoked closure blocks the condition",
    "categories": [
     "dependency-revocation"
    ],
-   "at": "2026-11-02T09:02:00.000Z",
+   "at": "2026-11-02T09:03:00.000Z",
    "op": "evaluate",
    "case": "D",
    "expected": {
@@ -5986,12 +6078,12 @@
    }
   },
   {
-   "step": 63,
+   "step": 64,
    "name": "D source-referenced condition with the delegated resolver registers",
    "categories": [
     "condition"
    ],
-   "at": "2026-11-02T09:03:00.000Z",
+   "at": "2026-11-02T09:04:00.000Z",
    "op": "register",
    "case": "D",
    "input": {
@@ -6109,13 +6201,13 @@
    }
   },
   {
-   "step": 64,
+   "step": 65,
    "name": "D source-referenced condition is satisfied",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T09:04:00.000Z",
+   "at": "2026-11-02T09:05:00.000Z",
    "op": "evaluate",
    "case": "D",
    "expected": {
@@ -6186,12 +6278,12 @@
    }
   },
   {
-   "step": 65,
+   "step": 66,
    "name": "D parent of the delegated resolver is revoked",
    "categories": [
     "dependency-revocation"
    ],
-   "at": "2026-11-02T09:05:00.000Z",
+   "at": "2026-11-02T09:06:00.000Z",
    "op": "revoke",
    "target": {
     "kind": "credential",
@@ -6202,12 +6294,12 @@
    }
   },
   {
-   "step": 66,
+   "step": 67,
    "name": "D resolver with a revoked parent blocks",
    "categories": [
     "dependency-revocation"
    ],
-   "at": "2026-11-02T09:06:00.000Z",
+   "at": "2026-11-02T09:07:00.000Z",
    "op": "evaluate",
    "case": "D",
    "expected": {
@@ -6274,12 +6366,12 @@
    }
   },
   {
-   "step": 67,
+   "step": 68,
    "name": "E permission whose clause says must not is refused",
    "categories": [
     "tamper"
    ],
-   "at": "2026-11-02T09:07:00.000Z",
+   "at": "2026-11-02T09:08:00.000Z",
    "op": "register",
    "case": "E",
    "input": {
@@ -6354,12 +6446,12 @@
    }
   },
   {
-   "step": 68,
+   "step": 69,
    "name": "E clause saying the permission has not been revoked registers",
    "categories": [
     "positive"
    ],
-   "at": "2026-11-02T09:08:00.000Z",
+   "at": "2026-11-02T09:09:00.000Z",
    "op": "register",
    "case": "E",
    "input": {
@@ -6440,12 +6532,12 @@
    }
   },
   {
-   "step": 69,
+   "step": 70,
    "name": "E clause with a later suspension is refused",
    "categories": [
     "tamper"
    ],
-   "at": "2026-11-02T09:09:00.000Z",
+   "at": "2026-11-02T09:10:00.000Z",
    "op": "register",
    "case": "E",
    "input": {
@@ -6520,13 +6612,13 @@
    }
   },
   {
-   "step": 70,
+   "step": 71,
    "name": "E conditional state reviewed as qualifying registers",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T09:10:00.000Z",
+   "at": "2026-11-02T09:11:00.000Z",
    "op": "register",
    "case": "E",
    "input": {
@@ -6644,13 +6736,13 @@
    }
   },
   {
-   "step": 71,
+   "step": 72,
    "name": "E qualified conditional state is satisfied",
    "categories": [
     "condition",
     "positive"
    ],
-   "at": "2026-11-02T09:11:00.000Z",
+   "at": "2026-11-02T09:12:00.000Z",
    "op": "evaluate",
    "case": "E",
    "expected": {
@@ -6721,12 +6813,12 @@
    }
   },
   {
-   "step": 72,
+   "step": 73,
    "name": "F already expired state is refused",
    "categories": [
     "expiry"
    ],
-   "at": "2026-11-02T09:12:00.000Z",
+   "at": "2026-11-02T09:13:00.000Z",
    "op": "register",
    "case": "F",
    "input": {
@@ -6801,12 +6893,12 @@
    }
   },
   {
-   "step": 73,
+   "step": 74,
    "name": "F review living longer than seven days is refused",
    "categories": [
     "expiry"
    ],
-   "at": "2026-11-02T09:13:00.000Z",
+   "at": "2026-11-02T09:14:00.000Z",
    "op": "register",
    "case": "F",
    "input": {
@@ -6881,12 +6973,12 @@
    }
   },
   {
-   "step": 74,
+   "step": 75,
    "name": "F state outliving its review is refused",
    "categories": [
     "expiry"
    ],
-   "at": "2026-11-02T09:14:00.000Z",
+   "at": "2026-11-02T09:15:00.000Z",
    "op": "register",
    "case": "F",
    "input": {
@@ -6961,12 +7053,12 @@
    }
   },
   {
-   "step": 75,
+   "step": 76,
    "name": "F review dated in the future is refused",
    "categories": [
     "expiry"
    ],
-   "at": "2026-11-02T09:15:00.000Z",
+   "at": "2026-11-02T09:16:00.000Z",
    "op": "register",
    "case": "F",
    "input": {
@@ -7041,12 +7133,12 @@
    }
   },
   {
-   "step": 76,
+   "step": 77,
    "name": "F review dated before the reviewer standing began is refused",
    "categories": [
     "expiry"
    ],
-   "at": "2026-11-02T09:16:00.000Z",
+   "at": "2026-11-02T09:17:00.000Z",
    "op": "register",
    "case": "F",
    "input": {
@@ -7121,12 +7213,12 @@
    }
   },
   {
-   "step": 77,
+   "step": 78,
    "name": "F state that starts later registers",
    "categories": [
     "expiry"
    ],
-   "at": "2026-11-02T09:17:00.000Z",
+   "at": "2026-11-02T09:18:00.000Z",
    "op": "register",
    "case": "F",
    "input": {
@@ -7207,12 +7299,12 @@
    }
   },
   {
-   "step": 78,
+   "step": 79,
    "name": "F state that has not started blocks",
    "categories": [
     "expiry"
    ],
-   "at": "2026-11-02T09:18:00.000Z",
+   "at": "2026-11-02T09:19:00.000Z",
    "op": "evaluate",
    "case": "F",
    "expected": {
@@ -7253,17 +7345,17 @@
    }
   },
   {
-   "step": 79,
+   "step": 80,
    "name": "F spend before the state starts is denied",
    "categories": [
     "expiry"
    ],
-   "at": "2026-11-02T09:19:00.000Z",
+   "at": "2026-11-02T09:20:00.000Z",
    "op": "effect",
    "case": "F",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-79",
+     "effect_id": "vector-effect-80",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -7293,12 +7385,12 @@
    }
   },
   {
-   "step": 80,
+   "step": 81,
    "name": "G waived condition on revocable evidence registers",
    "categories": [
     "waiver"
    ],
-   "at": "2026-11-02T09:20:00.000Z",
+   "at": "2026-11-02T09:21:00.000Z",
    "op": "register",
    "case": "G",
    "input": {
@@ -7418,12 +7510,12 @@
    }
   },
   {
-   "step": 81,
+   "step": 82,
    "name": "G waived condition is satisfied while the evidence is current",
    "categories": [
     "waiver"
    ],
-   "at": "2026-11-02T09:21:00.000Z",
+   "at": "2026-11-02T09:22:00.000Z",
    "op": "evaluate",
    "case": "G",
    "expected": {
@@ -7496,13 +7588,13 @@
    }
   },
   {
-   "step": 82,
+   "step": 83,
    "name": "G referenced source record is revoked",
    "categories": [
     "dependency-revocation",
     "waiver"
    ],
-   "at": "2026-11-02T09:22:00.000Z",
+   "at": "2026-11-02T09:23:00.000Z",
    "op": "revoke",
    "target": {
     "kind": "source_record",
@@ -7513,13 +7605,13 @@
    }
   },
   {
-   "step": 83,
+   "step": 84,
    "name": "G waiver cannot revive revoked evidence",
    "categories": [
     "dependency-revocation",
     "waiver"
    ],
-   "at": "2026-11-02T09:23:00.000Z",
+   "at": "2026-11-02T09:24:00.000Z",
    "op": "evaluate",
    "case": "G",
    "expected": {
@@ -7588,12 +7680,12 @@
    }
   },
   {
-   "step": 84,
+   "step": 85,
    "name": "H permission reviewed by a revocable reviewer registers",
    "categories": [
     "positive"
    ],
-   "at": "2026-11-02T09:24:00.000Z",
+   "at": "2026-11-02T09:25:00.000Z",
    "op": "register",
    "case": "H",
    "input": {
@@ -7674,12 +7766,12 @@
    }
   },
   {
-   "step": 85,
+   "step": 86,
    "name": "H permission does not block",
    "categories": [
     "positive"
    ],
-   "at": "2026-11-02T09:25:00.000Z",
+   "at": "2026-11-02T09:26:00.000Z",
    "op": "evaluate",
    "case": "H",
    "expected": {
@@ -7724,12 +7816,12 @@
    }
   },
   {
-   "step": 86,
+   "step": 87,
    "name": "H reviewer standing is revoked",
    "categories": [
     "dependency-revocation"
    ],
-   "at": "2026-11-02T09:26:00.000Z",
+   "at": "2026-11-02T09:27:00.000Z",
    "op": "revoke",
    "target": {
     "kind": "credential",
@@ -7740,12 +7832,12 @@
    }
   },
   {
-   "step": 87,
+   "step": 88,
    "name": "H revoked reviewer standing blocks",
    "categories": [
     "dependency-revocation"
    ],
-   "at": "2026-11-02T09:27:00.000Z",
+   "at": "2026-11-02T09:28:00.000Z",
    "op": "evaluate",
    "case": "H",
    "expected": {
@@ -7778,12 +7870,12 @@
    }
   },
   {
-   "step": 88,
+   "step": 89,
    "name": "V version 1 state with a text condition registers",
    "categories": [
     "condition"
    ],
-   "at": "2026-11-02T09:28:00.000Z",
+   "at": "2026-11-02T09:29:00.000Z",
    "op": "register",
    "case": "V",
    "input": {
@@ -7835,12 +7927,12 @@
    }
   },
   {
-   "step": 89,
+   "step": 90,
    "name": "V version 1 text condition never resolves",
    "categories": [
     "condition"
    ],
-   "at": "2026-11-02T09:29:00.000Z",
+   "at": "2026-11-02T09:30:00.000Z",
    "op": "evaluate",
    "case": "V",
    "expected": {
@@ -7869,7 +7961,7 @@
    }
   },
   {
-   "step": 90,
+   "step": 91,
    "name": "C inside the window the condition is satisfied",
    "categories": [
     "condition",
@@ -7948,7 +8040,7 @@
    }
   },
   {
-   "step": 91,
+   "step": 92,
    "name": "F state is current once it starts",
    "categories": [
     "expiry",
@@ -7999,7 +8091,7 @@
    }
   },
   {
-   "step": 92,
+   "step": 93,
    "name": "F spend once the state starts is allowed",
    "categories": [
     "expiry",
@@ -8010,7 +8102,7 @@
    "case": "F",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-92",
+     "effect_id": "vector-effect-93",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -8031,7 +8123,7 @@
    }
   },
   {
-   "step": 93,
+   "step": 94,
    "name": "C receipt expiry blocks",
    "categories": [
     "condition",
@@ -8106,7 +8198,7 @@
    }
   },
   {
-   "step": 94,
+   "step": 95,
    "name": "F state expires at valid_until",
    "categories": [
     "expiry"
@@ -8152,7 +8244,7 @@
    }
   },
   {
-   "step": 95,
+   "step": 96,
    "name": "F spend after the state expires is denied",
    "categories": [
     "expiry"
@@ -8162,7 +8254,7 @@
    "case": "F",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-95",
+     "effect_id": "vector-effect-96",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -8192,7 +8284,7 @@
    }
   },
   {
-   "step": 96,
+   "step": 97,
    "name": "F expired review is reported before state expiry",
    "categories": [
     "expiry"
@@ -8230,7 +8322,7 @@
    }
   },
   {
-   "step": 97,
+   "step": 98,
    "name": "A source issuer anchor is revoked",
    "categories": [
     "dependency-revocation"
@@ -8246,7 +8338,7 @@
    }
   },
   {
-   "step": 98,
+   "step": 99,
    "name": "A revoked issuer anchor blocks",
    "categories": [
     "dependency-revocation"
