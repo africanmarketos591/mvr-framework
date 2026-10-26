@@ -44,7 +44,7 @@ Both clients expose the same safe starter calls:
 
 Every result carries `deployment_revision` and `revision_matches`.
 
-**If you call the API with Python's `urllib` directly, set a `User-Agent`.** The default `Python-urllib` agent is refused at the edge with Cloudflare error 1010. All AMOS clients send one.
+**Python's default `urllib` client works on the machine endpoints.** Since 26 October 2026 the API (`/v1/…`, `/v3`, `/api/…`), MCP (`/mcp…`), `/a2a`, the published contracts (`/.well-known/…`), `/llms.txt`, `/llms-full.txt` and `/health` accept the default `Python-urllib` agent. Website pages still refuse it with Cloudflare error 1010. All AMOS clients send their own `User-Agent`, and so should yours, so that requests are attributable.
 
 ## Permission and receiver tools
 

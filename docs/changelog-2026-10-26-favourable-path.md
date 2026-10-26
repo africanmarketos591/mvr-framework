@@ -28,6 +28,7 @@ Fixes from an outside review. Each claim was reproduced first: in code, against 
 - **Unknown keys got 401 or 503 at random.** The answer depended on whether the paid-entitlement store answered in time. Unknown keys are now always `401 INVALID_CREDENTIAL`. A 503 means only that a store holding the key could not be read, and comes with a stable code and `Retry-After`.
 - **Generated TypeScript declarations did not compile.** They held duplicate, self-referencing response aliases (9 errors). The generator is now public ([scripts/generate-governance-client.mjs](../scripts/generate-governance-client.mjs)) and also emits a Python client. CI type-checks the declarations in a clean environment.
 - **The packaged Python SDK was blocked at the edge.** Its default `urllib` request was refused with Cloudflare 1010. The SDK (`mvr-agent-sdk` 0.2.0) and every AMOS client now send a User-Agent, take a timeout, and can pin the expected deployment revision.
+  - The same day, a Cloudflare configuration rule turned off Browser Integrity Check for the machine endpoints only: the API, MCP, `/a2a`, the published contracts, the `llms` files and `/health`. Python's default client now reaches them. The check stays on for website pages. These endpoints keep their own credentials, rate limits and quotas.
 - **Published examples failed as published.**
   - Live, 29 of 76 example runs failed:
     - 9 strict examples, the red-team one among them, lacked the `privacy_envelope` strict mode requires. Every template evidence item now has one.
