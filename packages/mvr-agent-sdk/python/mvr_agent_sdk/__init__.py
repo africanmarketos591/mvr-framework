@@ -1,3 +1,3 @@
-from .client import MvrPreflightClient
+from .client import MvrPreflightClient, MVR_AGENT_SDK_VERSION
 
-__all__ = ["MvrPreflightClient"]
+__all__ = ["MvrPreflightClient", "MVR_AGENT_SDK_VERSION"]

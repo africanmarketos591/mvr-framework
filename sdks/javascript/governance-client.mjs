@@ -1,6 +1,8 @@
-// Generated from the AMOS OpenAPI contract (https://africanmarketos.com/v1/openapi.json) by scripts/generate-governance-client.mjs.
-// Contract subset SHA-256: 58452d8727a538c5abd97488de396257ccbc378a29ececb8f81fd491bb1baec0. Do not edit by hand; regenerate instead.
-// Every method returns {status, body} and never throws on a refusal, so the server's coded refusal reaches the caller intact.
+// Generated from the AMOS OpenAPI contract by scripts/generate-governance-client.mjs (https://github.com/africanmarketos591/mvr-framework).
+// Contract version v6.32.0; operation subset SHA-256: bd23ff452553e85ad4679d29ee1c4cfe1fe900c49d9d3023594eecd663448cb7. Do not edit by hand; regenerate instead.
+// Every method returns {status, body, deployment_revision} and never throws on a coded refusal. Network failures and
+// timeouts throw. expectedRevision pins the deployment: the server refuses a mismatch with 409 DEPLOYMENT_REVISION_MISMATCH.
+export const GOVERNANCE_CLIENT_VERSION = "2026-10-26";
 export const GOVERNANCE_OPERATIONS = Object.freeze({
   "reviewCases": {
     "method": "POST",
@@ -56,6 +58,12 @@ export const GOVERNANCE_OPERATIONS = Object.freeze({
     "api_key": false,
     "summary": "Discover the lightweight reviewer assertion workflow, account requirements and non-authorizing boundaries."
   },
+  "authorityConformance": {
+    "method": "POST",
+    "path": "/v1/authority-conformance",
+    "api_key": false,
+    "summary": "Four disposable synthetic lab principals. Harmless draft effects only; no production authority."
+  },
   "keyCeremony": {
     "method": "POST",
     "path": "/v1/key-ceremony",
@@ -75,39 +83,48 @@ export const GOVERNANCE_OPERATIONS = Object.freeze({
     "summary": "How the made-in-Cloudflare receipt key ceremony works, its refusals and custody."
   }
 });
+const inBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';
 export class GovernanceClient {
-  constructor({baseUrl = 'https://africanmarketos.com', apiKey = null, fetch: fetchImpl = globalThis.fetch, responseProfile = 'full_advisory', headers = {}} = {}) {
+  constructor({baseUrl = 'https://africanmarketos.com', apiKey = null, fetch: fetchImpl = globalThis.fetch, responseProfile = 'full_advisory', headers = {}, timeoutMs = 30000, expectedRevision = null, userAgent = 'amos-governance-client-js/' + GOVERNANCE_CLIENT_VERSION} = {}) {
+    if (!Number.isFinite(timeoutMs) || timeoutMs < 1 || timeoutMs > 600000) throw new RangeError('timeoutMs must be between 1 and 600000');
+    if (expectedRevision !== null && !/^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$/.test(expectedRevision)) throw new TypeError('expectedRevision must be a deployment identifier');
     this.baseUrl = String(baseUrl).replace(/\/$/, ''); this.apiKey = apiKey; this.fetch = fetchImpl; this.responseProfile = responseProfile; this.headers = headers;
+    this.timeoutMs = timeoutMs; this.expectedRevision = expectedRevision; this.userAgent = userAgent;
   }
-  async call(name, body) {
+  async call(name, body, {signal, timeoutMs = this.timeoutMs} = {}) {
     const op = GOVERNANCE_OPERATIONS[name]; if (!op) throw new Error('Unknown governance operation: ' + name);
     if (op.api_key && !this.apiKey) throw new Error(op.path + ' needs an API key');
-    const response = await this.fetch(this.baseUrl + op.path, {method:op.method, redirect:'error', headers:{'Content-Type':'application/json', 'X-Response-Profile':this.responseProfile, ...(op.api_key ? {'X-API-Key':this.apiKey} : {}), ...this.headers}, ...(op.method === 'POST' ? {body:JSON.stringify(body ?? {})} : {})});
+    const timeout = AbortSignal.timeout(timeoutMs), combined = signal ? AbortSignal.any([signal, timeout]) : timeout;
+    const headers = {'Content-Type':'application/json', 'X-Response-Profile':this.responseProfile, ...(op.api_key ? {'X-API-Key':this.apiKey} : {}), ...(this.expectedRevision ? {'X-MVR-Expected-Deployment-Revision':this.expectedRevision} : {}), ...(!inBrowser && this.userAgent ? {'User-Agent':this.userAgent} : {}), ...this.headers};
+    const response = await this.fetch(this.baseUrl + op.path, {method:op.method, redirect:'error', signal:combined, headers, ...(op.method === 'POST' ? {body:JSON.stringify(body ?? {})} : {})});
     let parsed = null; try { parsed = await response.json(); } catch { parsed = null; }
-    return {status:response.status, body:parsed};
+    const served = response.headers.get('X-MVR-Deployment-Revision');
+    return {status:response.status, body:parsed, deployment_revision:served, revision_matches:this.expectedRevision ? served === this.expectedRevision : null};
   }
   /** POST /v1/review-cases (API key) */
-  reviewCases(body) { return this.call('reviewCases', body); }
+  reviewCases(body, options) { return this.call('reviewCases', body, options); }
   /** GET /v1/review-cases/contract */
-  reviewCasesContract() { return this.call('reviewCasesContract'); }
+  reviewCasesContract(options) { return this.call('reviewCasesContract', undefined, options); }
   /** POST /v1/review-sandbox */
-  reviewSandbox(body) { return this.call('reviewSandbox', body); }
+  reviewSandbox(body, options) { return this.call('reviewSandbox', body, options); }
   /** GET /v1/review-sandbox/contract */
-  reviewSandboxContract() { return this.call('reviewSandboxContract'); }
+  reviewSandboxContract(options) { return this.call('reviewSandboxContract', undefined, options); }
   /** POST /v1/authority-chain (API key) */
-  authorityChain(body) { return this.call('authorityChain', body); }
+  authorityChain(body, options) { return this.call('authorityChain', body, options); }
   /** GET /v1/authority-chain/contract */
-  authorityChainContract() { return this.call('authorityChainContract'); }
+  authorityChainContract(options) { return this.call('authorityChainContract', undefined, options); }
   /** POST /v1/authority-receipts/verify */
-  authorityReceiptsVerify(body) { return this.call('authorityReceiptsVerify', body); }
+  authorityReceiptsVerify(body, options) { return this.call('authorityReceiptsVerify', body, options); }
   /** POST /v1/reviewer-attestations (API key) */
-  reviewerAttestations(body) { return this.call('reviewerAttestations', body); }
+  reviewerAttestations(body, options) { return this.call('reviewerAttestations', body, options); }
   /** GET /v1/reviewer-attestations/contract */
-  reviewerAttestationsContract() { return this.call('reviewerAttestationsContract'); }
+  reviewerAttestationsContract(options) { return this.call('reviewerAttestationsContract', undefined, options); }
+  /** POST /v1/authority-conformance */
+  authorityConformance(body, options) { return this.call('authorityConformance', body, options); }
   /** POST /v1/key-ceremony */
-  keyCeremony(body) { return this.call('keyCeremony', body); }
+  keyCeremony(body, options) { return this.call('keyCeremony', body, options); }
   /** GET /v1/key-ceremony/status */
-  keyCeremonyStatus() { return this.call('keyCeremonyStatus'); }
+  keyCeremonyStatus(options) { return this.call('keyCeremonyStatus', undefined, options); }
   /** GET /v1/key-ceremony/contract */
-  keyCeremonyContract() { return this.call('keyCeremonyContract'); }
+  keyCeremonyContract(options) { return this.call('keyCeremonyContract', undefined, options); }
 }
