@@ -10,7 +10,7 @@ const weights={currency:'UGX',false_permit_minor:5000000,false_hold_minor:800000
 const seed='a1b2c3d4e5f60718293a4b5c6d7e8f90';
 test('randomized blocks contain each arm once and are reproducible from the seed',()=>{const s=createSchedule({decisions:30,seed});assert.deepEqual(createSchedule({decisions:30,seed}).schedule,s.schedule);for(let i=0;i<30;i+=3)assert.deepEqual(s.schedule.slice(i,i+3).map(r=>r.arm).sort(),[...ARMS].sort());assert.equal(s.causal_reading_supported,true);});
 test('alternation is reproducible and only associational',()=>{const s=createSchedule({decisions:9,method:'alternation'});assert.deepEqual(s.schedule.map(r=>r.arm).join(''),'PCAPCAPCA');assert.equal(s.causal_reading_supported,false);});
-const pilot=extra=>({workflow:'Distributor onboarding gate (proprietary lab fixture)',revision:'2026-10-26.favourable-path.1',weights,schedule:createSchedule({decisions:90,seed}),end_date:'2027-03-31T00:00:00.000Z',...extra});
+const pilot=extra=>({workflow:'Distributor onboarding gate (proprietary lab fixture)',revision:'2026-10-26.favourable-path.2',weights,schedule:createSchedule({decisions:90,seed}),end_date:'2027-03-31T00:00:00.000Z',...extra});
 const frozenAt='2026-11-01T00:00:00.000Z',m=freezePilot(pilot(),{frozenAt});
 test('fewer than 30 decisions needs a declared power calculation',()=>{assert.throws(()=>freezePilot({...pilot(),schedule:createSchedule({decisions:12,seed})}),/powered_minimum/);});
 test('weights must be complete integers in minor units',()=>{assert.throws(()=>freezePilot({...pilot(),weights:{...weights,false_hold_minor:-1}}),/false_hold_minor/);});

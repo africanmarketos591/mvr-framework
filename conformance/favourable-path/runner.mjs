@@ -100,6 +100,11 @@ export async function runFavourablePath(transport,{now=()=>Date.now()}={}){
   }
   const verify=async(name,effect=effects[name])=>ok(await chain('executor',{action:'verify_capability',capability_id:capabilities[name],requested_effect:{...effect,effect_id:op('e')}}),'verify '+name);
   for(const name of Object.keys(effects))check((await verify(name)).decision==='allow','executor verification allows '+name);
+  // A closure recorded after the reviews changes the case basis; it must not make the review tools stale, or no later
+  // review (including an adverse one) could be recorded. Found live on 2026-10-26 and fixed in the same release.
+  ok(await chain('reviewer',{action:'close_residual',case_id:caseId,residual_code:'SOURCE_AUTHENTICITY_UNVERIFIED',scope_ref:'source:LAB-DOC-A',credential_id:designationId,source_record_ids:['lab-source-licence'],statement:'Lab hash match, rechecked after the capabilities',expires_at:until}),'designated reviewer records a second closure after the reviews');
+  tools=ok(await call('institution','case',{action:'get_review_tools',case_id:caseId}),'read review tools after the closure').review_tools;
+  check(tools.basis_sha256===tools.current_basis_sha256,'a closure after the reviews does not make the review tools stale',{held:tools.basis_sha256,current:tools.current_basis_sha256});
   const statement=ok(await chain('executor',{action:'issue_permission_statement',case_id:caseId,capability_id:capabilities.draft,requested_effect:effects.draft}),'issue a signed permission statement for the exact draft effect');
   const registry=session.receipt_registry;
   let verdict=await verifyPermissionStatement(statement.receipt,{registry,allowLabKeys:true,expectedEffect:effects.draft,expectedExecutorPrincipalSha256:P('executor'),country:'UG'});

@@ -28,7 +28,7 @@ Both live on `/v1/review-cases`.
 |---|---|
 | Reviewer, `adverse` | The fact becomes false (`effect: claim_false`) |
 | Reviewer, `supports` or `unrelated` | Recorded only |
-| Model, any stance | Never sets a value (`routes_review_only`). It moves that fact to the front of `review_queue`: an ordering only; whether reviewers act on that order is not measured. Since 2026-10-26.favourable-path.1, an adverse or qualifying model reading also holds the claim's favourable value in the decision state until a designated reviewer disposes of it ([favourable path](favourable-path.md)) |
+| Model, any stance | Never sets a value (`routes_review_only`). It moves that fact to the front of `review_queue`: an ordering only; whether reviewers act on that order is not measured. Since the 2026-10-26 favourable-path release, an adverse or qualifying model reading also holds the claim's favourable value in the decision state until a designated reviewer disposes of it ([favourable path](favourable-path.md)) |
 
 ## Which facts need review
 

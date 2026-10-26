@@ -1,4 +1,6 @@
-# Changelog: 2026-10-26.favourable-path.1
+# Changelog: 2026-10-26.favourable-path.2
+
+`2026-10-26.favourable-path.1` was deployed and superseded the same day. Its live licensed check found that a residual closure made the review tools stale, so no clause review, adverse ones included, could be recorded after a capability's closure. Review tools now bind to the case, its context and its attestations, not to authority-chain outputs. The favourable-path conformance now records a closure after the reviews and checks that the tools stay current.
 
 Fixes from an outside review. Each claim was reproduced first: in code, against production, or with disposable lab keys.
 
