@@ -1,6 +1,6 @@
 # MVR Agent SDK for JavaScript
 
-> **Superseded compatibility package:** Version 0.1.0 is preserved for provenance. New integrations should install `@africanmarketos/mvr-api-client`.
+> **Compatibility package:** New integrations should install `@africanmarketos/mvr-api-client`. Version 0.2.0 is a maintenance release for existing users. It adds a request timeout, a deployment pin and an explicit User-Agent. Version 0.1.0 stays published for provenance.
 
 Public-safe wrapper for calling the MVR API before an AI agent recommends market entry, MVP launch, funding, partnership, scale, CFO action, or due diligence in African and other high-context markets.
 
@@ -32,6 +32,21 @@ const result = await mvr.preflightMarketEntry({
 
 console.log(result);
 ```
+
+## Options (0.2.0)
+
+```js
+const mvr = new MvrPreflightClient({
+  apiKey: process.env.MVR_API_KEY,
+  timeoutMs: 30000,                                  // default 30 s; every request has a deadline
+  expectedRevision: "2026-10-26.favourable-path.2", // optional; the server answers 409 DEPLOYMENT_REVISION_MISMATCH on any other revision
+  userAgent: "my-agent/1.0"                         // optional; a User-Agent is always sent from Node
+});
+```
+
+- A request that passes its deadline throws a `TimeoutError`. Pass `timeoutMs` per request to override the default.
+- `mvr.lastDeploymentRevision` holds the revision that served the last response.
+- Errors carry `status`, `code`, `response` and `deploymentRevision`.
 
 ## Boundary
 
