@@ -1,6 +1,6 @@
 # MVR Agent SDK for Python
 
-> **Superseded compatibility package:** Version 0.1.0 is preserved for provenance. New integrations should install `mvr-api-client`.
+> **Compatibility package:** New integrations should install `mvr-api-client`. Version 0.2.0 is a maintenance release for existing users. It adds a request timeout, a deployment pin and an explicit User-Agent. Version 0.1.0 stays published for provenance.
 
 Public-safe wrapper for calling the MVR API before an AI agent recommends market entry, MVP launch, funding, partnership, scale, CFO action, or due diligence in African and other high-context markets.
 
@@ -30,6 +30,23 @@ result = mvr.preflight_market_entry({
 
 print(result)
 ```
+
+## Options (0.2.0)
+
+```python
+import os
+
+mvr = MvrPreflightClient(
+    api_key=os.environ["MVR_API_KEY"],
+    timeout=30.0,                                   # default 30 s; every request has a deadline
+    expected_revision="2026-10-26.favourable-path.2",  # optional; the server answers 409 DEPLOYMENT_REVISION_MISMATCH on any other revision
+    user_agent="my-agent/1.0",                      # optional
+)
+```
+
+- A User-Agent is always sent. urllib's default is refused at the edge (Cloudflare error 1010), so 0.1.0 could fail there.
+- `mvr.last_deployment_revision` holds the revision that served the last response.
+- Errors carry `status`, `code`, `response` and `deployment_revision`.
 
 ## Boundary
 
