@@ -1,0 +1,5 @@
+# One row per scheduled decision. arm is the arm the frozen schedule assigned. decision: permit, hold or reject. UTC times; declared minutes; no commas inside values.
+decision_ref,arm,decision,decided_at,decider_ref,reviewer_minutes,integration_minutes,elapsed_closure_minutes,reopened,bypass_attempts,accountability_incidents
+D0001,A,permit,2026-11-03T09:00:00.000Z,reviewer-team-1,35,10,720,false,0,0
+D0002,P,hold,2026-11-03T10:00:00.000Z,policy-model-run,2,5,15,false,0,0
+D0003,C,permit,2026-11-03T11:00:00.000Z,reviewer-team-2,80,0,2880,false,0,0
