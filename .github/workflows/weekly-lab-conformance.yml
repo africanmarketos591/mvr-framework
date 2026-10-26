@@ -1,0 +1,46 @@
+name: Weekly lab conformance
+# Live, against production's isolated lab, on harmless lab fixtures. Lab sessions are limited per client address per UTC
+# hour, so these run on days and hours separate from the live canary's adversarial suite.
+#   Wednesday: favourable path and issuer-state/2 with the exact create_draft_record fixture (two sessions).
+#   Thursday: the reference staging receiver over HTTP (one session).
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '17 6 * * 3'
+    - cron: '17 6 * * 4'
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'favourable (two sessions) or receiver (one session)'
+        type: choice
+        options: [favourable, receiver]
+        default: favourable
+concurrency:
+  group: weekly-lab-conformance
+  cancel-in-progress: false
+jobs:
+  favourable:
+    if: github.event.schedule == '17 6 * * 3' || inputs.suite == 'favourable'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24.11.0'
+      - name: Favourable path
+        run: node conformance/favourable-path/run-live.mjs --output favourable.json
+      - name: Issuer-state/2 with the exact fixture
+        run: node conformance/issuer-state-v2/run-live.mjs > issuer-state.json
+  receiver:
+    if: github.event.schedule == '17 6 * * 4' || inputs.suite == 'receiver'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24.11.0'
+      - name: Reference staging receiver over HTTP against live lab commits
+        run: node conformance/receiver-kit/run-reference-staging.mjs --output receiver.json

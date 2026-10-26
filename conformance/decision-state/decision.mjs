@@ -29,8 +29,9 @@ export function decisionTargets(model){
 }
 
 // Machine-checkable conditions a reviewer may attach when qualifying a passage. Free text never conditions an effect.
-export function validateReviewConditions(list){
-  need(Array.isArray(list)&&list.length>=1&&list.length<=4,'REVIEW_CONDITIONS_INVALID');
+export function validateReviewConditions(input){
+  need(Array.isArray(input)&&input.length>=1&&input.length<=4,'REVIEW_CONDITIONS_INVALID');
+  const list=JSON.parse(JSON.stringify(input));
   const out=list.map(c=>{
     need(object(c),'REVIEW_CONDITIONS_INVALID');
     const k=Object.keys(c).sort().join(',');
@@ -88,7 +89,7 @@ export function preflightInterpretationTask({claim_id,claim,evidence_id,field,pa
 
 // Wording that limits, conditions, withdraws or argues against a claim. Routing only: a match never sets a value.
 // It holds a favourable value for the claim until a designated reviewer disposes of the passage.
-export const ADVERSE_SIGNAL_SOURCE="\\b(?:must not|shall not|may not|cannot|can not|prohibit\\w*|not (?:authori[sz]ed|permitted|approved|allowed|licen[cs]ed|renewed)|revok\\w*|revocation|suspen\\w*|cancel\\w*|withdr[ae]w\\w*|terminat\\w*|banned|barred|denied|refus\\w*|reject\\w*|cease\\w*|stop(?:s|ped)?|halt\\w*|discontinu\\w*|recall\\w*|shut\\w*|expire[ds]?|expiry|lapse[ds]?|subject to|only if|unless|provided that|conditional (?:on|upon)|pending|in principle|default\\w*|arrears|overdue|unpaid|non-?payment|complain\\w*|disput\\w*|breach\\w*|fraud\\w*|insolven\\w*|liquidat\\w*|receivership|penalt\\w*|sanction\\w*|delist\\w*|blacklist\\w*|declin\\w*|no longer)\\b";
+export const ADVERSE_SIGNAL_SOURCE="\\b(?:must not|shall not|may not|cannot|can not|prohibit\\w*|not (?:authori[sz]ed|permitted|approved|allowed|licen[cs]ed|renewed)|revok\\w*|revocation|suspen\\w*|cancel\\w*|withdr[ae]w\\w*|terminat\\w*|banned|barred|denied|refus\\w*|reject\\w*|cease\\w*|stop(?:s|ped)?|halt\\w*|discontinu\\w*|recall\\w*|shut\\w*|expire[ds]?|expiry|lapse[ds]?|not to (?:enrol|enroll|operate|distribute|sell|collect|proceed|launch|continue|open|trade|lend|disburse|recruit|advertise|accept)\\w*|subject to|only if|unless|provided that|conditional (?:on|upon)|pending|in principle|default\\w*|arrears|overdue|unpaid|non-?payment|complain\\w*|disput\\w*|breach\\w*|fraud\\w*|insolven\\w*|liquidat\\w*|receivership|penalt\\w*|sanction\\w*|delist\\w*|blacklist\\w*|declin\\w*|no longer)\\b";
 export function adverseSignals(text,{max=8}={}){
   if(typeof text!=='string')return [];
   const out=[],sentence=/[^.!?;\n]+[.!?;]?/g;let m;
@@ -174,7 +175,7 @@ function computeState(st,models,at){
   const coverage={pending:[...needed].sort(),not_needed:model.facts.map(f=>f.id).filter(id=>!needed.has(id)).sort()};
   const summary={contract:DECISION_VERSION,model_sha256:st.model_sha256,facts:allFacts,targets:targets.map(t=>({target:t.target,state:t.state,conditions:t.conditions,basis:t.basis.map(b=>[b.fact_id,b.value,b.reviews]),pending:t.pending_reviews.map(p=>p.fact_id)})),
     lapsed:[...st.lapsed.keys()].sort(),withdrawn:[...st.withdrawn].sort(),tasks:tasks.map(t=>[t.task_id,t.status,t.labels,t.disposition?.review_sha256||null])};
-  return {contract_version:DECISION_VERSION,model_sha256:st.model_sha256,targets,facts:allFacts,tasks,disagreements,coverage,state_sha256:digest(summary),targetStates};
+  return {contract_version:DECISION_VERSION,model_sha256:st.model_sha256,targets,facts:allFacts,held_facts:[...heldFacts].sort(),tasks,disagreements,coverage,state_sha256:digest(summary),targetStates};
 }
 function eventFacts(e,st,models){
   if(e.type==='model_set'){const m=models[e.payload.model_sha256];return m?m.facts.map(f=>f.id):[];}
@@ -242,7 +243,7 @@ export function appendDecisionEvent({models,journal,type,payload,at}){
   need(!journal.length||t>=Date.parse(journal.at(-1).at),'DECISION_EVENT_OUT_OF_ORDER');
   const {st,prev}=run(models,journal,{verify:false});
   const before=computeState(st,models,t);st.targets=before.targetStates;
-  const e={seq:journal.length+1,at,type,payload:JSON.parse(canonical(payload)),prev_sha256:prev};
+  const e={seq:journal.length+1,at,type,payload:JSON.parse(canonical(JSON.parse(JSON.stringify(payload)))),prev_sha256:prev};
   const facts=eventFacts(e,st,models);
   applyEvent(st,e);
   const after=computeState(st,models,t);

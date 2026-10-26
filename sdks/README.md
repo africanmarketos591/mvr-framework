@@ -29,3 +29,24 @@ Both clients expose the same safe starter calls:
 - `evidence_completeness`
 - `decision_check`
 
+## Generated governance clients
+
+[`scripts/generate-governance-client.mjs`](../scripts/generate-governance-client.mjs) generates these clients from the OpenAPI contract:
+- `sdks/javascript/governance-client.mjs` and its `.d.ts`;
+- `sdks/python/governance_client.py`.
+
+`node scripts/generate-governance-client.mjs --check` confirms that the committed clients match `openapi.json`. CI also type-checks the declarations with TypeScript in a clean environment.
+
+**Options.** Every client takes:
+- **Timeout:** `timeoutMs` in JavaScript, `timeout` in Python.
+- **Revision pin:** `expectedRevision` in JavaScript, `expected_revision` in Python. It sends `X-MVR-Expected-Deployment-Revision`; on any other revision the server answers 409 `DEPLOYMENT_REVISION_MISMATCH`.
+- **User-Agent.**
+
+Every result carries `deployment_revision` and `revision_matches`.
+
+**If you call the API with Python's `urllib` directly, set a `User-Agent`.** The default `Python-urllib` agent is refused at the edge with Cloudflare error 1010. All AMOS clients send one.
+
+## Permission and receiver tools
+
+- [`permission-verifier.mjs`](javascript/permission-verifier.mjs) verifies a permission statement and its commit offline.
+- [`receiver-sdk.mjs`](javascript/receiver-sdk.mjs) is the durable receiver, with monitoring and an HTTP surface. See [the receiver kit](../conformance/receiver-kit/README.md).

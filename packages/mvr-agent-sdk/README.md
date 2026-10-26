@@ -54,3 +54,12 @@ Contact: info@africanmarketos.com
 ## Publishing Boundary
 
 This repository package is safe to publish because it is a thin client wrapper only. It contains no scoring formula, no calibration weights, no private labels, no private evidence, no Worker source, and no private benchmark answer keys.
+
+## Version 0.2.0
+
+Both packages, npm and Python, now take three options and report the served revision:
+- **Timeout:** `timeoutMs` in JavaScript, `timeout` in Python, default 30 seconds. Every request has a deadline.
+- **Revision pin:** `expectedRevision` in JavaScript, `expected_revision` in Python. It pins one AMOS deployment; on any other revision the server answers 409 `DEPLOYMENT_REVISION_MISMATCH`.
+- **User-Agent:** `userAgent` in JavaScript, `user_agent` in Python. A User-Agent is always sent; Python's default is refused at the edge.
+
+Errors carry `status`, `code`, `response` and the served deployment revision.

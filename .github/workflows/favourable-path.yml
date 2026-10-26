@@ -1,0 +1,62 @@
+name: Favourable path, clients and pilot harness
+# Offline checks: decision-state replay, generated clients (regenerated from openapi.json, TypeScript type-checked,
+# Python imported), the three-arm pilot and frozen comparison harnesses, and the packaged agent SDKs.
+permissions:
+  contents: read
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'conformance/decision-state/**'
+      - 'conformance/favourable-path/**'
+      - 'conformance/pilot-study/**'
+      - 'conformance/frozen-comparison/**'
+      - 'conformance/examples/**'
+      - 'conformance/receiver-kit/**'
+      - 'scripts/generate-governance-client.mjs'
+      - 'sdks/**'
+      - 'packages/mvr-agent-sdk/**'
+      - 'openapi.json'
+      - '.github/workflows/favourable-path.yml'
+  pull_request:
+    paths:
+      - 'conformance/decision-state/**'
+      - 'conformance/favourable-path/**'
+      - 'conformance/pilot-study/**'
+      - 'conformance/frozen-comparison/**'
+      - 'conformance/examples/**'
+      - 'conformance/receiver-kit/**'
+      - 'scripts/generate-governance-client.mjs'
+      - 'sdks/**'
+      - 'packages/mvr-agent-sdk/**'
+      - 'openapi.json'
+      - '.github/workflows/favourable-path.yml'
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24.11.0'
+      - name: Decision-state replay
+        run: node conformance/decision-state/test.mjs
+      - name: Generated clients match the published contract
+        run: node scripts/generate-governance-client.mjs --check
+      - name: TypeScript declarations compile in a clean environment
+        run: |
+          mkdir -p "$RUNNER_TEMP/ts" && cd "$RUNNER_TEMP/ts"
+          npm init -y > /dev/null && npm install --no-audit --no-fund typescript@5.6.3 > /dev/null
+          cp "$GITHUB_WORKSPACE/sdks/javascript/governance-client.d.ts" .
+          printf "import {GovernanceClient, ReviewCasesRequest} from './governance-client.js';\nconst c = new GovernanceClient({timeoutMs: 5000, expectedRevision: 'x'});\nconst r: ReviewCasesRequest = {action: 'get_decision_journal', case_id: 'RC-'};\nvoid c; void r;\n" > consumer.ts
+          npx tsc --noEmit --strict --lib es2022,dom governance-client.d.ts
+          npx tsc --noEmit --strict --lib es2022,dom --module nodenext --moduleResolution nodenext consumer.ts
+      - name: Python clients import with a User-Agent and a deadline
+        run: |
+          python3 -c "import sys;sys.path.insert(0,'sdks/python');import governance_client as g;c=g.GovernanceClient(expected_revision='x',timeout=5);assert c.user_agent.startswith('amos-governance-client-python/')"
+          python3 -c "import sys;sys.path.insert(0,'packages/mvr-agent-sdk/python');import mvr_agent_sdk as m;c=m.MvrPreflightClient(timeout=5,expected_revision='x');assert c.user_agent.startswith('mvr-agent-sdk-python/')"
+      - name: Pilot and frozen comparison harnesses
+        run: |
+          node conformance/pilot-study/test.mjs
+          node conformance/frozen-comparison/test.mjs

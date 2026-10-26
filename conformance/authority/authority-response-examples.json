@@ -5,6 +5,11 @@
     "response": {
       "action": "register_anchor",
       "status": "registered",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "anchor": {
         "anchor_id": "LAB-EXAMPLE"
       }
@@ -16,6 +21,11 @@
     "response": {
       "action": "vet_anchor",
       "status": "platform_vetted",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "anchor": {
         "anchor_id": "LAB-EXAMPLE"
       }
@@ -27,8 +37,17 @@
     "response": {
       "action": "revoke_anchor",
       "status": "revoked",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "kind": "anchor",
       "id": "LAB-EXAMPLE",
+      "dependents_invalidated_on_next_check": true,
+      "anchor": {
+        "anchor_id": "LAB-EXAMPLE"
+      },
       "receipt": {
         "sequence": 1,
         "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -52,6 +71,11 @@
     "response": {
       "action": "register_credential",
       "status": "registered",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "credential": {
         "credential_id": "LAB-EXAMPLE",
         "usable": false,
@@ -65,6 +89,11 @@
     "response": {
       "action": "register_source_record",
       "status": "registered",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "source_record": {
         "record_id": "LAB-EXAMPLE",
         "usable": false,
@@ -78,6 +107,11 @@
     "response": {
       "action": "register_issuer_state",
       "status": "registered",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "issuer_state": {
         "record_id": "LAB-EXAMPLE",
         "state": "LAB-EXAMPLE"
@@ -90,8 +124,15 @@
     "response": {
       "action": "revoke_credential",
       "status": "revoked",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "kind": "credential",
       "id": "LAB-EXAMPLE",
+      "revocation_basis": "LAB-EXAMPLE",
+      "dependents_invalidated_on_next_check": true,
       "receipt": {
         "sequence": 1,
         "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -115,8 +156,15 @@
     "response": {
       "action": "revoke_source_record",
       "status": "revoked",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "kind": "source_record",
       "id": "LAB-EXAMPLE",
+      "revocation_basis": "LAB-EXAMPLE",
+      "dependents_invalidated_on_next_check": true,
       "receipt": {
         "sequence": 1,
         "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -140,6 +188,11 @@
     "response": {
       "action": "close_residual",
       "status": "closed",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "closure": {
         "closure_id": "LAB-EXAMPLE"
       }
@@ -151,8 +204,16 @@
     "response": {
       "action": "revoke_closure",
       "status": "revoked",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "kind": "closure",
       "id": "LAB-EXAMPLE",
+      "case_id": "LAB-EXAMPLE",
+      "residual_code": "LAB-EXAMPLE",
+      "dependents_invalidated_on_next_check": true,
       "receipt": {
         "sequence": 1,
         "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -176,6 +237,11 @@
     "response": {
       "action": "register_capability",
       "status": "registered",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "capability": {
         "capability_id": "LAB-EXAMPLE"
       }
@@ -187,8 +253,16 @@
     "response": {
       "action": "revoke_capability",
       "status": "revoked",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "kind": "capability",
       "id": "LAB-EXAMPLE",
+      "case_id": "LAB-EXAMPLE",
+      "revocation_basis": "LAB-EXAMPLE",
+      "next_verification": "deny",
       "receipt": {
         "sequence": 1,
         "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -212,14 +286,22 @@
     "response": {
       "action": "verify_capability",
       "status": "verified",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "decision": "deny",
       "deny_reasons": [
         "ILLUSTRATIVE_NOT_AUTHORITY"
       ],
       "verification_id": "LAB-EXAMPLE",
       "capability_id": "LAB-EXAMPLE",
+      "case": null,
       "valid_until": null,
       "reliance": null,
+      "effect_scope": null,
+      "dependency_chain": [],
       "receipt": {
         "sequence": 1,
         "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -240,7 +322,30 @@
         "executor_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
         "reliance": null,
         "valid_until": null
-      }
+      },
+      "executor_obligations": [],
+      "lab_fixture_warning": null
+    }
+  },
+  {
+    "action": "commit_effect",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "commit_effect",
+      "status": "checked",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
+      "decision": "deny",
+      "verification_id": "LAB-EXAMPLE",
+      "commit_id": null,
+      "commit_valid_until": null,
+      "executor_obligations": [],
+      "deny_reasons": [
+        "ILLUSTRATIVE_NOT_AUTHORITY"
+      ]
     }
   },
   {
@@ -249,9 +354,16 @@
     "response": {
       "action": "record_effect",
       "status": "recorded",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "verification_id": "LAB-EXAMPLE",
       "outcome": "succeeded",
       "reported_after_valid_until": false,
+      "commit_id": null,
+      "commit_time_check_performed": false,
       "receipt": {
         "sequence": 1,
         "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -277,6 +389,11 @@
     "response": {
       "action": "get",
       "status": "ok",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "anchor": {
         "anchor_id": "LAB-EXAMPLE"
       }
@@ -288,25 +405,16 @@
     "response": {
       "action": "trace",
       "status": "ok",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "capability_id": "LAB-EXAMPLE",
       "currently_valid": false,
       "reasons": [],
-      "reliance": null
-    }
-  },
-  {
-    "action": "commit_effect",
-    "classification": "illustrative_response_not_authority",
-    "response": {
-      "action": "commit_effect",
-      "status": "checked",
-      "decision": "deny",
-      "verification_id": "LAB-EXAMPLE",
-      "commit_id": null,
-      "commit_valid_until": null,
-      "deny_reasons": [
-        "ILLUSTRATIVE_NOT_AUTHORITY"
-      ]
+      "reliance": null,
+      "chain": {}
     }
   },
   {
@@ -315,6 +423,11 @@
     "response": {
       "action": "check_permission",
       "status": "ok",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
       "permission_position": {
         "contract_version": "mvr.permission-position/1",
         "tier": "planning_only",
@@ -332,6 +445,141 @@
         "nodes": [],
         "edges": []
       }
+    }
+  },
+  {
+    "action": "issue_permission_statement",
+    "classification": "illustrative_response_not_authority",
+    "response": {
+      "action": "issue_permission_statement",
+      "status": "issued",
+      "idempotent_replay": false,
+      "issued_by_amos": false,
+      "amos_authorization": false,
+      "authority_source": "institution_signature_only",
+      "real_world_identity_verified_by_amos": false,
+      "coverage": "not_covered",
+      "statement": {
+        "type": "mvr.permission-statement/1",
+        "statement_id": "PS-000000000000000000000000000000000000000000000000",
+        "issued_at": "2026-10-23T00:00:00Z",
+        "valid_until": "2026-10-23T00:00:00Z",
+        "case_id": "RC-0000000000000000000000000000000000000000000000000000000000000000",
+        "capability_id": "LAB-EXAMPLE",
+        "capability_document_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "institution_anchor_id": "LAB-EXAMPLE",
+        "reliance": "lab_fixture_only",
+        "executor_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "requested_effect": {
+          "effect_id": "LAB-EXAMPLE",
+          "effect_type": "amos.document.draft.create@1",
+          "resource": {
+            "system": "LAB-EXAMPLE",
+            "resource_type": "LAB-EXAMPLE"
+          }
+        },
+        "requested_effect_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "coverage": "not_covered",
+        "deny_reasons": [
+          "ILLUSTRATIVE_NOT_AUTHORITY"
+        ],
+        "effect_state": {
+          "target": null,
+          "effect_type": "LAB-EXAMPLE",
+          "state": "positive",
+          "conditions": [],
+          "basis_reviews": [],
+          "basis_credential_ids": [],
+          "valid_until": "2026-10-23T00:00:00Z",
+          "decision_state_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "decision_journal_head_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "dependencies": [
+          {
+            "kind": "capability",
+            "id": "LAB-EXAMPLE",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "valid_until": "2026-10-23T00:00:00Z"
+          }
+        ],
+        "revocation": {
+          "checked_at": "2026-10-23T00:00:00Z",
+          "method": "atomic_reread_of_every_dependency",
+          "commit_required": "LAB-EXAMPLE"
+        },
+        "requested_by_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "execution_authorized": false,
+        "amos_issued_authority": false
+      },
+      "receipt": {
+        "sequence": 1,
+        "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "recorded_at": "2026-10-23T00:00:00Z",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "signature": {
+          "status": "unsigned",
+          "reason": "Illustrative unsigned example; no authority"
+        },
+        "kind": "permission_statement",
+        "statement_id": "PS-000000000000000000000000000000000000000000000000",
+        "case_id": "RC-0000000000000000000000000000000000000000000000000000000000000000",
+        "capability_id": "LAB-EXAMPLE",
+        "coverage": "not_covered",
+        "valid_until": "2026-10-23T00:00:00Z",
+        "statement": {
+          "type": "mvr.permission-statement/1",
+          "statement_id": "PS-000000000000000000000000000000000000000000000000",
+          "issued_at": "2026-10-23T00:00:00Z",
+          "valid_until": "2026-10-23T00:00:00Z",
+          "case_id": "RC-0000000000000000000000000000000000000000000000000000000000000000",
+          "capability_id": "LAB-EXAMPLE",
+          "capability_document_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "institution_anchor_id": "LAB-EXAMPLE",
+          "reliance": "lab_fixture_only",
+          "executor_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "requested_effect": {
+            "effect_id": "LAB-EXAMPLE",
+            "effect_type": "amos.document.draft.create@1",
+            "resource": {
+              "system": "LAB-EXAMPLE",
+              "resource_type": "LAB-EXAMPLE"
+            }
+          },
+          "requested_effect_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "coverage": "not_covered",
+          "deny_reasons": [
+            "ILLUSTRATIVE_NOT_AUTHORITY"
+          ],
+          "effect_state": {
+            "target": null,
+            "effect_type": "LAB-EXAMPLE",
+            "state": "positive",
+            "conditions": [],
+            "basis_reviews": [],
+            "basis_credential_ids": [],
+            "valid_until": "2026-10-23T00:00:00Z",
+            "decision_state_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "decision_journal_head_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "dependencies": [
+            {
+              "kind": "capability",
+              "id": "LAB-EXAMPLE",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "valid_until": "2026-10-23T00:00:00Z"
+            }
+          ],
+          "revocation": {
+            "checked_at": "2026-10-23T00:00:00Z",
+            "method": "atomic_reread_of_every_dependency",
+            "commit_required": "LAB-EXAMPLE"
+          },
+          "requested_by_principal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "execution_authorized": false,
+          "amos_issued_authority": false
+        }
+      },
+      "verifier": "LAB-EXAMPLE"
     }
   }
 ]

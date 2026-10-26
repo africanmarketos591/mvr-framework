@@ -627,6 +627,11 @@ export type AuthorityChainContract = {
 export type AuthorityChainResponse = ({
     action: "register_anchor";
     status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     anchor: {
       anchor_id: string;
       anchor_role?: string;
@@ -634,10 +639,49 @@ export type AuthorityChainResponse = ({
       status?: string;
       [key: string]: unknown;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "vet_anchor";
     status: "platform_vetted" | "awaiting_second_operator";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     anchor: {
       anchor_id: string;
       anchor_role?: string;
@@ -645,12 +689,59 @@ export type AuthorityChainResponse = ({
       status?: string;
       [key: string]: unknown;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "revoke_anchor";
     status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     kind: "anchor";
     id: string;
+    dependents_invalidated_on_next_check: true;
+    anchor: {
+      anchor_id: string;
+      anchor_role?: string;
+      trust_tier?: string;
+      status?: string;
+      [key: string]: unknown;
+    };
     receipt: {
       sequence: number;
       prev_sha256: string;
@@ -678,41 +769,201 @@ export type AuthorityChainResponse = ({
       revoked_by_principal_sha256: string;
       operation_id: string;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "register_credential";
     status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     credential: {
       credential_id: string;
       usable: boolean;
       reasons: Array<string>;
       [key: string]: unknown;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "register_source_record";
     status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     source_record: {
       record_id: string;
       usable: boolean;
       reasons: Array<string>;
       [key: string]: unknown;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "register_issuer_state";
     status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     issuer_state: {
       record_id: string;
       state: string;
       [key: string]: unknown;
     };
-    [key: string]: unknown;
+    idempotent_record?: boolean;
+    dependents_rechecked_on_next_read?: boolean;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "revoke_credential";
     status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     kind: "credential";
     id: string;
+    revocation_basis: string;
+    dependents_invalidated_on_next_check: true;
     receipt: {
       sequence: number;
       prev_sha256: string;
@@ -740,12 +991,53 @@ export type AuthorityChainResponse = ({
       revoked_by_principal_sha256: string;
       operation_id: string;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "revoke_source_record";
     status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     kind: "source_record";
     id: string;
+    revocation_basis: string;
+    dependents_invalidated_on_next_check: true;
     receipt: {
       sequence: number;
       prev_sha256: string;
@@ -773,22 +1065,103 @@ export type AuthorityChainResponse = ({
       revoked_by_principal_sha256: string;
       operation_id: string;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "close_residual";
     status: "closed";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     closure: {
       closure_id: string;
       usable?: boolean;
       reasons?: Array<string>;
       [key: string]: unknown;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "revoke_closure";
     status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     kind: "closure";
     id: string;
+    case_id: string;
+    residual_code: string;
+    dependents_invalidated_on_next_check: true;
     receipt: {
       sequence: number;
       prev_sha256: string;
@@ -816,10 +1189,49 @@ export type AuthorityChainResponse = ({
       revoked_by_principal_sha256: string;
       operation_id: string;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "register_capability";
     status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     capability: {
       capability_id: string;
       case_id?: string;
@@ -827,12 +1239,54 @@ export type AuthorityChainResponse = ({
       not_after?: string;
       [key: string]: unknown;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "revoke_capability";
     status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     kind: "capability";
     id: string;
+    case_id: string;
+    revocation_basis: string;
+    next_verification: "deny";
     receipt: {
       sequence: number;
       prev_sha256: string;
@@ -860,16 +1314,62 @@ export type AuthorityChainResponse = ({
       revoked_by_principal_sha256: string;
       operation_id: string;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "verify_capability";
     status: "verified";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     decision: "allow" | "deny";
     deny_reasons: Array<string>;
     verification_id: string;
     capability_id: string;
+    case: {
+      [key: string]: unknown;
+    } | null;
     valid_until: string | null;
     reliance: string | null;
+    effect_scope: {
+      [key: string]: unknown;
+    } | null;
+    dependency_chain: Array<unknown>;
     receipt: {
       sequence: number;
       prev_sha256: string;
@@ -903,96 +1403,58 @@ export type AuthorityChainResponse = ({
       reliance: string | null;
       valid_until: string | null;
     };
-    [key: string]: unknown;
-  } | {
-    action: "record_effect";
-    status: "recorded";
-    verification_id: string;
-    outcome: "succeeded" | "failed" | "not_attempted";
-    reported_after_valid_until: boolean;
-    receipt: {
-      sequence: number;
-      prev_sha256: string;
-      recorded_at: string;
-      sha256: string;
-      signature: ({
-          status: "unsigned";
-          reason: string;
-          standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string | null;
-          registry_url?: string;
-        } | {
-          standard: "MVR-RECEIPT-SIG-V1";
-          status: "signed";
-          algorithm: "Ed25519";
-          key_id: string;
-          registry_url?: string;
-          signature_b64: string;
-        });
-      lab_fixture?: boolean;
-      production_authority?: false;
-      kind: "effect_report";
-      verification_id: string;
-      capability_id: string;
-      effect_id: string;
-      outcome: "succeeded" | "failed" | "not_attempted";
-      external_ref_sha256: (string | unknown);
-      reported_after_valid_until: boolean;
-      commit_id?: string;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "get";
-    status: "ok";
-    anchor?: {
-      anchor_id: string;
-      anchor_role?: string;
-      trust_tier?: string;
-      status?: string;
+    executor_obligations: Array<string>;
+    lab_fixture_warning: string | null;
+    response_meta?: {
       [key: string]: unknown;
     };
-    credential?: {
-      credential_id: string;
-      usable: boolean;
-      reasons: Array<string>;
+    response_contract_version?: string;
+    action_authorization?: {
       [key: string]: unknown;
     };
-    source_record?: {
-      record_id: string;
-      usable: boolean;
-      reasons: Array<string>;
+    output_use_authorization?: {
       [key: string]: unknown;
     };
-    closure?: {
-      closure_id: string;
-      usable?: boolean;
-      reasons?: Array<string>;
+    analysis_use?: {
       [key: string]: unknown;
     };
-    capability?: {
-      capability_id: string;
-      case_id?: string;
-      effect_type?: string;
-      not_after?: string;
+    action_capability?: {
       [key: string]: unknown;
     };
-    [key: string]: unknown;
-  } | {
-    action: "trace";
-    status: "ok";
-    capability_id: string;
-    currently_valid: boolean;
-    reasons: Array<string>;
-    reliance: string | null;
-    [key: string]: unknown;
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "commit_effect";
     status: "checked" | "already_committed";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     decision: "commit" | "deny" | "already_committed";
+    deny_reasons?: Array<string>;
     verification_id: string;
     commit_id: string | null;
     commit_valid_until: string | null;
-    deny_reasons?: Array<string>;
+    committed_at?: string;
+    capability_id?: string;
     receipt?: {
       sequence: number;
       prev_sha256: string;
@@ -1035,10 +1497,256 @@ export type AuthorityChainResponse = ({
         capability_document_sha256: (string | unknown);
       };
     };
-    [key: string]: unknown;
+    effect_state?: {
+      [key: string]: unknown;
+    } | null;
+    executor_obligations: Array<string>;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "record_effect";
+    status: "recorded";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    verification_id: string;
+    outcome: "succeeded" | "failed" | "not_attempted";
+    reported_after_valid_until: boolean;
+    commit_id: string | null;
+    commit_time_check_performed: boolean;
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "effect_report";
+      verification_id: string;
+      capability_id: string;
+      effect_id: string;
+      outcome: "succeeded" | "failed" | "not_attempted";
+      external_ref_sha256: (string | unknown);
+      reported_after_valid_until: boolean;
+      commit_id?: string;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "get";
+    status: "ok";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    anchor?: {
+      anchor_id: string;
+      anchor_role?: string;
+      trust_tier?: string;
+      status?: string;
+      [key: string]: unknown;
+    };
+    credential?: {
+      credential_id: string;
+      usable: boolean;
+      reasons: Array<string>;
+      [key: string]: unknown;
+    };
+    source_record?: {
+      record_id: string;
+      usable: boolean;
+      reasons: Array<string>;
+      [key: string]: unknown;
+    };
+    closure?: {
+      closure_id: string;
+      usable?: boolean;
+      reasons?: Array<string>;
+      [key: string]: unknown;
+    };
+    capability?: {
+      capability_id: string;
+      case_id?: string;
+      effect_type?: string;
+      not_after?: string;
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "trace";
+    status: "ok";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    capability_id: string;
+    currently_valid: boolean;
+    reasons: Array<string>;
+    reliance: string | null;
+    chain: {
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   } | {
     action: "check_permission";
     status: "ok";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
     permission_position: {
       contract_version: "mvr.permission-position/1";
       tier: "prohibited" | "not_permitted" | "planning_only" | "conditionally_permitted" | "permitted_up_to_ceiling" | "fully_permitted";
@@ -1059,7 +1767,273 @@ export type AuthorityChainResponse = ({
       edges: Array<unknown>;
       [key: string]: unknown;
     };
-    [key: string]: unknown;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "issue_permission_statement";
+    status: "issued";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    coverage: "covered" | "not_covered";
+    statement: {
+      type: "mvr.permission-statement/1";
+      statement_id: string;
+      issued_at: string;
+      valid_until: string;
+      case_id: string;
+      capability_id: string;
+      capability_document_sha256: string;
+      institution_anchor_id: string;
+      reliance: "lab_fixture_only" | "institution_signed";
+      executor_principal_sha256: string;
+      requested_effect: {
+        effect_id: string;
+        effect_type: "amos.document.draft.create@1" | "amos.communication.evidence.request@1" | "amos.calendar.meeting.create@1" | "amos.communication.counterparty.contact@1" | "amos.document.publish@1" | "amos.finance.spend.commit@1" | "amos.owner_lab.artifact.create@1" | "amos.procurement.order.issue@1" | "amos.finance.payment.initiate@1" | "amos.credit.application.approve@1" | "amos.distribution.product.release@1" | "amos.programme.participant.enrol@1" | "amos.data.record.disclose@1" | "amos.licence.permission.grant@1" | "amos.licence.permission.revoke@1" | "create_draft_record" | "send_evidence_request" | "schedule_meeting" | "contact_counterparty" | "publish_document" | "commit_spend";
+        resource: {
+          system: string;
+          resource_type: string;
+          resource_id?: string;
+        };
+        amount_minor?: number;
+        currency?: string;
+        external_contact?: boolean;
+        counterparty_ref?: string;
+      };
+      requested_effect_sha256: string;
+      coverage: "covered" | "not_covered";
+      deny_reasons: Array<string>;
+      effect_state: ({
+          target: string | null;
+          effect_type: string;
+          state: "positive" | "conditional" | "pending" | "adverse" | "revoked" | "not_modelled";
+          conditions: Array<{
+              [key: string]: unknown;
+            }>;
+          basis_reviews: Array<string>;
+          basis_credential_ids: Array<string>;
+          valid_until: (string | unknown);
+          decision_state_sha256: string;
+          decision_journal_head_sha256: string;
+        } | unknown);
+      dependencies: Array<{
+          kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
+          id: string;
+          sha256: (string | unknown);
+          valid_until: (string | unknown);
+          revision?: number | null;
+          residual_code?: string | null;
+        }>;
+      revocation: {
+        checked_at: string;
+        method: "atomic_reread_of_every_dependency";
+        commit_required: string;
+      };
+      requested_by_principal_sha256: string;
+      execution_authorized: false;
+      amos_issued_authority: false;
+    };
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "permission_statement";
+      statement_id: string;
+      case_id: string;
+      capability_id: string;
+      coverage: "covered" | "not_covered";
+      valid_until: string;
+      statement: {
+        type: "mvr.permission-statement/1";
+        statement_id: string;
+        issued_at: string;
+        valid_until: string;
+        case_id: string;
+        capability_id: string;
+        capability_document_sha256: string;
+        institution_anchor_id: string;
+        reliance: "lab_fixture_only" | "institution_signed";
+        executor_principal_sha256: string;
+        requested_effect: {
+          effect_id: string;
+          effect_type: "amos.document.draft.create@1" | "amos.communication.evidence.request@1" | "amos.calendar.meeting.create@1" | "amos.communication.counterparty.contact@1" | "amos.document.publish@1" | "amos.finance.spend.commit@1" | "amos.owner_lab.artifact.create@1" | "amos.procurement.order.issue@1" | "amos.finance.payment.initiate@1" | "amos.credit.application.approve@1" | "amos.distribution.product.release@1" | "amos.programme.participant.enrol@1" | "amos.data.record.disclose@1" | "amos.licence.permission.grant@1" | "amos.licence.permission.revoke@1" | "create_draft_record" | "send_evidence_request" | "schedule_meeting" | "contact_counterparty" | "publish_document" | "commit_spend";
+          resource: {
+            system: string;
+            resource_type: string;
+            resource_id?: string;
+          };
+          amount_minor?: number;
+          currency?: string;
+          external_contact?: boolean;
+          counterparty_ref?: string;
+        };
+        requested_effect_sha256: string;
+        coverage: "covered" | "not_covered";
+        deny_reasons: Array<string>;
+        effect_state: ({
+            target: string | null;
+            effect_type: string;
+            state: "positive" | "conditional" | "pending" | "adverse" | "revoked" | "not_modelled";
+            conditions: Array<{
+                [key: string]: unknown;
+              }>;
+            basis_reviews: Array<string>;
+            basis_credential_ids: Array<string>;
+            valid_until: (string | unknown);
+            decision_state_sha256: string;
+            decision_journal_head_sha256: string;
+          } | unknown);
+        dependencies: Array<{
+            kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
+            id: string;
+            sha256: (string | unknown);
+            valid_until: (string | unknown);
+            revision?: number | null;
+            residual_code?: string | null;
+          }>;
+        revocation: {
+          checked_at: string;
+          method: "atomic_reread_of_every_dependency";
+          commit_required: string;
+        };
+        requested_by_principal_sha256: string;
+        execution_authorized: false;
+        amos_issued_authority: false;
+      };
+    };
+    verifier: string;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    status: "invalid_input" | "forbidden" | "not_found" | "conflict" | "system_unavailable";
+    http_status: number;
+    code: string;
+    detail?: string;
+    action?: string;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
   });
 
 export type AuthorityConformanceResponse = {
