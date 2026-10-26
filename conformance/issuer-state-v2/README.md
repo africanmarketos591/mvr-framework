@@ -57,3 +57,24 @@ Implement SPEC.md in any language and replay `vectors.json` in order. Each `regi
 - **Lab only.** The keys are published on purpose and sign nothing outside these vectors. No production issuer is active.
 - **Attribution, not truth.** A signature shows which configured key signed. It says nothing about whether a document is true or anyone has legal authority.
 - **Not independent review.** AMOS wrote `check.py`. It is a separate implementation in another language, written from SPEC.md, but not the work of an independent party. An outside implementation that passes these vectors is still to come.
+
+## Live run with the lab's exact fixture
+
+```sh
+node conformance/issuer-state-v2/run-live.mjs
+```
+
+This runs issuer state version 2 against production's isolated lab, with the exact harmless fixture: the case's `intended_action` and the capability both name `create_draft_record`. It runs these steps in order:
+1. A baseline: the effect is allowed.
+2. A signed prohibition: the effect is denied, and the position is `prohibited`.
+3. The same prohibition also binds the canonical identifier `amos.document.draft.create@1`.
+4. A state registered under a different identifier from the case's is refused with `ISSUER_STATE_CASE_ACTION_MISMATCH`. The detail names both identifiers and says whether they are aliases.
+5. Supersession to permitted: the effect is allowed.
+6. A conditional state: denied without its receipt, allowed with it.
+7. Revocation: the effect is denied.
+
+On 26 October 2026, before this release, the run reached every step, and 12 of 14 behaved as specified. Two real defects caused the other two:
+- The prohibition on `create_draft_record` did not bind `amos.document.draft.create@1`; that identifier still read `planning_only`.
+- The alias refusal gave no reason.
+
+Both are fixed. A restriction now binds every identifier of the same action. A grant still binds only its exact identifier.

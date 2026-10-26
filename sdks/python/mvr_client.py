@@ -18,10 +18,13 @@ class MvrClient:
         api_key: str | None = None,
         base_url: str = "https://africanmarketos.com",
         timeout: int = 90,
+        expected_revision: str | None = None,
     ) -> None:
         self.api_key = api_key or os.getenv("MVR_API_KEY", "mvr-demo-key-2026")
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
+        # Pins one deployment; the server refuses a mismatch with 409 DEPLOYMENT_REVISION_MISMATCH.
+        self.expected_revision = expected_revision
 
     def _post(self, path: str, payload: dict[str, Any] | None = None) -> dict[str, Any]:
         response = requests.post(
@@ -30,6 +33,8 @@ class MvrClient:
                 "Content-Type": "application/json",
                 "X-API-Key": self.api_key,
                 "X-Response-Profile": "full_advisory",
+                "User-Agent": "mvr-reference-client-python/2026-10-26",
+                **({"X-MVR-Expected-Deployment-Revision": self.expected_revision} if self.expected_revision else {}),
             },
             json=payload or {},
             timeout=self.timeout,

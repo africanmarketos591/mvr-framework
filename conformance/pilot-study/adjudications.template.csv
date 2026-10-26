@@ -1,0 +1,5 @@
+# One row per decision, recorded later by someone who saw neither the arm nor the decision. correct_decision: permit or hold. Costs in minor units of the frozen currency.
+decision_ref,correct_decision,adjudicated_at,adjudicator_ref,blinded,scope_error,missed_contradiction,missed_stale_or_geography,downstream_incident_cost_minor,opportunity_lost_minor,basis
+D0001,permit,2027-01-15T09:00:00.000Z,adjudicator-1,true,false,false,false,0,0,partner activity report reference
+D0002,permit,2027-01-15T09:30:00.000Z,adjudicator-1,true,false,false,false,0,1200000,missed onboarding window reference
+D0003,permit,2027-01-15T10:00:00.000Z,adjudicator-1,true,false,false,false,0,0,partner activity report reference

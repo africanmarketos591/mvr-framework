@@ -1,0 +1,173 @@
+{
+ "classification": "AMOS lab verification; proprietary lab fixtures; lab keys; exact create_draft_record fixture",
+ "action": "create_draft_record",
+ "steps": [
+  {
+   "step": 1,
+   "name": "baseline: the exact fixture verifies before any issuer state",
+   "expected": {
+    "decision": "allow"
+   },
+   "observed": "allow",
+   "passed": true
+  },
+  {
+   "step": 2,
+   "name": "register a signed issuer-state/2 prohibition for create_draft_record",
+   "expected": {
+    "status": "registered"
+   },
+   "observed": "registered",
+   "passed": true
+  },
+  {
+   "step": 3,
+   "name": "the exact effect is prohibited",
+   "expected": {
+    "tier": "prohibited"
+   },
+   "observed": "prohibited",
+   "passed": true
+  },
+  {
+   "step": 4,
+   "name": "verification denies the exact effect",
+   "expected": {
+    "decision": "deny"
+   },
+   "observed": {
+    "decision": "deny",
+    "deny_reasons": [
+     "ISSUER_STATE_PROHIBITED",
+     "CASE_ACTIVE_CONTRADICTION",
+     "UNACCEPTED_OPEN_RESIDUAL:REVIEW_CONTRADICTION"
+    ]
+   },
+   "passed": true
+  },
+  {
+   "step": 5,
+   "name": "the prohibition binds the canonical alias of the same action",
+   "expected": {
+    "tier": "prohibited"
+   },
+   "observed": "prohibited",
+   "passed": true
+  },
+  {
+   "step": 6,
+   "name": "an issuer state naming the alias instead of the intended identifier is refused and says why",
+   "expected": {
+    "code": "ISSUER_STATE_CASE_ACTION_MISMATCH",
+    "same_action_by_alias": true
+   },
+   "observed": {
+    "code": "ISSUER_STATE_CASE_ACTION_MISMATCH",
+    "detail": {
+     "case_intended_action": "create_draft_record",
+     "issuer_state_action": "amos.document.draft.create@1",
+     "same_action_by_alias": true,
+     "fix": "Use the identical action identifier in the case intended_action and the signed issuer state."
+    }
+   },
+   "passed": true
+  },
+  {
+   "step": 7,
+   "name": "the issuer supersedes the prohibition with a permitted state",
+   "expected": {
+    "status": "registered"
+   },
+   "observed": "registered",
+   "passed": true
+  },
+  {
+   "step": 8,
+   "name": "the exact effect verifies under the permitted state",
+   "expected": {
+    "decision": "allow"
+   },
+   "observed": {
+    "decision": "allow",
+    "deny_reasons": []
+   },
+   "passed": true
+  },
+  {
+   "step": 9,
+   "name": "register a conditional state without its receipt",
+   "expected": {
+    "status": "registered"
+   },
+   "observed": "registered",
+   "passed": true
+  },
+  {
+   "step": 10,
+   "name": "an unresolved condition denies the exact effect",
+   "expected": {
+    "decision": "deny"
+   },
+   "observed": {
+    "decision": "deny",
+    "deny_reasons": [
+     "ISSUER_STATE_CONDITIONS_UNRESOLVED",
+     "CASE_ACTIVE_CONTRADICTION",
+     "UNACCEPTED_OPEN_RESIDUAL:REVIEW_CONTRADICTION"
+    ]
+   },
+   "passed": true
+  },
+  {
+   "step": 11,
+   "name": "register the conditional state with its signed receipt",
+   "expected": {
+    "status": "registered"
+   },
+   "observed": "registered",
+   "passed": true
+  },
+  {
+   "step": 12,
+   "name": "a satisfied condition lets the exact effect verify",
+   "expected": {
+    "decision": "allow"
+   },
+   "observed": {
+    "decision": "allow",
+    "deny_reasons": []
+   },
+   "passed": true
+  },
+  {
+   "step": 13,
+   "name": "the issuer revokes",
+   "expected": {
+    "status": "registered"
+   },
+   "observed": "registered",
+   "passed": true
+  },
+  {
+   "step": 14,
+   "name": "a revoked state denies and prohibits the exact effect",
+   "expected": {
+    "decision": "deny",
+    "tier": "prohibited"
+   },
+   "observed": {
+    "decision": "deny",
+    "tier": "prohibited"
+   },
+   "passed": true
+  }
+ ],
+ "requests": 27,
+ "passed": true,
+ "case_id": "RC-24a6c83e46639c3d8b47ed876d8a3d95fb5449f2bcd73f68f03acb9ad5ee4fd3",
+ "lab": "https://africanmarketos.com",
+ "served_revisions": [
+  "2026-10-26.favourable-path.2"
+ ],
+ "revision": "2026-10-26.favourable-path.2"
+}

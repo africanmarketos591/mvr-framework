@@ -51,7 +51,7 @@ const openapi = await probe('/v1/openapi.json');
 await check('the generated governance client matches the live contract', async () => {
   assert.equal(openapi.status, 200);
   const client = await import(pathToFileURL(path.join(repo, 'sdks/javascript/governance-client.mjs')).href);
-  const published = fs.readFileSync(path.join(repo, 'sdks/javascript/governance-client.mjs'), 'utf8').match(/Contract subset SHA-256: ([a-f0-9]{64})/)?.[1];
+  const published = fs.readFileSync(path.join(repo, 'sdks/javascript/governance-client.mjs'), 'utf8').match(/(?:Contract|operation) subset SHA-256: ([a-f0-9]{64})/i)?.[1];
   assert(published, 'client header names its contract hash');
   const subset = Object.values(client.GOVERNANCE_OPERATIONS).map(({method, path:route}) => {
     const op = openapi.body.paths?.[route]?.[method.toLowerCase()]; assert(op, 'live OpenAPI lacks ' + method + ' ' + route);

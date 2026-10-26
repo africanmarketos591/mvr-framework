@@ -1,5 +1,5 @@
-// Generated from the AMOS OpenAPI contract (https://africanmarketos.com/v1/openapi.json) by scripts/generate-governance-client.mjs.
-// Contract subset SHA-256: 58452d8727a538c5abd97488de396257ccbc378a29ececb8f81fd491bb1baec0. Do not edit by hand; regenerate instead.
+// Generated from the AMOS OpenAPI contract by scripts/generate-governance-client.mjs (https://github.com/africanmarketos591/mvr-framework).
+// Contract version v6.32.0; operation subset SHA-256: 568c81efaf61f1773791b31c90ece3893149121748c2994c63ad452d565c8621. Do not edit by hand; regenerate instead.
 /** Request body for POST /v1/review-cases. */
 export type ReviewCasesRequest = {
   workplan_id?: string;
@@ -23,6 +23,9 @@ export type ReviewCasesRequest = {
     clause_text: string;
     disposition: "approve" | "reject" | "qualify";
     note: string;
+    conditions?: Array<{
+        [key: string]: unknown;
+      }>;
   };
   passage_interpretation?: {
     document_sha256: string;
@@ -30,9 +33,17 @@ export type ReviewCasesRequest = {
     start: number;
     end: number;
     clause_text: string;
-    stance: "adverse" | "supports" | "unrelated";
+    stance: "adverse" | "supports" | "qualifies" | "unrelated";
     source: "human" | "model";
     model_ref?: string;
+    task_id?: string;
+    attribution?: {
+      provider: string;
+      model: string;
+      model_version: string;
+      prompt_sha256: string;
+      output_sha256: string;
+    };
     note?: string;
   };
   register_lei?: string;
@@ -42,6 +53,25 @@ export type ReviewCasesRequest = {
     expected_name?: string;
   };
   expected_tools_revision?: number;
+  designation_credential_id?: string;
+  acknowledge_restrictive_wording?: true;
+  interpretation_task?: {
+    document_sha256: string;
+    fact_id: string;
+    start: number;
+    end: number;
+    clause_text: string;
+  };
+  interpretation_disposition?: {
+    task_id: string;
+    disposition: "accept" | "reject" | "qualify";
+    label?: "supports" | "qualifies" | "adverse" | "unrelated";
+    conditions?: Array<{
+        [key: string]: unknown;
+      }>;
+    note?: string;
+  };
+  review_sha256?: string;
   review_model?: {
     [key: string]: unknown;
   };
@@ -72,7 +102,7 @@ export type ReviewCasesRequest = {
     currency?: string;
     note?: string;
   };
-  action: "create" | "get" | "link_attestation" | "unlink_attestation" | "prepare_packet" | "get_packet" | "withdraw" | "open_workplan" | "get_workplan" | "record_plan_step" | "finalize_workplan" | "lookup_public_register" | "register_review_document" | "review_document_clause" | "record_passage_interpretation" | "get_review_tools" | "set_review_model" | "record_review_observation" | "record_hold_event" | "capture_review_proposal" | "compare_review_decision" | "record_case_outcome" | "get_review_outcome_ledger";
+  action: "create" | "get" | "link_attestation" | "unlink_attestation" | "prepare_packet" | "get_packet" | "withdraw" | "open_workplan" | "get_workplan" | "record_plan_step" | "finalize_workplan" | "lookup_public_register" | "register_review_document" | "review_document_clause" | "record_passage_interpretation" | "get_review_tools" | "set_review_model" | "record_review_observation" | "record_hold_event" | "capture_review_proposal" | "compare_review_decision" | "issue_interpretation_task" | "dispose_interpretation" | "withdraw_review" | "record_dependency_check" | "get_decision_journal" | "record_case_outcome" | "get_review_outcome_ledger";
   operation_id?: string;
   case_id?: string;
   expected_revision?: number;
@@ -136,15 +166,12 @@ export type ReviewSandboxRequest = ({
     session_token: string;
   });
 
-/** Response body for POST /v1/review-sandbox. */
-export type ReviewSandboxResponse = ReviewSandboxResponse;
-
 /** Response body for GET /v1/review-sandbox/contract. */
 export type ReviewSandboxContractResponse = ReviewSandboxContract;
 
 /** Request body for POST /v1/authority-chain. */
 export type AuthorityChainRequest = {
-  action: "register_anchor" | "revoke_anchor" | "vet_anchor" | "register_credential" | "revoke_credential" | "register_source_record" | "register_issuer_state" | "revoke_source_record" | "close_residual" | "revoke_closure" | "register_capability" | "revoke_capability" | "verify_capability" | "commit_effect" | "record_effect" | "get" | "trace" | "check_permission";
+  action: "register_anchor" | "revoke_anchor" | "vet_anchor" | "register_credential" | "revoke_credential" | "register_source_record" | "register_issuer_state" | "revoke_source_record" | "close_residual" | "revoke_closure" | "register_capability" | "revoke_capability" | "verify_capability" | "commit_effect" | "record_effect" | "get" | "trace" | "check_permission" | "issue_permission_statement";
   operation_id?: string;
   anchor?: {
     type: "mvr.authority-anchor/1";
@@ -171,6 +198,7 @@ export type AuthorityChainRequest = {
       competence: {
         residual_codes: Array<"SOURCE_AUTHENTICITY_UNVERIFIED" | "CLAIM_TRUTH_UNVERIFIED" | "PERMISSION_STATUS_UNASSESSED" | "MISSING_GUARDIAN_PERMISSION" | "UNVERIFIED_REPAYMENT_CAPACITY" | "WRONG_GEOGRAPHY_TRANSFER" | "INCOMPLETE_STUDY_INVENTORY" | "ATTESTOR_STANDING_UNVERIFIED" | "DECISION_SCOPE_UNVERIFIED" | "UNCLASSIFIED_RESIDUAL_RISK">;
         jurisdictions: Array<string>;
+        effect_types?: Array<"amos.document.draft.create@1" | "amos.communication.evidence.request@1" | "amos.calendar.meeting.create@1" | "amos.communication.counterparty.contact@1" | "amos.document.publish@1" | "amos.finance.spend.commit@1" | "amos.owner_lab.artifact.create@1" | "amos.procurement.order.issue@1" | "amos.finance.payment.initiate@1" | "amos.credit.application.approve@1" | "amos.distribution.product.release@1" | "amos.programme.participant.enrol@1" | "amos.data.record.disclose@1" | "amos.licence.permission.grant@1" | "amos.licence.permission.revoke@1" | "create_draft_record" | "send_evidence_request" | "schedule_meeting" | "contact_counterparty" | "publish_document" | "commit_spend">;
       };
       independence: {
         relationship_to_subject: "none" | "employee" | "contractor" | "shareholder" | "family" | "adviser" | "other";
@@ -282,9 +310,6 @@ export type AuthorityChainRequest = {
   geography?: string;
 };
 
-/** Response body for POST /v1/authority-chain. */
-export type AuthorityChainResponse = AuthorityChainResponse;
-
 /** Response body for GET /v1/authority-chain/contract. */
 export type AuthorityChainContractResponse = AuthorityChainContract;
 
@@ -299,7 +324,7 @@ export type AuthorityReceiptsVerifyRequest = {
           status: "unsigned";
           reason: string;
           standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
+          key_id?: string | null;
           registry_url?: string;
         } | {
           standard: "MVR-RECEIPT-SIG-V1";
@@ -314,14 +339,14 @@ export type AuthorityReceiptsVerifyRequest = {
       kind: "capability_verification";
       verification_id: string;
       capability_id: string;
-      case_id: string;
+      case_id: string | null;
       decision: "allow" | "deny";
       deny_reasons: Array<string>;
       effect_id: string;
       requested_effect_sha256: string;
       executor_principal_sha256: string;
-      reliance: string;
-      valid_until: string;
+      reliance: string | null;
+      valid_until: string | null;
     } | {
       sequence: number;
       prev_sha256: string;
@@ -331,7 +356,7 @@ export type AuthorityReceiptsVerifyRequest = {
           status: "unsigned";
           reason: string;
           standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
+          key_id?: string | null;
           registry_url?: string;
         } | {
           standard: "MVR-RECEIPT-SIG-V1";
@@ -360,7 +385,7 @@ export type AuthorityReceiptsVerifyRequest = {
           status: "unsigned";
           reason: string;
           standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
+          key_id?: string | null;
           registry_url?: string;
         } | {
           standard: "MVR-RECEIPT-SIG-V1";
@@ -386,7 +411,7 @@ export type AuthorityReceiptsVerifyRequest = {
           status: "unsigned";
           reason: string;
           standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
+          key_id?: string | null;
           registry_url?: string;
         } | {
           standard: "MVR-RECEIPT-SIG-V1";
@@ -399,15 +424,120 @@ export type AuthorityReceiptsVerifyRequest = {
       lab_fixture?: boolean;
       production_authority?: false;
       kind: "effect_commit";
-      commit_id: string;
+      commit_id: string | null;
       verification_id: string;
       capability_id: string;
       effect_id: string;
       requested_effect_sha256: string;
       decision: "commit" | "deny";
       deny_reasons: Array<string>;
-      commit_valid_until: string;
+      commit_valid_until: string | null;
       executor_principal_sha256: string;
+      permission_basis?: {
+        effect_state: "positive" | "conditional" | "pending" | "adverse" | "revoked" | "not_modelled";
+        conditions: Array<{
+            [key: string]: unknown;
+          }>;
+        basis_reviews: Array<string>;
+        decision_state_sha256: string;
+        decision_journal_head_sha256: string;
+        capability_document_sha256: (string | unknown);
+      };
+    } | {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "permission_statement";
+      statement_id: string;
+      case_id: string;
+      capability_id: string;
+      coverage: "covered" | "not_covered";
+      valid_until: string;
+      statement: {
+        type: "mvr.permission-statement/1";
+        statement_id: string;
+        issued_at: string;
+        valid_until: string;
+        case_id: string;
+        capability_id: string;
+        capability_document_sha256: string;
+        institution_anchor_id: string;
+        reliance: "lab_fixture_only" | "institution_signed";
+        executor_principal_sha256: string;
+        requested_effect: {
+          effect_id: string;
+          effect_type: "amos.document.draft.create@1" | "amos.communication.evidence.request@1" | "amos.calendar.meeting.create@1" | "amos.communication.counterparty.contact@1" | "amos.document.publish@1" | "amos.finance.spend.commit@1" | "amos.owner_lab.artifact.create@1" | "amos.procurement.order.issue@1" | "amos.finance.payment.initiate@1" | "amos.credit.application.approve@1" | "amos.distribution.product.release@1" | "amos.programme.participant.enrol@1" | "amos.data.record.disclose@1" | "amos.licence.permission.grant@1" | "amos.licence.permission.revoke@1" | "create_draft_record" | "send_evidence_request" | "schedule_meeting" | "contact_counterparty" | "publish_document" | "commit_spend";
+          resource: {
+            system: string;
+            resource_type: string;
+            resource_id?: string;
+          };
+          amount_minor?: number;
+          currency?: string;
+          external_contact?: boolean;
+          counterparty_ref?: string;
+        };
+        requested_effect_sha256: string;
+        coverage: "covered" | "not_covered";
+        deny_reasons: Array<string>;
+        effect_state: ({
+            target: string | null;
+            effect_type: string;
+            state: "positive" | "conditional" | "pending" | "adverse" | "revoked" | "not_modelled";
+            conditions: Array<{
+                [key: string]: unknown;
+              }>;
+            basis_reviews: Array<string>;
+            basis_credential_ids: Array<string>;
+            valid_until: (string | unknown);
+            decision_state_sha256: string;
+            decision_journal_head_sha256: string;
+          } | unknown);
+        dependencies: Array<{
+            kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
+            id: string;
+            sha256: (string | unknown);
+            valid_until: (string | unknown);
+            revision?: number | null;
+            residual_code?: string | null;
+          }>;
+        standing_assertions: Array<{
+            credential_id: string;
+            asserted_by_anchor_id: string | null;
+            asserted_by_organization_ref: string | null;
+            verification: string;
+            trust_tier: string | null;
+            usable: boolean;
+            not_after: (string | unknown);
+            credential_sha256: (string | unknown);
+            supports_effect: string;
+          }>;
+        revocation: {
+          checked_at: string;
+          method: "atomic_reread_of_every_dependency";
+          commit_required: string;
+        };
+        requested_by_principal_sha256: string;
+        execution_authorized: false;
+        amos_issued_authority: false;
+      };
     });
   previous_head?: {
     sequence: number;
@@ -461,6 +591,25 @@ export type ReviewerAttestationsResponse = ReviewerAttestationResponse;
 /** Response body for GET /v1/reviewer-attestations/contract. */
 export type ReviewerAttestationsContractResponse = ReviewerAttestationContract;
 
+/** Request body for POST /v1/authority-conformance. */
+export type AuthorityConformanceRequest = ({
+    action: "issue";
+    synthetic_only: true;
+    acknowledge_no_identity_verification: true;
+  } | {
+    action: "call";
+    session_id: string;
+    session_token: string;
+    target: "authority" | "case" | "attestation" | "delivery";
+    request: {
+      [key: string]: unknown;
+    };
+  } | {
+    action: "close";
+    session_id: string;
+    session_token: string;
+  });
+
 /** Request body for POST /v1/key-ceremony. */
 export type KeyCeremonyRequest = {
   action: "precheck" | "run" | "check_token" | "recover_interrupted";
@@ -471,14 +620,1891 @@ export type KeyCeremonyRequest = {
   confirm_witnesses_present?: boolean;
 };
 
-/** Response body for POST /v1/key-ceremony. */
-export type KeyCeremonyResponse = KeyCeremonyResponse;
-
 /** Response body for GET /v1/key-ceremony/status. */
 export type KeyCeremonyStatusResponse = KeyCeremonyStatus;
 
 /** Response body for GET /v1/key-ceremony/contract. */
 export type KeyCeremonyContractResponse = KeyCeremonyContract;
+
+export type AuthorityChainContract = {
+  contract_version?: "mvr.authority-chain/1";
+  route?: "/v1/authority-chain";
+  closure_assurance?: Array<string>;
+  issued_by_amos?: false;
+  amos_authorization?: false;
+  [key: string]: unknown;
+};
+
+export type AuthorityChainResponse = ({
+    action: "register_anchor";
+    status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    anchor: {
+      anchor_id: string;
+      anchor_role?: string;
+      trust_tier?: string;
+      status?: string;
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "vet_anchor";
+    status: "platform_vetted" | "awaiting_second_operator";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    anchor: {
+      anchor_id: string;
+      anchor_role?: string;
+      trust_tier?: string;
+      status?: string;
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "revoke_anchor";
+    status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    kind: "anchor";
+    id: string;
+    dependents_invalidated_on_next_check: true;
+    anchor: {
+      anchor_id: string;
+      anchor_role?: string;
+      trust_tier?: string;
+      status?: string;
+      [key: string]: unknown;
+    };
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "revocation";
+      target_kind: "anchor";
+      target_id: string;
+      revoked_by_principal_sha256: string;
+      operation_id: string;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "register_credential";
+    status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    credential: {
+      credential_id: string;
+      usable: boolean;
+      reasons: Array<string>;
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "register_source_record";
+    status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    source_record: {
+      record_id: string;
+      usable: boolean;
+      reasons: Array<string>;
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "register_issuer_state";
+    status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    issuer_state: {
+      record_id: string;
+      state: string;
+      [key: string]: unknown;
+    };
+    idempotent_record?: boolean;
+    dependents_rechecked_on_next_read?: boolean;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "revoke_credential";
+    status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    kind: "credential";
+    id: string;
+    revocation_basis: string;
+    dependents_invalidated_on_next_check: true;
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "revocation";
+      target_kind: "credential";
+      target_id: string;
+      revoked_by_principal_sha256: string;
+      operation_id: string;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "revoke_source_record";
+    status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    kind: "source_record";
+    id: string;
+    revocation_basis: string;
+    dependents_invalidated_on_next_check: true;
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "revocation";
+      target_kind: "source_record";
+      target_id: string;
+      revoked_by_principal_sha256: string;
+      operation_id: string;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "close_residual";
+    status: "closed";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    closure: {
+      closure_id: string;
+      usable?: boolean;
+      reasons?: Array<string>;
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "revoke_closure";
+    status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    kind: "closure";
+    id: string;
+    case_id: string;
+    residual_code: string;
+    dependents_invalidated_on_next_check: true;
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "revocation";
+      target_kind: "closure";
+      target_id: string;
+      revoked_by_principal_sha256: string;
+      operation_id: string;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "register_capability";
+    status: "registered";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    capability: {
+      capability_id: string;
+      case_id?: string;
+      effect_type?: string;
+      not_after?: string;
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "revoke_capability";
+    status: "revoked";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    kind: "capability";
+    id: string;
+    case_id: string;
+    revocation_basis: string;
+    next_verification: "deny";
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "revocation";
+      target_kind: "capability";
+      target_id: string;
+      revoked_by_principal_sha256: string;
+      operation_id: string;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "verify_capability";
+    status: "verified";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    decision: "allow" | "deny";
+    deny_reasons: Array<string>;
+    verification_id: string;
+    capability_id: string;
+    case: {
+      [key: string]: unknown;
+    } | null;
+    valid_until: string | null;
+    reliance: string | null;
+    effect_scope: {
+      [key: string]: unknown;
+    } | null;
+    dependency_chain: Array<unknown>;
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "capability_verification";
+      verification_id: string;
+      capability_id: string;
+      case_id: string | null;
+      decision: "allow" | "deny";
+      deny_reasons: Array<string>;
+      effect_id: string;
+      requested_effect_sha256: string;
+      executor_principal_sha256: string;
+      reliance: string | null;
+      valid_until: string | null;
+    };
+    executor_obligations: Array<string>;
+    lab_fixture_warning: string | null;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "commit_effect";
+    status: "checked" | "already_committed";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    decision: "commit" | "deny" | "already_committed";
+    deny_reasons?: Array<string>;
+    verification_id: string;
+    commit_id: string | null;
+    commit_valid_until: string | null;
+    committed_at?: string;
+    capability_id?: string;
+    receipt?: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "effect_commit";
+      commit_id: string | null;
+      verification_id: string;
+      capability_id: string;
+      effect_id: string;
+      requested_effect_sha256: string;
+      decision: "commit" | "deny";
+      deny_reasons: Array<string>;
+      commit_valid_until: string | null;
+      executor_principal_sha256: string;
+      permission_basis?: {
+        effect_state: "positive" | "conditional" | "pending" | "adverse" | "revoked" | "not_modelled";
+        conditions: Array<{
+            [key: string]: unknown;
+          }>;
+        basis_reviews: Array<string>;
+        decision_state_sha256: string;
+        decision_journal_head_sha256: string;
+        capability_document_sha256: (string | unknown);
+      };
+    };
+    effect_state?: {
+      [key: string]: unknown;
+    } | null;
+    executor_obligations: Array<string>;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "record_effect";
+    status: "recorded";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    verification_id: string;
+    outcome: "succeeded" | "failed" | "not_attempted";
+    reported_after_valid_until: boolean;
+    commit_id: string | null;
+    commit_time_check_performed: boolean;
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "effect_report";
+      verification_id: string;
+      capability_id: string;
+      effect_id: string;
+      outcome: "succeeded" | "failed" | "not_attempted";
+      external_ref_sha256: (string | unknown);
+      reported_after_valid_until: boolean;
+      commit_id?: string;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "get";
+    status: "ok";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    anchor?: {
+      anchor_id: string;
+      anchor_role?: string;
+      trust_tier?: string;
+      status?: string;
+      [key: string]: unknown;
+    };
+    credential?: {
+      credential_id: string;
+      usable: boolean;
+      reasons: Array<string>;
+      [key: string]: unknown;
+    };
+    source_record?: {
+      record_id: string;
+      usable: boolean;
+      reasons: Array<string>;
+      [key: string]: unknown;
+    };
+    closure?: {
+      closure_id: string;
+      usable?: boolean;
+      reasons?: Array<string>;
+      [key: string]: unknown;
+    };
+    capability?: {
+      capability_id: string;
+      case_id?: string;
+      effect_type?: string;
+      not_after?: string;
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "trace";
+    status: "ok";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    capability_id: string;
+    currently_valid: boolean;
+    reasons: Array<string>;
+    reliance: string | null;
+    chain: {
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "check_permission";
+    status: "ok";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    permission_position: {
+      contract_version: "mvr.permission-position/1";
+      tier: "prohibited" | "not_permitted" | "planning_only" | "conditionally_permitted" | "permitted_up_to_ceiling" | "fully_permitted";
+      institution_capability_covers_effect: boolean;
+      narrowest_allowed_now: Array<unknown>;
+      blocked: Array<unknown>;
+      closure_path: {
+        status: string;
+        minimum_accountable_acts: number;
+        acts: Array<unknown>;
+        [key: string]: unknown;
+      };
+      execution_authorized: false;
+      [key: string]: unknown;
+    };
+    dependency_graph: {
+      nodes: Array<unknown>;
+      edges: Array<unknown>;
+      [key: string]: unknown;
+    };
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    action: "issue_permission_statement";
+    status: "issued";
+    idempotent_replay: boolean;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    coverage: "covered" | "not_covered";
+    statement: {
+      type: "mvr.permission-statement/1";
+      statement_id: string;
+      issued_at: string;
+      valid_until: string;
+      case_id: string;
+      capability_id: string;
+      capability_document_sha256: string;
+      institution_anchor_id: string;
+      reliance: "lab_fixture_only" | "institution_signed";
+      executor_principal_sha256: string;
+      requested_effect: {
+        effect_id: string;
+        effect_type: "amos.document.draft.create@1" | "amos.communication.evidence.request@1" | "amos.calendar.meeting.create@1" | "amos.communication.counterparty.contact@1" | "amos.document.publish@1" | "amos.finance.spend.commit@1" | "amos.owner_lab.artifact.create@1" | "amos.procurement.order.issue@1" | "amos.finance.payment.initiate@1" | "amos.credit.application.approve@1" | "amos.distribution.product.release@1" | "amos.programme.participant.enrol@1" | "amos.data.record.disclose@1" | "amos.licence.permission.grant@1" | "amos.licence.permission.revoke@1" | "create_draft_record" | "send_evidence_request" | "schedule_meeting" | "contact_counterparty" | "publish_document" | "commit_spend";
+        resource: {
+          system: string;
+          resource_type: string;
+          resource_id?: string;
+        };
+        amount_minor?: number;
+        currency?: string;
+        external_contact?: boolean;
+        counterparty_ref?: string;
+      };
+      requested_effect_sha256: string;
+      coverage: "covered" | "not_covered";
+      deny_reasons: Array<string>;
+      effect_state: ({
+          target: string | null;
+          effect_type: string;
+          state: "positive" | "conditional" | "pending" | "adverse" | "revoked" | "not_modelled";
+          conditions: Array<{
+              [key: string]: unknown;
+            }>;
+          basis_reviews: Array<string>;
+          basis_credential_ids: Array<string>;
+          valid_until: (string | unknown);
+          decision_state_sha256: string;
+          decision_journal_head_sha256: string;
+        } | unknown);
+      dependencies: Array<{
+          kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
+          id: string;
+          sha256: (string | unknown);
+          valid_until: (string | unknown);
+          revision?: number | null;
+          residual_code?: string | null;
+        }>;
+      standing_assertions: Array<{
+          credential_id: string;
+          asserted_by_anchor_id: string | null;
+          asserted_by_organization_ref: string | null;
+          verification: string;
+          trust_tier: string | null;
+          usable: boolean;
+          not_after: (string | unknown);
+          credential_sha256: (string | unknown);
+          supports_effect: string;
+        }>;
+      revocation: {
+        checked_at: string;
+        method: "atomic_reread_of_every_dependency";
+        commit_required: string;
+      };
+      requested_by_principal_sha256: string;
+      execution_authorized: false;
+      amos_issued_authority: false;
+    };
+    receipt: {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "permission_statement";
+      statement_id: string;
+      case_id: string;
+      capability_id: string;
+      coverage: "covered" | "not_covered";
+      valid_until: string;
+      statement: {
+        type: "mvr.permission-statement/1";
+        statement_id: string;
+        issued_at: string;
+        valid_until: string;
+        case_id: string;
+        capability_id: string;
+        capability_document_sha256: string;
+        institution_anchor_id: string;
+        reliance: "lab_fixture_only" | "institution_signed";
+        executor_principal_sha256: string;
+        requested_effect: {
+          effect_id: string;
+          effect_type: "amos.document.draft.create@1" | "amos.communication.evidence.request@1" | "amos.calendar.meeting.create@1" | "amos.communication.counterparty.contact@1" | "amos.document.publish@1" | "amos.finance.spend.commit@1" | "amos.owner_lab.artifact.create@1" | "amos.procurement.order.issue@1" | "amos.finance.payment.initiate@1" | "amos.credit.application.approve@1" | "amos.distribution.product.release@1" | "amos.programme.participant.enrol@1" | "amos.data.record.disclose@1" | "amos.licence.permission.grant@1" | "amos.licence.permission.revoke@1" | "create_draft_record" | "send_evidence_request" | "schedule_meeting" | "contact_counterparty" | "publish_document" | "commit_spend";
+          resource: {
+            system: string;
+            resource_type: string;
+            resource_id?: string;
+          };
+          amount_minor?: number;
+          currency?: string;
+          external_contact?: boolean;
+          counterparty_ref?: string;
+        };
+        requested_effect_sha256: string;
+        coverage: "covered" | "not_covered";
+        deny_reasons: Array<string>;
+        effect_state: ({
+            target: string | null;
+            effect_type: string;
+            state: "positive" | "conditional" | "pending" | "adverse" | "revoked" | "not_modelled";
+            conditions: Array<{
+                [key: string]: unknown;
+              }>;
+            basis_reviews: Array<string>;
+            basis_credential_ids: Array<string>;
+            valid_until: (string | unknown);
+            decision_state_sha256: string;
+            decision_journal_head_sha256: string;
+          } | unknown);
+        dependencies: Array<{
+            kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
+            id: string;
+            sha256: (string | unknown);
+            valid_until: (string | unknown);
+            revision?: number | null;
+            residual_code?: string | null;
+          }>;
+        standing_assertions: Array<{
+            credential_id: string;
+            asserted_by_anchor_id: string | null;
+            asserted_by_organization_ref: string | null;
+            verification: string;
+            trust_tier: string | null;
+            usable: boolean;
+            not_after: (string | unknown);
+            credential_sha256: (string | unknown);
+            supports_effect: string;
+          }>;
+        revocation: {
+          checked_at: string;
+          method: "atomic_reread_of_every_dependency";
+          commit_required: string;
+        };
+        requested_by_principal_sha256: string;
+        execution_authorized: false;
+        amos_issued_authority: false;
+      };
+    };
+    verifier: string;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  } | {
+    status: "invalid_input" | "forbidden" | "not_found" | "conflict" | "system_unavailable";
+    http_status: number;
+    code: string;
+    detail?: string;
+    action?: string;
+    issued_by_amos: false;
+    amos_authorization: false;
+    authority_source: "institution_signature_only";
+    real_world_identity_verified_by_amos: false;
+    response_meta?: {
+      [key: string]: unknown;
+    };
+    response_contract_version?: string;
+    action_authorization?: {
+      [key: string]: unknown;
+    };
+    output_use_authorization?: {
+      [key: string]: unknown;
+    };
+    analysis_use?: {
+      [key: string]: unknown;
+    };
+    action_capability?: {
+      [key: string]: unknown;
+    };
+    execution_authorization_state?: "not_authorized";
+    human_review_required?: boolean;
+    answer?: {
+      [key: string]: unknown;
+    };
+    residual_risk_register?: {
+      [key: string]: unknown;
+    };
+    action_boundary?: {
+      [key: string]: unknown;
+    };
+    evidence_authentication_status?: string;
+    authenticated_verified_count?: number;
+    evidence_authentication_basis?: unknown;
+    external_use_ceiling?: unknown;
+    internal_work_products?: unknown;
+    stable_content_hash?: string;
+    cite?: unknown;
+    response_hash?: string;
+  });
+
+export type AuthorityConformanceResponse = {
+  status: string;
+  http_status?: number;
+  contract_version: string;
+  lab_fixture: boolean;
+  evaluation_only?: boolean;
+  production_authority: false;
+  execution_authorized: false;
+  session_id?: string;
+  expires_at?: string;
+  tenant_id?: string;
+  workspace_id?: string;
+  max_calls?: number;
+  calls_remaining?: number;
+  credentials?: {
+    [key: string]: {
+      session_token?: string;
+      roles?: Array<string>;
+      principal_sha256?: string;
+      [key: string]: unknown;
+    } | unknown;
+  };
+  receipt_registry?: AuthorityConformanceKeysResponse;
+  receipt?: ({
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "capability_verification";
+      verification_id: string;
+      capability_id: string;
+      case_id: string | null;
+      decision: "allow" | "deny";
+      deny_reasons: Array<string>;
+      effect_id: string;
+      requested_effect_sha256: string;
+      executor_principal_sha256: string;
+      reliance: string | null;
+      valid_until: string | null;
+    } | {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "effect_report";
+      verification_id: string;
+      capability_id: string;
+      effect_id: string;
+      outcome: "succeeded" | "failed" | "not_attempted";
+      external_ref_sha256: (string | unknown);
+      reported_after_valid_until: boolean;
+      commit_id?: string;
+    } | {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "revocation";
+      target_kind: "anchor" | "credential" | "source_record" | "closure" | "capability";
+      target_id: string;
+      revoked_by_principal_sha256: string;
+      operation_id: string;
+    } | {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "effect_commit";
+      commit_id: string | null;
+      verification_id: string;
+      capability_id: string;
+      effect_id: string;
+      requested_effect_sha256: string;
+      decision: "commit" | "deny";
+      deny_reasons: Array<string>;
+      commit_valid_until: string | null;
+      executor_principal_sha256: string;
+      permission_basis?: {
+        effect_state: "positive" | "conditional" | "pending" | "adverse" | "revoked" | "not_modelled";
+        conditions: Array<{
+            [key: string]: unknown;
+          }>;
+        basis_reviews: Array<string>;
+        decision_state_sha256: string;
+        decision_journal_head_sha256: string;
+        capability_document_sha256: (string | unknown);
+      };
+    } | {
+      sequence: number;
+      prev_sha256: string;
+      recorded_at: string;
+      sha256: string;
+      signature: ({
+          status: "unsigned";
+          reason: string;
+          standard?: "MVR-RECEIPT-SIG-V1";
+          key_id?: string | null;
+          registry_url?: string;
+        } | {
+          standard: "MVR-RECEIPT-SIG-V1";
+          status: "signed";
+          algorithm: "Ed25519";
+          key_id: string;
+          registry_url?: string;
+          signature_b64: string;
+        });
+      lab_fixture?: boolean;
+      production_authority?: false;
+      kind: "permission_statement";
+      statement_id: string;
+      case_id: string;
+      capability_id: string;
+      coverage: "covered" | "not_covered";
+      valid_until: string;
+      statement: {
+        type: "mvr.permission-statement/1";
+        statement_id: string;
+        issued_at: string;
+        valid_until: string;
+        case_id: string;
+        capability_id: string;
+        capability_document_sha256: string;
+        institution_anchor_id: string;
+        reliance: "lab_fixture_only" | "institution_signed";
+        executor_principal_sha256: string;
+        requested_effect: {
+          effect_id: string;
+          effect_type: "amos.document.draft.create@1" | "amos.communication.evidence.request@1" | "amos.calendar.meeting.create@1" | "amos.communication.counterparty.contact@1" | "amos.document.publish@1" | "amos.finance.spend.commit@1" | "amos.owner_lab.artifact.create@1" | "amos.procurement.order.issue@1" | "amos.finance.payment.initiate@1" | "amos.credit.application.approve@1" | "amos.distribution.product.release@1" | "amos.programme.participant.enrol@1" | "amos.data.record.disclose@1" | "amos.licence.permission.grant@1" | "amos.licence.permission.revoke@1" | "create_draft_record" | "send_evidence_request" | "schedule_meeting" | "contact_counterparty" | "publish_document" | "commit_spend";
+          resource: {
+            system: string;
+            resource_type: string;
+            resource_id?: string;
+          };
+          amount_minor?: number;
+          currency?: string;
+          external_contact?: boolean;
+          counterparty_ref?: string;
+        };
+        requested_effect_sha256: string;
+        coverage: "covered" | "not_covered";
+        deny_reasons: Array<string>;
+        effect_state: ({
+            target: string | null;
+            effect_type: string;
+            state: "positive" | "conditional" | "pending" | "adverse" | "revoked" | "not_modelled";
+            conditions: Array<{
+                [key: string]: unknown;
+              }>;
+            basis_reviews: Array<string>;
+            basis_credential_ids: Array<string>;
+            valid_until: (string | unknown);
+            decision_state_sha256: string;
+            decision_journal_head_sha256: string;
+          } | unknown);
+        dependencies: Array<{
+            kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
+            id: string;
+            sha256: (string | unknown);
+            valid_until: (string | unknown);
+            revision?: number | null;
+            residual_code?: string | null;
+          }>;
+        standing_assertions: Array<{
+            credential_id: string;
+            asserted_by_anchor_id: string | null;
+            asserted_by_organization_ref: string | null;
+            verification: string;
+            trust_tier: string | null;
+            usable: boolean;
+            not_after: (string | unknown);
+            credential_sha256: (string | unknown);
+            supports_effect: string;
+          }>;
+        revocation: {
+          checked_at: string;
+          method: "atomic_reread_of_every_dependency";
+          commit_required: string;
+        };
+        requested_by_principal_sha256: string;
+        execution_authorized: false;
+        amos_issued_authority: false;
+      };
+    });
+  decision?: "allow" | "deny";
+  deny_reasons?: Array<string>;
+  verification_id?: string;
+  capability_id?: string;
+  valid_until?: string | null;
+  outcome?: "succeeded" | "failed" | "not_attempted";
+  [key: string]: unknown;
+};
+
+export type AuthorityReceiptVerificationResponse = {
+  valid: boolean;
+  hash_valid: boolean;
+  signature_verified: boolean;
+  chain_link_verified: boolean;
+  chronology_verified: boolean;
+  production_authority: false;
+  execution_authorized: false;
+  reason: string | null;
+  key_id?: string;
+  key_status?: string;
+  lab_fixture?: boolean;
+  boundary?: string;
+  [key: string]: unknown;
+};
+
+export type KeyCeremonyContract = {
+  contract_version: string;
+  route: string;
+  actions?: {
+    [key: string]: unknown;
+  };
+  request?: {
+    [key: string]: unknown;
+  };
+  custody?: {
+    [key: string]: unknown;
+  };
+  order?: Array<string>;
+  refusals: Array<string>;
+  rate_limits?: {
+    per_client_ip_per_hour?: number;
+    global_per_hour?: number;
+    [key: string]: unknown;
+  };
+  key_status?: {
+    [key: string]: unknown;
+  };
+  boundary?: string;
+  [key: string]: unknown;
+};
+
+export type KeyCeremonyResponse = {
+  status: "ready" | "completed" | "refused" | "token_active" | "recovered";
+  code?: string;
+  http_status?: number;
+  contract_version?: string;
+  ceremony_id?: string;
+  key_id?: string;
+  participants_sha256?: string;
+  worker_script?: string;
+  deployment_revision?: string;
+  token?: {
+    kind?: "user" | "account";
+    id_sha256?: string;
+    expires_on?: string;
+    [key: string]: unknown;
+  };
+  deployed_version_before?: string;
+  deployed_version_after?: string;
+  will_create?: Array<string>;
+  public_key_fingerprint_sha256?: string;
+  birth_record?: {
+    type?: "mvr.receipt-key-birth/1";
+    ceremony_id?: string;
+    key_id?: string;
+    algorithm?: "Ed25519";
+    public_key_spki_b64?: string;
+    public_key_fingerprint_sha256?: string;
+    participants_sha256?: string;
+    generated_at?: string;
+    not_before?: string;
+    rotation_due_at?: string;
+    generated_in?: "cloudflare_worker";
+    worker_script?: string;
+    deployment_revision?: string;
+    deployed_version_before?: string;
+    private_key_destination?: string;
+    private_key_returned_to_caller?: false;
+    cloudflare_token_id_sha256?: string;
+    statement?: string;
+    [key: string]: unknown;
+  };
+  birth_signature_b64?: string;
+  failed_step?: string;
+  cause?: string;
+  secrets_written?: Array<string>;
+  recovery?: string;
+  next?: (string | Array<string>);
+  note?: string;
+  ceremony?: {
+    [key: string]: unknown;
+  };
+  execution_authorized: false;
+  issued_by_amos_as_authority?: false;
+  grants_permission?: false;
+  [key: string]: unknown;
+};
+
+export type KeyCeremonyStatus = {
+  contract_version?: string;
+  ceremony: {
+    state: "not_started" | "started" | "completed" | "failed" | "unavailable" | "reset_for_rehearsal";
+    ceremony_id?: string;
+    key_id?: string;
+    started_at?: string;
+    completed_at?: string | null;
+    failed_step?: string | null;
+    failure_code?: string | null;
+    public_key_fingerprint_sha256?: string | null;
+    birth_record?: {
+      type?: "mvr.receipt-key-birth/1";
+      ceremony_id?: string;
+      key_id?: string;
+      algorithm?: "Ed25519";
+      public_key_spki_b64?: string;
+      public_key_fingerprint_sha256?: string;
+      participants_sha256?: string;
+      generated_at?: string;
+      not_before?: string;
+      rotation_due_at?: string;
+      generated_in?: "cloudflare_worker";
+      worker_script?: string;
+      deployment_revision?: string;
+      deployed_version_before?: string;
+      private_key_destination?: string;
+      private_key_returned_to_caller?: false;
+      cloudflare_token_id_sha256?: string;
+      statement?: string;
+      [key: string]: unknown;
+    } | null;
+    birth_signature_b64?: string | null;
+    [key: string]: unknown;
+  };
+  registry_activation: string;
+  private_key_binding: {
+    present?: boolean;
+    type?: string | null;
+    algorithm?: string | null;
+    extractable?: boolean | null;
+    usages?: Array<string> | null;
+    [key: string]: unknown;
+  };
+  ceremony_record_present?: boolean;
+  birth_record_verification?: {
+    valid?: boolean;
+    checks?: {
+      format?: boolean;
+      fingerprint?: boolean;
+      signature?: boolean;
+      [key: string]: unknown;
+    };
+    [key: string]: unknown;
+  } | null;
+  execution_authorized?: false;
+  [key: string]: unknown;
+};
+
+export type ReviewCaseContract = {
+  contract_version?: "mvr.review-progress/1";
+  policy_version?: "internal-review-preparation/2";
+  request_schema?: {
+    [key: string]: unknown;
+  };
+  risk_taxonomy?: Array<{
+      code?: string;
+      category?: string;
+      closure?: string;
+      description?: string;
+      [key: string]: unknown;
+    }>;
+  internal_planning?: {
+    [key: string]: unknown;
+  };
+  automatic_invalidation?: {
+    [key: string]: unknown;
+  };
+  execution_authorized?: false;
+  [key: string]: unknown;
+};
 
 export type ReviewCaseResponse = {
   status?: string;
@@ -794,25 +2820,14 @@ export type ReviewCaseResponse = {
   [key: string]: unknown;
 };
 
-export type ReviewCaseContract = {
-  contract_version?: "mvr.review-progress/1";
-  policy_version?: "internal-review-preparation/2";
+export type ReviewSandboxContract = {
+  contract_version?: "mvr.review-sandbox/1";
   request_schema?: {
     [key: string]: unknown;
   };
-  risk_taxonomy?: Array<{
-      code?: string;
-      category?: string;
-      closure?: string;
-      description?: string;
-      [key: string]: unknown;
-    }>;
-  internal_planning?: {
-    [key: string]: unknown;
-  };
-  automatic_invalidation?: {
-    [key: string]: unknown;
-  };
+  evaluation_only?: true;
+  identity_verified?: false;
+  production_authority?: false;
   execution_authorized?: false;
   [key: string]: unknown;
 };
@@ -838,468 +2853,12 @@ export type ReviewSandboxResponse = {
   [key: string]: unknown;
 };
 
-export type ReviewSandboxContract = {
-  contract_version?: "mvr.review-sandbox/1";
-  request_schema?: {
-    [key: string]: unknown;
-  };
-  evaluation_only?: true;
-  identity_verified?: false;
-  production_authority?: false;
+export type ReviewerAttestationContract = {
+  contract_version?: "mvr.reviewer-attestation/1";
+  authenticated_account_required?: true;
+  examiner_engagement_required?: false;
   execution_authorized?: false;
-  [key: string]: unknown;
-};
-
-export type AuthorityChainResponse = ({
-    action: "register_anchor";
-    status: "registered";
-    anchor: {
-      anchor_id: string;
-      anchor_role?: string;
-      trust_tier?: string;
-      status?: string;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "vet_anchor";
-    status: "platform_vetted" | "awaiting_second_operator";
-    anchor: {
-      anchor_id: string;
-      anchor_role?: string;
-      trust_tier?: string;
-      status?: string;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "revoke_anchor";
-    status: "revoked";
-    kind: "anchor";
-    id: string;
-    receipt: {
-      sequence: number;
-      prev_sha256: string;
-      recorded_at: string;
-      sha256: string;
-      signature: ({
-          status: "unsigned";
-          reason: string;
-          standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
-          registry_url?: string;
-        } | {
-          standard: "MVR-RECEIPT-SIG-V1";
-          status: "signed";
-          algorithm: "Ed25519";
-          key_id: string;
-          registry_url?: string;
-          signature_b64: string;
-        });
-      lab_fixture?: boolean;
-      production_authority?: false;
-      kind: "revocation";
-      target_kind: "anchor";
-      target_id: string;
-      revoked_by_principal_sha256: string;
-      operation_id: string;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "register_credential";
-    status: "registered";
-    credential: {
-      credential_id: string;
-      usable: boolean;
-      reasons: Array<string>;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "register_source_record";
-    status: "registered";
-    source_record: {
-      record_id: string;
-      usable: boolean;
-      reasons: Array<string>;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "register_issuer_state";
-    status: "registered";
-    issuer_state: {
-      record_id: string;
-      state: string;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "revoke_credential";
-    status: "revoked";
-    kind: "credential";
-    id: string;
-    receipt: {
-      sequence: number;
-      prev_sha256: string;
-      recorded_at: string;
-      sha256: string;
-      signature: ({
-          status: "unsigned";
-          reason: string;
-          standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
-          registry_url?: string;
-        } | {
-          standard: "MVR-RECEIPT-SIG-V1";
-          status: "signed";
-          algorithm: "Ed25519";
-          key_id: string;
-          registry_url?: string;
-          signature_b64: string;
-        });
-      lab_fixture?: boolean;
-      production_authority?: false;
-      kind: "revocation";
-      target_kind: "credential";
-      target_id: string;
-      revoked_by_principal_sha256: string;
-      operation_id: string;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "revoke_source_record";
-    status: "revoked";
-    kind: "source_record";
-    id: string;
-    receipt: {
-      sequence: number;
-      prev_sha256: string;
-      recorded_at: string;
-      sha256: string;
-      signature: ({
-          status: "unsigned";
-          reason: string;
-          standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
-          registry_url?: string;
-        } | {
-          standard: "MVR-RECEIPT-SIG-V1";
-          status: "signed";
-          algorithm: "Ed25519";
-          key_id: string;
-          registry_url?: string;
-          signature_b64: string;
-        });
-      lab_fixture?: boolean;
-      production_authority?: false;
-      kind: "revocation";
-      target_kind: "source_record";
-      target_id: string;
-      revoked_by_principal_sha256: string;
-      operation_id: string;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "close_residual";
-    status: "closed";
-    closure: {
-      closure_id: string;
-      usable?: boolean;
-      reasons?: Array<string>;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "revoke_closure";
-    status: "revoked";
-    kind: "closure";
-    id: string;
-    receipt: {
-      sequence: number;
-      prev_sha256: string;
-      recorded_at: string;
-      sha256: string;
-      signature: ({
-          status: "unsigned";
-          reason: string;
-          standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
-          registry_url?: string;
-        } | {
-          standard: "MVR-RECEIPT-SIG-V1";
-          status: "signed";
-          algorithm: "Ed25519";
-          key_id: string;
-          registry_url?: string;
-          signature_b64: string;
-        });
-      lab_fixture?: boolean;
-      production_authority?: false;
-      kind: "revocation";
-      target_kind: "closure";
-      target_id: string;
-      revoked_by_principal_sha256: string;
-      operation_id: string;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "register_capability";
-    status: "registered";
-    capability: {
-      capability_id: string;
-      case_id?: string;
-      effect_type?: string;
-      not_after?: string;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "revoke_capability";
-    status: "revoked";
-    kind: "capability";
-    id: string;
-    receipt: {
-      sequence: number;
-      prev_sha256: string;
-      recorded_at: string;
-      sha256: string;
-      signature: ({
-          status: "unsigned";
-          reason: string;
-          standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
-          registry_url?: string;
-        } | {
-          standard: "MVR-RECEIPT-SIG-V1";
-          status: "signed";
-          algorithm: "Ed25519";
-          key_id: string;
-          registry_url?: string;
-          signature_b64: string;
-        });
-      lab_fixture?: boolean;
-      production_authority?: false;
-      kind: "revocation";
-      target_kind: "capability";
-      target_id: string;
-      revoked_by_principal_sha256: string;
-      operation_id: string;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "verify_capability";
-    status: "verified";
-    decision: "allow" | "deny";
-    deny_reasons: Array<string>;
-    verification_id: string;
-    capability_id: string;
-    valid_until: string;
-    reliance: string;
-    receipt: {
-      sequence: number;
-      prev_sha256: string;
-      recorded_at: string;
-      sha256: string;
-      signature: ({
-          status: "unsigned";
-          reason: string;
-          standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
-          registry_url?: string;
-        } | {
-          standard: "MVR-RECEIPT-SIG-V1";
-          status: "signed";
-          algorithm: "Ed25519";
-          key_id: string;
-          registry_url?: string;
-          signature_b64: string;
-        });
-      lab_fixture?: boolean;
-      production_authority?: false;
-      kind: "capability_verification";
-      verification_id: string;
-      capability_id: string;
-      case_id: string;
-      decision: "allow" | "deny";
-      deny_reasons: Array<string>;
-      effect_id: string;
-      requested_effect_sha256: string;
-      executor_principal_sha256: string;
-      reliance: string;
-      valid_until: string;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "record_effect";
-    status: "recorded";
-    verification_id: string;
-    outcome: "succeeded" | "failed" | "not_attempted";
-    reported_after_valid_until: boolean;
-    receipt: {
-      sequence: number;
-      prev_sha256: string;
-      recorded_at: string;
-      sha256: string;
-      signature: ({
-          status: "unsigned";
-          reason: string;
-          standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
-          registry_url?: string;
-        } | {
-          standard: "MVR-RECEIPT-SIG-V1";
-          status: "signed";
-          algorithm: "Ed25519";
-          key_id: string;
-          registry_url?: string;
-          signature_b64: string;
-        });
-      lab_fixture?: boolean;
-      production_authority?: false;
-      kind: "effect_report";
-      verification_id: string;
-      capability_id: string;
-      effect_id: string;
-      outcome: "succeeded" | "failed" | "not_attempted";
-      external_ref_sha256: (string | unknown);
-      reported_after_valid_until: boolean;
-      commit_id?: string;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "get";
-    status: "ok";
-    anchor?: {
-      anchor_id: string;
-      anchor_role?: string;
-      trust_tier?: string;
-      status?: string;
-      [key: string]: unknown;
-    };
-    credential?: {
-      credential_id: string;
-      usable: boolean;
-      reasons: Array<string>;
-      [key: string]: unknown;
-    };
-    source_record?: {
-      record_id: string;
-      usable: boolean;
-      reasons: Array<string>;
-      [key: string]: unknown;
-    };
-    closure?: {
-      closure_id: string;
-      usable?: boolean;
-      reasons?: Array<string>;
-      [key: string]: unknown;
-    };
-    capability?: {
-      capability_id: string;
-      case_id?: string;
-      effect_type?: string;
-      not_after?: string;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "trace";
-    status: "ok";
-    capability_id: string;
-    currently_valid: boolean;
-    reasons: Array<string>;
-    reliance: string;
-    [key: string]: unknown;
-  } | {
-    action: "commit_effect";
-    status: "checked" | "already_committed";
-    decision: "commit" | "deny" | "already_committed";
-    verification_id: string;
-    commit_id: string;
-    commit_valid_until: string;
-    deny_reasons?: Array<string>;
-    receipt?: {
-      sequence: number;
-      prev_sha256: string;
-      recorded_at: string;
-      sha256: string;
-      signature: ({
-          status: "unsigned";
-          reason: string;
-          standard?: "MVR-RECEIPT-SIG-V1";
-          key_id?: string;
-          registry_url?: string;
-        } | {
-          standard: "MVR-RECEIPT-SIG-V1";
-          status: "signed";
-          algorithm: "Ed25519";
-          key_id: string;
-          registry_url?: string;
-          signature_b64: string;
-        });
-      lab_fixture?: boolean;
-      production_authority?: false;
-      kind: "effect_commit";
-      commit_id: string;
-      verification_id: string;
-      capability_id: string;
-      effect_id: string;
-      requested_effect_sha256: string;
-      decision: "commit" | "deny";
-      deny_reasons: Array<string>;
-      commit_valid_until: string;
-      executor_principal_sha256: string;
-    };
-    [key: string]: unknown;
-  } | {
-    action: "check_permission";
-    status: "ok";
-    permission_position: {
-      contract_version: "mvr.permission-position/1";
-      tier: "prohibited" | "not_permitted" | "planning_only" | "conditionally_permitted" | "permitted_up_to_ceiling" | "fully_permitted";
-      institution_capability_covers_effect: boolean;
-      narrowest_allowed_now: Array<unknown>;
-      blocked: Array<unknown>;
-      closure_path: {
-        status: string;
-        minimum_accountable_acts: number;
-        acts: Array<unknown>;
-        [key: string]: unknown;
-      };
-      execution_authorized: false;
-      [key: string]: unknown;
-    };
-    dependency_graph: {
-      nodes: Array<unknown>;
-      edges: Array<unknown>;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  });
-
-export type AuthorityChainContract = {
-  contract_version?: "mvr.authority-chain/1";
-  route?: "/v1/authority-chain";
-  closure_assurance?: Array<string>;
-  issued_by_amos?: false;
-  amos_authorization?: false;
-  [key: string]: unknown;
-};
-
-export type AuthorityReceiptVerificationResponse = {
-  valid: boolean;
-  hash_valid: boolean;
-  signature_verified: boolean;
-  chain_link_verified: boolean;
-  chronology_verified: boolean;
-  production_authority: false;
-  execution_authorized: false;
-  reason: string | null;
-  key_id?: string;
-  key_status?: string;
-  lab_fixture?: boolean;
-  boundary?: string;
+  scoring_eligible?: false;
   [key: string]: unknown;
 };
 
@@ -1330,153 +2889,16 @@ export type ReviewerAttestationResponse = {
   [key: string]: unknown;
 };
 
-export type ReviewerAttestationContract = {
-  contract_version?: "mvr.reviewer-attestation/1";
-  authenticated_account_required?: true;
-  examiner_engagement_required?: false;
-  execution_authorized?: false;
-  scoring_eligible?: false;
-  [key: string]: unknown;
-};
-
-export type KeyCeremonyResponse = {
-  status: "ready" | "completed" | "refused" | "token_active" | "recovered";
-  code?: string;
-  http_status?: number;
-  contract_version?: string;
-  ceremony_id?: string;
-  key_id?: string;
-  participants_sha256?: string;
-  worker_script?: string;
-  deployment_revision?: string;
-  token?: {
-    kind?: "user" | "account";
-    id_sha256?: string;
-    expires_on?: string;
-    [key: string]: unknown;
-  };
-  deployed_version_before?: string;
-  deployed_version_after?: string;
-  will_create?: Array<string>;
-  public_key_fingerprint_sha256?: string;
-  birth_record?: {
-    type?: "mvr.receipt-key-birth/1";
-    ceremony_id?: string;
-    key_id?: string;
-    algorithm?: "Ed25519";
-    public_key_spki_b64?: string;
-    public_key_fingerprint_sha256?: string;
-    participants_sha256?: string;
-    generated_at?: string;
-    not_before?: string;
-    rotation_due_at?: string;
-    generated_in?: "cloudflare_worker";
-    worker_script?: string;
-    deployment_revision?: string;
-    deployed_version_before?: string;
-    private_key_destination?: string;
-    private_key_returned_to_caller?: false;
-    cloudflare_token_id_sha256?: string;
-    statement?: string;
-    [key: string]: unknown;
-  };
-  birth_signature_b64?: string;
-  failed_step?: string;
-  cause?: string;
-  secrets_written?: Array<string>;
-  recovery?: string;
-  next?: (string | Array<string>);
-  note?: string;
-  ceremony?: {
-    [key: string]: unknown;
-  };
-  execution_authorized: false;
-  issued_by_amos_as_authority?: false;
-  grants_permission?: false;
-  [key: string]: unknown;
-};
-
-export type KeyCeremonyStatus = {
-  contract_version?: string;
-  ceremony: {
-    state: "not_started" | "started" | "completed" | "failed" | "unavailable" | "reset_for_rehearsal";
-    ceremony_id?: string;
-    key_id?: string;
-    started_at?: string;
-    completed_at?: string | null;
-    failed_step?: string | null;
-    failure_code?: string | null;
-    public_key_fingerprint_sha256?: string | null;
-    birth_record?: {
-      type?: "mvr.receipt-key-birth/1";
-      ceremony_id?: string;
+export type AuthorityConformanceKeysResponse = {
+  lab_fixture: boolean;
+  production_authority: false;
+  keys: Array<{
       key_id?: string;
-      algorithm?: "Ed25519";
+      status?: "active" | "retired" | "revoked";
+      lab_fixture?: boolean;
       public_key_spki_b64?: string;
-      public_key_fingerprint_sha256?: string;
-      participants_sha256?: string;
-      generated_at?: string;
-      not_before?: string;
-      rotation_due_at?: string;
-      generated_in?: "cloudflare_worker";
-      worker_script?: string;
-      deployment_revision?: string;
-      deployed_version_before?: string;
-      private_key_destination?: string;
-      private_key_returned_to_caller?: false;
-      cloudflare_token_id_sha256?: string;
-      statement?: string;
       [key: string]: unknown;
-    } | null;
-    birth_signature_b64?: string | null;
-    [key: string]: unknown;
-  };
-  registry_activation: string;
-  private_key_binding: {
-    present?: boolean;
-    type?: string | null;
-    algorithm?: string | null;
-    extractable?: boolean | null;
-    usages?: Array<string> | null;
-    [key: string]: unknown;
-  };
-  ceremony_record_present?: boolean;
-  birth_record_verification?: {
-    valid?: boolean;
-    checks?: {
-      format?: boolean;
-      fingerprint?: boolean;
-      signature?: boolean;
-      [key: string]: unknown;
-    };
-    [key: string]: unknown;
-  } | null;
-  execution_authorized?: false;
-  [key: string]: unknown;
-};
-
-export type KeyCeremonyContract = {
-  contract_version: string;
-  route: string;
-  actions?: {
-    [key: string]: unknown;
-  };
-  request?: {
-    [key: string]: unknown;
-  };
-  custody?: {
-    [key: string]: unknown;
-  };
-  order?: Array<string>;
-  refusals: Array<string>;
-  rate_limits?: {
-    per_client_ip_per_hour?: number;
-    global_per_hour?: number;
-    [key: string]: unknown;
-  };
-  key_status?: {
-    [key: string]: unknown;
-  };
+    }>;
   boundary?: string;
   [key: string]: unknown;
 };
@@ -1574,22 +2996,25 @@ export type ReviewProgress = {
   [key: string]: unknown;
 };
 
-export interface GovernanceResult<T> { status: number; body: T | null; }
-export interface GovernanceClientOptions { baseUrl?: string; apiKey?: string | null; fetch?: typeof fetch; responseProfile?: string; headers?: Record<string, string>; }
+export interface GovernanceResult<T> { status: number; body: T | null; deployment_revision: string | null; revision_matches: boolean | null; }
+export interface GovernanceClientOptions { baseUrl?: string; apiKey?: string | null; fetch?: typeof fetch; responseProfile?: string; headers?: Record<string, string>; timeoutMs?: number; expectedRevision?: string | null; userAgent?: string; }
+export interface GovernanceCallOptions { signal?: AbortSignal; timeoutMs?: number; }
+export declare const GOVERNANCE_CLIENT_VERSION: string;
 export declare const GOVERNANCE_OPERATIONS: Readonly<Record<string, {method: 'GET' | 'POST'; path: string; api_key: boolean; summary: string}>>;
 export declare class GovernanceClient {
   constructor(options?: GovernanceClientOptions);
-  call(name: string, body?: unknown): Promise<GovernanceResult<unknown>>;
-  reviewCases(body: ReviewCasesRequest): Promise<GovernanceResult<ReviewCasesResponse>>;
-  reviewCasesContract(): Promise<GovernanceResult<ReviewCasesContractResponse>>;
-  reviewSandbox(body: ReviewSandboxRequest): Promise<GovernanceResult<ReviewSandboxResponse>>;
-  reviewSandboxContract(): Promise<GovernanceResult<ReviewSandboxContractResponse>>;
-  authorityChain(body: AuthorityChainRequest): Promise<GovernanceResult<AuthorityChainResponse>>;
-  authorityChainContract(): Promise<GovernanceResult<AuthorityChainContractResponse>>;
-  authorityReceiptsVerify(body: AuthorityReceiptsVerifyRequest): Promise<GovernanceResult<AuthorityReceiptsVerifyResponse>>;
-  reviewerAttestations(body: ReviewerAttestationsRequest): Promise<GovernanceResult<ReviewerAttestationsResponse>>;
-  reviewerAttestationsContract(): Promise<GovernanceResult<ReviewerAttestationsContractResponse>>;
-  keyCeremony(body: KeyCeremonyRequest): Promise<GovernanceResult<KeyCeremonyResponse>>;
-  keyCeremonyStatus(): Promise<GovernanceResult<KeyCeremonyStatusResponse>>;
-  keyCeremonyContract(): Promise<GovernanceResult<KeyCeremonyContractResponse>>;
+  call(name: string, body?: unknown, options?: GovernanceCallOptions): Promise<GovernanceResult<unknown>>;
+  reviewCases(body: ReviewCasesRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<ReviewCasesResponse>>;
+  reviewCasesContract(options?: GovernanceCallOptions): Promise<GovernanceResult<ReviewCasesContractResponse>>;
+  reviewSandbox(body: ReviewSandboxRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<ReviewSandboxResponse>>;
+  reviewSandboxContract(options?: GovernanceCallOptions): Promise<GovernanceResult<ReviewSandboxContractResponse>>;
+  authorityChain(body: AuthorityChainRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<AuthorityChainResponse>>;
+  authorityChainContract(options?: GovernanceCallOptions): Promise<GovernanceResult<AuthorityChainContractResponse>>;
+  authorityReceiptsVerify(body: AuthorityReceiptsVerifyRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<AuthorityReceiptsVerifyResponse>>;
+  reviewerAttestations(body: ReviewerAttestationsRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<ReviewerAttestationsResponse>>;
+  reviewerAttestationsContract(options?: GovernanceCallOptions): Promise<GovernanceResult<ReviewerAttestationsContractResponse>>;
+  authorityConformance(body: AuthorityConformanceRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<AuthorityConformanceResponse>>;
+  keyCeremony(body: KeyCeremonyRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<KeyCeremonyResponse>>;
+  keyCeremonyStatus(options?: GovernanceCallOptions): Promise<GovernanceResult<KeyCeremonyStatusResponse>>;
+  keyCeremonyContract(options?: GovernanceCallOptions): Promise<GovernanceResult<KeyCeremonyContractResponse>>;
 }

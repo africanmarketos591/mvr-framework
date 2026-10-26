@@ -1,5 +1,7 @@
 import { createHash } from "node:crypto";
 
+export const MVR_AGENT_SDK_VERSION = "0.2.0";
+
 export class MvrPreflightClient {
   constructor(options = {}) {
     this.baseUrl = (options.baseUrl || "https://africanmarketos.com").replace(/\/+$/, "");
@@ -7,21 +9,33 @@ export class MvrPreflightClient {
     this.responseProfile = options.responseProfile || "full_advisory";
     this.fetchImpl = options.fetch || globalThis.fetch;
     if (!this.fetchImpl) throw new Error("fetch is required. Use Node 18+ or pass options.fetch.");
+    // Every request has a deadline; expectedRevision pins one deployment (the server refuses a mismatch with 409).
+    this.timeoutMs = options.timeoutMs ?? 30000;
+    if (!Number.isFinite(this.timeoutMs) || this.timeoutMs < 1 || this.timeoutMs > 600000) throw new RangeError("timeoutMs must be between 1 and 600000");
+    this.expectedRevision = options.expectedRevision ?? null;
+    if (this.expectedRevision !== null && !/^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$/.test(this.expectedRevision)) throw new TypeError("expectedRevision must be a deployment identifier");
+    this.userAgent = options.userAgent ?? "mvr-agent-sdk-js/" + MVR_AGENT_SDK_VERSION;
+    this.lastDeploymentRevision = null;
   }
 
-  async request(path, { method = "POST", body, idempotencyKey } = {}) {
+  async request(path, { method = "POST", body, idempotencyKey, timeoutMs = this.timeoutMs, signal } = {}) {
     const headers = {
       "Content-Type": "application/json",
       "X-API-Key": this.apiKey,
       "X-Response-Profile": this.responseProfile,
-      "X-MVR-SDK": "mvr-agent-sdk-js/0.1.0"
+      "X-MVR-SDK": "mvr-agent-sdk-js/" + MVR_AGENT_SDK_VERSION
     };
+    if (typeof window === "undefined" && this.userAgent) headers["User-Agent"] = this.userAgent;
+    if (this.expectedRevision) headers["X-MVR-Expected-Deployment-Revision"] = this.expectedRevision;
     if (idempotencyKey) headers["Idempotency-Key"] = idempotencyKey;
+    const deadline = AbortSignal.timeout(timeoutMs);
     const res = await this.fetchImpl(`${this.baseUrl}${path}`, {
       method,
       headers,
+      signal: signal ? AbortSignal.any([signal, deadline]) : deadline,
       body: body === undefined ? undefined : JSON.stringify(body)
     });
+    this.lastDeploymentRevision = res.headers?.get?.("X-MVR-Deployment-Revision") ?? null;
     const text = await res.text();
     let json;
     try { json = text ? JSON.parse(text) : {}; }
@@ -29,7 +43,9 @@ export class MvrPreflightClient {
     if (!res.ok) {
       const err = new Error(json.error?.message || json.error || `MVR API request failed: ${res.status}`);
       err.status = res.status;
+      err.code = json.code || null;
       err.response = json;
+      err.deploymentRevision = this.lastDeploymentRevision;
       throw err;
     }
     return json;

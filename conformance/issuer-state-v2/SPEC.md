@@ -322,7 +322,24 @@ This is a bounded English warning heuristic, not a legal reading.
    - `doc.subject` equals the first non-empty value of `preflight_context.subject.entity_name`, `preflight_context.subject.entity_id`, `preflight_context.entity_name` and `preflight_context.entity`;
    - `doc.geography.country` equals `market_scope.country`;
    - `doc.geography.region` equals `market_scope.region`, or `null` when that is empty or missing.
-7. **v2: `ISSUER_STATE_CASE_ACTION_MISMATCH` (409)** unless `preflight_context.intended_action = doc.action`.
+7. **v2: `ISSUER_STATE_CASE_ACTION_MISMATCH` (409)** unless `preflight_context.intended_action = doc.action`. The identifiers must be identical; an alias of the same action is refused too. The refusal carries `detail`:
+   - `case_intended_action`: `preflight_context.intended_action`, cut to its first 120 UTF-16 code units, or `null` when it is not a string;
+   - `issuer_state_action`: `doc.action`;
+   - `same_action_by_alias`: `true` when both identifiers name the same action under the alias table below, otherwise `false`;
+   - `fix`: `"Use the identical action identifier in the case intended_action and the signed issuer state."`
+
+   **Alias table.** Each legacy name is an alias of one versioned identifier:
+
+   | Legacy name | Versioned identifier |
+   |---|---|
+   | `create_draft_record` | `amos.document.draft.create@1` |
+   | `send_evidence_request` | `amos.communication.evidence.request@1` |
+   | `schedule_meeting` | `amos.calendar.meeting.create@1` |
+   | `contact_counterparty` | `amos.communication.counterparty.contact@1` |
+   | `publish_document` | `amos.document.publish@1` |
+   | `commit_spend` | `amos.finance.spend.commit@1` |
+
+   Resolve each identifier through the table (an identifier not in the table resolves to itself). `same_action_by_alias` is `true` when both values are strings, they differ, and they resolve to the same identifier.
 8. **Find the slot.** `slot` = `issuer_anchor_id:action`, and `prior` = the head of that slot, or `null`.
 9. **Existing record.** If a row already exists for `record_id`:
    - when its `document_sha256 = D(doc)` and its signature is identical, return the idempotent result. The head does not move, so replaying an old record never restores it;

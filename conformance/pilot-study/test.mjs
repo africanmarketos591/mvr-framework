@@ -1,0 +1,37 @@
+// Tests for the three-arm pilot harness. Proprietary lab fixture rows only; not observations of any organisation.
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createSchedule,freezePilot,scorePilot,parseCsv,decisionLoss,decisionsPerArm,DECISION_COLUMNS,ADJUDICATION_COLUMNS,ARMS} from './pilot.mjs';
+const results=[];const test=(name,fn)=>{fn();results.push(name);};
+const weights={currency:'UGX',false_permit_minor:5000000,false_hold_minor:800000,reviewer_cost_per_hour_minor:60000,integration_cost_per_hour_minor:80000,latency_cost_per_hour_minor:2000,scope_error_minor:1000000,missed_contradiction_minor:1500000,missed_stale_or_geography_minor:700000,bypass_attempt_minor:300000,accountability_incident_minor:2000000,reopen_minor:50000};
+const seed='a1b2c3d4e5f60718293a4b5c6d7e8f90';
+test('randomized blocks contain each arm once and are reproducible from the seed',()=>{const s=createSchedule({decisions:30,seed});assert.deepEqual(createSchedule({decisions:30,seed}).schedule,s.schedule);for(let i=0;i<30;i+=3)assert.deepEqual(s.schedule.slice(i,i+3).map(r=>r.arm).sort(),[...ARMS].sort());assert.equal(s.causal_reading_supported,true);});
+test('alternation is reproducible and only associational',()=>{const s=createSchedule({decisions:9,method:'alternation'});assert.deepEqual(s.schedule.map(r=>r.arm).join(''),'PCAPCAPCA');assert.equal(s.causal_reading_supported,false);});
+const pilot=extra=>({workflow:'Distributor onboarding gate (proprietary lab fixture)',revision:'2026-10-26.favourable-path.2',weights,schedule:createSchedule({decisions:90,seed}),end_date:'2027-03-31T00:00:00.000Z',...extra});
+const frozenAt='2026-11-01T00:00:00.000Z',m=freezePilot(pilot(),{frozenAt});
+test('fewer than 30 decisions needs a declared power calculation',()=>{assert.throws(()=>freezePilot({...pilot(),schedule:createSchedule({decisions:12,seed})}),/powered_minimum/);});
+test('weights must be complete integers in minor units',()=>{assert.throws(()=>freezePilot({...pilot(),weights:{...weights,false_hold_minor:-1}}),/false_hold_minor/);});
+// Lab rows: arm A permits correctly with modest time; P has false permits; C holds good decisions and takes longer.
+const rows=(armOf,{aLoss=true}={})=>{const d=[],a=[];m.schedule.forEach((s,i)=>{const correct=i%3===0?'hold':'permit';let decision=correct,rm=30,im=10,el=600;
+  if(s.arm==='P'){decision='permit';rm=5;im=5;el=60;}
+  if(s.arm==='C'){decision=i%4===0?'hold':correct;rm=90;el=4000;}
+  if(s.arm==='A'&&!aLoss){decision=i%5===0?'permit':correct;}
+  d.push({decision_ref:s.decision_ref,arm:armOf?armOf(s):s.arm,decision,decided_at:new Date(Date.parse(frozenAt)+(i+1)*864e5).toISOString(),decider_ref:'decider-'+s.arm,reviewer_minutes:String(rm),integration_minutes:String(im),elapsed_closure_minutes:String(el),reopened:'false',bypass_attempts:'0',accountability_incidents:'0'});
+  a.push({decision_ref:s.decision_ref,correct_decision:correct,adjudicated_at:new Date(Date.parse(frozenAt)+(i+60)*864e5).toISOString(),adjudicator_ref:'adjudicator-1',blinded:'true',scope_error:'false',missed_contradiction:'false',missed_stale_or_geography:'false',downstream_incident_cost_minor:decision==='permit'&&correct==='hold'?'2500000':'0',opportunity_lost_minor:decision==='hold'&&correct==='permit'?'1200000':'0',basis:'Lab adjudication record'});});return {d,a};};
+test('loss components follow the frozen weights',()=>{const l=decisionLoss({decision:'permit',reviewer_minutes:60,integration_minutes:30,elapsed_closure_minutes:120,reopened:true,bypass_attempts:1,accountability_incidents:0},{correct_decision:'hold',downstream_incident_cost_minor:100,opportunity_lost_minor:0,scope_error:true,missed_contradiction:false,missed_stale_or_geography:false},weights);
+  assert.equal(l.is_false_permit,true);assert.equal(l.false_permit,5000100);assert.equal(l.total,5000100+60000+40000+4000+1000000+300000+50000);});
+test('AMOS lower than both controls with the interval complete gives the loss verdict',()=>{const {d,a}=rows();const r=scorePilot(m,d,a,{resamples:2000});assert.equal(r.loss_verdict,'amos_lower_total_loss',JSON.stringify(r.arms));assert.ok(r.amos_minus_policy_only.ci95[1]<0&&r.amos_minus_conventional.ci95[1]<0);assert.equal(r.reading.startsWith('causal'),true);});
+test('commercial superiority also needs payment or renewal',()=>{const {d,a}=rows();assert.equal(scorePilot(m,d,a,{resamples:500,commercial:{fee_minor:0,paid:false,renewed:false}}).commercial_superiority,false);assert.equal(scorePilot(m,d,a,{resamples:500,commercial:{fee_minor:7400000,paid:true,renewed:null}}).commercial_superiority,true);});
+test('no advantage when AMOS makes the same errors as the policy-only arm',()=>{const {d,a}=rows(null,{aLoss:false});assert.notEqual(scorePilot(m,d,a,{resamples:2000}).loss_verdict,'amos_lower_total_loss');});
+test('an incomplete interval cannot claim an advantage',()=>{const {d,a}=rows();assert.equal(scorePilot(m,d,a.slice(0,-1),{resamples:500}).loss_verdict,'interval_incomplete');});
+test('a decision under a different arm than assigned is refused',()=>{const {d,a}=rows(s=>s.decision_ref==='D0001'?(s.arm==='A'?'P':'A'):s.arm);assert.throws(()=>scorePilot(m,d,a),/assigned/);});
+test('unblinded adjudication and self-adjudication are refused',()=>{const {d,a}=rows();assert.throws(()=>scorePilot(m,d,a.map((r,i)=>i?r:{...r,blinded:'false'})),/blinded/);assert.throws(()=>scorePilot(m,d,a.map((r,i)=>i?r:{...r,adjudicator_ref:d[0].decider_ref})),/own decision/);});
+test('edited weights or schedule after freezing are refused',()=>{const {d,a}=rows();assert.throws(()=>scorePilot({...m,weights:{...weights,false_permit_minor:1}},d,a),/edited|weights/);const s=structuredClone(m);s.schedule[0].arm=s.schedule[0].arm==='A'?'C':'A';assert.throws(()=>scorePilot(s,d,a),/edited|schedule/);});
+test('fewer than 30 adjudicated decisions is insufficient whatever the numbers',()=>{const small=freezePilot({...pilot(),schedule:createSchedule({decisions:12,seed}),powered_minimum:true},{frozenAt});const d=[],a=[];small.schedule.forEach((s,i)=>{d.push({decision_ref:s.decision_ref,arm:s.arm,decision:'permit',decided_at:new Date(Date.parse(frozenAt)+(i+1)*864e5).toISOString(),decider_ref:'x',reviewer_minutes:'1',integration_minutes:'1',elapsed_closure_minutes:'1',reopened:'false',bypass_attempts:'0',accountability_incidents:'0'});a.push({decision_ref:s.decision_ref,correct_decision:'permit',adjudicated_at:new Date(Date.parse(frozenAt)+(i+60)*864e5).toISOString(),adjudicator_ref:'y',blinded:'true',scope_error:'false',missed_contradiction:'false',missed_stale_or_geography:'false',downstream_incident_cost_minor:'0',opportunity_lost_minor:'0',basis:'Lab'});});assert.equal(scorePilot(small,d,a,{resamples:200}).loss_verdict,'insufficient_decisions');});
+test('the power helper gives decisions per arm',()=>{assert.equal(decisionsPerArm({sd:1,difference:1}),16);});
+test('CSV templates parse with the published columns',()=>{const dir=path.dirname(fileURLToPath(import.meta.url));assert.equal(parseCsv(fs.readFileSync(path.join(dir,'decisions.template.csv'),'utf8'),DECISION_COLUMNS).length,3);assert.equal(parseCsv(fs.readFileSync(path.join(dir,'adjudications.template.csv'),'utf8'),ADJUDICATION_COLUMNS).length,3);});
+void os;
+console.log(JSON.stringify({passed:true,tests:results.length,results,classification:'proprietary lab fixture rows; not observations of any organisation'}));

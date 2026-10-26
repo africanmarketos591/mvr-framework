@@ -7,8 +7,11 @@ export class MvrClient {
   constructor({
     apiKey = process.env.MVR_API_KEY || "mvr-demo-key-2026",
     baseUrl = "https://africanmarketos.com",
-    timeoutMs = 90000
+    timeoutMs = 90000,
+    expectedRevision = null
   } = {}) {
+    // Pins one deployment; the server refuses a mismatch with 409 DEPLOYMENT_REVISION_MISMATCH.
+    this.expectedRevision = expectedRevision;
     this.apiKey = apiKey;
     this.baseUrl = baseUrl.replace(/\/$/, "");
     this.timeoutMs = timeoutMs;
@@ -24,7 +27,9 @@ export class MvrClient {
         headers: {
           "Content-Type": "application/json",
           "X-API-Key": this.apiKey,
-          "X-Response-Profile": "full_advisory"
+          "X-Response-Profile": "full_advisory",
+          ...(typeof window === "undefined" ? {"User-Agent": "mvr-reference-client-js/2026-10-26"} : {}),
+          ...(this.expectedRevision ? {"X-MVR-Expected-Deployment-Revision": this.expectedRevision} : {})
         },
         body: JSON.stringify(payload),
         signal: controller.signal

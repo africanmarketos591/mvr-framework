@@ -26,7 +26,8 @@
         "record_effect",
         "get",
         "trace",
-        "check_permission"
+        "check_permission",
+        "issue_permission_statement"
       ]
     },
     "operation_id": {
@@ -205,6 +206,39 @@
                   },
                   "minItems": 1,
                   "maxItems": 20
+                },
+                "effect_types": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "amos.document.draft.create@1",
+                      "amos.communication.evidence.request@1",
+                      "amos.calendar.meeting.create@1",
+                      "amos.communication.counterparty.contact@1",
+                      "amos.document.publish@1",
+                      "amos.finance.spend.commit@1",
+                      "amos.owner_lab.artifact.create@1",
+                      "amos.procurement.order.issue@1",
+                      "amos.finance.payment.initiate@1",
+                      "amos.credit.application.approve@1",
+                      "amos.distribution.product.release@1",
+                      "amos.programme.participant.enrol@1",
+                      "amos.data.record.disclose@1",
+                      "amos.licence.permission.grant@1",
+                      "amos.licence.permission.revoke@1",
+                      "create_draft_record",
+                      "send_evidence_request",
+                      "schedule_meeting",
+                      "contact_counterparty",
+                      "publish_document",
+                      "commit_spend"
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 20,
+                  "uniqueItems": true,
+                  "description": "Optional. When present, this reviewer’s claim reviews support only these effects (and the internal recommendation)."
                 }
               },
               "required": [
@@ -1645,6 +1679,39 @@
                     },
                     "minItems": 1,
                     "maxItems": 20
+                  },
+                  "effect_types": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "amos.document.draft.create@1",
+                        "amos.communication.evidence.request@1",
+                        "amos.calendar.meeting.create@1",
+                        "amos.communication.counterparty.contact@1",
+                        "amos.document.publish@1",
+                        "amos.finance.spend.commit@1",
+                        "amos.owner_lab.artifact.create@1",
+                        "amos.procurement.order.issue@1",
+                        "amos.finance.payment.initiate@1",
+                        "amos.credit.application.approve@1",
+                        "amos.distribution.product.release@1",
+                        "amos.programme.participant.enrol@1",
+                        "amos.data.record.disclose@1",
+                        "amos.licence.permission.grant@1",
+                        "amos.licence.permission.revoke@1",
+                        "create_draft_record",
+                        "send_evidence_request",
+                        "schedule_meeting",
+                        "contact_counterparty",
+                        "publish_document",
+                        "commit_spend"
+                      ]
+                    },
+                    "minItems": 1,
+                    "maxItems": 20,
+                    "uniqueItems": true,
+                    "description": "Optional. When present, this reviewer’s claim reviews support only these effects (and the internal recommendation)."
                   }
                 },
                 "required": [

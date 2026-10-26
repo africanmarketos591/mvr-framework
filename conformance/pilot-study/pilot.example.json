@@ -1,0 +1,7 @@
+{
+ "workflow": "Distributor onboarding gate for one product line in one country",
+ "revision": "2026-10-26.favourable-path.2",
+ "end_date": "2027-03-31T00:00:00.000Z",
+ "weights": {"currency": "UGX", "false_permit_minor": 5000000, "false_hold_minor": 800000, "reviewer_cost_per_hour_minor": 60000, "integration_cost_per_hour_minor": 80000, "latency_cost_per_hour_minor": 2000, "scope_error_minor": 1000000, "missed_contradiction_minor": 1500000, "missed_stale_or_geography_minor": 700000, "bypass_attempt_minor": 300000, "accountability_incident_minor": 2000000, "reopen_minor": 50000},
+ "schedule": "replace with the output of: node pilot.mjs schedule --decisions 30 --method randomized_block --seed <32 hex characters>"
+}

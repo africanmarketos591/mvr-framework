@@ -1,0 +1,700 @@
+{
+ "classification": "AMOS lab verification; disposable lab key; published OpenAPI examples sent unchanged",
+ "started_at": "2026-10-26T07:47:33.840Z",
+ "results": [
+  {
+   "path": "/v1/evidence-compiler",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "review_required"
+  },
+  {
+   "path": "/v1/evidence-compiler",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Utility validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/evidence-pack-builder",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/evidence-pack-builder",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/decision-room",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "abstained"
+  },
+  {
+   "path": "/v1/decision-room",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Utility validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/verdict-delta",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/verdict-delta",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/red-team",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/red-team",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Utility validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/watchlist",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/watchlist",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/schema-diff",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/schema-diff",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/workflow-run",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/workflow-run",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Utility validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/report-pack",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/report-pack",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Utility validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/scenario-simulate",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/scenario-simulate",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "scenario_advisory_ok"
+  },
+  {
+   "path": "/v1/connectors/normalize",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/connectors/normalize",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/decision-check",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "abstained"
+  },
+  {
+   "path": "/v1/decision-check",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/ingest-event",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/ingest-event",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/evidence-suitability-scan",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/evidence-suitability-scan",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/data-map",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/data-map",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/minimum-evidence-path",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/minimum-evidence-path",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/instant-baseline",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "provisional_baseline"
+  },
+  {
+   "path": "/v1/instant-baseline",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "provisional_baseline"
+  },
+  {
+   "path": "/v1/daily-market-pulse",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "degraded"
+  },
+  {
+   "path": "/v1/daily-market-pulse",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "degraded"
+  },
+  {
+   "path": "/v1/strategy-sparring",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "challenge_ready"
+  },
+  {
+   "path": "/v1/strategy-sparring",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Utility validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/narrative-risk-scan",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "degraded"
+  },
+  {
+   "path": "/v1/narrative-risk-scan",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "degraded"
+  },
+  {
+   "path": "/v1/field-signal/request",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 403,
+   "code": null,
+   "error": "project_id is unknown in this tenant/workspace, or cross-workspace injection was blocked. Create project memory before opening field-signal requests.",
+   "status_field": "forbidden"
+  },
+  {
+   "path": "/v1/field-signal/request",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 403,
+   "code": null,
+   "error": "project_id is unknown in this tenant/workspace, or cross-workspace injection was blocked. Create project memory before opening field-signal requests.",
+   "status_field": "forbidden"
+  },
+  {
+   "path": "/v1/field-signal/submit",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 404,
+   "code": null,
+   "error": "field_signal_request_id was not found in this tenant/workspace.",
+   "status_field": "not_found"
+  },
+  {
+   "path": "/v1/field-signal/submit",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 404,
+   "code": null,
+   "error": "field_signal_request_id was not found in this tenant/workspace.",
+   "status_field": "not_found"
+  },
+  {
+   "path": "/v1/intervention-playbook",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/intervention-playbook",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/relational-stress-index",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "degraded"
+  },
+  {
+   "path": "/v1/relational-stress-index",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Utility validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/market-war-room",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/market-war-room",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/competitive-readiness-radar",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/competitive-readiness-radar",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/pricing-risk-guard",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/pricing-risk-guard",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/supply-route-resilience",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "degraded"
+  },
+  {
+   "path": "/v1/supply-route-resilience",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Utility validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/trust-credit-readiness",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/trust-credit-readiness",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/trust-velocity",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/trust-velocity",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/channel-pricing-composition",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/channel-pricing-composition",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 403,
+   "code": null,
+   "error": "Forbidden",
+   "status_field": null
+  },
+  {
+   "path": "/v1/webhooks/register",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 201,
+   "code": null,
+   "error": null,
+   "status_field": "created"
+  },
+  {
+   "path": "/v1/webhooks/register",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 201,
+   "code": null,
+   "error": null,
+   "status_field": "created"
+  },
+  {
+   "path": "/v1/evidence-run",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 422,
+   "code": null,
+   "error": "Validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/evidence-run",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "Validation failed",
+   "status_field": null
+  },
+  {
+   "path": "/v1/tasks/create",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/tasks/create",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/project-memory/upsert",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/project-memory/upsert",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/source-normalize",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/source-normalize",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/evidence-review",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 422,
+   "code": null,
+   "error": "evidence-review approval requires the referenced evidence item, evidence_ref, or source_artifact_id so existence and provenance can be checked before approval.",
+   "status_field": "invalid_input"
+  },
+  {
+   "path": "/v1/evidence-review",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 422,
+   "code": null,
+   "error": "evidence-review approval requires the referenced evidence item, evidence_ref, or source_artifact_id so existence and provenance can be checked before approval.",
+   "status_field": "invalid_input"
+  },
+  {
+   "path": "/v1/auth-check",
+   "example": "default",
+   "profile": "full_advisory",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  },
+  {
+   "path": "/v1/auth-check",
+   "example": "default",
+   "profile": "strict_calibrated",
+   "status": 200,
+   "code": null,
+   "error": null,
+   "status_field": "ok"
+  }
+ ],
+ "credentials": [
+  {
+   "role": "runner",
+   "key_hash": "key:7105474dca97f82524711313735f06604fe1a582b17222246b527c89b818131d",
+   "credential_id": "examples-e413eb09eabb-runner",
+   "expires_at": "2026-10-26T08:07:30.222Z"
+  }
+ ],
+ "cleanup_errors": [],
+ "completed_at": "2026-10-26T07:49:02.262Z"
+}

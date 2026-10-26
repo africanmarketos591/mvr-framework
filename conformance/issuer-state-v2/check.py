@@ -23,19 +23,28 @@ V1, V2 = 'mvr.issuer-state/1', 'mvr.issuer-state/2'
 REVIEW_TYPE, RESOLUTION_TYPE = 'mvr.issuer-state-review/1', 'mvr.condition-resolution/1'
 DOMAIN = 'MVR-AUTHORITY-V1'
 DAY = 86400000
+# SPEC 9, step 7: legacy names and the versioned identifier each is an alias of.
+LEGACY_ACTION_ALIASES = {'create_draft_record': 'amos.document.draft.create@1', 'send_evidence_request': 'amos.communication.evidence.request@1', 'schedule_meeting': 'amos.calendar.meeting.create@1',
+                         'contact_counterparty': 'amos.communication.counterparty.contact@1', 'publish_document': 'amos.document.publish@1', 'commit_spend': 'amos.finance.spend.commit@1'}
 NO_AUTHORITY = {'issued_by_amos': False, 'amos_authorization': False, 'authority_source': 'institution_signature_only', 'real_world_identity_verified_by_amos': False}
 NAN = float('nan')
 
 
 class Fault(Exception):
-    def __init__(self, code, status=422):
+    def __init__(self, code, status=422, detail=None):
         super().__init__(code)
-        self.code, self.status = code, status
+        self.code, self.status, self.detail = code, status, detail
 
 
 def need(ok, code, status=422):
     if not ok:
         raise Fault(code, status)
+
+
+def first_utf16_units(text, n):
+    """The first n UTF-16 code units of text (a split surrogate pair keeps its first half, as in JavaScript)."""
+    units = text.encode('utf-16-le')[:2 * n]
+    return units.decode('utf-16-le', errors='surrogatepass')
 
 
 # ---------------------------------------------------------------- 1.1 canonical JSON
@@ -658,7 +667,15 @@ class Engine:
             region = market.get('region') if truthy(market.get('region')) else None
             need(doc['subject'] == subject and doc['geography']['country'] == market.get('country') and doc['geography']['region'] == region, 'ISSUER_STATE_CASE_SCOPE_MISMATCH', 409)
             if doc['type'] == V2:
-                need(context.get('intended_action') == doc['action'], 'ISSUER_STATE_CASE_ACTION_MISMATCH', 409)
+                intended = context.get('intended_action')
+                if intended != doc['action']:
+                    def canonical(value):
+                        return LEGACY_ACTION_ALIASES.get(value, value) if isinstance(value, str) else None
+                    raise Fault('ISSUER_STATE_CASE_ACTION_MISMATCH', 409, {
+                        'case_intended_action': first_utf16_units(intended, 120) if isinstance(intended, str) else None,
+                        'issuer_state_action': doc['action'],
+                        'same_action_by_alias': isinstance(intended, str) and canonical(intended) == canonical(doc['action']),
+                        'fix': 'Use the identical action identifier in the case intended_action and the signed issuer state.'})
             heads = self.store.heads[doc['case_id']]
             slot = doc['issuer_anchor_id'] + ':' + doc['action']
             prior = heads.get(slot) or None
@@ -674,7 +691,7 @@ class Engine:
             return dict({'status': 'registered', 'issuer_state': {'record_id': doc['record_id'], 'state': doc['state'], 'supersedes': doc['supersedes'], 'lab_fixture': True, 'production_authority': False}, 'dependents_rechecked_on_next_read': True}, **NO_AUTHORITY)
         except Fault as fault:
             status = 'system_unavailable' if fault.status >= 500 else {403: 'forbidden', 404: 'not_found', 409: 'conflict'}.get(fault.status, 'invalid_input')
-            return dict({'status': status, 'http_status': fault.status, 'code': fault.code}, **NO_AUTHORITY)
+            return dict({'status': status, 'http_status': fault.status, 'code': fault.code}, **({'detail': fault.detail} if fault.detail is not None else {}), **NO_AUTHORITY)
 
     # ------------------------------------------------------------ 10. evaluation
     def evaluate(self, case, now):
