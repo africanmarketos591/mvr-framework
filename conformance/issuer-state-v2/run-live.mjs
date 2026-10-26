@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Live issuer-state/2 conformance in the isolated AMOS lab, using the lab's exact harmless fixture: the case intends
 // create_draft_record and the capability names create_draft_record. Every step goes through POST /v1/authority-conformance.
-//   node run-live.mjs [--lab https://africanmarketos.com]
+//   node run-live.mjs [--lab https://africanmarketos.com] [--output report.json] [--record-failures]
 // Proprietary lab fixtures; lab keys; no production issuer, institution or authority.
 import assert from 'node:assert/strict';
 import {webcrypto,createHash,randomBytes} from 'node:crypto';
@@ -89,6 +89,10 @@ export async function runIssuerStateLive(transport,{now=()=>Date.now(),continueO
 }
 if(import.meta.url===pathToFileURL(process.argv[1]||'').href){
   const args=process.argv.slice(2),i=args.indexOf('--lab'),lab=(i>=0?args[i+1]:'https://africanmarketos.com').replace(/\/$/,'');
-  const transport=async body=>(await fetch(lab+'/v1/authority-conformance',{method:'POST',headers:{'Content-Type':'application/json','User-Agent':'amos-issuer-state-live'},body:JSON.stringify(body),signal:AbortSignal.timeout(60000)})).json();
-  const report=await runIssuerStateLive(transport,{continueOnFailure:args.includes('--record-failures')});console.log(JSON.stringify(report,null,1));process.exitCode=report.passed?0:1;
+  const served=new Set();
+  const transport=async body=>{const r=await fetch(lab+'/v1/authority-conformance',{method:'POST',headers:{'Content-Type':'application/json','User-Agent':'amos-issuer-state-live'},body:JSON.stringify(body),signal:AbortSignal.timeout(60000)});const v=r.headers.get('X-MVR-Deployment-Revision');if(v)served.add(v);return r.json();};
+  const report=await runIssuerStateLive(transport,{continueOnFailure:args.includes('--record-failures')});
+  Object.assign(report,{lab,served_revisions:[...served],revision:served.size===1?[...served][0]:null});
+  const o=args.indexOf('--output');if(o>=0)(await import('node:fs')).writeFileSync(args[o+1],JSON.stringify(report,null,1));
+  console.log(JSON.stringify(report,null,1));process.exitCode=report.passed?0:1;
 }

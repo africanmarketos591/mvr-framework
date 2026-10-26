@@ -90,13 +90,19 @@ export function preflightInterpretationTask({claim_id,claim,evidence_id,field,pa
 // Wording that limits, conditions, withdraws or argues against a claim. Routing only: a match never sets a value.
 // It holds a favourable value for the claim until a designated reviewer disposes of the passage.
 export const ADVERSE_SIGNAL_SOURCE="\\b(?:must not|shall not|may not|cannot|can not|prohibit\\w*|not (?:authori[sz]ed|permitted|approved|allowed|licen[cs]ed|renewed)|revok\\w*|revocation|suspen\\w*|cancel\\w*|withdr[ae]w\\w*|terminat\\w*|banned|barred|denied|refus\\w*|reject\\w*|cease\\w*|stop(?:s|ped)?|halt\\w*|discontinu\\w*|recall\\w*|shut\\w*|expire[ds]?|expiry|lapse[ds]?|not to (?:enrol|enroll|operate|distribute|sell|collect|proceed|launch|continue|open|trade|lend|disburse|recruit|advertise|accept)\\w*|subject to|only if|unless|provided that|conditional (?:on|upon)|pending|in principle|default\\w*|arrears|overdue|unpaid|non-?payment|complain\\w*|disput\\w*|breach\\w*|fraud\\w*|insolven\\w*|liquidat\\w*|receivership|penalt\\w*|sanction\\w*|delist\\w*|blacklist\\w*|declin\\w*|no longer)\\b";
+// Strong wording: a directive, prohibition or withdrawal that, if true, defeats the claim. Only strong wording holds a
+// claim; other adverse wording marks the passage to read first.
+export const STRONG_ADVERSE=/\b(?:must not|shall not|may not|not to (?:enrol|enroll|operate|distribute|sell|collect|proceed|launch|continue|open|trade|lend|disburse|recruit|advertise|accept)\w*|prohibits|prohibited from|is prohibited|are prohibited|cease\w* (?:distribution|operations|operating|selling|trading|supply|supplying|lending|collection|collecting)|(?:ordered|orders|directed|directs|instructed|instructs|told|required) (?:\w+ ){0,4}to (?:stop|cease|halt|suspend|withdraw|close)|not (?:authori[sz]ed|permitted|licen[cs]ed) to)\b/i;
+// A strong phrase preceded closely by a negation ("not", "never", "no longer") is not treated as strong.
+const NEGATED=/\b(?:not|never|no longer|nothing)\b[^.;]{0,20}$/i;
+export const strongAdverse=text=>{const m=STRONG_ADVERSE.exec(text);return !!m&&!NEGATED.test(text.slice(0,m.index));};
 export function adverseSignals(text,{max=8}={}){
   if(typeof text!=='string')return [];
   const out=[],sentence=/[^.!?;\n]+[.!?;]?/g;let m;
   while((m=sentence.exec(text))&&out.length<max){
     const lead=m[0].length-m[0].trimStart().length,body=m[0].trim();if(!body)continue;
     const terms=[...new Set([...body.matchAll(new RegExp(ADVERSE_SIGNAL_SOURCE,'gi'))].map(x=>x[0].toLowerCase()))];
-    if(terms.length)out.push({start:m.index+lead,end:m.index+lead+body.length,terms:terms.slice(0,6)});
+    if(terms.length)out.push({start:m.index+lead,end:m.index+lead+body.length,terms:terms.slice(0,6),strong:strongAdverse(body)});
   }
   return out;
 }
@@ -131,7 +137,7 @@ function computeState(st,models,at){
   // A task is open when it carries an adverse signal (lexical flag, or an adverse or qualifying reading) and no current
   // designated disposition. While open, it holds a favourable value of its claim.
   const activeShas=new Set(activeReviews(st,at).map(r=>r.review_sha256));
-  const openTask=task=>(!!task.signal||task.readings.some(r=>r.stance==='adverse'||r.stance==='qualifies'))&&!(task.disposition&&activeShas.has(task.disposition.review_sha256));
+  const openTask=task=>(task.signal==='lexical_adverse'||task.readings.some(r=>r.stance==='adverse'||r.stance==='qualifies'))&&!(task.disposition&&activeShas.has(task.disposition.review_sha256));
   const heldFacts=new Set([...st.tasks.values()].filter(openTask).map(task=>task.fact_id));
   for(const t of decisionTargets(model)){
     const view=factView(st,t,at);

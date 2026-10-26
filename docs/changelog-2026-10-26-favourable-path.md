@@ -11,9 +11,11 @@ Fixes from an outside review. Each claim was reproduced first: in code, against 
   - `internal_recommendation` permits internal uses only.
 - **A journal replays every transition.** Each accepted review is a hash-chained journal entry that names which claims and which targets changed, and which were independent of it. `get_decision_journal` returns the journal; [`conformance/decision-state/replay.mjs`](../conformance/decision-state/README.md) replays it offline with the server's own library.
 - **Adverse meaning is routed to its exact passage.**
-  - Server-issued interpretation tasks carry the passage, the claim, the allowed labels and non-authority semantics.
+  - Server-issued interpretation tasks identify the passage (path, character span, length and SHA-256, never its text), the claim, the allowed labels and non-authority semantics.
   - Model readings need attribution and never set a value. An adverse reading holds the claim until a designated disposition. Disagreements are recorded.
   - Restrictive or adverse wording in an original or in a preflight passage routes that passage with no caller-supplied `contradicts`. The reviewer's two prose cases ("cease distribution", "not to enrol") are both caught.
+  - Only strong wording (a directive, prohibition or withdrawal) holds a claim. Other possibly adverse wording, such as "unless revoked" or "pending", marks the passage to read first without holding it. "Is not prohibited" is not strong.
+  - Readings are recorded with their attribution and route review. This release does not show that recording them improves review prioritisation.
 - **The decision check can use a linked review case.** With `review_case_ref`, a same-workspace review case settles an exact claim-source link (same claim id, same original hash) through a designated review.
 - **The authority chain gates on the effect's decision state.** It also checks review conditions and separation of duties. The new `issue_permission_statement` returns a signed (lab), current statement for one exact effect. Commit receipts carry the decision basis. [`permission-verifier.mjs`](../sdks/javascript/permission-verifier.mjs) verifies statements and commits offline.
 

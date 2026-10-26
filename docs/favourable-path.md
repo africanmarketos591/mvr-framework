@@ -92,9 +92,18 @@ Effects whose rules do not use that claim are unaffected.
 
 Every declared claim-source link on `/v1/decision-check`, `/v1/evidence-completeness` and `/v1/context/compile` gets a task: `claim_review.interpretation_tasks`, with ids beginning `PT-`.
 
-**Lexical routing.** Adverse or limiting wording in a passage declared as `direct_support` routes that exact passage (`claim_review.interpretation_routes`), with no caller-supplied `contradicts` needed.
+Tasks never echo the caller's passage text. Each carries the passage path, length and SHA-256.
 
-**Model readings.** Resubmit with `passage_interpretations` (`task_id`, `stance`, `source: "model"` and `attribution`). An adverse, qualifying or disagreeing reading routes the passage too. A supporting reading clears nothing.
+**Lexical routing.** A passage declared as `direct_support` is scanned. Matches route that exact passage (`claim_review.interpretation_routes`), with no caller-supplied `contradicts` needed. Each route carries `blocking`, `source` (`lexical` or `model`), the passage path and character span, and what to do next.
+- **Strong wording holds the claim** (`adverse_wording_requires_review`, `blocking: true`). This is a directive, prohibition or withdrawal, for example "must not", "prohibits", "ordered … to stop" or "not authorised to".
+- **Other possibly adverse wording only marks the passage to read first** (`adverse_wording_review_first`, `blocking: false`). Examples are "unless revoked", "pending" and "subject to".
+- A negation shortly before strong wording, as in "is not prohibited", is not treated as strong.
+
+**Model readings.** Resubmit to `/v1/decision-check` with `passage_interpretations` (`task_id`, `stance`, `source: "model"` and `attribution`). The OpenAPI `DecisionCheckRequest` has the full schema. The licensed MCP tool `mvr_decision_check` accepts the same field inside `payload`. It is not listed in that tool's input schema, which keeps the manifest small; the server validates it either way. An adverse, qualifying or disagreeing reading routes the passage and holds the claim. A supporting reading clears nothing. A refused reading is reported in `claim_review.issues` and routes nothing.
+
+**What a reading cannot do.** Readings persist with their attribution and never become a fact or a permission. Recording a reading routes the passage. This release does not show that recording readings improves how review is prioritised.
+
+**Governed review supersedes lexical routes.** When a linked review case has verified the exact claim-source link, lexical routes on that link are dropped (`interpretation_routes_superseded_by_governed_review`). Model routes stay.
 
 **Settling links from a review case.** With `review_case_ref`, a link in the same workspace is settled by the linked review case only when it meets both conditions:
 - the case has a designated review of the claim with the same `claim_id`;
