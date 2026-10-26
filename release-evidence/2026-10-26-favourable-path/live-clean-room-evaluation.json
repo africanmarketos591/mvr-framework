@@ -1,0 +1,90 @@
+{
+ "route": "isolated evaluation (/v1/review-sandbox), no API key",
+ "client": "sdks/javascript/governance-client.mjs, generated from the live contract",
+ "classification": "AMOS lab verification; proprietary example data",
+ "passed": true,
+ "steps": 9,
+ "checks": [
+  {
+   "name": "fully reviewed favourable case advances",
+   "passed": true,
+   "detail": {
+    "decisive_total": 2,
+    "decisive_reviewed": 2,
+    "pending": [],
+    "not_needed": [],
+    "note": "Only facts whose value can still change the outcome need review. not_needed facts add no work while the outcome stands."
+   }
+  },
+  {
+   "name": "reviewer adverse reading propagates to its claim",
+   "passed": true
+  },
+  {
+   "name": "economics recorded with complete telemetry and the declared cost",
+   "passed": true,
+   "detail": {
+    "wait_to_first_review_ms": 4296,
+    "elapsed_to_outcome_ms": 9217,
+    "operations_recorded": 6,
+    "review_actions": 3,
+    "distinct_accounts": 2,
+    "handoffs": 1,
+    "reopenings": 0,
+    "reviewer_minutes": 25,
+    "integration_minutes": 10,
+    "reviewer_cost_per_hour_minor": 2000000,
+    "currency": "UGX",
+    "decision_cost_minor": 833333,
+    "telemetry_complete": true,
+    "basis": "Timings and counts are recorded by the server; minutes and costs are declarations."
+   }
+  },
+  {
+   "name": "ledger reports prevented harm and decision economics",
+   "passed": true,
+   "detail": {
+    "decisions": 1,
+    "telemetry_complete": {
+     "count": 1,
+     "ratio": 1,
+     "meets_95_percent": true,
+     "small_sample": true
+    },
+    "median_wait_to_first_review_ms": 4296,
+    "median_elapsed_to_outcome_ms": 9217,
+    "median_operations_recorded": 6,
+    "median_handoffs": 1,
+    "reopenings_total": 0,
+    "integration_minutes_total": 10,
+    "cost_per_completed_decision": {
+     "UGX": {
+      "median_minor": 833333,
+      "total_minor": 833333,
+      "n": 1
+     }
+    },
+    "boundary": "Declared minutes and costs are not verified. Counts exclude read requests. No comparison with a counterfactual process is made here."
+   }
+  },
+  {
+   "name": "every example request satisfies the live published request schema",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "name": "every response satisfies the live published response schema",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "name": "the evaluation contract publishes its envelope fields",
+   "passed": true
+  }
+ ],
+ "case_id": "RC-f08e782246447f046ebf98d8a88f177069168c40b7f5abe8e51ced84d47da324",
+ "session_closed": true,
+ "revision": "2026-10-26.favourable-path.2",
+ "requests": 14,
+ "completed_at": "2026-10-26T13:11:04.861Z"
+}

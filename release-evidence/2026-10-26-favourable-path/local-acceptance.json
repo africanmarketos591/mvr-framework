@@ -1,0 +1,480 @@
+{
+  "head": "86d9a1fe5817775668f4897b4e5ec974d8465abb",
+  "environment": "Windows 10, Node v24.11.0, temporary files on D:",
+  "commands": 265,
+  "total": 265,
+  "passed": true,
+  "failed": [],
+  "minutes": 19,
+  "release_suites": [
+    {
+      "command": "node scripts/generate-governance-client.mjs --check",
+      "exit": 0,
+      "elapsed_ms": 1026
+    },
+    {
+      "command": "node scripts/test-decision-state.mjs",
+      "exit": 0,
+      "elapsed_ms": 685
+    },
+    {
+      "command": "node scripts/test-decision-review-licensed.mjs",
+      "exit": 0,
+      "elapsed_ms": 3057
+    },
+    {
+      "command": "node scripts/test-mcp-passage-interpretations.mjs",
+      "exit": 0,
+      "elapsed_ms": 2068
+    },
+    {
+      "command": "node scripts/test-favourable-path-workerd.mjs",
+      "exit": 0,
+      "elapsed_ms": 10386
+    },
+    {
+      "command": "node scripts/test-receiver-http-workerd.mjs",
+      "exit": 0,
+      "elapsed_ms": 26327
+    },
+    {
+      "command": "node scripts/test-issuer-state-live-workerd.mjs",
+      "exit": 0,
+      "elapsed_ms": 7586
+    },
+    {
+      "command": "node scripts/test-credential-classification.mjs",
+      "exit": 0,
+      "elapsed_ms": 759
+    },
+    {
+      "command": "node scripts/test-published-examples.mjs",
+      "exit": 0,
+      "elapsed_ms": 2950
+    },
+    {
+      "command": "node scripts/test-authority-response-invariants.mjs",
+      "exit": 0,
+      "elapsed_ms": 2506
+    },
+    {
+      "command": "node external_audit/mvr-framework/conformance/pilot-study/test.mjs",
+      "exit": 0,
+      "elapsed_ms": 202
+    },
+    {
+      "command": "node external_audit/mvr-framework/conformance/decision-state/test.mjs",
+      "exit": 0,
+      "elapsed_ms": 256
+    }
+  ],
+  "suite_reports": {
+    "node scripts/generate-governance-client.mjs --check": {
+      "passed": true,
+      "mode": "check",
+      "operations": 13,
+      "types": 31,
+      "contract_sha256": "568c81efaf61f1773791b31c90ece3893149121748c2994c63ad452d565c8621"
+    },
+    "node scripts/test-decision-state.mjs": {
+      "passed": true,
+      "events": 13,
+      "checks": [
+        "favourable path",
+        "only decisive claims queued",
+        "conditional ceiling",
+        "irrelevant passage",
+        "one claim adverse withdraws one effect",
+        "reviewer disagreement",
+        "withdrawal",
+        "competence limits",
+        "designation lapse",
+        "time expiry",
+        "replay",
+        "tamper",
+        "live lapse",
+        "tasks"
+      ]
+    },
+    "node scripts/test-decision-review-licensed.mjs": {
+      "passed": true,
+      "tests": 27,
+      "results": [
+        "unknown effect types are refused when the model is set",
+        "the case creator cannot be the designated reviewer, even with a credential",
+        "a credential bound to another account is refused",
+        "a designation for another jurisdiction is refused",
+        "a role-only review is recorded but moves nothing",
+        "restrictive wording needs an explicit acknowledgement from a designated reviewer",
+        "the flagged sentence inside the reviewed passage is disposed by that review",
+        "designated reviews reach the internal recommendation and the draft effect",
+        "a reviewer limited to drafts cannot support spend",
+        "a qualified review with a ceiling makes spend conditional",
+        "the designated reviewer closes one residual for the capability basis",
+        "review conditions are enforced on the exact request",
+        "separation of duties: the reviewer of the basis can neither approve nor perform the effect",
+        "an exact effect identifier is required; an alias is named",
+        "only the recording reviewer can withdraw a review; withdrawal revokes dependent targets",
+        "after a residual closure and capabilities, an adverse clause review is still recorded and moves only its effects",
+        "the review binding covers the case, its context and its attestations, not authority-chain outputs",
+        "a dependency check with nothing to record is refused, not silently written",
+        "the server journal replays exactly",
+        "explicit prohibition routes its exact passage",
+        "ordinary directive wording routes its exact passage",
+        "a clean supporting passage is not routed and gets one server-issued task",
+        "an attributed adverse model reading routes ordinary adverse meaning the lexicon cannot see",
+        "decisive reviews in the permission position name each routed passage",
+        "review-case linkage settles only the same claim on the same original",
+        "decision-check governed review reads the linked case only inside the same workspace",
+        "a tampered journal record fails the integrity check on read"
+      ]
+    },
+    "node scripts/test-mcp-passage-interpretations.mjs": {
+      "passed": true,
+      "checks": 8,
+      "results": [
+        "the MCP decision-check payload accepts unlisted fields, so readings reach the server",
+        "REST: a clean passage gets one server-issued task and no route",
+        "the task never echoes the caller passage text",
+        "REST: an adverse model reading routes the exact passage and holds the claim",
+        "MCP: an adverse model reading routes the exact passage and holds the claim",
+        "REST and MCP route the same task",
+        "MCP: a supporting reading clears nothing and confers nothing",
+        "MCP: a reading not marked as a model reading is refused as an issue"
+      ],
+      "classification": "proprietary lab fixtures"
+    },
+    "node scripts/test-favourable-path-workerd.mjs": {
+      "runtime": "workerd / SQLite durable objects / full worker bundle",
+      "passed": true,
+      "checks": 85,
+      "requests": 51,
+      "journal_events": 12,
+      "final_targets": [
+        {
+          "target": "internal_recommendation",
+          "state": "pending",
+          "reason": "reviews_pending",
+          "conditions": [],
+          "pending": [
+            "licence_current",
+            "local_partner_active",
+            "retail_presence"
+          ]
+        },
+        {
+          "target": "effect:create_draft_record",
+          "state": "revoked",
+          "reason": "supporting_review_withdrawn_or_lapsed",
+          "conditions": [],
+          "pending": [
+            "licence_current",
+            "local_partner_active"
+          ]
+        },
+        {
+          "target": "effect:publish_document",
+          "state": "pending",
+          "reason": "reviews_pending",
+          "conditions": [],
+          "pending": [
+            "retail_presence"
+          ]
+        },
+        {
+          "target": "effect:amos.owner_lab.artifact.create@1",
+          "state": "revoked",
+          "reason": "supporting_review_withdrawn_or_lapsed",
+          "conditions": [],
+          "pending": [
+            "licence_current"
+          ]
+        }
+      ]
+    },
+    "node scripts/test-receiver-http-workerd.mjs": {
+      "passed": true,
+      "transport": "HTTP on localhost",
+      "lab": "workerd full worker bundle",
+      "scenarios": [
+        [
+          "valid current commit",
+          1,
+          true
+        ],
+        [
+          "replay of the same commit",
+          0,
+          true
+        ],
+        [
+          "broadened amount",
+          0,
+          true
+        ],
+        [
+          "different resource",
+          0,
+          true
+        ],
+        [
+          "altered receipt (window extended)",
+          0,
+          true
+        ],
+        [
+          "invalid signature",
+          0,
+          true
+        ],
+        [
+          "revoked between verification and commit",
+          0,
+          true
+        ],
+        [
+          "two concurrent deliveries",
+          1,
+          true
+        ],
+        [
+          "acknowledgement lost, then redelivered",
+          1,
+          true
+        ],
+        [
+          "transient failure before the effect",
+          0,
+          true
+        ],
+        [
+          "retry within the window",
+          1,
+          true
+        ],
+        [
+          "crash after the effect",
+          1,
+          true
+        ],
+        [
+          "redelivery reconciles, no duplicate",
+          0,
+          true
+        ],
+        [
+          "delivered after the commit window",
+          0,
+          true
+        ]
+      ],
+      "restart_preserved_consumption": true,
+      "acknowledgement_retry": true,
+      "health": {
+        "duplicated": 6,
+        "completed": 6
+      }
+    },
+    "node scripts/test-issuer-state-live-workerd.mjs": {
+      "passed": true,
+      "runtime": "workerd full worker bundle",
+      "action": "create_draft_record",
+      "steps": [
+        [
+          "baseline: the exact fixture verifies before any issuer state",
+          true
+        ],
+        [
+          "register a signed issuer-state/2 prohibition for create_draft_record",
+          true
+        ],
+        [
+          "the exact effect is prohibited",
+          true
+        ],
+        [
+          "verification denies the exact effect",
+          true
+        ],
+        [
+          "the prohibition binds the canonical alias of the same action",
+          true
+        ],
+        [
+          "an issuer state naming the alias instead of the intended identifier is refused and says why",
+          true
+        ],
+        [
+          "the issuer supersedes the prohibition with a permitted state",
+          true
+        ],
+        [
+          "the exact effect verifies under the permitted state",
+          true
+        ],
+        [
+          "register a conditional state without its receipt",
+          true
+        ],
+        [
+          "an unresolved condition denies the exact effect",
+          true
+        ],
+        [
+          "register the conditional state with its signed receipt",
+          true
+        ],
+        [
+          "a satisfied condition lets the exact effect verify",
+          true
+        ],
+        [
+          "the issuer revokes",
+          true
+        ],
+        [
+          "a revoked state denies and prohibits the exact effect",
+          true
+        ]
+      ]
+    },
+    "node scripts/test-credential-classification.mjs": {
+      "passed": true,
+      "unknown_key_requests": 40,
+      "all_401": true,
+      "unknown_keys_reached_paid_authority": 0,
+      "expired": 401,
+      "known_paid_with_authority_down": 503,
+      "unreadable_store": 503
+    },
+    "node scripts/test-published-examples.mjs": {
+      "passed": true,
+      "examples": 39,
+      "runs": 77,
+      "profiles": [
+        "full_advisory",
+        "strict_calibrated"
+      ],
+      "failed": 0,
+      "not_run": 0,
+      "verified_live_only": [
+        "/v1/verdict-delta strict_calibrated",
+        "/v1/trust-velocity strict_calibrated"
+      ]
+    },
+    "node scripts/test-authority-response-invariants.mjs": {
+      "passed": true,
+      "actions": 19,
+      "responses_validated": 47,
+      "every_action_success_and_error": true,
+      "validator": "python jsonschema Draft 2020-12",
+      "closed_branches": true
+    },
+    "node external_audit/mvr-framework/conformance/pilot-study/test.mjs": {
+      "passed": true,
+      "tests": 15,
+      "results": [
+        "randomized blocks contain each arm once and are reproducible from the seed",
+        "alternation is reproducible and only associational",
+        "fewer than 30 decisions needs a declared power calculation",
+        "weights must be complete integers in minor units",
+        "loss components follow the frozen weights",
+        "AMOS lower than both controls with the interval complete gives the loss verdict",
+        "commercial superiority also needs payment or renewal",
+        "no advantage when AMOS makes the same errors as the policy-only arm",
+        "an incomplete interval cannot claim an advantage",
+        "a decision under a different arm than assigned is refused",
+        "unblinded adjudication and self-adjudication are refused",
+        "edited weights or schedule after freezing are refused",
+        "fewer than 30 adjudicated decisions is insufficient whatever the numbers",
+        "the power helper gives decisions per arm",
+        "CSV templates parse with the published columns"
+      ],
+      "classification": "proprietary lab fixture rows; not observations of any organisation"
+    },
+    "node external_audit/mvr-framework/conformance/decision-state/test.mjs": {
+      "passed": true,
+      "events": 6,
+      "checks": [
+        "favourable path",
+        "irrelevant claim",
+        "one effect withdrawn",
+        "replay matches",
+        "forgery detected",
+        "designation expiry"
+      ]
+    }
+  },
+  "python_release_checks": {
+    "private_head": "86d9a1fe5817775668f4897b4e5ec974d8465abb",
+    "sbom_source_commit": "c77f38a36093346ecc79594149f5b6c0b2f09dfe",
+    "public_head": "a97766e363ca6f4b9558bfc09d706c260318f174",
+    "public_tree_clean": true,
+    "deployment_revision": "2026-10-26.favourable-path.2",
+    "checked_at": "2026-10-26T13:04:18.981Z",
+    "passed": true,
+    "checks": [
+      {
+        "repo": "private",
+        "command": "python scripts/validate_cyclonedx_sbom.py --expected-source-sha c77f38a36093346ecc79594149f5b6c0b2f09dfe --verify-release-chain",
+        "exit": 0,
+        "last_line": "{\"status\": \"valid\", \"schema\": \"CycloneDX 1.5 draft-07\", \"serial_number\": \"urn:uuid:efbf0939-8efa-8086-8baa-955d97a8b750\", \"source_sha\": \"c77f38a36093346ecc79594149f5b6c0b2f09dfe\", \"deployment_revision\": \"2026-10-26.favourable-path.2\", \"components\": 96}"
+      },
+      {
+        "repo": "private",
+        "command": "python scripts/test_cyclonedx_offline.py",
+        "exit": 0,
+        "last_line": "4/4 offline SBOM checks passed"
+      },
+      {
+        "repo": "private",
+        "command": "node scripts/generate-release-sbom.mjs --source-sha c77f38a36093346ecc79594149f5b6c0b2f09dfe --deployment-revision 2026-10-26.favourable-path.2 (then byte comparison)",
+        "exit": 0,
+        "last_line": "regenerated SBOM byte-identical to the committed file"
+      },
+      {
+        "repo": "private",
+        "command": "python scripts/validate_partnership_readiness_schema.py",
+        "exit": 0,
+        "last_line": "{\"status\": \"valid\", \"schema\": \"https://africanmarketos.com/schemas/partnership-readiness-scorecard.schema.json\", \"scorecard\": \"partnership-readiness-scorecard-2026-08-03.json\"}"
+      },
+      {
+        "repo": "private",
+        "command": "python scripts/validate_founder_self_registry_schema.py",
+        "exit": 0,
+        "last_line": "Founder Self schema PASS: Draft 2020-12 registry contract is valid."
+      },
+      {
+        "repo": "public",
+        "command": "python scripts/sync_mcp_version_contract.py --check",
+        "exit": 0,
+        "last_line": "MCP version contract: PASS"
+      },
+      {
+        "repo": "public",
+        "command": "python scripts/validate_mcp_public_contract.py",
+        "exit": 0,
+        "last_line": "MCP public contract: PASS (local)"
+      },
+      {
+        "repo": "public",
+        "command": "python scripts/validate_workflow_pinning.py",
+        "exit": 0,
+        "last_line": "workflow pinning validation passed (25 workflows)"
+      },
+      {
+        "repo": "public",
+        "command": "python conformance/authority/validate-fixtures.py",
+        "exit": 0,
+        "last_line": "PASS: discriminated response examples; unsigned and illustrative, never authority"
+      },
+      {
+        "repo": "public",
+        "command": "C:\\Program Files\\nodejs\\node.exe conformance/authority/verify-fixtures.mjs",
+        "exit": 0,
+        "last_line": "PASS: 20 signed fixture, canonicalization and receipt checks; public lab key only."
+      }
+    ]
+  },
+  "classification": "AMOS lab verification on the operator machine; GitHub Actions CI is linked in deployment.json"
+}

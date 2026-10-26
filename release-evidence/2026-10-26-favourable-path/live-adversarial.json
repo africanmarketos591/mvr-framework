@@ -1,0 +1,137 @@
+{
+  "passed": true,
+  "sessions": 2,
+  "requests": 123,
+  "categories": {
+    "cross_tenant": 9,
+    "confused_deputy": 7,
+    "replay": 4,
+    "altered_receipt": 1,
+    "race": 4,
+    "secret_export": 4
+  },
+  "attacks": [
+    {
+      "category": "cross_tenant",
+      "name": "another session cannot read the case"
+    },
+    {
+      "category": "cross_tenant",
+      "name": "another session cannot verify the capability"
+    },
+    {
+      "category": "cross_tenant",
+      "name": "another session cannot record an outcome on a foreign verification"
+    },
+    {
+      "category": "cross_tenant",
+      "name": "another session cannot revoke the source, capability or closure"
+    },
+    {
+      "category": "cross_tenant",
+      "name": "another session cannot read permission position, trace or state"
+    },
+    {
+      "category": "cross_tenant",
+      "name": "another session cannot register issuer state on the case"
+    },
+    {
+      "category": "cross_tenant",
+      "name": "a session token never opens another session"
+    },
+    {
+      "category": "cross_tenant",
+      "name": "identical anchor ids in two sessions resolve to the key of their own session"
+    },
+    {
+      "category": "cross_tenant",
+      "name": "a receipt from one session never verifies against another session registry"
+    },
+    {
+      "category": "confused_deputy",
+      "name": "an executor cannot use a capability bound to another principal"
+    },
+    {
+      "category": "confused_deputy",
+      "name": "a reviewer cannot close with a credential bound to someone else"
+    },
+    {
+      "category": "confused_deputy",
+      "name": "a standing issuer key cannot sign a capability"
+    },
+    {
+      "category": "confused_deputy",
+      "name": "a capability naming another workspace is refused"
+    },
+    {
+      "category": "confused_deputy",
+      "name": "a source issuer key cannot sign a standing credential"
+    },
+    {
+      "category": "confused_deputy",
+      "name": "roles are enforced: an executor cannot register a capability, a reviewer cannot verify"
+    },
+    {
+      "category": "confused_deputy",
+      "name": "a commit cannot broaden or swap the verified effect"
+    },
+    {
+      "category": "replay",
+      "name": "an operation id replayed with a different body is refused"
+    },
+    {
+      "category": "replay",
+      "name": "a second commit of one verification never yields a second commit id"
+    },
+    {
+      "category": "replay",
+      "name": "replaying a revoked document does not restore it"
+    },
+    {
+      "category": "replay",
+      "name": "a verification issued before a revocation cannot be committed after it"
+    },
+    {
+      "category": "altered_receipt",
+      "name": "every altered field of a signed commit receipt fails verification"
+    },
+    {
+      "category": "race",
+      "name": "concurrent commits of one verification produce at most one commit id"
+    },
+    {
+      "category": "race",
+      "name": "concurrent verifications never exceed max_uses"
+    },
+    {
+      "category": "race",
+      "name": "no allow is ordered after a concurrent revocation"
+    },
+    {
+      "category": "race",
+      "name": "competing issuer-state supersessions serialize to one winner"
+    },
+    {
+      "category": "secret_export",
+      "name": "refusals never echo a submitted secret"
+    },
+    {
+      "category": "secret_export",
+      "name": "the receipt registry publishes public keys only"
+    },
+    {
+      "category": "secret_export",
+      "name": "public key-ceremony and registry routes carry no private material"
+    },
+    {
+      "category": "secret_export",
+      "name": "no token, private key, case secret or canary in any of 121 responses"
+    }
+  ],
+  "skipped": [],
+  "classification": "AMOS lab verification; proprietary lab fixtures; harmless lab drafts only; not independent review",
+  "revision": "2026-10-26.favourable-path.2",
+  "completed_at": "2026-10-26T16:03:45.951Z",
+  "base": "https://africanmarketos.com",
+  "credential_cleanup": "Both sessions closed and their next use rejected. Tokens are never written to the report."
+}
