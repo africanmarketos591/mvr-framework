@@ -1,0 +1,556 @@
+{
+ "suite": "audit-findings-live",
+ "base": "https://africanmarketos.com",
+ "started_at": "2026-11-01T20:22:05.334Z",
+ "classification": "proprietary lab fixtures (AMOS-authored, logically consistent, public-safe); not observations of any real organisation",
+ "cells": {
+  "strict_calibrated /v1/claim-audit": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "strict_calibrated /v1/release-check": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "strict_calibrated /v1/board-safety-check": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "strict_calibrated /v1/evidence-audit": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "422": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "strict_calibrated /v1/evidence-validation": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "strict_calibrated /v1/evidence-completeness": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "strict_calibrated /v1/decision-check": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "full_advisory /v1/claim-audit": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "full_advisory /v1/release-check": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "full_advisory /v1/board-safety-check": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "full_advisory /v1/evidence-audit": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "full_advisory /v1/evidence-validation": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "full_advisory /v1/evidence-completeness": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  },
+  "full_advisory /v1/decision-check": {
+   "cells": 24,
+   "defects": 16,
+   "defects_detected": 16,
+   "fully_targeted": 16,
+   "clean_controls": 8,
+   "clean_false_positives": 0,
+   "controlling_preserved": 24,
+   "critical_false_permits": 0,
+   "missing_contract": 0,
+   "passes_r8_bar": true,
+   "http_statuses": {
+    "200": 24
+   },
+   "undetected": [],
+   "clean_false_positive_cases": []
+  }
+ },
+ "checks": [
+  {
+   "name": "strict_calibrated /v1/claim-audit: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "strict_calibrated /v1/release-check: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "strict_calibrated /v1/board-safety-check: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "strict_calibrated /v1/evidence-audit: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "422": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "strict_calibrated /v1/evidence-validation: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "strict_calibrated /v1/evidence-completeness: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "strict_calibrated /v1/decision-check: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "full_advisory /v1/claim-audit: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "full_advisory /v1/release-check: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "full_advisory /v1/board-safety-check: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "full_advisory /v1/evidence-audit: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "full_advisory /v1/evidence-validation: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "full_advisory /v1/evidence-completeness: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "full_advisory /v1/decision-check: R8 audit bar",
+   "passed": true,
+   "detail": {
+    "cells": 24,
+    "defects": 16,
+    "defects_detected": 16,
+    "fully_targeted": 16,
+    "clean_controls": 8,
+    "clean_false_positives": 0,
+    "controlling_preserved": 24,
+    "critical_false_permits": 0,
+    "missing_contract": 0,
+    "passes_r8_bar": true,
+    "http_statuses": {
+     "200": 24
+    },
+    "undetected": [],
+    "clean_false_positive_cases": []
+   }
+  },
+  {
+   "name": "strict evidence-audit: non-2xx, audit_performed=false, stable reason, alternatives, structural findings",
+   "passed": true,
+   "detail": {
+    "status": 422
+   }
+  },
+  {
+   "name": "capabilities say before submission that strict evidence-audit is unavailable and why",
+   "passed": true
+  }
+ ],
+ "failures": [],
+ "finished_at": "2026-11-01T20:37:09.938Z",
+ "passed": true
+}

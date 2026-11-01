@@ -1,0 +1,1031 @@
+{
+ "suite": "effect-decision-live",
+ "base": "https://africanmarketos.com",
+ "started_at": "2026-11-01T20:22:07.633Z",
+ "classification": "proprietary lab fixtures (AMOS-authored, logically consistent, public-safe); not observations of any real organisation",
+ "checks": [
+  {
+   "name": "strict_calibrated complete: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated complete: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "df9f1cb6929d161e9fbe0d40fd64cc0a2c9e8d3a5873ac17ab31116b20aed241",
+    "mcp_decisions": "df9f1cb6929d161e9fbe0d40fd64cc0a2c9e8d3a5873ac17ab31116b20aed241"
+   }
+  },
+  {
+   "name": "strict_calibrated complete: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated complete: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated missing: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated missing: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "2ba0dea8710b12f6b4653fa1589c07f1a5b6de931bf345b1b9e9bf9f04047c3e",
+    "mcp_decisions": "2ba0dea8710b12f6b4653fa1589c07f1a5b6de931bf345b1b9e9bf9f04047c3e"
+   }
+  },
+  {
+   "name": "strict_calibrated missing: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated missing: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated conditional: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "conditional/planning_only/planning_only",
+     "EXT-OFFER": "conditional/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "conditional/planning_only/planning_only",
+     "EXT-OFFER": "conditional/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated conditional: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "4c80fcb2c6cad5183190e851eee6881e6dfc45ea1303abe064f0996a2c52690c",
+    "mcp_decisions": "4c80fcb2c6cad5183190e851eee6881e6dfc45ea1303abe064f0996a2c52690c"
+   }
+  },
+  {
+   "name": "strict_calibrated conditional: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated conditional: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated irrelevant_addition: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated irrelevant_addition: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "df9f1cb6929d161e9fbe0d40fd64cc0a2c9e8d3a5873ac17ab31116b20aed241",
+    "mcp_decisions": "df9f1cb6929d161e9fbe0d40fd64cc0a2c9e8d3a5873ac17ab31116b20aed241"
+   }
+  },
+  {
+   "name": "strict_calibrated irrelevant_addition: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated irrelevant_addition: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated revoked_permission: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/revoked/revoked",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/revoked/revoked",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated revoked_permission: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "53b0286a3b98b308f1bbce54e10d96e8a56171ff5d82f14c099a46ec99efaa51",
+    "mcp_decisions": "53b0286a3b98b308f1bbce54e10d96e8a56171ff5d82f14c099a46ec99efaa51"
+   }
+  },
+  {
+   "name": "strict_calibrated revoked_permission: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated revoked_permission: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated revoked_licence_dependency: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "adverse/planning_only/not_authorized",
+     "EXT-OFFER": "adverse/revoked/revoked",
+     "EXT-DRAFT": "adverse/revoked/revoked"
+    },
+    "expected": {
+     "INT-RECOMMEND": "adverse/planning_only/not_authorized",
+     "EXT-OFFER": "adverse/revoked/revoked",
+     "EXT-DRAFT": "adverse/revoked/revoked"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated revoked_licence_dependency: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "4d6af3f4314510dba693919036619e7c51cc4312fde30418c7f5876759db3772",
+    "mcp_decisions": "4d6af3f4314510dba693919036619e7c51cc4312fde30418c7f5876759db3772"
+   }
+  },
+  {
+   "name": "strict_calibrated revoked_licence_dependency: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated revoked_licence_dependency: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated prohibition: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "adverse/not_authorized/not_authorized",
+     "EXT-DRAFT": "adverse/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "adverse/not_authorized/not_authorized",
+     "EXT-DRAFT": "adverse/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated prohibition: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "b666f13013474e3dc20cc06a7478e7c18ff50dbb8f6eeb3fa685379a8e6c7416",
+    "mcp_decisions": "b666f13013474e3dc20cc06a7478e7c18ff50dbb8f6eeb3fa685379a8e6c7416"
+   }
+  },
+  {
+   "name": "strict_calibrated prohibition: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated prohibition: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated stale: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated stale: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "26c246ae7a520ea6f6893b16a4e0ed4f918941f057cd9af9fa6b5cf3a9bb64f9",
+    "mcp_decisions": "26c246ae7a520ea6f6893b16a4e0ed4f918941f057cd9af9fa6b5cf3a9bb64f9"
+   }
+  },
+  {
+   "name": "strict_calibrated stale: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated stale: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated contradiction: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated contradiction: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "515e99fc7d25f43c95b260421a5598a04117b125c42369c205e28dd7ab195bbb",
+    "mcp_decisions": "515e99fc7d25f43c95b260421a5598a04117b125c42369c205e28dd7ab195bbb"
+   }
+  },
+  {
+   "name": "strict_calibrated contradiction: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated contradiction: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated expired_permission: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/expired/expired",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/expired/expired",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated expired_permission: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "6b2b4feaaceb1ce2e906845e6c7452351d723906912bf679ef8a5219421d2dd5",
+    "mcp_decisions": "6b2b4feaaceb1ce2e906845e6c7452351d723906912bf679ef8a5219421d2dd5"
+   }
+  },
+  {
+   "name": "strict_calibrated expired_permission: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated expired_permission: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated superseded_contradiction: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated superseded_contradiction: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "6f245324d045045cafa8004a87ae6e5fc6a2c34c7c8e6813129a66a11e3c9623",
+    "mcp_decisions": "6f245324d045045cafa8004a87ae6e5fc6a2c34c7c8e6813129a66a11e3c9623"
+   }
+  },
+  {
+   "name": "strict_calibrated superseded_contradiction: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated superseded_contradiction: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated internal_only: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "IC-1": "not_relevant/not_applicable/not_applicable",
+     "IC-2": "not_relevant/not_applicable/not_applicable",
+     "IC-3": "not_relevant/not_applicable/not_applicable"
+    },
+    "expected": {
+     "IC-1": "not_relevant/not_applicable/not_applicable",
+     "IC-2": "not_relevant/not_applicable/not_applicable",
+     "IC-3": "not_relevant/not_applicable/not_applicable"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated internal_only: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "7a5e71847cc401170ea0718e5df980d976bfcead2102e24a6a39b70ee0130f95",
+    "mcp_decisions": "7a5e71847cc401170ea0718e5df980d976bfcead2102e24a6a39b70ee0130f95"
+   }
+  },
+  {
+   "name": "strict_calibrated internal_only: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated internal_only: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated mixed: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "IC-1": "not_relevant/not_applicable/not_applicable",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "IC-1": "not_relevant/not_applicable/not_applicable",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "strict_calibrated mixed: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "8618a7db2afd577b81c74b6d5e0a54e70d8aef6d0f8c015ccbb197256f97c470",
+    "mcp_decisions": "8618a7db2afd577b81c74b6d5e0a54e70d8aef6d0f8c015ccbb197256f97c470"
+   }
+  },
+  {
+   "name": "strict_calibrated mixed: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated mixed: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "strict_calibrated internal control 1: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "strict_calibrated internal control 2: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "strict_calibrated internal control 3: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "strict_calibrated internal control 4: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "strict_calibrated internal control 5: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "strict_calibrated internal control 6: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "strict_calibrated internal control 7: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "strict_calibrated internal control 8: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "strict_calibrated mixed request splits by effect",
+   "passed": true,
+   "detail": {
+    "split": [
+     {
+      "effect_id": "DERIVED-1",
+      "clause_index": 0,
+      "clause_characters": 38,
+      "effect_type": "internal_document_formatting",
+      "scope_class": "internal_non_market",
+      "relevance": "not_relevant"
+     },
+     {
+      "effect_id": "DERIVED-2",
+      "clause_index": 1,
+      "clause_characters": 67,
+      "effect_type": "external_offer",
+      "scope_class": "external_effect",
+      "relevance": "relevant"
+     }
+    ]
+   }
+  },
+  {
+   "name": "full_advisory complete: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory complete: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "df9f1cb6929d161e9fbe0d40fd64cc0a2c9e8d3a5873ac17ab31116b20aed241",
+    "mcp_decisions": "df9f1cb6929d161e9fbe0d40fd64cc0a2c9e8d3a5873ac17ab31116b20aed241"
+   }
+  },
+  {
+   "name": "full_advisory complete: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory complete: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory missing: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory missing: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "2ba0dea8710b12f6b4653fa1589c07f1a5b6de931bf345b1b9e9bf9f04047c3e",
+    "mcp_decisions": "2ba0dea8710b12f6b4653fa1589c07f1a5b6de931bf345b1b9e9bf9f04047c3e"
+   }
+  },
+  {
+   "name": "full_advisory missing: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory missing: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory conditional: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "conditional/planning_only/planning_only",
+     "EXT-OFFER": "conditional/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "conditional/planning_only/planning_only",
+     "EXT-OFFER": "conditional/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory conditional: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "4c80fcb2c6cad5183190e851eee6881e6dfc45ea1303abe064f0996a2c52690c",
+    "mcp_decisions": "4c80fcb2c6cad5183190e851eee6881e6dfc45ea1303abe064f0996a2c52690c"
+   }
+  },
+  {
+   "name": "full_advisory conditional: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory conditional: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory irrelevant_addition: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory irrelevant_addition: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "df9f1cb6929d161e9fbe0d40fd64cc0a2c9e8d3a5873ac17ab31116b20aed241",
+    "mcp_decisions": "df9f1cb6929d161e9fbe0d40fd64cc0a2c9e8d3a5873ac17ab31116b20aed241"
+   }
+  },
+  {
+   "name": "full_advisory irrelevant_addition: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory irrelevant_addition: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory revoked_permission: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/revoked/revoked",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/revoked/revoked",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory revoked_permission: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "53b0286a3b98b308f1bbce54e10d96e8a56171ff5d82f14c099a46ec99efaa51",
+    "mcp_decisions": "53b0286a3b98b308f1bbce54e10d96e8a56171ff5d82f14c099a46ec99efaa51"
+   }
+  },
+  {
+   "name": "full_advisory revoked_permission: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory revoked_permission: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory revoked_licence_dependency: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "adverse/planning_only/not_authorized",
+     "EXT-OFFER": "adverse/revoked/revoked",
+     "EXT-DRAFT": "adverse/revoked/revoked"
+    },
+    "expected": {
+     "INT-RECOMMEND": "adverse/planning_only/not_authorized",
+     "EXT-OFFER": "adverse/revoked/revoked",
+     "EXT-DRAFT": "adverse/revoked/revoked"
+    }
+   }
+  },
+  {
+   "name": "full_advisory revoked_licence_dependency: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "4d6af3f4314510dba693919036619e7c51cc4312fde30418c7f5876759db3772",
+    "mcp_decisions": "4d6af3f4314510dba693919036619e7c51cc4312fde30418c7f5876759db3772"
+   }
+  },
+  {
+   "name": "full_advisory revoked_licence_dependency: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory revoked_licence_dependency: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory prohibition: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "adverse/not_authorized/not_authorized",
+     "EXT-DRAFT": "adverse/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "adverse/not_authorized/not_authorized",
+     "EXT-DRAFT": "adverse/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory prohibition: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "b666f13013474e3dc20cc06a7478e7c18ff50dbb8f6eeb3fa685379a8e6c7416",
+    "mcp_decisions": "b666f13013474e3dc20cc06a7478e7c18ff50dbb8f6eeb3fa685379a8e6c7416"
+   }
+  },
+  {
+   "name": "full_advisory prohibition: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory prohibition: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory stale: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory stale: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "26c246ae7a520ea6f6893b16a4e0ed4f918941f057cd9af9fa6b5cf3a9bb64f9",
+    "mcp_decisions": "26c246ae7a520ea6f6893b16a4e0ed4f918941f057cd9af9fa6b5cf3a9bb64f9"
+   }
+  },
+  {
+   "name": "full_advisory stale: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory stale: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory contradiction: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+     "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory contradiction: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "515e99fc7d25f43c95b260421a5598a04117b125c42369c205e28dd7ab195bbb",
+    "mcp_decisions": "515e99fc7d25f43c95b260421a5598a04117b125c42369c205e28dd7ab195bbb"
+   }
+  },
+  {
+   "name": "full_advisory contradiction: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory contradiction: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory expired_permission: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/expired/expired",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/expired/expired",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory expired_permission: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "6b2b4feaaceb1ce2e906845e6c7452351d723906912bf679ef8a5219421d2dd5",
+    "mcp_decisions": "6b2b4feaaceb1ce2e906845e6c7452351d723906912bf679ef8a5219421d2dd5"
+   }
+  },
+  {
+   "name": "full_advisory expired_permission: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory expired_permission: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory superseded_contradiction: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized",
+     "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory superseded_contradiction: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "6f245324d045045cafa8004a87ae6e5fc6a2c34c7c8e6813129a66a11e3c9623",
+    "mcp_decisions": "6f245324d045045cafa8004a87ae6e5fc6a2c34c7c8e6813129a66a11e3c9623"
+   }
+  },
+  {
+   "name": "full_advisory superseded_contradiction: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory superseded_contradiction: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory internal_only: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "IC-1": "not_relevant/not_applicable/not_applicable",
+     "IC-2": "not_relevant/not_applicable/not_applicable",
+     "IC-3": "not_relevant/not_applicable/not_applicable"
+    },
+    "expected": {
+     "IC-1": "not_relevant/not_applicable/not_applicable",
+     "IC-2": "not_relevant/not_applicable/not_applicable",
+     "IC-3": "not_relevant/not_applicable/not_applicable"
+    }
+   }
+  },
+  {
+   "name": "full_advisory internal_only: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "7a5e71847cc401170ea0718e5df980d976bfcead2102e24a6a39b70ee0130f95",
+    "mcp_decisions": "7a5e71847cc401170ea0718e5df980d976bfcead2102e24a6a39b70ee0130f95"
+   }
+  },
+  {
+   "name": "full_advisory internal_only: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory internal_only: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory mixed: exact effect set and states",
+   "passed": true,
+   "detail": {
+    "status": 200,
+    "got": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "IC-1": "not_relevant/not_applicable/not_applicable",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized"
+    },
+    "expected": {
+     "INT-RECOMMEND": "favorable/planning_only/planning_only",
+     "IC-1": "not_relevant/not_applicable/not_applicable",
+     "EXT-OFFER": "favorable/not_authorized/not_authorized"
+    }
+   }
+  },
+  {
+   "name": "full_advisory mixed: MCP parity",
+   "passed": true,
+   "detail": {
+    "rest_decisions": "8618a7db2afd577b81c74b6d5e0a54e70d8aef6d0f8c015ccbb197256f97c470",
+    "mcp_decisions": "8618a7db2afd577b81c74b6d5e0a54e70d8aef6d0f8c015ccbb197256f97c470"
+   }
+  },
+  {
+   "name": "full_advisory mixed: no contradicting root field",
+   "passed": true
+  },
+  {
+   "name": "full_advisory mixed: release manifest bound",
+   "passed": true
+  },
+  {
+   "name": "full_advisory internal control 1: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "full_advisory internal control 2: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "full_advisory internal control 3: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "full_advisory internal control 4: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "full_advisory internal control 5: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "full_advisory internal control 6: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "full_advisory internal control 7: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "full_advisory internal control 8: not_relevant, terminal, no evidence requested",
+   "passed": true,
+   "detail": {
+    "status": "not_relevant"
+   }
+  },
+  {
+   "name": "full_advisory mixed request splits by effect",
+   "passed": true,
+   "detail": {
+    "split": [
+     {
+      "effect_id": "DERIVED-1",
+      "clause_index": 0,
+      "clause_characters": 38,
+      "effect_type": "internal_document_formatting",
+      "scope_class": "internal_non_market",
+      "relevance": "not_relevant"
+     },
+     {
+      "effect_id": "DERIVED-2",
+      "clause_index": 1,
+      "clause_characters": 67,
+      "effect_type": "external_offer",
+      "scope_class": "external_effect",
+      "relevance": "relevant"
+     }
+    ]
+   }
+  }
+ ],
+ "failures": [],
+ "release_manifest_id": "MVRRM-d108c2d199e484b844f9dcd0914a42d2",
+ "deployment_revision": "2026-11-01.effect-state.2",
+ "finished_at": "2026-11-01T20:24:16.797Z",
+ "passed": true
+}

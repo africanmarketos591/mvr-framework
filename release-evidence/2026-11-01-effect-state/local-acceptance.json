@@ -1,0 +1,66 @@
+{
+ "head": "8b350cd0123b6cb44c44c5a66aefec8d21367c7f",
+ "environment": "Windows 10, Node v24.11.0, temporary files on D:",
+ "commands": 276,
+ "total": 276,
+ "passed": true,
+ "reruns": [],
+ "r8_suites": [
+  {
+   "command": "node scripts/test-effect-decision.mjs",
+   "exit": 0,
+   "elapsed_ms": 333
+  },
+  {
+   "command": "node scripts/test-effect-decision-http.mjs",
+   "exit": 0,
+   "elapsed_ms": 2973
+  },
+  {
+   "command": "node scripts/test-first-call-internal-controls.mjs",
+   "exit": 0,
+   "elapsed_ms": 1152
+  },
+  {
+   "command": "node scripts/test-interpretation-submission.mjs",
+   "exit": 0,
+   "elapsed_ms": 2684
+  },
+  {
+   "command": "node scripts/test-audit-findings.mjs",
+   "exit": 0,
+   "elapsed_ms": 541
+  },
+  {
+   "command": "node scripts/test-audit-findings-http.mjs",
+   "exit": 0,
+   "elapsed_ms": 39496
+  },
+  {
+   "command": "node scripts/test-authority-conformance-quota.mjs",
+   "exit": 0,
+   "elapsed_ms": 800
+  },
+  {
+   "command": "node scripts/test-trust-chain.mjs",
+   "exit": 0,
+   "elapsed_ms": 932
+  },
+  {
+   "command": "node scripts/test-verification-ledger.mjs",
+   "exit": 0,
+   "elapsed_ms": 322
+  },
+  {
+   "command": "node scripts/test-release-manifest.mjs",
+   "exit": 0,
+   "elapsed_ms": 3290
+  },
+  {
+   "command": "node scripts/test-golden-hash-migration-effect-state.mjs",
+   "exit": 0,
+   "elapsed_ms": 931
+  }
+ ],
+ "classification": "AMOS lab verification on the operator machine; GitHub Actions CI is linked in deployment.json"
+}

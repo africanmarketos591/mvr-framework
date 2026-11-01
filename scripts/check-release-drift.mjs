@@ -14,7 +14,7 @@ const sha = v => createHash('sha256').update(typeof v === 'string' ? v : JSON.st
 const canon = v => Array.isArray(v) ? v.map(canon) : v && typeof v === 'object' ? Object.fromEntries(Object.keys(v).sort().map(k => [k, canon(v[k])])) : v;
 export const manifestId = body => 'MVRRM-' + sha(JSON.stringify(canon(body))).slice(0, 32);
 const base = process.env.MVR_BASE_URL || 'https://africanmarketos.com';
-const results = [], notRun = [];
+const results = [], notRun = [], identity = {checked_at: new Date().toISOString(), base};
 const check = (name, ok, detail) => { results.push({name, passed: !!ok, ...(detail === undefined ? {} : {detail})}); };
 const dir = path.join(root, 'release-manifests');
 const committed = fs.existsSync(dir) ? fs.readdirSync(dir).filter(f => f.endsWith('.json')).map(f => ({file: f, manifest: JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))})) : [];
@@ -28,6 +28,7 @@ if (process.argv.includes('--live')) {
   const liveRes = await get('/.well-known/mvr-release-manifest.json');
   const live = JSON.parse(liveRes.text);
   const {manifest_id, ...body} = live;
+  Object.assign(identity, {deployment_revision: live.deployment_revision, release_manifest_id: manifest_id});
   check('live manifest is content-addressed', manifest_id === manifestId(body), {manifest_id});
   const match = committed.find(c => c.manifest.deployment_revision === live.deployment_revision);
   check('live manifest is committed and attested in release-manifests/', !!match && JSON.stringify(match.manifest) === JSON.stringify(live), {revision: live.deployment_revision});
@@ -54,5 +55,5 @@ if (process.argv.includes('--live')) {
   finally { fs.rmSync(path.join(root, '.live-openapi.json'), {force: true}); }
 }
 const failed = results.filter(r => !r.passed);
-console.log(JSON.stringify({passed: failed.length === 0, checks: results.length, failed, not_run: notRun}, null, 1));
+console.log(JSON.stringify({passed: failed.length === 0, checks: results.length, failed, not_run: notRun, ...identity, results: results.map(({name, passed}) => ({name, passed}))}, null, 1));
 process.exitCode = failed.length ? 1 : 0;

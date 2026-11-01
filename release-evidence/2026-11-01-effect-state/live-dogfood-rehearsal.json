@@ -1,0 +1,292 @@
+{
+ "suite": "internal-dogfood-lab-rehearsal",
+ "base": "https://africanmarketos.com",
+ "realm": "amos-lab",
+ "trust_root_pinned": true,
+ "ran_at": "2026-11-01T20:39:50.438Z",
+ "runner_passed": true,
+ "runner_error": null,
+ "summary": {
+  "PASS": 21,
+  "FAIL": 0,
+  "NOT RUN": 13
+ },
+ "cases": [
+  {
+   "id": "P01",
+   "case": "Current exact-effect commit by the bound executor",
+   "expected": "applies_once",
+   "status": "PASS",
+   "proof_checks": [
+    "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none"
+   ]
+  },
+  {
+   "id": "P02",
+   "case": "Current-state proof verifies through the pinned root before the fence",
+   "expected": "applies_once",
+   "status": "PASS",
+   "proof_checks": [
+    "current state verifies through the pinned root and allows the exact effect"
+   ]
+  },
+  {
+   "id": "P03",
+   "case": "Permission position fully permitted for the exact effect",
+   "expected": "authorized_lab_only",
+   "status": "PASS",
+   "proof_checks": [
+    "read permission position"
+   ]
+  },
+  {
+   "id": "P04",
+   "case": "Issuer supersession of a prohibition restores the exact effect",
+   "expected": "applies_once",
+   "status": "PASS",
+   "proof_checks": [
+    "register signed lab prohibition",
+    "signed issuer supersession",
+    "verify allow"
+   ]
+  },
+  {
+   "id": "P05",
+   "case": "Renewal is a new capability after a full recheck; the predecessor stays invalid",
+   "expected": "new_object_only",
+   "status": "PASS",
+   "proof_checks": [
+    "commit-time check stops an effect revoked after verification",
+    "register harmless capability three",
+    "verify allow"
+   ]
+  },
+  {
+   "id": "P06",
+   "case": "30 consecutive harmless valid commits apply exactly once each",
+   "status": "NOT RUN",
+   "reason": "needs the team run: team_run"
+  },
+  {
+   "id": "N01",
+   "case": "Altered amount",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N02",
+   "case": "Altered currency",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N03",
+   "case": "Altered effect type",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N04",
+   "case": "Altered resource",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N05",
+   "case": "External contact broadened",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N06",
+   "case": "Counterparty changed",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N07",
+   "case": "Wrong principal (not the bound executor)",
+   "status": "NOT RUN",
+   "reason": "proven by a private CI suite: scripts/test-authority-chain-http.mjs (EXECUTOR_NOT_BOUND)"
+  },
+  {
+   "id": "N08",
+   "case": "Cross-session registry substitution",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "a cross-session substitution fails before any effect"
+   ]
+  },
+  {
+   "id": "N09",
+   "case": "Cross-tenant access to another tenant's case or capability",
+   "status": "NOT RUN",
+   "reason": "proven by a private CI suite: scripts/test-authority-cross-tenant.mjs"
+  },
+  {
+   "id": "N10",
+   "case": "Expired capability",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none"
+   ]
+  },
+  {
+   "id": "N11",
+   "case": "Stale current-state proof beyond max_offline_age",
+   "status": "NOT RUN",
+   "reason": "proven by a private CI suite: scripts/test-trust-chain.mjs (stale proof)"
+  },
+  {
+   "id": "N12",
+   "case": "Revoked capability",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "commit-time check stops an effect revoked after verification",
+    "after revocation the current-state proof withholds the effect"
+   ]
+  },
+  {
+   "id": "N13",
+   "case": "Superseded capability",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "commit after revocation"
+   ]
+  },
+  {
+   "id": "N14",
+   "case": "Revoked residual closure under the capability",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "revoke closure",
+    "verify deny"
+   ]
+  },
+  {
+   "id": "N15",
+   "case": "Revoked reviewer credential",
+   "status": "NOT RUN",
+   "reason": "proven by a private CI suite: scripts/test-authority-chain-http.mjs (revoked credential)"
+  },
+  {
+   "id": "N16",
+   "case": "Issuer prohibition in force",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "register signed lab prohibition",
+    "verify deny"
+   ]
+  },
+  {
+   "id": "N17",
+   "case": "Forged receipt (hash or signature altered)",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none"
+   ]
+  },
+  {
+   "id": "N18",
+   "case": "Self-review: a reviewer of the basis approves or executes",
+   "status": "NOT RUN",
+   "reason": "needs the team run: team_run_distinct_people"
+  },
+  {
+   "id": "N19",
+   "case": "Self-issue: the approver executes",
+   "status": "NOT RUN",
+   "reason": "needs the team run: team_run_distinct_people"
+  },
+  {
+   "id": "N20",
+   "case": "Commit after session close",
+   "status": "NOT RUN",
+   "reason": "proven by a private CI suite: scripts/test-trust-chain.mjs (closed session fails closed)"
+  },
+  {
+   "id": "R01",
+   "case": "Replay of a consumed commit",
+   "expected": "exact_once",
+   "status": "PASS",
+   "proof_checks": [
+    "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none"
+   ]
+  },
+  {
+   "id": "R02",
+   "case": "Concurrent double commit",
+   "status": "NOT RUN",
+   "reason": "proven by a private CI suite: scripts/test-receiver-kit.mjs (concurrency)"
+  },
+  {
+   "id": "R03",
+   "case": "Acknowledgement lost after effect",
+   "status": "NOT RUN",
+   "reason": "proven by a private CI suite: scripts/test-receiver-kit.mjs (acknowledgement loss)"
+  },
+  {
+   "id": "R04",
+   "case": "Receiver restart between commit and effect",
+   "status": "NOT RUN",
+   "reason": "proven by a private CI suite: scripts/test-receiver-kit.mjs (restart)"
+  },
+  {
+   "id": "R05",
+   "case": "Receiver crash after effect, before outcome",
+   "status": "NOT RUN",
+   "reason": "proven by a private CI suite: scripts/test-durable-worker.mjs (crash recovery)"
+  },
+  {
+   "id": "R06",
+   "case": "Revocation reaches the receiver before commit",
+   "expected": "applies_zero",
+   "status": "PASS",
+   "proof_checks": [
+    "revoke between verification and commit",
+    "commit after revocation"
+   ]
+  },
+  {
+   "id": "R07",
+   "case": "Current-state service unavailable",
+   "expected": "fail_closed",
+   "status": "PASS",
+   "proof_checks": [
+    "harmless executor fresh checks, outage, cached-answer avoidance and observed verify-to-effect race"
+   ]
+  },
+  {
+   "id": "R08",
+   "case": "Cold observer reconstructs identities, evidence, decisions, changes and the effect from the journal",
+   "status": "NOT RUN",
+   "reason": "needs the team run: team_run_separate_observer"
+  }
+ ],
+ "boundary": "Lab realm only. The team run (distinct AMOS team members, organisation-bound staging registry, 30 consecutive commits) is separate and not represented by this rehearsal."
+}

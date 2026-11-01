@@ -1,0 +1,85 @@
+{
+ "deployment_revision": "2026-11-01.effect-state.2",
+ "release_manifest_id": "MVRRM-d108c2d199e484b844f9dcd0914a42d2",
+ "credential_scan": {
+  "patterns": [
+   "/mvr_eval_[A-Za-z0-9_-]{8,}/",
+   "/\\bacb_[a-f0-9]{16,}/",
+   "/MVRIS-[a-f0-9]{16,}/",
+   "/private_pkcs8_b64/",
+   "/\"session_token\"\\s*:\\s*\"[^\"]{8,}/",
+   "/X-API-Key\"\\s*:\\s*\"[^<\"]{8,}/"
+  ],
+  "hits": 0
+ },
+ "files": [
+  {
+   "path": "README.md",
+   "sha256": "bf1f243818c20be936e3f7cbf5a2b7c559850c725fa3c18cd393fb3e2b04faaa"
+  },
+  {
+   "path": "deployment.json",
+   "sha256": "4f60d80686ed934337d2c708551793df933b720d4fe4609bf154b107a4c15389"
+  },
+  {
+   "path": "live-audit-findings.json",
+   "sha256": "29cd538784653d6b0eb3bcd6d465d1eecb180633067b9b59074168edd78a85cf"
+  },
+  {
+   "path": "live-canary.json",
+   "sha256": "d39e7a42eaec341f3a3ae6e9a8ab5503cca5475188f1fbd5e94f5e13a9702488"
+  },
+  {
+   "path": "live-dogfood-rehearsal.json",
+   "sha256": "1871b023c8ccfe600f4b1e9e8790c28d0e06f461c9fc337261439662ec184027"
+  },
+  {
+   "path": "live-effect-decision.json",
+   "sha256": "3fbb551ce8ed4ada4375783df05d6c12fcad17de838628f2e7cf089ad34b65aa"
+  },
+  {
+   "path": "live-favourable-path.json",
+   "sha256": "8504e717febe0e865c5bc41da96eefc77aaefbce131e99011b0658d2efedd3fd"
+  },
+  {
+   "path": "live-interpretation-submission-cross-tenant.json",
+   "sha256": "fc8cfc985df37e29c92995f79f4d44d35aaf7450e4c9948f8718e4d71dbb6dce"
+  },
+  {
+   "path": "live-interpretation-submission.json",
+   "sha256": "0294cffefca2234361fa4338c93ac126c41fb296b60f194ca071697909e5a8f0"
+  },
+  {
+   "path": "live-issuer-state-v2.json",
+   "sha256": "b9c3bfe417c22c2f58061f4077c4e7e10b9e5f3cd1f673f6c81ac240cfec94af"
+  },
+  {
+   "path": "live-licensed-favourable-cleanup.json",
+   "sha256": "a870a06739509f4aa3f983e12ae0c80df91cda6cdf417433c7873369c881b507"
+  },
+  {
+   "path": "live-licensed-favourable.json",
+   "sha256": "d4b84a544f1ca6e0b3d196a0fff2cffa23d558ac5763e49c92b11ea2d3fc601c"
+  },
+  {
+   "path": "live-licensed.json",
+   "sha256": "2e4215b9440a6eb3814b78563e16d47140d3d430db01c3bec15655264cb91cc2"
+  },
+  {
+   "path": "live-receiver-staging.json",
+   "sha256": "1bf8ce4e291c03b6b408cd56633a4a55c2f3cb1c4337387a0e4a983bdb195d2e"
+  },
+  {
+   "path": "live-release-drift.json",
+   "sha256": "9c6c90c4a91d3d8709e73995de250c9f0f64f97e01db9577d9fb338376f82d39"
+  },
+  {
+   "path": "local-acceptance.json",
+   "sha256": "d4dace005380a60d9239700873d5eefddd1031ee85571420120bee61d34c9bd2"
+  },
+  {
+   "path": "verify.mjs",
+   "sha256": "f0c00945d997cb5668857eb6620857f5dca5f001e06f137193976933374e2bb6"
+  }
+ ]
+}
