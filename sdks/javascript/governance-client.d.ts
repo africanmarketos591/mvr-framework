@@ -1,5 +1,5 @@
 // Generated from the AMOS OpenAPI contract by scripts/generate-governance-client.mjs (https://github.com/africanmarketos591/mvr-framework).
-// Contract version v6.32.0; operation subset SHA-256: 568c81efaf61f1773791b31c90ece3893149121748c2994c63ad452d565c8621. Do not edit by hand; regenerate instead.
+// Contract version v6.32.0; operation subset SHA-256: bddfbce458bd4f2d81d1943e9c1936cab428d899f5451f94315e954d59d133b7. Do not edit by hand; regenerate instead.
 /** Request body for POST /v1/review-cases. */
 export type ReviewCasesRequest = {
   workplan_id?: string;
@@ -600,7 +600,7 @@ export type AuthorityConformanceRequest = ({
     action: "call";
     session_id: string;
     session_token: string;
-    target: "authority" | "case" | "attestation" | "delivery";
+    target: "authority" | "case" | "attestation" | "delivery" | "current_state";
     request: {
       [key: string]: unknown;
     };
@@ -625,6 +625,136 @@ export type KeyCeremonyStatusResponse = KeyCeremonyStatus;
 
 /** Response body for GET /v1/key-ceremony/contract. */
 export type KeyCeremonyContractResponse = KeyCeremonyContract;
+
+/** Request body for POST /v1/effect-decision. */
+export type EffectDecisionRequest = {
+  analysis_date: string;
+  context_freshness_window_days?: number;
+  subject?: {
+    entity_name?: string;
+    subject_id?: string;
+  };
+  market_scope?: {
+    country?: string;
+    locality?: string;
+    [key: string]: unknown;
+  };
+  decision_question?: string;
+  request_id?: string;
+  claims?: Array<{
+      claim_id: string;
+      claim?: string;
+      load_bearing?: boolean;
+      support_links?: Array<{
+          claim_id?: string;
+          evidence_id: string;
+          relationship: "direct_support" | "qualifies" | "contradicts" | "context_only";
+          locator: string;
+          [key: string]: unknown;
+        }>;
+      [key: string]: unknown;
+    }>;
+  claim_links?: Array<{
+      claim_id: string;
+      evidence_id: string;
+      relationship: "direct_support" | "qualifies" | "contradicts" | "context_only";
+      locator: string;
+      [key: string]: unknown;
+    }>;
+  evidence_pack?: Array<{
+      evidence_id?: string;
+      id?: string;
+      authority_effect?: "grant" | "revocation" | "suspension" | "prohibition" | "expiry" | "scope_narrowing";
+      applies_to_effect_ids?: Array<string>;
+      applies_to_effect_types?: Array<string>;
+      supersedes?: Array<string>;
+      conditions?: Array<{
+          condition_id?: string;
+          type: "amount_at_most" | "geography_within" | "valid_until" | "counterparty_is" | "duration_at_most" | "prerequisite";
+          description?: string;
+          amount_minor?: number;
+          currency?: string;
+          country?: string;
+          locality?: string;
+          date?: string;
+          counterparty_ref?: string;
+          days?: number;
+          satisfied_by_evidence_id?: string;
+        }>;
+      [key: string]: unknown;
+    }>;
+  evidence_items?: Array<unknown>;
+  requested_effects: Array<{
+      effect_id: string;
+      effect_type?: string;
+      description?: string;
+      depends_on_claims?: Array<string>;
+      geography?: {
+        country: string;
+        locality?: string;
+      };
+      amount?: {
+        amount_minor: number;
+        currency: string;
+      };
+      duration_days?: number;
+      counterparty_ref?: string;
+      authority_ref?: {
+        case_id: string;
+        requested_effect: {
+          [key: string]: unknown;
+        };
+        geography?: string;
+      };
+    }>;
+  interpretation_submission_id?: string;
+};
+
+/** Response body for GET /v1/effect-decision/contract. */
+export type EffectDecisionContractResponse = Record<string, unknown>;
+
+/** Request body for POST /v1/interpretation-submissions. */
+export type InterpretationSubmissionsRequest = {
+  action: "submit" | "get" | "dispose";
+  submission_token?: string;
+  submission_id?: string;
+  schema_version?: "mvr.interpretation-submission/1";
+  model?: {
+    provider: string;
+    model: string;
+    model_version: string;
+  };
+  prompt_policy_sha256?: string;
+  workflow_id?: string | null;
+  task_set_sha256?: string;
+  readings?: Array<{
+      task_id: string;
+      claim_sha256: string;
+      passage_sha256: string;
+      label: "supports" | "qualifies" | "adverse" | "unrelated";
+      rationale?: string;
+      model?: {
+        provider: string;
+        model: string;
+        model_version: string;
+      };
+    }>;
+  task_id?: string;
+  disposition?: "accept" | "qualify" | "reject_support" | "adverse";
+  reason?: string;
+};
+
+/** Response body for POST /v1/interpretation-submissions. */
+export type InterpretationSubmissionsResponse = InterpretationSubmissionResponse;
+
+/** Response body for GET /v1/interpretation-submissions/contract. */
+export type InterpretationSubmissionsContractResponse = Record<string, unknown>;
+
+/** Response body for GET /v1/audit-capabilities. */
+export type AuditCapabilitiesResponse = Record<string, unknown>;
+
+/** Response body for GET /v1/audit-findings/contract. */
+export type AuditFindingsContractResponse = Record<string, unknown>;
 
 export type AuthorityChainContract = {
   contract_version?: "mvr.authority-chain/1";
@@ -2341,6 +2471,97 @@ export type AuthorityReceiptVerificationResponse = {
   [key: string]: unknown;
 };
 
+export type EffectDecisionResponse = {
+  status: string;
+  code?: string;
+  contract_version: "mvr.effect-decision/1";
+  decision_performed?: boolean;
+  issues?: Array<{
+      [key: string]: unknown;
+    }>;
+  analysis_date?: string;
+  effect_count?: number;
+  effects?: Array<{
+      effect_id: string;
+      effect_type: "internal_document_formatting" | "internal_document_editing" | "internal_minutes_or_notes" | "equipment_maintenance" | "internal_scheduling" | "it_administration" | "office_administration" | "internal_recommendation" | "internal_planning" | "pilot_design" | "evidence_collection_design" | "board_reporting" | "internal_review_packet" | "external_offer" | "external_communication" | "public_claim" | "distribution_agreement" | "partner_onboarding" | "procurement_order" | "create_draft_record" | "programme_disbursement" | "payment" | "market_launch" | "contract_signature" | "other_external_effect" | "credit_decision";
+      scope_class: "internal_non_market" | "internal_analysis" | "external_effect" | "excluded";
+      relevance: "relevant" | "not_relevant" | "excluded_credit_decision";
+      analytical_evidence_status: "favorable" | "conditional" | "insufficient" | "adverse" | "not_relevant";
+      institutional_authority_status: "authorized" | "planning_only" | "not_authorized" | "revoked" | "expired" | "not_applicable";
+      execution_authorization_status: "authorized" | "planning_only" | "not_authorized" | "revoked" | "expired" | "not_applicable";
+      precedence_rule: string;
+      reason_codes: Array<string>;
+      authority_reason_codes?: Array<string>;
+      execution_reason_codes?: Array<string>;
+      dependencies: {
+        [key: string]: unknown;
+      };
+      claims?: Array<{
+          [key: string]: unknown;
+        }>;
+      controlling_records: Array<{
+          [key: string]: unknown;
+        }>;
+      excluded_records: Array<{
+          [key: string]: unknown;
+        }>;
+      authority_records?: Array<{
+          [key: string]: unknown;
+        }>;
+      supported_scope?: {
+        [key: string]: unknown;
+      } | null;
+      analytical_closure?: Array<{
+          [key: string]: unknown;
+        }>;
+      authority_closure?: Array<{
+          [key: string]: unknown;
+        }>;
+      smallest_decisive_closure: Array<{
+          [key: string]: unknown;
+        }>;
+      permitted_interim_scope: Array<string>;
+      effect_sha256: string;
+      normative_sha256: string;
+      summary?: string;
+      [key: string]: unknown;
+    }>;
+  relevance?: {
+    [key: string]: unknown;
+  };
+  dependency_index?: {
+    [key: string]: unknown;
+  };
+  unlinked_record_ids?: Array<string>;
+  effect_set_sha256?: string;
+  decisions_sha256?: string;
+  boundaries?: {
+    [key: string]: unknown;
+  };
+  [key: string]: unknown;
+};
+
+export type InterpretationSubmissionResponse = {
+  status: string;
+  code?: string;
+  contract_version: "mvr.interpretation-submission/1";
+  submission_id?: string;
+  receipt_id?: string;
+  accepted_count?: number;
+  rejected_count?: number;
+  readings?: Array<{
+      index: number;
+      task_id?: string | null;
+      status: "accepted" | "rejected";
+      code: string;
+      [key: string]: unknown;
+    }>;
+  review?: {
+    [key: string]: unknown;
+  };
+  [key: string]: unknown;
+};
+
 export type KeyCeremonyContract = {
   contract_version: string;
   route: string;
@@ -3017,4 +3238,10 @@ export declare class GovernanceClient {
   keyCeremony(body: KeyCeremonyRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<KeyCeremonyResponse>>;
   keyCeremonyStatus(options?: GovernanceCallOptions): Promise<GovernanceResult<KeyCeremonyStatusResponse>>;
   keyCeremonyContract(options?: GovernanceCallOptions): Promise<GovernanceResult<KeyCeremonyContractResponse>>;
+  effectDecision(body: EffectDecisionRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<EffectDecisionResponse>>;
+  effectDecisionContract(options?: GovernanceCallOptions): Promise<GovernanceResult<EffectDecisionContractResponse>>;
+  interpretationSubmissions(body: InterpretationSubmissionsRequest, options?: GovernanceCallOptions): Promise<GovernanceResult<InterpretationSubmissionsResponse>>;
+  interpretationSubmissionsContract(options?: GovernanceCallOptions): Promise<GovernanceResult<InterpretationSubmissionsContractResponse>>;
+  auditCapabilities(options?: GovernanceCallOptions): Promise<GovernanceResult<AuditCapabilitiesResponse>>;
+  auditFindingsContract(options?: GovernanceCallOptions): Promise<GovernanceResult<AuditFindingsContractResponse>>;
 }

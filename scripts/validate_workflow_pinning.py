@@ -21,6 +21,7 @@ APPROVED_ACTION_COMMITS = {
     "actions/setup-node": "a0853c24544627f65ddf259abe73b1d18a591444",  # v5.0.0
     "actions/setup-python": "a26af69be951a213d495a4c3e4e4022e16d87065",  # v5.6.0
     "pypa/gh-action-pypi-publish": "dc37677b2e1c63e2034f94d8a5b11f265b73ba33",  # v1.14.2
+    "actions/attest-build-provenance": "4d101475d8b20a2381f78447822ac1eab6504dd8",  # v4.2.2
 }
 
 

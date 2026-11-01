@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "base": "https://africanmarketos.com",
+  "expected_revision": "2026-11-01.effect-state.2",
+  "served_revisions": [
+    "2026-11-01.effect-state.2"
+  ],
+  "checked_at": "2026-11-01T22:04:02.827Z",
+  "checks": [
+    {
+      "name": "public contract routes answer 200 with no-store",
+      "passed": true,
+      "detail": {
+        "routes": 7
+      }
+    },
+    {
+      "name": "one serving revision, equal to the newest published release",
+      "passed": true,
+      "detail": {
+        "revision": "2026-11-01.effect-state.2"
+      }
+    },
+    {
+      "name": "the generated governance client matches the live contract",
+      "passed": true,
+      "detail": {
+        "operations": 19,
+        "contract_subset_sha256": "bddfbce458bd4f2d81d1943e9c1936cab428d899f5451f94315e954d59d133b7"
+      }
+    },
+    {
+      "name": "issuer-state vectors still bind the live engine",
+      "passed": true,
+      "detail": {
+        "action_ids": 21,
+        "engine": "v6.32.0"
+      }
+    },
+    {
+      "name": "the public receipt verifier rejects tampering and unsessioned lab keys",
+      "passed": true,
+      "detail": {
+        "lab_reason": "unknown_or_ambiguous_key",
+        "tampered_reason": "hash_mismatch"
+      }
+    },
+    {
+      "name": "protected routes refuse without credentials and never fail open",
+      "passed": true
+    },
+    {
+      "name": "the key ceremony status is coherent and the receipt registry is public-only",
+      "passed": true,
+      "detail": {
+        "ceremony_state": "not_started",
+        "key_bound": false,
+        "registry_keys": 0
+      }
+    },
+    {
+      "name": "no public route carries private key material",
+      "passed": true
+    },
+    {
+      "name": "the key ceremony page keeps its security headers",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "classification": "Read-only AMOS canary: no session, key, write or effect"
+}

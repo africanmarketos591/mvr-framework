@@ -8,8 +8,8 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 
-export const GOVERNANCE_OPERATIONS_LIST=['/v1/review-cases','/v1/review-cases/contract','/v1/review-sandbox','/v1/review-sandbox/contract','/v1/authority-chain','/v1/authority-chain/contract','/v1/authority-receipts/verify','/v1/reviewer-attestations','/v1/reviewer-attestations/contract','/v1/authority-conformance','/v1/key-ceremony','/v1/key-ceremony/status','/v1/key-ceremony/contract'];
-const SDK_VERSION='2026-10-26';
+export const GOVERNANCE_OPERATIONS_LIST=['/v1/review-cases','/v1/review-cases/contract','/v1/review-sandbox','/v1/review-sandbox/contract','/v1/authority-chain','/v1/authority-chain/contract','/v1/authority-receipts/verify','/v1/reviewer-attestations','/v1/reviewer-attestations/contract','/v1/authority-conformance','/v1/key-ceremony','/v1/key-ceremony/status','/v1/key-ceremony/contract','/v1/effect-decision','/v1/effect-decision/contract','/v1/interpretation-submissions','/v1/interpretation-submissions/contract','/v1/audit-capabilities','/v1/audit-findings/contract'];
+const SDK_VERSION='2026-11-01';
 const camel=p=>p.replace(/^\/v1\//,'').split(/[-/]/).map((w,i)=>i?w[0].toUpperCase()+w.slice(1):w).join('');
 const pascal=n=>n[0].toUpperCase()+n.slice(1);
 const snake=n=>n.replace(/[A-Z]/g,c=>'_'+c.toLowerCase());

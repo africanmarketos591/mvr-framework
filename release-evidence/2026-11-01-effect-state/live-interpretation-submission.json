@@ -1,0 +1,113 @@
+{
+ "suite": "interpretation-submission-live",
+ "base": "https://africanmarketos.com",
+ "started_at": "2026-11-01T20:24:16.978Z",
+ "classification": "proprietary lab fixtures",
+ "checks": [
+  {
+   "name": "a licensed workflow step issues a slot bound to its tasks, and names the tool",
+   "passed": true,
+   "detail": {
+    "tasks": 2,
+    "submission_id": "ISB-550b199fa28a6c32513676771a398af8"
+   }
+  },
+  {
+   "name": "positive: every reading reaches label evaluation and is accepted",
+   "passed": true,
+   "detail": [
+    {
+     "index": 0,
+     "task_id": "PT-7dbb05ec8f19655b88e5b01b086ec4df978872b8273dd26d",
+     "status": "accepted",
+     "code": "READING_ACCEPTED",
+     "label": "supports",
+     "claim_id": "C1",
+     "evidence_id": "E1"
+    },
+    {
+     "index": 1,
+     "task_id": "PT-d61df961a264963c0def064ec905df7256b9d862f6393093",
+     "status": "accepted",
+     "code": "READING_ACCEPTED",
+     "label": "supports",
+     "claim_id": "C1",
+     "evidence_id": "E2"
+    }
+   ]
+  },
+  {
+   "name": "replay by the same model fails SUBMISSION_REPLAYED",
+   "passed": true
+  },
+  {
+   "name": "a conflicting second model is accepted and the conflict retained",
+   "passed": true
+  },
+  {
+   "name": "each negative reading fails for its own reason",
+   "passed": true,
+   "detail": [
+    "CLAIM_HASH_MISMATCH",
+    "PASSAGE_HASH_MISMATCH",
+    "LABEL_NOT_ALLOWED",
+    "TASK_NOT_IN_SUBMISSION",
+    "READING_FIELD_NOT_ALLOWED",
+    "MODEL_IDENTITY_MISMATCH",
+    "READING_ACCEPTED",
+    "DUPLICATE_TASK_IN_SUBMISSION"
+   ]
+  },
+  {
+   "name": "submission negative: receipt as fresh input",
+   "passed": true,
+   "detail": "RECEIPT_NOT_SUBMISSION_INPUT"
+  },
+  {
+   "name": "submission negative: wrong schema version",
+   "passed": true,
+   "detail": "SUBMISSION_SCHEMA_VERSION_UNSUPPORTED"
+  },
+  {
+   "name": "submission negative: mutated workflow binding",
+   "passed": true,
+   "detail": "IMMUTABLE_FIELD_MISMATCH"
+  },
+  {
+   "name": "submission negative: extra field",
+   "passed": true,
+   "detail": "SUBMISSION_FIELD_NOT_ALLOWED"
+  },
+  {
+   "name": "model readings alone change no effect decision",
+   "passed": true,
+   "detail": [
+    "favorable",
+    "favorable"
+   ]
+  },
+  {
+   "name": "a reviewer rejection changes only the dependent effect; no permission is granted",
+   "passed": true,
+   "detail": [
+    [
+     "EXT-C1",
+     "insufficient"
+    ],
+    [
+     "EXT-C9",
+     "favorable"
+    ]
+   ]
+  }
+ ],
+ "failures": [],
+ "not_run": [
+  {
+   "check": "cross-tenant injection",
+   "reason": "MVR_API_KEY_2 (a key in another tenant) not supplied"
+  }
+ ],
+ "finished_at": "2026-11-01T20:24:55.453Z",
+ "passed": true
+}

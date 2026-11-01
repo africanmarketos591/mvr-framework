@@ -15656,78 +15656,6 @@
                       }
                     },
                     "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
-                  },
-                  "passage_interpretations": {
-                    "type": "array",
-                    "maxItems": 40,
-                    "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "required": [
-                        "task_id",
-                        "stance",
-                        "source",
-                        "attribution"
-                      ],
-                      "properties": {
-                        "task_id": {
-                          "type": "string",
-                          "pattern": "^PT-[a-f0-9]{48}$"
-                        },
-                        "stance": {
-                          "type": "string",
-                          "enum": [
-                            "supports",
-                            "qualifies",
-                            "adverse",
-                            "unrelated"
-                          ]
-                        },
-                        "source": {
-                          "type": "string",
-                          "enum": [
-                            "model"
-                          ]
-                        },
-                        "attribution": {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "required": [
-                            "provider",
-                            "model",
-                            "model_version",
-                            "prompt_sha256",
-                            "output_sha256"
-                          ],
-                          "properties": {
-                            "provider": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 100
-                            },
-                            "model": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "model_version": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "prompt_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            },
-                            "output_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            }
-                          }
-                        }
-                      }
-                    }
                   }
                 },
                 "description": "Compiles incomplete or complete context without requiring evidence, subject, country or requested_use. Market precedence: market_context, market_scope, target_market, subject. Use precedence: requested_use, decision_use, output_use. Empty input returns verification_required. Supplied containers and evidence field types are validated before normalization, and a supplied analysis_date must be a real ISO date or datetime. Full decision evidence requirements are not imposed on incomplete items; sentiment, freshness and corroboration remain inference limits, not authorization.",
@@ -16138,78 +16066,6 @@
                       }
                     },
                     "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
-                  },
-                  "passage_interpretations": {
-                    "type": "array",
-                    "maxItems": 40,
-                    "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "required": [
-                        "task_id",
-                        "stance",
-                        "source",
-                        "attribution"
-                      ],
-                      "properties": {
-                        "task_id": {
-                          "type": "string",
-                          "pattern": "^PT-[a-f0-9]{48}$"
-                        },
-                        "stance": {
-                          "type": "string",
-                          "enum": [
-                            "supports",
-                            "qualifies",
-                            "adverse",
-                            "unrelated"
-                          ]
-                        },
-                        "source": {
-                          "type": "string",
-                          "enum": [
-                            "model"
-                          ]
-                        },
-                        "attribution": {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "required": [
-                            "provider",
-                            "model",
-                            "model_version",
-                            "prompt_sha256",
-                            "output_sha256"
-                          ],
-                          "properties": {
-                            "provider": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 100
-                            },
-                            "model": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "model_version": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "prompt_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            },
-                            "output_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            }
-                          }
-                        }
-                      }
-                    }
                   },
                   "category": {
                     "type": "string"
@@ -17892,78 +17748,6 @@
                       }
                     },
                     "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
-                  },
-                  "passage_interpretations": {
-                    "type": "array",
-                    "maxItems": 40,
-                    "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "required": [
-                        "task_id",
-                        "stance",
-                        "source",
-                        "attribution"
-                      ],
-                      "properties": {
-                        "task_id": {
-                          "type": "string",
-                          "pattern": "^PT-[a-f0-9]{48}$"
-                        },
-                        "stance": {
-                          "type": "string",
-                          "enum": [
-                            "supports",
-                            "qualifies",
-                            "adverse",
-                            "unrelated"
-                          ]
-                        },
-                        "source": {
-                          "type": "string",
-                          "enum": [
-                            "model"
-                          ]
-                        },
-                        "attribution": {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "required": [
-                            "provider",
-                            "model",
-                            "model_version",
-                            "prompt_sha256",
-                            "output_sha256"
-                          ],
-                          "properties": {
-                            "provider": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 100
-                            },
-                            "model": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "model_version": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "prompt_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            },
-                            "output_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            }
-                          }
-                        }
-                      }
-                    }
                   },
                   "category": {
                     "type": "string"
@@ -41577,78 +41361,6 @@
                       }
                     },
                     "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
-                  },
-                  "passage_interpretations": {
-                    "type": "array",
-                    "maxItems": 40,
-                    "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "required": [
-                        "task_id",
-                        "stance",
-                        "source",
-                        "attribution"
-                      ],
-                      "properties": {
-                        "task_id": {
-                          "type": "string",
-                          "pattern": "^PT-[a-f0-9]{48}$"
-                        },
-                        "stance": {
-                          "type": "string",
-                          "enum": [
-                            "supports",
-                            "qualifies",
-                            "adverse",
-                            "unrelated"
-                          ]
-                        },
-                        "source": {
-                          "type": "string",
-                          "enum": [
-                            "model"
-                          ]
-                        },
-                        "attribution": {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "required": [
-                            "provider",
-                            "model",
-                            "model_version",
-                            "prompt_sha256",
-                            "output_sha256"
-                          ],
-                          "properties": {
-                            "provider": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 100
-                            },
-                            "model": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "model_version": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "prompt_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            },
-                            "output_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            }
-                          }
-                        }
-                      }
-                    }
                   }
                 },
                 "description": "Keyless, non-authorizing first-call context; unknown top-level fields are rejected."
@@ -42319,78 +42031,6 @@
                       }
                     },
                     "description": "Host-private, case-bound read reference. Never put its secret into prompts, URLs, logs or exports. Grants no write or action authority."
-                  },
-                  "passage_interpretations": {
-                    "type": "array",
-                    "maxItems": 40,
-                    "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "required": [
-                        "task_id",
-                        "stance",
-                        "source",
-                        "attribution"
-                      ],
-                      "properties": {
-                        "task_id": {
-                          "type": "string",
-                          "pattern": "^PT-[a-f0-9]{48}$"
-                        },
-                        "stance": {
-                          "type": "string",
-                          "enum": [
-                            "supports",
-                            "qualifies",
-                            "adverse",
-                            "unrelated"
-                          ]
-                        },
-                        "source": {
-                          "type": "string",
-                          "enum": [
-                            "model"
-                          ]
-                        },
-                        "attribution": {
-                          "type": "object",
-                          "additionalProperties": false,
-                          "required": [
-                            "provider",
-                            "model",
-                            "model_version",
-                            "prompt_sha256",
-                            "output_sha256"
-                          ],
-                          "properties": {
-                            "provider": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 100
-                            },
-                            "model": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "model_version": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "prompt_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            },
-                            "output_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            }
-                          }
-                        }
-                      }
-                    }
                   }
                 },
                 "anyOf": [
@@ -42659,7 +42299,7 @@
                   "passage_interpretations": {
                     "type": "array",
                     "maxItems": 40,
-                    "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
+                    "description": "Attributed model readings of claim_review.interpretation_tasks. They route review and never set a value.",
                     "items": {
                       "type": "object",
                       "additionalProperties": false,
@@ -42675,7 +42315,6 @@
                           "pattern": "^PT-[a-f0-9]{48}$"
                         },
                         "stance": {
-                          "type": "string",
                           "enum": [
                             "supports",
                             "qualifies",
@@ -42684,46 +42323,19 @@
                           ]
                         },
                         "source": {
-                          "type": "string",
                           "enum": [
                             "model"
                           ]
                         },
                         "attribution": {
                           "type": "object",
-                          "additionalProperties": false,
                           "required": [
                             "provider",
                             "model",
                             "model_version",
                             "prompt_sha256",
                             "output_sha256"
-                          ],
-                          "properties": {
-                            "provider": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 100
-                            },
-                            "model": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "model_version": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "prompt_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            },
-                            "output_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            }
-                          }
+                          ]
                         }
                       }
                     }
@@ -55850,7 +55462,7 @@
                             "passage_interpretations": {
                               "type": "array",
                               "maxItems": 40,
-                              "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
+                              "description": "Attributed model readings of claim_review.interpretation_tasks. They route review and never set a value.",
                               "items": {
                                 "type": "object",
                                 "additionalProperties": false,
@@ -55866,7 +55478,6 @@
                                     "pattern": "^PT-[a-f0-9]{48}$"
                                   },
                                   "stance": {
-                                    "type": "string",
                                     "enum": [
                                       "supports",
                                       "qualifies",
@@ -55875,46 +55486,19 @@
                                     ]
                                   },
                                   "source": {
-                                    "type": "string",
                                     "enum": [
                                       "model"
                                     ]
                                   },
                                   "attribution": {
                                     "type": "object",
-                                    "additionalProperties": false,
                                     "required": [
                                       "provider",
                                       "model",
                                       "model_version",
                                       "prompt_sha256",
                                       "output_sha256"
-                                    ],
-                                    "properties": {
-                                      "provider": {
-                                        "type": "string",
-                                        "minLength": 1,
-                                        "maxLength": 100
-                                      },
-                                      "model": {
-                                        "type": "string",
-                                        "minLength": 1,
-                                        "maxLength": 120
-                                      },
-                                      "model_version": {
-                                        "type": "string",
-                                        "minLength": 1,
-                                        "maxLength": 120
-                                      },
-                                      "prompt_sha256": {
-                                        "type": "string",
-                                        "pattern": "^[a-f0-9]{64}$"
-                                      },
-                                      "output_sha256": {
-                                        "type": "string",
-                                        "pattern": "^[a-f0-9]{64}$"
-                                      }
-                                    }
+                                    ]
                                   }
                                 }
                               }
@@ -77246,7 +76830,7 @@
                   "passage_interpretations": {
                     "type": "array",
                     "maxItems": 40,
-                    "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
+                    "description": "Attributed model readings of claim_review.interpretation_tasks. They route review and never set a value.",
                     "items": {
                       "type": "object",
                       "additionalProperties": false,
@@ -77262,7 +76846,6 @@
                           "pattern": "^PT-[a-f0-9]{48}$"
                         },
                         "stance": {
-                          "type": "string",
                           "enum": [
                             "supports",
                             "qualifies",
@@ -77271,46 +76854,19 @@
                           ]
                         },
                         "source": {
-                          "type": "string",
                           "enum": [
                             "model"
                           ]
                         },
                         "attribution": {
                           "type": "object",
-                          "additionalProperties": false,
                           "required": [
                             "provider",
                             "model",
                             "model_version",
                             "prompt_sha256",
                             "output_sha256"
-                          ],
-                          "properties": {
-                            "provider": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 100
-                            },
-                            "model": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "model_version": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "prompt_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            },
-                            "output_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            }
-                          }
+                          ]
                         }
                       }
                     }
@@ -88210,6 +87766,1370 @@
         }
       }
     },
+    "/v1/effect-decision": {
+      "post": {
+        "summary": "Exact-effect decision state: for each requested effect, what the supplied record analytically supports, whether authenticated institutional authority covers it, and whether it may be executed, kept as three separate states with controlling and excluded records, dependencies, the smallest closure and the permitted interim scope. Non-market internal tasks terminate not_relevant. Never permission by itself.",
+        "description": "Exact-effect decision state: for each requested effect, what the supplied record analytically supports, whether authenticated institutional authority covers it, and whether it may be executed, kept as three separate states with controlling and excluded records, dependencies, the smallest closure and the permitted interim scope. Non-market internal tasks terminate not_relevant. Never permission by itself.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/effect-decision",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "rbac_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-policy": {
+          "mode": "not_required"
+        },
+        "x-mvr-access": {
+          "plans": [
+            "TRIAL",
+            "STANDARD",
+            "PRO",
+            "ENTERPRISE"
+          ],
+          "required_roles_any": [
+            "analyst",
+            "attestor",
+            "reviewer",
+            "owner",
+            "admin",
+            "compliance_officer",
+            "org_admin",
+            "approver",
+            "executor"
+          ],
+          "output_modes": [
+            "client_safe",
+            "internal_full"
+          ],
+          "break_glass_allowed": false
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EffectDecisionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "analysis_date",
+                  "requested_effects"
+                ],
+                "properties": {
+                  "analysis_date": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "context_freshness_window_days": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 3650,
+                    "description": "Default 365."
+                  },
+                  "subject": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "entity_name": {
+                        "type": "string",
+                        "maxLength": 200
+                      },
+                      "subject_id": {
+                        "type": "string",
+                        "maxLength": 128
+                      }
+                    }
+                  },
+                  "market_scope": {
+                    "type": "object",
+                    "properties": {
+                      "country": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z]{2}$"
+                      },
+                      "locality": {
+                        "type": "string"
+                      }
+                    },
+                    "description": "Default effect geography."
+                  },
+                  "decision_question": {
+                    "type": "string",
+                    "maxLength": 2000
+                  },
+                  "request_id": {
+                    "type": "string",
+                    "maxLength": 64
+                  },
+                  "claims": {
+                    "type": "array",
+                    "maxItems": 60,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "claim_id"
+                      ],
+                      "properties": {
+                        "claim_id": {
+                          "type": "string",
+                          "maxLength": 64
+                        },
+                        "claim": {
+                          "type": "string",
+                          "maxLength": 600
+                        },
+                        "load_bearing": {
+                          "type": "boolean",
+                          "default": true
+                        },
+                        "support_links": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "evidence_id",
+                              "relationship",
+                              "locator"
+                            ],
+                            "properties": {
+                              "claim_id": {
+                                "type": "string"
+                              },
+                              "evidence_id": {
+                                "type": "string"
+                              },
+                              "relationship": {
+                                "enum": [
+                                  "direct_support",
+                                  "qualifies",
+                                  "contradicts",
+                                  "context_only"
+                                ]
+                              },
+                              "locator": {
+                                "type": "string",
+                                "maxLength": 200
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "claim_links": {
+                    "type": "array",
+                    "maxItems": 400,
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "claim_id",
+                        "evidence_id",
+                        "relationship",
+                        "locator"
+                      ],
+                      "properties": {
+                        "claim_id": {
+                          "type": "string"
+                        },
+                        "evidence_id": {
+                          "type": "string"
+                        },
+                        "relationship": {
+                          "enum": [
+                            "direct_support",
+                            "qualifies",
+                            "contradicts",
+                            "context_only"
+                          ]
+                        },
+                        "locator": {
+                          "type": "string",
+                          "maxLength": 200
+                        }
+                      }
+                    }
+                  },
+                  "evidence_pack": {
+                    "type": "array",
+                    "maxItems": 200,
+                    "description": "Shared EvidenceItem records. Fields read: see /v1/effect-decision/contract.",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "evidence_id": {
+                          "type": "string",
+                          "maxLength": 64
+                        },
+                        "id": {
+                          "type": "string",
+                          "maxLength": 64
+                        },
+                        "authority_effect": {
+                          "enum": [
+                            "grant",
+                            "revocation",
+                            "suspension",
+                            "prohibition",
+                            "expiry",
+                            "scope_narrowing"
+                          ]
+                        },
+                        "applies_to_effect_ids": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "applies_to_effect_types": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "supersedes": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "conditions": {
+                          "type": "array",
+                          "maxItems": 16,
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "type"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                              "condition_id": {
+                                "type": "string",
+                                "maxLength": 64
+                              },
+                              "type": {
+                                "enum": [
+                                  "amount_at_most",
+                                  "geography_within",
+                                  "valid_until",
+                                  "counterparty_is",
+                                  "duration_at_most",
+                                  "prerequisite"
+                                ]
+                              },
+                              "description": {
+                                "type": "string",
+                                "maxLength": 200
+                              },
+                              "amount_minor": {
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "currency": {
+                                "type": "string",
+                                "pattern": "^[A-Z]{3}$"
+                              },
+                              "country": {
+                                "type": "string",
+                                "pattern": "^[A-Za-z]{2}$"
+                              },
+                              "locality": {
+                                "type": "string"
+                              },
+                              "date": {
+                                "type": "string",
+                                "format": "date"
+                              },
+                              "counterparty_ref": {
+                                "type": "string",
+                                "maxLength": 64
+                              },
+                              "days": {
+                                "type": "integer",
+                                "minimum": 1
+                              },
+                              "satisfied_by_evidence_id": {
+                                "type": "string",
+                                "maxLength": 64
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "evidence_items": {
+                    "type": "array",
+                    "description": "Alias of evidence_pack; send one."
+                  },
+                  "requested_effects": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 32,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "effect_id"
+                      ],
+                      "properties": {
+                        "effect_id": {
+                          "type": "string",
+                          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:#/-]{0,63}$"
+                        },
+                        "effect_type": {
+                          "type": "string",
+                          "description": "Taxonomy type or alias; omit to classify description."
+                        },
+                        "description": {
+                          "type": "string",
+                          "maxLength": 600
+                        },
+                        "depends_on_claims": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "Default: every load-bearing claim."
+                        },
+                        "geography": {
+                          "type": "object",
+                          "required": [
+                            "country"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "country": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z]{2}$"
+                            },
+                            "locality": {
+                              "type": "string",
+                              "maxLength": 80
+                            }
+                          }
+                        },
+                        "amount": {
+                          "type": "object",
+                          "required": [
+                            "amount_minor",
+                            "currency"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "amount_minor": {
+                              "type": "integer",
+                              "minimum": 0
+                            },
+                            "currency": {
+                              "type": "string",
+                              "pattern": "^[A-Z]{3}$"
+                            }
+                          }
+                        },
+                        "duration_days": {
+                          "type": "integer",
+                          "minimum": 1
+                        },
+                        "counterparty_ref": {
+                          "type": "string",
+                          "maxLength": 64
+                        },
+                        "authority_ref": {
+                          "type": "object",
+                          "required": [
+                            "case_id",
+                            "requested_effect"
+                          ],
+                          "additionalProperties": false,
+                          "description": "Authenticated authority via /v1/authority-chain check_permission.",
+                          "properties": {
+                            "case_id": {
+                              "type": "string",
+                              "pattern": "^RC-[a-f0-9]{64}$"
+                            },
+                            "requested_effect": {
+                              "type": "object"
+                            },
+                            "geography": {
+                              "type": "string",
+                              "pattern": "^[A-Z]{2}(-[A-Z0-9]{1,8})?$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "interpretation_submission_id": {
+                    "type": "string",
+                    "description": "Apply accountable dispositions from this slot."
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/interpretation-submissions": {
+      "post": {
+        "summary": "One-time submission of model-attributed passage readings against server-issued interpretation tasks (submit), the routing state (get), and accountable reviewer dispositions (dispose). Readings route review; they never set a value, authenticate a source or grant permission.",
+        "description": "One-time submission of model-attributed passage readings against server-issued interpretation tasks (submit), the routing state (get), and accountable reviewer dispositions (dispose). Readings route review; they never set a value, authenticate a source or grant permission.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/interpretation-submissions",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [
+          "rbac_gated"
+        ],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-policy": {
+          "mode": "not_required"
+        },
+        "x-mvr-access": {
+          "plans": [
+            "TRIAL",
+            "STANDARD",
+            "PRO",
+            "ENTERPRISE"
+          ],
+          "required_roles_any": [
+            "analyst",
+            "attestor",
+            "reviewer",
+            "owner",
+            "admin",
+            "compliance_officer",
+            "org_admin"
+          ],
+          "output_modes": [
+            "client_safe",
+            "internal_full"
+          ],
+          "break_glass_allowed": false
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          },
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InterpretationSubmissionResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "action"
+                ],
+                "properties": {
+                  "action": {
+                    "enum": [
+                      "submit",
+                      "get",
+                      "dispose"
+                    ]
+                  },
+                  "submission_token": {
+                    "type": "string",
+                    "pattern": "^MVRIS-[a-f0-9]{64}$",
+                    "description": "submit: the one-time token from interpretation_submission in the issuing response."
+                  },
+                  "submission_id": {
+                    "type": "string",
+                    "pattern": "^ISB-[a-f0-9]{32}$",
+                    "description": "get and dispose."
+                  },
+                  "schema_version": {
+                    "const": "mvr.interpretation-submission/1"
+                  },
+                  "model": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "provider",
+                      "model",
+                      "model_version"
+                    ],
+                    "properties": {
+                      "provider": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "model": {
+                        "type": "string",
+                        "maxLength": 120
+                      },
+                      "model_version": {
+                        "type": "string",
+                        "maxLength": 120
+                      }
+                    }
+                  },
+                  "prompt_policy_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "workflow_id": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "description": "Optional echo; must match the slot."
+                  },
+                  "task_set_sha256": {
+                    "type": "string",
+                    "description": "Optional echo; must match the slot."
+                  },
+                  "readings": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 40,
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "task_id",
+                        "claim_sha256",
+                        "passage_sha256",
+                        "label"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "type": "string",
+                          "pattern": "^PT-[a-f0-9]{48}$"
+                        },
+                        "claim_sha256": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$"
+                        },
+                        "passage_sha256": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$"
+                        },
+                        "label": {
+                          "enum": [
+                            "supports",
+                            "qualifies",
+                            "adverse",
+                            "unrelated"
+                          ]
+                        },
+                        "rationale": {
+                          "type": "string",
+                          "maxLength": 600
+                        },
+                        "model": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "provider",
+                            "model",
+                            "model_version"
+                          ],
+                          "properties": {
+                            "provider": {
+                              "type": "string",
+                              "maxLength": 100
+                            },
+                            "model": {
+                              "type": "string",
+                              "maxLength": 120
+                            },
+                            "model_version": {
+                              "type": "string",
+                              "maxLength": 120
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "task_id": {
+                    "type": "string",
+                    "pattern": "^PT-[a-f0-9]{48}$",
+                    "description": "dispose."
+                  },
+                  "disposition": {
+                    "enum": [
+                      "accept",
+                      "qualify",
+                      "reject_support",
+                      "adverse"
+                    ],
+                    "description": "dispose: an accountable reviewer decision about the passage."
+                  },
+                  "reason": {
+                    "type": "string",
+                    "maxLength": 400
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/interpretation-submissions/contract": {
+      "get": {
+        "summary": "Discover the interpretation submission contract: slot binding, labels, dispositions, reason codes and request schema.",
+        "description": "Discover the interpretation submission contract: slot binding, labels, dispositions, reason codes and request schema.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/interpretation-submissions/contract",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-policy": {
+          "mode": "not_required"
+        },
+        "x-mvr-access": {
+          "plans": [
+            "PUBLIC",
+            "STANDARD",
+            "PRO",
+            "ENTERPRISE"
+          ],
+          "required_roles_any": [],
+          "output_modes": [
+            "client_safe"
+          ],
+          "break_glass_allowed": false
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/audit-capabilities": {
+      "get": {
+        "summary": "Prospective audit capability discovery: for each audit route and profile, which components run, their calibration dependency, availability and the answer when unavailable.",
+        "description": "Prospective audit capability discovery: for each audit route and profile, which components run, their calibration dependency, availability and the answer when unavailable.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/audit-capabilities",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-policy": {
+          "mode": "not_required"
+        },
+        "x-mvr-access": {
+          "plans": [
+            "PUBLIC",
+            "STANDARD",
+            "PRO",
+            "ENTERPRISE"
+          ],
+          "required_roles_any": [],
+          "output_modes": [
+            "client_safe"
+          ],
+          "break_glass_allowed": false
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/audit-findings/contract": {
+      "get": {
+        "summary": "The audit defect contract: route families, defect dictionary, severities, consequences, remediations and outcomes.",
+        "description": "The audit defect contract: route families, defect dictionary, severities, consequences, remediations and outcomes.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/audit-findings/contract",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-policy": {
+          "mode": "not_required"
+        },
+        "x-mvr-access": {
+          "plans": [
+            "PUBLIC",
+            "STANDARD",
+            "PRO",
+            "ENTERPRISE"
+          ],
+          "required_roles_any": [],
+          "output_modes": [
+            "client_safe"
+          ],
+          "break_glass_allowed": false
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/effect-decision/contract": {
+      "get": {
+        "summary": "Discover the exact-effect decision contract: the three state enums, effect taxonomy, precedence table, currentness and geography rules, digests and request schema.",
+        "description": "Discover the exact-effect decision contract: the three state enums, effect taxonomy, precedence table, currentness and geography rules, digests and request schema.",
+        "parameters": [],
+        "x-mvr-registry-route": "/v1/effect-decision/contract",
+        "x-mvr-maturity": "release_candidate",
+        "x-mvr-labels": [],
+        "x-mvr-validator-contract": {
+          "name": "none",
+          "status": "none"
+        },
+        "x-mvr-idempotency-key-required": false,
+        "x-mvr-idempotency-policy": {
+          "mode": "not_required"
+        },
+        "x-mvr-access": {
+          "plans": [
+            "PUBLIC",
+            "STANDARD",
+            "PRO",
+            "ENTERPRISE"
+          ],
+          "required_roles_any": [],
+          "output_modes": [
+            "client_safe"
+          ],
+          "break_glass_allowed": false
+        },
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict. For idempotent operations, reconcile IDEMPOTENCY_CONTEXT_MISMATCH or IDEMPOTENCY_REQUEST_MISMATCH without changing the original key to bypass the conflict.",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation or calibration failure",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate or compute limit exceeded",
+            "headers": {
+              "Server-Timing": {
+                "$ref": "#/components/headers/WorkerElapsed"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RequestErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/review-cases/contract": {
       "get": {
         "summary": "Discover the bounded review workflow, residual-risk taxonomy, current-state checks and input schema.",
@@ -88817,7 +89737,8 @@
                           "authority",
                           "case",
                           "attestation",
-                          "delivery"
+                          "delivery",
+                          "current_state"
                         ]
                       },
                       "request": {
@@ -96413,7 +97334,7 @@
                   "passage_interpretations": {
                     "type": "array",
                     "maxItems": 40,
-                    "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
+                    "description": "Attributed model readings of claim_review.interpretation_tasks. They route review and never set a value.",
                     "items": {
                       "type": "object",
                       "additionalProperties": false,
@@ -96429,7 +97350,6 @@
                           "pattern": "^PT-[a-f0-9]{48}$"
                         },
                         "stance": {
-                          "type": "string",
                           "enum": [
                             "supports",
                             "qualifies",
@@ -96438,46 +97358,19 @@
                           ]
                         },
                         "source": {
-                          "type": "string",
                           "enum": [
                             "model"
                           ]
                         },
                         "attribution": {
                           "type": "object",
-                          "additionalProperties": false,
                           "required": [
                             "provider",
                             "model",
                             "model_version",
                             "prompt_sha256",
                             "output_sha256"
-                          ],
-                          "properties": {
-                            "provider": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 100
-                            },
-                            "model": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "model_version": {
-                              "type": "string",
-                              "minLength": 1,
-                              "maxLength": 120
-                            },
-                            "prompt_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            },
-                            "output_sha256": {
-                              "type": "string",
-                              "pattern": "^[a-f0-9]{64}$"
-                            }
-                          }
+                          ]
                         }
                       }
                     }
@@ -97393,7 +98286,7 @@
                         "passage_interpretations": {
                           "type": "array",
                           "maxItems": 40,
-                          "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
+                          "description": "Attributed model readings of claim_review.interpretation_tasks. They route review and never set a value.",
                           "items": {
                             "type": "object",
                             "additionalProperties": false,
@@ -97409,7 +98302,6 @@
                                 "pattern": "^PT-[a-f0-9]{48}$"
                               },
                               "stance": {
-                                "type": "string",
                                 "enum": [
                                   "supports",
                                   "qualifies",
@@ -97418,46 +98310,19 @@
                                 ]
                               },
                               "source": {
-                                "type": "string",
                                 "enum": [
                                   "model"
                                 ]
                               },
                               "attribution": {
                                 "type": "object",
-                                "additionalProperties": false,
                                 "required": [
                                   "provider",
                                   "model",
                                   "model_version",
                                   "prompt_sha256",
                                   "output_sha256"
-                                ],
-                                "properties": {
-                                  "provider": {
-                                    "type": "string",
-                                    "minLength": 1,
-                                    "maxLength": 100
-                                  },
-                                  "model": {
-                                    "type": "string",
-                                    "minLength": 1,
-                                    "maxLength": 120
-                                  },
-                                  "model_version": {
-                                    "type": "string",
-                                    "minLength": 1,
-                                    "maxLength": 120
-                                  },
-                                  "prompt_sha256": {
-                                    "type": "string",
-                                    "pattern": "^[a-f0-9]{64}$"
-                                  },
-                                  "output_sha256": {
-                                    "type": "string",
-                                    "pattern": "^[a-f0-9]{64}$"
-                                  }
-                                }
+                                ]
                               }
                             }
                           }
@@ -100346,7 +101211,7 @@
           "passage_interpretations": {
             "type": "array",
             "maxItems": 40,
-            "description": "Attributed model readings answering the server-issued interpretation tasks of an earlier preflight response (claim_review.interpretation_tasks). Adverse, qualifying or disagreeing readings route the exact passage to accountable review; no reading sets a value, clears a gate or confers permission.",
+            "description": "Attributed model readings of claim_review.interpretation_tasks. They route review and never set a value.",
             "items": {
               "type": "object",
               "additionalProperties": false,
@@ -100362,7 +101227,6 @@
                   "pattern": "^PT-[a-f0-9]{48}$"
                 },
                 "stance": {
-                  "type": "string",
                   "enum": [
                     "supports",
                     "qualifies",
@@ -100371,46 +101235,19 @@
                   ]
                 },
                 "source": {
-                  "type": "string",
                   "enum": [
                     "model"
                   ]
                 },
                 "attribution": {
                   "type": "object",
-                  "additionalProperties": false,
                   "required": [
                     "provider",
                     "model",
                     "model_version",
                     "prompt_sha256",
                     "output_sha256"
-                  ],
-                  "properties": {
-                    "provider": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 100
-                    },
-                    "model": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 120
-                    },
-                    "model_version": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 120
-                    },
-                    "prompt_sha256": {
-                      "type": "string",
-                      "pattern": "^[a-f0-9]{64}$"
-                    },
-                    "output_sha256": {
-                      "type": "string",
-                      "pattern": "^[a-f0-9]{64}$"
-                    }
-                  }
+                  ]
                 }
               }
             }
@@ -116404,6 +117241,330 @@
           "rule": "Every success and error response carries these exact values. Success branches are closed: each lists every field its action can return."
         }
       },
+      "EffectDecisionResponse": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "status",
+          "contract_version"
+        ],
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "mvr.effect-decision/1"
+          },
+          "decision_performed": {
+            "type": "boolean"
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "analysis_date": {
+            "type": "string"
+          },
+          "effect_count": {
+            "type": "integer"
+          },
+          "effects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "effect_id",
+                "effect_type",
+                "scope_class",
+                "relevance",
+                "analytical_evidence_status",
+                "institutional_authority_status",
+                "execution_authorization_status",
+                "precedence_rule",
+                "reason_codes",
+                "dependencies",
+                "controlling_records",
+                "excluded_records",
+                "smallest_decisive_closure",
+                "permitted_interim_scope",
+                "effect_sha256",
+                "normative_sha256"
+              ],
+              "properties": {
+                "effect_id": {
+                  "type": "string"
+                },
+                "effect_type": {
+                  "enum": [
+                    "internal_document_formatting",
+                    "internal_document_editing",
+                    "internal_minutes_or_notes",
+                    "equipment_maintenance",
+                    "internal_scheduling",
+                    "it_administration",
+                    "office_administration",
+                    "internal_recommendation",
+                    "internal_planning",
+                    "pilot_design",
+                    "evidence_collection_design",
+                    "board_reporting",
+                    "internal_review_packet",
+                    "external_offer",
+                    "external_communication",
+                    "public_claim",
+                    "distribution_agreement",
+                    "partner_onboarding",
+                    "procurement_order",
+                    "create_draft_record",
+                    "programme_disbursement",
+                    "payment",
+                    "market_launch",
+                    "contract_signature",
+                    "other_external_effect",
+                    "credit_decision"
+                  ]
+                },
+                "scope_class": {
+                  "enum": [
+                    "internal_non_market",
+                    "internal_analysis",
+                    "external_effect",
+                    "excluded"
+                  ]
+                },
+                "relevance": {
+                  "enum": [
+                    "relevant",
+                    "not_relevant",
+                    "excluded_credit_decision"
+                  ]
+                },
+                "analytical_evidence_status": {
+                  "enum": [
+                    "favorable",
+                    "conditional",
+                    "insufficient",
+                    "adverse",
+                    "not_relevant"
+                  ]
+                },
+                "institutional_authority_status": {
+                  "enum": [
+                    "authorized",
+                    "planning_only",
+                    "not_authorized",
+                    "revoked",
+                    "expired",
+                    "not_applicable"
+                  ]
+                },
+                "execution_authorization_status": {
+                  "enum": [
+                    "authorized",
+                    "planning_only",
+                    "not_authorized",
+                    "revoked",
+                    "expired",
+                    "not_applicable"
+                  ]
+                },
+                "precedence_rule": {
+                  "type": "string"
+                },
+                "reason_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "authority_reason_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "execution_reason_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "dependencies": {
+                  "type": "object",
+                  "additionalProperties": true
+                },
+                "claims": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "controlling_records": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "excluded_records": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "authority_records": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "supported_scope": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                },
+                "analytical_closure": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "authority_closure": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "smallest_decisive_closure": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "permitted_interim_scope": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "effect_sha256": {
+                  "type": "string"
+                },
+                "normative_sha256": {
+                  "type": "string"
+                },
+                "summary": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "relevance": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "dependency_index": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "unlinked_record_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "effect_set_sha256": {
+            "type": "string"
+          },
+          "decisions_sha256": {
+            "type": "string"
+          },
+          "boundaries": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
+      "InterpretationSubmissionResponse": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "status",
+          "contract_version"
+        ],
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "mvr.interpretation-submission/1"
+          },
+          "submission_id": {
+            "type": "string"
+          },
+          "receipt_id": {
+            "type": "string"
+          },
+          "accepted_count": {
+            "type": "integer"
+          },
+          "rejected_count": {
+            "type": "integer"
+          },
+          "readings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "index",
+                "status",
+                "code"
+              ],
+              "properties": {
+                "index": {
+                  "type": "integer"
+                },
+                "task_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "status": {
+                  "enum": [
+                    "accepted",
+                    "rejected"
+                  ]
+                },
+                "code": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "review": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      },
       "AuthorityChainContract": {
         "type": "object",
         "properties": {
@@ -121425,7 +122586,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-10-26.favourable-path.2"
+    "deployment_revision": "2026-11-01.effect-state.2"
   },
   "response_contract_version": "2026-05-01.v1"
 }

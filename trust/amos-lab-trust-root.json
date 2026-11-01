@@ -1,0 +1,26 @@
+{
+ "pinned_at": "2026-11-01T19:33:56.273Z",
+ "source": "https://africanmarketos.com/.well-known/mvr-lab-trust-root.json",
+ "realm": "amos-lab",
+ "assurance": "lab_fixture",
+ "rule": "Receivers pin this root from the attested public repository, never from a session response. A change of root is announced here with a signed supersession.",
+ "trust_root": {
+  "contract_version": "mvr.trust-root/1",
+  "realm": "amos-lab",
+  "key_id": "AMOSLABROOT-306542fd8c20474153bfd568",
+  "public_key_spki_b64": "MCowBQYDK2VwAyEAOYVf0d3q5GZlMEN0DwS3KkXkaltAGD2pbwhn8HV8YpE=",
+  "created_at": "2026-11-01T19:33:56.033Z",
+  "organization_ref": "amos-authority-conformance-lab",
+  "assurance": "lab_fixture",
+  "production_authority": false,
+  "standing": "not_asserted_by_signature",
+  "boundary": "This root signs AMOS registry statements for its realm. It proves key possession, not institutional standing.",
+  "sha256": "9b685977fb000aaa0cf644a2c4fb724901fb886a62767a1ba7f1e3416fc7ad9b",
+  "signature": {
+   "standard": "MVR-TRUST-SIG-V1",
+   "algorithm": "Ed25519",
+   "key_id": "AMOSLABROOT-306542fd8c20474153bfd568",
+   "signature_b64": "aoI3hLB7aIAm3gbT0gYQuKLd2e14CPCPD4kmTZt49b/JJKECsP9ERHWVIYUr3KySx7awrQEUTowuS6mFIg2CBg=="
+  }
+ }
+}

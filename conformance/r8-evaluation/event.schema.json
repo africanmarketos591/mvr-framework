@@ -1,0 +1,25 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://africanmarketos.com/schemas/amos-evaluation-event.schema.json",
+ "title": "AMOS blinded evaluation event (amos.evaluation-event/1)",
+ "description": "One adjudicated outcome for one case, arm and review. Treatment identity is held in the sealed allocation file, never in the event, until scoring.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["contract_version", "study", "case_id", "allocation_id", "reviewer_ref", "model_id", "profile", "effect_id", "decided", "oracle", "event_types", "minutes"],
+ "properties": {
+  "contract_version": {"const": "amos.evaluation-event/1"},
+  "study": {"enum": ["model_confirmation", "operational_comparison", "public_replay"]},
+  "case_id": {"type": "string", "maxLength": 80},
+  "allocation_id": {"type": "string", "description": "Opaque id; resolves to the arm only through the sealed allocation."},
+  "reviewer_ref": {"type": "string", "description": "Pseudonymous reviewer id; no names or contact details."},
+  "model_id": {"type": ["string", "null"]},
+  "profile": {"enum": ["strict_calibrated", "full_advisory", "not_applicable"]},
+  "effect_id": {"type": "string"},
+  "decided": {"type": "object", "additionalProperties": false, "required": ["analytical", "execution"], "properties": {"analytical": {"enum": ["favorable", "conditional", "insufficient", "adverse", "not_relevant"]}, "execution": {"enum": ["authorized", "planning_only", "not_authorized", "revoked", "expired", "not_applicable"]}, "closure_code": {"type": ["string", "null"]}}},
+  "oracle": {"type": "object", "additionalProperties": false, "required": ["analytical", "execution"], "properties": {"analytical": {"type": "string"}, "execution": {"type": "string"}, "closure_code": {"type": ["string", "null"]}, "critical_defect": {"type": "boolean"}}},
+  "event_types": {"type": "array", "items": {"enum": ["false_permit", "scope_broadening", "missed_critical_defect", "invented_authority", "false_hold", "lost_opportunity", "wrong_closure", "reopen", "bypass", "incident", "correct"]}},
+  "minutes": {"type": "object", "additionalProperties": false, "required": ["review"], "properties": {"review": {"type": "number", "minimum": 0}, "reconstruction": {"type": "number", "minimum": 0}, "closure_delay_days": {"type": "number", "minimum": 0}, "integration_latency_ms": {"type": "number", "minimum": 0}}},
+  "correction": {"type": "boolean"},
+  "notes_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$", "description": "Hash of private adjudication notes; the notes stay in the private archive."}
+ }
+}
