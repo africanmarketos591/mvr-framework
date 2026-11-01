@@ -1,0 +1,12 @@
+{
+ "contract_version": "amos.buyer-loss-weights/1",
+ "frozen_at": "2026-11-01",
+ "frozen_before_results": true,
+ "rule": "Weights are fixed here before any study result exists. Changing them after observing results invalidates the study. Report every view by model and profile before pooling.",
+ "unit": "loss points per event; time and labour in minutes",
+ "views": {
+  "risk_heavy": {"false_permit": 100, "scope_broadening": 60, "missed_critical_defect": 40, "invented_authority": 100, "false_hold": 5, "lost_opportunity": 5, "wrong_closure": 3, "reopen": 4, "bypass": 50, "reviewer_minute": 0.05, "closure_delay_day": 0.5, "reconstruction_minute": 0.05, "incident": 80},
+  "balanced": {"false_permit": 40, "scope_broadening": 25, "missed_critical_defect": 20, "invented_authority": 40, "false_hold": 15, "lost_opportunity": 15, "wrong_closure": 6, "reopen": 6, "bypass": 25, "reviewer_minute": 0.1, "closure_delay_day": 1.5, "reconstruction_minute": 0.1, "incident": 40},
+  "opportunity_heavy": {"false_permit": 20, "scope_broadening": 10, "missed_critical_defect": 10, "invented_authority": 20, "false_hold": 30, "lost_opportunity": 30, "wrong_closure": 8, "reopen": 6, "bypass": 15, "reviewer_minute": 0.15, "closure_delay_day": 3, "reconstruction_minute": 0.15, "incident": 20}
+ }
+}

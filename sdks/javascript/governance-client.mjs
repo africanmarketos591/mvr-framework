@@ -1,8 +1,8 @@
 // Generated from the AMOS OpenAPI contract by scripts/generate-governance-client.mjs (https://github.com/africanmarketos591/mvr-framework).
-// Contract version v6.32.0; operation subset SHA-256: 568c81efaf61f1773791b31c90ece3893149121748c2994c63ad452d565c8621. Do not edit by hand; regenerate instead.
+// Contract version v6.32.0; operation subset SHA-256: bddfbce458bd4f2d81d1943e9c1936cab428d899f5451f94315e954d59d133b7. Do not edit by hand; regenerate instead.
 // Every method returns {status, body, deployment_revision} and never throws on a coded refusal. Network failures and
 // timeouts throw. expectedRevision pins the deployment: the server refuses a mismatch with 409 DEPLOYMENT_REVISION_MISMATCH.
-export const GOVERNANCE_CLIENT_VERSION = "2026-10-26";
+export const GOVERNANCE_CLIENT_VERSION = "2026-11-01";
 export const GOVERNANCE_OPERATIONS = Object.freeze({
   "reviewCases": {
     "method": "POST",
@@ -81,6 +81,42 @@ export const GOVERNANCE_OPERATIONS = Object.freeze({
     "path": "/v1/key-ceremony/contract",
     "api_key": false,
     "summary": "How the made-in-Cloudflare receipt key ceremony works, its refusals and custody."
+  },
+  "effectDecision": {
+    "method": "POST",
+    "path": "/v1/effect-decision",
+    "api_key": true,
+    "summary": "Exact-effect decision state: for each requested effect, what the supplied record analytically supports, whether authenticated institutional authority covers it, and whether it may be executed, kept as"
+  },
+  "effectDecisionContract": {
+    "method": "GET",
+    "path": "/v1/effect-decision/contract",
+    "api_key": false,
+    "summary": "Discover the exact-effect decision contract: the three state enums, effect taxonomy, precedence table, currentness and geography rules, digests and request schema."
+  },
+  "interpretationSubmissions": {
+    "method": "POST",
+    "path": "/v1/interpretation-submissions",
+    "api_key": true,
+    "summary": "One-time submission of model-attributed passage readings against server-issued interpretation tasks (submit), the routing state (get), and accountable reviewer dispositions (dispose). Readings route r"
+  },
+  "interpretationSubmissionsContract": {
+    "method": "GET",
+    "path": "/v1/interpretation-submissions/contract",
+    "api_key": false,
+    "summary": "Discover the interpretation submission contract: slot binding, labels, dispositions, reason codes and request schema."
+  },
+  "auditCapabilities": {
+    "method": "GET",
+    "path": "/v1/audit-capabilities",
+    "api_key": false,
+    "summary": "Prospective audit capability discovery: for each audit route and profile, which components run, their calibration dependency, availability and the answer when unavailable."
+  },
+  "auditFindingsContract": {
+    "method": "GET",
+    "path": "/v1/audit-findings/contract",
+    "api_key": false,
+    "summary": "The audit defect contract: route families, defect dictionary, severities, consequences, remediations and outcomes."
   }
 });
 const inBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';
@@ -127,4 +163,16 @@ export class GovernanceClient {
   keyCeremonyStatus(options) { return this.call('keyCeremonyStatus', undefined, options); }
   /** GET /v1/key-ceremony/contract */
   keyCeremonyContract(options) { return this.call('keyCeremonyContract', undefined, options); }
+  /** POST /v1/effect-decision (API key) */
+  effectDecision(body, options) { return this.call('effectDecision', body, options); }
+  /** GET /v1/effect-decision/contract */
+  effectDecisionContract(options) { return this.call('effectDecisionContract', undefined, options); }
+  /** POST /v1/interpretation-submissions (API key) */
+  interpretationSubmissions(body, options) { return this.call('interpretationSubmissions', body, options); }
+  /** GET /v1/interpretation-submissions/contract */
+  interpretationSubmissionsContract(options) { return this.call('interpretationSubmissionsContract', undefined, options); }
+  /** GET /v1/audit-capabilities */
+  auditCapabilities(options) { return this.call('auditCapabilities', undefined, options); }
+  /** GET /v1/audit-findings/contract */
+  auditFindingsContract(options) { return this.call('auditFindingsContract', undefined, options); }
 }

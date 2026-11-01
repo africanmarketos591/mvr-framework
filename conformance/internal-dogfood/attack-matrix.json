@@ -1,0 +1,376 @@
+{
+ "contract_version": "amos.internal-dogfood-matrix/1",
+ "frozen_at": "2026-11-01",
+ "classification": "proprietary lab fixtures; harmless effects only",
+ "note": "AMOS reconstruction of the 34 positive, negative and resilience case categories named in the R8 qualification (INTERNAL-PERMISSION-DOGFOOD-R8.md was not shared). Reconcile case-by-case with the evaluator's frozen file before the team run; do not edit expected outcomes after results.",
+ "effect": {
+  "effect_type": "create_draft_record",
+  "resource": {
+   "system": "amos-lab",
+   "resource_type": "draft"
+  },
+  "amount_minor": 0,
+  "external_contact": false,
+  "counterparty_ref": "lab-only"
+ },
+ "consecutive_valid_effects_required": 30,
+ "cases": [
+  {
+   "id": "P01",
+   "category": "positive",
+   "case": "Current exact-effect commit by the bound executor",
+   "expected": "applies_once",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none"
+   ]
+  },
+  {
+   "id": "P02",
+   "category": "positive",
+   "case": "Current-state proof verifies through the pinned root before the fence",
+   "expected": "applies_once",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "current state verifies through the pinned root and allows the exact effect"
+   ]
+  },
+  {
+   "id": "P03",
+   "category": "positive",
+   "case": "Permission position fully permitted for the exact effect",
+   "expected": "authorized_lab_only",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "read permission position"
+   ]
+  },
+  {
+   "id": "P04",
+   "category": "positive",
+   "case": "Issuer supersession of a prohibition restores the exact effect",
+   "expected": "applies_once",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "register signed lab prohibition",
+    "signed issuer supersession",
+    "verify allow"
+   ]
+  },
+  {
+   "id": "P05",
+   "category": "positive",
+   "case": "Renewal is a new capability after a full recheck; the predecessor stays invalid",
+   "expected": "new_object_only",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "commit-time check stops an effect revoked after verification",
+    "register harmless capability three",
+    "verify allow"
+   ]
+  },
+  {
+   "id": "P06",
+   "category": "positive",
+   "case": "30 consecutive harmless valid commits apply exactly once each",
+   "expected": "applies_once_x30",
+   "requires": [
+    "team_run"
+   ],
+   "proof_source": "team_run_only",
+   "proof_checks": []
+  },
+  {
+   "id": "N01",
+   "category": "negative",
+   "case": "Altered amount",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N02",
+   "category": "negative",
+   "case": "Altered currency",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N03",
+   "category": "negative",
+   "case": "Altered effect type",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N04",
+   "category": "negative",
+   "case": "Altered resource",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N05",
+   "category": "negative",
+   "case": "External contact broadened",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N06",
+   "category": "negative",
+   "case": "Counterparty changed",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "six independent effect mutations denied"
+   ]
+  },
+  {
+   "id": "N07",
+   "category": "negative",
+   "case": "Wrong principal (not the bound executor)",
+   "expected": "applies_zero",
+   "proof_source": "private_ci_suite",
+   "proof_checks": [
+    "scripts/test-authority-chain-http.mjs (EXECUTOR_NOT_BOUND)"
+   ]
+  },
+  {
+   "id": "N08",
+   "category": "negative",
+   "case": "Cross-session registry substitution",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "a cross-session substitution fails before any effect"
+   ]
+  },
+  {
+   "id": "N09",
+   "category": "negative",
+   "case": "Cross-tenant access to another tenant's case or capability",
+   "expected": "applies_zero",
+   "proof_source": "private_ci_suite",
+   "proof_checks": [
+    "scripts/test-authority-cross-tenant.mjs"
+   ]
+  },
+  {
+   "id": "N10",
+   "category": "negative",
+   "case": "Expired capability",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none"
+   ]
+  },
+  {
+   "id": "N11",
+   "category": "negative",
+   "case": "Stale current-state proof beyond max_offline_age",
+   "expected": "applies_zero",
+   "proof_source": "private_ci_suite",
+   "proof_checks": [
+    "scripts/test-trust-chain.mjs (stale proof)"
+   ]
+  },
+  {
+   "id": "N12",
+   "category": "negative",
+   "case": "Revoked capability",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "commit-time check stops an effect revoked after verification",
+    "after revocation the current-state proof withholds the effect"
+   ]
+  },
+  {
+   "id": "N13",
+   "category": "negative",
+   "case": "Superseded capability",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "commit after revocation"
+   ]
+  },
+  {
+   "id": "N14",
+   "category": "negative",
+   "case": "Revoked residual closure under the capability",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "revoke closure",
+    "verify deny"
+   ]
+  },
+  {
+   "id": "N15",
+   "category": "negative",
+   "case": "Revoked reviewer credential",
+   "expected": "applies_zero",
+   "proof_source": "private_ci_suite",
+   "proof_checks": [
+    "scripts/test-authority-chain-http.mjs (revoked credential)"
+   ]
+  },
+  {
+   "id": "N16",
+   "category": "negative",
+   "case": "Issuer prohibition in force",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "register signed lab prohibition",
+    "verify deny"
+   ]
+  },
+  {
+   "id": "N17",
+   "category": "negative",
+   "case": "Forged receipt (hash or signature altered)",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none"
+   ]
+  },
+  {
+   "id": "N18",
+   "category": "negative",
+   "case": "Self-review: a reviewer of the basis approves or executes",
+   "expected": "refused",
+   "requires": [
+    "team_run_distinct_people"
+   ],
+   "proof_source": "team_run_only",
+   "proof_checks": []
+  },
+  {
+   "id": "N19",
+   "category": "negative",
+   "case": "Self-issue: the approver executes",
+   "expected": "refused",
+   "requires": [
+    "team_run_distinct_people"
+   ],
+   "proof_source": "team_run_only",
+   "proof_checks": []
+  },
+  {
+   "id": "N20",
+   "category": "negative",
+   "case": "Commit after session close",
+   "expected": "applies_zero",
+   "proof_source": "private_ci_suite",
+   "proof_checks": [
+    "scripts/test-trust-chain.mjs (closed session fails closed)"
+   ]
+  },
+  {
+   "id": "R01",
+   "category": "resilience",
+   "case": "Replay of a consumed commit",
+   "expected": "exact_once",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "customer receiver kit: one effect per valid commit; replay, broadening, altered receipt, expiry and revocation produce none"
+   ]
+  },
+  {
+   "id": "R02",
+   "category": "resilience",
+   "case": "Concurrent double commit",
+   "expected": "exact_once",
+   "proof_source": "private_ci_suite",
+   "proof_checks": [
+    "scripts/test-receiver-kit.mjs (concurrency)"
+   ]
+  },
+  {
+   "id": "R03",
+   "category": "resilience",
+   "case": "Acknowledgement lost after effect",
+   "expected": "exact_once",
+   "proof_source": "private_ci_suite",
+   "proof_checks": [
+    "scripts/test-receiver-kit.mjs (acknowledgement loss)"
+   ]
+  },
+  {
+   "id": "R04",
+   "category": "resilience",
+   "case": "Receiver restart between commit and effect",
+   "expected": "exact_once",
+   "proof_source": "private_ci_suite",
+   "proof_checks": [
+    "scripts/test-receiver-kit.mjs (restart)"
+   ]
+  },
+  {
+   "id": "R05",
+   "category": "resilience",
+   "case": "Receiver crash after effect, before outcome",
+   "expected": "exact_once",
+   "proof_source": "private_ci_suite",
+   "proof_checks": [
+    "scripts/test-durable-worker.mjs (crash recovery)"
+   ]
+  },
+  {
+   "id": "R06",
+   "category": "resilience",
+   "case": "Revocation reaches the receiver before commit",
+   "expected": "applies_zero",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "revoke between verification and commit",
+    "commit after revocation"
+   ]
+  },
+  {
+   "id": "R07",
+   "category": "resilience",
+   "case": "Current-state service unavailable",
+   "expected": "fail_closed",
+   "proof_source": "live_lab_rehearsal",
+   "proof_checks": [
+    "harmless executor fresh checks, outage, cached-answer avoidance and observed verify-to-effect race"
+   ]
+  },
+  {
+   "id": "R08",
+   "category": "resilience",
+   "case": "Cold observer reconstructs identities, evidence, decisions, changes and the effect from the journal",
+   "expected": "no_unexplained_join",
+   "requires": [
+    "team_run_separate_observer"
+   ],
+   "proof_source": "team_run_only",
+   "proof_checks": []
+  }
+ ],
+ "summary": {
+  "live_lab_rehearsal": 21,
+  "private_ci_suite": 9,
+  "team_run_only": 4
+ }
+}

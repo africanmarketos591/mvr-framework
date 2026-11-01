@@ -1,0 +1,24 @@
+name: Live release drift
+# Fails when a live surface no longer matches the attested manifest it names: the served manifest, OpenAPI, public MCP
+# tool lists and contracts, and the generated clients reproduced from the served OpenAPI.
+permissions:
+  contents: read
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'release-manifests/**'
+      - 'scripts/check-release-drift.mjs'
+      - '.github/workflows/release-drift.yml'
+jobs:
+  drift:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24.11.0'
+      - run: node scripts/check-release-drift.mjs --live
