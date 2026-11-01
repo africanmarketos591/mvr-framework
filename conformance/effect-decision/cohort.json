@@ -1,0 +1,1537 @@
+{
+ "classification": "proprietary lab fixtures (AMOS-authored, logically consistent, public-safe); not observations of any real organisation",
+ "frozen_at": "2026-11-01",
+ "source": "african-market-os-worker-private scripts/test-effect-decision-cohort.mjs and test-audit-findings-cohort.mjs",
+ "contract_version": "mvr.effect-decision/1",
+ "route": "/v1/effect-decision",
+ "mcp_tool": "mvr_effect_decision",
+ "state_format": "analytical_evidence_status/institutional_authority_status/execution_authorization_status",
+ "cases": [
+  {
+   "case_id": "complete",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "favorable/planning_only/planning_only",
+    "EXT-OFFER": "favorable/not_authorized/not_authorized",
+    "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "missing",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": []
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+    "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+    "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "conditional",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15",
+      "conditions": [
+       {
+        "condition_id": "CEIL",
+        "type": "amount_at_most",
+        "amount_minor": 25000000,
+        "currency": "UGX"
+       }
+      ]
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "conditional/planning_only/planning_only",
+    "EXT-OFFER": "conditional/not_authorized/not_authorized",
+    "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "irrelevant_addition",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       },
+       {
+        "evidence_id": "E9",
+        "relationship": "direct_support",
+        "locator": "p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     },
+     {
+      "evidence_id": "E9",
+      "claim": "Nairobi retailers agreed to stock a different product.",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-09-01"
+     },
+     {
+      "evidence_id": "E10",
+      "claim": "Kenya suspended an unrelated importer in 2019.",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "permission_status": "suspended",
+      "source_date": "2019-02-01"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "favorable/planning_only/planning_only",
+    "EXT-OFFER": "favorable/not_authorized/not_authorized",
+    "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "revoked_permission",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     },
+     {
+      "evidence_id": "R1",
+      "claim": "The distribution offer permission for AMOS Lab Distributor Ltd was revoked on 2026-10-10.",
+      "permission_status": "revoked",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd"
+      },
+      "source_date": "2026-10-10",
+      "applies_to_effect_types": [
+       "external_offer"
+      ]
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "favorable/planning_only/planning_only",
+    "EXT-OFFER": "favorable/revoked/revoked",
+    "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "revoked_licence_dependency",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       },
+       {
+        "evidence_id": "R2",
+        "relationship": "contradicts",
+        "locator": "p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     },
+     {
+      "evidence_id": "R2",
+      "claim": "The licence LAB-UG-001 of AMOS Lab Distributor Ltd was revoked by the regulator on 2026-10-12.",
+      "licence_status": "revoked",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd"
+      },
+      "source_date": "2026-10-12"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "adverse/planning_only/not_authorized",
+    "EXT-OFFER": "adverse/revoked/revoked",
+    "EXT-DRAFT": "adverse/revoked/revoked"
+   }
+  },
+  {
+   "case_id": "prohibition",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     },
+     {
+      "evidence_id": "P1",
+      "claim": "The regulator prohibits AMOS Lab Distributor Ltd from distributing in Mbarara.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd"
+      },
+      "source_date": "2026-10-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "favorable/planning_only/planning_only",
+    "EXT-OFFER": "adverse/not_authorized/not_authorized",
+    "EXT-DRAFT": "adverse/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "stale",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2025-01-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ],
+    "context_freshness_window_days": 180
+   },
+   "expected": {
+    "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+    "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+    "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "contradiction",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       },
+       {
+        "evidence_id": "E4",
+        "relationship": "contradicts",
+        "locator": "p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     },
+     {
+      "evidence_id": "E4",
+      "claim": "A second Mbarara survey found most retailers declined the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-10-01"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "insufficient/planning_only/not_authorized",
+    "EXT-OFFER": "insufficient/not_authorized/not_authorized",
+    "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "expired_permission",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     },
+     {
+      "evidence_id": "X1",
+      "claim": "Offer approval for AMOS Lab Distributor Ltd.",
+      "authority_effect": "expiry",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd"
+      },
+      "applies_to_effect_ids": [
+       "EXT-OFFER"
+      ]
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "favorable/planning_only/planning_only",
+    "EXT-OFFER": "favorable/expired/expired",
+    "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "superseded_contradiction",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       },
+       {
+        "evidence_id": "E4",
+        "relationship": "contradicts",
+        "locator": "p1"
+       },
+       {
+        "evidence_id": "E5",
+        "relationship": "direct_support",
+        "locator": "p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     },
+     {
+      "evidence_id": "E4",
+      "claim": "Early survey: retailers declined.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-08-01"
+     },
+     {
+      "evidence_id": "E5",
+      "claim": "Corrected survey replaces the early survey.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-20",
+      "supersedes": [
+       "E4"
+      ]
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     },
+     {
+      "effect_id": "EXT-DRAFT",
+      "effect_type": "create_draft_record",
+      "depends_on_claims": [
+       "C1"
+      ]
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "favorable/planning_only/planning_only",
+    "EXT-OFFER": "favorable/not_authorized/not_authorized",
+    "EXT-DRAFT": "favorable/not_authorized/not_authorized"
+   }
+  },
+  {
+   "case_id": "internal_only",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "requested_effects": [
+     {
+      "effect_id": "IC-1",
+      "effect_type": "internal_document_formatting",
+      "description": "Reformat the quarterly board-report template."
+     },
+     {
+      "effect_id": "IC-2",
+      "description": "Schedule preventive maintenance for the head-office backup generator next Tuesday."
+     },
+     {
+      "effect_id": "IC-3",
+      "description": "Merge the two internal procurement policy drafts into one document for the finance team."
+     }
+    ]
+   },
+   "expected": {
+    "IC-1": "not_relevant/not_applicable/not_applicable",
+    "IC-2": "not_relevant/not_applicable/not_applicable",
+    "IC-3": "not_relevant/not_applicable/not_applicable"
+   }
+  },
+  {
+   "case_id": "mixed",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "subject": {
+     "entity_name": "AMOS Lab Distributor Ltd"
+    },
+    "market_scope": {
+     "country": "UG",
+     "locality": "Mbarara"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "AMOS Lab Distributor Ltd holds a current wholesale distribution licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "licence p1"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mbarara retailers will stock the product at the proposed terms.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "survey table 2"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "Regional demand is growing.",
+      "load_bearing": false,
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "trend chart"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Licence LAB-UG-001 is held by AMOS Lab Distributor Ltd for wholesale distribution in Uganda.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_scope": {
+       "country": "UG",
+       "entity_name": "AMOS Lab Distributor Ltd",
+       "effective_from": "2026-01-01",
+       "effective_to": "2027-12-31"
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "41 of 50 Mbarara retailers surveyed agreed to stock the product at the proposed terms.",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "Mbarara"
+      },
+      "source_date": "2026-09-15"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Regional demand grew in 2025.",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2024-01-10"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "INT-RECOMMEND",
+      "effect_type": "internal_recommendation",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ]
+     },
+     {
+      "effect_id": "IC-1",
+      "description": "Reformat the internal pricing template."
+     },
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "depends_on_claims": [
+       "C1",
+       "C2"
+      ],
+      "amount": {
+       "amount_minor": 40000000,
+       "currency": "UGX"
+      }
+     }
+    ]
+   },
+   "expected": {
+    "INT-RECOMMEND": "favorable/planning_only/planning_only",
+    "IC-1": "not_relevant/not_applicable/not_applicable",
+    "EXT-OFFER": "favorable/not_authorized/not_authorized"
+   }
+  }
+ ]
+}

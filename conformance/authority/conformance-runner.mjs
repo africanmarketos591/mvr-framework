@@ -3,9 +3,10 @@ import {runExecutorRevocationHarness,runCommittedRevocationHarness} from './exec
 import {runReceiverConformance} from '../receiver-kit/scenarios.mjs';
 import {webcrypto,createHash,randomBytes} from 'node:crypto';
 import {canonicalJson,verifyAuthorityReceipt} from '../../sdks/javascript/authority-receipts.mjs';
+import {verifyAuthorityChain} from '../../sdks/javascript/trust-chain-verifier.mjs';
 const hash=v=>createHash('sha256').update(v).digest('hex');
 const signBytes=(type,doc)=>new TextEncoder().encode(`MVR-AUTHORITY-V1\n${type}\n${canonicalJson(doc)}`);
-export async function runAuthorityConformance(transport,{createReceiver}={}){
+export async function runAuthorityConformance(transport,{createReceiver,fetchTrustRoot}={}){
  const checks=[];let count=0,n=0,session,head={sequence:0,sha256:'0'.repeat(64)};const receiptKinds=new Set();
  const op=label=>label+'-'+(++n);
  const send=async body=>{count++;const value=await transport(body);if(session)for(const c of Object.values(session.credentials))assert(!JSON.stringify(value).includes(c.session_token),'A lab credential leaked');if(value.receipt){const verified=await verifyAuthorityReceipt(value.receipt,{registry:session.receipt_registry,previousHead:head,allowLabKeys:true});assert.equal(verified.valid,true,'Offline receipt: '+verified.reason);assert.equal(verified.lab_fixture,true);head={sequence:value.receipt.sequence,sha256:value.receipt.sha256};receiptKinds.add(value.receipt.decision||value.receipt.kind);}return value;};
@@ -46,9 +47,25 @@ export async function runAuthorityConformance(transport,{createReceiver}={}){
   await registerSource('two');await closeResidual('two');await registerCapability('two');
   const position=good(await call('institution','authority',{action:'check_permission',case_id:caseId,requested_effect:{...effect,effect_id:op('position')}}),'read permission position');
   assert.equal(position.permission_position.tier,'fully_permitted',JSON.stringify(position.permission_position.blocked));assert.equal(position.permission_position.lab_fixture_only,true);assert.equal(position.permission_position.execution_authorized,false);
+  // Origin chain and current state: the pinned root signs the session registry; the session key signs a short-lived reading.
+  const trustRoot=fetchTrustRoot?await fetchTrustRoot():null;
+  const chainExpect=trustRoot?{root_key_id:trustRoot.key_id,realm:'amos-lab',session_id:session.session_id,tenant_id:session.tenant_id,workspace_id:session.workspace_id,capability_id:capabilityId}:null;
+  if(trustRoot){
+   assert.ok(session.trust_chain?.registry_statement,'issue returns a root-signed registry statement');
+   const currentProof=good(await call('executor','current_state',{capability_id:capabilityId}),'signed current-state proof for a fully permitted capability');
+   const live=await verifyAuthorityChain({trustRoot,registryStatement:session.trust_chain.registry_statement,currentState:currentProof.current_state,expect:chainExpect});
+   assert.equal(live.valid,true,live.reason);assert.equal(live.effect_allowed,true);checks.push('current state verifies through the pinned root and allows the exact effect');
+   const other=await verifyAuthorityChain({trustRoot,registryStatement:session.trust_chain.registry_statement,currentState:currentProof.current_state,expect:{...chainExpect,session_id:'AC-'+'0'.repeat(32)}});
+   assert.equal(other.effect_allowed,false);checks.push('a cross-session substitution fails before any effect');
+  }
   const ceiling=good(await call('institution','authority',{action:'check_permission',case_id:caseId,requested_effect:{...effect,effect_id:op('position'),amount_minor:1}}),'read permission for another amount');assert.equal(ceiling.permission_position.tier,'conditionally_permitted');assert(ceiling.permission_position.closure_path.acts.some(a=>a.act==='reduce_amount_or_issue_capability'));
   const committedHarness=await runCommittedRevocationHarness({capability_id:capabilityId,effect,verify:request=>chain('executor',{action:'verify_capability',...request}),commitEffect:request=>chain('executor',{action:'commit_effect',...request}),recordEffect:request=>chain('executor',{action:'record_effect',...request}),revoke:()=>chain('institution',{action:'revoke_credential',id:credentialId,reason:'Proprietary lab revocation between verify and commit'})});checks.push('commit-time check stops an effect revoked after verification');
   const after=good(await call('institution','authority',{action:'check_permission',case_id:caseId,requested_effect:{...effect,effect_id:op('position')}}),'read permission after revocation');assert.equal(after.permission_position.tier,'conditionally_permitted');assert(after.permission_position.closure_path.acts.length>=1);
+  if(trustRoot){
+   const revokedProof=good(await call('executor','current_state',{capability_id:capabilityId}),'signed current-state proof after revocation');
+   const blocked=await verifyAuthorityChain({trustRoot,registryStatement:session.trust_chain.registry_statement,currentState:revokedProof.current_state,expect:chainExpect});
+   assert.equal(blocked.effect_allowed,false);assert.match(blocked.reason,/^current_state_not_permitted/);checks.push('after revocation the current-state proof withholds the effect');
+  }
   await verify({},'deny');
   await registerCredential('two');await closeResidual('three');await registerCapability('three');await verify();good(await chain('reviewer',{action:'revoke_closure',closure_id:closureId,reason:'Proprietary lab revocation'}),'revoke closure');await verify({},'deny');
   await closeResidual('four');await registerCapability('four');await verify();
