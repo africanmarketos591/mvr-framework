@@ -1,4 +1,6 @@
-# Changelog: 2026-11-01.effect-state.1
+# Changelog: 2026-11-01.effect-state.2
+
+`2026-11-01.effect-state.1` was deployed at 19:33 UTC and superseded the same day. Its live audit qualification passed the R8 bar on 12 of 14 route and profile cells: `/v1/evidence-validation` ran record checks only and detected 12 of 16 defects in both profiles. In `.2` every audit route family runs the same claim-to-source checks, and the local test no longer exempts any route. Its manifest stays in `release-manifests/` as the deployed record of `.1`.
 
 This release answers the R8 Enterprise qualification. Its principle is that analysis, institutional authority and execution are three different questions, and that AMOS must answer each one, per exact effect, without letting one rewrite another.
 
