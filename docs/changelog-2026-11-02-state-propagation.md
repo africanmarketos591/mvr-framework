@@ -1,4 +1,6 @@
-# Changelog: 2026-11-02.state-propagation.1
+# Changelog: 2026-11-02.state-propagation.2
+
+`2026-11-02.state-propagation.1` was deployed at 20:23 UTC on 2 November and superseded the next day. Its R9 qualification passed live (effect sets A and B exact in both profiles, the held-out audit bar in both profiles, relevance on every route), but the licensed favourable-path regression found that a permission statement issued for a modelled effect no longer validated against the closed published contract: `effect_state` now carries `canonical_action_id` and `modelled_as`, which the published statement schema did not allow. In `.2` the schema allows both fields (optional, so earlier statements still validate) and the private CI checks the closed schema directly. Its manifest stays in `release-manifests/` as the deployed record of `.1`.
 
 This release answers the R9 Enterprise qualification. R9 found that the three-axis envelope held at the safety boundary, but that the parts were not yet one trustworthy loop: analytical state was falsely favorable for missing and conditional evidence, accountable dispositions did not change effect state, audit routes were weak, the effect and authority layers disagreed on action identity, and the published contracts were not self-consistent. Its principle is deterministic state propagation: read each record's stated state once, recompute only the dependent exact effects, use one action identity, distribute current state, and let a buyer-controlled receiver enforce the result.
 

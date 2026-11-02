@@ -94655,6 +94655,20 @@
                                       "decision_journal_head_sha256": {
                                         "type": "string",
                                         "pattern": "^[a-f0-9]{64}$"
+                                      },
+                                      "canonical_action_id": {
+                                        "type": [
+                                          "string",
+                                          "null"
+                                        ],
+                                        "maxLength": 120
+                                      },
+                                      "modelled_as": {
+                                        "type": [
+                                          "string",
+                                          "null"
+                                        ],
+                                        "maxLength": 120
                                       }
                                     },
                                     "required": [
@@ -114937,6 +114951,20 @@
                           "decision_journal_head_sha256": {
                             "type": "string",
                             "pattern": "^[a-f0-9]{64}$"
+                          },
+                          "canonical_action_id": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "maxLength": 120
+                          },
+                          "modelled_as": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "maxLength": 120
                           }
                         },
                         "required": [
@@ -115526,6 +115554,20 @@
                               "decision_journal_head_sha256": {
                                 "type": "string",
                                 "pattern": "^[a-f0-9]{64}$"
+                              },
+                              "canonical_action_id": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "maxLength": 120
+                              },
+                              "modelled_as": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "maxLength": 120
                               }
                             },
                             "required": [
@@ -119681,6 +119723,20 @@
                           "decision_journal_head_sha256": {
                             "type": "string",
                             "pattern": "^[a-f0-9]{64}$"
+                          },
+                          "canonical_action_id": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "maxLength": 120
+                          },
+                          "modelled_as": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "maxLength": 120
                           }
                         },
                         "required": [
@@ -120270,6 +120326,20 @@
                               "decision_journal_head_sha256": {
                                 "type": "string",
                                 "pattern": "^[a-f0-9]{64}$"
+                              },
+                              "canonical_action_id": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "maxLength": 120
+                              },
+                              "modelled_as": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "maxLength": 120
                               }
                             },
                             "required": [
@@ -125666,6 +125736,20 @@
                               "decision_journal_head_sha256": {
                                 "type": "string",
                                 "pattern": "^[a-f0-9]{64}$"
+                              },
+                              "canonical_action_id": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "maxLength": 120
+                              },
+                              "modelled_as": {
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "maxLength": 120
                               }
                             },
                             "required": [
@@ -126753,7 +126837,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-11-02.state-propagation.1"
+    "deployment_revision": "2026-11-02.state-propagation.2"
   },
   "response_contract_version": "2026-05-01.v1"
 }

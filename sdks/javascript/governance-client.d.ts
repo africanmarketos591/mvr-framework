@@ -1,5 +1,5 @@
 // Generated from the AMOS OpenAPI contract by scripts/generate-governance-client.mjs (https://github.com/africanmarketos591/mvr-framework).
-// Contract version v6.32.0; operation subset SHA-256: 57dee4fa0628e91c8a2a86b4f3e0db2acbea1eebbeaaf7db9eefd7623810988c. Do not edit by hand; regenerate instead.
+// Contract version v6.32.0; operation subset SHA-256: c9bfba0f996935a790053f2c833815081ad95b526a0ea7ce775a1c22a7168227. Do not edit by hand; regenerate instead.
 /** Request body for POST /v1/review-cases. */
 export type ReviewCasesRequest = {
   workplan_id?: string;
@@ -509,6 +509,8 @@ export type AuthorityReceiptsVerifyRequest = {
             valid_until: (string | unknown);
             decision_state_sha256: string;
             decision_journal_head_sha256: string;
+            canonical_action_id?: string | null;
+            modelled_as?: string | null;
           } | unknown);
         dependencies: Array<{
             kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
@@ -2004,6 +2006,8 @@ export type AuthorityChainResponse = ({
           valid_until: (string | unknown);
           decision_state_sha256: string;
           decision_journal_head_sha256: string;
+          canonical_action_id?: string | null;
+          modelled_as?: string | null;
         } | unknown);
       dependencies: Array<{
           kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
@@ -2099,6 +2103,8 @@ export type AuthorityChainResponse = ({
             valid_until: (string | unknown);
             decision_state_sha256: string;
             decision_journal_head_sha256: string;
+            canonical_action_id?: string | null;
+            modelled_as?: string | null;
           } | unknown);
         dependencies: Array<{
             kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
@@ -2429,6 +2435,8 @@ export type AuthorityConformanceResponse = {
             valid_until: (string | unknown);
             decision_state_sha256: string;
             decision_journal_head_sha256: string;
+            canonical_action_id?: string | null;
+            modelled_as?: string | null;
           } | unknown);
         dependencies: Array<{
             kind: "capability" | "institution_anchor" | "review_case" | "residual_closure" | "reviewer_designation" | "decision_journal";
