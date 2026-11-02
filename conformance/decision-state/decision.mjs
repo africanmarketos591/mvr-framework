@@ -1,7 +1,7 @@
 // Decision state: what the accountable reviews on one case currently support, for the internal
 // recommendation and for each named effect. Pure and deterministic: the AMOS server and the public
 // replay tool run this same file, so anyone holding the journal can recompute every transition.
-import {need,object,text,instant,canonical,digest} from './core.mjs';
+import {need,object,text,instant,canonical,digest,sameAction} from './core.mjs';
 import {planReviews} from './review.mjs';
 import {createHash} from 'node:crypto';
 const sha256=value=>createHash('sha256').update(value,'utf8').digest('hex');
@@ -112,7 +112,9 @@ function freshState(){return {model_sha256:null,reviews:[],withdrawn:new Set(),l
 function activeReviews(st,at){
   return st.reviews.filter(r=>r.model_sha256===st.model_sha256&&!st.withdrawn.has(r.review_sha256)&&!st.lapsed.has(r.designation.credential_id)&&Date.parse(r.designation.not_after)>at);
 }
-const covers=(r,t)=>t.kind!=='effect'||!Array.isArray(r.designation.effect_types)||r.designation.effect_types.includes(t.effect_type);
+// A designation limited to effect types covers an effect named by an alias or by its canonical identifier alike.
+export const designationCovers=(r,t)=>t.kind!=='effect'||!Array.isArray(r.designation.effect_types)||r.designation.effect_types.some(type=>sameAction(type,t.effect_type));
+const covers=designationCovers;
 function factView(st,t,at){
   const latest=new Map();
   for(const r of activeReviews(st,at))if(r.value!==null&&covers(r,t))latest.set(r.fact_id+'|'+r.reviewer_principal_sha256,r);

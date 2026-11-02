@@ -10,6 +10,8 @@ on:
       - 'conformance/enterprise-conformance/**'
       - 'conformance/effect-decision/r9-heldout/**'
       - 'conformance/audit-findings/heldout-r9/**'
+      - 'conformance/r9-qualification/**'
+      - 'conformance/interpretation-submission/**'
       - 'sdks/javascript/buyer-executor-verifier.mjs'
       - 'sdks/javascript/trust-chain-verifier.mjs'
       - '.github/workflows/state-propagation.yml'
@@ -20,6 +22,8 @@ on:
       - 'conformance/enterprise-conformance/**'
       - 'conformance/effect-decision/r9-heldout/**'
       - 'conformance/audit-findings/heldout-r9/**'
+      - 'conformance/r9-qualification/**'
+      - 'conformance/interpretation-submission/**'
       - 'sdks/javascript/buyer-executor-verifier.mjs'
       - 'sdks/javascript/trust-chain-verifier.mjs'
       - '.github/workflows/state-propagation.yml'
@@ -39,3 +43,6 @@ jobs:
           node conformance/effect-decision/r9-heldout/build.mjs
           node conformance/audit-findings/heldout-r9/build.mjs
           git diff --exit-code -- conformance/effect-decision/r9-heldout conformance/audit-findings/heldout-r9
+      - name: Live runners parse (they need a key to run, so CI checks syntax only)
+        run: |
+          for f in conformance/r9-qualification/run-live.mjs conformance/interpretation-submission/run-live.mjs conformance/interpretation-submission/stratum-live.mjs conformance/enterprise-conformance/run-live.mjs; do node --check "$f"; done

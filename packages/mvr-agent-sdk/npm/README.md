@@ -39,7 +39,7 @@ console.log(result);
 const mvr = new MvrPreflightClient({
   apiKey: process.env.MVR_API_KEY,
   timeoutMs: 30000,                                  // default 30 s; every request has a deadline
-  expectedRevision: "2026-11-02.state-propagation.2", // optional; the server answers 409 DEPLOYMENT_REVISION_MISMATCH on any other revision
+  expectedRevision: "2026-11-02.state-propagation.3", // optional; the server answers 409 DEPLOYMENT_REVISION_MISMATCH on any other revision
   userAgent: "my-agent/1.0"                         // optional; a User-Agent is always sent from Node
 });
 ```

@@ -17,19 +17,27 @@ const arg = name => { const i = process.argv.indexOf('--' + name); return i > 0 
 const base = arg('base') || 'https://africanmarketos.com', output = arg('output'), key = process.env.MVR_API_KEY;
 if (!key || !output) { console.error('Set MVR_API_KEY and pass --output <file>.'); process.exit(2); }
 const read = p => JSON.parse(fs.readFileSync(path.join(here, '..', p), 'utf8'));
-const report = {suite: 'r9-qualification-live', base, started_at: new Date().toISOString(), classification: 'proprietary lab fixtures; not observations of real organisations', checks: [], failures: [], scores: {}};
+const report = {suite: 'r9-qualification-live', base, started_at: new Date().toISOString(), classification: 'proprietary lab fixtures; not observations of real organisations', checks: [], failures: [], scores: {}, retries: [], parity_mismatches: []};
 const save = () => fs.writeFileSync(output, JSON.stringify(report, null, 1) + '\n');
 const check = (name, ok, detail) => { report.checks.push({name, passed: !!ok, ...(detail === undefined ? {} : {detail})}); if (!ok) report.failures.push(name); save(); };
 // Some governed routes (for example /v1/evidence-review) require a fresh Idempotency-Key on every POST.
 const headers = (profile, licensed = true, post = true) => ({'Content-Type': 'application/json', 'User-Agent': 'amos-r9-qualification', Accept: 'application/json, text/event-stream', ...(licensed ? {'X-API-Key': key, 'X-Response-Profile': profile} : {}), ...(post ? {'Idempotency-Key': crypto.randomUUID()} : {})});
 const call = async (route, body, profile = 'full_advisory', {licensed = true, method = 'POST'} = {}) => {
   for (let attempt = 0; attempt < 3; attempt++) {
-    try { const r = await fetch(base + route, {method, headers: headers(profile, licensed, method !== 'GET'), ...(method === 'GET' ? {} : {body: JSON.stringify(body)}), signal: AbortSignal.timeout(90000)}); return {status: r.status, headers: r.headers, body: await r.json().catch(() => null)}; }
-    catch (error) { if (attempt === 2) throw error; await new Promise(r => setTimeout(r, 2000)); }
+    try {
+      const r = await fetch(base + route, {method, headers: headers(profile, licensed, method !== 'GET'), ...(method === 'GET' ? {} : {body: JSON.stringify(body)}), signal: AbortSignal.timeout(90000)});
+      // A throttle or gateway reply is not an answer: wait as told, retry, and record that it happened.
+      if ((r.status === 429 || r.status >= 502) && attempt < 2) { report.retries.push({route, status: r.status, retry_after: r.headers.get('Retry-After'), at: new Date().toISOString()}); await new Promise(res => setTimeout(res, 1000 * Math.min(60, Number(r.headers.get('Retry-After')) || 5))); continue; }
+      return {status: r.status, headers: r.headers, body: await r.json().catch(() => null)};
+    }
+    catch (error) { if (attempt === 2) throw error; report.retries.push({route, error: String(error?.message || error).slice(0, 120), at: new Date().toISOString()}); await new Promise(r => setTimeout(r, 2000)); }
   }
 };
 let id = 0;
-const mcp = async (route, name, args, profile = 'full_advisory', licensed = true) => (await call(route, {jsonrpc: '2.0', id: ++id, method: 'tools/call', params: {name, arguments: args}}, profile, {licensed})).body?.result?.structuredContent;
+const mcpCall = (route, name, args, profile = 'full_advisory', licensed = true) => call(route, {jsonrpc: '2.0', id: ++id, method: 'tools/call', params: {name, arguments: args}}, profile, {licensed});
+const mcp = async (...a) => (await mcpCall(...a)).body?.result?.structuredContent;
+// The first path at which two JSON values differ (for the parity record).
+const firstDiff = (a, b, p = '') => { if (JSON.stringify(a) === JSON.stringify(b)) return null; if (a && b && typeof a === 'object' && typeof b === 'object') { for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) { const d = firstDiff(a[k], b[k], p + '.' + k); if (d) return d; } } return {path: p || '.', rest: JSON.stringify(a)?.slice(0, 200), mcp: JSON.stringify(b)?.slice(0, 200)}; };
 const manifest = (await call('/.well-known/mvr-release-manifest.json', null, 'full_advisory', {licensed: false, method: 'GET'})).body;
 report.deployment_revision = manifest.deployment_revision; report.release_manifest_id = manifest.manifest_id;
 const strip = b => { const {response_meta, mvr_response_receipt, workflow_integrity, diagnostics, ...rest} = b || {}; return rest; };
@@ -42,9 +50,10 @@ for (const [setName, file] of [['A', 'effect-decision/r9-heldout/cohort.json'], 
     let parity = 0, bound = 0;
     for (const c of cohort.cases) {
       const r = await call('/v1/effect-decision', c.request, profile);
-      const m = await mcp('/mcp/runtime', 'mvr_effect_decision', c.request, profile);
+      const mr = await mcpCall('/mcp/runtime', 'mvr_effect_decision', c.request, profile), m = mr.body?.result?.structuredContent;
       results.push({case_id: c.case_id, body: r.body});
       if (m && JSON.stringify(strip(m)) === JSON.stringify(strip(r.body))) parity++;
+      else report.parity_mismatches.push({set: setName, profile, case_id: c.case_id, rest_status: r.status, mcp_status: mr.status, mcp_is_error: mr.body?.result?.isError ?? null, mcp_error: mr.body?.error ?? null, diff: m ? firstDiff(strip(r.body), strip(m)) : 'no MCP structuredContent'});
       if (r.headers.get('X-MVR-Release-Manifest') === manifest.manifest_id) bound++;
     }
     const s = scoreEffects(cohort, results); const {mismatches, ...summary} = s;

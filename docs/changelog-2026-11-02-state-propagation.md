@@ -1,4 +1,19 @@
-# Changelog: 2026-11-02.state-propagation.2
+# Changelog: 2026-11-02.state-propagation.3
+
+`2026-11-02.state-propagation.2` was deployed at 21:43 UTC on 2 November and superseded the same night; its manifest stays in `release-manifests/`. `2026-11-02.state-propagation.3` completes one action identity (R9 P0.3) in the authority layer. `.2` resolved aliases and canonical identifiers in the effect engine, capability scope, review targets, the covering capability and the issuer-state checks. A sweep of every authority module for raw spelling comparisons found four places that still compared the spelling. Each fails closed (it refused or under-counted; nothing was permitted that should not be), but each gave an answer that depended on which spelling was used:
+
+- **Delegation scope.** A reviewer credential delegated under a parent limited to `create_draft_record` that named `amos.document.draft.create@1` (or the reverse) was refused as `DELEGATION_SCOPE_EXPANDED`. It is now the same action; naming another action is still refused.
+- **Designation coverage.** A designated reviewer limited to one spelling did not count toward an effect modelled under the other. Fixed in `lib/review-tools/decision.mjs`, the file the public replay tool runs, which now carries the immutable alias table (`LEGACY_ACTION_ALIASES`); private CI checks it equals the server ontology.
+- **Permission position.** `covers_effect_type` was false across spellings, so a capability that needed one closure was reported as "no capability covers this effect", with a closure path asking for a new capability. It now reports the same tier and closure path for either spelling.
+- **Review models.** A model could name an action twice, once under each spelling, with different rules, so one action had two states. It is now refused as `REVIEW_TOOLS_EFFECT_ACTION_DUPLICATE`.
+
+New tests prove parity for the grant, the capability ceiling, review conditions, dependency revocation, adverse reviews, expiry, revocation and delegation, in both directions and with identical reasons. A static check fails CI if any authority module compares action identifiers by raw spelling, and mutation runs confirm each test fails when its fix is removed.
+
+One deliberate exception stays: issuer-state v2 *registration* requires the case's `intended_action` and the signed state to use the identical identifier (`conformance/issuer-state-v2/SPEC.md`, section 9 step 7), because the published vectors and the independent Python checker encode that rule. The refusal says when the two are aliases (`same_action_by_alias`), and *evaluation* applies a registered state to both spellings.
+
+The R9 live runner now records the cause of any REST/MCP parity miss (both HTTP statuses and the first differing field) and retries throttle and gateway replies with a logged retry. A disposition stratum runner (`conformance/interpretation-submission/stratum-live.mjs`) measures the disposition lane at the scale R9 used: 24 workflows.
+
+## 2026-11-02.state-propagation.2
 
 `2026-11-02.state-propagation.1` was deployed at 20:23 UTC on 2 November and superseded the next day. Its R9 qualification passed live (effect sets A and B exact in both profiles, the held-out audit bar in both profiles, relevance on every route), but the licensed favourable-path regression found that a permission statement issued for a modelled effect no longer validated against the closed published contract: `effect_state` now carries `canonical_action_id` and `modelled_as`, which the published statement schema did not allow. In `.2` the schema allows both fields (optional, so earlier statements still validate) and the private CI checks the closed schema directly. Its manifest stays in `release-manifests/` as the deployed record of `.1`.
 

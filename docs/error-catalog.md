@@ -32,6 +32,7 @@ https://africanmarketos.com/get-api-key
 - `REVIEW_DESIGNATION_CASE_CREATOR`: the case creator tried to act as the designated reviewer.
 - `REVIEW_RESTRICTIVE_WORDING_ACKNOWLEDGEMENT_REQUIRED`: a designated approval of restrictive wording needs `acknowledge_restrictive_wording: true`.
 - `REVIEW_TOOLS_EFFECT_TYPE_UNKNOWN`: a modelled effect identifier that is not in the action ontology.
+- `REVIEW_TOOLS_EFFECT_ACTION_DUPLICATE`: a review model names the same action twice (an alias and its canonical identifier). Model each action once; `detail` names both spellings and the canonical identifier.
 - `REVIEW_INTERPRETATION_TASK_MISMATCH`, `REVIEW_INTERPRETATION_TASK_NOT_FOUND`, `INTERPRETATION_ATTRIBUTION_INVALID`, `INTERPRETATION_DISPOSITION_INVALID`: errors in interpretation tasks, attributions or dispositions.
 - `REVIEW_RECORDING_ACCOUNT_REQUIRED`: only the recording reviewer can withdraw a review.
 - `REVIEW_DECISION_DEPENDENCIES_CURRENT`: a dependency check found nothing to record.
