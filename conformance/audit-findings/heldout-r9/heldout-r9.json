@@ -1,0 +1,1964 @@
+{
+ "classification": "proprietary lab fixtures (AMOS-authored, logically consistent, public-safe); not observations of real organisations",
+ "frozen_at": "2026-11-02",
+ "contract_version": "mvr.audit-finding/1",
+ "bar": {
+  "defects_detected_at_least": 15,
+  "defects": 16,
+  "route_level_false_permits": 0,
+  "clean_false_positives": 0,
+  "controlling_at_least": 23,
+  "targeted_at_least": 15,
+  "internal_only_false_triggers": 0
+ },
+ "scoring": "A defect is detected when a finding has the expected code. A route-level false permit is a defect case answered no_defects_found or not_applicable. Controlling: the controlling finding has the expected code, a clean case is no_defects_found, the internal case is not_applicable. Targeted: the expected finding names the expected locus and carries a remediation and an acceptance condition.",
+ "routes": [
+  "/v1/evidence-validation",
+  "/v1/privacy-risk-review",
+  "/v1/evidence-suitability-scan",
+  "/v1/board-safety-check",
+  "/v1/red-team",
+  "/v1/release-check",
+  "/v1/claim-audit",
+  "/v1/decision-check",
+  "/v1/evidence-completeness",
+  "/v1/evidence-review"
+ ],
+ "cases": [
+  {
+   "case_id": "validation_stale_record",
+   "route": "/v1/evidence-validation",
+   "expected_defect_code": "EVIDENCE_STALE",
+   "expected_locus": {
+    "evidence_id": "V2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "entity_archetype": "distributor",
+    "evidence_pack": [
+     {
+      "evidence_id": "V1",
+      "claim": "Trading permit NKR-2026-0417 is current for Rift Valley Dairies Ltd.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-08-14",
+      "id": "V1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "V2",
+      "claim": "Retail audit of yoghurt shelf space in Nakuru.",
+      "source_class": "nonprobability_survey",
+      "country": "KE",
+      "date": "2024-03-02",
+      "id": "V2",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V2",
+      "freshness_date": "2024-03-02",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "validation_wrong_country",
+   "route": "/v1/evidence-validation",
+   "expected_defect_code": "GEOGRAPHY_MISMATCH",
+   "expected_locus": {
+    "evidence_id": "V2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "entity_archetype": "distributor",
+    "evidence_pack": [
+     {
+      "evidence_id": "V1",
+      "claim": "Trading permit NKR-2026-0417 is current for Rift Valley Dairies Ltd.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-08-14",
+      "id": "V1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "V2",
+      "claim": "Cold-chain distributor coverage survey.",
+      "source_class": "nonprobability_survey",
+      "geography": "TZ",
+      "published_at": "2026-07-01",
+      "id": "V2",
+      "evidence_geography": {
+       "country": "TZ"
+      },
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V2",
+      "freshness_date": "2026-07-01",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "privacy_narrative_conflict",
+   "route": "/v1/privacy-risk-review",
+   "expected_defect_code": "PRIVACY_ENVELOPE_CONFLICT",
+   "expected_locus": {
+    "input_path": "/narrative"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "privacy_envelope": {
+     "contains_personal_data": false
+    },
+    "narrative": "For follow-up, the farmer group lead Grace Achieng can be reached on 0722 481 093 after 5pm."
+   }
+  },
+  {
+   "case_id": "privacy_record_id_number",
+   "route": "/v1/privacy-risk-review",
+   "expected_defect_code": "PERSONAL_DATA_UNDECLARED",
+   "expected_locus": {
+    "evidence_id": "P1"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "evidence_pack": [
+     {
+      "evidence_id": "P1",
+      "claim": "Beneficiary registration sheet for the Nakuru cohort.",
+      "notes": "Row 14: ID No. 28456719, enrolled 2026-09-03.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-09-03",
+      "id": "P1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-P1",
+      "freshness_date": "2026-09-03",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "suitability_press_release_permission",
+   "route": "/v1/evidence-suitability-scan",
+   "expected_defect_code": "SOURCE_UNSUITABLE_FOR_USE",
+   "expected_locus": {
+    "evidence_id": "S1"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "available_data": [
+     {
+      "evidence_id": "S1",
+      "claim": "Rift Valley Dairies Ltd is licensed by the Kenya Dairy Board to process and sell yoghurt nationwide.",
+      "source_class": "entity_reported",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-10-02",
+      "id": "S1",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "internal_operations",
+      "source_grade": "B",
+      "source_doc_id": "LAB-S1",
+      "freshness_date": "2026-10-02",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "suitability_application_under_review",
+   "route": "/v1/evidence-suitability-scan",
+   "expected_defect_code": "SUPPORT_STATES_LINK_MISSING",
+   "expected_locus": {
+    "evidence_id": "S2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "evidence_pack": [
+     {
+      "evidence_id": "S2",
+      "claim": "The import permit application for the culture starter is still under review at the ministry.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-10-11",
+      "id": "S2",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-S2",
+      "freshness_date": "2026-10-11",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "board_overstates",
+   "route": "/v1/board-safety-check",
+   "expected_defect_code": "OUTPUT_OVERSTATES_EVIDENCE",
+   "expected_locus": {
+    "input_path": "/report_pack/recommendation"
+   },
+   "body": {
+    "report_pack": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The county approved the trading permit for Rift Valley Dairies Ltd pending a final premises inspection.",
+       "source_class": "regulator_published",
+       "evidence_type": "public_filing",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-08-14",
+       "id": "E1",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-08-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "KE"
+     },
+     "recommendation": "All approvals are in place; the board can approve the Nakuru launch this month."
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "KE"
+    }
+   }
+  },
+  {
+   "case_id": "board_receipt_as_evidence",
+   "route": "/v1/board-safety-check",
+   "expected_defect_code": "RECEIPT_USED_AS_EVIDENCE",
+   "expected_locus": {
+    "evidence_id": "X9"
+   },
+   "body": {
+    "report_pack": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        },
+        {
+         "evidence_id": "X9",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+       "source_class": "regulator_published",
+       "evidence_type": "public_filing",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-08-14",
+       "id": "E1",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-08-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "X9",
+       "claim": "Permission confirmed.",
+       "amos_receipt": "ISR-a1b2c3d4a1b2c3d4a1b2c3d4a1b2c3d4",
+       "source_class": "entity_reported",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-10-20",
+       "id": "X9",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "internal_operations",
+       "source_grade": "B",
+       "source_doc_id": "LAB-X9",
+       "freshness_date": "2026-10-20",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "KE"
+     }
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "KE"
+    }
+   }
+  },
+  {
+   "case_id": "redteam_amos_cited",
+   "route": "/v1/red-team",
+   "expected_defect_code": "OUTPUT_CITES_AMOS_AS_PERMISSION",
+   "expected_locus": {
+    "input_path": "/decision_result/agent_output"
+   },
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Nakuru outlets agreed to stock the yoghurt range.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+       "source_class": "regulator_published",
+       "evidence_type": "public_filing",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-08-14",
+       "id": "E1",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-08-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Field visits on 2026-09-20 found 23 of 30 Nakuru outlets agreed to stock the yoghurt range.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "KE",
+        "locality": "nakuru"
+       },
+       "source_date": "2026-09-20",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-09-20",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "KE"
+     },
+     "agent_output": "MVR approved the disbursement, so the team can release the supplier advance today."
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "KE"
+    },
+    "red_team_depth": "standard"
+   }
+  },
+  {
+   "case_id": "redteam_licence_cancelled",
+   "route": "/v1/red-team",
+   "expected_defect_code": "REVOCATION_PRESENT",
+   "expected_locus": {
+    "claim_id": "C1",
+    "evidence_id": "E1"
+   },
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Nakuru outlets agreed to stock the yoghurt range.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The county government cancelled the trading permit of Rift Valley Dairies Ltd on 14 October 2026.",
+       "source_class": "regulator_published",
+       "evidence_type": "public_filing",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-08-14",
+       "id": "E1",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-08-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Field visits on 2026-09-20 found 23 of 30 Nakuru outlets agreed to stock the yoghurt range.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "KE",
+        "locality": "nakuru"
+       },
+       "source_date": "2026-09-20",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-09-20",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "KE"
+     }
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "KE"
+    },
+    "red_team_depth": "standard"
+   }
+  },
+  {
+   "case_id": "release_board_prohibition",
+   "route": "/v1/release-check",
+   "expected_defect_code": "PROHIBITION_PRESENT",
+   "expected_locus": {
+    "claim_id": "C3",
+    "evidence_id": "E3"
+   },
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Nakuru outlets agreed to stock the yoghurt range.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C3",
+       "claim": "The flavoured yoghurt may be sold in Kenya.",
+       "support_links": [
+        {
+         "evidence_id": "E3",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+       "source_class": "regulator_published",
+       "evidence_type": "public_filing",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-08-14",
+       "id": "E1",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-08-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Field visits on 2026-09-20 found 23 of 30 Nakuru outlets agreed to stock the yoghurt range.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "KE",
+        "locality": "nakuru"
+       },
+       "source_date": "2026-09-20",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-09-20",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E3",
+       "claim": "The Kenya Dairy Board prohibited the flavoured yoghurt from sale in Kenya on 2026-09-30.",
+       "source_class": "regulator_published",
+       "evidence_type": "public_filing",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-08-14",
+       "id": "E3",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E3",
+       "freshness_date": "2026-08-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "KE"
+     }
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "KE"
+    }
+   }
+  },
+  {
+   "case_id": "claimaudit_quantity",
+   "route": "/v1/claim-audit",
+   "expected_defect_code": "UNSUPPORTED_QUANTITY",
+   "expected_locus": {
+    "claim_id": "C2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Yoghurt sales grew 35 percent to KES 4.2 million in the quarter.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-08-14",
+      "id": "E1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Quarterly yoghurt sales rose 25% to KES 4,200,000.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-09-20",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "claimaudit_pilot_only",
+   "route": "/v1/claim-audit",
+   "expected_defect_code": "QUALIFIER_IN_SUPPORT",
+   "expected_locus": {
+    "claim_id": "C1",
+    "evidence_id": "E1"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nakuru outlets agreed to stock the yoghurt range.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The trading permit for Rift Valley Dairies Ltd is valid for the Nakuru pilot only, until 31 March 2027.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-08-14",
+      "id": "E1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Field visits on 2026-09-20 found 23 of 30 Nakuru outlets agreed to stock the yoghurt range.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-09-20",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "decision_context_only",
+   "route": "/v1/decision-check",
+   "expected_defect_code": "CONTEXT_ONLY_SUPPORT",
+   "expected_locus": {
+    "claim_id": "C2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "decision_scope_level": "country"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "entity_name": "Rift Valley Dairies Ltd",
+    "country": "KE",
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nakuru outlets agreed to stock the yoghurt range.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "context_only",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-08-14",
+      "id": "E1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Field visits on 2026-09-20 found 23 of 30 Nakuru outlets agreed to stock the yoghurt range.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-09-20",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ],
+    "mode": "evidence_backed",
+    "case_type": "scaling",
+    "maturity_level": "startup",
+    "stakeholder_scope": [
+     "retailer",
+     "public_official"
+    ]
+   }
+  },
+  {
+   "case_id": "completeness_actor",
+   "route": "/v1/evidence-completeness",
+   "expected_defect_code": "UNSUPPORTED_ACTOR",
+   "expected_locus": {
+    "claim_id": "C2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "decision_question": "Should we appoint a Nakuru distributor?",
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Savanna Agro Holdings will distribute the range in Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-08-14",
+      "id": "E1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Savannah Agro Ltd confirmed it will distribute the yoghurt range in Nakuru from November.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-09-20",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "review_directive",
+   "route": "/v1/evidence-review",
+   "expected_defect_code": "DIRECTIVE_IN_SUPPORT",
+   "expected_locus": {
+    "claim_id": "R1",
+    "evidence_id": "E7"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "evidence_id": "E7",
+    "review_status": "pending",
+    "evidence_item": {
+     "evidence_id": "E7",
+     "claim": "Distributors of the yoghurt range must not supply unregistered kiosks.",
+     "source_class": "regulator_published",
+     "evidence_type": "public_filing",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-08-14",
+     "id": "E7",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E7",
+     "freshness_date": "2026-08-14",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    },
+    "claim_support": [
+     {
+      "claim_id": "R1",
+      "claim": "The distributor may supply all Nakuru retail outlets.",
+      "relationship": "direct_support",
+      "locator": "claim"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "clean_claimaudit_renewed",
+   "route": "/v1/claim-audit",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nakuru outlets agreed to stock the yoghurt range.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The trading permit of Rift Valley Dairies Ltd was renewed on 2026-02-10 and runs to 2027-02-09; the earlier permit expired in January 2026.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-08-14",
+      "id": "E1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Field visits on 2026-09-20 found 23 of 30 Nakuru outlets agreed to stock the yoghurt range.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-09-20",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "clean_release_boilerplate",
+   "route": "/v1/release-check",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "The Nakuru supply contract is signed.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+       "source_class": "regulator_published",
+       "evidence_type": "public_filing",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-08-14",
+       "id": "E1",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-08-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "The Nakuru supply contract, value KES 3,500,000 excluding VAT and subject to the laws of Kenya, was signed by both parties on 2026-09-18.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "KE",
+        "locality": "nakuru"
+       },
+       "source_date": "2026-09-20",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-09-20",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "KE"
+     }
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "KE"
+    }
+   }
+  },
+  {
+   "case_id": "clean_privacy_org_contact",
+   "route": "/v1/privacy-risk-review",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "privacy_envelope": {
+     "contains_personal_data": false
+    },
+    "narrative": "Enquiries go to info@riftvalleydairies.example or the head office switchboard +254 20 555 0100."
+   }
+  },
+  {
+   "case_id": "clean_validation_spellings",
+   "route": "/v1/evidence-validation",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "entity_archetype": "distributor",
+    "evidence_pack": [
+     {
+      "evidence_id": "V1",
+      "claim": "Trading permit NKR-2026-0417 issued to Rift Valley Dairies Ltd.",
+      "source_class": "regulator_published",
+      "country": "KE",
+      "published_at": "2026-08-14",
+      "id": "V1",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "V2",
+      "claim": "The conditional cash transfer programme operates in Nakuru wards.",
+      "source_class": "administrative_record",
+      "geography": "KE",
+      "date": "2026-09-01",
+      "id": "V2",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V2",
+      "freshness_date": "2026-09-01",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "clean_board_hedged",
+   "route": "/v1/board-safety-check",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "report_pack": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Nakuru outlets agreed to stock the yoghurt range.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+       "source_class": "regulator_published",
+       "evidence_type": "public_filing",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-08-14",
+       "id": "E1",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-08-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Field visits on 2026-09-20 found 23 of 30 Nakuru outlets agreed to stock the yoghurt range.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "KE",
+        "locality": "nakuru"
+       },
+       "source_date": "2026-09-20",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-09-20",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "KE"
+     },
+     "recommendation": "The evidence supports a bounded Nakuru pilot; an external launch still needs the institution approval named in the plan."
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "KE"
+    }
+   }
+  },
+  {
+   "case_id": "clean_redteam_hedged",
+   "route": "/v1/red-team",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Nakuru outlets agreed to stock the yoghurt range.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+       "source_class": "regulator_published",
+       "evidence_type": "public_filing",
+       "evidence_geography": {
+        "country": "KE"
+       },
+       "source_date": "2026-08-14",
+       "id": "E1",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-08-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Field visits on 2026-09-20 found 23 of 30 Nakuru outlets agreed to stock the yoghurt range.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "KE",
+        "locality": "nakuru"
+       },
+       "source_date": "2026-09-20",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-09-20",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "KE"
+     },
+     "agent_output": "Do not release funds until the county confirms the permit renewal in writing."
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "KE"
+    },
+    "red_team_depth": "standard"
+   }
+  },
+  {
+   "case_id": "clean_suitability_registry",
+   "route": "/v1/evidence-suitability-scan",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "available_data": [
+     {
+      "evidence_id": "S1",
+      "claim": "Registry extract: Rift Valley Dairies Ltd is licensed by the Kenya Dairy Board to process yoghurt, licence KDB-2026-1188.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-08-14",
+      "id": "S1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-S1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "internal_only_completeness",
+   "route": "/v1/evidence-completeness",
+   "expected_outcome": "not_applicable",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd",
+     "entity_archetype": "fmcg_brand"
+    },
+    "decision_question": "Reformat the quarterly board pack template for the finance team",
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nakuru outlets agreed to stock the yoghurt range.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Nakuru County Government issued trading permit NKR-2026-0417 to Rift Valley Dairies Ltd on 2026-08-14, valid until 2027-08-13.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-08-14",
+      "id": "E1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-08-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Field visits on 2026-09-20 found 23 of 30 Nakuru outlets agreed to stock the yoghurt range.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-09-20",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

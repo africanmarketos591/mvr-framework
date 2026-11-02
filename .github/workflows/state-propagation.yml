@@ -1,0 +1,41 @@
+name: State propagation conformance
+permissions:
+  contents: read
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'conformance/buyer-executor/**'
+      - 'conformance/receiver-kit/**'
+      - 'conformance/enterprise-conformance/**'
+      - 'conformance/effect-decision/r9-heldout/**'
+      - 'conformance/audit-findings/heldout-r9/**'
+      - 'sdks/javascript/buyer-executor-verifier.mjs'
+      - 'sdks/javascript/trust-chain-verifier.mjs'
+      - '.github/workflows/state-propagation.yml'
+  pull_request:
+    paths:
+      - 'conformance/buyer-executor/**'
+      - 'conformance/receiver-kit/**'
+      - 'conformance/enterprise-conformance/**'
+      - 'conformance/effect-decision/r9-heldout/**'
+      - 'conformance/audit-findings/heldout-r9/**'
+      - 'sdks/javascript/buyer-executor-verifier.mjs'
+      - 'sdks/javascript/trust-chain-verifier.mjs'
+      - '.github/workflows/state-propagation.yml'
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: '24.11.0'
+      - name: Buyer-executor negative conformance (offline)
+        run: node conformance/buyer-executor/negative-suite.mjs
+      - name: Held-out cohorts rebuild exactly from their builders
+        run: |
+          node conformance/effect-decision/r9-heldout/build.mjs
+          node conformance/audit-findings/heldout-r9/build.mjs
+          git diff --exit-code -- conformance/effect-decision/r9-heldout conformance/audit-findings/heldout-r9

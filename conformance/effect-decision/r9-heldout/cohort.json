@@ -1,0 +1,6150 @@
+{
+ "classification": "proprietary lab fixtures (AMOS-authored, logically consistent, public-safe); not observations of real organisations",
+ "frozen_at": "2026-11-02",
+ "contract_version": "mvr.effect-decision/1",
+ "precedence_version": "mvr.effect-precedence/2",
+ "shape": "8 scenarios x 6 variants x 5 effects (3 external, internal_recommendation, internal_planning) + 8 internal non-market controls = 56 cases, 248 effect rows (240 market + 8 internal)",
+ "bar": {
+  "market_effect_agreement_at_least": 228,
+  "market_effect_rows": 240,
+  "false_favorable": 0,
+  "missing_link_precedence": "32/32",
+  "qualifier_precedence": "32/32",
+  "external_authorized": 0,
+  "irrelevant_pairs_identical": "8/8",
+  "internal_controls_not_relevant": "8/8"
+ },
+ "cases": [
+  {
+   "case_id": "dairy-ke:complete",
+   "scenario": "dairy-ke",
+   "variant": "complete",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "nakuru"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Rift Valley Dairies Ltd has an active Nakuru distributor.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Nakuru County Government issued trading permit NKR-0417 to Rift Valley Dairies Ltd on 2026-08-14; it runs to 2027-08-13.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Highland Traders signed a two-year distribution agreement with Rift Valley Dairies Ltd on 2026-09-02.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the nakuru partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the nakuru distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "dairy-ke:missing",
+   "scenario": "dairy-ke",
+   "variant": "missing",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "nakuru"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Rift Valley Dairies Ltd has an active Nakuru distributor.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Rift Valley Dairies Ltd lodged its trading permit application with Nakuru County on 2026-08-14; the permit has not been issued.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Highland Traders signed a two-year distribution agreement with Rift Valley Dairies Ltd on 2026-09-02.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the nakuru partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the nakuru distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-ORDER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "INT-REC": {
+     "analytical": "insufficient",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "dairy-ke:conditional",
+   "scenario": "dairy-ke",
+   "variant": "conditional",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "nakuru"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Rift Valley Dairies Ltd has an active Nakuru distributor.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Nakuru County approved the trading permit for Rift Valley Dairies Ltd on condition that the cold room passes inspection.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Highland Traders signed a two-year distribution agreement with Rift Valley Dairies Ltd on 2026-09-02.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the nakuru partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the nakuru distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-ORDER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "INT-REC": {
+     "analytical": "conditional",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "dairy-ke:revoked",
+   "scenario": "dairy-ke",
+   "variant": "revoked",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "nakuru"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Rift Valley Dairies Ltd has an active Nakuru distributor.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Nakuru County revoked trading permit NKR-0417 of Rift Valley Dairies Ltd on 2026-10-09.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-10-10"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Highland Traders signed a two-year distribution agreement with Rift Valley Dairies Ltd on 2026-09-02.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the nakuru partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the nakuru distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "dairy-ke:prohibited",
+   "scenario": "dairy-ke",
+   "variant": "prohibited",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "nakuru"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "P1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Rift Valley Dairies Ltd has an active Nakuru distributor.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Nakuru County Government issued trading permit NKR-0417 to Rift Valley Dairies Ltd on 2026-08-14; it runs to 2027-08-13.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Highland Traders signed a two-year distribution agreement with Rift Valley Dairies Ltd on 2026-09-02.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "P1",
+      "claim": "The Kenya Dairy Board prohibited Rift Valley Dairies Ltd from distributing raw milk products in Kenya.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-10-12"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the nakuru partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the nakuru distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "dairy-ke:irrelevant",
+   "scenario": "dairy-ke",
+   "variant": "irrelevant",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "nakuru"
+    },
+    "subject": {
+     "entity_name": "Rift Valley Dairies Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Rift Valley Dairies Ltd holds a current county trading permit for Nakuru.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Rift Valley Dairies Ltd has an active Nakuru distributor.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Nakuru County Government issued trading permit NKR-0417 to Rift Valley Dairies Ltd on 2026-08-14; it runs to 2027-08-13.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Highland Traders signed a two-year distribution agreement with Rift Valley Dairies Ltd on 2026-09-02.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "nakuru"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "A nakuru weather bulletin forecast seasonal rains for late November.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-10-25"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the nakuru partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the nakuru distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   },
+   "paired_with": "dairy-ke:complete"
+  },
+  {
+   "case_id": "solar-ug:complete",
+   "scenario": "solar-ug",
+   "variant": "complete",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the gulu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "solar-ug:missing",
+   "scenario": "solar-ug",
+   "variant": "missing",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "The installation partnership agreement with Acholi Power Services is still awaiting countersignature.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the gulu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-ORDER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "INT-REC": {
+     "analytical": "insufficient",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "solar-ug:conditional",
+   "scenario": "solar-ug",
+   "variant": "conditional",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The retail licence of Nile Solar Ltd is provisional for the first twelve months of operation.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the gulu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-ORDER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "INT-REC": {
+     "analytical": "conditional",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "solar-ug:revoked",
+   "scenario": "solar-ug",
+   "variant": "revoked",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "R1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "R1",
+      "claim": "Licence ERA-RL-221, Nile Solar Ltd.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-10-10",
+      "licence_status": "revoked"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the gulu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "solar-ug:prohibited",
+   "scenario": "solar-ug",
+   "variant": "prohibited",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "P1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "P1",
+      "claim": "The Electricity Regulatory Authority barred Nile Solar Ltd from selling pay-as-you-go systems in Gulu.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-10-12"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the gulu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "solar-ug:irrelevant",
+   "scenario": "solar-ug",
+   "variant": "irrelevant",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "A gulu weather bulletin forecast seasonal rains for late November.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-10-25"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the gulu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   },
+   "paired_with": "solar-ug:complete"
+  },
+  {
+   "case_id": "pharma-tz:complete",
+   "scenario": "pharma-tz",
+   "variant": "complete",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "TZ",
+     "locality": "arusha"
+    },
+    "subject": {
+     "entity_name": "Kilima Pharma Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Kilima Pharma Ltd holds a current wholesale pharmacy permit in Tanzania.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Kilima Pharma Ltd has an active Arusha hospital supply contract.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Pharmacy Council issued wholesale permit PC-W-889 to Kilima Pharma Ltd on 2026-03-02 for the period to 2027-03-01.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Arusha Regional Hospital signed a supply contract with Kilima Pharma Ltd on 2026-08-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the arusha partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the arusha distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "pharma-tz:missing",
+   "scenario": "pharma-tz",
+   "variant": "missing",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "TZ",
+     "locality": "arusha"
+    },
+    "subject": {
+     "entity_name": "Kilima Pharma Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Kilima Pharma Ltd holds a current wholesale pharmacy permit in Tanzania.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Kilima Pharma Ltd has an active Arusha hospital supply contract.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Pharmacy Council issued wholesale permit PC-W-889 to Kilima Pharma Ltd on 2026-03-02 for the period to 2027-03-01.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "No executed copy of the Arusha Regional Hospital supply contract is on file; only an unsigned draft was provided.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the arusha partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the arusha distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-ORDER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "INT-REC": {
+     "analytical": "insufficient",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "pharma-tz:conditional",
+   "scenario": "pharma-tz",
+   "variant": "conditional",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "TZ",
+     "locality": "arusha"
+    },
+    "subject": {
+     "entity_name": "Kilima Pharma Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Kilima Pharma Ltd holds a current wholesale pharmacy permit in Tanzania.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Kilima Pharma Ltd has an active Arusha hospital supply contract.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The wholesale permit for Kilima Pharma Ltd is restricted to non-controlled medicines.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Arusha Regional Hospital signed a supply contract with Kilima Pharma Ltd on 2026-08-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the arusha partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the arusha distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-ORDER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "INT-REC": {
+     "analytical": "conditional",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "pharma-tz:revoked",
+   "scenario": "pharma-tz",
+   "variant": "revoked",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "TZ",
+     "locality": "arusha"
+    },
+    "subject": {
+     "entity_name": "Kilima Pharma Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Kilima Pharma Ltd holds a current wholesale pharmacy permit in Tanzania.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "R1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Kilima Pharma Ltd has an active Arusha hospital supply contract.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Pharmacy Council issued wholesale permit PC-W-889 to Kilima Pharma Ltd on 2026-03-02 for the period to 2027-03-01.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Arusha Regional Hospital signed a supply contract with Kilima Pharma Ltd on 2026-08-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "R1",
+      "claim": "Pharmacy Council notice concerning permit PC-W-889 of Kilima Pharma Ltd.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-10-10",
+      "authority_effect": "revocation"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the arusha partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the arusha distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "pharma-tz:prohibited",
+   "scenario": "pharma-tz",
+   "variant": "prohibited",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "TZ",
+     "locality": "arusha"
+    },
+    "subject": {
+     "entity_name": "Kilima Pharma Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Kilima Pharma Ltd holds a current wholesale pharmacy permit in Tanzania.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "P1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Kilima Pharma Ltd has an active Arusha hospital supply contract.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Pharmacy Council issued wholesale permit PC-W-889 to Kilima Pharma Ltd on 2026-03-02 for the period to 2027-03-01.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Arusha Regional Hospital signed a supply contract with Kilima Pharma Ltd on 2026-08-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "P1",
+      "claim": "Pharmacy Council order concerning Kilima Pharma Ltd and controlled medicines.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-10-12",
+      "authority_effect": "prohibition"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the arusha partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the arusha distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "pharma-tz:irrelevant",
+   "scenario": "pharma-tz",
+   "variant": "irrelevant",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "TZ",
+     "locality": "arusha"
+    },
+    "subject": {
+     "entity_name": "Kilima Pharma Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Kilima Pharma Ltd holds a current wholesale pharmacy permit in Tanzania.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Kilima Pharma Ltd has an active Arusha hospital supply contract.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Pharmacy Council issued wholesale permit PC-W-889 to Kilima Pharma Ltd on 2026-03-02 for the period to 2027-03-01.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Arusha Regional Hospital signed a supply contract with Kilima Pharma Ltd on 2026-08-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "TZ",
+       "locality": "arusha"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "A arusha weather bulletin forecast seasonal rains for late November.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "TZ"
+      },
+      "source_date": "2026-10-25"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the arusha partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the arusha distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   },
+   "paired_with": "pharma-tz:complete"
+  },
+  {
+   "case_id": "cash-transfer-ke:complete",
+   "scenario": "cash-transfer-ke",
+   "variant": "complete",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "kisumu"
+    },
+    "subject": {
+     "entity_name": "Lake Basin Relief Trust"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Lake Basin Relief Trust holds a current county no-objection for the Kisumu cash transfer programme.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Lake Basin Relief Trust has an active Kisumu payment agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Kisumu County issued a no-objection to Lake Basin Relief Trust for its conditional cash transfer programme on 2026-06-01, valid to 2027-05-31.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Equator Payments Ltd entered a payment agency agreement with Lake Basin Relief Trust on 2026-07-15.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kisumu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kisumu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cash-transfer-ke:missing",
+   "scenario": "cash-transfer-ke",
+   "variant": "missing",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "kisumu"
+    },
+    "subject": {
+     "entity_name": "Lake Basin Relief Trust"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Lake Basin Relief Trust holds a current county no-objection for the Kisumu cash transfer programme.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Lake Basin Relief Trust has an active Kisumu payment agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The county no-objection for Lake Basin Relief Trust is expected to be issued after the November council sitting.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Equator Payments Ltd entered a payment agency agreement with Lake Basin Relief Trust on 2026-07-15.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kisumu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kisumu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-ORDER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "INT-REC": {
+     "analytical": "insufficient",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cash-transfer-ke:conditional",
+   "scenario": "cash-transfer-ke",
+   "variant": "conditional",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "kisumu"
+    },
+    "subject": {
+     "entity_name": "Lake Basin Relief Trust"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Lake Basin Relief Trust holds a current county no-objection for the Kisumu cash transfer programme.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Lake Basin Relief Trust has an active Kisumu payment agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Kisumu County issued a no-objection to Lake Basin Relief Trust capped at 2,000 households for the first phase.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Equator Payments Ltd entered a payment agency agreement with Lake Basin Relief Trust on 2026-07-15.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kisumu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kisumu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-ORDER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "INT-REC": {
+     "analytical": "conditional",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cash-transfer-ke:revoked",
+   "scenario": "cash-transfer-ke",
+   "variant": "revoked",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "kisumu"
+    },
+    "subject": {
+     "entity_name": "Lake Basin Relief Trust"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Lake Basin Relief Trust holds a current county no-objection for the Kisumu cash transfer programme.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Lake Basin Relief Trust has an active Kisumu payment agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Kisumu County withdrew the no-objection it had issued to Lake Basin Relief Trust on 2026-10-20.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-10-10"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Equator Payments Ltd entered a payment agency agreement with Lake Basin Relief Trust on 2026-07-15.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kisumu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kisumu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cash-transfer-ke:prohibited",
+   "scenario": "cash-transfer-ke",
+   "variant": "prohibited",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "kisumu"
+    },
+    "subject": {
+     "entity_name": "Lake Basin Relief Trust"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Lake Basin Relief Trust holds a current county no-objection for the Kisumu cash transfer programme.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "P1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Lake Basin Relief Trust has an active Kisumu payment agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Kisumu County issued a no-objection to Lake Basin Relief Trust for its conditional cash transfer programme on 2026-06-01, valid to 2027-05-31.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Equator Payments Ltd entered a payment agency agreement with Lake Basin Relief Trust on 2026-07-15.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "P1",
+      "claim": "Kisumu County ordered Lake Basin Relief Trust to stop enrolling households pending an audit.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-10-12"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kisumu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kisumu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cash-transfer-ke:irrelevant",
+   "scenario": "cash-transfer-ke",
+   "variant": "irrelevant",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE",
+     "locality": "kisumu"
+    },
+    "subject": {
+     "entity_name": "Lake Basin Relief Trust"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Lake Basin Relief Trust holds a current county no-objection for the Kisumu cash transfer programme.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Lake Basin Relief Trust has an active Kisumu payment agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Kisumu County issued a no-objection to Lake Basin Relief Trust for its conditional cash transfer programme on 2026-06-01, valid to 2027-05-31.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Equator Payments Ltd entered a payment agency agreement with Lake Basin Relief Trust on 2026-07-15.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "KE",
+       "locality": "kisumu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "A kisumu weather bulletin forecast seasonal rains for late November.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "source_date": "2026-10-25"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kisumu partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kisumu distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   },
+   "paired_with": "cash-transfer-ke:complete"
+  },
+  {
+   "case_id": "agro-rw:complete",
+   "scenario": "agro-rw",
+   "variant": "complete",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "RW",
+     "locality": "musanze"
+    },
+    "subject": {
+     "entity_name": "Virunga Agro Inputs Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Virunga Agro Inputs Ltd holds a current fertiliser import registration in Rwanda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Virunga Agro Inputs Ltd has an active Musanze cooperative offtake.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Rwanda Agriculture Board registered Virunga Agro Inputs Ltd as a fertiliser importer on 2026-04-18, registration valid to 2027-04-17.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Musanze Potato Cooperative signed an offtake with Virunga Agro Inputs Ltd on 2026-08-05.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the musanze partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the musanze distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agro-rw:missing",
+   "scenario": "agro-rw",
+   "variant": "missing",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "RW",
+     "locality": "musanze"
+    },
+    "subject": {
+     "entity_name": "Virunga Agro Inputs Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Virunga Agro Inputs Ltd holds a current fertiliser import registration in Rwanda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Virunga Agro Inputs Ltd has an active Musanze cooperative offtake.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Rwanda Agriculture Board registered Virunga Agro Inputs Ltd as a fertiliser importer on 2026-04-18, registration valid to 2027-04-17.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "The Musanze Potato Cooperative offtake is only a letter of intent; the cooperative board has yet to ratify it.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the musanze partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the musanze distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-ORDER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "INT-REC": {
+     "analytical": "insufficient",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agro-rw:conditional",
+   "scenario": "agro-rw",
+   "variant": "conditional",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "RW",
+     "locality": "musanze"
+    },
+    "subject": {
+     "entity_name": "Virunga Agro Inputs Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Virunga Agro Inputs Ltd holds a current fertiliser import registration in Rwanda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Virunga Agro Inputs Ltd has an active Musanze cooperative offtake.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The fertiliser import registration applies only to blended NPK products, until the laboratory certifies other blends.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Musanze Potato Cooperative signed an offtake with Virunga Agro Inputs Ltd on 2026-08-05.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the musanze partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the musanze distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-ORDER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "INT-REC": {
+     "analytical": "conditional",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agro-rw:revoked",
+   "scenario": "agro-rw",
+   "variant": "revoked",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "RW",
+     "locality": "musanze"
+    },
+    "subject": {
+     "entity_name": "Virunga Agro Inputs Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Virunga Agro Inputs Ltd holds a current fertiliser import registration in Rwanda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "R1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Virunga Agro Inputs Ltd has an active Musanze cooperative offtake.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Rwanda Agriculture Board registered Virunga Agro Inputs Ltd as a fertiliser importer on 2026-04-18, registration valid to 2027-04-17.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Musanze Potato Cooperative signed an offtake with Virunga Agro Inputs Ltd on 2026-08-05.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "R1",
+      "claim": "Fertiliser importer registration of Virunga Agro Inputs Ltd.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-10-10",
+      "registration_status": "cancelled"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the musanze partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the musanze distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agro-rw:prohibited",
+   "scenario": "agro-rw",
+   "variant": "prohibited",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "RW",
+     "locality": "musanze"
+    },
+    "subject": {
+     "entity_name": "Virunga Agro Inputs Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Virunga Agro Inputs Ltd holds a current fertiliser import registration in Rwanda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "P1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Virunga Agro Inputs Ltd has an active Musanze cooperative offtake.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Rwanda Agriculture Board registered Virunga Agro Inputs Ltd as a fertiliser importer on 2026-04-18, registration valid to 2027-04-17.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Musanze Potato Cooperative signed an offtake with Virunga Agro Inputs Ltd on 2026-08-05.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "P1",
+      "claim": "The Rwanda Agriculture Board banned the sale of the unregistered urea blend by Virunga Agro Inputs Ltd.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-10-12"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the musanze partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the musanze distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agro-rw:irrelevant",
+   "scenario": "agro-rw",
+   "variant": "irrelevant",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "RW",
+     "locality": "musanze"
+    },
+    "subject": {
+     "entity_name": "Virunga Agro Inputs Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Virunga Agro Inputs Ltd holds a current fertiliser import registration in Rwanda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Virunga Agro Inputs Ltd has an active Musanze cooperative offtake.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Rwanda Agriculture Board registered Virunga Agro Inputs Ltd as a fertiliser importer on 2026-04-18, registration valid to 2027-04-17.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Musanze Potato Cooperative signed an offtake with Virunga Agro Inputs Ltd on 2026-08-05.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "RW",
+       "locality": "musanze"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "A musanze weather bulletin forecast seasonal rains for late November.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "RW"
+      },
+      "source_date": "2026-10-25"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the musanze partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the musanze distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   },
+   "paired_with": "agro-rw:complete"
+  },
+  {
+   "case_id": "agent-gh:complete",
+   "scenario": "agent-gh",
+   "variant": "complete",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "GH",
+     "locality": "kumasi"
+    },
+    "subject": {
+     "entity_name": "Ashanti Mobile Agents Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Ashanti Mobile Agents Ltd holds a current agent network approval in Ghana.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Ashanti Mobile Agents Ltd has an active Kumasi super-agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Bank of Ghana approved the agent network of Ashanti Mobile Agents Ltd on 2026-02-27; the approval runs to 2027-02-26.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Kejetia Super Agent Ltd signed a super-agent agreement with Ashanti Mobile Agents Ltd on 2026-06-12.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kumasi partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kumasi distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agent-gh:missing",
+   "scenario": "agent-gh",
+   "variant": "missing",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "GH",
+     "locality": "kumasi"
+    },
+    "subject": {
+     "entity_name": "Ashanti Mobile Agents Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Ashanti Mobile Agents Ltd holds a current agent network approval in Ghana.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Ashanti Mobile Agents Ltd has an active Kumasi super-agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Ashanti Mobile Agents Ltd applied for agent network approval in July; the Bank of Ghana decision is still pending.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Kejetia Super Agent Ltd signed a super-agent agreement with Ashanti Mobile Agents Ltd on 2026-06-12.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kumasi partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kumasi distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-ORDER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "INT-REC": {
+     "analytical": "insufficient",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agent-gh:conditional",
+   "scenario": "agent-gh",
+   "variant": "conditional",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "GH",
+     "locality": "kumasi"
+    },
+    "subject": {
+     "entity_name": "Ashanti Mobile Agents Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Ashanti Mobile Agents Ltd holds a current agent network approval in Ghana.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Ashanti Mobile Agents Ltd has an active Kumasi super-agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Bank of Ghana approval for Ashanti Mobile Agents Ltd is limited to 150 agents during the pilot.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Kejetia Super Agent Ltd signed a super-agent agreement with Ashanti Mobile Agents Ltd on 2026-06-12.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kumasi partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kumasi distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-ORDER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "INT-REC": {
+     "analytical": "conditional",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agent-gh:revoked",
+   "scenario": "agent-gh",
+   "variant": "revoked",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "GH",
+     "locality": "kumasi"
+    },
+    "subject": {
+     "entity_name": "Ashanti Mobile Agents Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Ashanti Mobile Agents Ltd holds a current agent network approval in Ghana.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Ashanti Mobile Agents Ltd has an active Kumasi super-agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Bank of Ghana revoked the agent network approval of Ashanti Mobile Agents Ltd on 2026-10-01.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-10-10"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Kejetia Super Agent Ltd signed a super-agent agreement with Ashanti Mobile Agents Ltd on 2026-06-12.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kumasi partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kumasi distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agent-gh:prohibited",
+   "scenario": "agent-gh",
+   "variant": "prohibited",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "GH",
+     "locality": "kumasi"
+    },
+    "subject": {
+     "entity_name": "Ashanti Mobile Agents Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Ashanti Mobile Agents Ltd holds a current agent network approval in Ghana.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "P1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Ashanti Mobile Agents Ltd has an active Kumasi super-agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Bank of Ghana approved the agent network of Ashanti Mobile Agents Ltd on 2026-02-27; the approval runs to 2027-02-26.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Kejetia Super Agent Ltd signed a super-agent agreement with Ashanti Mobile Agents Ltd on 2026-06-12.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "P1",
+      "claim": "Bank of Ghana directive concerning Ashanti Mobile Agents Ltd.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-10-12",
+      "authority_effect": "prohibition"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kumasi partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kumasi distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "agent-gh:irrelevant",
+   "scenario": "agent-gh",
+   "variant": "irrelevant",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "GH",
+     "locality": "kumasi"
+    },
+    "subject": {
+     "entity_name": "Ashanti Mobile Agents Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Ashanti Mobile Agents Ltd holds a current agent network approval in Ghana.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Ashanti Mobile Agents Ltd has an active Kumasi super-agent.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Bank of Ghana approved the agent network of Ashanti Mobile Agents Ltd on 2026-02-27; the approval runs to 2027-02-26.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Kejetia Super Agent Ltd signed a super-agent agreement with Ashanti Mobile Agents Ltd on 2026-06-12.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "GH",
+       "locality": "kumasi"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "A kumasi weather bulletin forecast seasonal rains for late November.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "GH"
+      },
+      "source_date": "2026-10-25"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kumasi partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kumasi distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   },
+   "paired_with": "agent-gh:complete"
+  },
+  {
+   "case_id": "school-meals-ng:complete",
+   "scenario": "school-meals-ng",
+   "variant": "complete",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "NG",
+     "locality": "kano"
+    },
+    "subject": {
+     "entity_name": "Sahel School Meals Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Sahel School Meals Ltd holds a current state food handling certificate in Kano.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Sahel School Meals Ltd has an active Kano grain supplier.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Kano State food safety agency certified Sahel School Meals Ltd for food handling on 2026-05-05, certificate valid to 2027-05-04.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Dala Grains Ltd executed a grain supply agreement with Sahel School Meals Ltd on 2026-07-21.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kano partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kano distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "school-meals-ng:missing",
+   "scenario": "school-meals-ng",
+   "variant": "missing",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "NG",
+     "locality": "kano"
+    },
+    "subject": {
+     "entity_name": "Sahel School Meals Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Sahel School Meals Ltd holds a current state food handling certificate in Kano.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Sahel School Meals Ltd has an active Kano grain supplier.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Kano State food safety agency certified Sahel School Meals Ltd for food handling on 2026-05-05, certificate valid to 2027-05-04.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Dala Grains Ltd could not be traced in the state supplier register and no supply agreement was produced.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kano partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kano distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-ORDER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "INT-REC": {
+     "analytical": "insufficient",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "school-meals-ng:conditional",
+   "scenario": "school-meals-ng",
+   "variant": "conditional",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "NG",
+     "locality": "kano"
+    },
+    "subject": {
+     "entity_name": "Sahel School Meals Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Sahel School Meals Ltd holds a current state food handling certificate in Kano.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Sahel School Meals Ltd has an active Kano grain supplier.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The food handling certificate of Sahel School Meals Ltd is subject to quarterly hygiene audits.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Dala Grains Ltd executed a grain supply agreement with Sahel School Meals Ltd on 2026-07-21.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kano partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kano distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-ORDER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "INT-REC": {
+     "analytical": "conditional",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "school-meals-ng:revoked",
+   "scenario": "school-meals-ng",
+   "variant": "revoked",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "NG",
+     "locality": "kano"
+    },
+    "subject": {
+     "entity_name": "Sahel School Meals Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Sahel School Meals Ltd holds a current state food handling certificate in Kano.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "R1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Sahel School Meals Ltd has an active Kano grain supplier.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Kano State food safety agency certified Sahel School Meals Ltd for food handling on 2026-05-05, certificate valid to 2027-05-04.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Dala Grains Ltd executed a grain supply agreement with Sahel School Meals Ltd on 2026-07-21.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "R1",
+      "claim": "Kano State food safety agency notice concerning Sahel School Meals Ltd.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-10-10",
+      "authority_effect": "revocation"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kano partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kano distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "school-meals-ng:prohibited",
+   "scenario": "school-meals-ng",
+   "variant": "prohibited",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "NG",
+     "locality": "kano"
+    },
+    "subject": {
+     "entity_name": "Sahel School Meals Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Sahel School Meals Ltd holds a current state food handling certificate in Kano.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "P1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Sahel School Meals Ltd has an active Kano grain supplier.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Kano State food safety agency certified Sahel School Meals Ltd for food handling on 2026-05-05, certificate valid to 2027-05-04.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Dala Grains Ltd executed a grain supply agreement with Sahel School Meals Ltd on 2026-07-21.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "P1",
+      "claim": "The Kano State food safety agency prohibited Sahel School Meals Ltd from supplying schools in Kano.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-10-12"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kano partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kano distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "school-meals-ng:irrelevant",
+   "scenario": "school-meals-ng",
+   "variant": "irrelevant",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "NG",
+     "locality": "kano"
+    },
+    "subject": {
+     "entity_name": "Sahel School Meals Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Sahel School Meals Ltd holds a current state food handling certificate in Kano.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Sahel School Meals Ltd has an active Kano grain supplier.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Kano State food safety agency certified Sahel School Meals Ltd for food handling on 2026-05-05, certificate valid to 2027-05-04.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Dala Grains Ltd executed a grain supply agreement with Sahel School Meals Ltd on 2026-07-21.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "NG",
+       "locality": "kano"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "A kano weather bulletin forecast seasonal rains for late November.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "NG"
+      },
+      "source_date": "2026-10-25"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the kano partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the kano distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   },
+   "paired_with": "school-meals-ng:complete"
+  },
+  {
+   "case_id": "cement-zm:complete",
+   "scenario": "cement-zm",
+   "variant": "complete",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "ZM",
+     "locality": "ndola"
+    },
+    "subject": {
+     "entity_name": "Copperbelt Cement Distributors Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Copperbelt Cement Distributors Ltd holds a current trading licence in Zambia.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Copperbelt Cement Distributors Ltd has an active Ndola hardware network.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Ndola City Council issued trading licence NDL-TL-552 to Copperbelt Cement Distributors Ltd on 2026-01-15, valid to 2027-01-14.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Ndola Hardware Association signed a stockist agreement with Copperbelt Cement Distributors Ltd on 2026-05-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the ndola partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the ndola distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cement-zm:missing",
+   "scenario": "cement-zm",
+   "variant": "missing",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "ZM",
+     "locality": "ndola"
+    },
+    "subject": {
+     "entity_name": "Copperbelt Cement Distributors Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Copperbelt Cement Distributors Ltd holds a current trading licence in Zambia.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Copperbelt Cement Distributors Ltd has an active Ndola hardware network.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Ndola City Council issued trading licence NDL-TL-552 to Copperbelt Cement Distributors Ltd on 2026-01-15, valid to 2027-01-14.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "The Ndola Hardware Association stockist agreement will be signed once pricing is agreed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the ndola partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the ndola distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "EXT-ORDER": {
+     "analytical": "insufficient",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+    },
+    "INT-REC": {
+     "analytical": "insufficient",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cement-zm:conditional",
+   "scenario": "cement-zm",
+   "variant": "conditional",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "ZM",
+     "locality": "ndola"
+    },
+    "subject": {
+     "entity_name": "Copperbelt Cement Distributors Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Copperbelt Cement Distributors Ltd holds a current trading licence in Zambia.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Copperbelt Cement Distributors Ltd has an active Ndola hardware network.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The trading licence of Copperbelt Cement Distributors Ltd is valid only within the Ndola central business district.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Ndola Hardware Association signed a stockist agreement with Copperbelt Cement Distributors Ltd on 2026-05-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the ndola partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the ndola distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "EXT-ORDER": {
+     "analytical": "conditional",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+    },
+    "INT-REC": {
+     "analytical": "conditional",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cement-zm:revoked",
+   "scenario": "cement-zm",
+   "variant": "revoked",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "ZM",
+     "locality": "ndola"
+    },
+    "subject": {
+     "entity_name": "Copperbelt Cement Distributors Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Copperbelt Cement Distributors Ltd holds a current trading licence in Zambia.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Copperbelt Cement Distributors Ltd has an active Ndola hardware network.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Ndola City Council cancelled trading licence NDL-TL-552 of Copperbelt Cement Distributors Ltd on 2026-09-28.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-10-10"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Ndola Hardware Association signed a stockist agreement with Copperbelt Cement Distributors Ltd on 2026-05-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the ndola partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the ndola distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "revoked",
+     "execution": "revoked"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cement-zm:prohibited",
+   "scenario": "cement-zm",
+   "variant": "prohibited",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "ZM",
+     "locality": "ndola"
+    },
+    "subject": {
+     "entity_name": "Copperbelt Cement Distributors Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Copperbelt Cement Distributors Ltd holds a current trading licence in Zambia.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "P1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Copperbelt Cement Distributors Ltd has an active Ndola hardware network.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Ndola City Council issued trading licence NDL-TL-552 to Copperbelt Cement Distributors Ltd on 2026-01-15, valid to 2027-01-14.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Ndola Hardware Association signed a stockist agreement with Copperbelt Cement Distributors Ltd on 2026-05-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "P1",
+      "claim": "Ndola City Council order concerning Copperbelt Cement Distributors Ltd.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-10-12",
+      "authority_effect": "prohibition"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the ndola partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the ndola distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "EXT-ORDER": {
+     "analytical": "adverse",
+     "authority": "not_authorized",
+     "execution": "not_authorized"
+    },
+    "INT-REC": {
+     "analytical": "adverse",
+     "authority": "planning_only",
+     "execution": "not_authorized"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   }
+  },
+  {
+   "case_id": "cement-zm:irrelevant",
+   "scenario": "cement-zm",
+   "variant": "irrelevant",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "ZM",
+     "locality": "ndola"
+    },
+    "subject": {
+     "entity_name": "Copperbelt Cement Distributors Ltd"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Copperbelt Cement Distributors Ltd holds a current trading licence in Zambia.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Copperbelt Cement Distributors Ltd has an active Ndola hardware network.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "Ndola City Council issued trading licence NDL-TL-552 to Copperbelt Cement Distributors Ltd on 2026-01-15, valid to 2027-01-14.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Ndola Hardware Association signed a stockist agreement with Copperbelt Cement Distributors Ltd on 2026-05-30.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "ZM",
+       "locality": "ndola"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "A ndola weather bulletin forecast seasonal rains for late November.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "ZM"
+      },
+      "source_date": "2026-10-25"
+     }
+    ],
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the ndola partner"
+     },
+     {
+      "effect_id": "EXT-AGREEMENT",
+      "effect_type": "distribution_agreement",
+      "description": "Enter the ndola distribution relationship"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ]
+   },
+   "expected": {
+    "EXT-OFFER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-AGREEMENT": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "EXT-ORDER": {
+     "analytical": "favorable",
+     "authority": "not_authorized",
+     "execution": "not_authorized",
+     "precedence_rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+    },
+    "INT-REC": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only"
+    },
+    "INT-PLAN": {
+     "analytical": "favorable",
+     "authority": "planning_only",
+     "execution": "planning_only",
+     "precedence_rule": "R0_INTERNAL_PLANNING"
+    }
+   },
+   "paired_with": "cement-zm:complete"
+  },
+  {
+   "case_id": "internal:1",
+   "scenario": "internal",
+   "variant": "internal_control",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "INT-OPS",
+      "description": "Reformat the quarterly operations report template for the finance team"
+     }
+    ]
+   },
+   "expected": {
+    "INT-OPS": {
+     "analytical": "not_relevant",
+     "authority": "not_applicable",
+     "execution": "not_applicable"
+    }
+   },
+   "first_call_task": "Reformat the quarterly operations report template for the finance team"
+  },
+  {
+   "case_id": "internal:2",
+   "scenario": "internal",
+   "variant": "internal_control",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "INT-OPS",
+      "description": "Service the warehouse generator and replace its air filter"
+     }
+    ]
+   },
+   "expected": {
+    "INT-OPS": {
+     "analytical": "not_relevant",
+     "authority": "not_applicable",
+     "execution": "not_applicable"
+    }
+   },
+   "first_call_task": "Service the warehouse generator and replace its air filter"
+  },
+  {
+   "case_id": "internal:3",
+   "scenario": "internal",
+   "variant": "internal_control",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "INT-OPS",
+      "description": "Schedule the staff fire-safety training for Friday morning"
+     }
+    ]
+   },
+   "expected": {
+    "INT-OPS": {
+     "analytical": "not_relevant",
+     "authority": "not_applicable",
+     "execution": "not_applicable"
+    }
+   },
+   "first_call_task": "Schedule the staff fire-safety training for Friday morning"
+  },
+  {
+   "case_id": "internal:4",
+   "scenario": "internal",
+   "variant": "internal_control",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "INT-OPS",
+      "description": "Reset the shared mailbox password and update the antivirus on office laptops"
+     }
+    ]
+   },
+   "expected": {
+    "INT-OPS": {
+     "analytical": "not_relevant",
+     "authority": "not_applicable",
+     "execution": "not_applicable"
+    }
+   },
+   "first_call_task": "Reset the shared mailbox password and update the antivirus on office laptops"
+  },
+  {
+   "case_id": "internal:5",
+   "scenario": "internal",
+   "variant": "internal_control",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "INT-OPS",
+      "description": "Merge the two HR leave policy documents into one handbook"
+     }
+    ]
+   },
+   "expected": {
+    "INT-OPS": {
+     "analytical": "not_relevant",
+     "authority": "not_applicable",
+     "execution": "not_applicable"
+    }
+   },
+   "first_call_task": "Merge the two HR leave policy documents into one handbook"
+  },
+  {
+   "case_id": "internal:6",
+   "scenario": "internal",
+   "variant": "internal_control",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "INT-OPS",
+      "description": "Write up the minutes of the internal budget meeting"
+     }
+    ]
+   },
+   "expected": {
+    "INT-OPS": {
+     "analytical": "not_relevant",
+     "authority": "not_applicable",
+     "execution": "not_applicable"
+    }
+   },
+   "first_call_task": "Write up the minutes of the internal budget meeting"
+  },
+  {
+   "case_id": "internal:7",
+   "scenario": "internal",
+   "variant": "internal_control",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "INT-OPS",
+      "description": "Proofread the internal newsletter before it goes to staff"
+     }
+    ]
+   },
+   "expected": {
+    "INT-OPS": {
+     "analytical": "not_relevant",
+     "authority": "not_applicable",
+     "execution": "not_applicable"
+    }
+   },
+   "first_call_task": "Proofread the internal newsletter before it goes to staff"
+  },
+  {
+   "case_id": "internal:8",
+   "scenario": "internal",
+   "variant": "internal_control",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "KE"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "INT-OPS",
+      "description": "Rename and tidy up the shared drive folders for the operations team"
+     }
+    ]
+   },
+   "expected": {
+    "INT-OPS": {
+     "analytical": "not_relevant",
+     "authority": "not_applicable",
+     "execution": "not_applicable"
+    }
+   },
+   "first_call_task": "Rename and tidy up the shared drive folders for the operations team"
+  }
+ ]
+}

@@ -1,5 +1,5 @@
 // Generated from the AMOS OpenAPI contract by scripts/generate-governance-client.mjs (https://github.com/africanmarketos591/mvr-framework).
-// Contract version v6.32.0; operation subset SHA-256: bddfbce458bd4f2d81d1943e9c1936cab428d899f5451f94315e954d59d133b7. Do not edit by hand; regenerate instead.
+// Contract version v6.32.0; operation subset SHA-256: 57dee4fa0628e91c8a2a86b4f3e0db2acbea1eebbeaaf7db9eefd7623810988c. Do not edit by hand; regenerate instead.
 /** Request body for POST /v1/review-cases. */
 export type ReviewCasesRequest = {
   workplan_id?: string;
@@ -596,6 +596,7 @@ export type AuthorityConformanceRequest = ({
     action: "issue";
     synthetic_only: true;
     acknowledge_no_identity_verification: true;
+    realm?: "amos_lab" | "enterprise_conformance";
   } | {
     action: "call";
     session_id: string;
@@ -705,6 +706,7 @@ export type EffectDecisionRequest = {
           [key: string]: unknown;
         };
         geography?: string;
+        conformance_session_id?: string;
       };
     }>;
   interpretation_submission_id?: string;
@@ -715,9 +717,20 @@ export type EffectDecisionContractResponse = Record<string, unknown>;
 
 /** Request body for POST /v1/interpretation-submissions. */
 export type InterpretationSubmissionsRequest = {
-  action: "submit" | "get" | "dispose";
+  action: "submit" | "get" | "dispose" | "withdraw_disposition";
   submission_token?: string;
   submission_id?: string;
+  reviewer?: {
+    reviewer_id: string;
+    display_name?: string;
+    organisation_ref?: string;
+    role_title?: string;
+    standing_basis?: string;
+    independence?: "declared_independent" | "declared_same_team" | "undeclared";
+  };
+  reading_receipt_ids?: Array<string>;
+  supersedes_disposition_id?: string;
+  disposition_id?: string;
   schema_version?: "mvr.interpretation-submission/1";
   model?: {
     provider: string;
@@ -2483,8 +2496,32 @@ export type EffectDecisionResponse = {
   effect_count?: number;
   effects?: Array<{
       effect_id: string;
-      effect_type: "internal_document_formatting" | "internal_document_editing" | "internal_minutes_or_notes" | "equipment_maintenance" | "internal_scheduling" | "it_administration" | "office_administration" | "internal_recommendation" | "internal_planning" | "pilot_design" | "evidence_collection_design" | "board_reporting" | "internal_review_packet" | "external_offer" | "external_communication" | "public_claim" | "distribution_agreement" | "partner_onboarding" | "procurement_order" | "create_draft_record" | "programme_disbursement" | "payment" | "market_launch" | "contract_signature" | "other_external_effect" | "credit_decision";
+      effect_type: "internal_document_formatting" | "internal_document_editing" | "internal_minutes_or_notes" | "equipment_maintenance" | "internal_scheduling" | "it_administration" | "office_administration" | "internal_recommendation" | "internal_planning" | "pilot_design" | "evidence_collection_design" | "board_reporting" | "internal_review_packet" | "external_offer" | "external_communication" | "public_claim" | "distribution_agreement" | "partner_onboarding" | "procurement_order" | "create_draft_record" | "programme_disbursement" | "payment" | "evidence_request" | "external_meeting" | "counterparty_contact" | "document_publication" | "spend_commitment" | "lab_artifact_create" | "product_release" | "participant_enrolment" | "data_disclosure" | "permission_grant" | "permission_revocation" | "market_launch" | "contract_signature" | "other_external_effect" | "credit_decision";
+      canonical_action_id?: string | null;
+      supplied_effect_type?: string | null;
+      effect_type_basis?: string | null;
       scope_class: "internal_non_market" | "internal_analysis" | "external_effect" | "excluded";
+      informing_claims?: Array<{
+          claim_id?: string;
+          state?: string;
+          reason?: string;
+          [key: string]: unknown;
+        }>;
+      changed_by_dispositions?: {
+        before?: {
+          [key: string]: unknown;
+        };
+        disposition_ids?: Array<string>;
+        [key: string]: unknown;
+      };
+      authority_basis?: {
+        [key: string]: unknown;
+      };
+      market_evidence_recruited?: boolean;
+      minimum_closure_acts?: number;
+      request?: {
+        [key: string]: unknown;
+      };
       relevance: "relevant" | "not_relevant" | "excluded_credit_decision";
       analytical_evidence_status: "favorable" | "conditional" | "insufficient" | "adverse" | "not_relevant";
       institutional_authority_status: "authorized" | "planning_only" | "not_authorized" | "revoked" | "expired" | "not_applicable";
@@ -2538,6 +2575,41 @@ export type EffectDecisionResponse = {
   boundaries?: {
     [key: string]: unknown;
   };
+  taxonomy_version?: string;
+  precedence_version?: string;
+  support_state_version?: string;
+  freshness?: {
+    [key: string]: unknown;
+  };
+  dispositions?: {
+    submission_id?: string;
+    applied?: Array<{
+        [key: string]: unknown;
+      }>;
+    unmatched?: Array<{
+        disposition_id?: string | null;
+        task_id?: string | null;
+        reason?: "CLAIM_OR_PASSAGE_CHANGED_SINCE_DISPOSITION" | "CLAIM_AND_PASSAGE_NOT_IN_REQUEST";
+        [key: string]: unknown;
+      }>;
+    changed_effect_ids?: Array<string>;
+    disposition_set_sha256?: string;
+    rule?: string;
+    [key: string]: unknown;
+  };
+  verification_ledger?: {
+    contract_version?: "mvr.verification-ledger/1";
+    assurance_ladder?: Array<string>;
+    record_count?: number;
+    records?: Array<{
+        [key: string]: unknown;
+      }>;
+    dispositions?: {
+      [key: string]: unknown;
+    } | null;
+    withdrawal_rule?: string;
+    [key: string]: unknown;
+  };
   [key: string]: unknown;
 };
 
@@ -2547,6 +2619,13 @@ export type InterpretationSubmissionResponse = {
   contract_version: "mvr.interpretation-submission/1";
   submission_id?: string;
   receipt_id?: string;
+  receipt_sha256?: string;
+  model?: {
+    provider?: string;
+    model?: string;
+    model_version?: string;
+    [key: string]: unknown;
+  };
   accepted_count?: number;
   rejected_count?: number;
   readings?: Array<{
@@ -2554,11 +2633,131 @@ export type InterpretationSubmissionResponse = {
       task_id?: string | null;
       status: "accepted" | "rejected";
       code: string;
+      label?: string;
+      claim_id?: string;
+      evidence_id?: string;
+      field?: string;
       [key: string]: unknown;
     }>;
   review?: {
+    tasks?: Array<{
+        task_id?: string;
+        claim_id?: string;
+        evidence_id?: string;
+        passage_path?: string | null;
+        declared_relationship?: string | null;
+        expected_label?: string | null;
+        readings?: Array<{
+            label?: "supports" | "qualifies" | "adverse" | "unrelated";
+            model?: {
+              provider?: string;
+              model?: string;
+              model_version?: string;
+              [key: string]: unknown;
+            };
+            receipt_id?: string;
+            source?: "model";
+            accountable?: false;
+            [key: string]: unknown;
+          }>;
+        labels?: Array<string>;
+        conflict?: boolean;
+        review_reasons?: Array<string>;
+        routed_to_accountable_review?: boolean;
+        disposition?: {
+          disposition_id?: string | null;
+          disposition?: "accept" | "qualify" | "reject_support" | "adverse";
+          reviewer?: {
+            reviewer_id?: string;
+            display_name?: string;
+            organisation_ref?: string;
+            role_title?: string;
+            standing_basis?: string;
+            independence?: string;
+            identity_assurance?: "declared_unverified";
+            [key: string]: unknown;
+          } | null;
+          by_principal?: string | null;
+          role?: string;
+          assurance?: string;
+          at?: string;
+          reason?: string;
+          reading_receipt_ids?: Array<string>;
+          [key: string]: unknown;
+        } | null;
+        [key: string]: unknown;
+      }>;
+    routed_task_ids?: Array<string>;
+    conflicting_task_ids?: Array<string>;
+    disposed_task_ids?: Array<string>;
     [key: string]: unknown;
   };
+  workflow_id?: string | null;
+  expires_at?: string;
+  retain_until?: string;
+  expired?: boolean;
+  task_count?: number;
+  task_set_sha256?: string;
+  submissions?: Array<{
+      receipt_id?: string;
+      receipt_sha256?: string;
+      model?: {
+        provider?: string;
+        model?: string;
+        model_version?: string;
+        [key: string]: unknown;
+      };
+      submitted_at?: string;
+      accepted_count?: number;
+      rejected_count?: number;
+      [key: string]: unknown;
+    }>;
+  task_id?: string;
+  disposition?: "accept" | "qualify" | "reject_support" | "adverse";
+  assurance?: "tenant_declared_reviewer" | "tenant_declared_same_principal_as_issuer" | "tenant_declared";
+  disposition_receipt?: {
+    disposition_id?: string;
+    disposition_sha256?: string;
+    reviewer?: {
+      reviewer_id?: string;
+      display_name?: string;
+      organisation_ref?: string;
+      role_title?: string;
+      standing_basis?: string;
+      independence?: string;
+      identity_assurance?: "declared_unverified";
+      [key: string]: unknown;
+    } | null;
+    assurance?: string;
+    reading_receipt_ids?: Array<string>;
+    readings?: Array<{
+        [key: string]: unknown;
+      }>;
+    supersedes?: Array<string>;
+    at?: string;
+    claim_sha256?: string;
+    passage_sha256?: string;
+    [key: string]: unknown;
+  };
+  withdrawn_disposition_id?: string;
+  affects?: {
+    claim_id?: string;
+    evidence_id?: string;
+    binding?: string;
+    note?: string;
+    [key: string]: unknown;
+  };
+  receipt_boundary?: string;
+  authority_boundary?: string;
+  non_authority?: {
+    decides_nothing?: true;
+    sets_no_fact_value?: true;
+    authenticates_no_source?: true;
+    confers_no_permission?: true;
+    [key: string]: unknown;
+  };
+  field?: string;
+  retry?: string;
   [key: string]: unknown;
 };
 

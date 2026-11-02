@@ -108,3 +108,13 @@ With `--faults` and the test hooks on, it also covers two failures:
 - a crash after the effect, then reconciliation.
 
 `node conformance/receiver-kit/run-reference-staging.mjs` runs all of this against the reference staging receiver on localhost. It then restarts the receiver and confirms a consumed commit stays consumed. It runs weekly against production's lab (`weekly-lab-conformance.yml`).
+
+## Current-state feed and offline policy
+
+`feed-subscriber.mjs` keeps a receiver current with the signed, hash-chained feed of a session (`GET /v1/authority-conformance/feed?session_id=&after=<sequence>&wait=<0-20>`):
+
+- `follow()` long-polls the feed, so a connected receiver learns of a revocation within seconds;
+- `poll()` catches up from the last sequence it holds, after a restart or a network loss;
+- `fresh({riskClass})` says whether the receiver may still act without re-reading state, under `mvr.offline-policy/1` (low 300 s, standard 60 s, high 5 s).
+
+Every head is verified with the registry key and every entry against the hash chain. A gap, a broken link, a sequence regression or a foreign signature stops the subscriber, and a receiver that cannot read the feed applies zero effects. `sdks/javascript/buyer-executor-verifier.mjs` combines the subscriber with the commit receiver above for a buyer's own adapter; see `conformance/buyer-executor/` and `conformance/enterprise-conformance/`.

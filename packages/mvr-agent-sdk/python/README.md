@@ -39,7 +39,7 @@ import os
 mvr = MvrPreflightClient(
     api_key=os.environ["MVR_API_KEY"],
     timeout=30.0,                                   # default 30 s; every request has a deadline
-    expected_revision="2026-11-01.effect-state.2",  # optional; the server answers 409 DEPLOYMENT_REVISION_MISMATCH on any other revision
+    expected_revision="2026-11-02.state-propagation.1",  # optional; the server answers 409 DEPLOYMENT_REVISION_MISMATCH on any other revision
     user_agent="my-agent/1.0",                      # optional
 )
 ```

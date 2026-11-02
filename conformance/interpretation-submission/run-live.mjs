@@ -16,7 +16,7 @@ const mcp = async (name, args, k = key, profile = 'full_advisory') => { const r 
 const rest = async (route, body, k = key) => { const r = await fetch(base + route, {method: 'POST', headers: {'Content-Type': 'application/json', 'User-Agent': 'amos-conformance-submission', 'X-API-Key': k, 'X-Response-Profile': 'full_advisory'}, body: JSON.stringify(body)}); return {status: r.status, body: await r.json()}; };
 const passages = ['The lab registry filing shows twelve of the twelve lab retailers renewed after the launch.', 'Retail partners in Kampala reported reorders after launch.'];
 const args = {company_name: 'AMOS lab distributor', country: 'UG', entity_archetype: 'fintech_lending', decision_question: 'Should the lab distributor pilot a second retail wave?',
-  claims: [{claim_id: 'C1', claim: 'Lab retailers reorder after launch.', support_links: [{claim_id: 'C1', evidence_id: 'E1', relationship: 'direct_support', locator: 'claim'}, {claim_id: 'C1', evidence_id: 'E2', relationship: 'direct_support', locator: 'claim'}]}],
+  claims: [{claim_id: 'C1', claim: 'Lab retailers reorder after launch.', support_links: [{claim_id: 'C1', evidence_id: 'E1', relationship: 'direct_support', locator: 'claim'}, {claim_id: 'C1', evidence_id: 'E2', relationship: 'direct_support', locator: 'claim'}]}, {claim_id: 'C2', claim: 'Kampala partners reorder within the first quarter.', support_links: [{claim_id: 'C2', evidence_id: 'E2', relationship: 'qualifies', locator: 'claim'}]}],
   evidence_pack: [{id: 'E1', claim: passages[0], load_bearing: true, evidence_origin: 'public_osint', stakeholder_class: 'guardian', source_class: 'regulator_published', source_grade: 'A', evidence_type: 'public_filing', collection_method: 'direct', freshness_date: '2026-10-01', geography: 'UG', evidence_geography: {country: 'UG'}, source_doc_id: 'LAB-FILING-1', public_metric_registry: 'fintech_lending', public_metrics: {regulatory_authorization_status: true}, privacy_envelope: {safe_for_modeling: true}},
     {id: 'E2', claim: passages[1], load_bearing: true, evidence_origin: 'field_research', stakeholder_class: 'retailer', source_class: 'structured_field_research', source_grade: 'B', evidence_type: 'interview', collection_method: 'field_interview', freshness_date: '2026-10-05', geography: 'UG', evidence_geography: {country: 'UG'}, source_doc_id: 'LAB-FIELD-1', privacy_envelope: {safe_for_modeling: true}, structured_values: {trust: 60, permission: 55}}]};
 let step = await mcp('mvr_first_call', args), slot = null, tasks = null, instruction = null;
@@ -51,9 +51,30 @@ if (slot) {
     requested_effects: [{effect_id: 'EXT-C1', effect_type: 'external_offer', depends_on_claims: ['C1']}, {effect_id: 'EXT-C9', effect_type: 'external_offer', depends_on_claims: ['C9']}], interpretation_submission_id: id});
   const before = await rest('/v1/effect-decision', effectBody(slot.submission_id));
   check('model readings alone change no effect decision', before.status === 200 && before.body.effects.every(e => e.analytical_evidence_status === 'favorable'), before.body.effects?.map(e => e.analytical_evidence_status));
-  for (const task of tasks) await rest('/v1/interpretation-submissions', {action: 'dispose', submission_id: slot.submission_id, task_id: task.task_id, disposition: 'reject_support', reason: 'Conformance: the passage does not support the claim as stated.'});
+  // One mechanical routing rule for every label pair: an unrelated reading of a link declared qualifies routes to review.
+  const qualifiesTask = tasks.find(x => x.declared_relationship === 'qualifies');
+  if (qualifiesTask) {
+    await submit(model('d'), [reading(qualifiesTask, 'unrelated')]);
+    const g = await mcp('mvr_interpretation_submission', {action: 'get', submission_id: slot.submission_id});
+    const row = g?.structuredContent?.review?.tasks?.find(x => x.task_id === qualifiesTask.task_id);
+    check('an unrelated reading of a link declared qualifies routes to accountable review', row?.routed_to_accountable_review === true && row.review_reasons.includes('model_reading_disagrees_with_declared_relationship'), row?.review_reasons);
+  } else report.not_run.push({check: 'unrelated vs declared qualifies routing', reason: 'the workflow issued no task for the qualifies link'});
+  const reviewer = {reviewer_id: 'conformance-reviewer-1', role_title: 'Conformance reviewer', independence: 'declared_independent'};
+  const noReviewer = await rest('/v1/interpretation-submissions', {action: 'dispose', submission_id: slot.submission_id, task_id: tasks[0].task_id, disposition: 'reject_support', reason: 'No reviewer named.'});
+  check('a disposition must name its reviewer', noReviewer.status === 422 && noReviewer.body.code === 'REVIEWER_IDENTITY_REQUIRED', noReviewer.body.code);
+  const c1Tasks = tasks.filter(x => x.claim_id === 'C1'), receipts = [];
+  for (const task of c1Tasks) { const d = await rest('/v1/interpretation-submissions', {action: 'dispose', submission_id: slot.submission_id, task_id: task.task_id, disposition: 'reject_support', reason: 'Conformance: the passage does not support the claim as stated.', reviewer}); receipts.push(d.body.disposition_receipt); }
+  check('each disposition is a receipt-bound record naming its reviewer and the readings it answers', receipts.every(r => /^IDP-[a-f0-9]{32}$/.test(r?.disposition_id || '') && r.reviewer?.reviewer_id === reviewer.reviewer_id && r.reading_receipt_ids.length >= 1), receipts.map(r => r?.disposition_id));
   const after = await rest('/v1/effect-decision', effectBody(slot.submission_id));
   check('a reviewer rejection changes only the dependent effect; no permission is granted', JSON.stringify(after.body.effects?.map(e => [e.effect_id, e.analytical_evidence_status])) === JSON.stringify([['EXT-C1', 'insufficient'], ['EXT-C9', 'favorable']]) && after.body.effects.every(e => e.execution_authorization_status !== 'authorized'), after.body.effects?.map(e => [e.effect_id, e.analytical_evidence_status]));
+  check('the response names the dispositions applied and exactly the effects they changed', JSON.stringify(after.body.dispositions?.changed_effect_ids) === JSON.stringify(['EXT-C1']) && after.body.dispositions.applied.every(a => a.binding === 'claim_and_passage_sha256') && after.body.effects[0].changed_by_dispositions?.before?.analytical_evidence_status === 'favorable', after.body.dispositions);
+  // Withdrawal recomputes: one rejection withdrawn, the claim has support again; a qualify makes it conditional.
+  const w = await rest('/v1/interpretation-submissions', {action: 'withdraw_disposition', submission_id: slot.submission_id, disposition_id: receipts[0].disposition_id, reason: 'Conformance: second reader disagreed.', reviewer});
+  const afterWithdraw = await rest('/v1/effect-decision', effectBody(slot.submission_id));
+  check('withdrawing a disposition recomputes the dependent effect', w.status === 200 && afterWithdraw.body.effects[0].analytical_evidence_status === 'favorable', afterWithdraw.body.effects?.map(e => e.analytical_evidence_status));
+  await rest('/v1/interpretation-submissions', {action: 'dispose', submission_id: slot.submission_id, task_id: c1Tasks[0].task_id, disposition: 'qualify', reason: 'Conformance: reorders shown for the lab cohort only.', reviewer});
+  const afterQualify = await rest('/v1/effect-decision', effectBody(slot.submission_id));
+  check('a qualify disposition makes the dependent effect conditional, never authorized', afterQualify.body.effects[0].analytical_evidence_status === 'conditional' && afterQualify.body.effects[1].analytical_evidence_status === 'favorable' && afterQualify.body.effects.every(e => e.execution_authorization_status !== 'authorized'), afterQualify.body.effects?.map(e => [e.effect_id, e.analytical_evidence_status, e.execution_authorization_status]));
 }
 report.finished_at = new Date().toISOString();
 report.passed = report.failures.length === 0;

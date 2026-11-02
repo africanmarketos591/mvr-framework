@@ -1,6 +1,6 @@
 {
   "contract": "mvr.mcp-profile-outputs/1",
-  "deployment_revision": "2026-11-01.effect-state.2",
+  "deployment_revision": "2026-11-02.state-propagation.1",
   "default_field_contract": "authority-fields/2",
   "legacy_sunset": "2027-01-21T00:00:00Z",
   "unconstrained_legacy_tools": [
@@ -34616,12 +34616,791 @@
         "additionalProperties": true
       },
       "mvr_effect_decision": {
+        "$comment": "Full docs: https://africanmarketos.com/v1/openapi.json",
+        "properties": {
+          "analysis_date": {
+            "type": "string"
+          },
+          "boundaries": {
+            "type": "object"
+          },
+          "code": {
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "mvr.effect-decision/1"
+          },
+          "decision_performed": {
+            "type": "boolean"
+          },
+          "decisions_sha256": {
+            "type": "string"
+          },
+          "dependency_index": {
+            "type": "object"
+          },
+          "dispositions": {
+            "properties": {
+              "applied": {
+                "$ref": "#/$defs/0"
+              },
+              "changed_effect_ids": {
+                "$ref": "#/$defs/1"
+              },
+              "disposition_set_sha256": {
+                "type": "string"
+              },
+              "rule": {
+                "type": "string"
+              },
+              "submission_id": {
+                "type": "string"
+              },
+              "unmatched": {
+                "items": {
+                  "properties": {
+                    "disposition_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "reason": {
+                      "enum": [
+                        "CLAIM_OR_PASSAGE_CHANGED_SINCE_DISPOSITION",
+                        "CLAIM_AND_PASSAGE_NOT_IN_REQUEST"
+                      ]
+                    },
+                    "task_id": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "effect_count": {
+            "type": "integer"
+          },
+          "effect_set_sha256": {
+            "type": "string"
+          },
+          "effects": {
+            "items": {
+              "properties": {
+                "analytical_closure": {
+                  "$ref": "#/$defs/0"
+                },
+                "analytical_evidence_status": {
+                  "enum": [
+                    "favorable",
+                    "conditional",
+                    "insufficient",
+                    "adverse",
+                    "not_relevant"
+                  ]
+                },
+                "authority_basis": {
+                  "type": "object"
+                },
+                "authority_closure": {
+                  "$ref": "#/$defs/0"
+                },
+                "authority_reason_codes": {
+                  "$ref": "#/$defs/1"
+                },
+                "authority_records": {
+                  "$ref": "#/$defs/0"
+                },
+                "canonical_action_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "changed_by_dispositions": {
+                  "properties": {
+                    "before": {
+                      "type": "object"
+                    },
+                    "disposition_ids": {
+                      "$ref": "#/$defs/1"
+                    }
+                  },
+                  "type": "object"
+                },
+                "claims": {
+                  "$ref": "#/$defs/0"
+                },
+                "controlling_records": {
+                  "$ref": "#/$defs/0"
+                },
+                "dependencies": {
+                  "type": "object"
+                },
+                "effect_id": {
+                  "type": "string"
+                },
+                "effect_sha256": {
+                  "type": "string"
+                },
+                "effect_type": {
+                  "enum": [
+                    "internal_document_formatting",
+                    "internal_document_editing",
+                    "internal_minutes_or_notes",
+                    "equipment_maintenance",
+                    "internal_scheduling",
+                    "it_administration",
+                    "office_administration",
+                    "internal_recommendation",
+                    "internal_planning",
+                    "pilot_design",
+                    "evidence_collection_design",
+                    "board_reporting",
+                    "internal_review_packet",
+                    "external_offer",
+                    "external_communication",
+                    "public_claim",
+                    "distribution_agreement",
+                    "partner_onboarding",
+                    "procurement_order",
+                    "create_draft_record",
+                    "programme_disbursement",
+                    "payment",
+                    "evidence_request",
+                    "external_meeting",
+                    "counterparty_contact",
+                    "document_publication",
+                    "spend_commitment",
+                    "lab_artifact_create",
+                    "product_release",
+                    "participant_enrolment",
+                    "data_disclosure",
+                    "permission_grant",
+                    "permission_revocation",
+                    "market_launch",
+                    "contract_signature",
+                    "other_external_effect",
+                    "credit_decision"
+                  ]
+                },
+                "effect_type_basis": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "excluded_records": {
+                  "$ref": "#/$defs/0"
+                },
+                "execution_authorization_status": {
+                  "$ref": "#/$defs/2"
+                },
+                "execution_reason_codes": {
+                  "$ref": "#/$defs/1"
+                },
+                "informing_claims": {
+                  "items": {
+                    "properties": {
+                      "claim_id": {
+                        "type": "string"
+                      },
+                      "reason": {
+                        "type": "string"
+                      },
+                      "state": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "institutional_authority_status": {
+                  "$ref": "#/$defs/2"
+                },
+                "market_evidence_recruited": {
+                  "type": "boolean"
+                },
+                "minimum_closure_acts": {
+                  "type": "integer"
+                },
+                "normative_sha256": {
+                  "type": "string"
+                },
+                "permitted_interim_scope": {
+                  "$ref": "#/$defs/1"
+                },
+                "precedence_rule": {
+                  "type": "string"
+                },
+                "reason_codes": {
+                  "$ref": "#/$defs/1"
+                },
+                "relevance": {
+                  "enum": [
+                    "relevant",
+                    "not_relevant",
+                    "excluded_credit_decision"
+                  ]
+                },
+                "request": {
+                  "type": "object"
+                },
+                "scope_class": {
+                  "enum": [
+                    "internal_non_market",
+                    "internal_analysis",
+                    "external_effect",
+                    "excluded"
+                  ]
+                },
+                "smallest_decisive_closure": {
+                  "$ref": "#/$defs/0"
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "supplied_effect_type": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "supported_scope": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "effect_id",
+                "effect_type",
+                "scope_class",
+                "relevance",
+                "analytical_evidence_status",
+                "institutional_authority_status",
+                "execution_authorization_status",
+                "precedence_rule",
+                "reason_codes",
+                "dependencies",
+                "controlling_records",
+                "excluded_records",
+                "smallest_decisive_closure",
+                "permitted_interim_scope",
+                "effect_sha256",
+                "normative_sha256"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "freshness": {
+            "type": "object"
+          },
+          "issues": {
+            "$ref": "#/$defs/0"
+          },
+          "precedence_version": {
+            "type": "string"
+          },
+          "relevance": {
+            "type": "object"
+          },
+          "status": {
+            "type": "string"
+          },
+          "support_state_version": {
+            "type": "string"
+          },
+          "taxonomy_version": {
+            "type": "string"
+          },
+          "unlinked_record_ids": {
+            "$ref": "#/$defs/1"
+          },
+          "verification_ledger": {
+            "properties": {
+              "assurance_ladder": {
+                "$ref": "#/$defs/1"
+              },
+              "contract_version": {
+                "const": "mvr.verification-ledger/1"
+              },
+              "dispositions": {
+                "type": [
+                  "object",
+                  "null"
+                ]
+              },
+              "record_count": {
+                "type": "integer"
+              },
+              "records": {
+                "$ref": "#/$defs/0"
+              },
+              "withdrawal_rule": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "status",
+          "contract_version"
+        ],
         "type": "object",
-        "additionalProperties": true
+        "$defs": {
+          "0": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "1": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "2": {
+            "enum": [
+              "authorized",
+              "planning_only",
+              "not_authorized",
+              "revoked",
+              "expired",
+              "not_applicable"
+            ]
+          }
+        }
       },
       "mvr_interpretation_submission": {
+        "$comment": "Full docs: https://africanmarketos.com/v1/openapi.json",
+        "properties": {
+          "accepted_count": {
+            "type": "integer"
+          },
+          "affects": {
+            "properties": {
+              "binding": {
+                "type": "string"
+              },
+              "claim_id": {
+                "type": "string"
+              },
+              "evidence_id": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "assurance": {
+            "enum": [
+              "tenant_declared_reviewer",
+              "tenant_declared_same_principal_as_issuer",
+              "tenant_declared"
+            ]
+          },
+          "authority_boundary": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "contract_version": {
+            "const": "mvr.interpretation-submission/1"
+          },
+          "disposition": {
+            "enum": [
+              "accept",
+              "qualify",
+              "reject_support",
+              "adverse"
+            ]
+          },
+          "disposition_receipt": {
+            "properties": {
+              "assurance": {
+                "type": "string"
+              },
+              "at": {
+                "type": "string"
+              },
+              "claim_sha256": {
+                "type": "string"
+              },
+              "disposition_id": {
+                "type": "string"
+              },
+              "disposition_sha256": {
+                "type": "string"
+              },
+              "passage_sha256": {
+                "type": "string"
+              },
+              "reading_receipt_ids": {
+                "$ref": "#/$defs/0"
+              },
+              "readings": {
+                "items": {
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "reviewer": {
+                "$ref": "#/$defs/1"
+              },
+              "supersedes": {
+                "$ref": "#/$defs/0"
+              }
+            },
+            "type": "object"
+          },
+          "expired": {
+            "type": "boolean"
+          },
+          "expires_at": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "model": {
+            "$ref": "#/$defs/2"
+          },
+          "non_authority": {
+            "properties": {
+              "authenticates_no_source": {
+                "const": true
+              },
+              "confers_no_permission": {
+                "const": true
+              },
+              "decides_nothing": {
+                "const": true
+              },
+              "sets_no_fact_value": {
+                "const": true
+              }
+            },
+            "type": "object"
+          },
+          "readings": {
+            "items": {
+              "properties": {
+                "claim_id": {
+                  "type": "string"
+                },
+                "code": {
+                  "type": "string"
+                },
+                "evidence_id": {
+                  "type": "string"
+                },
+                "field": {
+                  "type": "string"
+                },
+                "index": {
+                  "type": "integer"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "accepted",
+                    "rejected"
+                  ]
+                },
+                "task_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "index",
+                "status",
+                "code"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "receipt_boundary": {
+            "type": "string"
+          },
+          "receipt_id": {
+            "type": "string"
+          },
+          "receipt_sha256": {
+            "type": "string"
+          },
+          "rejected_count": {
+            "type": "integer"
+          },
+          "retain_until": {
+            "type": "string"
+          },
+          "retry": {
+            "type": "string"
+          },
+          "review": {
+            "properties": {
+              "conflicting_task_ids": {
+                "$ref": "#/$defs/0"
+              },
+              "disposed_task_ids": {
+                "$ref": "#/$defs/0"
+              },
+              "routed_task_ids": {
+                "$ref": "#/$defs/0"
+              },
+              "tasks": {
+                "items": {
+                  "properties": {
+                    "claim_id": {
+                      "type": "string"
+                    },
+                    "conflict": {
+                      "type": "boolean"
+                    },
+                    "declared_relationship": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "disposition": {
+                      "properties": {
+                        "assurance": {
+                          "type": "string"
+                        },
+                        "at": {
+                          "type": "string"
+                        },
+                        "by_principal": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "disposition": {
+                          "enum": [
+                            "accept",
+                            "qualify",
+                            "reject_support",
+                            "adverse"
+                          ]
+                        },
+                        "disposition_id": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "reading_receipt_ids": {
+                          "$ref": "#/$defs/0"
+                        },
+                        "reason": {
+                          "type": "string"
+                        },
+                        "reviewer": {
+                          "$ref": "#/$defs/1"
+                        },
+                        "role": {
+                          "type": "string"
+                        }
+                      },
+                      "type": [
+                        "object",
+                        "null"
+                      ]
+                    },
+                    "evidence_id": {
+                      "type": "string"
+                    },
+                    "expected_label": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "labels": {
+                      "$ref": "#/$defs/0"
+                    },
+                    "passage_path": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "readings": {
+                      "items": {
+                        "properties": {
+                          "accountable": {
+                            "const": false
+                          },
+                          "label": {
+                            "enum": [
+                              "supports",
+                              "qualifies",
+                              "adverse",
+                              "unrelated"
+                            ]
+                          },
+                          "model": {
+                            "$ref": "#/$defs/2"
+                          },
+                          "receipt_id": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "const": "model"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "review_reasons": {
+                      "$ref": "#/$defs/0"
+                    },
+                    "routed_to_accountable_review": {
+                      "type": "boolean"
+                    },
+                    "task_id": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "status": {
+            "type": "string"
+          },
+          "submission_id": {
+            "type": "string"
+          },
+          "submissions": {
+            "items": {
+              "properties": {
+                "accepted_count": {
+                  "type": "integer"
+                },
+                "model": {
+                  "$ref": "#/$defs/2"
+                },
+                "receipt_id": {
+                  "type": "string"
+                },
+                "receipt_sha256": {
+                  "type": "string"
+                },
+                "rejected_count": {
+                  "type": "integer"
+                },
+                "submitted_at": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "task_count": {
+            "type": "integer"
+          },
+          "task_id": {
+            "type": "string"
+          },
+          "task_set_sha256": {
+            "type": "string"
+          },
+          "withdrawn_disposition_id": {
+            "type": "string"
+          },
+          "workflow_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "contract_version"
+        ],
         "type": "object",
-        "additionalProperties": true
+        "$defs": {
+          "0": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "1": {
+            "properties": {
+              "display_name": {
+                "type": "string"
+              },
+              "identity_assurance": {
+                "const": "declared_unverified"
+              },
+              "independence": {
+                "type": "string"
+              },
+              "organisation_ref": {
+                "type": "string"
+              },
+              "reviewer_id": {
+                "type": "string"
+              },
+              "role_title": {
+                "type": "string"
+              },
+              "standing_basis": {
+                "type": "string"
+              }
+            },
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "2": {
+            "properties": {
+              "model": {
+                "type": "string"
+              },
+              "model_version": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        }
       }
     }
   }
