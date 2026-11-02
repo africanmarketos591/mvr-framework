@@ -20,10 +20,11 @@ const read = p => JSON.parse(fs.readFileSync(path.join(here, '..', p), 'utf8'));
 const report = {suite: 'r9-qualification-live', base, started_at: new Date().toISOString(), classification: 'proprietary lab fixtures; not observations of real organisations', checks: [], failures: [], scores: {}};
 const save = () => fs.writeFileSync(output, JSON.stringify(report, null, 1) + '\n');
 const check = (name, ok, detail) => { report.checks.push({name, passed: !!ok, ...(detail === undefined ? {} : {detail})}); if (!ok) report.failures.push(name); save(); };
-const headers = (profile, licensed = true) => ({'Content-Type': 'application/json', 'User-Agent': 'amos-r9-qualification', Accept: 'application/json, text/event-stream', ...(licensed ? {'X-API-Key': key, 'X-Response-Profile': profile} : {})});
+// Some governed routes (for example /v1/evidence-review) require a fresh Idempotency-Key on every POST.
+const headers = (profile, licensed = true, post = true) => ({'Content-Type': 'application/json', 'User-Agent': 'amos-r9-qualification', Accept: 'application/json, text/event-stream', ...(licensed ? {'X-API-Key': key, 'X-Response-Profile': profile} : {}), ...(post ? {'Idempotency-Key': crypto.randomUUID()} : {})});
 const call = async (route, body, profile = 'full_advisory', {licensed = true, method = 'POST'} = {}) => {
   for (let attempt = 0; attempt < 3; attempt++) {
-    try { const r = await fetch(base + route, {method, headers: headers(profile, licensed), ...(method === 'GET' ? {} : {body: JSON.stringify(body)}), signal: AbortSignal.timeout(90000)}); return {status: r.status, headers: r.headers, body: await r.json().catch(() => null)}; }
+    try { const r = await fetch(base + route, {method, headers: headers(profile, licensed, method !== 'GET'), ...(method === 'GET' ? {} : {body: JSON.stringify(body)}), signal: AbortSignal.timeout(90000)}); return {status: r.status, headers: r.headers, body: await r.json().catch(() => null)}; }
     catch (error) { if (attempt === 2) throw error; await new Promise(r => setTimeout(r, 2000)); }
   }
 };
