@@ -1,0 +1,282 @@
+{
+ "record": "effect set B, first measurement before any engine change for it",
+ "measured_at": "2026-11-02",
+ "environment": "in-process engine on the operator machine (working tree before the positive-establishment rule); not a production call",
+ "cohort": "conformance/effect-decision/r9-heldout/cohort-b.json",
+ "summary": {
+  "market_rows": 80,
+  "market_agree": 64,
+  "false_favorable": 16,
+  "false_adverse": 0,
+  "missing_rows": 32,
+  "missing_precedence": 20,
+  "qualifier_rows": 32,
+  "qualifier_precedence": 28,
+  "external_rows": 48,
+  "external_authorized": 0,
+  "irrelevant_pairs": 0,
+  "irrelevant_identical": 0,
+  "internal": 0,
+  "internal_not_relevant": 0,
+  "passes": false
+ },
+ "first_mismatches": [
+  {
+   "case": "dairy-ke:missing:B",
+   "id": "EXT-OFFER",
+   "expected": [
+    "insufficient",
+    "not_authorized",
+    "not_authorized",
+    "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "dairy-ke:missing:B",
+   "id": "EXT-AGREEMENT",
+   "expected": [
+    "insufficient",
+    "not_authorized",
+    "not_authorized",
+    "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "dairy-ke:missing:B",
+   "id": "EXT-ORDER",
+   "expected": [
+    "insufficient",
+    "not_authorized",
+    "not_authorized",
+    "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "dairy-ke:missing:B",
+   "id": "INT-REC",
+   "expected": [
+    "insufficient",
+    "planning_only",
+    "not_authorized",
+    ""
+   ],
+   "got": [
+    "favorable",
+    "planning_only",
+    "planning_only",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "cash-transfer-ke:conditional:B",
+   "id": "EXT-OFFER",
+   "expected": [
+    "conditional",
+    "not_authorized",
+    "not_authorized",
+    "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "cash-transfer-ke:conditional:B",
+   "id": "EXT-AGREEMENT",
+   "expected": [
+    "conditional",
+    "not_authorized",
+    "not_authorized",
+    "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "cash-transfer-ke:conditional:B",
+   "id": "EXT-ORDER",
+   "expected": [
+    "conditional",
+    "not_authorized",
+    "not_authorized",
+    "R4_LOAD_BEARING_CLAIM_CONDITIONAL"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "cash-transfer-ke:conditional:B",
+   "id": "INT-REC",
+   "expected": [
+    "conditional",
+    "planning_only",
+    "planning_only",
+    ""
+   ],
+   "got": [
+    "favorable",
+    "planning_only",
+    "planning_only",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "agent-gh:missing:B",
+   "id": "EXT-OFFER",
+   "expected": [
+    "insufficient",
+    "not_authorized",
+    "not_authorized",
+    "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "agent-gh:missing:B",
+   "id": "EXT-AGREEMENT",
+   "expected": [
+    "insufficient",
+    "not_authorized",
+    "not_authorized",
+    "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "agent-gh:missing:B",
+   "id": "EXT-ORDER",
+   "expected": [
+    "insufficient",
+    "not_authorized",
+    "not_authorized",
+    "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "agent-gh:missing:B",
+   "id": "INT-REC",
+   "expected": [
+    "insufficient",
+    "planning_only",
+    "not_authorized",
+    ""
+   ],
+   "got": [
+    "favorable",
+    "planning_only",
+    "planning_only",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "school-meals-ng:missing:B",
+   "id": "EXT-OFFER",
+   "expected": [
+    "insufficient",
+    "not_authorized",
+    "not_authorized",
+    "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "school-meals-ng:missing:B",
+   "id": "EXT-AGREEMENT",
+   "expected": [
+    "insufficient",
+    "not_authorized",
+    "not_authorized",
+    "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "school-meals-ng:missing:B",
+   "id": "EXT-ORDER",
+   "expected": [
+    "insufficient",
+    "not_authorized",
+    "not_authorized",
+    "R3_LOAD_BEARING_CLAIM_INSUFFICIENT"
+   ],
+   "got": [
+    "favorable",
+    "not_authorized",
+    "not_authorized",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  },
+  {
+   "case": "school-meals-ng:missing:B",
+   "id": "INT-REC",
+   "expected": [
+    "insufficient",
+    "planning_only",
+    "not_authorized",
+    ""
+   ],
+   "got": [
+    "favorable",
+    "planning_only",
+    "planning_only",
+    "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED"
+   ]
+  }
+ ],
+ "classification": "proprietary lab fixtures"
+}

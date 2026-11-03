@@ -1,0 +1,136 @@
+{
+ "passed": true,
+ "checks": 31,
+ "failed": [],
+ "not_run": [],
+ "checked_at": "2026-11-03T06:44:15.661Z",
+ "base": "https://africanmarketos.com",
+ "deployment_revision": "2026-11-02.state-propagation.3",
+ "release_manifest_id": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+ "results": [
+  {
+   "name": "2026-11-01.effect-state.1.json: content-addressed",
+   "passed": true
+  },
+  {
+   "name": "2026-11-01.effect-state.1.json: named after its revision",
+   "passed": true
+  },
+  {
+   "name": "2026-11-01.effect-state.2.json: content-addressed",
+   "passed": true
+  },
+  {
+   "name": "2026-11-01.effect-state.2.json: named after its revision",
+   "passed": true
+  },
+  {
+   "name": "2026-11-02.state-propagation.1.json: content-addressed",
+   "passed": true
+  },
+  {
+   "name": "2026-11-02.state-propagation.1.json: named after its revision",
+   "passed": true
+  },
+  {
+   "name": "2026-11-02.state-propagation.2.json: content-addressed",
+   "passed": true
+  },
+  {
+   "name": "2026-11-02.state-propagation.2.json: named after its revision",
+   "passed": true
+  },
+  {
+   "name": "2026-11-02.state-propagation.3.json: content-addressed",
+   "passed": true
+  },
+  {
+   "name": "2026-11-02.state-propagation.3.json: named after its revision",
+   "passed": true
+  },
+  {
+   "name": "live manifest is content-addressed",
+   "passed": true
+  },
+  {
+   "name": "live manifest is committed and attested in release-manifests/",
+   "passed": true
+  },
+  {
+   "name": "live OpenAPI reproduces the bound hash",
+   "passed": true
+  },
+  {
+   "name": "API responses name the manifest",
+   "passed": true
+  },
+  {
+   "name": "contract /v1/effect-decision/contract",
+   "passed": true
+  },
+  {
+   "name": "contract /v1/audit-findings/contract",
+   "passed": true
+  },
+  {
+   "name": "contract /v1/interpretation-submissions/contract",
+   "passed": true
+  },
+  {
+   "name": "contract /v1/authority-chain/contract",
+   "passed": true
+  },
+  {
+   "name": "contract /v1/review-cases/contract",
+   "passed": true
+  },
+  {
+   "name": "contract /v1/authority-conformance/contract",
+   "passed": true
+  },
+  {
+   "name": "contract /v1/reviewer-attestations/contract",
+   "passed": true
+  },
+  {
+   "name": "contract /v1/review-sandbox/contract",
+   "passed": true
+  },
+  {
+   "name": "contract /v1/field-contract",
+   "passed": true
+  },
+  {
+   "name": "public MCP consumer tools/list",
+   "passed": true
+  },
+  {
+   "name": "public MCP full tools/list",
+   "passed": true
+  },
+  {
+   "name": "public MCP preflight tools/list",
+   "passed": true
+  },
+  {
+   "name": "public MCP guided tools/list",
+   "passed": true
+  },
+  {
+   "name": "public MCP openai tools/list",
+   "passed": true
+  },
+  {
+   "name": "licensed MCP full_advisory tools/list",
+   "passed": true
+  },
+  {
+   "name": "licensed MCP strict_calibrated tools/list",
+   "passed": true
+  },
+  {
+   "name": "generated clients reproduce from the live OpenAPI",
+   "passed": true
+  }
+ ]
+}

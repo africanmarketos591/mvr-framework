@@ -1,0 +1,334 @@
+{
+ "revision": "2026-11-02.state-propagation.3",
+ "classification": "AMOS lab verification; disposable lab keys; proprietary lab fixtures; no institutional authority",
+ "started_at": "2026-11-03T17:55:32.724Z",
+ "checks": [
+  {
+   "name": "twenty unknown keys: always 401 INVALID_CREDENTIAL",
+   "passed": true,
+   "detail": [
+    [
+     401,
+     "INVALID_CREDENTIAL"
+    ],
+    [
+     401,
+     "INVALID_CREDENTIAL"
+    ],
+    [
+     401,
+     "INVALID_CREDENTIAL"
+    ]
+   ]
+  },
+  {
+   "name": "auth-check gives the principal hash a designation binds to",
+   "passed": true
+  },
+  {
+   "name": "institution registers a designation for the reviewer",
+   "passed": true
+  },
+  {
+   "name": "set a review model with two named effects",
+   "passed": true
+  },
+  {
+   "name": "licensed: the case creator cannot use a designation",
+   "passed": true,
+   "detail": {
+    "code": "REVIEW_DESIGNATION_CASE_CREATOR"
+   }
+  },
+  {
+   "name": "licensed: designated reviews reach the internal recommendation and the draft effect",
+   "passed": true,
+   "detail": [
+    [
+     "internal_recommendation",
+     "positive"
+    ],
+    [
+     "effect:create_draft_record",
+     "positive"
+    ],
+    [
+     "effect:commit_spend",
+     "pending"
+    ]
+   ]
+  },
+  {
+   "name": "licensed: a qualified review with a ceiling makes spend conditional",
+   "passed": true,
+   "detail": {
+    "target": "effect:commit_spend",
+    "kind": "effect",
+    "effect_type": "commit_spend",
+    "state": "conditional",
+    "reason": null,
+    "facts": [
+     "budget_ok",
+     "licence_current"
+    ],
+    "conditions": [
+     {
+      "amount_minor": 50000,
+      "currency": "UGX",
+      "type": "amount_at_most"
+     }
+    ],
+    "pending_reviews": [],
+    "next_review": null,
+    "open_signals": [],
+    "basis": [
+     {
+      "fact_id": "budget_ok",
+      "value": true,
+      "reviews": [
+       "e9e1ae55c8faa88737e8f8cacc75daaac1e1d4f77cf919c0c9a6b87b9ebd3bc3"
+      ],
+      "reviewers": [
+       "553785045314e70e30b47bb9c7e72d9e8d9df965191e8a3e34020626fa6f30df"
+      ],
+      "credential_ids": [
+       "fl-designation"
+      ]
+     },
+     {
+      "fact_id": "licence_current",
+      "value": true,
+      "reviews": [
+       "8263c53054f3ec6130b614d0e7c9d6921fe50a1e1632e599d47b869eea85be52"
+      ],
+      "reviewers": [
+       "553785045314e70e30b47bb9c7e72d9e8d9df965191e8a3e34020626fa6f30df"
+      ],
+      "credential_ids": [
+       "fl-designation"
+      ]
+     }
+    ],
+    "valid_until": "2026-11-03T19:55:52.745Z"
+   }
+  },
+  {
+   "name": "register capabilities for both effects and a separation-of-duties probe",
+   "passed": true
+  },
+  {
+   "name": "licensed: verification allows the supported draft effect",
+   "passed": true
+  },
+  {
+   "name": "licensed: the review ceiling is enforced on the exact request",
+   "passed": true,
+   "detail": {
+    "over": [
+     "REVIEW_CONDITION_UNMET:amount_at_most"
+    ],
+    "within": "allow"
+   }
+  },
+  {
+   "name": "licensed: a reviewer of the basis cannot approve the capability",
+   "passed": true
+  },
+  {
+   "name": "licensed: a permission statement for the exact effect is covered; production receipts stay unsigned until the key ceremony",
+   "passed": true,
+   "detail": {
+    "coverage": "covered",
+    "signature": "unsigned"
+   }
+  },
+  {
+   "name": "licensed: the statement names who asserted the reviewer standing, how it was verified, when it ends and which effect rests on it",
+   "passed": true,
+   "detail": [
+    {
+     "by": "fl-standing",
+     "verification": "Ed25519 signature checked against the issuer anchor registered in this workspace, re-read now",
+     "not_after": "2026-11-03T19:55:52.745Z",
+     "supports": "create_draft_record"
+    }
+   ]
+  },
+  {
+   "name": "licensed: the commit receipt carries the decision basis",
+   "passed": true,
+   "detail": {
+    "effect_state": "positive",
+    "conditions": [],
+    "basis_reviews": [
+     "521f02bba5841e53b62612fc7022b50a24259160ace5951befcc114baf8bd016",
+     "8263c53054f3ec6130b614d0e7c9d6921fe50a1e1632e599d47b869eea85be52"
+    ],
+    "decision_state_sha256": "50c88a763622c11e4d23d99a4bcc301c25d642a7882c95ff553d27e438a04b07",
+    "decision_journal_head_sha256": "eabeb168eedded8956e0bc438faafb3ffe8e8736056fc60e2ff4c595e06bf560",
+    "capability_document_sha256": "01362a0f1dcad36708acf2350c6b8c6f3e2a207e86155021fd1dafcd76cac02c"
+   }
+  },
+  {
+   "name": "licensed: one adverse claim withdraws only the effects that use it",
+   "passed": true,
+   "detail": {
+    "review": [
+     200,
+     null
+    ],
+    "targets": [
+     [
+      "internal_recommendation",
+      "adverse"
+     ],
+     [
+      "effect:create_draft_record",
+      "adverse"
+     ],
+     [
+      "effect:commit_spend",
+      "conditional"
+     ]
+    ]
+   }
+  },
+  {
+   "name": "licensed: verification follows the decision state",
+   "passed": true
+  },
+  {
+   "name": "licensed: the public replay reproduces the production journal",
+   "passed": true,
+   "detail": {
+    "events": 5,
+    "mismatches": []
+   }
+  },
+  {
+   "name": "licensed preflight: both prose cases route the exact passage with no caller contradicts",
+   "passed": true,
+   "detail": {
+    "mbarara": [
+     [
+      "adverse_wording_requires_review",
+      true
+     ]
+    ],
+    "education": [
+     [
+      "adverse_wording_requires_review",
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "name": "licensed preflight: conditional and negated wording is review-first and does not hold; a clean passage is not routed",
+   "passed": true,
+   "detail": {
+    "conditional": [
+     [
+      "adverse_wording_review_first",
+      false
+     ]
+    ],
+    "negated": [
+     [
+      "adverse_wording_review_first",
+      false
+     ]
+    ],
+    "clean": 0
+   }
+  },
+  {
+   "name": "licensed preflight: tasks never echo the passage text",
+   "passed": true
+  },
+  {
+   "name": "licensed: an attributed adverse model reading routes the exact passage on REST and on the MCP decision-check tool",
+   "passed": true,
+   "detail": {
+    "task": true,
+    "rest": [
+     "model_reading_requires_review"
+    ],
+    "mcp": [
+     "model_reading_requires_review"
+    ],
+    "mcp_error": null
+   }
+  },
+  {
+   "name": "licensed: a supporting model reading clears nothing",
+   "passed": true,
+   "detail": {
+    "status": "governed_claim_review_required"
+   }
+  },
+  {
+   "name": "every live authority response validates against the closed published contract",
+   "passed": true,
+   "detail": {
+    "responses": 16,
+    "invalid": "[]\r\n"
+   }
+  },
+  {
+   "name": "every published example passes as published in both profiles on production",
+   "passed": true,
+   "detail": {
+    "run": 77,
+    "failed": []
+   }
+  },
+  {
+   "name": "generated JavaScript and Python clients pin the revision on production",
+   "passed": true,
+   "detail": {
+    "js": [
+     200,
+     true
+    ],
+    "py": "[200, true]"
+   }
+  }
+ ],
+ "findings": [],
+ "cleanup_errors": [],
+ "credentials": [
+  {
+   "role": "creator",
+   "key_hash": "key:3ea5b1e38766ec20c09d6390eddbe5f4291b047bf5dc28d3a3de689e954b3dfb",
+   "credential_id": "favourable-834cdd24e6c7-creator",
+   "expires_at": "2026-11-03T18:15:33.547Z"
+  },
+  {
+   "role": "institution",
+   "key_hash": "key:e431cc32eb13b043439f00cda483ff881ceab8abdd9e22715d591af9d03b6fc8",
+   "credential_id": "favourable-834cdd24e6c7-institution",
+   "expires_at": "2026-11-03T18:15:33.547Z"
+  },
+  {
+   "role": "reviewer",
+   "key_hash": "key:099d5f756fef32e94fdae8ea5f3ac8fdec71f4a606207a96f938242aafa8cc0e",
+   "credential_id": "favourable-834cdd24e6c7-reviewer",
+   "expires_at": "2026-11-03T18:15:33.547Z"
+  },
+  {
+   "role": "executor",
+   "key_hash": "key:3fdf8ed497a4beb4924c4e024f2c626961f3786914ca3b36122ecce8e04ae049",
+   "credential_id": "favourable-834cdd24e6c7-executor",
+   "expires_at": "2026-11-03T18:15:33.547Z"
+  },
+  {
+   "role": "examples",
+   "key_hash": "key:f3f9f56c241f03a716c508543350c78a8671ef6a04c932a9a60727903ad818d2",
+   "credential_id": "favourable-834cdd24e6c7-examples",
+   "expires_at": "2026-11-03T18:15:33.547Z"
+  }
+ ],
+ "completed_at": "2026-11-03T18:00:50.084Z",
+ "passed": true
+}

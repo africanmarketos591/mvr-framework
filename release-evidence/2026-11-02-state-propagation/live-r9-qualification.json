@@ -1,0 +1,1096 @@
+{
+ "suite": "r9-qualification-live",
+ "base": "https://africanmarketos.com",
+ "started_at": "2026-11-03T06:44:41.100Z",
+ "classification": "proprietary lab fixtures; not observations of real organisations",
+ "checks": [
+  {
+   "name": "effect set A strict_calibrated: zero false favorable, every market row exact, precedence on every missing-link and qualifier row",
+   "passed": true,
+   "detail": {
+    "market": "240/240",
+    "false_favorable": 0
+   }
+  },
+  {
+   "name": "effect set A strict_calibrated: REST and MCP identical, release manifest bound",
+   "passed": true,
+   "detail": {
+    "parity": 56,
+    "bound": 56
+   }
+  },
+  {
+   "name": "effect set A full_advisory: zero false favorable, every market row exact, precedence on every missing-link and qualifier row",
+   "passed": true,
+   "detail": {
+    "market": "240/240",
+    "false_favorable": 0
+   }
+  },
+  {
+   "name": "effect set A full_advisory: REST and MCP identical, release manifest bound",
+   "passed": true,
+   "detail": {
+    "parity": 56,
+    "bound": 56
+   }
+  },
+  {
+   "name": "effect set B strict_calibrated: zero false favorable, every market row exact, precedence on every missing-link and qualifier row",
+   "passed": true,
+   "detail": {
+    "market": "80/80",
+    "false_favorable": 0
+   }
+  },
+  {
+   "name": "effect set B strict_calibrated: REST and MCP identical, release manifest bound",
+   "passed": true,
+   "detail": {
+    "parity": 16,
+    "bound": 16
+   }
+  },
+  {
+   "name": "effect set B full_advisory: zero false favorable, every market row exact, precedence on every missing-link and qualifier row",
+   "passed": true,
+   "detail": {
+    "market": "80/80",
+    "false_favorable": 0
+   }
+  },
+  {
+   "name": "effect set B full_advisory: REST and MCP identical, release manifest bound",
+   "passed": true,
+   "detail": {
+    "parity": 16,
+    "bound": 16
+   }
+  },
+  {
+   "name": "audit strict_calibrated: passes the R9 bar",
+   "passed": true,
+   "detail": {
+    "detected": "16/16",
+    "route_level_false_permits": 0,
+    "clean_false_positives": "0/7",
+    "controlling": "24/24",
+    "targeted": "16/16",
+    "internal_only_false_triggers": 0,
+    "missing_contract": 0,
+    "statuses": [
+     200
+    ],
+    "rows": [
+     {
+      "case_id": "validation_stale_record",
+      "route": "/v1/evidence-validation",
+      "outcome": "defects_found",
+      "codes": [
+       "EVIDENCE_STALE"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "validation_wrong_country",
+      "route": "/v1/evidence-validation",
+      "outcome": "defects_found",
+      "codes": [
+       "GEOGRAPHY_MISMATCH"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "privacy_narrative_conflict",
+      "route": "/v1/privacy-risk-review",
+      "outcome": "defects_found",
+      "codes": [
+       "PRIVACY_ENVELOPE_CONFLICT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "privacy_record_id_number",
+      "route": "/v1/privacy-risk-review",
+      "outcome": "defects_found",
+      "codes": [
+       "PERSONAL_DATA_UNDECLARED"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "suitability_press_release_permission",
+      "route": "/v1/evidence-suitability-scan",
+      "outcome": "defects_found",
+      "codes": [
+       "SOURCE_UNSUITABLE_FOR_USE"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "suitability_application_under_review",
+      "route": "/v1/evidence-suitability-scan",
+      "outcome": "defects_found",
+      "codes": [
+       "SUPPORT_STATES_LINK_MISSING"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "board_overstates",
+      "route": "/v1/board-safety-check",
+      "outcome": "defects_found",
+      "codes": [
+       "OUTPUT_OVERSTATES_EVIDENCE",
+       "QUALIFIER_IN_SUPPORT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "board_receipt_as_evidence",
+      "route": "/v1/board-safety-check",
+      "outcome": "defects_found",
+      "codes": [
+       "RECEIPT_USED_AS_EVIDENCE"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "redteam_amos_cited",
+      "route": "/v1/red-team",
+      "outcome": "defects_found",
+      "codes": [
+       "OUTPUT_CITES_AMOS_AS_PERMISSION"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "redteam_licence_cancelled",
+      "route": "/v1/red-team",
+      "outcome": "defects_found",
+      "codes": [
+       "REVOCATION_PRESENT",
+       "REVOCATION_PRESENT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "release_board_prohibition",
+      "route": "/v1/release-check",
+      "outcome": "defects_found",
+      "codes": [
+       "PROHIBITION_PRESENT",
+       "PROHIBITION_PRESENT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "claimaudit_quantity",
+      "route": "/v1/claim-audit",
+      "outcome": "defects_found",
+      "codes": [
+       "UNSUPPORTED_QUANTITY"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "claimaudit_pilot_only",
+      "route": "/v1/claim-audit",
+      "outcome": "defects_found",
+      "codes": [
+       "QUALIFIER_IN_SUPPORT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "decision_context_only",
+      "route": "/v1/decision-check",
+      "outcome": "defects_found",
+      "codes": [
+       "CONTEXT_ONLY_SUPPORT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "completeness_actor",
+      "route": "/v1/evidence-completeness",
+      "outcome": "defects_found",
+      "codes": [
+       "UNSUPPORTED_ACTOR"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "review_directive",
+      "route": "/v1/evidence-review",
+      "outcome": "defects_found",
+      "codes": [
+       "DIRECTIVE_IN_SUPPORT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "clean_claimaudit_renewed",
+      "route": "/v1/claim-audit",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_release_boilerplate",
+      "route": "/v1/release-check",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_privacy_org_contact",
+      "route": "/v1/privacy-risk-review",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_validation_spellings",
+      "route": "/v1/evidence-validation",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_board_hedged",
+      "route": "/v1/board-safety-check",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_redteam_hedged",
+      "route": "/v1/red-team",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_suitability_registry",
+      "route": "/v1/evidence-suitability-scan",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "internal_only_completeness",
+      "route": "/v1/evidence-completeness",
+      "outcome": "not_applicable",
+      "codes": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "audit full_advisory: passes the R9 bar",
+   "passed": true,
+   "detail": {
+    "detected": "16/16",
+    "route_level_false_permits": 0,
+    "clean_false_positives": "0/7",
+    "controlling": "24/24",
+    "targeted": "16/16",
+    "internal_only_false_triggers": 0,
+    "missing_contract": 0,
+    "statuses": [
+     200
+    ],
+    "rows": [
+     {
+      "case_id": "validation_stale_record",
+      "route": "/v1/evidence-validation",
+      "outcome": "defects_found",
+      "codes": [
+       "EVIDENCE_STALE"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "validation_wrong_country",
+      "route": "/v1/evidence-validation",
+      "outcome": "defects_found",
+      "codes": [
+       "GEOGRAPHY_MISMATCH"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "privacy_narrative_conflict",
+      "route": "/v1/privacy-risk-review",
+      "outcome": "defects_found",
+      "codes": [
+       "PRIVACY_ENVELOPE_CONFLICT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "privacy_record_id_number",
+      "route": "/v1/privacy-risk-review",
+      "outcome": "defects_found",
+      "codes": [
+       "PERSONAL_DATA_UNDECLARED"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "suitability_press_release_permission",
+      "route": "/v1/evidence-suitability-scan",
+      "outcome": "defects_found",
+      "codes": [
+       "SOURCE_UNSUITABLE_FOR_USE"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "suitability_application_under_review",
+      "route": "/v1/evidence-suitability-scan",
+      "outcome": "defects_found",
+      "codes": [
+       "SUPPORT_STATES_LINK_MISSING"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "board_overstates",
+      "route": "/v1/board-safety-check",
+      "outcome": "defects_found",
+      "codes": [
+       "OUTPUT_OVERSTATES_EVIDENCE",
+       "QUALIFIER_IN_SUPPORT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "board_receipt_as_evidence",
+      "route": "/v1/board-safety-check",
+      "outcome": "defects_found",
+      "codes": [
+       "RECEIPT_USED_AS_EVIDENCE"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "redteam_amos_cited",
+      "route": "/v1/red-team",
+      "outcome": "defects_found",
+      "codes": [
+       "OUTPUT_CITES_AMOS_AS_PERMISSION"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "redteam_licence_cancelled",
+      "route": "/v1/red-team",
+      "outcome": "defects_found",
+      "codes": [
+       "REVOCATION_PRESENT",
+       "REVOCATION_PRESENT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "release_board_prohibition",
+      "route": "/v1/release-check",
+      "outcome": "defects_found",
+      "codes": [
+       "PROHIBITION_PRESENT",
+       "PROHIBITION_PRESENT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "claimaudit_quantity",
+      "route": "/v1/claim-audit",
+      "outcome": "defects_found",
+      "codes": [
+       "UNSUPPORTED_QUANTITY"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "claimaudit_pilot_only",
+      "route": "/v1/claim-audit",
+      "outcome": "defects_found",
+      "codes": [
+       "QUALIFIER_IN_SUPPORT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "decision_context_only",
+      "route": "/v1/decision-check",
+      "outcome": "defects_found",
+      "codes": [
+       "CONTEXT_ONLY_SUPPORT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "completeness_actor",
+      "route": "/v1/evidence-completeness",
+      "outcome": "defects_found",
+      "codes": [
+       "UNSUPPORTED_ACTOR"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "review_directive",
+      "route": "/v1/evidence-review",
+      "outcome": "defects_found",
+      "codes": [
+       "DIRECTIVE_IN_SUPPORT"
+      ],
+      "detected": true
+     },
+     {
+      "case_id": "clean_claimaudit_renewed",
+      "route": "/v1/claim-audit",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_release_boilerplate",
+      "route": "/v1/release-check",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_privacy_org_contact",
+      "route": "/v1/privacy-risk-review",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_validation_spellings",
+      "route": "/v1/evidence-validation",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_board_hedged",
+      "route": "/v1/board-safety-check",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_redteam_hedged",
+      "route": "/v1/red-team",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "clean_suitability_registry",
+      "route": "/v1/evidence-suitability-scan",
+      "outcome": "no_defects_found",
+      "codes": []
+     },
+     {
+      "case_id": "internal_only_completeness",
+      "route": "/v1/evidence-completeness",
+      "outcome": "not_applicable",
+      "codes": []
+     }
+    ]
+   }
+  },
+  {
+   "name": "relevance: 16/16 licensed first-call cells and 8/8 on preflight, guided, audit and effect routes terminate before market evidence work",
+   "passed": true,
+   "detail": {
+    "first_call": 16,
+    "preflight": 8,
+    "guided": 8,
+    "audit": 8,
+    "effect": 8
+   }
+  },
+  {
+   "name": "contracts strict_calibrated: capabilities names exactly the tools tools/list returns",
+   "passed": true,
+   "detail": {
+    "declared": [
+     "mvr_first_call",
+     "mvr_entity_resolve",
+     "mvr_evidence_completeness",
+     "mvr_context_compile",
+     "mvr_decision_check",
+     "mvr_authority_operation",
+     "mvr_effect_decision",
+     "mvr_interpretation_submission"
+    ],
+    "listed": [
+     "mvr_first_call",
+     "mvr_entity_resolve",
+     "mvr_evidence_completeness",
+     "mvr_context_compile",
+     "mvr_decision_check",
+     "mvr_authority_operation",
+     "mvr_effect_decision",
+     "mvr_interpretation_submission"
+    ]
+   }
+  },
+  {
+   "name": "contracts strict_calibrated: the exact-effect and submission tools publish detailed output schemas",
+   "passed": true
+  },
+  {
+   "name": "contracts full_advisory: capabilities names exactly the tools tools/list returns",
+   "passed": true,
+   "detail": {
+    "declared": [
+     "mvr_first_call",
+     "mvr_entity_resolve",
+     "mvr_evidence_completeness",
+     "mvr_context_compile",
+     "mvr_decision_check",
+     "mvr_authority_operation",
+     "mvr_effect_decision",
+     "mvr_interpretation_submission"
+    ],
+    "listed": [
+     "mvr_first_call",
+     "mvr_entity_resolve",
+     "mvr_evidence_completeness",
+     "mvr_context_compile",
+     "mvr_decision_check",
+     "mvr_authority_operation",
+     "mvr_effect_decision",
+     "mvr_interpretation_submission"
+    ]
+   }
+  },
+  {
+   "name": "contracts full_advisory: the exact-effect and submission tools publish detailed output schemas",
+   "passed": true
+  },
+  {
+   "name": "contracts: every OpenAPI 429 declares Retry-After and RateLimit headers",
+   "passed": true,
+   "detail": {
+    "operations_with_429": 266,
+    "missing": []
+   }
+  },
+  {
+   "name": "contracts: the buyer SDK alias table equals the server action ontology",
+   "passed": true
+  }
+ ],
+ "failures": [],
+ "scores": {
+  "effect_set_A_strict_calibrated": {
+   "market_rows": 240,
+   "market_agree": 240,
+   "false_favorable": 0,
+   "false_adverse": 0,
+   "missing_rows": 32,
+   "missing_precedence": 32,
+   "qualifier_rows": 32,
+   "qualifier_precedence": 32,
+   "external_rows": 144,
+   "external_authorized": 0,
+   "irrelevant_pairs": 8,
+   "irrelevant_identical": 8,
+   "internal": 8,
+   "internal_not_relevant": 8,
+   "passes": true,
+   "rest_mcp_parity": "56/56",
+   "manifest_bound": "56/56",
+   "mismatches": []
+  },
+  "effect_set_A_full_advisory": {
+   "market_rows": 240,
+   "market_agree": 240,
+   "false_favorable": 0,
+   "false_adverse": 0,
+   "missing_rows": 32,
+   "missing_precedence": 32,
+   "qualifier_rows": 32,
+   "qualifier_precedence": 32,
+   "external_rows": 144,
+   "external_authorized": 0,
+   "irrelevant_pairs": 8,
+   "irrelevant_identical": 8,
+   "internal": 8,
+   "internal_not_relevant": 8,
+   "passes": true,
+   "rest_mcp_parity": "56/56",
+   "manifest_bound": "56/56",
+   "mismatches": []
+  },
+  "effect_set_B_strict_calibrated": {
+   "market_rows": 80,
+   "market_agree": 80,
+   "false_favorable": 0,
+   "false_adverse": 0,
+   "missing_rows": 32,
+   "missing_precedence": 32,
+   "qualifier_rows": 32,
+   "qualifier_precedence": 32,
+   "external_rows": 48,
+   "external_authorized": 0,
+   "irrelevant_pairs": 0,
+   "irrelevant_identical": 0,
+   "internal": 0,
+   "internal_not_relevant": 0,
+   "passes": false,
+   "rest_mcp_parity": "16/16",
+   "manifest_bound": "16/16",
+   "mismatches": []
+  },
+  "effect_set_B_full_advisory": {
+   "market_rows": 80,
+   "market_agree": 80,
+   "false_favorable": 0,
+   "false_adverse": 0,
+   "missing_rows": 32,
+   "missing_precedence": 32,
+   "qualifier_rows": 32,
+   "qualifier_precedence": 32,
+   "external_rows": 48,
+   "external_authorized": 0,
+   "irrelevant_pairs": 0,
+   "irrelevant_identical": 0,
+   "internal": 0,
+   "internal_not_relevant": 0,
+   "passes": false,
+   "rest_mcp_parity": "16/16",
+   "manifest_bound": "16/16",
+   "mismatches": []
+  },
+  "audit_strict_calibrated": {
+   "detected": "16/16",
+   "route_level_false_permits": 0,
+   "clean_false_positives": "0/7",
+   "controlling": "24/24",
+   "targeted": "16/16",
+   "internal_only_false_triggers": 0,
+   "missing_contract": 0,
+   "statuses": [
+    200
+   ],
+   "rows": [
+    {
+     "case_id": "validation_stale_record",
+     "route": "/v1/evidence-validation",
+     "outcome": "defects_found",
+     "codes": [
+      "EVIDENCE_STALE"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "validation_wrong_country",
+     "route": "/v1/evidence-validation",
+     "outcome": "defects_found",
+     "codes": [
+      "GEOGRAPHY_MISMATCH"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "privacy_narrative_conflict",
+     "route": "/v1/privacy-risk-review",
+     "outcome": "defects_found",
+     "codes": [
+      "PRIVACY_ENVELOPE_CONFLICT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "privacy_record_id_number",
+     "route": "/v1/privacy-risk-review",
+     "outcome": "defects_found",
+     "codes": [
+      "PERSONAL_DATA_UNDECLARED"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "suitability_press_release_permission",
+     "route": "/v1/evidence-suitability-scan",
+     "outcome": "defects_found",
+     "codes": [
+      "SOURCE_UNSUITABLE_FOR_USE"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "suitability_application_under_review",
+     "route": "/v1/evidence-suitability-scan",
+     "outcome": "defects_found",
+     "codes": [
+      "SUPPORT_STATES_LINK_MISSING"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "board_overstates",
+     "route": "/v1/board-safety-check",
+     "outcome": "defects_found",
+     "codes": [
+      "OUTPUT_OVERSTATES_EVIDENCE",
+      "QUALIFIER_IN_SUPPORT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "board_receipt_as_evidence",
+     "route": "/v1/board-safety-check",
+     "outcome": "defects_found",
+     "codes": [
+      "RECEIPT_USED_AS_EVIDENCE"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "redteam_amos_cited",
+     "route": "/v1/red-team",
+     "outcome": "defects_found",
+     "codes": [
+      "OUTPUT_CITES_AMOS_AS_PERMISSION"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "redteam_licence_cancelled",
+     "route": "/v1/red-team",
+     "outcome": "defects_found",
+     "codes": [
+      "REVOCATION_PRESENT",
+      "REVOCATION_PRESENT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "release_board_prohibition",
+     "route": "/v1/release-check",
+     "outcome": "defects_found",
+     "codes": [
+      "PROHIBITION_PRESENT",
+      "PROHIBITION_PRESENT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "claimaudit_quantity",
+     "route": "/v1/claim-audit",
+     "outcome": "defects_found",
+     "codes": [
+      "UNSUPPORTED_QUANTITY"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "claimaudit_pilot_only",
+     "route": "/v1/claim-audit",
+     "outcome": "defects_found",
+     "codes": [
+      "QUALIFIER_IN_SUPPORT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "decision_context_only",
+     "route": "/v1/decision-check",
+     "outcome": "defects_found",
+     "codes": [
+      "CONTEXT_ONLY_SUPPORT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "completeness_actor",
+     "route": "/v1/evidence-completeness",
+     "outcome": "defects_found",
+     "codes": [
+      "UNSUPPORTED_ACTOR"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "review_directive",
+     "route": "/v1/evidence-review",
+     "outcome": "defects_found",
+     "codes": [
+      "DIRECTIVE_IN_SUPPORT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "clean_claimaudit_renewed",
+     "route": "/v1/claim-audit",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_release_boilerplate",
+     "route": "/v1/release-check",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_privacy_org_contact",
+     "route": "/v1/privacy-risk-review",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_validation_spellings",
+     "route": "/v1/evidence-validation",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_board_hedged",
+     "route": "/v1/board-safety-check",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_redteam_hedged",
+     "route": "/v1/red-team",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_suitability_registry",
+     "route": "/v1/evidence-suitability-scan",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "internal_only_completeness",
+     "route": "/v1/evidence-completeness",
+     "outcome": "not_applicable",
+     "codes": []
+    }
+   ]
+  },
+  "audit_full_advisory": {
+   "detected": "16/16",
+   "route_level_false_permits": 0,
+   "clean_false_positives": "0/7",
+   "controlling": "24/24",
+   "targeted": "16/16",
+   "internal_only_false_triggers": 0,
+   "missing_contract": 0,
+   "statuses": [
+    200
+   ],
+   "rows": [
+    {
+     "case_id": "validation_stale_record",
+     "route": "/v1/evidence-validation",
+     "outcome": "defects_found",
+     "codes": [
+      "EVIDENCE_STALE"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "validation_wrong_country",
+     "route": "/v1/evidence-validation",
+     "outcome": "defects_found",
+     "codes": [
+      "GEOGRAPHY_MISMATCH"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "privacy_narrative_conflict",
+     "route": "/v1/privacy-risk-review",
+     "outcome": "defects_found",
+     "codes": [
+      "PRIVACY_ENVELOPE_CONFLICT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "privacy_record_id_number",
+     "route": "/v1/privacy-risk-review",
+     "outcome": "defects_found",
+     "codes": [
+      "PERSONAL_DATA_UNDECLARED"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "suitability_press_release_permission",
+     "route": "/v1/evidence-suitability-scan",
+     "outcome": "defects_found",
+     "codes": [
+      "SOURCE_UNSUITABLE_FOR_USE"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "suitability_application_under_review",
+     "route": "/v1/evidence-suitability-scan",
+     "outcome": "defects_found",
+     "codes": [
+      "SUPPORT_STATES_LINK_MISSING"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "board_overstates",
+     "route": "/v1/board-safety-check",
+     "outcome": "defects_found",
+     "codes": [
+      "OUTPUT_OVERSTATES_EVIDENCE",
+      "QUALIFIER_IN_SUPPORT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "board_receipt_as_evidence",
+     "route": "/v1/board-safety-check",
+     "outcome": "defects_found",
+     "codes": [
+      "RECEIPT_USED_AS_EVIDENCE"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "redteam_amos_cited",
+     "route": "/v1/red-team",
+     "outcome": "defects_found",
+     "codes": [
+      "OUTPUT_CITES_AMOS_AS_PERMISSION"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "redteam_licence_cancelled",
+     "route": "/v1/red-team",
+     "outcome": "defects_found",
+     "codes": [
+      "REVOCATION_PRESENT",
+      "REVOCATION_PRESENT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "release_board_prohibition",
+     "route": "/v1/release-check",
+     "outcome": "defects_found",
+     "codes": [
+      "PROHIBITION_PRESENT",
+      "PROHIBITION_PRESENT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "claimaudit_quantity",
+     "route": "/v1/claim-audit",
+     "outcome": "defects_found",
+     "codes": [
+      "UNSUPPORTED_QUANTITY"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "claimaudit_pilot_only",
+     "route": "/v1/claim-audit",
+     "outcome": "defects_found",
+     "codes": [
+      "QUALIFIER_IN_SUPPORT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "decision_context_only",
+     "route": "/v1/decision-check",
+     "outcome": "defects_found",
+     "codes": [
+      "CONTEXT_ONLY_SUPPORT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "completeness_actor",
+     "route": "/v1/evidence-completeness",
+     "outcome": "defects_found",
+     "codes": [
+      "UNSUPPORTED_ACTOR"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "review_directive",
+     "route": "/v1/evidence-review",
+     "outcome": "defects_found",
+     "codes": [
+      "DIRECTIVE_IN_SUPPORT"
+     ],
+     "detected": true
+    },
+    {
+     "case_id": "clean_claimaudit_renewed",
+     "route": "/v1/claim-audit",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_release_boilerplate",
+     "route": "/v1/release-check",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_privacy_org_contact",
+     "route": "/v1/privacy-risk-review",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_validation_spellings",
+     "route": "/v1/evidence-validation",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_board_hedged",
+     "route": "/v1/board-safety-check",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_redteam_hedged",
+     "route": "/v1/red-team",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "clean_suitability_registry",
+     "route": "/v1/evidence-suitability-scan",
+     "outcome": "no_defects_found",
+     "codes": []
+    },
+    {
+     "case_id": "internal_only_completeness",
+     "route": "/v1/evidence-completeness",
+     "outcome": "not_applicable",
+     "codes": []
+    }
+   ]
+  },
+  "relevance": {
+   "internal_controls": 8,
+   "first_call": 16,
+   "preflight": 8,
+   "guided": 8,
+   "audit": 8,
+   "effect": 8
+  }
+ },
+ "retries": [],
+ "parity_mismatches": [],
+ "deployment_revision": "2026-11-02.state-propagation.3",
+ "release_manifest_id": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+ "finished_at": "2026-11-03T06:58:30.312Z",
+ "passed": true
+}

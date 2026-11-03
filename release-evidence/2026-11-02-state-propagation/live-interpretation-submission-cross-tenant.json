@@ -1,0 +1,219 @@
+{
+ "suite": "interpretation-submission-live",
+ "base": "https://africanmarketos.com",
+ "started_at": "2026-11-03T07:09:36.051Z",
+ "classification": "proprietary lab fixtures",
+ "checks": [
+  {
+   "name": "a licensed workflow step issues a slot bound to its tasks, and names the tool",
+   "passed": true,
+   "detail": {
+    "tasks": 3,
+    "submission_id": "ISB-43f9289bf7d4ecb4d7bcb1e2163ae46b"
+   }
+  },
+  {
+   "name": "positive: every reading reaches label evaluation and is accepted",
+   "passed": true,
+   "detail": [
+    {
+     "index": 0,
+     "task_id": "PT-7dbb05ec8f19655b88e5b01b086ec4df978872b8273dd26d",
+     "status": "accepted",
+     "code": "READING_ACCEPTED",
+     "label": "supports",
+     "claim_id": "C1",
+     "evidence_id": "E1"
+    },
+    {
+     "index": 1,
+     "task_id": "PT-d61df961a264963c0def064ec905df7256b9d862f6393093",
+     "status": "accepted",
+     "code": "READING_ACCEPTED",
+     "label": "supports",
+     "claim_id": "C1",
+     "evidence_id": "E2"
+    },
+    {
+     "index": 2,
+     "task_id": "PT-ac6f21b9aa51d8e33035251066d9b527341cb2ea3eecb2a1",
+     "status": "accepted",
+     "code": "READING_ACCEPTED",
+     "label": "supports",
+     "claim_id": "C2",
+     "evidence_id": "E2"
+    }
+   ]
+  },
+  {
+   "name": "replay by the same model fails SUBMISSION_REPLAYED",
+   "passed": true
+  },
+  {
+   "name": "a conflicting second model is accepted and the conflict retained",
+   "passed": true
+  },
+  {
+   "name": "each negative reading fails for its own reason",
+   "passed": true,
+   "detail": [
+    "CLAIM_HASH_MISMATCH",
+    "PASSAGE_HASH_MISMATCH",
+    "LABEL_NOT_ALLOWED",
+    "TASK_NOT_IN_SUBMISSION",
+    "READING_FIELD_NOT_ALLOWED",
+    "MODEL_IDENTITY_MISMATCH",
+    "READING_ACCEPTED",
+    "DUPLICATE_TASK_IN_SUBMISSION"
+   ]
+  },
+  {
+   "name": "submission negative: receipt as fresh input",
+   "passed": true,
+   "detail": "RECEIPT_NOT_SUBMISSION_INPUT"
+  },
+  {
+   "name": "submission negative: wrong schema version",
+   "passed": true,
+   "detail": "SUBMISSION_SCHEMA_VERSION_UNSUPPORTED"
+  },
+  {
+   "name": "submission negative: mutated workflow binding",
+   "passed": true,
+   "detail": "IMMUTABLE_FIELD_MISMATCH"
+  },
+  {
+   "name": "submission negative: extra field",
+   "passed": true,
+   "detail": "SUBMISSION_FIELD_NOT_ALLOWED"
+  },
+  {
+   "name": "cross-tenant injection: the slot is unknown to another tenant",
+   "passed": true
+  },
+  {
+   "name": "model readings alone change no effect decision",
+   "passed": true,
+   "detail": [
+    "favorable",
+    "favorable"
+   ]
+  },
+  {
+   "name": "an unrelated reading of a link declared qualifies routes to accountable review",
+   "passed": true,
+   "detail": [
+    "model_reading_requires_review",
+    "model_reading_disagrees_with_declared_relationship",
+    "model_readings_disagree"
+   ]
+  },
+  {
+   "name": "a disposition must name its reviewer",
+   "passed": true,
+   "detail": "REVIEWER_IDENTITY_REQUIRED"
+  },
+  {
+   "name": "each disposition is a receipt-bound record naming its reviewer and the readings it answers",
+   "passed": true,
+   "detail": [
+    "IDP-87d01aefef4cfdb68a8ed46ada31db56",
+    "IDP-921bc4a6b47fc2ba63924263bb561e7e"
+   ]
+  },
+  {
+   "name": "a reviewer rejection changes only the dependent effect; no permission is granted",
+   "passed": true,
+   "detail": [
+    [
+     "EXT-C1",
+     "insufficient"
+    ],
+    [
+     "EXT-C9",
+     "favorable"
+    ]
+   ]
+  },
+  {
+   "name": "the response names the dispositions applied and exactly the effects they changed",
+   "passed": true,
+   "detail": {
+    "applied": [
+     {
+      "disposition_id": "IDP-87d01aefef4cfdb68a8ed46ada31db56",
+      "task_id": "PT-7dbb05ec8f19655b88e5b01b086ec4df978872b8273dd26d",
+      "disposition": "reject_support",
+      "bound_to": [
+       {
+        "claim_id": "C1",
+        "evidence_id": "E1"
+       }
+      ],
+      "reviewer_id": "conformance-reviewer-1",
+      "assurance": "tenant_declared_same_principal_as_issuer",
+      "reading_receipt_ids": [
+       "ISR-93486f694e497a4b3a81523ec98739a2",
+       "ISR-ee5d882f64de28412275e968f94b32bf",
+       "ISR-58a7a57fc1b3e46923617f00f37093be"
+      ],
+      "binding": "claim_and_passage_sha256"
+     },
+     {
+      "disposition_id": "IDP-921bc4a6b47fc2ba63924263bb561e7e",
+      "task_id": "PT-d61df961a264963c0def064ec905df7256b9d862f6393093",
+      "disposition": "reject_support",
+      "bound_to": [
+       {
+        "claim_id": "C1",
+        "evidence_id": "E2"
+       }
+      ],
+      "reviewer_id": "conformance-reviewer-1",
+      "assurance": "tenant_declared_same_principal_as_issuer",
+      "reading_receipt_ids": [
+       "ISR-93486f694e497a4b3a81523ec98739a2",
+       "ISR-ee5d882f64de28412275e968f94b32bf"
+      ],
+      "binding": "claim_and_passage_sha256"
+     }
+    ],
+    "unmatched": [],
+    "changed_effect_ids": [
+     "EXT-C1"
+    ],
+    "rule": "A disposition applies only to the claim-source link whose exact claim text and passage it was made on (SHA-256), and changes only the effects that depend on that claim. A changed claim or passage never inherits it.",
+    "disposition_set_sha256": "656d1014dedc6defeec13d908a2a51754395bf7ace6116da80ee69440de948b0",
+    "submission_id": "ISB-43f9289bf7d4ecb4d7bcb1e2163ae46b"
+   }
+  },
+  {
+   "name": "withdrawing a disposition recomputes the dependent effect",
+   "passed": true,
+   "detail": [
+    "favorable",
+    "favorable"
+   ]
+  },
+  {
+   "name": "a qualify disposition makes the dependent effect conditional, never authorized",
+   "passed": true,
+   "detail": [
+    [
+     "EXT-C1",
+     "conditional",
+     "not_authorized"
+    ],
+    [
+     "EXT-C9",
+     "favorable",
+     "not_authorized"
+    ]
+   ]
+  }
+ ],
+ "failures": [],
+ "not_run": [],
+ "finished_at": "2026-11-03T07:10:28.244Z",
+ "passed": true
+}

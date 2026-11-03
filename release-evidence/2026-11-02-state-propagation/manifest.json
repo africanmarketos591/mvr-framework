@@ -1,0 +1,101 @@
+{
+ "deployment_revision": "2026-11-02.state-propagation.3",
+ "release_manifest_id": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+ "credential_scan": {
+  "patterns": [
+   "/mvr_eval_[A-Za-z0-9_-]{8,}/",
+   "/\\bacb_[a-f0-9]{16,}/",
+   "/MVRIS-[a-f0-9]{16,}/",
+   "/private_pkcs8_b64/",
+   "/\"session_token\"\\s*:\\s*\"[^\"]{8,}/",
+   "/X-API-Key\"\\s*:\\s*\"[^<\"]{8,}/"
+  ],
+  "hits": 0
+ },
+ "files": [
+  {
+   "path": "README.md",
+   "sha256": "8394e910f038f16688756a68ecf2401f71eaf35a12b3d594183aa9a07d4aab1f"
+  },
+  {
+   "path": "deployment.json",
+   "sha256": "b5313ab6fb56cec27a167a14d571f22ad07657bcd437325032e920da8cdf3a81"
+  },
+  {
+   "path": "live-audit-findings.json",
+   "sha256": "c9764e4c223031a6698b1b998de23b9a5b75dcbb9bd77ab14a8f27d5901751b3"
+  },
+  {
+   "path": "live-buyer-executor-suite.json",
+   "sha256": "45cd50c7afdc2bcf120be7aa1f4c5a75eb63a77811254af6ebc8dc852511a289"
+  },
+  {
+   "path": "live-canary.json",
+   "sha256": "b8dbe4a39a0ea6c8fdccbfcbd2930ea9cfcae8b5cb0d3352aa5a1ee83e753ea2"
+  },
+  {
+   "path": "live-dogfood-rehearsal.json",
+   "sha256": "1da2dabc72fe007220e6768ca0417b35077f37deadb2c290b53318d6015d2891"
+  },
+  {
+   "path": "live-effect-decision.json",
+   "sha256": "8d39690ce7a3502f4f3b1a7fdc6401772fbdd5a62e77a8bcc4c80001dc2b9370"
+  },
+  {
+   "path": "live-effect-set-b-first-pass.json",
+   "sha256": "2698ee4a0da27dce485ac0f91b0aed000bf7b61d2f58ec7f23bb32705fde6f27"
+  },
+  {
+   "path": "live-enterprise-conformance.json",
+   "sha256": "28bf83492f8b06fcc557ccecbd92f502be7ae49cac16601df3d56189a5b0f80b"
+  },
+  {
+   "path": "live-favourable-path.json",
+   "sha256": "e5665009bda72b50b447d6e728c5cd31f2fbfffc0d953beb5457e94da7f62341"
+  },
+  {
+   "path": "live-interpretation-disposition-stratum.json",
+   "sha256": "3e31472f598c35a175c940ab47b95ac39c8539a62627840351f26c21e7462032"
+  },
+  {
+   "path": "live-interpretation-submission-cross-tenant.json",
+   "sha256": "de0748a72ba1197ab1a51668f2e6f0b36e3c3fec97cb7d980e5a1ae37e4dcb4d"
+  },
+  {
+   "path": "live-interpretation-submission.json",
+   "sha256": "69e046c39142dc4c6c38794fb60f5a19ceaab45cbfb2338a77d7c554a2904609"
+  },
+  {
+   "path": "live-issuer-state-v2.json",
+   "sha256": "c3c73042b5e283ff90634aae7f517e6742b6862cc88629bfb88b62eaeb3417fb"
+  },
+  {
+   "path": "live-licensed-favourable.json",
+   "sha256": "66b767e7ed0d1b2aae442c45af4c88976998c899d6002c251ac9127d07233451"
+  },
+  {
+   "path": "live-licensed.json",
+   "sha256": "8296b2e012fc46e0a962ef15b3f47eabb2b2c665831ddde0b5671288eca0e21a"
+  },
+  {
+   "path": "live-r9-qualification.json",
+   "sha256": "2eedf57911486bf6086206835b63cb8209f6531ee01f7bba05044c9a8d027af3"
+  },
+  {
+   "path": "live-receiver-staging.json",
+   "sha256": "7541a6c1bf8eec88dd7a255d98230aaeba8e349880bb75fe3108b6fe0b6319e4"
+  },
+  {
+   "path": "live-release-drift.json",
+   "sha256": "9b394970dbbcd9e509c63fc13e8d4288ff342aa696e759f09822e92dc6e62c55"
+  },
+  {
+   "path": "local-acceptance.json",
+   "sha256": "e107f0a3166e502c3487448243d6952f4af176ec9bac44efe5610d18e667467a"
+  },
+  {
+   "path": "verify.mjs",
+   "sha256": "70d0566acdb0e1b801df262cae10fedd1e0f70d3cc85d10e0c19b058043966e6"
+  }
+ ]
+}
