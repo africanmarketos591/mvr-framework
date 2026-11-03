@@ -1,0 +1,335 @@
+{
+ "manifest_id": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+ "contract_version": "mvr.release-manifest/1",
+ "deployment_revision": "2026-11-02.state-propagation.3",
+ "release_version": "v6.32.0",
+ "policy_snapshot_id": "v6.32.0:policy",
+ "contract_versions": {
+  "effect_decision": "mvr.effect-decision/1",
+  "effect_taxonomy": "mvr.effect-taxonomy/2",
+  "effect_precedence": "mvr.effect-precedence/2",
+  "audit_finding": "mvr.audit-finding/1",
+  "interpretation_submission": "mvr.interpretation-submission/1"
+ },
+ "environment": "production",
+ "endpoints": {
+  "api": "https://africanmarketos.com",
+  "licensed_mcp": "https://africanmarketos.com/mcp/runtime",
+  "manifest": "https://africanmarketos.com/.well-known/mvr-release-manifest.json"
+ },
+ "components": {
+  "runtime": {
+   "files": {
+    "lib/pdf-text/extract.mjs": "ce6b59631487215f24e31cf1e149e3e62de1f0693963376ce261c69e35f25574",
+    "lib/review-tools/core.mjs": "90bf6e2121f98c16890dd0fd3a79fd58e9a86f8f67fe0e6e204355d50922428a",
+    "lib/review-tools/counterfactual.mjs": "b265854b528eeca5aad6bfe9be7fd9c3a0916250884e72ab0298018505475c0b",
+    "lib/review-tools/decision.mjs": "4e8013eff31308c8a4209e33f62a040deb6aa878c56692eb9f90838860b6cc96",
+    "lib/review-tools/holds.mjs": "e2b3aec210944ed6fbb8c9db9c5d5d8cc9ef2a03de6f65ca9d5b96aaf2984392",
+    "lib/review-tools/review.mjs": "f743248000237e30666015f5f4eb6e51d477f17f98f178dd2e84b8be23f3b76f",
+    "mvr-action-ontology.js": "cd8f32bebcbf99abef2039aa8852cc5c2b02fa41eacbfaf26baf32bc16572ac7",
+    "mvr-adverse-source.js": "0f74b26b70855bad5e5b972e9f2165e231534c495cd48fb373ac1938be17b5ca",
+    "mvr-artifact-boundary.js": "3ae68fad6a9fa5528af5e43e87445bffbc10b4e49f7b43c5a96f8d7599d8d1a1",
+    "mvr-audit-findings.js": "704b04fb0dd45034703757fd2429d4d4b014133d31f42ef85791bb5e2745cebd",
+    "mvr-authority-chain.js": "9d6f2a724b5d7034b3cf5298ec7b85c0c36c4cfbefbc242b442a3e99cd8a4054",
+    "mvr-authority-conformance.js": "126ea99e5b0af235b45079967f3c0a2680a5380d5b39463b84356b56c67ca4ad",
+    "mvr-authority-docs.js": "22ae6b91b6f8db918ba077bcf0f4c838a00dfedf93edfb0ce4b3bb59febe05f5",
+    "mvr-authority-document-schemas.js": "b0b632e3f124f454a95c027954a36b6c9b5569b4dc7be9f0a427ddf8acced9ce",
+    "mvr-authority-lab-delivery.js": "d84ca2c629070b19d264519e616ae0753c2aec5b89c61ed996d33243ae2f952b",
+    "mvr-authority-receipts.js": "e3c87a3be4779018f7b6dd651db0d555dac21121651296e5a62c9d16c223be89",
+    "mvr-authority-response-contracts.js": "50e7f056829d1aaa67d6e8cbe35de2e05a0046af98611eb211cdcd841f39a720",
+    "mvr-buyer-bridge-pages.js": "9991bfb00cbbe8ad605a16bd87432bf78fa2df4749ba8b00bbd0c76fcc4b4f49",
+    "mvr-calibration-retirements.js": "95f91abb3feba928e56f59cae464084d08fc5344d593832fe856c09978042965",
+    "mvr-condition-predicates.js": "c68f52b8626869e2acd45f7c2afb87429a3b67fac6cd1a6280d280ebb7a60c42",
+    "mvr-country-codes.js": "a40a957db86ca52b76323eb8d7ac7e29064539d99720a135cca172ef5a0d975b",
+    "mvr-decision-review.js": "87398339eb6f69c4330ed69fcfec265e90085a0b86e624bd148a9fdeaaec514f",
+    "mvr-decision-scope.js": "3ca9b1c5eb057c2bf61ad71ad501d121b9547bb788d33c11df893976220dfd6c",
+    "mvr-declared-text-conflict.js": "c68dbef73754f203e60ecaf097b8ec66f7bfb74ac945e5481b97dc8773024bfe",
+    "mvr-demand-engine-pages.js": "92fcf3673d3b2fc48163462eb442c52644c3ed85161f7428e63986333f276d25",
+    "mvr-diagnostic-page.js": "9f9160aea651938971dd1b3f9c5116bb5bba11ceb6bcd5d6d9b210410eab3eb5",
+    "mvr-diagnostic-public-page.js": "c80a31b1ef8ea4e5caf7f179d31a6e269dd95b266324acb0e6e93c27ccea34c5",
+    "mvr-diagnostic-stages-page.js": "682047482851691b5092359e58568b0939e0796b89c7e6859d110da0b2ba8149",
+    "mvr-diligence-scan-page.js": "8f31de3b01340cda4d1bf8a5b55a82194673e7e2425fc4423d7f54629af3f106",
+    "mvr-durable-runtime.js": "5d24725e6762628e2396417c4518c079048627101eeeae079ab05a0163a9a141",
+    "mvr-effect-decision.js": "1156a9283834c18b7087dac26b5d2e5c72e65056986063535609dfaf35b5a875",
+    "mvr-embeddedness-audit-page.js": "76fe5bfaa9f34d815925ebacd0befd3d6972c6f168832a0e76eed4fb70985f56",
+    "mvr-evidence-builder-page.js": "b224a287050e15837157ff2440576e0de444b0eefde31c5f97402a4efa5c69a8",
+    "mvr-evidence-fit-recovery.js": "c6e9f37396c926ee0e0f2a4514fcdac027e2b4a4bec413b3272522f596fcff6a",
+    "mvr-evidence-map-core.js": "9ccea48dec7b406be9cacdbffd9ab372d7dca665082a8b59848a511fd39e58d3",
+    "mvr-evidence-source-boundary.js": "71282dfafc549e113b5564cf12008b7391925e18610897e41ffcac25443e2632",
+    "mvr-facilitator-field-guide-page.js": "9555642fe354f9b0ca48f1da22c66a3fedcc79480301f66c88eb9cd6ad351d6e",
+    "mvr-field-contract.js": "9a47f25bb6ac21dbe76878b56384140242aeeb887edfe0b230f7fac2533db260",
+    "mvr-field-provenance.js": "4ebeaf3b95240819dbcb66a5cd6810e9af07433b28f62e481072f26475117dbd",
+    "mvr-founder-decision-readiness-page.js": "92aa1fe5d51f25def01e167c57ef80773578ba6e74dffed026d93ed07a0abdc8",
+    "mvr-founder-fieldwork.js": "2c2d1aa35b2fb387aa1c9ae7596388e0c37cf8120b56c00a875b983a71a8e6ce",
+    "mvr-founder-operating-patterns-page.js": "76409e88a608d32e32ef3a334659c9f74808a4944a1c09f07e56cbb55f62c606",
+    "mvr-founder-workspace.js": "ca0bc1254959745c9fa522743174a5cb4001c51d068f36d2637f1a8bfbc324de",
+    "mvr-hosted-review-page.js": "07da65e9dbc62c411a9ad4edd435d81b09759dbf8a8eb9e41c1b6c2ab5caf199",
+    "mvr-hosted-review-tools.js": "8155471e591b129c3d85301618086ada7e1bff70af5dcdca5c0e2f7090ce37c5",
+    "mvr-idempotency-policy.js": "78945661cc4e073eda8f86330be487de1d24b04673f1a4457d9ea4c1d43f90fe",
+    "mvr-intake-draft.js": "5c5b7244cc72852aa35a58c105d1e77b2641a5dc4f8a6535ef4052ea33ac54f0",
+    "mvr-integration-governance.js": "de31eef9c3e118dcb9c33e502a8634d2c17b1b5bd978d6cb90f2c795a71f60a3",
+    "mvr-internal-work-products.js": "f9760d96d0b3a715eda540f9f6f92abe1aba72c91de89b0e1548721d138a484e",
+    "mvr-interpretation-submission.js": "ef5731f570259b458abcf96fdaea0cead9d2e79102d6239eda58d7baf9daef95",
+    "mvr-issuer-conditions.js": "5840e85513dc8fdfdd4576e5d9f45aa9ac8bc474b48dac55d7b2b63b1d73997a",
+    "mvr-issuer-review.js": "f5b67ece0d6b11828e298c0e2a8e16844b5b7bfb7232316996343d0a1d282498",
+    "mvr-issuer-state.js": "f1277ea0f06eba19f49439b8fc51a7f0123c83abd0de0fe9fb16ea5e7fa665be",
+    "mvr-market-insight-brief.js": "94429562d94548d05e5daea756a68e201a7fbe9a5e660b5e3d9cb013eeaac2a2",
+    "mvr-mcp-evidence-contract.js": "36857782954a7cf2f718a145eee04ccea25b0013150cb617af908cda258b34da",
+    "mvr-openai-profile.js": "4a9f58c9924c7121e10784421efecb257f58a50c2b65bf279bc8646929ee53e6",
+    "mvr-organization-identity.js": "f816ff6b18d1f34ec8913a710672cf4c73bf015a474c1358570231b1516c2cd1",
+    "mvr-original-review.js": "75f3014d28153fafc7965bd7194268b678be8ca3208c90ab8cfffd48e9568e8f",
+    "mvr-permission-declaration.js": "540e5910d940ea79101958cf67f6433c5cf966099415aa75842804db8cd5f9ac",
+    "mvr-permission-position.js": "1ba2fd66292abd41a1956d8a896efda22baaea9f1b4430776b570c7b26e51e90",
+    "mvr-preflight-interpretation.js": "fd4df17c5d40b47ade8a61e698dc7f8ff00838dc1252ee335f06221f02a8abe0",
+    "mvr-programme-pages.js": "39dde5b7042d1ea09274af8cdae941949654e2af930ca683aaa9e3d09f940011",
+    "mvr-public-register.js": "89376732abd9c2f349d2982f444eb432379b36d51a4e79a667e7abf6a9d5e398",
+    "mvr-rate-admission.js": "25039e3c44eb4df9d5beff408ebdff352e46cddf97a16d18ac359aec52435af0",
+    "mvr-receipt-key-ceremony-page.js": "2259bfbafe20088df4908309cdea9987fd75f7474d34ad50081d51ef4889a707",
+    "mvr-receipt-key-ceremony.js": "3550b5c8c35716c446078cfbe0509be27453f488af4cfff83ddc89ae9e150d2e",
+    "mvr-relevance-classifier.js": "383f5fa5d96075ebd7471e06a7329a7ca7d76463ec214377fdfe7dcf406e96a8",
+    "mvr-review-case-examples.js": "de26aa49e582264c8f79e6eb1621b2d9aff22498bae0a914d1663476d36bdafe",
+    "mvr-review-evaluation.js": "b0578fc88c9127e75dab61d7afcb5b24c1f8fff70c50940791f1358b1ad2ba7a",
+    "mvr-review-outcome-ledger.js": "728ee0b24d6a9e2d536a9eb9f73601a4176998caac0617e7514c9fd93c637fe7",
+    "mvr-review-progress.js": "c856d43b45b530709960259068e24cd0afaa2e2f7b3a45491da962b05e486ad5",
+    "mvr-review-risk.js": "dafa96fe708b8e31ffb6b6efde427e8fef4dfd9dd1346ca41ba1ec811bd47d61",
+    "mvr-review-sandbox.js": "d0414f15e6d6baa1a91f450224897b354ef39b6b4b6ff8fa5206fe6dcae77c1a",
+    "mvr-review-workplan.js": "3b85ac806fb8a9e455d72a9ff09a13c30352619c666d075115ce93e45efbfd93",
+    "mvr-reviewer-attestation.js": "854752b1af52052bfdc3bdc4f524f6560fe7377a95231dbd335d38d62824fcf0",
+    "mvr-route-request-contracts.js": "f58400c4e659248b46e9617b0573ff635bd8e82d80fbcd8de9eb8121788ad3ff",
+    "mvr-runtime-contracts.js": "f1a3a0729705bb69cd8d43f4a2ba6cc08f1ca8793a9c4c14c26acc909b74feb1",
+    "mvr-source-consistency.js": "b950c65729b9da8ceb3a88aee8c7e81312262281c530140fe8fbb29b53e65964",
+    "mvr-source-date.js": "7ae1bbe417ac34436a59d9b77c05f8781a061f626aebe70725802ef124a23aaa",
+    "mvr-source-review-binding.js": "fd8bc416575673b51a5b87f56fba70b3f692184b89120a73927ebf8709d7ba88",
+    "mvr-support-state.js": "f15a7fc792226b0f03c6a48bd76b4a1e4531a6e3379cdbe4ccd95bdc96837dd6",
+    "mvr-trust-chain.js": "eb525ba64bedb8f6ee48f9283b9a5bc966d432431b9a3bd023224bf7f68fd6ad",
+    "mvr-uganda-districts.js": "b583275e3e1db225db34a111d2cb8dcb0b0e0c85721beefad3abb70c0c9c2376",
+    "mvr-webmcp-human-presentation.js": "de2914df07a5c0aded78ca79071f86c9f9085c57afa56a5513a90c2fa923c1e4",
+    "mvr-workflow-continuation.js": "e939294f8d57c61aeb7cf1eb80fa292906ffe40b07331eb939587c6ea7bb880f",
+    "runtime-entry.js": "04ba4b26496a7bfa6c9a0c325f2e4272b2b327116b02e80c01285de96a3eede1",
+    "worker.js": "ce6e27e2782b31cc5ba943236fa7b7ab5435ad971dd5577d2137e121fa1021ec"
+   },
+   "file_count": 87,
+   "closure_sha256": "bbc89dd34d5435002112fc49940dee00c4b0c9d19e3794e0635e03c1336b0bda",
+   "excludes": [
+    "mvr-release-manifest.generated.js"
+   ]
+  },
+  "openapi": {
+   "route": "/v1/openapi.json",
+   "sha256": "e90d2eaac5bf304a51efc0caf402b5dd815fe27f8969ddf9681c4b73983e36ab",
+   "bytes": 2058162
+  },
+  "contracts": {
+   "/v1/effect-decision/contract": "fd8ff36a9c9be3be02cf9cebaf9716a304664a20261a36b39c2b836d9b84faa6",
+   "/v1/audit-findings/contract": "1c6658a5c8c60e542c50f736ea7466eaa00d1cb6ff536d9ef1cd6adeb98f8d71",
+   "/v1/interpretation-submissions/contract": "c0c067b7673bb52df53f20d2eeae598029a3fed5442f52dae2c646d12df036d6",
+   "/v1/authority-chain/contract": "405885c80aa8645e1587d0a246baf481332ff596e532f6bc53dec4f8b2224e05",
+   "/v1/review-cases/contract": "c4242a48136c149a2828977d544f9abff5704ec155d1bbf57e70291d1abf23dd",
+   "/v1/authority-conformance/contract": "ada533b23d30d79b338802e1df1805e46f0164f0fbbf9d67c11415c986c72090",
+   "/v1/reviewer-attestations/contract": "656ab7dd15446ce22d2f7cbdf1b3ef3ad71741747077c7155c831bde1a761cdf",
+   "/v1/review-sandbox/contract": "f213f359ab50f435cc3875b36c716f615a5bced3a3c952f35bccada1666b54db",
+   "/v1/field-contract": "b4e6b0ad6b5202dd67dbc144dda511a24de60162ff0e2012b03de4bae7f54ae3"
+  },
+  "mcp": {
+   "public": {
+    "consumer": {
+     "tool_names": [
+      "mvr_first_call",
+      "mvr_african_market_insights",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check",
+      "mvr_commercial_handshake"
+     ],
+     "tools_sha256": "7dfec44bacd79ee2b00e4594c03e56b1bf51275d4623a55b4c8120a672078fd5",
+     "bytes": 365321
+    },
+    "full": {
+     "tool_names": [
+      "mvr_first_call",
+      "mvr_commercial_handshake",
+      "mvr_auth_check",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check",
+      "mvr_preflight_market_entry",
+      "mvr_preflight_mvp",
+      "mvr_investor_due_diligence",
+      "mvr_accelerator_screen",
+      "mvr_partner_readiness",
+      "mvr_guardian_risk_scan",
+      "mvr_evidence_gap_plan",
+      "mvr_abstention_check",
+      "mvr_african_market_insights",
+      "mvr_agent_market_entry_guardrail",
+      "mvr_market_permission_memo",
+      "mvr_get_benchmark_scenarios",
+      "mvr_submit_benchmark_run",
+      "mvr_get_leaderboard",
+      "mvr_get_reckless_go_rate"
+     ],
+     "tools_sha256": "2b3789e7f5b5fa7f82aaadc2b7482627ceb8ee9e7d82e13a7bdf186a6884e6d9",
+     "bytes": 379455
+    },
+    "preflight": {
+     "tool_names": [
+      "mvr_first_call",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check"
+     ],
+     "tools_sha256": "3e8688673ca477eb7cc0bae8195e1a357a4d0d5d131425f83a5e1341a9f1d1f2",
+     "bytes": 310435
+    },
+    "guided": {
+     "tool_names": [
+      "mvr_guided_preflight"
+     ],
+     "tools_sha256": "02d854d48d88c04e2fef09f5d51c36a710b08672b837db43380f20ad45f8097b",
+     "bytes": 65131
+    },
+    "openai": {
+     "tool_names": [
+      "start_market_evidence_check",
+      "explain_market_relationship_factors",
+      "normalize_venture_context",
+      "check_evidence_coverage",
+      "organize_evidence_context",
+      "summarize_evidence_check"
+     ],
+     "tools_sha256": "17f6154da7f652519bb48897321b0c234899bfbe5c0047995c7045360ac36082",
+     "bytes": 336819
+    }
+   },
+   "licensed": {
+    "full_advisory": {
+     "tool_names": [
+      "mvr_first_call",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check",
+      "mvr_authority_operation",
+      "mvr_effect_decision",
+      "mvr_interpretation_submission"
+     ],
+     "tools_sha256": "8654717943e11627f6da24f1df469ee159306a34dd1d5bd68e966e2b7c2bae14",
+     "bytes": 218409
+    },
+    "strict_calibrated": {
+     "tool_names": [
+      "mvr_first_call",
+      "mvr_entity_resolve",
+      "mvr_evidence_completeness",
+      "mvr_context_compile",
+      "mvr_decision_check",
+      "mvr_authority_operation",
+      "mvr_effect_decision",
+      "mvr_interpretation_submission"
+     ],
+     "tools_sha256": "1654b6c06ed4194b067a0f976d4644064a62532d016e4b1c097e881f2bd6d620",
+     "bytes": 220978
+    }
+   }
+  },
+  "public_repository": {
+   "repository": "africanmarketos591/mvr-framework",
+   "components_commit": "45d98e132e41f7ef87c2df4b02022d85ab788eab",
+   "working_tree_clean": true,
+   "generated_clients": {
+    "generator": "scripts/generate-governance-client.mjs",
+    "reproduce": "node scripts/generate-governance-client.mjs --spec <served openapi> --check",
+    "javascript": {
+     "files": 13,
+     "tree_sha256": "7ba6db7cf71144f6a867973464b5316ed1d3ac19e1c41297a9acee64171fe9b5"
+    },
+    "python": {
+     "files": 2,
+     "tree_sha256": "e353c6c1a5ad943e6b195784c115a026c517d1b2515ff1157ec3fdd30f57a156"
+    }
+   },
+   "sdk_packages": {
+    "npm": {
+     "files": 4,
+     "tree_sha256": "5bb4a2a52ace54b1480d73de57d081272decca0173baaaa386c6e49a32dd6980"
+    },
+    "python": {
+     "files": 5,
+     "tree_sha256": "d7a6b7697f0a9d4fee87a674395e6bd657238c8891d2df56152ad7b7310f269e"
+    }
+   },
+   "conformance_vectors": {
+    "files": 132,
+    "tree_sha256": "d13cb5364da837c443e53c1c2188afd400fa457d7339833e140f974614e75a6c"
+   },
+   "schemas": {
+    "files": 5,
+    "tree_sha256": "12c870eb30bfcbbe5d349dfe696934f79359a72428e5b78f782e8d818277a82f"
+   },
+   "openapi_snapshots": {
+    "openapi_json": "569fe93b486861d1e5c62a314dec21cd7ad116867a95837202ea18dfee6b4892"
+   },
+   "canonicalization_vectors": {
+    "files": 6,
+    "tree_sha256": "4c709a879d9c726503a7d6514012d4ef92e90e9e4ec3fb06617bb702febb8bb0"
+   }
+  },
+  "published_packages": {
+   "npm": {
+    "name": "mvr-agent-sdk",
+    "version": "0.2.0",
+    "integrity": "sha512-IqyPcjYUP0vgvAbByk6zNMnV1lvCt9kUCqRrJwkPjV8ssYxCRID9K1Gccv0PP3OkwvzcWRxq4a7mDctpBIK9ow==",
+    "shasum": "ef223fe2ab6392b6de6a664b3ca8bf6f51322229"
+   },
+   "pypi": {
+    "name": "mvr-agent-sdk",
+    "version": "0.2.0",
+    "files": [
+     {
+      "filename": "mvr_agent_sdk-0.2.0-py3-none-any.whl",
+      "sha256": "fddcaee02df2690eade2549cd3c9d8d78a8aa750342fb514d6aa200edefc1c25"
+     },
+     {
+      "filename": "mvr_agent_sdk-0.2.0.tar.gz",
+      "sha256": "a4a5a93c993f1b81723e8517a787b6e703fcd63e8e1aac93cf8705df320d365d"
+     }
+    ]
+   }
+  }
+ },
+ "attestation": {
+  "method": "github_artifact_attestation",
+  "repository": "africanmarketos591/mvr-framework",
+  "path": "release-manifests/<deployment_revision>.json",
+  "verify": "gh attestation verify release-manifests/<deployment_revision>.json --repo africanmarketos591/mvr-framework"
+ },
+ "boundary": "A manifest binds component identity. It is not evidence that any decision is correct and grants no authority.",
+ "change_log": {
+  "previous_manifest_id": "MVRRM-a463c96145e02b57e72d7fe2e9644bed",
+  "changed_components": [
+   "contracts./v1/audit-findings/contract",
+   "contracts./v1/authority-chain/contract",
+   "contracts./v1/authority-conformance/contract",
+   "contracts./v1/effect-decision/contract",
+   "contracts./v1/field-contract",
+   "contracts./v1/interpretation-submissions/contract",
+   "contracts./v1/review-cases/contract",
+   "contracts./v1/review-sandbox/contract",
+   "contracts./v1/reviewer-attestations/contract",
+   "openapi.sha256",
+   "public_repository.canonicalization_vectors.tree_sha256",
+   "public_repository.components_commit",
+   "public_repository.conformance_vectors.files",
+   "public_repository.conformance_vectors.tree_sha256",
+   "public_repository.openapi_snapshots.openapi_json",
+   "public_repository.schemas.tree_sha256",
+   "public_repository.sdk_packages.npm.tree_sha256",
+   "public_repository.sdk_packages.python.tree_sha256",
+   "runtime.closure_sha256"
+  ],
+  "behaviour_change_statement": "See changed_components and the release notes."
+ }
+}
