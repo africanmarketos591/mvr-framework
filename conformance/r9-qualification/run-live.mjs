@@ -28,7 +28,11 @@ const call = async (route, body, profile = 'full_advisory', {licensed = true, me
       const r = await fetch(base + route, {method, headers: headers(profile, licensed, method !== 'GET'), ...(method === 'GET' ? {} : {body: JSON.stringify(body)}), signal: AbortSignal.timeout(90000)});
       // A throttle or gateway reply is not an answer: wait as told, retry, and record that it happened.
       if ((r.status === 429 || r.status >= 502) && attempt < 2) { report.retries.push({route, status: r.status, retry_after: r.headers.get('Retry-After'), at: new Date().toISOString()}); await new Promise(res => setTimeout(res, 1000 * Math.min(60, Number(r.headers.get('Retry-After')) || 5))); continue; }
-      return {status: r.status, headers: r.headers, body: await r.json().catch(() => null)};
+      // A reply cut off in transfer is not an answer either: retry and record it; never score it as a difference.
+      const text = await r.text().catch(() => null);
+      if (text === null && attempt < 2) { report.retries.push({route, status: r.status, error: 'reply unreadable', at: new Date().toISOString()}); continue; }
+      let parsed = null; try { parsed = text === null ? null : JSON.parse(text); } catch {}
+      return {status: r.status, headers: r.headers, body: parsed};
     }
     catch (error) { if (attempt === 2) throw error; report.retries.push({route, error: String(error?.message || error).slice(0, 120), at: new Date().toISOString()}); await new Promise(r => setTimeout(r, 2000)); }
   }

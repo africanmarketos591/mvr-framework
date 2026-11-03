@@ -18,7 +18,7 @@ import fs from 'node:fs';
 const arg = name => { const i = process.argv.indexOf('--' + name); return i > 0 ? process.argv[i + 1] : null; };
 const base = arg('base') || 'https://africanmarketos.com', out = arg('out'), key = process.env.MVR_API_KEY;
 if (!key || !out) { console.error('Set MVR_API_KEY and pass --out <file>.'); process.exit(2); }
-const report = {suite: 'interpretation-disposition-stratum-live', base, started_at: new Date().toISOString(), classification: 'proprietary lab fixtures; not observations of real organisations', checks: [], failures: [], not_run: [], workflows: [], totals: {}};
+const report = {suite: 'interpretation-disposition-stratum-live', base, started_at: new Date().toISOString(), classification: 'proprietary lab fixtures; not observations of real organisations', checks: [], failures: [], not_run: [], workflows: [], totals: {}, retries: []};
 const save = () => fs.writeFileSync(out, JSON.stringify(report, null, 1) + '\n');
 const check = (name, ok, detail) => { report.checks.push({name, passed: !!ok, ...(detail === undefined ? {} : {detail})}); if (!ok) report.failures.push(name); save(); };
 let n = 0;
@@ -26,8 +26,11 @@ const post = async (route, body, headers) => {
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const r = await fetch(base + route, {method: 'POST', headers: {'Content-Type': 'application/json', 'User-Agent': 'amos-conformance-stratum', 'X-API-Key': key, 'X-Response-Profile': 'full_advisory', ...headers}, body: JSON.stringify(body), signal: AbortSignal.timeout(90000)});
-      if (r.status === 429 || r.status >= 502) { await new Promise(res => setTimeout(res, 1000 * Math.min(30, Number(r.headers.get('Retry-After')) || 5))); continue; }
-      return {status: r.status, body: await r.json().catch(() => null)};
+      if (r.status === 429 || r.status >= 502) { report.retries.push({route, status: r.status, at: new Date().toISOString()}); await new Promise(res => setTimeout(res, 1000 * Math.min(30, Number(r.headers.get('Retry-After')) || 5))); continue; }
+      const text = await r.text().catch(() => null);
+      if (text === null && attempt < 3) { report.retries.push({route, status: r.status, error: 'reply unreadable', at: new Date().toISOString()}); continue; }
+      let parsed = null; try { parsed = text === null ? null : JSON.parse(text); } catch {}
+      return {status: r.status, body: parsed};
     } catch (error) { if (attempt === 3) throw error; await new Promise(res => setTimeout(res, 3000)); }
   }
   return {status: 0, body: null};
