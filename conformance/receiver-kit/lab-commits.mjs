@@ -6,11 +6,11 @@ import {canonicalJson} from '../../sdks/javascript/authority-receipts.mjs';
 const sha=v=>createHash('sha256').update(v).digest('hex');
 const signBytes=(type,doc)=>new TextEncoder().encode(`MVR-AUTHORITY-V1\n${type}\n${canonicalJson(doc)}`);
 
-export async function createLabCommitSource(transport,{now=()=>Date.now()}={}){
+export async function createLabCommitSource(transport,{now=()=>Date.now(),realm}={}){
   let n=0;const op=l=>l+'-'+(++n)+'-'+randomBytes(3).toString('hex');
   const ok=(r,label)=>{assert((r.http_status||200)<400,label+': '+(r.code||r.status));return r;};
   const keys={};for(const role of ['institution','standing','source']){const pair=await webcrypto.subtle.generateKey('Ed25519',true,['sign','verify']);keys[role]={spki:Buffer.from(await webcrypto.subtle.exportKey('spki',pair.publicKey)).toString('base64'),sign:async(type,doc)=>Buffer.from(await webcrypto.subtle.sign('Ed25519',pair.privateKey,signBytes(type,doc))).toString('base64')};}
-  const session=ok(await transport({action:'issue',synthetic_only:true,acknowledge_no_identity_verification:true}),'issue lab session');
+  const session=ok(await transport({action:'issue',synthetic_only:true,acknowledge_no_identity_verification:true,...(realm?{realm}:{})}),'issue '+(realm||'lab')+' session');
   const call=(role,target,request)=>transport({action:'call',session_id:session.session_id,session_token:session.credentials[role].session_token,target,request});
   const chain=(role,request)=>call(role,'authority',{...request,operation_id:op(request.action)});
   const from=new Date(now()-1000).toISOString(),until=new Date(Date.parse(session.expires_at)-10000).toISOString(),scope={tenant_id:session.tenant_id,workspace_id:session.workspace_id};
@@ -37,5 +37,9 @@ export async function createLabCommitSource(transport,{now=()=>Date.now()}={}){
   const commitAfterRevocation=async()=>{const requested_effect={...effect,effect_id:op('receiver-revoked')};const v=ok(await chain('executor',{action:'verify_capability',capability_id:capabilityId,requested_effect}),'verify before revocation');ok(await chain('institution',{action:'revoke_capability',capability_id:capabilityId,reason:'Lab: revoke between verification and commit'}),'revoke');const c=ok(await chain('executor',{action:'commit_effect',verification_id:v.verification_id,effect_id:requested_effect.effect_id,requested_effect}),'commit after revocation');await register();return {receipt:c.receipt,requested_effect};};
   const acknowledge=async({verification_id,effect_id,outcome})=>{const r=await chain('executor',{action:'record_effect',verification_id,effect_id,outcome});if((r.http_status||200)>=400&&r.code!=='AUTHORITY_EFFECT_ALREADY_RECORDED')throw new Error(r.code||'acknowledgement_failed');return r;};
   const close=()=>transport({action:'close',session_id:session.session_id,session_token:session.credentials.institution.session_token});
-  return {registry:session.receipt_registry,commitFresh,commitAfterRevocation,acknowledge,close,session_id:session.session_id};
+  // For realm and feed runs: the case, the exact effect template, the current capability, a fresh current-state proof and a revocation.
+  const currentState=async()=>ok(await call('executor','current_state',{capability_id:capabilityId}),'current state').current_state;
+  const revokeCurrent=async reason=>ok(await chain('institution',{action:'revoke_capability',capability_id:capabilityId,reason:reason||'Lab: revoke the current capability'}),'revoke');
+  return {registry:session.receipt_registry,commitFresh,commitAfterRevocation,acknowledge,close,session_id:session.session_id,
+    case_id:caseId,effect,capability_id:()=>capabilityId,current_state:currentState,revoke_current:revokeCurrent,register_capability:register,trust_chain:session.trust_chain,realm:session.realm,realm_key:session.realm_key};
 }

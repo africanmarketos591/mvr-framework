@@ -1,0 +1,71 @@
+{
+ "head": "2423ab835370b915799b4fa715cc74f1b1967d76",
+ "environment": "Windows 10, Node v24.11.0, temporary files on D:",
+ "commands": 282,
+ "total": 282,
+ "passed": true,
+ "reruns": [],
+ "r9_suites": [
+  {
+   "command": "node scripts/test-authority-chain.mjs",
+   "exit": 0,
+   "elapsed_ms": 11504
+  },
+  {
+   "command": "node scripts/test-decision-state.mjs",
+   "exit": 0,
+   "elapsed_ms": 670
+  },
+  {
+   "command": "node scripts/test-decision-review-licensed.mjs",
+   "exit": 0,
+   "elapsed_ms": 3663
+  },
+  {
+   "command": "node scripts/test-interpretation-submission.mjs",
+   "exit": 0,
+   "elapsed_ms": 2551
+  },
+  {
+   "command": "node scripts/test-verification-ledger.mjs",
+   "exit": 0,
+   "elapsed_ms": 505
+  },
+  {
+   "command": "node scripts/test-release-manifest.mjs",
+   "exit": 0,
+   "elapsed_ms": 3040
+  },
+  {
+   "command": "node scripts/test-effect-sufficiency-r9.mjs",
+   "exit": 0,
+   "elapsed_ms": 1306
+  },
+  {
+   "command": "node scripts/test-action-identity-r9.mjs",
+   "exit": 0,
+   "elapsed_ms": 177
+  },
+  {
+   "command": "node scripts/test-audit-heldout-r9-http.mjs",
+   "exit": 0,
+   "elapsed_ms": 2535
+  },
+  {
+   "command": "node scripts/test-relevance-contracts-r9-http.mjs",
+   "exit": 0,
+   "elapsed_ms": 3580
+  },
+  {
+   "command": "node scripts/test-authority-conformance-realm.mjs",
+   "exit": 0,
+   "elapsed_ms": 4687
+  },
+  {
+   "command": "node external_audit/mvr-framework/conformance/buyer-executor/negative-suite.mjs",
+   "exit": 0,
+   "elapsed_ms": 335
+  }
+ ],
+ "classification": "AMOS lab verification on the operator machine; GitHub Actions CI is linked in deployment.json"
+}

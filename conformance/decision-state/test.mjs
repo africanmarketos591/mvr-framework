@@ -1,8 +1,8 @@
 // Self-contained checks of the published decision library and replay tool (no AMOS service needed).
 // Proprietary lab fixture journal; not observations of any organisation.
 import assert from 'node:assert/strict';
-import {digest} from './core.mjs';
-import {appendDecisionEvent,replayDecisionJournal,internalRecommendation} from './decision.mjs';
+import {digest,sameAction,LEGACY_ACTION_ALIASES} from './core.mjs';
+import {appendDecisionEvent,replayDecisionJournal,internalRecommendation,designationCovers} from './decision.mjs';
 import {replayExport} from './replay.mjs';
 const T0=Date.parse('2026-11-02T08:00:00.000Z'),iso=ms=>new Date(T0+ms).toISOString(),H=3600000,doc='a'.repeat(64);
 const fact=(id,start)=>({id,label:id,cost:1,binding:{document_sha256:doc,locator:'utf16:'+start+':'+(start+10),claim:'Lab claim '+id,relationship:'direct_support',subject:'Lab subject',action:'create_draft_record',geography:'UG',valid_from:iso(-H),valid_until:iso(48*H),reviewer_standing_ref:'designated',model_version:'lab',extractor_version:'lab'}});
@@ -20,4 +20,7 @@ const exported={journal,models,server_replay:{as_of:journal.at(-1).at,journal_he
 const out=replayExport(exported);assert.equal(out.valid_chain,true);assert.equal(out.matches_server,true);
 const forged=structuredClone(exported);forged.journal[2].payload.value=false;assert.equal(replayExport(forged).valid_chain,false);
 assert.equal(target(replayDecisionJournal({models,journal,as_of:iso(41*H)}).state,'effect:create_draft_record'),'revoked','an expired designation revokes support');
-console.log(JSON.stringify({passed:true,events:journal.length,checks:['favourable path','irrelevant claim','one effect withdrawn','replay matches','forgery detected','designation expiry']}));
+// One action identity: a designation limited to an alias covers the effect named by its canonical identifier, and the reverse.
+for(const [alias,id] of Object.entries(LEGACY_ACTION_ALIASES)){assert.ok(sameAction(alias,id));for(const [held,named] of [[alias,id],[id,alias]])assert.equal(designationCovers({designation:{effect_types:[held]}},{kind:'effect',effect_type:named}),true);}
+assert.equal(designationCovers({designation:{effect_types:['create_draft_record']}},{kind:'effect',effect_type:'amos.finance.payment.initiate@1'}),false);
+console.log(JSON.stringify({passed:true,events:journal.length,checks:['favourable path','irrelevant claim','one effect withdrawn','replay matches','forgery detected','designation expiry','one action identity']}));

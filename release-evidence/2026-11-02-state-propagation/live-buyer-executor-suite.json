@@ -1,0 +1,251 @@
+{
+ "suite": "amos.buyer-executor/1 negative conformance",
+ "classification": "proprietary lab fixtures; offline; no network",
+ "passed": true,
+ "total": 28,
+ "failed": 0,
+ "positives": 2,
+ "refusals": 26,
+ "results": [
+  {
+   "name": "canonical action: the committed effect is performed exactly once",
+   "expectation": "perform",
+   "passed": true,
+   "detail": {
+    "replay": "already_performed"
+   }
+  },
+  {
+   "name": "alias parity: an adapter registered as create_draft_record performs the canonical amos.document.draft.create@1 commit",
+   "expectation": "perform",
+   "passed": true
+  },
+  {
+   "name": "refuses a root the buyer did not pin",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "registry_statement_invalid"
+   }
+  },
+  {
+   "name": "refuses a registry statement signed by another root",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "registry_statement_invalid"
+   }
+  },
+  {
+   "name": "refuses a production receiver refuses the conformance realm",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "realm_mismatch"
+   }
+  },
+  {
+   "name": "refuses a tampered registry statement",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "registry_statement_invalid"
+   }
+  },
+  {
+   "name": "refuses a receipt signed by a key outside the registry",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "receipt_key_not_in_registry"
+   }
+  },
+  {
+   "name": "refuses a receipt whose fields were altered after signing",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "receipt_invalid"
+   }
+  },
+  {
+   "name": "refuses a receipt that is not a commit",
+   "expectation": "BUYER_NOT_A_COMMIT",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_NOT_A_COMMIT",
+    "detail": null
+   }
+  },
+  {
+   "name": "refuses a different amount than committed",
+   "expectation": "BUYER_EFFECT_MISMATCH",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_EFFECT_MISMATCH",
+    "detail": null
+   }
+  },
+  {
+   "name": "refuses a different effect id than committed",
+   "expectation": "BUYER_EFFECT_MISMATCH",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_EFFECT_MISMATCH",
+    "detail": null
+   }
+  },
+  {
+   "name": "refuses an expired commit window",
+   "expectation": "BUYER_COMMIT_EXPIRED",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_COMMIT_EXPIRED",
+    "detail": null
+   }
+  },
+  {
+   "name": "refuses another executor",
+   "expectation": "BUYER_EXECUTOR_MISMATCH",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_EXECUTOR_MISMATCH",
+    "detail": null
+   }
+  },
+  {
+   "name": "refuses a current-state proof older than the risk class allows",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "current_state_stale"
+   }
+  },
+  {
+   "name": "refuses a current-state proof that does not permit",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "current_state_not_permitted:CAPABILITY_REVOKED"
+   }
+  },
+  {
+   "name": "refuses a current-state proof for another capability",
+   "expectation": "BUYER_CAPABILITY_MISMATCH",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CAPABILITY_MISMATCH",
+    "detail": null
+   }
+  },
+  {
+   "name": "refuses a current-state proof signed by a key outside the registry",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "current_state_key_not_in_registry"
+   }
+  },
+  {
+   "name": "refuses a high-risk effect on a proof older than 5 seconds",
+   "expectation": "BUYER_CHAIN_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CHAIN_INVALID",
+    "detail": "current_state_stale"
+   }
+  },
+  {
+   "name": "refuses a receiver offline longer than the offline policy",
+   "expectation": "BUYER_FEED_NOT_FRESH",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_FEED_NOT_FRESH",
+    "detail": "FEED_OLDER_THAN_OFFLINE_POLICY"
+   }
+  },
+  {
+   "name": "refuses no feed subscriber at all",
+   "expectation": "BUYER_FEED_NOT_FRESH",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_FEED_NOT_FRESH",
+    "detail": "no feed subscriber"
+   }
+  },
+  {
+   "name": "refuses the feed revokes the capability after the proof",
+   "expectation": "BUYER_CAPABILITY_REVOKED_IN_FEED",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_CAPABILITY_REVOKED_IN_FEED",
+    "detail": null
+   }
+  },
+  {
+   "name": "refuses the feed shows the session closed",
+   "expectation": "BUYER_SESSION_CLOSED",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_SESSION_CLOSED",
+    "detail": null
+   }
+  },
+  {
+   "name": "refuses the proof is ahead of the feed the receiver holds",
+   "expectation": "BUYER_FEED_BEHIND_PROOF",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_FEED_BEHIND_PROOF",
+    "detail": null
+   }
+  },
+  {
+   "name": "refuses an adapter that performs a different action",
+   "expectation": "BUYER_ACTION_NOT_SUPPORTED",
+   "passed": true,
+   "detail": {
+    "code": "BUYER_ACTION_NOT_SUPPORTED",
+    "detail": null
+   }
+  },
+  {
+   "name": "subscriber refuses a tampered feed entry",
+   "expectation": "FEED_ENTRY_HASH_MISMATCH",
+   "passed": true,
+   "detail": {
+    "code": "FEED_ENTRY_HASH_MISMATCH"
+   }
+  },
+  {
+   "name": "subscriber refuses a feed with a missing entry",
+   "expectation": "FEED_GAP",
+   "passed": true,
+   "detail": {
+    "code": "FEED_GAP"
+   }
+  },
+  {
+   "name": "subscriber refuses a feed head signed by another key",
+   "expectation": "FEED_HEAD_INVALID",
+   "passed": true,
+   "detail": {
+    "code": "FEED_HEAD_INVALID"
+   }
+  },
+  {
+   "name": "subscriber refuses a sequence regression (an older feed replayed)",
+   "expectation": "FEED_SEQUENCE_REGRESSED",
+   "passed": true
+  }
+ ]
+}
