@@ -17,34 +17,66 @@ export function createFeedSubscriber({base = 'https://africanmarketos.com', sess
     const checked = await verifyStatement(head, {key_id: registryKey.key_id, public_key_spki_b64: registryKey.public_key_spki_b64, contract: FEED_CONTRACT});
     if (!checked.valid) throw fault('FEED_HEAD_INVALID:' + checked.reason);
     if (head.session_id !== sessionId) throw fault('FEED_SESSION_MISMATCH');
-    if (head.last_sequence < state.last_sequence) throw fault('FEED_SEQUENCE_REGRESSED');
+
+    // Hashes are asynchronous. Recheck the cursor before committing if another poll wins the race.
+    const start = state.last_sequence;
+    const observed = Date.parse(head.observed_at);
+    if (!Number.isSafeInteger(head.last_sequence) || head.last_sequence < start) throw fault('FEED_SEQUENCE_REGRESSED');
+    if (!Number.isFinite(observed) || observed > now() + 1000 || observed < (state.head_observed_at ?? -Infinity)) throw fault('FEED_OBSERVATION_INVALID');
+    if (state.session_closed && head.session_status === 'active') throw fault('FEED_SESSION_REOPENED');
+    if (!Array.isArray(body.entries)) throw fault('FEED_ENTRIES_REQUIRED');
     let prev = state.head_sha256;
-    for (const entry of [...(body.entries || [])].sort((a, b) => a.sequence - b.sequence)) {
-      if (entry.sequence <= state.last_sequence) continue;
-      if (entry.sequence !== state.last_sequence + 1) throw fault('FEED_GAP');
-      if (entry.prev_entry_sha256 !== prev) throw fault('FEED_CHAIN_BROKEN');
+    let sequence = start;
+    const additions = [];
+    for (const entry of body.entries) {
+      if (!Number.isSafeInteger(entry?.sequence) || entry.sequence < 1) throw fault('FEED_GAP');
       const {entry_sha256, ...rest} = entry;
       if (await sha256(canonical(rest)) !== entry_sha256) throw fault('FEED_ENTRY_HASH_MISMATCH');
-      prev = entry_sha256; state.last_sequence = entry.sequence; state.head_sha256 = entry_sha256; state.entries.push(entry);
+      if (entry.sequence <= start) {
+        if (state.entries[entry.sequence - 1]?.entry_sha256 !== entry_sha256) throw fault('FEED_CHAIN_BROKEN');
+        continue;
+      }
+      if (entry.sequence !== sequence + 1) throw fault('FEED_GAP');
+      if (entry.prev_entry_sha256 !== prev) throw fault('FEED_CHAIN_BROKEN');
+      prev = entry_sha256;
+      sequence = entry.sequence;
+      additions.push(entry);
+    }
+    if (head.last_sequence !== sequence || head.head_sha256 !== prev) throw fault('FEED_HEAD_MISMATCH');
+    if (state.last_sequence !== start || observed < (state.head_observed_at ?? -Infinity) || (state.session_closed && head.session_status === 'active')) throw fault('FEED_CURSOR_CHANGED');
+    for (const entry of additions) {
+      state.entries.push(entry);
       if (entry.receivers_must_reverify) state.revocations.push({sequence: entry.sequence, action: entry.action, id: entry.id, at: entry.at});
       if (entry.action === 'revoke_capability' && entry.id) state.revoked_capabilities.add(entry.id);
       if (entry.action === 'close_session') state.session_closed = true;
     }
-    if (head.last_sequence !== state.last_sequence || head.head_sha256 !== state.head_sha256) throw fault('FEED_HEAD_MISMATCH');
+    state.last_sequence = sequence;
+    state.head_sha256 = prev;
     if (head.session_status !== 'active') state.session_closed = true;
-    state.head_observed_at = Date.parse(head.observed_at);
+    state.head_observed_at = observed;
     state.offline_policy = head.offline_policy;
     return state;
+  }
+  let verificationFailed = false;
+  async function verifyAndApply(body) {
+    try {
+      const verified = await apply(body);
+      verificationFailed = false;
+      return verified;
+    } catch (error) {
+      verificationFailed = true;
+      throw error;
+    }
   }
   async function poll({wait = 0} = {}) {
     state.polls++;
     const response = await fetchImpl(`${base}/v1/authority-conformance/feed?session_id=${encodeURIComponent(sessionId)}&after=${state.last_sequence}&wait=${wait}`, {headers: {'User-Agent': 'amos-feed-subscriber', Accept: 'application/json'}, signal: AbortSignal.timeout(40000)});
     const body = await response.json().catch(() => null);
     if (response.status !== 200 || !body) throw fault('FEED_UNAVAILABLE:' + response.status);
-    return apply(body);
+    return verifyAndApply(body);
   }
   return {
-    version: FEED_SUBSCRIBER_VERSION, state, poll, apply,
+    version: FEED_SUBSCRIBER_VERSION, state, poll, apply: verifyAndApply,
     // Long-poll until stop() returns true or the deadline passes; onRevocation runs for each new revoke_* or close entry.
     async follow({deadlineMs, stop = () => false, onRevocation = () => {}, wait = 20} = {}) {
       let seen = state.revocations.length;
@@ -57,10 +89,11 @@ export function createFeedSubscriber({base = 'https://africanmarketos.com', sess
       return state;
     },
     fresh({riskClass = 'standard'} = {}) {
+      if (verificationFailed) return {fresh: false, reason: 'FEED_VERIFICATION_FAILED'};
       const max = state.offline_policy?.risk_classes?.[riskClass]?.max_offline_age_seconds;
       if (max === undefined || state.head_observed_at === null) return {fresh: false, reason: 'FEED_NOT_READ'};
       const age = (now() - state.head_observed_at) / 1000;
-      return age <= max ? {fresh: true, age_seconds: age, max_offline_age_seconds: max} : {fresh: false, reason: 'FEED_OLDER_THAN_OFFLINE_POLICY', age_seconds: age, max_offline_age_seconds: max};
+      return Number.isFinite(max) && max >= 0 && age >= -1 && age <= max ? {fresh: true, age_seconds: age, max_offline_age_seconds: max} : {fresh: false, reason: 'FEED_OLDER_THAN_OFFLINE_POLICY', age_seconds: age, max_offline_age_seconds: max};
     }
   };
 }

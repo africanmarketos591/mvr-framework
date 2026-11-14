@@ -11,6 +11,9 @@ on:
       - 'conformance/effect-decision/r9-heldout/**'
       - 'conformance/audit-findings/heldout-r9/**'
       - 'conformance/r9-qualification/**'
+      - 'conformance/r10-qualification/**'
+      - 'conformance/effect-decision/r10-heldout/**'
+      - 'conformance/audit-findings/heldout-r10/**'
       - 'conformance/interpretation-submission/**'
       - 'sdks/javascript/buyer-executor-verifier.mjs'
       - 'sdks/javascript/trust-chain-verifier.mjs'
@@ -23,6 +26,9 @@ on:
       - 'conformance/effect-decision/r9-heldout/**'
       - 'conformance/audit-findings/heldout-r9/**'
       - 'conformance/r9-qualification/**'
+      - 'conformance/r10-qualification/**'
+      - 'conformance/effect-decision/r10-heldout/**'
+      - 'conformance/audit-findings/heldout-r10/**'
       - 'conformance/interpretation-submission/**'
       - 'sdks/javascript/buyer-executor-verifier.mjs'
       - 'sdks/javascript/trust-chain-verifier.mjs'
@@ -38,10 +44,18 @@ jobs:
           node-version: '24.11.0'
       - name: Buyer-executor negative conformance (offline)
         run: node conformance/buyer-executor/negative-suite.mjs
+      - name: Independently verify feed vectors and receiver checkpoints
+        run: |
+          python3 conformance/receiver-kit/feed-vectors/check.py
+          node conformance/receiver-kit/feed-vectors/check-subscriber.mjs
       - name: Held-out cohorts rebuild exactly from their builders
         run: |
           node conformance/effect-decision/r9-heldout/build.mjs
           node conformance/audit-findings/heldout-r9/build.mjs
+          node conformance/effect-decision/r10-heldout/build.mjs
+          node conformance/audit-findings/heldout-r10/build.mjs
+          node conformance/audit-findings/heldout-r10/build-b.mjs
+          git diff --exit-code -- conformance/effect-decision/r10-heldout conformance/audit-findings/heldout-r10
           git diff --exit-code -- conformance/effect-decision/r9-heldout conformance/audit-findings/heldout-r9
       - name: Live runners parse (they need a key to run, so CI checks syntax only)
         run: |

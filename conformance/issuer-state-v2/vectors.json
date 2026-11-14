@@ -723,6 +723,25 @@
     },
     "content_sha256": "07ae082a710f839155b1899f95fb003c2d2d6ac682284293c34650933cf2854b",
     "status": "active"
+   },
+   "CL-1e81ed65640894a4d199f3a220e9240a9080b21a6c8e311d": {
+    "closure_id": "CL-1e81ed65640894a4d199f3a220e9240a9080b21a6c8e311d",
+    "content": {
+     "case_id": "RC-937e8016792a30dff4ef7d7ed003428233451cc7590759b961789f4caf0e8011",
+     "residual_code": "PERMISSION_STATUS_UNASSESSED",
+     "scope_ref": "jurisdiction:UG",
+     "credential_id": "vector-closer-standing",
+     "source_record_ids": [
+      "vector-closure-permit"
+     ],
+     "reviewer_principal_sha256": "bcc7eda09ae14bef9d98c00a06d75ad54e096a87e8b19402958d313b36ecb9db",
+     "statement": "Proprietary lab fixture: jurisdiction scope reviewed",
+     "expires_at": "2026-11-04T08:00:00.000Z",
+     "closed_at": "2026-11-02T08:00:00.000Z",
+     "case_context_sha256": "ce788f19029c9eee8d1e90017a4ddef368f4302b17bd0ad87ab8ee658758bf22"
+    },
+    "content_sha256": "fd6c1387c3cac28070eaa803172ffd26b40562eaf430c1447c3088f9faa1257c",
+    "status": "active"
    }
   },
   "cases": {
@@ -959,6 +978,40 @@
       }
      ]
     }
+   },
+   "P": {
+    "case_id": "RC-937e8016792a30dff4ef7d7ed003428233451cc7590759b961789f4caf0e8011",
+    "status": "active",
+    "context_sha256": "ce788f19029c9eee8d1e90017a4ddef368f4302b17bd0ad87ab8ee658758bf22",
+    "preflight_context": {
+     "subject": {
+      "entity_name": "Vector Lab Mbale"
+     },
+     "market_scope": {
+      "country": "UG",
+      "region": "Mbale"
+     },
+     "intended_action": "amos.finance.spend.commit@1",
+     "decision_question": "Proprietary lab fixture: may the lab commit one bounded spend?",
+     "evidence_pack": [
+      {
+       "id": "vector-evidence",
+       "claim": "Proprietary lab fixture permission record."
+      }
+     ]
+    },
+    "capability": {
+     "capability_id": "vector-capability-P",
+     "effect_type": "amos.finance.spend.commit@1",
+     "accepted_open_residuals": [
+      "SOURCE_RECORD_REVIEW_MISSING",
+      "SOURCE_AUTHENTICITY_UNVERIFIED",
+      "CLAIM_TRUTH_UNVERIFIED",
+      "ATTESTOR_STANDING_UNVERIFIED",
+      "DECISION_SCOPE_UNVERIFIED",
+      "INCOMPLETE_STUDY_INVENTORY"
+     ]
+    }
    }
   }
  },
@@ -1042,6 +1095,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -1065,6 +1124,7 @@
       "record_id": "vector-A-permit-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "permitted",
       "blocking": false,
       "reason": null,
@@ -2083,7 +2143,7 @@
      "case_intended_action": "amos.finance.spend.commit@1",
      "issuer_state_action": "amos.finance.payment.initiate@1",
      "same_action_by_alias": false,
-     "fix": "Use the identical action identifier in the case intended_action and the signed issuer state."
+     "fix": "Sign the issuer state for the case intended_action, under that identifier or an alias of it in the published alias table."
     },
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -2093,7 +2153,7 @@
   },
   {
    "step": 17,
-   "name": "A state naming a legacy alias of the intended action is refused",
+   "name": "A state naming an alias of a different action is refused",
    "categories": [
     "tamper"
    ],
@@ -2107,7 +2167,7 @@
      "issuer_anchor_id": "vector-source-issuer",
      "case_id": "RC-226cd89c1ff00ffd448dd5d472c04c0f88e43b20bd4adac436f4cc262ae4ada5",
      "subject": "Vector Lab Kampala",
-     "action": "commit_spend",
+     "action": "publish_document",
      "geography": {
       "country": "UG",
       "region": "Kampala"
@@ -2126,7 +2186,7 @@
      "source_review": {
       "document": {
        "type": "mvr.issuer-state-review/1",
-       "assertion_sha256": "a1bcb75636a0a58dd8dc85f2caa7b28e8ec4b0902851fecc7a01433a0a6358d9",
+       "assertion_sha256": "cb299ba4821c10eabdedfae6012ed20ffac8248163a396651e3edd58ae7ab505",
        "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
        "clause_text": "Proprietary lab fixture: the lab may commit one bounded spend of at most UGX 1,000.",
        "clause_locator": "page 1, clause 1",
@@ -2141,11 +2201,11 @@
        "model_version": "human-reading/1",
        "runtime_model_version": "v6.32.0"
       },
-      "signature_b64": "/Lx/oQPAvbma14o40cHZ7PfJepzHBf80EQitMt2p4cZcmR7bnhqVejLjrpY6rFo3I+dgm+dSbtaW4dfyVZ9DBw=="
+      "signature_b64": "tSJP701f49yKETveenkfPd5dwoL/Kx1hgjCh6RX1DWoXXg670+cns0eN1yALN9UAjssykgJcigPjRUSWF/29Ag=="
      },
      "condition_receipts": []
     },
-    "signature_b64": "fb1kMuoTdjPuS8zxdb2xAzFb5f7Wje2WiIwnlN+B0a0azuz/u2V7tMKhxRVpHjptZxCbLacBp88kVfRI0HTfBQ=="
+    "signature_b64": "svcH7UrqK3IYu8C8B0etOsCiEWHt7ADdNdThf7JIsHbb3buIP7py76HD7MII8QtRcBJzsuiFKIcKGgHBedzbDQ=="
    },
    "signers": {
     "document": "source-issuer",
@@ -2153,12 +2213,12 @@
     "receipts": []
    },
    "digests": {
-    "document_sha256": "cf79bfbc2c735cd485df0015914a197a9105d184a30600b06e9f391162572fe8",
-    "signing_payload_sha256": "1175e2c6fba123bf94a189bb72f2897c386c4f1b0f650f8ecae25903214dc0ca",
-    "assertion_sha256": "a1bcb75636a0a58dd8dc85f2caa7b28e8ec4b0902851fecc7a01433a0a6358d9",
-    "scope_sha256": "cf79bfbc2c735cd485df0015914a197a9105d184a30600b06e9f391162572fe8",
+    "document_sha256": "4b011cd0197b8445ddcdcf78eaceb1580cdd005662d861b3c16205f01f4c8a98",
+    "signing_payload_sha256": "dda3e570d3494fc74c12ab75b2bbbf889f02349fe98056cca81ae8212ff5819f",
+    "assertion_sha256": "cb299ba4821c10eabdedfae6012ed20ffac8248163a396651e3edd58ae7ab505",
+    "scope_sha256": "4b011cd0197b8445ddcdcf78eaceb1580cdd005662d861b3c16205f01f4c8a98",
     "condition_sha256": [],
-    "review_signing_payload_sha256": "7cdc046621595c10cf753226482de88d6508f589617788a47798e4a706376aed",
+    "review_signing_payload_sha256": "9fcc7f965bd0298014f628d77d96dde89ade326e9cd658c8b24ef92508e64b40",
     "receipt_signing_payload_sha256": []
    },
    "expected": {
@@ -2167,9 +2227,9 @@
     "code": "ISSUER_STATE_CASE_ACTION_MISMATCH",
     "detail": {
      "case_intended_action": "amos.finance.spend.commit@1",
-     "issuer_state_action": "commit_spend",
-     "same_action_by_alias": true,
-     "fix": "Use the identical action identifier in the case intended_action and the signed issuer state."
+     "issuer_state_action": "publish_document",
+     "same_action_by_alias": false,
+     "fix": "Sign the issuer state for the case intended_action, under that identifier or an alias of it in the published alias table."
     },
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -2768,6 +2828,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -2791,6 +2857,7 @@
       "record_id": "vector-A-prohibit-2",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "prohibited",
       "blocking": true,
       "reason": "ISSUER_STATE_PROHIBITED",
@@ -2961,6 +3028,7 @@
       "record_id": "vector-A-prohibit-2",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "prohibited",
       "blocking": true,
       "reason": "ISSUER_STATE_PROHIBITED",
@@ -3070,6 +3138,12 @@
      "supersedes": "vector-A-prohibit-2",
      "lab_fixture": true,
      "production_authority": false
+    },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
     },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
@@ -3188,6 +3262,12 @@
      "supersedes": "vector-A-permit-3",
      "lab_fixture": true,
      "production_authority": false
+    },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
     },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
@@ -3353,6 +3433,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -3377,6 +3463,7 @@
       "record_id": "vector-B-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": false,
       "reason": null,
@@ -3566,6 +3653,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -3589,6 +3682,7 @@
       "record_id": "vector-B-2",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -3817,6 +3911,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -3840,6 +3940,7 @@
       "record_id": "vector-B-3",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -4013,6 +4114,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -4037,6 +4144,7 @@
       "record_id": "vector-B-4",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -4212,6 +4320,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -4236,6 +4350,7 @@
       "record_id": "vector-B-5",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -4413,6 +4528,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -4437,6 +4558,7 @@
       "record_id": "vector-B-6",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": false,
       "reason": null,
@@ -4617,6 +4739,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -4640,6 +4768,7 @@
       "record_id": "vector-B-7",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -4816,6 +4945,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -4839,6 +4974,7 @@
       "record_id": "vector-B-8",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": false,
       "reason": null,
@@ -5049,6 +5185,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -5073,6 +5215,7 @@
       "record_id": "vector-B-9",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -5246,6 +5389,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -5270,6 +5419,7 @@
       "record_id": "vector-B-10",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -5477,6 +5627,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -5501,6 +5657,7 @@
       "record_id": "vector-B-11",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": false,
       "reason": null,
@@ -5706,6 +5863,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -5730,6 +5893,7 @@
       "record_id": "vector-C-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -5905,6 +6069,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -5929,6 +6099,7 @@
       "record_id": "vector-D-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": false,
       "reason": null,
@@ -6021,6 +6192,7 @@
       "record_id": "vector-D-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -6193,6 +6365,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -6217,6 +6395,7 @@
       "record_id": "vector-D-2",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": false,
       "reason": null,
@@ -6309,6 +6488,7 @@
       "record_id": "vector-D-2",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -6524,6 +6704,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -6728,6 +6914,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -6752,6 +6944,7 @@
       "record_id": "vector-E-qualified",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": false,
       "reason": null,
@@ -7291,6 +7484,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -7314,6 +7513,7 @@
       "record_id": "vector-F-future",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "permitted",
       "blocking": true,
       "reason": "ISSUER_STATE_NOT_YET_VALID",
@@ -7502,6 +7702,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -7525,6 +7731,7 @@
       "record_id": "vector-G-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": false,
       "reason": null,
@@ -7621,6 +7828,7 @@
       "record_id": "vector-G-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -7758,6 +7966,12 @@
      "lab_fixture": true,
      "production_authority": false
     },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
     "dependents_rechecked_on_next_read": true,
     "issued_by_amos": false,
     "amos_authorization": false,
@@ -7781,6 +7995,7 @@
       "record_id": "vector-H-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "permitted",
       "blocking": false,
       "reason": null,
@@ -7847,6 +8062,7 @@
       "record_id": "vector-H-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "permitted",
       "blocking": true,
       "reason": "ISSUER_REVIEW_STANDING_INVALID",
@@ -7942,6 +8158,7 @@
       "record_id": "vector-V-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "permitted",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -7962,6 +8179,571 @@
   },
   {
    "step": 91,
+   "name": "P a permission signed under the legacy alias of the intended action registers",
+   "categories": [
+    "positive",
+    "alias"
+   ],
+   "at": "2026-11-02T09:31:00.000Z",
+   "op": "register",
+   "case": "P",
+   "input": {
+    "document": {
+     "type": "mvr.issuer-state/2",
+     "record_id": "vector-P-permit-alias",
+     "issuer_anchor_id": "vector-source-issuer",
+     "case_id": "RC-937e8016792a30dff4ef7d7ed003428233451cc7590759b961789f4caf0e8011",
+     "subject": "Vector Lab Mbale",
+     "action": "commit_spend",
+     "geography": {
+      "country": "UG",
+      "region": "Mbale"
+     },
+     "state": "permitted",
+     "valid_from": "2026-11-02T08:00:00.000Z",
+     "valid_until": "2026-11-02T20:00:00.000Z",
+     "conditions": [],
+     "supersedes": null,
+     "statement": "Proprietary lab fixture for the issuer-state/2 vectors.",
+     "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+     "ceiling": {
+      "amount_minor": 1000,
+      "currency": "UGX"
+     },
+     "source_review": {
+      "document": {
+       "type": "mvr.issuer-state-review/1",
+       "assertion_sha256": "934360c9c6eb03f5edac83c4d9007d33d452be320895c9ed684680b4d4c95b3b",
+       "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+       "clause_text": "Proprietary lab fixture: the lab may commit one bounded spend of at most UGX 1,000.",
+       "clause_locator": "page 1, clause 1",
+       "target_claim": "The lab may perform the stated bounded action.",
+       "relationship": "direct_support",
+       "reviewer_credential_id": "vector-review-standing",
+       "standing_sha256": "e08df4a0a77f017b80d651a0f5fdebba4e6a52b0cb05169ef33f748a27e88851",
+       "reviewed_at": "2026-11-02T08:00:00.000Z",
+       "valid_until": "2026-11-03T08:00:00.000Z",
+       "extractor_name": "lab-original-text",
+       "extractor_version": "1",
+       "model_version": "human-reading/1",
+       "runtime_model_version": "v6.32.0"
+      },
+      "signature_b64": "2ofFRtuNQQO1VnT1YWkORf1nwgIjvjpaSKYrINHPQRHMIdL38vuCygjxT37CwV4QUlSalvjYn02Xa7v3z9M+Cg=="
+     },
+     "condition_receipts": []
+    },
+    "signature_b64": "KFOxYUgU2CQNj7CBxWg0uRQsYarfOhIlvKR1TT5pViyc+hTksB3Ep+F7cyJlS7jZ1Oaonn2o2rOMBOY1c+XHDg=="
+   },
+   "signers": {
+    "document": "source-issuer",
+    "review": "reviewer",
+    "receipts": []
+   },
+   "digests": {
+    "document_sha256": "bb82574b9acd66a1437572ca01913b5292561df123837fb97b2df16e44e0e5ef",
+    "signing_payload_sha256": "11c00ced6bb16d5eaf6bc83218eaea35dc9d5d1b975e8420eedf286b624c3fc2",
+    "assertion_sha256": "934360c9c6eb03f5edac83c4d9007d33d452be320895c9ed684680b4d4c95b3b",
+    "scope_sha256": "bb82574b9acd66a1437572ca01913b5292561df123837fb97b2df16e44e0e5ef",
+    "condition_sha256": [],
+    "review_signing_payload_sha256": "de24f4a7e2e1e0c34fdf7cc21d2884ac5d27ec80b4e5fa00a40a4ee887b5e062",
+    "receipt_signing_payload_sha256": []
+   },
+   "expected": {
+    "status": "registered",
+    "issuer_state": {
+     "record_id": "vector-P-permit-alias",
+     "state": "permitted",
+     "supersedes": null,
+     "lab_fixture": true,
+     "production_authority": false
+    },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "commit_spend",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": true
+    },
+    "dependents_rechecked_on_next_read": true,
+    "issued_by_amos": false,
+    "amos_authorization": false,
+    "authority_source": "institution_signature_only",
+    "real_world_identity_verified_by_amos": false
+   }
+  },
+  {
+   "step": 92,
+   "name": "P the alias-signed permission does not block",
+   "categories": [
+    "positive",
+    "alias"
+   ],
+   "at": "2026-11-02T09:32:00.000Z",
+   "op": "evaluate",
+   "case": "P",
+   "expected": {
+    "contract": "mvr.issuer-state/1",
+    "states": [
+     {
+      "record_id": "vector-P-permit-alias",
+      "issuer_anchor_id": "vector-source-issuer",
+      "action": "commit_spend",
+      "canonical_action_id": "amos.finance.spend.commit@1",
+      "state": "permitted",
+      "blocking": false,
+      "reason": null,
+      "valid_until": "2026-11-02T20:00:00.000Z",
+      "conditions": [],
+      "supersedes": null,
+      "document_sha256": "bb82574b9acd66a1437572ca01913b5292561df123837fb97b2df16e44e0e5ef",
+      "lab_fixture": true,
+      "review": {
+       "reviewer_credential_id": "vector-review-standing",
+       "reviewer_principal_sha256": "b837f8be61e412201423cb995da15d6b08b69b200364486701eebeb5a3c1de2d",
+       "standing_sha256": "e08df4a0a77f017b80d651a0f5fdebba4e6a52b0cb05169ef33f748a27e88851",
+       "review_valid_until": "2026-11-03T08:00:00.000Z",
+       "assertion_sha256": "934360c9c6eb03f5edac83c4d9007d33d452be320895c9ed684680b4d4c95b3b",
+       "legal_truth_asserted": false,
+       "source_authenticity_verified": false
+      },
+      "condition_resolution": {
+       "satisfied": true,
+       "conditions": [],
+       "scope_sha256": "bb82574b9acd66a1437572ca01913b5292561df123837fb97b2df16e44e0e5ef"
+      },
+      "ceiling": {
+       "amount_minor": 1000,
+       "currency": "UGX"
+      }
+     }
+    ],
+    "blocking": false,
+    "caller_labels_override": false,
+    "prose_is_supporting_material": true,
+    "production_authority": false
+   }
+  },
+  {
+   "step": 93,
+   "name": "P a spend named by the versioned identifier under the alias-signed permission is allowed",
+   "categories": [
+    "positive",
+    "alias"
+   ],
+   "at": "2026-11-02T09:33:00.000Z",
+   "op": "effect",
+   "case": "P",
+   "input": {
+    "requested_effect": {
+     "effect_id": "vector-effect-93",
+     "effect_type": "amos.finance.spend.commit@1",
+     "resource": {
+      "system": "vector-lab",
+      "resource_type": "spend",
+      "resource_id": "vector-spend"
+     },
+     "amount_minor": 1000,
+     "currency": "UGX",
+     "external_contact": false
+    }
+   },
+   "expected": {
+    "decision": "allow",
+    "deny_reasons": [],
+    "issuer_state_reasons": [],
+    "case_contradiction_reasons": [],
+    "other_reasons": []
+   }
+  },
+  {
+   "step": 94,
+   "name": "P a revocation signed under the versioned identifier supersedes the alias-signed permission",
+   "categories": [
+    "supersession",
+    "alias"
+   ],
+   "at": "2026-11-02T09:34:00.000Z",
+   "op": "register",
+   "case": "P",
+   "input": {
+    "document": {
+     "type": "mvr.issuer-state/2",
+     "record_id": "vector-P-revoke-versioned",
+     "issuer_anchor_id": "vector-source-issuer",
+     "case_id": "RC-937e8016792a30dff4ef7d7ed003428233451cc7590759b961789f4caf0e8011",
+     "subject": "Vector Lab Mbale",
+     "action": "amos.finance.spend.commit@1",
+     "geography": {
+      "country": "UG",
+      "region": "Mbale"
+     },
+     "state": "revoked",
+     "valid_from": "2026-11-02T08:00:00.000Z",
+     "valid_until": "2026-11-02T20:00:00.000Z",
+     "conditions": [],
+     "supersedes": "vector-P-permit-alias",
+     "statement": "Proprietary lab fixture for the issuer-state/2 vectors.",
+     "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+     "ceiling": {
+      "amount_minor": 1000,
+      "currency": "UGX"
+     },
+     "source_review": {
+      "document": {
+       "type": "mvr.issuer-state-review/1",
+       "assertion_sha256": "8f26d169987e87812b9088dc4c88749bb0ef48bbe4eabf174f57ab4748324540",
+       "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+       "clause_text": "Proprietary lab fixture: the lab may commit one bounded spend of at most UGX 1,000.",
+       "clause_locator": "page 1, clause 1",
+       "target_claim": "The lab may perform the stated bounded action.",
+       "relationship": "contradicts",
+       "reviewer_credential_id": "vector-review-standing",
+       "standing_sha256": "e08df4a0a77f017b80d651a0f5fdebba4e6a52b0cb05169ef33f748a27e88851",
+       "reviewed_at": "2026-11-02T08:00:00.000Z",
+       "valid_until": "2026-11-03T08:00:00.000Z",
+       "extractor_name": "lab-original-text",
+       "extractor_version": "1",
+       "model_version": "human-reading/1",
+       "runtime_model_version": "v6.32.0"
+      },
+      "signature_b64": "6oiU88Qok6ljn05xt6DRWObKgKwrtLWJTG6wGUka5LU0qQJnRMJKJqZN0nmZvszUJvQLYCusUE1quKg6P0TXDw=="
+     },
+     "condition_receipts": []
+    },
+    "signature_b64": "mZ/BJlVDMPUF+aHW0WG30YmcL3RqORRQLLq/bpJmD73wzK7aA9EdifH3a4nAre+QoGKPy5DoHtHYiniwtnR4BA=="
+   },
+   "signers": {
+    "document": "source-issuer",
+    "review": "reviewer",
+    "receipts": []
+   },
+   "digests": {
+    "document_sha256": "fa4e8d5b8ed6c7ae0754dc2d2a294e065f0afc7b06a937876efe838c7bff3b6f",
+    "signing_payload_sha256": "1250a51138208dcfa028f6ea54d5821bc598248cab31ebfd284ced37a391b677",
+    "assertion_sha256": "8f26d169987e87812b9088dc4c88749bb0ef48bbe4eabf174f57ab4748324540",
+    "scope_sha256": "fa4e8d5b8ed6c7ae0754dc2d2a294e065f0afc7b06a937876efe838c7bff3b6f",
+    "condition_sha256": [],
+    "review_signing_payload_sha256": "3526302bbab437cb52cd0db45e2ae79fd726a8eaf0cf75c3c32994cd768e58fd",
+    "receipt_signing_payload_sha256": []
+   },
+   "expected": {
+    "status": "registered",
+    "issuer_state": {
+     "record_id": "vector-P-revoke-versioned",
+     "state": "revoked",
+     "supersedes": "vector-P-permit-alias",
+     "lab_fixture": true,
+     "production_authority": false
+    },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "amos.finance.spend.commit@1",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": false
+    },
+    "dependents_rechecked_on_next_read": true,
+    "issued_by_amos": false,
+    "amos_authorization": false,
+    "authority_source": "institution_signature_only",
+    "real_world_identity_verified_by_amos": false
+   }
+  },
+  {
+   "step": 95,
+   "name": "P the revocation signed under the other spelling blocks",
+   "categories": [
+    "supersession",
+    "alias"
+   ],
+   "at": "2026-11-02T09:35:00.000Z",
+   "op": "evaluate",
+   "case": "P",
+   "expected": {
+    "contract": "mvr.issuer-state/1",
+    "states": [
+     {
+      "record_id": "vector-P-revoke-versioned",
+      "issuer_anchor_id": "vector-source-issuer",
+      "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
+      "state": "revoked",
+      "blocking": true,
+      "reason": "ISSUER_STATE_REVOKED",
+      "valid_until": "2026-11-02T20:00:00.000Z",
+      "conditions": [],
+      "supersedes": "vector-P-permit-alias",
+      "document_sha256": "fa4e8d5b8ed6c7ae0754dc2d2a294e065f0afc7b06a937876efe838c7bff3b6f",
+      "lab_fixture": true,
+      "review": {
+       "reviewer_credential_id": "vector-review-standing",
+       "reviewer_principal_sha256": "b837f8be61e412201423cb995da15d6b08b69b200364486701eebeb5a3c1de2d",
+       "standing_sha256": "e08df4a0a77f017b80d651a0f5fdebba4e6a52b0cb05169ef33f748a27e88851",
+       "review_valid_until": "2026-11-03T08:00:00.000Z",
+       "assertion_sha256": "8f26d169987e87812b9088dc4c88749bb0ef48bbe4eabf174f57ab4748324540",
+       "legal_truth_asserted": false,
+       "source_authenticity_verified": false
+      },
+      "condition_resolution": null,
+      "ceiling": {
+       "amount_minor": 1000,
+       "currency": "UGX"
+      }
+     }
+    ],
+    "blocking": true,
+    "caller_labels_override": false,
+    "prose_is_supporting_material": true,
+    "production_authority": false
+   }
+  },
+  {
+   "step": 96,
+   "name": "P a spend after the revocation is denied",
+   "categories": [
+    "supersession",
+    "alias"
+   ],
+   "at": "2026-11-02T09:36:00.000Z",
+   "op": "effect",
+   "case": "P",
+   "input": {
+    "requested_effect": {
+     "effect_id": "vector-effect-96",
+     "effect_type": "amos.finance.spend.commit@1",
+     "resource": {
+      "system": "vector-lab",
+      "resource_type": "spend",
+      "resource_id": "vector-spend"
+     },
+     "amount_minor": 1000,
+     "currency": "UGX",
+     "external_contact": false
+    }
+   },
+   "expected": {
+    "decision": "deny",
+    "deny_reasons": [
+     "ISSUER_STATE_REVOKED",
+     "CASE_ACTIVE_CONTRADICTION",
+     "UNACCEPTED_OPEN_RESIDUAL:REVIEW_CONTRADICTION"
+    ],
+    "issuer_state_reasons": [
+     "ISSUER_STATE_REVOKED"
+    ],
+    "case_contradiction_reasons": [
+     "CASE_ACTIVE_CONTRADICTION",
+     "UNACCEPTED_OPEN_RESIDUAL:REVIEW_CONTRADICTION"
+    ],
+    "other_reasons": []
+   }
+  },
+  {
+   "step": 97,
+   "name": "P a new alias-signed permission that does not name the revocation is refused",
+   "categories": [
+    "supersession",
+    "alias"
+   ],
+   "at": "2026-11-02T09:37:00.000Z",
+   "op": "register",
+   "case": "P",
+   "input": {
+    "document": {
+     "type": "mvr.issuer-state/2",
+     "record_id": "vector-P-permit-unlinked",
+     "issuer_anchor_id": "vector-source-issuer",
+     "case_id": "RC-937e8016792a30dff4ef7d7ed003428233451cc7590759b961789f4caf0e8011",
+     "subject": "Vector Lab Mbale",
+     "action": "commit_spend",
+     "geography": {
+      "country": "UG",
+      "region": "Mbale"
+     },
+     "state": "permitted",
+     "valid_from": "2026-11-02T08:00:00.000Z",
+     "valid_until": "2026-11-02T20:00:00.000Z",
+     "conditions": [],
+     "supersedes": null,
+     "statement": "Proprietary lab fixture for the issuer-state/2 vectors.",
+     "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+     "ceiling": {
+      "amount_minor": 1000,
+      "currency": "UGX"
+     },
+     "source_review": {
+      "document": {
+       "type": "mvr.issuer-state-review/1",
+       "assertion_sha256": "5b653f17e483252d9bfc7e34ca850ff9da450add28f381f31d62ebc0b23679bf",
+       "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+       "clause_text": "Proprietary lab fixture: the lab may commit one bounded spend of at most UGX 1,000.",
+       "clause_locator": "page 1, clause 1",
+       "target_claim": "The lab may perform the stated bounded action.",
+       "relationship": "direct_support",
+       "reviewer_credential_id": "vector-review-standing",
+       "standing_sha256": "e08df4a0a77f017b80d651a0f5fdebba4e6a52b0cb05169ef33f748a27e88851",
+       "reviewed_at": "2026-11-02T08:00:00.000Z",
+       "valid_until": "2026-11-03T08:00:00.000Z",
+       "extractor_name": "lab-original-text",
+       "extractor_version": "1",
+       "model_version": "human-reading/1",
+       "runtime_model_version": "v6.32.0"
+      },
+      "signature_b64": "bgid5Wa8bXbdquHrzh83bLGI2155kkHqO9LVtE5tvERbbvkkRdC5VveJpJLEGb7+nbtcpTPadsawmSUgW75+BA=="
+     },
+     "condition_receipts": []
+    },
+    "signature_b64": "V2ZsSd0OamxcZYaXns+Apgvp/JqqiRuOwQnNl/5lx4YfGaskJgVxFZrT48eHFoOhccKVUqMaoaMSePwwUTq6DA=="
+   },
+   "signers": {
+    "document": "source-issuer",
+    "review": "reviewer",
+    "receipts": []
+   },
+   "digests": {
+    "document_sha256": "e5d2777ef883a1172ac170364a708ed8075f3f2853a1de25eecf4fa9ed6270f8",
+    "signing_payload_sha256": "05a9cd34255937a27bdc9439feb6f0c4fb4793c6a8cef8de441844e3b3b73672",
+    "assertion_sha256": "5b653f17e483252d9bfc7e34ca850ff9da450add28f381f31d62ebc0b23679bf",
+    "scope_sha256": "e5d2777ef883a1172ac170364a708ed8075f3f2853a1de25eecf4fa9ed6270f8",
+    "condition_sha256": [],
+    "review_signing_payload_sha256": "67cbb2eac09bfc182f587881685c4e70dbf8243a71bc2d0797448026499d5e03",
+    "receipt_signing_payload_sha256": []
+   },
+   "expected": {
+    "status": "conflict",
+    "http_status": 409,
+    "code": "ISSUER_STATE_SUPERSESSION_REQUIRED",
+    "issued_by_amos": false,
+    "amos_authorization": false,
+    "authority_source": "institution_signature_only",
+    "real_world_identity_verified_by_amos": false
+   }
+  },
+  {
+   "step": 98,
+   "name": "P an alias-signed permission that names the revocation as its predecessor registers",
+   "categories": [
+    "supersession",
+    "alias"
+   ],
+   "at": "2026-11-02T09:38:00.000Z",
+   "op": "register",
+   "case": "P",
+   "input": {
+    "document": {
+     "type": "mvr.issuer-state/2",
+     "record_id": "vector-P-permit-alias-2",
+     "issuer_anchor_id": "vector-source-issuer",
+     "case_id": "RC-937e8016792a30dff4ef7d7ed003428233451cc7590759b961789f4caf0e8011",
+     "subject": "Vector Lab Mbale",
+     "action": "commit_spend",
+     "geography": {
+      "country": "UG",
+      "region": "Mbale"
+     },
+     "state": "permitted",
+     "valid_from": "2026-11-02T08:00:00.000Z",
+     "valid_until": "2026-11-02T20:00:00.000Z",
+     "conditions": [],
+     "supersedes": "vector-P-revoke-versioned",
+     "statement": "Proprietary lab fixture for the issuer-state/2 vectors.",
+     "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+     "ceiling": {
+      "amount_minor": 1000,
+      "currency": "UGX"
+     },
+     "source_review": {
+      "document": {
+       "type": "mvr.issuer-state-review/1",
+       "assertion_sha256": "02113b91fd42e52035c45a15210b56236e283b307089098fd9488a74e1c49116",
+       "original_document_sha256": "4999857ff19854a97b6b6678fc59f2c53387867957e22c70872895d24f76c636",
+       "clause_text": "Proprietary lab fixture: the lab may commit one bounded spend of at most UGX 1,000.",
+       "clause_locator": "page 1, clause 1",
+       "target_claim": "The lab may perform the stated bounded action.",
+       "relationship": "direct_support",
+       "reviewer_credential_id": "vector-review-standing",
+       "standing_sha256": "e08df4a0a77f017b80d651a0f5fdebba4e6a52b0cb05169ef33f748a27e88851",
+       "reviewed_at": "2026-11-02T08:00:00.000Z",
+       "valid_until": "2026-11-03T08:00:00.000Z",
+       "extractor_name": "lab-original-text",
+       "extractor_version": "1",
+       "model_version": "human-reading/1",
+       "runtime_model_version": "v6.32.0"
+      },
+      "signature_b64": "2P6smxRTOx9grxfTEkrDrQRlQ6arT+JFYpABJwRZ4eRz4YNHNHmTFnOyDHSQDCL81+8khvGTKqL5FiKlPDv5AA=="
+     },
+     "condition_receipts": []
+    },
+    "signature_b64": "V8fEVStNn5SXm/bSQokRUF7Sq9BbNPGaAcWAV0q0gSGGuVPwgZGrsL8umAgccjYPVC2AZvw7DglOmILMZxt+Cg=="
+   },
+   "signers": {
+    "document": "source-issuer",
+    "review": "reviewer",
+    "receipts": []
+   },
+   "digests": {
+    "document_sha256": "fa00c153c9ddc9a58660eb96fb5c2539b2410ef17cceb6b87fc5eff5c40b2e71",
+    "signing_payload_sha256": "08b41a53ffb11c4a1f5742b5b096d7a10ac1887609dfaab529dd771baef78850",
+    "assertion_sha256": "02113b91fd42e52035c45a15210b56236e283b307089098fd9488a74e1c49116",
+    "scope_sha256": "fa00c153c9ddc9a58660eb96fb5c2539b2410ef17cceb6b87fc5eff5c40b2e71",
+    "condition_sha256": [],
+    "review_signing_payload_sha256": "17dbfef4572585664f9a28f8c8815929e4df15a08c01e2718617bb1abc681319",
+    "receipt_signing_payload_sha256": []
+   },
+   "expected": {
+    "status": "registered",
+    "issuer_state": {
+     "record_id": "vector-P-permit-alias-2",
+     "state": "permitted",
+     "supersedes": "vector-P-revoke-versioned",
+     "lab_fixture": true,
+     "production_authority": false
+    },
+    "action_identity": {
+     "case_intended_action": "amos.finance.spend.commit@1",
+     "issuer_state_action": "commit_spend",
+     "canonical_action_id": "amos.finance.spend.commit@1",
+     "same_action_by_alias": true
+    },
+    "dependents_rechecked_on_next_read": true,
+    "issued_by_amos": false,
+    "amos_authorization": false,
+    "authority_source": "institution_signature_only",
+    "real_world_identity_verified_by_amos": false
+   }
+  },
+  {
+   "step": 99,
+   "name": "P a spend under the restored alias-signed permission is allowed",
+   "categories": [
+    "positive",
+    "alias"
+   ],
+   "at": "2026-11-02T09:39:00.000Z",
+   "op": "effect",
+   "case": "P",
+   "input": {
+    "requested_effect": {
+     "effect_id": "vector-effect-99",
+     "effect_type": "amos.finance.spend.commit@1",
+     "resource": {
+      "system": "vector-lab",
+      "resource_type": "spend",
+      "resource_id": "vector-spend"
+     },
+     "amount_minor": 1000,
+     "currency": "UGX",
+     "external_contact": false
+    }
+   },
+   "expected": {
+    "decision": "allow",
+    "deny_reasons": [],
+    "issuer_state_reasons": [],
+    "case_contradiction_reasons": [],
+    "other_reasons": []
+   }
+  },
+  {
+   "step": 100,
    "name": "C inside the window the condition is satisfied",
    "categories": [
     "condition",
@@ -7977,6 +8759,7 @@
       "record_id": "vector-C-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": false,
       "reason": null,
@@ -8040,7 +8823,7 @@
    }
   },
   {
-   "step": 92,
+   "step": 101,
    "name": "F state is current once it starts",
    "categories": [
     "expiry",
@@ -8056,6 +8839,7 @@
       "record_id": "vector-F-future",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "permitted",
       "blocking": false,
       "reason": null,
@@ -8091,7 +8875,7 @@
    }
   },
   {
-   "step": 93,
+   "step": 102,
    "name": "F spend once the state starts is allowed",
    "categories": [
     "expiry",
@@ -8102,7 +8886,7 @@
    "case": "F",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-93",
+     "effect_id": "vector-effect-102",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -8123,7 +8907,7 @@
    }
   },
   {
-   "step": 94,
+   "step": 103,
    "name": "C receipt expiry blocks",
    "categories": [
     "condition",
@@ -8139,6 +8923,7 @@
       "record_id": "vector-C-1",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "conditional",
       "blocking": true,
       "reason": "ISSUER_STATE_CONDITIONS_UNRESOLVED",
@@ -8198,7 +8983,7 @@
    }
   },
   {
-   "step": 95,
+   "step": 104,
    "name": "F state expires at valid_until",
    "categories": [
     "expiry"
@@ -8213,6 +8998,7 @@
       "record_id": "vector-F-future",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "permitted",
       "blocking": true,
       "reason": "ISSUER_STATE_EXPIRED",
@@ -8244,7 +9030,7 @@
    }
   },
   {
-   "step": 96,
+   "step": 105,
    "name": "F spend after the state expires is denied",
    "categories": [
     "expiry"
@@ -8254,7 +9040,7 @@
    "case": "F",
    "input": {
     "requested_effect": {
-     "effect_id": "vector-effect-96",
+     "effect_id": "vector-effect-105",
      "effect_type": "amos.finance.spend.commit@1",
      "resource": {
       "system": "vector-lab",
@@ -8284,7 +9070,7 @@
    }
   },
   {
-   "step": 97,
+   "step": 106,
    "name": "F expired review is reported before state expiry",
    "categories": [
     "expiry"
@@ -8299,6 +9085,7 @@
       "record_id": "vector-F-future",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "permitted",
       "blocking": true,
       "reason": "ISSUER_REVIEW_VALIDITY_INVALID",
@@ -8322,7 +9109,7 @@
    }
   },
   {
-   "step": 98,
+   "step": 107,
    "name": "A source issuer anchor is revoked",
    "categories": [
     "dependency-revocation"
@@ -8338,7 +9125,7 @@
    }
   },
   {
-   "step": 99,
+   "step": 108,
    "name": "A revoked issuer anchor blocks",
    "categories": [
     "dependency-revocation"
@@ -8353,6 +9140,7 @@
       "record_id": "vector-A-revoked-4",
       "issuer_anchor_id": "vector-source-issuer",
       "action": "amos.finance.spend.commit@1",
+      "canonical_action_id": "amos.finance.spend.commit@1",
       "state": "revoked",
       "blocking": true,
       "reason": "ISSUER_STATE_ISSUER_INACTIVE",

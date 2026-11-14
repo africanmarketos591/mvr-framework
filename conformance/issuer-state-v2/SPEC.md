@@ -322,11 +322,13 @@ This is a bounded English warning heuristic, not a legal reading.
    - `doc.subject` equals the first non-empty value of `preflight_context.subject.entity_name`, `preflight_context.subject.entity_id`, `preflight_context.entity_name` and `preflight_context.entity`;
    - `doc.geography.country` equals `market_scope.country`;
    - `doc.geography.region` equals `market_scope.region`, or `null` when that is empty or missing.
-7. **v2: `ISSUER_STATE_CASE_ACTION_MISMATCH` (409)** unless `preflight_context.intended_action = doc.action`. The identifiers must be identical; an alias of the same action is refused too. The refusal carries `detail`:
+7. **v2: `ISSUER_STATE_CASE_ACTION_MISMATCH` (409)** unless `preflight_context.intended_action` and `doc.action` name the same action: they are identical, or they resolve to the same identifier through the alias table below. An alias and its versioned identifier are one action everywhere in AMOS (rule revision 2026-11-14; the earlier revision required identical identifiers and refused an alias). A different action is refused, and the refusal carries `detail`:
    - `case_intended_action`: `preflight_context.intended_action`, cut to its first 120 UTF-16 code units, or `null` when it is not a string;
    - `issuer_state_action`: `doc.action`;
-   - `same_action_by_alias`: `true` when both identifiers name the same action under the alias table below, otherwise `false`;
-   - `fix`: `"Use the identical action identifier in the case intended_action and the signed issuer state."`
+   - `same_action_by_alias`: always `false` in a refusal (the same action is no longer refused);
+   - `fix`: `"Sign the issuer state for the case intended_action, under that identifier or an alias of it in the published alias table."`
+
+   A registration that passes this step for a v2 document returns `action_identity`: `case_intended_action`, `issuer_state_action` (the identifier the issuer signed, never rewritten), `canonical_action_id` (the identifier `doc.action` resolves to) and `same_action_by_alias` (`true` when the two spellings differ).
 
    **Alias table.** Each legacy name is an alias of one versioned identifier:
 
@@ -339,8 +341,8 @@ This is a bounded English warning heuristic, not a legal reading.
    | `publish_document` | `amos.document.publish@1` |
    | `commit_spend` | `amos.finance.spend.commit@1` |
 
-   Resolve each identifier through the table (an identifier not in the table resolves to itself). `same_action_by_alias` is `true` when both values are strings, they differ, and they resolve to the same identifier.
-8. **Find the slot.** `slot` = `issuer_anchor_id:action`, and `prior` = the head of that slot, or `null`.
+   Resolve each identifier through the table (an identifier not in the table resolves to itself): this is `canonical(identifier)`. The table is immutable: an alias never changes the identifier it resolves to.
+8. **Find the slot.** `slot` = `issuer_anchor_id:canonical(doc.action)`, and `prior` = the head of that slot, or `null`. A permission signed under an alias and a revocation signed under the versioned identifier therefore occupy one slot, and each must name the other as `supersedes`. A head stored under another spelling of the same action (written under the earlier revision) is the same slot: it is read as `prior` and replaced by the canonical key when the new record is stored. In evaluation each state row carries `canonical_action_id` beside `action`.
 9. **Existing record.** If a row already exists for `record_id`:
    - when its `document_sha256 = D(doc)` and its signature is identical, return the idempotent result. The head does not move, so replaying an old record never restores it;
    - otherwise fail with **`ISSUER_STATE_RECORD_CONFLICT` (409)**.

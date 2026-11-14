@@ -58,14 +58,16 @@ export async function runIssuerStateLive(transport,{now=()=>Date.now(),continueO
     let v=await verify();record('verification denies the exact effect',{decision:'deny'},{decision:v.decision,deny_reasons:v.deny_reasons},v.decision==='deny');
     // 2. The prohibition also binds the same action under its canonical identifier.
     p=await position(ALIAS);record('the prohibition binds the canonical alias of the same action',{tier:'prohibited'},p.tier,p.tier==='prohibited');
-    // 3. A state naming a different identifier than the case intends is refused, with the alias named.
-    const aliasDoc=await build('lab-state-alias','prohibited',{action:ALIAS});
-    r=await chain('source_issuer',{action:'register_issuer_state',document:aliasDoc,signature_b64:await keys.source.sign(aliasDoc.type,aliasDoc)});
-    record('an issuer state naming the alias instead of the intended identifier is refused and says why',{code:'ISSUER_STATE_CASE_ACTION_MISMATCH',same_action_by_alias:true},{code:r.code,detail:r.detail},r.code==='ISSUER_STATE_CASE_ACTION_MISMATCH'&&r.detail?.same_action_by_alias===true);
+    // 3. One action identity: a state signed under the other spelling of the same action registers in the same slot
+    //    (it must supersede the head), and the reply says which action it is. The signed identifier is not rewritten.
+    r=await registerState(await build('lab-state-alias','prohibited',{action:ALIAS}));
+    record('an issuer state signed under the other spelling of the same action registers in the same slot and says which action it is',{status:'registered',same_action_by_alias:true},{status:r.status,action_identity:r.action_identity??null,code:r.code??null},r.status==='registered'&&r.action_identity?.same_action_by_alias===true&&r.action_identity?.issuer_state_action===ALIAS);
     // 4. Superseded by a permitted state: the exact effect verifies again.
-    r=await registerState(await build('lab-state-2-permitted','permitted'));
+    r=await registerState(await build('lab-state-2-permitted','permitted',{action:ALIAS}));
     record('the issuer supersedes the prohibition with a permitted state',{status:'registered'},r.status,r.status==='registered');
     v=await verify();record('the exact effect verifies under the permitted state',{decision:'allow'},{decision:v.decision,deny_reasons:v.deny_reasons},v.decision==='allow');
+    p=await position(ALIAS);const otherSpelling=await position(ACTION);
+    record('the permitted alias and canonical spelling have the same positive tier',{matching_positive_tier:true},[p.tier,otherSpelling.tier],p.tier===otherSpelling.tier&&['fully_permitted','permitted_up_to_ceiling'].includes(p.tier));
     // 5. Conditional: held until its signed condition receipt arrives.
     const condition={condition_id:'lab-condition-1',predicate:{type:'all_references_current'},required_references:[{kind:'source_record',id:'lab-src-1',sha256:await digest(src)}],resolver_credential_id:'lab-review-standing',waiver_allowed:false};
     const pending=await build('lab-state-3-conditional','conditional',{conditions:[condition]});
@@ -83,6 +85,8 @@ export async function runIssuerStateLive(transport,{now=()=>Date.now(),continueO
     record('the issuer revokes',{status:'registered'},r.status,r.status==='registered');
     v=await verify();p=await position();
     record('a revoked state denies and prohibits the exact effect',{decision:'deny',tier:'prohibited'},{decision:v.decision,tier:p.tier},v.decision==='deny'&&p.tier==='prohibited');
+    const revokedAlias=await position(ALIAS);
+    record('revocation under the other spelling also prohibits the original spelling',{tier:'prohibited'},revokedAlias.tier,revokedAlias.tier==='prohibited');
     report.passed=steps.every(s=>s.passed);report.case_id=caseId;
   }finally{await send({action:'close',session_id:session.session_id,session_token:session.credentials.institution.session_token}).catch(()=>{});}
   return report;
