@@ -1,0 +1,6 @@
+GET capabilities                     status 200 server ms 9018 299 326 294 0 | client ms 9818 908 712 1283 96
+GET effect contract                  status 200 server ms 0 0 0 0 0 | client ms 73 82 72 114 78
+POST effect, no idempotency key      status 200 server ms 192 186 184 184 190 | client ms 280 267 261 263 498
+POST effect, with idempotency key    status 200 server ms 551 546 550 545 546 | client ms 633 634 629 626 621
+POST effect strict, with key         status 200 server ms 545 549 552 547 549 | client ms 621 625 631 625 868
+POST mcp runtime first_call          status 200 server ms 1786 1383 1370 1371 1396 | client ms 1891 1483 1466 1464 1823

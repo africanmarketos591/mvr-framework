@@ -1,0 +1,195 @@
+{
+  "classification": "AMOS lab verification; proprietary lab fixtures; lab keys; exact create_draft_record fixture",
+  "action": "create_draft_record",
+  "steps": [
+    {
+      "step": 1,
+      "name": "baseline: the exact fixture verifies before any issuer state",
+      "expected": {
+        "decision": "allow"
+      },
+      "observed": "allow",
+      "passed": true
+    },
+    {
+      "step": 2,
+      "name": "register a signed issuer-state/2 prohibition for create_draft_record",
+      "expected": {
+        "status": "registered"
+      },
+      "observed": "registered",
+      "passed": true
+    },
+    {
+      "step": 3,
+      "name": "the exact effect is prohibited",
+      "expected": {
+        "tier": "prohibited"
+      },
+      "observed": "prohibited",
+      "passed": true
+    },
+    {
+      "step": 4,
+      "name": "verification denies the exact effect",
+      "expected": {
+        "decision": "deny"
+      },
+      "observed": {
+        "decision": "deny",
+        "deny_reasons": [
+          "ISSUER_STATE_PROHIBITED",
+          "CASE_ACTIVE_CONTRADICTION",
+          "UNACCEPTED_OPEN_RESIDUAL:REVIEW_CONTRADICTION"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "step": 5,
+      "name": "the prohibition binds the canonical alias of the same action",
+      "expected": {
+        "tier": "prohibited"
+      },
+      "observed": "prohibited",
+      "passed": true
+    },
+    {
+      "step": 6,
+      "name": "an issuer state signed under the other spelling of the same action registers in the same slot and says which action it is",
+      "expected": {
+        "status": "registered",
+        "same_action_by_alias": true
+      },
+      "observed": {
+        "status": "registered",
+        "action_identity": {
+          "case_intended_action": "create_draft_record",
+          "issuer_state_action": "amos.document.draft.create@1",
+          "canonical_action_id": "amos.document.draft.create@1",
+          "same_action_by_alias": true
+        },
+        "code": null
+      },
+      "passed": true
+    },
+    {
+      "step": 7,
+      "name": "the issuer supersedes the prohibition with a permitted state",
+      "expected": {
+        "status": "registered"
+      },
+      "observed": "registered",
+      "passed": true
+    },
+    {
+      "step": 8,
+      "name": "the exact effect verifies under the permitted state",
+      "expected": {
+        "decision": "allow"
+      },
+      "observed": {
+        "decision": "allow",
+        "deny_reasons": []
+      },
+      "passed": true
+    },
+    {
+      "step": 9,
+      "name": "the permitted alias and canonical spelling have the same positive tier",
+      "expected": {
+        "matching_positive_tier": true
+      },
+      "observed": [
+        "fully_permitted",
+        "fully_permitted"
+      ],
+      "passed": true
+    },
+    {
+      "step": 10,
+      "name": "register a conditional state without its receipt",
+      "expected": {
+        "status": "registered"
+      },
+      "observed": "registered",
+      "passed": true
+    },
+    {
+      "step": 11,
+      "name": "an unresolved condition denies the exact effect",
+      "expected": {
+        "decision": "deny"
+      },
+      "observed": {
+        "decision": "deny",
+        "deny_reasons": [
+          "ISSUER_STATE_CONDITIONS_UNRESOLVED",
+          "CASE_ACTIVE_CONTRADICTION",
+          "UNACCEPTED_OPEN_RESIDUAL:REVIEW_CONTRADICTION"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "step": 12,
+      "name": "register the conditional state with its signed receipt",
+      "expected": {
+        "status": "registered"
+      },
+      "observed": "registered",
+      "passed": true
+    },
+    {
+      "step": 13,
+      "name": "a satisfied condition lets the exact effect verify",
+      "expected": {
+        "decision": "allow"
+      },
+      "observed": {
+        "decision": "allow",
+        "deny_reasons": []
+      },
+      "passed": true
+    },
+    {
+      "step": 14,
+      "name": "the issuer revokes",
+      "expected": {
+        "status": "registered"
+      },
+      "observed": "registered",
+      "passed": true
+    },
+    {
+      "step": 15,
+      "name": "a revoked state denies and prohibits the exact effect",
+      "expected": {
+        "decision": "deny",
+        "tier": "prohibited"
+      },
+      "observed": {
+        "decision": "deny",
+        "tier": "prohibited"
+      },
+      "passed": true
+    },
+    {
+      "step": 16,
+      "name": "revocation under the other spelling also prohibits the original spelling",
+      "expected": {
+        "tier": "prohibited"
+      },
+      "observed": "prohibited",
+      "passed": true
+    }
+  ],
+  "requests": 30,
+  "passed": true,
+  "case_id": "RC-1aff6954fbdfef8cb5d720c72d3c3eb740d053296a6ed43f8d82071d3821f680",
+  "lab": "https://africanmarketos.com",
+  "served_revisions": [
+    "2026-11-14.exact-reducer.1"
+  ],
+  "revision": "2026-11-14.exact-reducer.1"
+}
