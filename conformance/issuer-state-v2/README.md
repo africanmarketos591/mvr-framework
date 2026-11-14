@@ -68,7 +68,7 @@ This runs issuer state version 2 against production's isolated lab, with the exa
 1. A baseline: the effect is allowed.
 2. A signed prohibition: the effect is denied, and the position is `prohibited`.
 3. The same prohibition also binds the canonical identifier `amos.document.draft.create@1`.
-4. A state registered under a different identifier from the case's is refused with `ISSUER_STATE_CASE_ACTION_MISMATCH`. The detail names both identifiers and says whether they are aliases.
+4. Registering the other spelling of the same action advances the same issuer-state slot. The signed document keeps its original spelling. A genuinely different action returns ISSUER_STATE_CASE_ACTION_MISMATCH.
 5. Supersession to permitted: the effect is allowed.
 6. A conditional state: denied without its receipt, allowed with it.
 7. Revocation: the effect is denied.
