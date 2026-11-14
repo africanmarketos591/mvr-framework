@@ -666,19 +666,24 @@ class Engine:
             market = context.get('market_scope') or {}
             region = market.get('region') if truthy(market.get('region')) else None
             need(doc['subject'] == subject and doc['geography']['country'] == market.get('country') and doc['geography']['region'] == region, 'ISSUER_STATE_CASE_SCOPE_MISMATCH', 409)
+            # SPEC 9, step 7: an alias and its versioned identifier are the same action; a different action is refused.
+            action_identity = None
             if doc['type'] == V2:
                 intended = context.get('intended_action')
-                if intended != doc['action']:
-                    def canonical(value):
-                        return LEGACY_ACTION_ALIASES.get(value, value) if isinstance(value, str) else None
+                same = isinstance(intended, str) and canonical_action(intended) == canonical_action(doc['action'])
+                if intended != doc['action'] and not same:
                     raise Fault('ISSUER_STATE_CASE_ACTION_MISMATCH', 409, {
                         'case_intended_action': first_utf16_units(intended, 120) if isinstance(intended, str) else None,
                         'issuer_state_action': doc['action'],
-                        'same_action_by_alias': isinstance(intended, str) and canonical(intended) == canonical(doc['action']),
-                        'fix': 'Use the identical action identifier in the case intended_action and the signed issuer state.'})
+                        'same_action_by_alias': False,
+                        'fix': 'Sign the issuer state for the case intended_action, under that identifier or an alias of it in the published alias table.'})
+                action_identity = {'case_intended_action': intended, 'issuer_state_action': doc['action'],
+                                   'canonical_action_id': canonical_action(doc['action']), 'same_action_by_alias': intended != doc['action']}
+            # SPEC 9, step 8: the slot is keyed by the canonical identifier; a head stored under another spelling is the same slot.
             heads = self.store.heads[doc['case_id']]
-            slot = doc['issuer_anchor_id'] + ':' + doc['action']
-            prior = heads.get(slot) or None
+            slot = slot_key(doc['issuer_anchor_id'], doc['action'])
+            same_slot = [key for key in heads if canonical_slot(key) == slot]
+            prior = next((heads[key] for key in same_slot if heads[key]), None)
             existing = self.store.rows.get(doc['record_id'])
             sha = digest(doc)
             if existing:
@@ -687,8 +692,12 @@ class Engine:
             need(doc['supersedes'] == prior, 'ISSUER_STATE_SUPERSESSION_REQUIRED', 409)
             need(len(heads) < 40 or prior is not None, 'ISSUER_STATE_CASE_LIMIT', 409)
             self.store.rows[doc['record_id']] = {'document': copy.deepcopy(doc), 'document_sha256': sha, 'signature_b64': signature, 'case_context_sha256': case['context_sha256']}
+            for key in same_slot:
+                if key != slot:
+                    del heads[key]
             heads[slot] = doc['record_id']
-            return dict({'status': 'registered', 'issuer_state': {'record_id': doc['record_id'], 'state': doc['state'], 'supersedes': doc['supersedes'], 'lab_fixture': True, 'production_authority': False}, 'dependents_rechecked_on_next_read': True}, **NO_AUTHORITY)
+            return dict({'status': 'registered', 'issuer_state': {'record_id': doc['record_id'], 'state': doc['state'], 'supersedes': doc['supersedes'], 'lab_fixture': True, 'production_authority': False},
+                         **({'action_identity': action_identity} if action_identity is not None else {}), 'dependents_rechecked_on_next_read': True}, **NO_AUTHORITY)
         except Fault as fault:
             status = 'system_unavailable' if fault.status >= 500 else {403: 'forbidden', 404: 'not_found', 409: 'conflict'}.get(fault.status, 'invalid_input')
             return dict({'status': status, 'http_status': fault.status, 'code': fault.code}, **({'detail': fault.detail} if fault.detail is not None else {}), **NO_AUTHORITY)
@@ -703,7 +712,7 @@ class Engine:
             doc = saved.get('document') if saved else None
             reason = review = resolution = None
             try:
-                need(saved and isinstance(doc, dict) and doc.get('record_id') == record_id and doc.get('case_id') == case['case_id'] and slot == str(doc.get('issuer_anchor_id')) + ':' + str(doc.get('action'))
+                need(saved and isinstance(doc, dict) and doc.get('record_id') == record_id and doc.get('case_id') == case['case_id'] and canonical_slot(slot) == slot_key(str(doc.get('issuer_anchor_id')), str(doc.get('action')))
                      and saved.get('case_context_sha256') == case['context_sha256'] and saved.get('document_sha256') == digest(doc), 'ISSUER_STATE_INTEGRITY_FAILED', 503)
                 validate(doc, self.action_ids)
                 self.check_issuer(doc, saved['signature_b64'], now)
@@ -726,7 +735,8 @@ class Engine:
             except Exception:
                 reason = 'ISSUER_STATE_UNAVAILABLE'
             d = doc if isinstance(doc, dict) else {}
-            row = {'record_id': record_id, 'issuer_anchor_id': d.get('issuer_anchor_id') or None, 'action': d.get('action') or None, 'state': d.get('state') or 'unavailable',
+            row = {'record_id': record_id, 'issuer_anchor_id': d.get('issuer_anchor_id') or None, 'action': d.get('action') or None,
+                   'canonical_action_id': canonical_action(d.get('action')) if d.get('action') else None, 'state': d.get('state') or 'unavailable',
                    'blocking': reason is not None, 'reason': reason, 'valid_until': d.get('valid_until') or None, 'conditions': d.get('conditions') or [],
                    'supersedes': d.get('supersedes') or None, 'document_sha256': (saved or {}).get('document_sha256') or None, 'lab_fixture': True}
             if d.get('type') == V2:
@@ -770,6 +780,20 @@ CONSTRUCTORS = {
     'closure_reference': lambda row: canon(row['content']),
     'anchor_document': lambda row: canon(row['document']),
 }
+
+
+def canonical_action(value):
+    """An alias resolves to its versioned identifier; any other identifier resolves to itself."""
+    return LEGACY_ACTION_ALIASES.get(value, value) if isinstance(value, str) else None
+
+
+def slot_key(anchor_id, action):
+    return str(anchor_id) + ':' + str(canonical_action(action))
+
+
+def canonical_slot(key):
+    i = str(key).rfind(':')
+    return str(key) if i < 0 else slot_key(str(key)[:i], str(key)[i + 1:])
 
 
 def run(vectors):

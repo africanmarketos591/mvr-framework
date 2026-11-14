@@ -1,0 +1,3172 @@
+{
+ "classification": "proprietary lab fixtures; not observations of real organisations",
+ "frozen": "2026-11-11",
+ "precedence_version": "mvr.effect-precedence/3",
+ "rule": "Exclusion removes a record's power to support a claim, never its power to weaken it. A record about a claim that says the link is missing makes the claim insufficient; one that states a qualifier makes it conditional; an unrelated record changes nothing. Internal planning is favorable and planning_only throughout.",
+ "cases": [
+  {
+   "case_id": "complete",
+   "expected": {
+    "analytical": "favorable",
+    "internal_recommendation": "favorable",
+    "internal_planning": "favorable"
+   },
+   "note": "Both load-bearing claims have current, in-scope support that states the link established.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:replaces-the-support",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "The only record for the claim says it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:added-beside-support",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable",
+    "reason": "MISSING_LINK_PRECEDES_SUPPORT"
+   },
+   "note": "Missing-link precedence: the statement outweighs support it does not post-date.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:added-declared-qualifies",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "A declared qualifier whose text says the link is missing is a missing link.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "qualifies",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:added-context-only",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "A context record about the claim cannot support it, and still weakens it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "context_only",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:added-unlinked",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "Leaving a record unlinked does not silence it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:added-dated-later",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "A later statement stands.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-10-15"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:added-undated",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "An undated record cannot support; what it says against the link still counts.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:added-geography-undeclared",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "A record with no declared geography cannot support; what it says against the link still counts.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:its-own-load-bearing-claim",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "A separate load-bearing claim carries it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "The installation partnership is signed.",
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:background-claim-about-the-same-link",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "A background claim does not carry the effect, but its record is still about a load-bearing claim and weakens it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "load_bearing": false,
+      "claim": "Background on the installation partnership paperwork.",
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "context_only",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:replaces-the-support",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "The only record for the claim says it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:added-beside-support",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable",
+    "reason": "SUPPORT_QUALIFIED"
+   },
+   "note": "Qualifier precedence: a qualified record narrows the claim beside unqualified support.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:added-declared-qualifies",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "Declared and stated qualifier.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "qualifies",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:added-context-only",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "A context record about the claim cannot support it, and still weakens it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "context_only",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:added-unlinked",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "Leaving a record unlinked does not silence it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:added-dated-later",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "A later statement stands.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-10-15"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:added-undated",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "An undated record cannot support; what it says against the link still counts.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:added-geography-undeclared",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "A record with no declared geography cannot support; what it says against the link still counts.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:its-own-load-bearing-claim",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "A separate load-bearing claim carries it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "claim": "The installation partnership is in force.",
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:background-claim-about-the-same-link",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "A background claim does not carry the effect, but its record is still about a load-bearing claim and weakens it.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C3",
+      "load_bearing": false,
+      "claim": "Background on the installation partnership paperwork.",
+      "support_links": [
+       {
+        "evidence_id": "E3",
+        "relationship": "context_only",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The partnership applies subject to ratification by the Acholi Power Services board.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:dated-before-the-support",
+   "expected": {
+    "analytical": "favorable",
+    "internal_recommendation": "favorable",
+    "internal_planning": "favorable"
+   },
+   "note": "Support dated after the gap settles it: \"not signed\" in June, executed in July.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-06-01"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:declared-contradiction",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "A declared contradiction beside support is contested.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "The installation partnership has not been signed.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:claim-has-no-record",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable"
+   },
+   "note": "A load-bearing claim with no linked record.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": []
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "missing:record-is-silent-on-the-link",
+   "expected": {
+    "analytical": "insufficient",
+    "internal_recommendation": "insufficient",
+    "internal_planning": "favorable",
+    "reason": "SUPPORT_DOES_NOT_STATE_LINK"
+   },
+   "note": "Silence is not support for a claim that a relationship exists.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services is an installer based in Gulu.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "complete:silent-record-beside-support",
+   "expected": {
+    "analytical": "favorable",
+    "internal_recommendation": "favorable",
+    "internal_planning": "favorable"
+   },
+   "note": "A silent record is not a counter-statement: other support stands.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Acholi Power Services is an installer based in Gulu.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "qualifier:declared-qualifier-with-plain-text",
+   "expected": {
+    "analytical": "conditional",
+    "internal_recommendation": "conditional",
+    "internal_planning": "favorable"
+   },
+   "note": "Qualifier preservation: a declared qualifier keeps its state; a text reading cannot turn it into a missing link.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "E3",
+        "relationship": "qualifies",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E3",
+      "claim": "Installations are carried out in Gulu municipality.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "irrelevant:unlinked-with-cue-words",
+   "expected": {
+    "analytical": "favorable",
+    "internal_recommendation": "favorable",
+    "internal_planning": "favorable"
+   },
+   "note": "An unrelated record never changes a state, whatever words it uses.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "The Gulu road upgrade has not been completed and applies only to the northern bypass.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-10-25"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "irrelevant:context-link-with-cue-words",
+   "expected": {
+    "analytical": "favorable",
+    "internal_recommendation": "favorable",
+    "internal_planning": "favorable"
+   },
+   "note": "A context link to an unrelated record changes nothing.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "Z1",
+        "relationship": "context_only",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "Z1",
+      "claim": "A weather bulletin says seasonal rains are pending and travel is permitted only by day.",
+      "source_class": "public_bulletin",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-10-25"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "revoked:structured",
+   "expected": {
+    "analytical": "adverse",
+    "internal_recommendation": "adverse",
+    "internal_planning": "favorable",
+    "authority": "revoked"
+   },
+   "note": "A revocation is adverse and the authority state is revoked; planning stays planning.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "R1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "R1",
+      "claim": "Electricity Regulatory Authority notice concerning licence ERA-RL-221 of Nile Solar Ltd.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-10-10",
+      "authority_effect": "revocation"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "revoked:stated-in-the-support-record",
+   "expected": {
+    "analytical": "adverse",
+    "internal_recommendation": "adverse",
+    "internal_planning": "favorable",
+    "authority": "revoked"
+   },
+   "note": "A record linked as support that states the revocation is adverse.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority revoked retail licence ERA-RL-221 of Nile Solar Ltd on 2026-10-09.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-10-10"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "prohibited:stated",
+   "expected": {
+    "analytical": "adverse",
+    "internal_recommendation": "adverse",
+    "internal_planning": "favorable",
+    "authority": "not_authorized"
+   },
+   "note": "An issuer prohibition is adverse; authority not_authorized.",
+   "request": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "locality": "gulu"
+    },
+    "subject": {
+     "entity_name": "Nile Solar Ltd"
+    },
+    "requested_effects": [
+     {
+      "effect_id": "EXT-OFFER",
+      "effect_type": "external_offer",
+      "description": "Send distribution terms to the gulu partner"
+     },
+     {
+      "effect_id": "EXT-ORDER",
+      "effect_type": "procurement_order",
+      "description": "Place the first stock order"
+     },
+     {
+      "effect_id": "INT-REC",
+      "effect_type": "internal_recommendation",
+      "description": "Recommend market entry to the board"
+     },
+     {
+      "effect_id": "INT-PLAN",
+      "effect_type": "internal_planning",
+      "description": "Plan the internal entry workstream"
+     }
+    ],
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "Nile Solar Ltd holds a current electricity retail licence in Uganda.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       },
+       {
+        "evidence_id": "X1",
+        "relationship": "contradicts",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Nile Solar Ltd has an active Gulu installation partner.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The Electricity Regulatory Authority granted retail licence ERA-RL-221 to Nile Solar Ltd on 2026-05-20, valid until 2028-05-19.",
+      "source_class": "regulator_published",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Acholi Power Services executed an installation partnership with Nile Solar Ltd on 2026-07-11.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-09-20"
+     },
+     {
+      "evidence_id": "X1",
+      "claim": "The Electricity Regulatory Authority barred Nile Solar Ltd from selling pay-as-you-go systems in Gulu.",
+      "source_class": "counterparty_record",
+      "evidence_geography": {
+       "country": "UG",
+       "locality": "gulu"
+      },
+      "source_date": "2026-10-12"
+     }
+    ]
+   }
+  }
+ ]
+}

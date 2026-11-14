@@ -14,6 +14,13 @@ export const ENTERPRISE_REALM = 'amos-enterprise-conformance';
 export async function runEnterpriseConformanceFlow({conformance, get, effectDecision, fetchImpl, base, today = new Date().toISOString().slice(0, 10), pinnedEnterpriseRoot = null, pinnedLabRoot = null, checkQuota = false}) {
   const checks = [];
   const check = async (name, fn) => { try { const detail = await fn(); checks.push({name, passed: true, ...(detail === undefined ? {} : {detail})}); } catch (error) { checks.push({name, passed: false, error: String(error?.message || error).slice(0, 400)}); } };
+  await check('capabilities and OpenAPI advertise the Enterprise realm', async () => {
+    const caps = await get('/v1/capabilities');
+    assert.equal(caps.enterprise_conformance?.issue_realm, 'enterprise_conformance');
+    assert.equal(caps.enterprise_conformance.production_authority, false);
+    const spec = await get('/v1/openapi.json');
+    assert.match(JSON.stringify(spec.paths['/v1/authority-conformance'].post), /enterprise_conformance/);
+  });
   const issueBody = {action: 'issue', synthetic_only: true, acknowledge_no_identity_verification: true, realm: 'enterprise_conformance'};
   await check('the Enterprise realm is refused without a licensed key', async () => { const r = await conformance(issueBody, {key: null}); assert.equal(r.http_status, 401); assert.equal(r.code, 'AUTHORITY_CONFORMANCE_ENTERPRISE_KEY_REQUIRED'); });
   // Trust roots: the Enterprise realm has its own root, distinct from the lab root.
@@ -86,17 +93,28 @@ export async function runEnterpriseConformanceFlow({conformance, get, effectDeci
   // Revocation reaches a connected receiver through the feed, and the receiver then refuses.
   const pending = await source.commitFresh(), proofBefore = await source.current_state();
   await check('a revocation reaches the connected subscriber by long poll, and the adapter refuses', async () => {
-    const started = Date.now();
-    const following = feed.follow({deadlineMs: Date.now() + 25000, stop: () => feed.state.revoked_capabilities.has(proofBefore.capability_id), wait: 10});
+    let receivedAt;
+    const following = feed.follow({deadlineMs: Date.now() + 25000, stop: () => feed.state.revoked_capabilities.has(proofBefore.capability_id), wait: 10, onRevocation: event => { if (event.id === proofBefore.capability_id) receivedAt = performance.now(); }});
     await new Promise(r => setTimeout(r, 1500));
+    const started = performance.now();
     await source.revoke_current('Conformance: revoke while the receiver is connected');
     await following;
     assert.ok(feed.state.revoked_capabilities.has(proofBefore.capability_id), 'revocation entry received');
-    const latency = (Date.now() - started) / 1000;
+    assert.ok(receivedAt >= started, 'subscriber observed this revocation after submission');
+    const latencyMs = Math.round(receivedAt - started);
     const r = await adapter.commit({receipt: pending.receipt, requested_effect: pending.requested_effect, registry_statement: statement, current_state: proofBefore});
     assert.equal(r.performed, false); assert.equal(r.code, 'BUYER_CAPABILITY_REVOKED_IN_FEED', JSON.stringify(r)); assert.equal(performed.length, 1);
-    return {seconds_until_received: Math.round(latency * 10) / 10, polls: feed.state.polls};
+    return {revocation_submit_to_observation_ms: latencyMs, polls: feed.state.polls};
   });
+  for (const spelling of ['create_draft_record', 'amos.document.draft.create@1']) {
+    await check('revoking the capability denies ' + spelling, async () => {
+      const r = await effectDecision(decisionBody(spelling), 'enterprise');
+      const e = r.effects?.[0];
+      assert.equal(e?.execution_authorization_status, 'revoked');
+      assert.equal(e?.institutional_authority_status, 'revoked');
+      assert.equal(e.canonical_action_id, 'amos.document.draft.create@1');
+    });
+  }
   await check('a receiver offline longer than its risk class allows applies zero effects', async () => {
     await source.register_capability();
     await feed.poll();

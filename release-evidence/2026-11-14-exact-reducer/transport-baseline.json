@@ -1,0 +1,1806 @@
+{
+  "suite": "AMOS 112-cell comparison",
+  "cohort_sha256": "c4604a1a7da204fe3a9291a1a6b8e3b6d4fc26514c3aac5d3cbb1fac63097eb7",
+  "deployment_revision": "2026-11-02.state-propagation.3",
+  "manifest_id": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+  "retries": 0,
+  "cells": 112,
+  "summary": {
+    "primary": 112,
+    "effect": 112
+  },
+  "rows": [
+    {
+      "case_id": "dairy-ke:complete",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 6117
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1878
+      }
+    },
+    {
+      "case_id": "dairy-ke:missing",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3806
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1202
+      }
+    },
+    {
+      "case_id": "dairy-ke:conditional",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3875
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1097
+      }
+    },
+    {
+      "case_id": "dairy-ke:revoked",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3787
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1086
+      }
+    },
+    {
+      "case_id": "dairy-ke:prohibited",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4126
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1156
+      }
+    },
+    {
+      "case_id": "dairy-ke:irrelevant",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3852
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1111
+      }
+    },
+    {
+      "case_id": "solar-ug:complete",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4296
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1191
+      }
+    },
+    {
+      "case_id": "solar-ug:missing",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3806
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1080
+      }
+    },
+    {
+      "case_id": "solar-ug:conditional",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4376
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "solar-ug:revoked",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3809
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1110
+      }
+    },
+    {
+      "case_id": "solar-ug:prohibited",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3884
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1069
+      }
+    },
+    {
+      "case_id": "solar-ug:irrelevant",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3778
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1097
+      }
+    },
+    {
+      "case_id": "pharma-tz:complete",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3777
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1087
+      }
+    },
+    {
+      "case_id": "pharma-tz:missing",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3791
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1122
+      }
+    },
+    {
+      "case_id": "pharma-tz:conditional",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3911
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1072
+      }
+    },
+    {
+      "case_id": "pharma-tz:revoked",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3782
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1079
+      }
+    },
+    {
+      "case_id": "pharma-tz:prohibited",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3773
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1096
+      }
+    },
+    {
+      "case_id": "pharma-tz:irrelevant",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3818
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:complete",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3793
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1085
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:missing",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3784
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1089
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:conditional",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3835
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1094
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:revoked",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3820
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:prohibited",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4170
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1081
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:irrelevant",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3857
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1085
+      }
+    },
+    {
+      "case_id": "agro-rw:complete",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3784
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1083
+      }
+    },
+    {
+      "case_id": "agro-rw:missing",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3891
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1085
+      }
+    },
+    {
+      "case_id": "agro-rw:conditional",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3799
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1081
+      }
+    },
+    {
+      "case_id": "agro-rw:revoked",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3800
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1184
+      }
+    },
+    {
+      "case_id": "agro-rw:prohibited",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4156
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1091
+      }
+    },
+    {
+      "case_id": "agro-rw:irrelevant",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3799
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1082
+      }
+    },
+    {
+      "case_id": "agent-gh:complete",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3862
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1077
+      }
+    },
+    {
+      "case_id": "agent-gh:missing",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3788
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1086
+      }
+    },
+    {
+      "case_id": "agent-gh:conditional",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3781
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1079
+      }
+    },
+    {
+      "case_id": "agent-gh:revoked",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3818
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1079
+      }
+    },
+    {
+      "case_id": "agent-gh:prohibited",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3796
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1097
+      }
+    },
+    {
+      "case_id": "agent-gh:irrelevant",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3790
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1117
+      }
+    },
+    {
+      "case_id": "school-meals-ng:complete",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3820
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1090
+      }
+    },
+    {
+      "case_id": "school-meals-ng:missing",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3835
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1080
+      }
+    },
+    {
+      "case_id": "school-meals-ng:conditional",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3788
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "school-meals-ng:revoked",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4093
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1079
+      }
+    },
+    {
+      "case_id": "school-meals-ng:prohibited",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3759
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1076
+      }
+    },
+    {
+      "case_id": "school-meals-ng:irrelevant",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3820
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1083
+      }
+    },
+    {
+      "case_id": "cement-zm:complete",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3800
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1076
+      }
+    },
+    {
+      "case_id": "cement-zm:missing",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3786
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1073
+      }
+    },
+    {
+      "case_id": "cement-zm:conditional",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3796
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1074
+      }
+    },
+    {
+      "case_id": "cement-zm:revoked",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3783
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1070
+      }
+    },
+    {
+      "case_id": "cement-zm:prohibited",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3833
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1099
+      }
+    },
+    {
+      "case_id": "cement-zm:irrelevant",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3795
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "internal:1",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3045
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1075
+      }
+    },
+    {
+      "case_id": "internal:2",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3395
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "internal:3",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3017
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1185
+      }
+    },
+    {
+      "case_id": "internal:4",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3124
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1091
+      }
+    },
+    {
+      "case_id": "internal:5",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3049
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1071
+      }
+    },
+    {
+      "case_id": "internal:6",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3065
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1072
+      }
+    },
+    {
+      "case_id": "internal:7",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3024
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1086
+      }
+    },
+    {
+      "case_id": "internal:8",
+      "profile": "full_advisory",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3004
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1075
+      }
+    },
+    {
+      "case_id": "dairy-ke:complete",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3831
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1092
+      }
+    },
+    {
+      "case_id": "dairy-ke:missing",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4426
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1084
+      }
+    },
+    {
+      "case_id": "dairy-ke:conditional",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3824
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1072
+      }
+    },
+    {
+      "case_id": "dairy-ke:revoked",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3806
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1098
+      }
+    },
+    {
+      "case_id": "dairy-ke:prohibited",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3820
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1094
+      }
+    },
+    {
+      "case_id": "dairy-ke:irrelevant",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3825
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1137
+      }
+    },
+    {
+      "case_id": "solar-ug:complete",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3776
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1089
+      }
+    },
+    {
+      "case_id": "solar-ug:missing",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3775
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1082
+      }
+    },
+    {
+      "case_id": "solar-ug:conditional",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4261
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1093
+      }
+    },
+    {
+      "case_id": "solar-ug:revoked",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3810
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1088
+      }
+    },
+    {
+      "case_id": "solar-ug:prohibited",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3805
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1084
+      }
+    },
+    {
+      "case_id": "solar-ug:irrelevant",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3793
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1087
+      }
+    },
+    {
+      "case_id": "pharma-tz:complete",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3775
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1084
+      }
+    },
+    {
+      "case_id": "pharma-tz:missing",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4064
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1085
+      }
+    },
+    {
+      "case_id": "pharma-tz:conditional",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3814
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1079
+      }
+    },
+    {
+      "case_id": "pharma-tz:revoked",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3788
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1071
+      }
+    },
+    {
+      "case_id": "pharma-tz:prohibited",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3785
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1077
+      }
+    },
+    {
+      "case_id": "pharma-tz:irrelevant",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4055
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1090
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:complete",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4179
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1080
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:missing",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3829
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1102
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:conditional",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3812
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:revoked",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4455
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1085
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:prohibited",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3780
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1077
+      }
+    },
+    {
+      "case_id": "cash-transfer-ke:irrelevant",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3793
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1090
+      }
+    },
+    {
+      "case_id": "agro-rw:complete",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3826
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1070
+      }
+    },
+    {
+      "case_id": "agro-rw:missing",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3794
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1081
+      }
+    },
+    {
+      "case_id": "agro-rw:conditional",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3854
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1073
+      }
+    },
+    {
+      "case_id": "agro-rw:revoked",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4162
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1090
+      }
+    },
+    {
+      "case_id": "agro-rw:prohibited",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3779
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1108
+      }
+    },
+    {
+      "case_id": "agro-rw:irrelevant",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3766
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "agent-gh:complete",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3817
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1128
+      }
+    },
+    {
+      "case_id": "agent-gh:missing",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3838
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1083
+      }
+    },
+    {
+      "case_id": "agent-gh:conditional",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3804
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1083
+      }
+    },
+    {
+      "case_id": "agent-gh:revoked",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3798
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "agent-gh:prohibited",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3812
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1089
+      }
+    },
+    {
+      "case_id": "agent-gh:irrelevant",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3834
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1086
+      }
+    },
+    {
+      "case_id": "school-meals-ng:complete",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3830
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1080
+      }
+    },
+    {
+      "case_id": "school-meals-ng:missing",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3827
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1086
+      }
+    },
+    {
+      "case_id": "school-meals-ng:conditional",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3797
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1077
+      }
+    },
+    {
+      "case_id": "school-meals-ng:revoked",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3772
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1074
+      }
+    },
+    {
+      "case_id": "school-meals-ng:prohibited",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4072
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1081
+      }
+    },
+    {
+      "case_id": "school-meals-ng:irrelevant",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3811
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1081
+      }
+    },
+    {
+      "case_id": "cement-zm:complete",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3826
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1071
+      }
+    },
+    {
+      "case_id": "cement-zm:missing",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3812
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1079
+      }
+    },
+    {
+      "case_id": "cement-zm:conditional",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4142
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1078
+      }
+    },
+    {
+      "case_id": "cement-zm:revoked",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3861
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1087
+      }
+    },
+    {
+      "case_id": "cement-zm:prohibited",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3791
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1066
+      }
+    },
+    {
+      "case_id": "cement-zm:irrelevant",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 4115
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1114
+      }
+    },
+    {
+      "case_id": "internal:1",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3016
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1071
+      }
+    },
+    {
+      "case_id": "internal:2",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3001
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1074
+      }
+    },
+    {
+      "case_id": "internal:3",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3002
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1070
+      }
+    },
+    {
+      "case_id": "internal:4",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 2999
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1071
+      }
+    },
+    {
+      "case_id": "internal:5",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3033
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1067
+      }
+    },
+    {
+      "case_id": "internal:6",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3017
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1066
+      }
+    },
+    {
+      "case_id": "internal:7",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3036
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1080
+      }
+    },
+    {
+      "case_id": "internal:8",
+      "profile": "strict_calibrated",
+      "primary": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 3036
+      },
+      "effect": {
+        "http": 200,
+        "release": "MVRRM-a7edfc9c9368bf59c07aaf09f34129d9",
+        "ok": true,
+        "ms": 1081
+      }
+    }
+  ]
+}

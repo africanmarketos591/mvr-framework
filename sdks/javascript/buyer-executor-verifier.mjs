@@ -60,6 +60,9 @@ export function createBuyerExecutor({pinnedRoot, expect = {}, action, executorPr
       if ((current_state.feed_sequence ?? 0) > feed.state.last_sequence) return refuse('BUYER_FEED_BEHIND_PROOF', steps);
       if (feed.state.session_closed) return refuse('BUYER_SESSION_CLOSED', steps);
       if (feed.state.revoked_capabilities.has(current_state.capability_id)) return refuse('BUYER_CAPABILITY_REVOKED_IN_FEED', steps);
+      if (feed.state.revocations.some(event => event.sequence > current_state.feed_sequence && event.action !== 'revoke_capability')) {
+        return refuse('BUYER_FEED_BEHIND_PROOF', steps, 'a dependency changed after the signed proof');
+      }
       steps.push({check: 'feed_current', last_sequence: feed.state.last_sequence, proof_feed_sequence: current_state.feed_sequence ?? 0});
       if (!requested_effect || requested_effect.effect_id !== receipt.effect_id || await sha256(canonicalJson(requested_effect)) !== receipt.requested_effect_sha256) return refuse('BUYER_EFFECT_MISMATCH', steps);
       if (canonicalAction(requested_effect.effect_type) !== canonicalAction(action)) return refuse('BUYER_ACTION_NOT_SUPPORTED', steps);

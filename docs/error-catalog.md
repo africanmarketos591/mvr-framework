@@ -44,7 +44,7 @@ https://africanmarketos.com/get-api-key
 - `REVIEW_CONDITION_UNMET:<type>`
 - `SEPARATION_OF_DUTIES_EXECUTOR_REVIEWED`, `SEPARATION_OF_DUTIES_APPROVER_REVIEWED`, `SEPARATION_OF_DUTIES_APPROVER_EXECUTES`
 
-`ISSUER_STATE_CASE_ACTION_MISMATCH` now carries a `detail` naming both identifiers, and `same_action_by_alias`.
+ISSUER_STATE_CASE_ACTION_MISMATCH (409) identifies two different actions. Its detail names both identifiers. A recognized alias and canonical ID share one slot. ISSUER_STATE_SUPERSESSION_REQUIRED (409) means the replacement must name the current head of that slot.
 
 **Explain:**
 - `NARRATIVE_MODE_UNSUPPORTED`: `narrative_mode` must be one of `technical`, `analyst`, `executive`, `board`, `client_safe` or `field_team`.

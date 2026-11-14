@@ -1,0 +1,1952 @@
+{
+ "classification": "proprietary lab fixtures (AMOS-authored, logically consistent, public-safe); not observations of real organisations",
+ "frozen_at": "2026-11-11",
+ "contract_version": "mvr.audit-finding/1",
+ "bar": {
+  "defects_detected_at_least": 15,
+  "defects": 16,
+  "route_level_false_permits": 0,
+  "clean_false_positives": 0,
+  "controlling_at_least": 23,
+  "targeted_at_least": 15,
+  "internal_only_false_triggers": 0
+ },
+ "scoring": "Same scorer as heldout-r9 (../heldout-r9/score.mjs).",
+ "routes": [
+  "/v1/evidence-validation",
+  "/v1/privacy-risk-review",
+  "/v1/evidence-suitability-scan",
+  "/v1/board-safety-check",
+  "/v1/red-team",
+  "/v1/release-check",
+  "/v1/claim-audit",
+  "/v1/decision-check",
+  "/v1/evidence-completeness",
+  "/v1/evidence-review"
+ ],
+ "cases": [
+  {
+   "case_id": "validation_old_record",
+   "route": "/v1/evidence-validation",
+   "expected_defect_code": "EVIDENCE_STALE",
+   "expected_locus": {
+    "evidence_id": "V2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "entity_archetype": "distributor",
+    "evidence_pack": [
+     {
+      "evidence_id": "V1",
+      "claim": "The donor approved release of the second tranche on 2026-09-14.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-09-14",
+      "id": "V1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V1",
+      "freshness_date": "2026-09-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "V2",
+      "claim": "Cold-chain capacity assessment of district stores.",
+      "source_class": "nonprobability_survey",
+      "country": "UG",
+      "published_at": "2023-11-20",
+      "id": "V2",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V2",
+      "freshness_date": "2023-11-20",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "validation_other_country",
+   "route": "/v1/evidence-validation",
+   "expected_defect_code": "GEOGRAPHY_MISMATCH",
+   "expected_locus": {
+    "evidence_id": "V2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "entity_archetype": "distributor",
+    "evidence_pack": [
+     {
+      "evidence_id": "V1",
+      "claim": "The donor approved release of the second tranche on 2026-09-14.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-09-14",
+      "id": "V1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V1",
+      "freshness_date": "2026-09-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "V2",
+      "claim": "Supplier performance review for vaccine fridges.",
+      "source_class": "nonprobability_survey",
+      "geography": "KE",
+      "date": "2026-08-05",
+      "id": "V2",
+      "evidence_geography": {
+       "country": "KE"
+      },
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V2",
+      "freshness_date": "2026-08-05",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "privacy_named_officer",
+   "route": "/v1/privacy-risk-review",
+   "expected_defect_code": "PRIVACY_ENVELOPE_CONFLICT",
+   "expected_locus": {
+    "input_path": "/narrative"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "privacy_envelope": {
+     "contains_personal_data": false
+    },
+    "narrative": "Before delivery, call the district cold-chain officer, Mr Okello Peter, on his mobile 0772 310 448."
+   }
+  },
+  {
+   "case_id": "privacy_patient_extract",
+   "route": "/v1/privacy-risk-review",
+   "expected_defect_code": "PERSONAL_DATA_UNDECLARED",
+   "expected_locus": {
+    "evidence_id": "P1"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "evidence_pack": [
+     {
+      "evidence_id": "P1",
+      "claim": "Clinic register extract for the outreach cohort.",
+      "notes": "Entry 31: National ID CM90012345ABCD, date of birth 1990-02-11.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-09-22",
+      "id": "P1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-P1",
+      "freshness_date": "2026-09-22",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "suitability_company_website",
+   "route": "/v1/evidence-suitability-scan",
+   "expected_defect_code": "SOURCE_UNSUITABLE_FOR_USE",
+   "expected_locus": {
+    "evidence_id": "S1"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "available_data": [
+     {
+      "evidence_id": "S1",
+      "claim": "Mara Clinics Ltd is authorised by the National Drug Authority to import cold-chain equipment.",
+      "source_class": "entity_reported",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-10-06",
+      "id": "S1",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "internal_operations",
+      "source_grade": "B",
+      "source_doc_id": "LAB-S1",
+      "freshness_date": "2026-10-06",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "suitability_decision_awaited",
+   "route": "/v1/evidence-suitability-scan",
+   "expected_defect_code": "SUPPORT_STATES_LINK_MISSING",
+   "expected_locus": {
+    "evidence_id": "S2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "evidence_pack": [
+     {
+      "evidence_id": "S2",
+      "claim": "Safeguards clearance for the Lira works has been requested from the authority; a decision is awaited.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-10-09",
+      "id": "S2",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-S2",
+      "freshness_date": "2026-10-09",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "board_claims_conditions_met",
+   "route": "/v1/board-safety-check",
+   "expected_defect_code": "OUTPUT_OVERSTATES_EVIDENCE",
+   "expected_locus": {
+    "input_path": "/report_pack/recommendation"
+   },
+   "body": {
+    "report_pack": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The donor approved release of the second tranche on 2026-09-14, on receipt of the audited accounts.",
+       "source_class": "administrative_record",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-09-14",
+       "id": "E1",
+       "evidence_type": "public_filing",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-09-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "UG"
+     },
+     "recommendation": "Every approval is in place and the board can release the second tranche now."
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "UG"
+    }
+   }
+  },
+  {
+   "case_id": "board_receipt_in_pack",
+   "route": "/v1/board-safety-check",
+   "expected_defect_code": "RECEIPT_USED_AS_EVIDENCE",
+   "expected_locus": {
+    "evidence_id": "X7"
+   },
+   "body": {
+    "report_pack": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        },
+        {
+         "evidence_id": "X7",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "By letter of 2026-09-14 the donor approved release of the second tranche to Kivu Health Trust.",
+       "source_class": "administrative_record",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-09-14",
+       "id": "E1",
+       "evidence_type": "public_filing",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-09-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "X7",
+       "claim": "Tranche release confirmed.",
+       "amos_receipt": "ISR-9f8e7d6c9f8e7d6c9f8e7d6c9f8e7d6c",
+       "source_class": "entity_reported",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-10-21",
+       "id": "X7",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "internal_operations",
+       "source_grade": "B",
+       "source_doc_id": "LAB-X7",
+       "freshness_date": "2026-10-21",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "UG"
+     }
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "UG"
+    }
+   }
+  },
+  {
+   "case_id": "redteam_check_as_authority",
+   "route": "/v1/red-team",
+   "expected_defect_code": "OUTPUT_CITES_AMOS_AS_PERMISSION",
+   "expected_locus": {
+    "input_path": "/decision_result/agent_output"
+   },
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "By letter of 2026-09-14 the donor approved release of the second tranche to Kivu Health Trust.",
+       "source_class": "administrative_record",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-09-14",
+       "id": "E1",
+       "evidence_type": "public_filing",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-09-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-07-03",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-07-03",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "UG"
+     },
+     "agent_output": "The AMOS check came back favorable, which authorises the payment run to the supplier."
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "UG"
+    },
+    "red_team_depth": "standard"
+   }
+  },
+  {
+   "case_id": "redteam_approval_withdrawn",
+   "route": "/v1/red-team",
+   "expected_defect_code": "REVOCATION_PRESENT",
+   "expected_locus": {
+    "claim_id": "C1",
+    "evidence_id": "E1"
+   },
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "The donor withdrew its approval of the second tranche on 20 October 2026.",
+       "source_class": "administrative_record",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-10-20",
+       "id": "E1",
+       "evidence_type": "public_filing",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-10-20",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-07-03",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-07-03",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "UG"
+     }
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "UG"
+    },
+    "red_team_depth": "standard"
+   }
+  },
+  {
+   "case_id": "release_ministry_stop_order",
+   "route": "/v1/release-check",
+   "expected_defect_code": "PROHIBITION_PRESENT",
+   "expected_locus": {
+    "claim_id": "C3",
+    "evidence_id": "E3"
+   },
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C3",
+       "claim": "Kivu Health Trust may procure the cold-chain equipment.",
+       "support_links": [
+        {
+         "evidence_id": "E3",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "By letter of 2026-09-14 the donor approved release of the second tranche to Kivu Health Trust.",
+       "source_class": "administrative_record",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-09-14",
+       "id": "E1",
+       "evidence_type": "public_filing",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-09-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-07-03",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-07-03",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E3",
+       "claim": "The Ministry of Health prohibited Kivu Health Trust from procuring cold-chain equipment pending an audit.",
+       "source_class": "administrative_record",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-10-12",
+       "id": "E3",
+       "evidence_type": "public_filing",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E3",
+       "freshness_date": "2026-10-12",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "UG"
+     }
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "UG"
+    }
+   }
+  },
+  {
+   "case_id": "claimaudit_amount",
+   "route": "/v1/claim-audit",
+   "expected_defect_code": "UNSUPPORTED_QUANTITY",
+   "expected_locus": {
+    "claim_id": "C1"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "The donor approved a second tranche of USD 480,000.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "By letter of 2026-09-14 the donor approved a second tranche of USD 400,000.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-09-14",
+      "id": "E1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-09-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-07-03",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-07-03",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "claimaudit_scope_limit",
+   "route": "/v1/claim-audit",
+   "expected_defect_code": "QUALIFIER_IN_SUPPORT",
+   "expected_locus": {
+    "claim_id": "C1",
+    "evidence_id": "E1"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The donor approved release of the second tranche on 2026-09-14 for health activities but not construction.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-09-14",
+      "id": "E1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-09-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-07-03",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-07-03",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "decision_background_only",
+   "route": "/v1/decision-check",
+   "expected_defect_code": "CONTEXT_ONLY_SUPPORT",
+   "expected_locus": {
+    "claim_id": "C2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG",
+     "decision_scope_level": "country"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "entity_name": "Kivu Health Trust",
+    "country": "UG",
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "context_only",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "By letter of 2026-09-14 the donor approved release of the second tranche to Kivu Health Trust.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-09-14",
+      "id": "E1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-09-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-07-03",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-07-03",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ],
+    "mode": "evidence_backed",
+    "case_type": "scaling",
+    "maturity_level": "startup",
+    "stakeholder_scope": [
+     "retailer",
+     "public_official"
+    ]
+   }
+  },
+  {
+   "case_id": "completeness_other_company",
+   "route": "/v1/evidence-completeness",
+   "expected_defect_code": "UNSUPPORTED_ACTOR",
+   "expected_locus": {
+    "claim_id": "C2"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "decision_question": "Should we release the supplier advance?",
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mara Medical Supplies Ltd is the contracted supplier of cold-chain equipment.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "By letter of 2026-09-14 the donor approved release of the second tranche to Kivu Health Trust.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-09-14",
+      "id": "E1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-09-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-07-03",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-07-03",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "review_rule_against",
+   "route": "/v1/evidence-review",
+   "expected_defect_code": "DIRECTIVE_IN_SUPPORT",
+   "expected_locus": {
+    "claim_id": "R1",
+    "evidence_id": "E9"
+   },
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "evidence_id": "E9",
+    "review_status": "pending",
+    "evidence_item": {
+     "evidence_id": "E9",
+     "claim": "Sub-grantees must not procure equipment above USD 10,000 without the donor's prior approval.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-09-14",
+     "id": "E9",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E9",
+     "freshness_date": "2026-09-14",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    },
+    "claim_support": [
+     {
+      "claim_id": "R1",
+      "claim": "Tukole Youth Initiative may procure the cold room directly.",
+      "relationship": "direct_support",
+      "locator": "claim"
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "clean_claimaudit_no_objection",
+   "route": "/v1/claim-audit",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "The donor approved release of the second tranche to Kivu Health Trust on 2026-09-14; no objections were raised by the co-financier and no further approval is needed.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-09-14",
+      "id": "E1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-09-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-07-03",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-07-03",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "clean_release_contract_terms",
+   "route": "/v1/release-check",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "By letter of 2026-09-14 the donor approved release of the second tranche to Kivu Health Trust.",
+       "source_class": "administrative_record",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-09-14",
+       "id": "E1",
+       "evidence_type": "public_filing",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-09-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Supply contract CC-2026-07 between Mara Clinics Ltd and the programme, price UGX 380 million inclusive of taxes and governed by the laws of Uganda, was signed by both parties on 2026-07-03.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-07-03",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-07-03",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "UG"
+     }
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "UG"
+    }
+   }
+  },
+  {
+   "case_id": "clean_privacy_office_contact",
+   "route": "/v1/privacy-risk-review",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "privacy_envelope": {
+     "contains_personal_data": false
+    },
+    "narrative": "Queries go to procurement@kivuhealth.example or the trust reception on +256 414 555 010."
+   }
+  },
+  {
+   "case_id": "clean_validation_field_spellings",
+   "route": "/v1/evidence-validation",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "entity_archetype": "distributor",
+    "evidence_pack": [
+     {
+      "evidence_id": "V1",
+      "claim": "Donor letter approving release of the second tranche.",
+      "source_class": "administrative_record",
+      "country": "UG",
+      "published_at": "2026-09-14",
+      "id": "V1",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V1",
+      "freshness_date": "2026-09-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "V2",
+      "claim": "Supply contract CC-2026-07 signed with Mara Clinics Ltd.",
+      "source_class": "structured_field_research",
+      "geography": "UG",
+      "date": "2026-07-03",
+      "id": "V2",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-V2",
+      "freshness_date": "2026-07-03",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "clean_board_bounded",
+   "route": "/v1/board-safety-check",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "report_pack": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "By letter of 2026-09-14 the donor approved release of the second tranche to Kivu Health Trust.",
+       "source_class": "administrative_record",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-09-14",
+       "id": "E1",
+       "evidence_type": "public_filing",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-09-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-07-03",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-07-03",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "UG"
+     },
+     "recommendation": "The record supports preparing the release request; funds should move after the institution approver has signed."
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "UG"
+    }
+   }
+  },
+  {
+   "case_id": "clean_redteam_hold",
+   "route": "/v1/red-team",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "decision_result": {
+     "claims": [
+      {
+       "claim_id": "C1",
+       "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+       "support_links": [
+        {
+         "evidence_id": "E1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      },
+      {
+       "claim_id": "C2",
+       "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+       "support_links": [
+        {
+         "evidence_id": "E2",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "evidence_pack": [
+      {
+       "evidence_id": "E1",
+       "claim": "By letter of 2026-09-14 the donor approved release of the second tranche to Kivu Health Trust.",
+       "source_class": "administrative_record",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-09-14",
+       "id": "E1",
+       "evidence_type": "public_filing",
+       "evidence_origin": "public_osint",
+       "collection_method": "secondary_source",
+       "stakeholder_class": "public_official",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E1",
+       "freshness_date": "2026-09-14",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      },
+      {
+       "evidence_id": "E2",
+       "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+       "source_class": "structured_field_research",
+       "evidence_geography": {
+        "country": "UG"
+       },
+       "source_date": "2026-07-03",
+       "id": "E2",
+       "evidence_type": "survey",
+       "evidence_origin": "field_research",
+       "collection_method": "field_survey",
+       "stakeholder_class": "retailer",
+       "source_grade": "B",
+       "source_doc_id": "LAB-E2",
+       "freshness_date": "2026-07-03",
+       "structured_values": {
+        "trust": 60,
+        "permission": 55
+       },
+       "privacy_envelope": {
+        "consent_basis": "legitimate_interest",
+        "retention_class": "1y",
+        "redaction_status": "redacted",
+        "safe_for_modeling": true
+       }
+      }
+     ],
+     "analysis_date": "2026-11-01",
+     "market_scope": {
+      "country": "UG"
+     },
+     "agent_output": "Hold the payment run until the approver has signed the release form."
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "market_scope": {
+     "country": "UG"
+    },
+    "red_team_depth": "standard"
+   }
+  },
+  {
+   "case_id": "clean_suitability_register",
+   "route": "/v1/evidence-suitability-scan",
+   "expected_outcome": "no_defects_found",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "available_data": [
+     {
+      "evidence_id": "S1",
+      "claim": "National Drug Authority register: Mara Clinics Ltd, import licence NDA-IL-2291, issued 2026-03-04.",
+      "source_class": "regulator_published",
+      "evidence_type": "public_filing",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-03-04",
+      "id": "S1",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-S1",
+      "freshness_date": "2026-03-04",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  },
+  {
+   "case_id": "internal_only_completeness",
+   "route": "/v1/evidence-completeness",
+   "expected_outcome": "not_applicable",
+   "body": {
+    "analysis_date": "2026-11-01",
+    "market_scope": {
+     "country": "UG"
+    },
+    "subject": {
+     "entity_name": "Kivu Health Trust",
+     "entity_archetype": "fmcg_brand"
+    },
+    "decision_question": "Archive last year's project folders on the shared drive",
+    "claims": [
+     {
+      "claim_id": "C1",
+      "claim": "The donor has approved the release of the second tranche to Kivu Health Trust.",
+      "support_links": [
+       {
+        "evidence_id": "E1",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     },
+     {
+      "claim_id": "C2",
+      "claim": "Mara Clinics Ltd is the contracted supplier of cold-chain equipment for the programme.",
+      "support_links": [
+       {
+        "evidence_id": "E2",
+        "relationship": "direct_support",
+        "locator": "claim"
+       }
+      ]
+     }
+    ],
+    "evidence_pack": [
+     {
+      "evidence_id": "E1",
+      "claim": "By letter of 2026-09-14 the donor approved release of the second tranche to Kivu Health Trust.",
+      "source_class": "administrative_record",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-09-14",
+      "id": "E1",
+      "evidence_type": "public_filing",
+      "evidence_origin": "public_osint",
+      "collection_method": "secondary_source",
+      "stakeholder_class": "public_official",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E1",
+      "freshness_date": "2026-09-14",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     },
+     {
+      "evidence_id": "E2",
+      "claim": "Mara Clinics Ltd and the programme signed supply contract CC-2026-07 on 2026-07-03.",
+      "source_class": "structured_field_research",
+      "evidence_geography": {
+       "country": "UG"
+      },
+      "source_date": "2026-07-03",
+      "id": "E2",
+      "evidence_type": "survey",
+      "evidence_origin": "field_research",
+      "collection_method": "field_survey",
+      "stakeholder_class": "retailer",
+      "source_grade": "B",
+      "source_doc_id": "LAB-E2",
+      "freshness_date": "2026-07-03",
+      "structured_values": {
+       "trust": 60,
+       "permission": 55
+      },
+      "privacy_envelope": {
+       "consent_basis": "legitimate_interest",
+       "retention_class": "1y",
+       "redaction_status": "redacted",
+       "safe_for_modeling": true
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

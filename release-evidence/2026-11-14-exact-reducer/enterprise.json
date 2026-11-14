@@ -1,0 +1,131 @@
+{
+  "suite": "enterprise-conformance-live",
+  "base": "https://africanmarketos.com",
+  "started_at": "2026-11-14T18:59:28.703Z",
+  "finished_at": "2026-11-14T19:00:51.666Z",
+  "deployment_revision": "2026-11-14.exact-reducer.1",
+  "release_manifest_id": "MVRRM-91a75b533a60ac8deed81d057f0b7811",
+  "classification": "proprietary lab fixtures; one harmless draft record (amos-lab, amount 0, no external contact); the Enterprise conformance realm asserts no institutional standing",
+  "root_pinned_from": "trust/amos-conformance-trust-root.json",
+  "passed": true,
+  "checks": [
+    {
+      "name": "capabilities and OpenAPI advertise the Enterprise realm",
+      "passed": true
+    },
+    {
+      "name": "the Enterprise realm is refused without a licensed key",
+      "passed": true
+    },
+    {
+      "name": "the Enterprise realm has its own trust root",
+      "passed": true,
+      "detail": {
+        "root_key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7",
+        "pinned_from": "public repository"
+      }
+    },
+    {
+      "name": "the session is bound to the tenant and asserts no standing",
+      "passed": true,
+      "detail": {
+        "session_id": "AC-3696e6f6854fdfc91b86177076eae028",
+        "registry_id": "REG-AC-3696e6f6854fdfc91b86177076eae028"
+      }
+    },
+    {
+      "name": "positive exact capability (create_draft_record): analysis favorable, authority and execution authorized, scoped to the conformance realm",
+      "passed": true,
+      "detail": {
+        "canonical_action_id": "amos.document.draft.create@1",
+        "tier": "fully_permitted",
+        "risk_class": "standard"
+      }
+    },
+    {
+      "name": "positive exact capability (amos.document.draft.create@1): analysis favorable, authority and execution authorized, scoped to the conformance realm",
+      "passed": true,
+      "detail": {
+        "canonical_action_id": "amos.document.draft.create@1",
+        "tier": "fully_permitted",
+        "risk_class": "standard"
+      }
+    },
+    {
+      "name": "another tenant cannot reference the session",
+      "passed": true
+    },
+    {
+      "name": "a keyless lab session never authorizes a licensed effect decision",
+      "passed": true
+    },
+    {
+      "name": "the buyer adapter performs the committed effect exactly once",
+      "passed": true,
+      "detail": {
+        "commit_id": "CM-99466b6f9198266607c6d9ebf5f76263c69fa0dc8db62989",
+        "risk_class": "standard",
+        "feed_sequence": 7
+      }
+    },
+    {
+      "name": "a production-pinned or lab-pinned receiver refuses the conformance commit",
+      "passed": true,
+      "detail": {
+        "production": "realm_mismatch",
+        "lab": "registry_statement_invalid"
+      }
+    },
+    {
+      "name": "a revocation reaches the connected subscriber by long poll, and the adapter refuses",
+      "passed": true,
+      "detail": {
+        "revocation_submit_to_observation_ms": 2492,
+        "polls": 3
+      }
+    },
+    {
+      "name": "revoking the capability denies create_draft_record",
+      "passed": true
+    },
+    {
+      "name": "revoking the capability denies amos.document.draft.create@1",
+      "passed": true
+    },
+    {
+      "name": "a receiver offline longer than its risk class allows applies zero effects",
+      "passed": true,
+      "detail": {
+        "code": "BUYER_CHAIN_INVALID",
+        "detail": "current_state_stale"
+      }
+    },
+    {
+      "name": "closing the session stops every later reference",
+      "passed": true,
+      "detail": {
+        "feed_last_sequence": 10
+      }
+    },
+    {
+      "name": "the feed is hash-chained and signed end to end",
+      "passed": true,
+      "detail": {
+        "entries": 10,
+        "actions": [
+          "register_anchor",
+          "register_credential",
+          "register_source_record",
+          "close_residual",
+          "register_capability",
+          "revoke_capability",
+          "close_session"
+        ]
+      }
+    }
+  ],
+  "session_id": "AC-3696e6f6854fdfc91b86177076eae028",
+  "realm": "amos-enterprise-conformance",
+  "effects_performed": 1,
+  "not_run": []
+}

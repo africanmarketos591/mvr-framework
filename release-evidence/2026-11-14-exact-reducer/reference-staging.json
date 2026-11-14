@@ -1,0 +1,165 @@
+{
+  "passed": true,
+  "receiver_url_host": "127.0.0.1:65356",
+  "transport": "HTTP",
+  "scenarios": [
+    {
+      "name": "valid current commit",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "performed"
+    },
+    {
+      "name": "replay of the same commit",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "already_performed"
+    },
+    {
+      "name": "broadened amount",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "RECEIVER_EFFECT_MISMATCH"
+    },
+    {
+      "name": "different resource",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "RECEIVER_EFFECT_MISMATCH"
+    },
+    {
+      "name": "altered receipt (window extended)",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "RECEIVER_RECEIPT_INVALID"
+    },
+    {
+      "name": "invalid signature",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "RECEIVER_RECEIPT_INVALID"
+    },
+    {
+      "name": "revoked between verification and commit",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "RECEIVER_NOT_COMMITTED"
+    },
+    {
+      "name": "two concurrent deliveries",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": [
+        "performed",
+        "already_performed"
+      ]
+    },
+    {
+      "name": "acknowledgement lost, then redelivered",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "already_performed"
+    },
+    {
+      "name": "transient failure before the effect",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "RECEIVER_EFFECT_FAILED_RETRYABLE"
+    },
+    {
+      "name": "retry within the window",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "performed"
+    },
+    {
+      "name": "crash after the effect",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "RECEIVER_EFFECT_FAILED_RETRYABLE"
+    },
+    {
+      "name": "redelivery reconciles, no duplicate",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "already_performed"
+    },
+    {
+      "name": "delivered after the commit window",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "RECEIVER_COMMIT_EXPIRED"
+    }
+  ],
+  "fault_scenarios": "covered",
+  "health": {
+    "version": "amos.receiver-sdk/1",
+    "checked_at": "2026-11-14T19:01:04.510Z",
+    "unconsumed": [],
+    "expired_unconsumed": [
+      "CM-95fc41948a6c1acef3250d03f608faf68c2d654156a80eab"
+    ],
+    "in_doubt": [],
+    "duplicated": [
+      {
+        "commit_id": "CM-57c98d659256d5e5554ea66d47ff77ce860c58b1c0056563",
+        "deliveries": 4
+      },
+      {
+        "commit_id": "CM-74190f018fc96349e8b54d04e5dd5b80c6b0861193471857",
+        "deliveries": 2
+      },
+      {
+        "commit_id": "CM-b7f47664adc11250cab8fc4ed60ec855eb6431331d7725a1",
+        "deliveries": 2
+      },
+      {
+        "commit_id": "CM-bae34368fc65dec3ffbe7a613495e774262d4ae34086e55c",
+        "deliveries": 2
+      },
+      {
+        "commit_id": "CM-ccc319e6087b5236e45cd89d20f8c80e1a9ca8de6f6014cc",
+        "deliveries": 2
+      },
+      {
+        "commit_id": "CM-db50d5ae85ba97bc043f48d1889c0d74da1071a1bb01c64f",
+        "deliveries": 2
+      },
+      {
+        "commit_id": "CM-fefee211f136f84dcf64a3dddb1d0b8067142204d15a1f36",
+        "deliveries": 2
+      }
+    ],
+    "unacknowledged": [],
+    "post_effect_failures": [],
+    "completed": 6,
+    "irreversible_effects": 6,
+    "healthy": true,
+    "meaning": "duplicated lists commits delivered more than once (each performed at most once). in_doubt are claims older than staleMs with no recorded outcome: reconcile them against the effect system. unacknowledged effects were performed but not yet reported to AMOS."
+  },
+  "classification": "AMOS lab verification; real lab commits signed with lab keys; the receiver under test is whatever runs at the URL",
+  "restart": {
+    "first_performed": true,
+    "after_restart_performed": false,
+    "after_restart_already_performed": true
+  },
+  "lab": "https://africanmarketos.com",
+  "served_revisions": [
+    "2026-11-14.exact-reducer.1"
+  ],
+  "revision": "2026-11-14.exact-reducer.1"
+}

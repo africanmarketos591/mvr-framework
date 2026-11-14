@@ -1,0 +1,107 @@
+{
+  "session_id": "AC-abababababababababababababababab",
+  "registry_key": {
+    "key_id": "FEED-FIXTURE-2cdc0acf0e8a5b464bd1d24a",
+    "public_key_spki_b64": "MCowBQYDK2VwAyEAgjo6fugWVmq33sUAhxTyz2159sq5l+PfDlFLgrqQkUM="
+  },
+  "first_batch": {
+    "head": {
+      "contract_version": "mvr.current-state-feed/1",
+      "session_id": "AC-abababababababababababababababab",
+      "registry_id": "REG-AC-abababababababababababababababab",
+      "realm": "amos-enterprise-conformance",
+      "session_status": "active",
+      "last_sequence": 1,
+      "head_sha256": "16b43b543d4f2fdfc5963a688b15bb93e213ae8b4591182fb40039be741a3943",
+      "observed_at": "2026-11-14T12:00:00.000Z",
+      "offline_policy": {
+        "version": "mvr.offline-policy/1",
+        "risk_classes": {
+          "standard": {
+            "max_offline_age_seconds": 60
+          }
+        }
+      },
+      "sha256": "c2bada5534315e05145d7c90d7b7334428c4991e355f16627d11f0c00e2efe64",
+      "signature": {
+        "standard": "MVR-TRUST-SIG-V1",
+        "algorithm": "Ed25519",
+        "key_id": "FEED-FIXTURE-2cdc0acf0e8a5b464bd1d24a",
+        "signature_b64": "dASpLoRZPNIfOmzlB42Y/7fb8hnreh0oe/iS9LgWK3D6kyco4d0Mis/zkOrKNJG9aXnE6UbaJNnYyajaFXA7DQ=="
+      }
+    },
+    "entries": [
+      {
+        "sequence": 1,
+        "prev_entry_sha256": null,
+        "at": "2026-11-14T12:00:00.000Z",
+        "action": "register_capability",
+        "kind": "capability",
+        "id": "synthetic-draft",
+        "event": "registered",
+        "receipt_sha256": null,
+        "receivers_must_reverify": false,
+        "entry_sha256": "16b43b543d4f2fdfc5963a688b15bb93e213ae8b4591182fb40039be741a3943"
+      }
+    ]
+  },
+  "batch": {
+    "head": {
+      "contract_version": "mvr.current-state-feed/1",
+      "session_id": "AC-abababababababababababababababab",
+      "registry_id": "REG-AC-abababababababababababababababab",
+      "realm": "amos-enterprise-conformance",
+      "session_status": "active",
+      "last_sequence": 2,
+      "head_sha256": "461f0bd55bac0eaf9e9914de55acdb768ab77878e4f69cd2e12a95b262293416",
+      "observed_at": "2026-11-14T12:00:01.000Z",
+      "offline_policy": {
+        "version": "mvr.offline-policy/1",
+        "risk_classes": {
+          "standard": {
+            "max_offline_age_seconds": 60
+          }
+        }
+      },
+      "sha256": "e6f62e3c07c8e68c7da4a48137dfe0ee61bf1676c321404b6b8555b8e432fdcd",
+      "signature": {
+        "standard": "MVR-TRUST-SIG-V1",
+        "algorithm": "Ed25519",
+        "key_id": "FEED-FIXTURE-2cdc0acf0e8a5b464bd1d24a",
+        "signature_b64": "6k3dUn1N0v57XNML4E70ckGHMzYcEhZuC/rv8y4kz3tCe3xRawVVzB7lMRObA3B6JbDWkpH4cYgrEOsusIxsDA=="
+      }
+    },
+    "entries": [
+      {
+        "sequence": 1,
+        "prev_entry_sha256": null,
+        "at": "2026-11-14T12:00:00.000Z",
+        "action": "register_capability",
+        "kind": "capability",
+        "id": "synthetic-draft",
+        "event": "registered",
+        "receipt_sha256": null,
+        "receivers_must_reverify": false,
+        "entry_sha256": "16b43b543d4f2fdfc5963a688b15bb93e213ae8b4591182fb40039be741a3943"
+      },
+      {
+        "sequence": 2,
+        "prev_entry_sha256": "16b43b543d4f2fdfc5963a688b15bb93e213ae8b4591182fb40039be741a3943",
+        "at": "2026-11-14T12:00:01.000Z",
+        "action": "revoke_capability",
+        "kind": "capability",
+        "id": "synthetic-draft",
+        "event": "revoked",
+        "receipt_sha256": null,
+        "receivers_must_reverify": true,
+        "entry_sha256": "461f0bd55bac0eaf9e9914de55acdb768ab77878e4f69cd2e12a95b262293416"
+      }
+    ]
+  },
+  "entry_canonical": [
+    "{\"action\":\"register_capability\",\"at\":\"2026-11-14T12:00:00.000Z\",\"event\":\"registered\",\"id\":\"synthetic-draft\",\"kind\":\"capability\",\"prev_entry_sha256\":null,\"receipt_sha256\":null,\"receivers_must_reverify\":false,\"sequence\":1}",
+    "{\"action\":\"revoke_capability\",\"at\":\"2026-11-14T12:00:01.000Z\",\"event\":\"revoked\",\"id\":\"synthetic-draft\",\"kind\":\"capability\",\"prev_entry_sha256\":\"16b43b543d4f2fdfc5963a688b15bb93e213ae8b4591182fb40039be741a3943\",\"receipt_sha256\":null,\"receivers_must_reverify\":true,\"sequence\":2}"
+  ],
+  "head_canonical": "{\"contract_version\":\"mvr.current-state-feed/1\",\"head_sha256\":\"461f0bd55bac0eaf9e9914de55acdb768ab77878e4f69cd2e12a95b262293416\",\"last_sequence\":2,\"observed_at\":\"2026-11-14T12:00:01.000Z\",\"offline_policy\":{\"risk_classes\":{\"standard\":{\"max_offline_age_seconds\":60}},\"version\":\"mvr.offline-policy/1\"},\"realm\":\"amos-enterprise-conformance\",\"registry_id\":\"REG-AC-abababababababababababababababab\",\"session_id\":\"AC-abababababababababababababababab\",\"session_status\":\"active\"}",
+  "signing_input_hex": "4d56522d54525553542d56310a6d76722e63757272656e742d73746174652d666565642f310a464545442d464958545552452d3263646330616366306538613562343634626431643234610a65366636326533633037633865363863376461346134383133376466653065653631626631363736633332313430346236623835353562386534333266646364"
+}

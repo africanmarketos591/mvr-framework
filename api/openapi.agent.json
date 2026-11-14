@@ -92400,8 +92400,8 @@
     },
     "/v1/authority-conformance": {
       "post": {
-        "summary": "Four disposable synthetic lab principals. Harmless draft effects only; no production authority.",
-        "description": "Four disposable synthetic lab principals. Harmless draft effects only; no production authority.",
+        "summary": "Issue a synthetic session in the keyless lab or, with an Enterprise key, the tenant-bound enterprise_conformance realm. Both allow harmless draft effects only.",
+        "description": "Issue a synthetic session in the keyless lab or, with an Enterprise key, the tenant-bound enterprise_conformance realm. Both allow harmless draft effects only.",
         "parameters": [],
         "x-mvr-registry-route": "/v1/authority-conformance",
         "x-mvr-maturity": "release_candidate",
@@ -120844,6 +120844,7 @@
                     "internal_scheduling",
                     "it_administration",
                     "office_administration",
+                    "internal_task",
                     "internal_recommendation",
                     "internal_planning",
                     "pilot_design",
@@ -126837,7 +126838,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-11-02.state-propagation.3"
+    "deployment_revision": "2026-11-14.exact-reducer.1"
   },
   "response_contract_version": "2026-05-01.v1"
 }

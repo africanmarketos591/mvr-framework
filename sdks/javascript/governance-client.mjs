@@ -62,7 +62,7 @@ export const GOVERNANCE_OPERATIONS = Object.freeze({
     "method": "POST",
     "path": "/v1/authority-conformance",
     "api_key": false,
-    "summary": "Four disposable synthetic lab principals. Harmless draft effects only; no production authority."
+    "summary": "Issue a synthetic session in the keyless lab or, with an Enterprise key, the tenant-bound enterprise_conformance realm. Both allow harmless draft effects only."
   },
   "keyCeremony": {
     "method": "POST",

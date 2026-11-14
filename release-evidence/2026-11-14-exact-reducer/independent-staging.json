@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "receiver_url_host": "127.0.0.1:65355",
+  "transport": "HTTP",
+  "scenarios": [
+    {
+      "name": "valid current commit",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "performed"
+    },
+    {
+      "name": "replay of the same commit",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "already_performed"
+    },
+    {
+      "name": "broadened amount",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "different resource",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "altered receipt (window extended)",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "invalid signature",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "revoked between verification and commit",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "two concurrent deliveries",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": [
+        "performed",
+        "already_performed"
+      ]
+    },
+    {
+      "name": "acknowledgement lost, then redelivered",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "already_performed"
+    },
+    {
+      "name": "transient failure before the effect",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "retryable"
+    },
+    {
+      "name": "retry within the window",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "performed"
+    },
+    {
+      "name": "crash after the effect",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "interrupted_after_write"
+    },
+    {
+      "name": "redelivery reconciles, no duplicate",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "already_performed"
+    },
+    {
+      "name": "delivered after the commit window",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "expired"
+    }
+  ],
+  "fault_scenarios": "covered",
+  "health": {
+    "in_doubt": [],
+    "total_drafts": 5
+  },
+  "classification": "AMOS lab verification; real lab commits signed with lab keys; the receiver under test is whatever runs at the URL",
+  "restart": {
+    "first_performed": true,
+    "replay_prevented": true
+  },
+  "revision": "2026-11-14.exact-reducer.1",
+  "manifest": "MVRRM-91a75b533a60ac8deed81d057f0b7811",
+  "implementation": "Independent local Python HTTP adapter, SQLite unique draft ledger, OpenSSL Ed25519",
+  "buyer_operated": false
+}
