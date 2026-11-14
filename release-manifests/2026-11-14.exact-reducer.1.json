@@ -1,5 +1,5 @@
 {
- "manifest_id": "MVRRM-1f0fe505b0bcdb9ab80a481623b7d006",
+ "manifest_id": "MVRRM-91a75b533a60ac8deed81d057f0b7811",
  "contract_version": "mvr.release-manifest/1",
  "deployment_revision": "2026-11-14.exact-reducer.1",
  "release_version": "v6.32.0",
@@ -100,16 +100,16 @@
     "mvr-source-consistency.js": "b950c65729b9da8ceb3a88aee8c7e81312262281c530140fe8fbb29b53e65964",
     "mvr-source-date.js": "7ae1bbe417ac34436a59d9b77c05f8781a061f626aebe70725802ef124a23aaa",
     "mvr-source-review-binding.js": "fd8bc416575673b51a5b87f56fba70b3f692184b89120a73927ebf8709d7ba88",
-    "mvr-support-state.js": "9e46a7cbadaf5ccfd6b1495973f99fa12a362198fe9af89a7388022efbb9ce73",
+    "mvr-support-state.js": "e42d6bad3eb1b95c8288e869ad638a3e03efafd8416626e5cc21f046eeb2260d",
     "mvr-trust-chain.js": "eb525ba64bedb8f6ee48f9283b9a5bc966d432431b9a3bd023224bf7f68fd6ad",
     "mvr-uganda-districts.js": "b583275e3e1db225db34a111d2cb8dcb0b0e0c85721beefad3abb70c0c9c2376",
     "mvr-webmcp-human-presentation.js": "de2914df07a5c0aded78ca79071f86c9f9085c57afa56a5513a90c2fa923c1e4",
     "mvr-workflow-continuation.js": "e939294f8d57c61aeb7cf1eb80fa292906ffe40b07331eb939587c6ea7bb880f",
     "runtime-entry.js": "04ba4b26496a7bfa6c9a0c325f2e4272b2b327116b02e80c01285de96a3eede1",
-    "worker.js": "9a6f918655bbe6618587d3dc5d89fabc2e78d05ca90728617cb9765c833181bb"
+    "worker.js": "5d9868d1eaac8c9a66a7be85e4cd5f74884130721dc34ea7d0297ef2ef73a071"
    },
    "file_count": 87,
-   "closure_sha256": "c031c1f6bcadcfde94e4ac06608392cd0a01effbcf35c9302ef71c2c4f18af72",
+   "closure_sha256": "a3df2c46063db7754159a3adda9c4c8fbfb683c1eb5c7ca07025b4d02d300fab",
    "excludes": [
     "mvr-release-manifest.generated.js"
    ]
@@ -120,7 +120,7 @@
    "bytes": 2058302
   },
   "contracts": {
-   "/v1/effect-decision/contract": "2e252bf75fac0fed91be2c82895abf3082597aec0e89e174ef5496370071089e",
+   "/v1/effect-decision/contract": "048197bf21d747669feb0b30c16ca4c50a64ae5249734ac49fc739114beb271d",
    "/v1/audit-findings/contract": "3e119d345bcc26b3ee0198f4531b3310d8376b8d5660dba24cfb4ea64606a560",
    "/v1/interpretation-submissions/contract": "00dc9125c5096192b462af87c22de54d14ef7f4d997e57711f8b4b043ba45fc1",
    "/v1/authority-chain/contract": "8db4c40ab9ae30c2c1769524259973919f2949404a1b62cd204f66e3c1122ea0",
@@ -237,7 +237,7 @@
   },
   "public_repository": {
    "repository": "africanmarketos591/mvr-framework",
-   "components_commit": "ca750e7d593ee1f382926a98a3551e93ab676122",
+   "components_commit": "747599e6f471d988a23e8cdc16c1fe25f7b2f87d",
    "working_tree_clean": true,
    "generated_clients": {
     "generator": "scripts/generate-governance-client.mjs",
@@ -262,8 +262,8 @@
     }
    },
    "conformance_vectors": {
-    "files": 152,
-    "tree_sha256": "49a10e04077661ef6aef9cc66d8d02328b8446867f43963500006f43b2875a09"
+    "files": 154,
+    "tree_sha256": "b70b55f04fdb4c77f2a699cf5f6c8cc41a1ad0a25fb8d83f87348c2b29b68ed9"
    },
    "schemas": {
     "files": 5,
