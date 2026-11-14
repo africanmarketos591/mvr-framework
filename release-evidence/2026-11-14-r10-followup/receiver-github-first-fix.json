@@ -1,0 +1,146 @@
+{
+  "passed": true,
+  "receiver_url_host": "127.0.0.1:41173",
+  "transport": "HTTP",
+  "scenarios": [
+    {
+      "name": "valid current commit",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "performed"
+    },
+    {
+      "name": "replay of the same commit",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "already_performed"
+    },
+    {
+      "name": "broadened amount",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "different resource",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "altered receipt (window extended)",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "invalid signature",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "revoked between verification and commit",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "invalid_commit"
+    },
+    {
+      "name": "two concurrent deliveries",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": [
+        "performed",
+        "already_performed"
+      ]
+    },
+    {
+      "name": "acknowledgement lost, then redelivered",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "already_performed"
+    },
+    {
+      "name": "transient failure before the effect",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "retryable"
+    },
+    {
+      "name": "retry within the window",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "performed"
+    },
+    {
+      "name": "crash after the effect",
+      "expected_new_effects": 1,
+      "new_effects": 1,
+      "passed": true,
+      "outcome": "interrupted_after_write"
+    },
+    {
+      "name": "redelivery reconciles, no duplicate",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "already_performed"
+    },
+    {
+      "name": "delivered after the commit window",
+      "expected_new_effects": 0,
+      "new_effects": 0,
+      "passed": true,
+      "outcome": "expired"
+    }
+  ],
+  "fault_scenarios": "covered",
+  "health": {
+    "in_doubt": [],
+    "total_drafts": 5
+  },
+  "classification": "AMOS lab verification; real lab commits signed with lab keys; the receiver under test is whatever runs at the URL",
+  "restart": {
+    "first_performed": true,
+    "replay_prevented": true
+  },
+  "post_commit_revocation": {
+    "refused_by_current_feed": true,
+    "additional_effects": 0,
+    "still_within_window": true
+  },
+  "ledger_observation": {
+    "source": "separate read-only SQLite connection",
+    "before": {
+      "total": 6,
+      "positive_rows": 1,
+      "revoked_rows": 0
+    },
+    "after": {
+      "total": 6,
+      "positive_rows": 1,
+      "revoked_rows": 0
+    }
+  },
+  "revision": "2026-11-14.exact-reducer.2",
+  "manifest": "MVRRM-5abad19c7fcaf8f2583ac4f074d562aa",
+  "runner": "GitHub-hosted runner",
+  "run_id": "43635735804",
+  "source_commit": "7821566cd11e919c603639cefa5cd1dd3319347c",
+  "buyer_operated": false,
+  "workflow_url": "https://github.com/africanmarketos591/mvr-framework/actions/runs/43635735804/attempts/2",
+  "job_url": "https://github.com/africanmarketos591/mvr-framework/actions/runs/43635735804/job/132573788177",
+  "workflow_head": "7f32dbffda0b042d16911b0d51d98e0f44a26b7f",
+  "completed_at": "2026-11-14T20:14:01Z"
+}
