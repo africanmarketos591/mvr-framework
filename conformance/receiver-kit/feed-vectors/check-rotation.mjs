@@ -1,0 +1,23 @@
+// Signed fixture registry succession with a real chain checkpoint. No network or issuer administration.
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {createFeedSubscriber} from '../feed-subscriber.mjs';
+import {generateSigningKey,publicKeyOf,signStatement} from '../../../sdks/javascript/trust-chain-verifier.mjs';
+const data=JSON.parse(fs.readFileSync(new URL('vectors.json',import.meta.url)));
+const root=await generateSigningKey('unit-root'),before=await generateSigningKey('unit-before'),after=await generateSigningKey('unit-after');
+let clock=Date.parse(data.batch.head.observed_at);
+const since=new Date(clock-3600000).toISOString(),until=new Date(clock+3600000).toISOString();
+const common={contract_version:'mvr.authority-registry-statement/1',registry_id:'fixture',realm:'fixture',tenant_id:'t',workspace_id:'w',
+  session_id:data.session_id,organization_ref:'test',production_authority:false,recognized_standing:'none',assurance_level:'fixture',issuer:{root_key_id:root.key_id},issued_at:since,expires_at:until};
+const registry=(key,n,parent)=>signStatement(root,{...common,registry_version:n,keys:[{...publicKeyOf(key),status:'active',not_before:since,not_after:until}],supersedes:parent?{registry_id:parent.registry_id,registry_version:parent.registry_version,sha256:parent.sha256}:null});
+const one=await registry(before,1,null),two=await registry(after,2,one);
+const batch=async(data,key)=>{const {signature,sha256,...head}=data.head;return {entries:data.entries,head:await signStatement(key,head)};};
+const sub=createFeedSubscriber({sessionId:data.session_id,registryKey:publicKeyOf(before),pinnedRoot:{realm:'fixture',...publicKeyOf(root)},now:()=>clock});
+await sub.apply(await batch(data.first_batch,before));const cursor=sub.state.last_sequence;
+await sub.rotateRegistry(one,two);assert.equal(sub.state.last_sequence,cursor);assert.equal(sub.fresh({}).fresh,false);
+await assert.rejects(sub.apply(await batch(data.batch,before)));assert.equal(sub.state.last_sequence,cursor);
+await sub.apply(await batch(data.batch,after));assert.ok(sub.state.revoked_capabilities.size);assert.equal(sub.fresh({}).fresh,true);
+await assert.rejects(sub.rotateRegistry(one,two));assert.equal(sub.fresh({}).fresh,false);
+await sub.apply(await batch(data.batch,after));assert.equal(sub.fresh({}).fresh,true);
+clock=Date.parse(until);assert.equal(sub.fresh({}).reason,'FEED_KEY_EXPIRED');
+console.log('Passed signed succession, pinned predecessor, cursor continuity, catch-up, retired key rejection and expiry.');
