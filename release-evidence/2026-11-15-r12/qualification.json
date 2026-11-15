@@ -1,0 +1,209 @@
+{
+  "revision": "2026-11-15.exact-reducer.5",
+  "manifest_id": "MVRRM-70a63f50e460c5284fda8482cdb26f83",
+  "runtime_sha256": "bbb26ae30169caceb2b6984a472d118ef2a71d8642a287597d65ebd3ed9dd485",
+  "source_head": "9532d68149b9819c39a74838bd9f22aaa6e6c8e4",
+  "git_hosted_receiver_job": "https://github.com/africanmarketos591/mvr-framework/actions/runs/43751548705/job/132926401686",
+  "receiver_ownership": "AMOS synthetic conformance, independent evaluator ticket reported separately",
+  "independent_prior_release": {
+    "revision": "2026-11-15.exact-reducer.4",
+    "comparable_correct": 276,
+    "literal_correct": 224,
+    "market_denominator": 480,
+    "false_favorable": 48,
+    "missing_correct": 16,
+    "missing_denominator": 64,
+    "qualifier_correct": 64,
+    "revoked_prohibited_correct": 160,
+    "audit_defects_recalled": 9,
+    "audit_defects": 16,
+    "critical_false_permits": 3,
+    "clean_false_positives_strict": 6,
+    "clean_false_positives_full": 5,
+    "online_control_drafts_reported": 1,
+    "online_revoked_drafts_reported": 0,
+    "buyer_owned": false,
+    "query_attachment_provided": false
+  },
+  "independent_gate": "HOLD, no independent R12 benchmark or buyer-operated store export supplied",
+  "amos_frozen_cases": {
+    "sha256": "5f786848b805b66f86ddd83c377d93ef6d9d0791d3af33d2d23f1c985be697b0",
+    "packets": 192,
+    "prior_source_exact": 144,
+    "prior_false_favorable": 24,
+    "new_source_exact": 192,
+    "live_exact": 192,
+    "live_false_favorable": 0,
+    "planning_errors": 0,
+    "external_authorizations": 0
+  },
+  "new_prose": {
+    "packets": 12,
+    "initial_exact": 11,
+    "revised_live_exact": 12,
+    "sha256": "d93bb836eda2dc6168129648ea1417179edc33bd0f9ae2576ccfbdb8e1122dcb"
+  },
+  "live_internal_control_comparisons": {
+    "same_receipt_and_correct_terminal_state": 8,
+    "task_profile_pairs": 8,
+    "surfaces_per_pair": 4
+  },
+  "live_maintained_exact_by_profile": [
+    {
+      "profile": "strict_calibrated",
+      "score": {
+        "market_rows": 240,
+        "market_agree": 240,
+        "false_favorable": 0,
+        "false_adverse": 0,
+        "missing_rows": 32,
+        "missing_precedence": 32,
+        "qualifier_rows": 32,
+        "qualifier_precedence": 32,
+        "external_rows": 144,
+        "external_authorized": 0,
+        "irrelevant_pairs": 8,
+        "irrelevant_identical": 8,
+        "internal": 8,
+        "internal_not_relevant": 8,
+        "passes": true
+      },
+      "http_errors": 0
+    },
+    {
+      "profile": "full_advisory",
+      "score": {
+        "market_rows": 240,
+        "market_agree": 240,
+        "false_favorable": 0,
+        "false_adverse": 0,
+        "missing_rows": 32,
+        "missing_precedence": 32,
+        "qualifier_rows": 32,
+        "qualifier_precedence": 32,
+        "external_rows": 144,
+        "external_authorized": 0,
+        "irrelevant_pairs": 8,
+        "irrelevant_identical": 8,
+        "internal": 8,
+        "internal_not_relevant": 8,
+        "passes": true
+      },
+      "http_errors": 0
+    }
+  ],
+  "live_maintained_audit": [
+    {
+      "file": "audit-findings/heldout-r10/heldout-r10.json",
+      "profile": "full_advisory",
+      "score": {
+        "cases": 24,
+        "defects": 16,
+        "defects_detected": 16,
+        "route_level_false_permits": 0,
+        "clean": 7,
+        "clean_false_positives": 0,
+        "internal": 1,
+        "internal_only_false_triggers": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "missing_contract": 0,
+        "passes_r9_bar": true
+      },
+      "cases": 24,
+      "passed": true
+    },
+    {
+      "file": "audit-findings/heldout-r10/heldout-r10b.json",
+      "profile": "full_advisory",
+      "score": {
+        "cases": 24,
+        "defects": 16,
+        "defects_detected": 16,
+        "route_level_false_permits": 0,
+        "clean": 7,
+        "clean_false_positives": 0,
+        "internal": 1,
+        "internal_only_false_triggers": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "missing_contract": 0,
+        "passes_r9_bar": true
+      },
+      "cases": 24,
+      "passed": true
+    },
+    {
+      "file": "audit-findings/heldout-r10/heldout-r10.json",
+      "profile": "strict_calibrated",
+      "score": {
+        "cases": 24,
+        "defects": 16,
+        "defects_detected": 16,
+        "route_level_false_permits": 0,
+        "clean": 7,
+        "clean_false_positives": 0,
+        "internal": 1,
+        "internal_only_false_triggers": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "missing_contract": 0,
+        "passes_r9_bar": true
+      },
+      "cases": 24,
+      "passed": true
+    },
+    {
+      "file": "audit-findings/heldout-r10/heldout-r10b.json",
+      "profile": "strict_calibrated",
+      "score": {
+        "cases": 24,
+        "defects": 16,
+        "defects_detected": 16,
+        "route_level_false_permits": 0,
+        "clean": 7,
+        "clean_false_positives": 0,
+        "internal": 1,
+        "internal_only_false_triggers": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "missing_contract": 0,
+        "passes_r9_bar": true
+      },
+      "cases": 24,
+      "passed": true
+    }
+  ],
+  "receiver": {
+    "control_count": 1,
+    "revoked_count": 0,
+    "in_window": true,
+    "standard_lease_s": 60,
+    "fresh_commit_stale_feed": "BUYER_FEED_NOT_FRESH",
+    "stale_count": 0,
+    "caught_up_count": 1,
+    "replayed_total": 1,
+    "cursor_holds": [
+      "FEED_GAP",
+      "FEED_SEQUENCE_REGRESSED"
+    ],
+    "closed": true,
+    "redacted_packet_sha256": "3c3758e128ab9169eff6d2960521008b658af5ce7aa5e9d11dbc9201a190619a",
+    "key_rotation": "The independent observer rejected the first fixture on realm and registry ID. The corrected receiver holds the mismatched scope, accepts the corrected root-signed succession and catches up. The rotation used local test keys."
+  },
+  "capabilities_client_ms": [
+    1727,
+    198,
+    153,
+    92,
+    92
+  ],
+  "separate_client_first_ms": [
+    553,
+    615,
+    406,
+    508
+  ],
+  "new_pilot_model_calls": 0,
+  "buyer_price_observations": 0
+}
