@@ -1,0 +1,148 @@
+{
+  "case": "missing college signature before reviewer acceptance",
+  "environment": "in-process licensed worker with durable fixture and designated reviewer role",
+  "model_calls": 0,
+  "rows": [
+    {
+      "profile": "strict_calibrated",
+      "effect_id": "EXT-1",
+      "before": [
+        "favorable",
+        "not_authorized",
+        "not_authorized"
+      ],
+      "after": [
+        "favorable",
+        "not_authorized",
+        "not_authorized"
+      ]
+    },
+    {
+      "profile": "strict_calibrated",
+      "effect_id": "EXT-2",
+      "before": [
+        "insufficient",
+        "not_authorized",
+        "not_authorized"
+      ],
+      "after": [
+        "favorable",
+        "not_authorized",
+        "not_authorized"
+      ]
+    },
+    {
+      "profile": "strict_calibrated",
+      "effect_id": "INT-REC",
+      "before": [
+        "insufficient",
+        "planning_only",
+        "not_authorized"
+      ],
+      "after": [
+        "favorable",
+        "planning_only",
+        "not_authorized"
+      ]
+    },
+    {
+      "profile": "strict_calibrated",
+      "effect_id": "INT-PLAN",
+      "before": [
+        "favorable",
+        "planning_only",
+        "planning_only"
+      ],
+      "after": [
+        "favorable",
+        "planning_only",
+        "planning_only"
+      ]
+    },
+    {
+      "profile": "strict_calibrated",
+      "effect_id": "INT-TASK",
+      "before": [
+        "not_relevant",
+        "not_applicable",
+        "not_applicable"
+      ],
+      "after": [
+        "not_relevant",
+        "not_applicable",
+        "not_applicable"
+      ]
+    },
+    {
+      "profile": "full_advisory",
+      "effect_id": "EXT-1",
+      "before": [
+        "favorable",
+        "not_authorized",
+        "not_authorized"
+      ],
+      "after": [
+        "favorable",
+        "not_authorized",
+        "not_authorized"
+      ]
+    },
+    {
+      "profile": "full_advisory",
+      "effect_id": "EXT-2",
+      "before": [
+        "insufficient",
+        "not_authorized",
+        "not_authorized"
+      ],
+      "after": [
+        "favorable",
+        "not_authorized",
+        "not_authorized"
+      ]
+    },
+    {
+      "profile": "full_advisory",
+      "effect_id": "INT-REC",
+      "before": [
+        "insufficient",
+        "planning_only",
+        "not_authorized"
+      ],
+      "after": [
+        "favorable",
+        "planning_only",
+        "not_authorized"
+      ]
+    },
+    {
+      "profile": "full_advisory",
+      "effect_id": "INT-PLAN",
+      "before": [
+        "favorable",
+        "planning_only",
+        "planning_only"
+      ],
+      "after": [
+        "favorable",
+        "planning_only",
+        "planning_only"
+      ]
+    },
+    {
+      "profile": "full_advisory",
+      "effect_id": "INT-TASK",
+      "before": [
+        "not_relevant",
+        "not_applicable",
+        "not_applicable"
+      ],
+      "after": [
+        "not_relevant",
+        "not_applicable",
+        "not_applicable"
+      ]
+    }
+  ],
+  "broadenings": 0
+}

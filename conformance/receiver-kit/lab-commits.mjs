@@ -41,5 +41,6 @@ export async function createLabCommitSource(transport,{now=()=>Date.now(),realm}
   const currentState=async()=>ok(await call('executor','current_state',{capability_id:capabilityId}),'current state').current_state;
   const revokeCurrent=async reason=>ok(await chain('institution',{action:'revoke_capability',capability_id:capabilityId,reason:reason||'Lab: revoke the current capability'}),'revoke');
   return {registry:session.receipt_registry,commitFresh,commitAfterRevocation,acknowledge,close,session_id:session.session_id,
+    check_permission:requested_effect=>chain('executor',{action:'check_permission',case_id:caseId,geography:'UG',requested_effect}),
     case_id:caseId,effect,capability_id:()=>capabilityId,current_state:currentState,revoke_current:revokeCurrent,register_capability:register,trust_chain:session.trust_chain,realm:session.realm,realm_key:session.realm_key};
 }

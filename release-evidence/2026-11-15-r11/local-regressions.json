@@ -1,0 +1,396 @@
+{
+  "effect-local": "effect decision: 36 passed",
+  "authority-local": {
+    "passed": true,
+    "checks": 18,
+    "results": [
+      "capabilities and OpenAPI advertise the Enterprise realm",
+      "the Enterprise realm is refused without a licensed key",
+      "the Enterprise realm has its own trust root",
+      "the session is bound to the tenant and asserts no standing",
+      "positive exact capability (create_draft_record): analysis favorable, authority and execution authorized, scoped to the conformance realm",
+      "positive exact capability (amos.document.draft.create@1): analysis favorable, authority and execution authorized, scoped to the conformance realm",
+      "another tenant cannot reference the session",
+      "a keyless lab session never authorizes a licensed effect decision",
+      "the buyer adapter performs the committed effect exactly once",
+      "a production-pinned or lab-pinned receiver refuses the conformance commit",
+      "a revocation reaches the connected subscriber by long poll, and the adapter refuses",
+      "revoking the capability denies create_draft_record",
+      "revoking the capability denies amos.document.draft.create@1",
+      "a receiver offline longer than its risk class allows applies zero effects",
+      "closing the session stops every later reference",
+      "the feed is hash-chained and signed end to end",
+      "the Enterprise realm quota is per licensed tenant"
+    ]
+  },
+  "state-local": {
+    "passed": true,
+    "checks": 10,
+    "results": [
+      "versions",
+      "sentence sets: C, D, E and F exact on every row; zero false favorable; planning favorable on all 480",
+      "36 additional cases cover issuer identity, process steps, scope and documentary evidence",
+      "follow-up wording sets retain their corrected decisions",
+      "structure: 32 encodings of a missing link, a qualifier, silence, unrelated additions, revocation and prohibition",
+      "unrelated additions leave every normative digest unchanged",
+      "reader polarity guards: the negation of an obstacle is not a missing link; a hypothetical is not an adverse state",
+      "the closed-world rule applies to claims that assert an act, an instrument or a relationship, not to behavioural claims",
+      "dispositions change analytical state exactly, and never authority or execution",
+      "a confirmed gap is recorded as reviewer-confirmed, and withdrawing every disposition restores the state before it"
+    ],
+    "classification": "proprietary lab fixtures"
+  },
+  "evidence-local": {
+    "passed": true,
+    "checks": 10,
+    "results": [
+      "support-state rules read 33 fixed sentences correctly, with negation, resolution and boilerplate guards",
+      "support for an instrument claim must state it established; silence is a missing link",
+      "held-out cohort.json: zero false favorable, missing-link and qualifier precedence on every row, planning never adverse",
+      "held-out cohort-b.json: zero false favorable, missing-link and qualifier precedence on every row, planning never adverse",
+      "one canonical action identity: every ontology ID and alias resolves to one effect type and canonical ID",
+      "alias and canonical ID give identical states; an authority reference for another action is refused",
+      "internal planning is favorable and planning_only with no dependencies, even under revocation",
+      "qualifier precedence: a qualifying record makes the claim conditional beside unqualified support",
+      "one relevance router: internal work is not_relevant whatever scope is attached; a market clause keeps it relevant",
+      "the published permission-statement schema accepts the canonical action fields on effect_state and stays closed"
+    ]
+  },
+  "audit-local": {
+    "passed": 204,
+    "summary": {
+      "/v1/claim-audit": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0
+      },
+      "/v1/release-check": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0
+      },
+      "/v1/board-safety-check": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0
+      },
+      "/v1/decision-check": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0
+      },
+      "/v1/evidence-audit": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0
+      },
+      "/v1/evidence-validation": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0
+      },
+      "/v1/evidence-completeness": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0
+      },
+      "/v1/context/compile": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0
+      }
+    },
+    "classification": "proprietary lab fixtures"
+  },
+  "audit-routes": {
+    "passed": true,
+    "summary": {
+      "strict_calibrated /v1/claim-audit": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "strict_calibrated /v1/release-check": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "strict_calibrated /v1/board-safety-check": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "strict_calibrated /v1/evidence-audit": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "422": 24
+        }
+      },
+      "strict_calibrated /v1/evidence-validation": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "strict_calibrated /v1/evidence-completeness": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "strict_calibrated /v1/decision-check": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "full_advisory /v1/claim-audit": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "full_advisory /v1/release-check": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "full_advisory /v1/board-safety-check": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "full_advisory /v1/evidence-audit": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "full_advisory /v1/evidence-validation": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "full_advisory /v1/evidence-completeness": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "full_advisory /v1/decision-check": {
+        "cells": 24,
+        "defects_detected": 16,
+        "fully_targeted": 16,
+        "clean_false_positives": 0,
+        "controlling_preserved": 24,
+        "critical_false_permits": 0,
+        "http_statuses": {
+          "200": 24
+        }
+      },
+      "strict_evidence_audit": {
+        "http_status": 422,
+        "audit_performed": false,
+        "structural_findings": [
+          "EXPLICIT_CONTRADICTION"
+        ]
+      }
+    },
+    "classification": "proprietary lab fixtures"
+  },
+  "router-local": {
+    "suite": "relevance corpus across surfaces",
+    "corpus": {
+      "ordinary": 315,
+      "decisions": 30,
+      "adversarial": 25
+    },
+    "checked": {
+      "rest": 370,
+      "rest_relevance_check": 370,
+      "mcp": 370,
+      "mcp_preflight": 370,
+      "mcp_full": 370,
+      "mcp_openai": 370
+    },
+    "failure_count": 0,
+    "failures": []
+  },
+  "test-relevance-router-r10-http": {
+    "passed": true,
+    "checks": 6,
+    "internal": 40,
+    "market": 28,
+    "vague": 5,
+    "classification": "proprietary lab fixtures"
+  },
+  "test-audit-heldout-r9-http": {
+    "passed": true,
+    "cohort": "heldout-r9",
+    "summary": {
+      "strict_calibrated": {
+        "detected": 16,
+        "false_permits": 0,
+        "clean_fp": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "internal_triggers": 0,
+        "missing": 0,
+        "statuses": [
+          200
+        ]
+      },
+      "full_advisory": {
+        "detected": 16,
+        "false_permits": 0,
+        "clean_fp": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "internal_triggers": 0,
+        "missing": 0,
+        "statuses": [
+          200
+        ]
+      }
+    }
+  },
+  "test-audit-heldout-r10-http": {
+    "passed": true,
+    "cohort": "heldout-r10",
+    "summary": {
+      "strict_calibrated": {
+        "detected": 16,
+        "false_permits": 0,
+        "clean_fp": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "internal_triggers": 0,
+        "missing": 0,
+        "statuses": [
+          200
+        ]
+      },
+      "full_advisory": {
+        "detected": 16,
+        "false_permits": 0,
+        "clean_fp": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "internal_triggers": 0,
+        "missing": 0,
+        "statuses": [
+          200
+        ]
+      }
+    }
+  },
+  "test-audit-heldout-r10b-http": {
+    "passed": true,
+    "cohort": "heldout-r10b",
+    "summary": {
+      "strict_calibrated": {
+        "detected": 16,
+        "false_permits": 0,
+        "clean_fp": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "internal_triggers": 0,
+        "missing": 0,
+        "statuses": [
+          200
+        ]
+      },
+      "full_advisory": {
+        "detected": 16,
+        "false_permits": 0,
+        "clean_fp": 0,
+        "controlling": 24,
+        "targeted": 16,
+        "internal_triggers": 0,
+        "missing": 0,
+        "statuses": [
+          200
+        ]
+      }
+    }
+  }
+}

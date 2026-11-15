@@ -90946,6 +90946,34 @@
                           },
                           "description": "Default: every load-bearing claim."
                         },
+                        "resource": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "system",
+                            "resource_type",
+                            "resource_id"
+                          ],
+                          "properties": {
+                            "system": {
+                              "type": "string"
+                            },
+                            "resource_type": {
+                              "type": "string"
+                            },
+                            "resource_id": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "external_contact": {
+                          "type": "boolean"
+                        },
+                        "authority_binding_sha256": {
+                          "type": "string",
+                          "pattern": "^[a-f0-9]{64}$",
+                          "description": "Current check_permission exact_effect_binding.sha256 for this executor and fully specified effect."
+                        },
                         "geography": {
                           "type": "object",
                           "required": [
@@ -126838,7 +126866,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-11-14.exact-reducer.3"
+    "deployment_revision": "2026-11-15.exact-reducer.4"
   },
   "response_contract_version": "2026-05-01.v1"
 }
