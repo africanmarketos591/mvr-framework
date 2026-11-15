@@ -502,6 +502,25 @@
       "FirstCallRequest": {
         "type": "object",
         "properties": {
+          "requested_effects": {
+            "type": "array",
+            "maxItems": 32,
+            "items": {
+              "type": "object",
+              "properties": {
+                "effect_id": {
+                  "type": "string"
+                },
+                "effect_type": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Explicit actions for applicability before any market evidence workflow."
+          },
           "relevance_check": {
             "type": "boolean",
             "description": "Check relevance only; never start a workflow."

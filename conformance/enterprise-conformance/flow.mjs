@@ -74,7 +74,7 @@ export async function runEnterpriseConformanceFlow({conformance, get, effectDeci
     const e = r.effects[0]; assert.equal(e.execution_authorization_status, 'not_authorized'); assert.ok(e.authority_reason_codes.includes('CONFORMANCE_SESSION_NOT_THIS_TENANT'));
   });
   // Exact-once commit at a buyer-owned adapter that pins the Enterprise root.
-  const feed = createFeedSubscriber({base, sessionId: source.session_id, registryKey, fetchImpl});
+  const feed = createFeedSubscriber({base, sessionId: source.session_id, registryId: statement.registry_id, pinnedRoot: enterpriseRoot, registryKey, fetchImpl});
   await feed.poll();
   const performed = [];
   const buyer = (pinned, expect) => createBuyerExecutor({pinnedRoot: pinned, expect, action: 'amos.document.draft.create@1', store: memoryClaimStore(), feed,
@@ -144,7 +144,7 @@ export async function runEnterpriseConformanceFlow({conformance, get, effectDeci
   });
   await check('the feed is hash-chained and signed end to end', async () => {
     const body = await get('/v1/authority-conformance/feed?session_id=' + source.session_id + '&after=0');
-    const verifier = createFeedSubscriber({base, sessionId: source.session_id, registryKey, fetchImpl});
+    const verifier = createFeedSubscriber({base, sessionId: source.session_id, registryId: statement.registry_id, pinnedRoot: enterpriseRoot, registryKey, fetchImpl});
     await verifier.apply(body);
     assert.equal(verifier.state.last_sequence, feed.state.last_sequence);
     return {entries: body.entries.length, actions: [...new Set(body.entries.map(e => e.action))]};

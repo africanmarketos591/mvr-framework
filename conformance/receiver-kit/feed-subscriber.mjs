@@ -9,14 +9,27 @@ export const FEED_SUBSCRIBER_VERSION = 'amos.feed-subscriber/1';
 export const FEED_CONTRACT = 'mvr.current-state-feed/1';
 const fault = code => Object.assign(new Error(code), {code});
 
-export function createFeedSubscriber({base = 'https://africanmarketos.com', sessionId, registryKey, fetchImpl = fetch, now = () => Date.now()}) {
+export function createFeedSubscriber({base = 'https://africanmarketos.com', sessionId, registryKey, registryId=null, pinnedRoot=null, fetchImpl = fetch, now = () => Date.now()}) {
   if (!sessionId || !registryKey?.key_id || !registryKey?.public_key_spki_b64) throw new Error('sessionId and registryKey {key_id, public_key_spki_b64} are required');
-  const state = {last_sequence: 0, head_sha256: null, head_observed_at: null, revoked_capabilities: new Set(), revocations: [], session_closed: false, offline_policy: null, entries: [], polls: 0};
+  const root=pinnedRoot?structuredClone(pinnedRoot):null;
+  registryKey=structuredClone(registryKey);
+  let feedRealm=root?.realm??null,feedRegistry=registryId;
+  function checkScope(head){
+    if(typeof head.realm!=='string'||!head.realm||typeof head.registry_id!=='string'||!head.registry_id||
+       (feedRealm!==null&&head.realm!==feedRealm)||(feedRegistry!==null&&head.registry_id!==feedRegistry))
+      throw fault('FEED_REGISTRY_SCOPE_MISMATCH');
+  }
+  let registryDigest=null,keyDeadline=registryKey.not_after===undefined?Infinity:Date.parse(registryKey.not_after);
+  if(Number.isNaN(keyDeadline))throw fault('FEED_KEY_EXPIRY_INVALID');
+  const state = {registry_id:null,realm:null,last_sequence: 0, head_sha256: null, head_observed_at: null, revoked_capabilities: new Set(), revocations: [], session_closed: false, offline_policy: null, entries: [], polls: 0};
   async function apply(body) {
     const head = body?.head;
+    const checkedKey=registryKey;
+    if(now()>=keyDeadline)throw fault('FEED_KEY_EXPIRED');
     const checked = await verifyStatement(head, {key_id: registryKey.key_id, public_key_spki_b64: registryKey.public_key_spki_b64, contract: FEED_CONTRACT});
     if (!checked.valid) throw fault('FEED_HEAD_INVALID:' + checked.reason);
     if (head.session_id !== sessionId) throw fault('FEED_SESSION_MISMATCH');
+    checkScope(head);
 
     // Hashes are asynchronous. Recheck the cursor before committing if another poll wins the race.
     const start = state.last_sequence;
@@ -43,7 +56,11 @@ export function createFeedSubscriber({base = 'https://africanmarketos.com', sess
       additions.push(entry);
     }
     if (head.last_sequence !== sequence || head.head_sha256 !== prev) throw fault('FEED_HEAD_MISMATCH');
-    if (state.last_sequence !== start || observed < (state.head_observed_at ?? -Infinity) || (state.session_closed && head.session_status === 'active')) throw fault('FEED_CURSOR_CHANGED');
+    if (checkedKey!==registryKey || now()>=keyDeadline || state.last_sequence !== start || observed < (state.head_observed_at ?? -Infinity) || (state.session_closed && head.session_status === 'active')) throw fault('FEED_CURSOR_CHANGED');
+    checkScope(head);
+    feedRealm=head.realm;
+    feedRegistry=head.registry_id;
+    state.registry_id=feedRegistry;state.realm=feedRealm;
     for (const entry of additions) {
       state.entries.push(entry);
       if (entry.receivers_must_reverify) state.revocations.push({sequence: entry.sequence, action: entry.action, id: entry.id, at: entry.at});
@@ -77,6 +94,33 @@ export function createFeedSubscriber({base = 'https://africanmarketos.com', sess
   }
   return {
     version: FEED_SUBSCRIBER_VERSION, state, poll, apply: verifyAndApply,
+    async rotateRegistry(previousStatement,nextStatement) {
+      const previous=structuredClone(previousStatement),next=structuredClone(nextStatement),oldKey=registryKey;
+      verificationFailed=true;
+      if(!root || state.session_closed)throw fault('FEED_ROTATION_UNAVAILABLE');
+      for (const statement of [previous,next]) {
+        const checked=await verifyStatement(statement,{key_id:root.key_id,public_key_spki_b64:root.public_key_spki_b64,contract:'mvr.authority-registry-statement/1'});
+        if(!checked.valid || statement.session_id!==sessionId || statement.realm!==root.realm ||
+           statement.issuer?.root_key_id!==root.key_id)throw fault('FEED_REGISTRY_INVALID');
+      }
+      checkScope(previous);
+      checkScope(next);
+      const identity=['registry_id','organization_ref','tenant_id','workspace_id','licensed_tenant_ref','recognized_standing','production_authority','assurance_level'];
+      const successor=next.supersedes;
+      if(identity.some(k=>previous[k]!==next[k]) || !Number.isSafeInteger(previous.registry_version) || previous.registry_version<1 ||
+         next.registry_version!==previous.registry_version+1 || successor?.registry_id!==previous.registry_id ||
+         successor?.registry_version!==previous.registry_version || successor?.sha256!==previous.sha256 ||
+         (registryDigest!==null && previous.sha256!==registryDigest))throw fault('FEED_REGISTRY_DISCONTINUITY');
+      const active=s=>Array.isArray(s.keys)?s.keys.filter(k=>k.status==='active'):[];
+      const [old]=active(previous),newKeys=active(next),key=newKeys[0];
+      const deadline=Math.min(Date.parse(next.expires_at),Date.parse(key?.not_after));
+      if(active(previous).length!==1 || old?.key_id!==oldKey.key_id || old?.public_key_spki_b64!==oldKey.public_key_spki_b64 ||
+         newKeys.length!==1 || !key.key_id || !key.public_key_spki_b64 || key.key_id===oldKey.key_id || key.public_key_spki_b64===oldKey.public_key_spki_b64 ||
+         !(Date.parse(next.issued_at)<=now() && Date.parse(key.not_before)<=now() && now()<deadline) ||
+         registryKey!==oldKey || state.session_closed)throw fault('FEED_KEY_TRANSITION_INVALID');
+      feedRealm=next.realm;feedRegistry=next.registry_id;registryKey=key;registryDigest=next.sha256;keyDeadline=deadline;verificationFailed=true;
+      return {registry_version:next.registry_version,key_id:key.key_id,verified_cursor:state.last_sequence};
+    },
     // Long-poll until stop() returns true or the deadline passes; onRevocation runs for each new revoke_* or close entry.
     async follow({deadlineMs, stop = () => false, onRevocation = () => {}, wait = 20} = {}) {
       let seen = state.revocations.length;
@@ -89,6 +133,7 @@ export function createFeedSubscriber({base = 'https://africanmarketos.com', sess
       return state;
     },
     fresh({riskClass = 'standard'} = {}) {
+      if(now()>=keyDeadline)return {fresh:false,reason:'FEED_KEY_EXPIRED'};
       if (verificationFailed) return {fresh: false, reason: 'FEED_VERIFICATION_FAILED'};
       const max = state.offline_policy?.risk_classes?.[riskClass]?.max_offline_age_seconds;
       if (max === undefined || state.head_observed_at === null) return {fresh: false, reason: 'FEED_NOT_READ'};

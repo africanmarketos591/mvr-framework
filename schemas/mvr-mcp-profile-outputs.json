@@ -1,6 +1,6 @@
 {
   "contract": "mvr.mcp-profile-outputs/1",
-  "deployment_revision": "2026-11-15.exact-reducer.4",
+  "deployment_revision": "2026-11-15.exact-reducer.5",
   "default_field_contract": "authority-fields/2",
   "legacy_sunset": "2027-01-21T00:00:00Z",
   "unconstrained_legacy_tools": [
@@ -34620,6 +34620,26 @@
         "properties": {
           "analysis_date": {
             "type": "string"
+          },
+          "applicability_receipt": {
+            "properties": {
+              "contract_version": {
+                "const": "mvr.applicability-receipt/1"
+              },
+              "decision": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              },
+              "receipt_id": {
+                "type": "string"
+              },
+              "task_sha256": {
+                "type": "string"
+              }
+            },
+            "type": "object"
           },
           "boundaries": {
             "type": "object"

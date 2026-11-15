@@ -2578,6 +2578,14 @@ export type EffectDecisionResponse = {
       summary?: string;
       [key: string]: unknown;
     }>;
+  applicability_receipt?: {
+    receipt_id?: string;
+    task_sha256?: string;
+    contract_version?: "mvr.applicability-receipt/1";
+    decision?: string;
+    execution_authorized?: false;
+    [key: string]: unknown;
+  };
   relevance?: {
     [key: string]: unknown;
   };

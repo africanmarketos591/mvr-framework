@@ -42273,6 +42273,25 @@
                     "maxLength": 2000,
                     "description": "Exact recorded decision_question."
                   },
+                  "requested_effects": {
+                    "type": "array",
+                    "maxItems": 32,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "effect_id": {
+                          "type": "string"
+                        },
+                        "effect_type": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "description": "Explicit actions for applicability before any market evidence workflow."
+                  },
                   "relevance_check": {
                     "type": "boolean",
                     "description": "Check relevance only; never start a workflow."
@@ -121114,6 +121133,27 @@
               }
             }
           },
+          "applicability_receipt": {
+            "type": "object",
+            "properties": {
+              "receipt_id": {
+                "type": "string"
+              },
+              "task_sha256": {
+                "type": "string"
+              },
+              "contract_version": {
+                "const": "mvr.applicability-receipt/1"
+              },
+              "decision": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              }
+            },
+            "additionalProperties": true
+          },
           "relevance": {
             "type": "object",
             "additionalProperties": true
@@ -126866,7 +126906,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-11-15.exact-reducer.4"
+    "deployment_revision": "2026-11-15.exact-reducer.5"
   },
   "response_contract_version": "2026-05-01.v1"
 }
