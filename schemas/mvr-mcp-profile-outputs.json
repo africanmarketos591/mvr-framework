@@ -34621,6 +34621,26 @@
           "analysis_date": {
             "type": "string"
           },
+          "applicability_receipt": {
+            "properties": {
+              "contract_version": {
+                "const": "mvr.applicability-receipt/1"
+              },
+              "decision": {
+                "type": "string"
+              },
+              "execution_authorized": {
+                "const": false
+              },
+              "receipt_id": {
+                "type": "string"
+              },
+              "task_sha256": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
           "boundaries": {
             "type": "object"
           },
