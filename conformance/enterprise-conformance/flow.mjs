@@ -41,15 +41,23 @@ export async function runEnterpriseConformanceFlow({conformance, get, effectDeci
   });
   const registryKey = publicKeyOf(statement.keys[0]);
   const effect = {...source.effect, effect_id: 'conf-' + Date.now().toString(36)};
+  const exactPosition = await source.check_permission(effect);
+  const binding = exactPosition.permission_position?.exact_effect_binding?.sha256;
+  assert.match(binding ?? '', /^[a-f0-9]{64}$/, 'current exact permission binding');
   const decisionBody = (effectType, conformance_session_id = source.session_id) => ({analysis_date: today, market_scope: {country: 'UG'}, subject: {entity_name: 'AMOS Lab Receiver Venture'},
     claims: [{claim_id: 'C1', claim: 'The lab draft record request is in scope for the conformance case.', support_links: [{evidence_id: 'E1', relationship: 'direct_support', locator: 'claim'}]}],
     evidence_pack: [{evidence_id: 'E1', claim: 'The conformance case was opened on ' + today + ' to create one harmless lab draft record.', source_class: 'administrative_record', evidence_geography: {country: 'UG'}, source_date: today}],
-    requested_effects: [{effect_id: 'CONF-DRAFT', effect_type: effectType, authority_ref: {case_id: source.case_id, requested_effect: {...effect, effect_type: effectType}, conformance_session_id}}]});
+    requested_effects: [{effect_id:effect.effect_id, effect_type:effectType,
+      resource:effect.resource, amount:{amount_minor:effect.amount_minor,currency:effect.currency}, external_contact:effect.external_contact,
+      counterparty_ref:effect.counterparty_ref, geography:{country:'UG'}, authority_binding_sha256:binding,
+      authority_ref: {case_id: source.case_id, geography:'UG', requested_effect: {...effect, effect_type: effectType}, conformance_session_id}}]});
   for (const form of ['create_draft_record', 'amos.document.draft.create@1']) await check(`positive exact capability (${form}): analysis favorable, authority and execution authorized, scoped to the conformance realm`, async () => {
     const r = await effectDecision(decisionBody(form), 'enterprise');
     const e = r.effects?.[0];
     assert.ok(e, JSON.stringify(r).slice(0, 400));
     assert.deepEqual([e.analytical_evidence_status, e.institutional_authority_status, e.execution_authorization_status], ['favorable', 'authorized', 'authorized'], JSON.stringify({rule: e.precedence_rule, a: e.authority_reason_codes, x: e.execution_reason_codes}));
+    assert.equal(e.authority_basis.outer_effect_sha256,e.effect_sha256);
+    assert.equal(e.authority_basis.exact_effect_binding.sha256,binding);
     assert.equal(e.canonical_action_id, 'amos.document.draft.create@1'); assert.equal(e.authority_basis.realm, ENTERPRISE_REALM); assert.equal(e.authority_basis.production_authority, false); assert.equal(e.authority_basis.recognized_standing, 'none');
     assert.equal(e.execution_scope.production_authority, false);
     return {canonical_action_id: e.canonical_action_id, tier: e.authority_basis.tier, risk_class: e.authority_basis.risk_class};

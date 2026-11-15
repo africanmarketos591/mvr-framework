@@ -1,5 +1,5 @@
 # Generated from the AMOS OpenAPI contract by scripts/generate-governance-client.mjs (https://github.com/africanmarketos591/mvr-framework).
-# Contract version v6.32.0; operation subset SHA-256: c9bfba0f996935a790053f2c833815081ad95b526a0ea7ce775a1c22a7168227. Do not edit by hand; regenerate instead.
+# Contract version v6.32.0; operation subset SHA-256: 1df214525d6958c08e1e90d0279fe014da6c7acd6fc9d82d6cc1e83c7ef9098f. Do not edit by hand; regenerate instead.
 """AMOS governance client (Python standard library only).
 
 Every method returns a dict {"status", "body", "deployment_revision", "revision_matches"} and does not raise on a coded
