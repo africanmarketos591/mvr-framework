@@ -11,8 +11,13 @@ const common={contract_version:'mvr.authority-registry-statement/1',registry_id:
   session_id:data.session_id,organization_ref:'test',production_authority:false,recognized_standing:'none',assurance_level:'fixture',issuer:{root_key_id:root.key_id},issued_at:since,expires_at:until};
 const registry=(key,n,parent)=>signStatement(root,{...common,registry_version:n,keys:[{...publicKeyOf(key),status:'active',not_before:since,not_after:until}],supersedes:parent?{registry_id:parent.registry_id,registry_version:parent.registry_version,sha256:parent.sha256}:null});
 const one=await registry(before,1,null),two=await registry(after,2,one);
-const batch=async(data,key)=>{const {signature,sha256,...head}=data.head;return {entries:data.entries,head:await signStatement(key,head)};};
-const sub=createFeedSubscriber({sessionId:data.session_id,registryKey:publicKeyOf(before),pinnedRoot:{realm:'fixture',...publicKeyOf(root)},now:()=>clock});
+const batch=async(data,key)=>{const {signature,sha256,...head}=data.head;return {entries:data.entries,head:await signStatement(key,{...head,registry_id:common.registry_id,realm:common.realm})};};
+const sub=createFeedSubscriber({sessionId:data.session_id,registryKey:publicKeyOf(before),registryId:common.registry_id,pinnedRoot:{realm:'fixture',...publicKeyOf(root)},now:()=>clock});
+// The historical feed vector belongs to a different registry from these locally issued statements.
+const {signature:unusedSignature,sha256:unusedHash,...historicalHead}=data.first_batch.head;
+const otherRegistryHead=await signStatement(before,historicalHead);
+await assert.rejects(sub.apply({head:otherRegistryHead,entries:data.first_batch.entries}),{code:'FEED_REGISTRY_SCOPE_MISMATCH'});
+assert.equal(sub.state.last_sequence,0);
 const first=await batch(data.first_batch,before),complete=await batch(data.batch,before);
 await assert.rejects(sub.apply({...complete,entries:complete.entries.slice(1)}),{code:'FEED_GAP'});
 assert.equal(sub.state.last_sequence,0);

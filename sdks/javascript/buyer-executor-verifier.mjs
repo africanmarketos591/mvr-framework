@@ -54,6 +54,8 @@ export function createBuyerExecutor({pinnedRoot, expect = {}, action, executorPr
       if (!chain.valid) return refuse('BUYER_CHAIN_INVALID', steps, chain.reason);
       if (receipt.kind !== 'effect_commit' || receipt.decision !== 'commit' || !/^CM-[a-f0-9]{48}$/.test(receipt.commit_id || '')) return refuse('BUYER_NOT_A_COMMIT', steps);
       if (receipt.capability_id !== undefined && receipt.capability_id !== current_state.capability_id) return refuse('BUYER_CAPABILITY_MISMATCH', steps);
+      if ((feed.state.registry_id!=null && feed.state.registry_id!==registry_statement.registry_id) ||
+          (feed.state.realm!=null && feed.state.realm!==registry_statement.realm)) return refuse('BUYER_FEED_SCOPE_MISMATCH',steps);
       const fresh = feed.fresh({riskClass});
       steps.push({check: 'feed_fresh', ...fresh});
       if (!fresh.fresh) return refuse('BUYER_FEED_NOT_FRESH', steps, fresh.reason);
