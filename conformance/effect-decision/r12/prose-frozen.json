@@ -1,0 +1,579 @@
+[
+  {
+    "id": "prose-1",
+    "expected": "favorable",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "KE",
+        "locality": "Kisumu"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The depot received 12 crates of chilled produce.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "Receiving log, morning shift. Unloaded 12 crates of chilled produce at the depot.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "KE",
+            "locality": "Kisumu"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-2",
+    "expected": "insufficient",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "GH",
+        "locality": "Tamale"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The north office bought 40 kits.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "Signed handover to the north office covers 35 kits. The file sits under reference 40.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "GH",
+            "locality": "Tamale"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-3",
+    "expected": "favorable",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "UG",
+        "locality": "Jinja"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The reserve for this delivery is UGX 2 million.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "The approved delivery reserve in the ledger is UGX 2,000,000.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "UG",
+            "locality": "Jinja"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-4",
+    "expected": "insufficient",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "NG",
+        "locality": "Kano"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The wholesaler funded 18 outlets.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "Signed schedule of disbursements mentions 18 farms. It records funding for 9 outlets.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "NG",
+            "locality": "Kano"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-5",
+    "expected": "favorable",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "RW",
+        "locality": "Huye"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The partner signed the intake agreement.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "The partner signed the intake agreement. The attachments carry the specimen schedule.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "RW",
+            "locality": "Huye"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-6",
+    "expected": "insufficient",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "TZ",
+        "locality": "Arusha"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The clinic secured an allocation of 14 kits.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "Fourteen requests were reviewed. The signed notice allocates 14 kits to this clinic.",
+          "source_date": "2026-11-18",
+          "evidence_geography": {
+            "country": "TZ",
+            "locality": "Arusha"
+          },
+          "valid_until": "2026-12-31"
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-7",
+    "expected": "insufficient",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "KE",
+        "locality": "Embu"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "At this depot the storekeeper accepted 9 sacks.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "Signed receipt from the storekeeper at this depot records 9 sacks.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "KE",
+            "locality": "Nyeri"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-8",
+    "expected": "favorable",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "GH",
+        "locality": "Kumasi"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The signed order covers GHS 85,000.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "Countersigned order: budget line GHS 85,000, debited at dispatch.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "GH",
+            "locality": "Kumasi"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-9",
+    "expected": "insufficient",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "UG",
+        "locality": "Lira"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The retailer signed the supply agreement.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "The retailer has applied for the supply agreement. The signature page is blank.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "UG",
+            "locality": "Lira"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-10",
+    "expected": "conditional",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "NG",
+        "locality": "Kaduna"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The pilot agreement covers 7 stores.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "The agreement covers 7 stores, subject to a stock inspection before the first delivery.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "NG",
+            "locality": "Kaduna"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-11",
+    "expected": "insufficient",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "RW",
+        "locality": "Kigali"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The ledger shows a cash allocation of USD 9,000.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "Cash reserved for the trial is EUR 9,000. No dollar allocation appears in the ledger.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "RW",
+            "locality": "Kigali"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prose-12",
+    "expected": "favorable",
+    "request": {
+      "analysis_date": "2026-11-15",
+      "market_scope": {
+        "country": "TZ",
+        "locality": "Moshi"
+      },
+      "claims": [
+        {
+          "claim_id": "C",
+          "claim": "The supply agreement was signed.",
+          "support_links": [
+            {
+              "evidence_id": "E",
+              "relationship": "direct_support",
+              "locator": "claim"
+            }
+          ]
+        }
+      ],
+      "evidence_pack": [
+        {
+          "evidence_id": "E",
+          "claim": "The supply agreement was signed. Archive note: the truck arrived late that afternoon.",
+          "source_date": "2026-11-12",
+          "evidence_geography": {
+            "country": "TZ",
+            "locality": "Moshi"
+          }
+        }
+      ],
+      "requested_effects": [
+        {
+          "effect_id": "X",
+          "effect_type": "external_offer",
+          "depends_on_claims": [
+            "C"
+          ]
+        },
+        {
+          "effect_id": "P",
+          "effect_type": "internal_planning"
+        }
+      ]
+    }
+  }
+]
