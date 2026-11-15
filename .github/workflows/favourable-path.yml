@@ -42,6 +42,10 @@ jobs:
           node-version: '24.11.0'
       - name: Decision-state replay
         run: node conformance/decision-state/test.mjs
+      - name: Signed feed lease, rotation and verified catch-up
+        run: |
+          node conformance/receiver-kit/feed-vectors/check-subscriber.mjs
+          node conformance/receiver-kit/feed-vectors/check-rotation.mjs
       - name: Generated clients match the published contract
         run: node scripts/generate-governance-client.mjs --check
       - name: TypeScript declarations compile in a clean environment

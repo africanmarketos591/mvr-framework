@@ -13,7 +13,8 @@ export function createFeedSubscriber({base = 'https://africanmarketos.com', sess
   if (!sessionId || !registryKey?.key_id || !registryKey?.public_key_spki_b64) throw new Error('sessionId and registryKey {key_id, public_key_spki_b64} are required');
   const root=pinnedRoot?structuredClone(pinnedRoot):null;
   registryKey=structuredClone(registryKey);
-  let registryDigest=null,keyDeadline=Infinity;
+  let registryDigest=null,keyDeadline=registryKey.not_after===undefined?Infinity:Date.parse(registryKey.not_after);
+  if(Number.isNaN(keyDeadline))throw fault('FEED_KEY_EXPIRY_INVALID');
   const state = {last_sequence: 0, head_sha256: null, head_observed_at: null, revoked_capabilities: new Set(), revocations: [], session_closed: false, offline_policy: null, entries: [], polls: 0};
   async function apply(body) {
     const head = body?.head;
