@@ -1,5 +1,5 @@
 {
- "manifest_id": "MVRRM-27910eafe4f776201a62dfa7a1293d0b",
+ "manifest_id": "MVRRM-c5e1b6d048a8d45529b6cb47e25ff0bc",
  "contract_version": "mvr.release-manifest/1",
  "deployment_revision": "2026-11-15.exact-reducer.5",
  "release_version": "v6.32.0",
@@ -238,14 +238,14 @@
   },
   "public_repository": {
    "repository": "africanmarketos591/mvr-framework",
-   "components_commit": "233ab22682e352be6139a0bbff92178e74a18881",
+   "components_commit": "ec0b281a49f8ed78d291501d2658be2ccdf37461",
    "working_tree_clean": true,
    "generated_clients": {
     "generator": "scripts/generate-governance-client.mjs",
     "reproduce": "node scripts/generate-governance-client.mjs --spec <served openapi> --check",
     "javascript": {
      "files": 13,
-     "tree_sha256": "cacf0cc7c7e35ec0576629f1de6055039c4b4e6861b9985ae497290cc09bc15f"
+     "tree_sha256": "5b426320ff126652343533e1ae32d9aae9eb340f9661fb1c53656c0deb4da05f"
     },
     "python": {
      "files": 2,
@@ -264,7 +264,7 @@
    },
    "conformance_vectors": {
     "files": 173,
-    "tree_sha256": "3805b9c6e6e3495644964c6d41518a087b38ce9bc0e0c3940fefef62566c279d"
+    "tree_sha256": "03f4b09d3d36d5a5a83ccd33da7dc6957860011ea352bbafcaee93726f0381bf"
    },
    "schemas": {
     "files": 5,
@@ -329,6 +329,7 @@
    "public_repository.components_commit",
    "public_repository.conformance_vectors.files",
    "public_repository.conformance_vectors.tree_sha256",
+   "public_repository.generated_clients.javascript.tree_sha256",
    "public_repository.openapi_snapshots.openapi_json",
    "public_repository.schemas.tree_sha256",
    "runtime.closure_sha256",
