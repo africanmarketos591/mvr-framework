@@ -1,0 +1,3321 @@
+[
+ {
+  "id": "b-f01",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Teranga Foods holds an import authorisation.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The Ministry of Commerce issued import authorisation AI-2026-3312 to Teranga Foods on 12 October 2026.",
+     "source_date": "2026-10-12",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f02",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers holds an environmental permit from ZEMA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "ZEMA environmental permit EP/1187 has been granted to Copperbelt Recyclers and is currently valid.",
+     "source_date": "2026-10-05",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f03",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Abyssinia Coffee has an executed supply contract with Harar Growers Union.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The supply contract between Abyssinia Coffee and Harar Growers Union was executed on 2 November 2026; both seals are affixed.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f04",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Certificate of origin CO-55120 was stamped and released by the chamber of commerce on 7 November 2026.",
+     "source_date": "2026-11-07",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f05",
+  "category": "validity_window",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "licensing-year term is currentness, not a qualifier",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "MW",
+    "locality": "Lilongwe"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Mzuzu Agro holds a current Lilongwe City Council business licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The Lilongwe City Council business licence for Mzuzu Agro was renewed on 1 October 2026 for the 2026/27 licensing year.",
+     "source_date": "2026-10-01",
+     "evidence_geography": {
+      "country": "MW",
+      "locality": "Lilongwe"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f06",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Kisumu buyer paid the deposit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Payment of KES 1,200,000 was received in full and receipted (receipt R-8812) on 10 November 2026.",
+     "source_date": "2026-11-10",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f07",
+  "category": "validity_window",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "expiry date is currentness",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Gulu trader holds a livestock movement permit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The district veterinary office approved the livestock movement permit on 3 November 2026; the permit expires on 31 January 2027.",
+     "source_date": "2026-11-03",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Gulu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f08",
+  "category": "complete_trap",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "'no outstanding requirements'",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Teranga Foods completed its exporter registration.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Exporter registration for Teranga Foods was completed on 4 November 2026 with no outstanding requirements.",
+     "source_date": "2026-11-04",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f09",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "structured status",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Abyssinia Coffee holds a trade licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Trade licence TL-9921 for Abyssinia Coffee.",
+     "source_date": "2026-09-20",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     },
+     "licence_status": "active"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f10",
+  "category": "complete_trap",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "the instrument itself 'states' - not hearsay",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Ivoire Cocoa SARL is incorporated.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The registrar's certificate states that Ivoire Cocoa SARL was incorporated on 3 March 2026 under number CI-ABJ-2026-B-1182.",
+     "source_date": "2026-03-03",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f11",
+  "category": "complete_trap",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "'Will' is a name, not future tense",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Kisumu depot received 50 crates of tilapia.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Will Otieno, the depot manager, signed delivery note DN-3381 for 50 crates of tilapia received on 9 November 2026.",
+     "source_date": "2026-11-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-f12",
+  "category": "validity_window",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "valid-through date is currentness",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers holds an environmental permit from ZEMA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "ZEMA granted environmental permit EP/1187 to Copperbelt Recyclers on 5 October 2026, valid through 4 October 2028.",
+     "source_date": "2026-10-05",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-i01",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "future-tense context record",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Teranga Foods holds an import authorisation.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "context_only",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The Ministry of Commerce issued import authorisation AI-2026-3312 to Teranga Foods on 12 October 2026.",
+     "source_date": "2026-10-12",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The Dakar port authority will introduce new berth fees next year.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-i02",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Certificate of origin CO-55120 was stamped and released by the chamber of commerce on 7 November 2026.",
+     "source_date": "2026-11-07",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Chamber of commerce register extract: certificate of origin CO-55120, status issued.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-i03",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "non-load-bearing unsupported claim",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "MW",
+    "locality": "Lilongwe"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Mzuzu Agro holds a current Lilongwe City Council business licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    },
+    {
+     "claim_id": "D",
+     "claim": "Mzuzu Agro may open a Blantyre outlet.",
+     "support_links": [],
+     "load_bearing": false
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The Lilongwe City Council business licence for Mzuzu Agro was renewed on 1 October 2026.",
+     "source_date": "2026-10-01",
+     "evidence_geography": {
+      "country": "MW",
+      "locality": "Lilongwe"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-i04",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Kisumu buyer paid the deposit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "context_only",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Payment of KES 1,200,000 was received in full and receipted (receipt R-8812) on 10 November 2026.",
+     "source_date": "2026-11-10",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Mobile money outages were reported in Uganda last week.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-i05",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "effect does not depend on the missing claim",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Abyssinia Coffee has an executed supply contract with Harar Growers Union.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    },
+    {
+     "claim_id": "C2",
+     "claim": "Harar Growers Union has organic certification.",
+     "support_links": [
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "claim": "The supply contract between Abyssinia Coffee and Harar Growers Union was executed on 2 November 2026; both seals are affixed.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Organic certification for Harar Growers Union is still awaiting the auditor's report.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C1"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m01",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Teranga Foods holds an import authorisation.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Teranga Foods expects the import authorisation to be issued by the end of the month.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m02",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers holds an environmental permit from ZEMA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Copperbelt Recyclers' environmental permit application is being processed by ZEMA.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m03",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Abyssinia Coffee has an executed supply contract with Harar Growers Union.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The supply contract is awaiting signature by the Harar Growers Union board.",
+     "source_date": "2026-11-06",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m04",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "reported only",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "According to the exporter, the certificate of origin was stamped last week.",
+     "source_date": "2026-11-10",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m05",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "MW",
+    "locality": "Lilongwe"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Mzuzu Agro holds a current Lilongwe City Council business licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The council is yet to renew Mzuzu Agro's business licence for this year.",
+     "source_date": "2026-11-03",
+     "evidence_geography": {
+      "country": "MW",
+      "locality": "Lilongwe"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m06",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Kisumu buyer paid the deposit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The buyer promised to pay the KES 1,200,000 deposit on Friday.",
+     "source_date": "2026-11-11",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m07",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Gulu trader holds a livestock movement permit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "A livestock movement permit request has been lodged with the district veterinary office.",
+     "source_date": "2026-11-04",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Gulu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m08",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "structured status",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Teranga Foods holds an import authorisation.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Import authorisation file AI-2026-3312 for Teranga Foods.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     },
+     "approval_status": "under_review"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m09",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers holds an environmental permit from ZEMA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "ZEMA is scheduled to decide on the environmental permit at its December sitting.",
+     "source_date": "2026-11-08",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m10",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Abyssinia Coffee has an executed supply contract with Harar Growers Union.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The supply contract would be signed once financing is confirmed.",
+     "source_date": "2026-11-04",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m11",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The chamber will stamp the certificate of origin after the inspection on 20 November.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-m12",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Kisumu buyer paid the deposit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Deposit payment of KES 1,200,000: pending bank confirmation.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-mp1",
+  "category": "missing_precedence",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers holds an environmental permit from ZEMA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "ZEMA granted environmental permit EP/1187 to Copperbelt Recyclers.",
+     "source_date": "2026-10-01",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "ZEMA notice: the Copperbelt Recyclers application is still being processed and no permit has been issued.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-mp2",
+  "category": "missing_precedence",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Kisumu buyer paid the deposit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Deposit received from the Kisumu buyer.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Bank advice: the buyer's deposit transfer remains unconfirmed.",
+     "source_date": "2026-11-08",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-mp3",
+  "category": "missing_precedence_sibling",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "later support states its completion date",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Teranga Foods holds an import authorisation.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Teranga Foods lodged its application for an import authorisation.",
+     "source_date": "2026-09-10",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The Ministry of Commerce issued import authorisation AI-2026-3312 to Teranga Foods on 12 October 2026.",
+     "source_date": "2026-10-12",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-mp4",
+  "category": "missing_precedence",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Abyssinia Coffee has an executed supply contract with Harar Growers Union.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The supply contract with Harar Growers Union has been executed.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The supply contract with Harar Growers Union is awaiting countersignature.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-q01",
+  "category": "qualified",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Teranga Foods holds an import authorisation.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The import authorisation was issued on condition that each consignment is inspected at the port of Dakar.",
+     "source_date": "2026-10-12",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-q02",
+  "category": "qualified",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers holds an environmental permit from ZEMA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "EP/1187 was granted for the Kitwe site only; Copperbelt Recyclers' other sites are not covered.",
+     "source_date": "2026-10-05",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-q03",
+  "category": "qualified",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Abyssinia Coffee has an executed supply contract with Harar Growers Union.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The supply contract was signed on 2 November 2026, but deliveries are capped at 40 tonnes per month.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-q04",
+  "category": "qualified",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "A temporary certificate of origin was issued, valid only for the first shipment.",
+     "source_date": "2026-11-07",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-q05",
+  "category": "qualifier_precedence",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "MW",
+    "locality": "Lilongwe"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Mzuzu Agro holds a current Lilongwe City Council business licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "qualifies",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The Lilongwe City Council business licence for Mzuzu Agro was renewed on 1 October 2026.",
+     "source_date": "2026-10-01",
+     "evidence_geography": {
+      "country": "MW",
+      "locality": "Lilongwe"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The renewed licence excludes the sale of agro-chemicals.",
+     "source_date": "2026-10-01",
+     "evidence_geography": {
+      "country": "MW",
+      "locality": "Lilongwe"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-q06",
+  "category": "qualified",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Gulu trader holds a livestock movement permit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The livestock movement permit was approved provisionally, pending a second inspection.",
+     "source_date": "2026-11-04",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Gulu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-a01",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Teranga Foods holds an import authorisation.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The Ministry of Commerce cancelled Teranga Foods' import authorisation on 9 November 2026.",
+     "source_date": "2026-11-09",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-a02",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers holds an environmental permit from ZEMA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "ZEMA withdrew environmental permit EP/1187 from Copperbelt Recyclers on 3 November 2026.",
+     "source_date": "2026-11-03",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-a03",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Abyssinia Coffee has an executed supply contract with Harar Growers Union.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The supply contract between Abyssinia Coffee and Harar Growers Union lapsed on 31 October 2026 and was not renewed.",
+     "source_date": "2026-10-31",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-a04",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The chamber of commerce annulled certificate of origin CO-55120 after finding errors.",
+     "source_date": "2026-11-11",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-a05",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "MW",
+    "locality": "Lilongwe"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Mzuzu Agro holds a current Lilongwe City Council business licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Mzuzu Agro was struck off the Lilongwe City Council licence register on 5 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "MW",
+      "locality": "Lilongwe"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-a06",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Kisumu buyer paid the deposit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "contradicts",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The bank statement for 1-12 November shows no deposit from the Kisumu buyer.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-c01",
+  "category": "contested",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Kisumu buyer paid the deposit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "contradicts",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Payment of KES 1,200,000 was received in full and receipted (receipt R-8812) on 10 November 2026.",
+     "source_date": "2026-11-10",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The bank statement shows only KES 200,000 received from the buyer.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-p01",
+  "category": "prohibition",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Certificate of origin CO-55120 was stamped and released by the chamber of commerce on 7 November 2026.",
+     "source_date": "2026-11-07",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Conseil du Cafe-Cacao directive: no new cocoa sale offers may be made until the 2026/27 export quota is published.",
+     "source_date": "2026-11-10",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     },
+     "authority_effect": "prohibition",
+     "applies_to_effect_types": [
+      "external_offer"
+     ]
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-p02",
+  "category": "prohibition_scope_sibling",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "prohibition of a different effect type",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Certificate of origin CO-55120 was stamped and released by the chamber of commerce on 7 November 2026.",
+     "source_date": "2026-11-07",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Treasury directive: no foreign-currency payments may be released this week.",
+     "source_date": "2026-11-10",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     },
+     "authority_effect": "prohibition",
+     "applies_to_effect_types": [
+      "payment"
+     ]
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-r01",
+  "category": "revocation",
+  "grade": "authority",
+  "expected": "revoked_authority",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers holds an environmental permit from ZEMA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "ZEMA environmental permit EP/1187 has been granted to Copperbelt Recyclers and is currently valid.",
+     "source_date": "2026-10-05",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The Copperbelt Recyclers board revoked the sales team's authority to send offers on 13 November 2026.",
+     "source_date": "2026-11-13",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     },
+     "authority_effect": "revocation",
+     "applies_to_effect_types": [
+      "external_offer"
+     ]
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-s01",
+  "category": "stale",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "MW",
+    "locality": "Lilongwe"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Mzuzu Agro holds a current Lilongwe City Council business licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The Lilongwe City Council business licence for Mzuzu Agro was issued on 1 August 2025.",
+     "source_date": "2025-08-01",
+     "evidence_geography": {
+      "country": "MW",
+      "locality": "Lilongwe"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-s02",
+  "category": "stale_sibling",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "declared validity covers analysis date",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Teranga Foods holds an import authorisation.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The Ministry of Commerce issued import authorisation AI-2025-0901 to Teranga Foods on 1 April 2025.",
+     "source_date": "2025-04-01",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     },
+     "temporal": {
+      "valid_through": "2027-03-31"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-s03",
+  "category": "validity_ended",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "declared validity ended before analysis date",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers holds an environmental permit from ZEMA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "ZEMA granted environmental permit EP/0942 to Copperbelt Recyclers.",
+     "source_date": "2025-11-01",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     },
+     "source_scope": {
+      "effective_from": "2025-11-01",
+      "effective_to": "2026-10-31"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-g01",
+  "category": "geography",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Gulu trader holds a livestock movement permit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The district veterinary office approved the livestock movement permit on 3 November 2026.",
+     "source_date": "2026-11-03",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Lira"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-g02",
+  "category": "geography",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Abyssinia Coffee has an executed supply contract with Harar Growers Union.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The supply contract between Abyssinia Coffee and Harar Growers Union was executed on 2 November 2026; both seals are affixed.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Kisumu"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-g03",
+  "category": "geography",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Certificate of origin CO-55120 was stamped and released by the chamber of commerce on 7 November 2026.",
+     "source_date": "2026-11-07"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-qt1",
+  "category": "quantity",
+  "grade": "safety",
+  "expected": "not_favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ET",
+    "locality": "Addis Ababa"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Harar Growers Union can supply 40 tonnes of green coffee per month.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Harar Growers Union capacity letter: up to 4 tonnes of green coffee per month.",
+     "source_date": "2026-11-03",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Addis Ababa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-qt2",
+  "category": "quantity",
+  "grade": "safety",
+  "expected": "not_favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Lusaka"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Copperbelt Recyclers has a USD 50,000 working-capital facility.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Bank letter: Copperbelt Recyclers holds a working-capital facility of USD 5,000.",
+     "source_date": "2026-11-06",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Lusaka"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-mc1",
+  "category": "multi_claim",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "The cocoa shipment has a certificate of origin.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    },
+    {
+     "claim_id": "C2",
+     "claim": "The exporter holds a CCC export licence.",
+     "support_links": [
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "claim": "Certificate of origin CO-55120 was stamped and released by the chamber of commerce on 7 November 2026.",
+     "source_date": "2026-11-07",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The exporter's CCC export licence application is being processed.",
+     "source_date": "2026-11-09",
+     "evidence_geography": {
+      "country": "CI",
+      "locality": "Abidjan"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C1",
+      "C2"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-mc2",
+  "category": "multi_claim",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Teranga Foods holds an import authorisation.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    },
+    {
+     "claim_id": "C2",
+     "claim": "Teranga Foods has a cold-store lease in Dakar.",
+     "support_links": [
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "claim": "The Ministry of Commerce issued import authorisation AI-2026-3312 to Teranga Foods on 12 October 2026.",
+     "source_date": "2026-10-12",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The cold-store lease was signed on 1 November 2026, subject to the landlord completing electrical repairs.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "SN",
+      "locality": "Dakar"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C1",
+      "C2"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "b-mc3",
+  "category": "multi_claim",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "MW",
+    "locality": "Lilongwe"
+   },
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Mzuzu Agro holds a current Lilongwe City Council business licence.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    },
+    {
+     "claim_id": "C2",
+     "claim": "Mzuzu Agro is a registered MRA taxpayer.",
+     "support_links": [
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "claim": "The Lilongwe City Council business licence for Mzuzu Agro was renewed on 1 October 2026.",
+     "source_date": "2026-10-01",
+     "evidence_geography": {
+      "country": "MW",
+      "locality": "Lilongwe"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "MRA cancelled Mzuzu Agro's taxpayer registration on 2 November 2026.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "MW",
+      "locality": "Lilongwe"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C1",
+      "C2"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ }
+]
