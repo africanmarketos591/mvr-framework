@@ -1,0 +1,13 @@
+{
+ "contract_version": "mvr.effect-precedence/3",
+ "note": "The case files are unchanged since freezing (see the .sha256 files). A correction records where a frozen label followed contract wording that R13 clarified. The first-pass score is reported against the original labels.",
+ "corrections": [
+  {
+   "file": "blind-cases.json",
+   "id": "mp3",
+   "original": "favorable",
+   "corrected": "insufficient",
+   "reason": "The later record states the licence issued and in force but gives no completion date. The R12 contract said a missing-link record outweighs support 'it does not post-date', which reads as the record date. The reducer has always required a stated completion date, so that a later-dated restatement cannot settle a gap. R13 states that rule in the contract: a record date alone does not settle the gap. Holdout B case b-mp3 states its completion date and is favorable."
+  }
+ ]
+}

@@ -1,0 +1,3278 @@
+[
+ {
+  "id": "f01",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Kampala Fresh Ltd holds a current food handling licence from KCCA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "KCCA licence FH/2026/0412 was issued to Kampala Fresh Ltd on 2 September 2026 and remains in force until 1 September 2027.",
+     "source_date": "2026-09-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f02",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Savanna Dairies signed the distribution agreement with Mwangi Traders.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Executed copy of the Distribution Agreement between Savanna Dairies and Mwangi Traders, signed by both directors on 14 October 2026.",
+     "source_date": "2026-10-14",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f03",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "FDA Ghana registered Sunrise Shea Butter.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "FDA Ghana registration number FDA/CS/26-0981 granted for Sunrise Shea Butter on 21 July 2026.",
+     "source_date": "2026-07-21",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f04",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cooperative delivered 300 bags of maize to the Kigali warehouse.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Goods received note GRN-5530: 300 bags of maize received at the Kigali warehouse, counted and accepted by the storekeeper on 9 November 2026.",
+     "source_date": "2026-11-09",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Kigali"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f05",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "structured status field",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "NG",
+    "locality": "Lagos"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Eko Packaging Ltd is registered with the Corporate Affairs Commission.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Corporate Affairs Commission search result for Eko Packaging Ltd, RC 1849302.",
+     "source_date": "2026-10-28",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Lagos"
+     },
+     "registration_status": "registered"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f06",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Dar es Salaam"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "TMDA approved the import permit for consignment DSM-44.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Import permit TMDA/IP/2026/7781 was approved on 30 October 2026 for consignment DSM-44.",
+     "source_date": "2026-10-30",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f07",
+  "category": "complete",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Johannesburg"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The City of Johannesburg granted Lerato Mokoena a trading permit for stall 14.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Trading permit JHB-TP-22019 granted to Lerato Mokoena for stall 14, Braamfontein, effective 1 November 2026.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Johannesburg"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f08",
+  "category": "complete_trap",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "negation 'no deficiencies' must not read as missing",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Nairobi warehouse holds a certificate of compliance.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The inspection found no deficiencies, and the certificate of compliance was issued on 5 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f09",
+  "category": "complete_trap",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "resolved 'previously pending'",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Nile Grain Ltd holds an export licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The previously pending application was approved on 12 October 2026, and export licence EX-883 was issued the same day.",
+     "source_date": "2026-10-12",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f10",
+  "category": "complete_trap",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "'unpaid' prefix trap",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Tema Supplies is an approved vendor.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Unpaid invoices were cleared, and Tema Supplies is now listed as approved vendor V-2291 effective 1 November 2026.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "f11",
+  "category": "complete_trap",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "'without conditions' must not read as qualified",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cooperative holds a RAB seed dealer licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "RAB issued seed dealer licence SD-2026-077 to the cooperative on 3 October 2026 without conditions.",
+     "source_date": "2026-10-03",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Kigali"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "i01",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Kampala Fresh Ltd holds a current food handling licence from KCCA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "context_only",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "KCCA licence FH/2026/0412 was issued to Kampala Fresh Ltd on 2 September 2026 and remains in force until 1 September 2027.",
+     "source_date": "2026-09-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "KCCA also announced road closures on Jinja Road for the weekend of 22 November.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "i02",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "unlinked record with missing-link wording",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Savanna Dairies signed the distribution agreement with Mwangi Traders.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Executed copy of the Distribution Agreement between Savanna Dairies and Mwangi Traders, signed by both directors on 14 October 2026.",
+     "source_date": "2026-10-14",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "A separate draft MoU with a Mombasa logistics firm is still under negotiation and has not been signed.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "i03",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "unsupported claim the effect does not depend on",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cooperative delivered 300 bags of maize to the Kigali warehouse.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    },
+    {
+     "claim_id": "D",
+     "claim": "The cooperative will open a Musanze depot next year.",
+     "support_links": []
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Goods received note GRN-5530: 300 bags of maize received at the Kigali warehouse, counted and accepted by the storekeeper on 9 November 2026.",
+     "source_date": "2026-11-09",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Kigali"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "i04",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Dar es Salaam"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "TMDA approved the import permit for consignment DSM-44.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "context_only",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Import permit TMDA/IP/2026/7781 was approved on 30 October 2026 for consignment DSM-44.",
+     "source_date": "2026-10-30",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Kenyan port congestion delayed several unrelated shipments in October.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Mombasa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "i05",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "FDA Ghana registered Sunrise Shea Butter.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "FDA Ghana registration number FDA/CS/26-0981 granted for Sunrise Shea Butter on 21 July 2026.",
+     "source_date": "2026-07-21",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "FDA public register lists Sunrise Shea Butter, FDA/CS/26-0981, status: registered.",
+     "source_date": "2026-11-10",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "i06",
+  "category": "irrelevant_addition",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "context-only record with 'pending'",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Johannesburg"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The City of Johannesburg granted Lerato Mokoena a trading permit for stall 14.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "context_only",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Trading permit JHB-TP-22019 granted to Lerato Mokoena for stall 14, Braamfontein, effective 1 November 2026.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Johannesburg"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Separately, the stall's electricity connection request is pending with City Power.",
+     "source_date": "2026-11-08",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Johannesburg"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m01",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Kampala Fresh Ltd holds a current food handling licence from KCCA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Kampala Fresh Ltd submitted its licence application to KCCA on 20 October 2026; a decision is expected within 30 days.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m02",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Savanna Dairies signed the distribution agreement with Mwangi Traders.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "A draft distribution agreement was circulated to Mwangi Traders for comment on 3 November 2026.",
+     "source_date": "2026-11-03",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m03",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "FDA Ghana registered Sunrise Shea Butter.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "FDA Ghana acknowledged receipt of the registration dossier for Sunrise Shea Butter; technical review has not started.",
+     "source_date": "2026-10-15",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m04",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cooperative delivered 300 bags of maize to the Kigali warehouse.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The cooperative chair says the 300 bags will be delivered to the Kigali warehouse next week.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Kigali"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m05",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "structured status field",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "NG",
+    "locality": "Lagos"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Eko Packaging Ltd is registered with the Corporate Affairs Commission.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Corporate Affairs Commission name reservation for Eko Packaging Ltd.",
+     "source_date": "2026-10-28",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Lagos"
+     },
+     "registration_status": "pending"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m06",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Dar es Salaam"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "TMDA approved the import permit for consignment DSM-44.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The import permit for consignment DSM-44 has not yet been issued; TMDA requested additional laboratory results.",
+     "source_date": "2026-11-04",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m07",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "no support at all",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Johannesburg"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The City of Johannesburg granted Lerato Mokoena a trading permit for stall 14.",
+     "support_links": []
+    }
+   ],
+   "evidence_pack": [],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m08",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "context-only link only",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Dar es Salaam"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "TMDA approved the import permit for consignment DSM-44.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "context_only",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "An industry newsletter notes that TMDA usually approves import permits within a week.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m09",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Nile Grain Ltd and Busoga Millers have a signed supply MoU.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The supply MoU between Nile Grain Ltd and Busoga Millers remains unsigned while legal review continues.",
+     "source_date": "2026-11-06",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "m10",
+  "category": "missing",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "only reported",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Nairobi County issued the depot's single business permit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Our field officer was told by the depot manager that the permit had come through, but nobody has seen a copy.",
+     "source_date": "2026-11-11",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "mp1",
+  "category": "missing_precedence",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "later record says link not established",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Savanna Dairies signed the distribution agreement with Mwangi Traders.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The distribution agreement between Savanna Dairies and Mwangi Traders was signed on 1 October 2026.",
+     "source_date": "2026-10-01",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Legal confirms Mwangi Traders has not countersigned the distribution agreement.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "mp2",
+  "category": "missing_precedence",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "FDA Ghana registered Sunrise Shea Butter.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "FDA Ghana registration FDA/CS/26-0981 granted for Sunrise Shea Butter.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The FDA portal shows the Sunrise Shea Butter registration as under review.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "mp3",
+  "category": "missing_precedence_sibling",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "established record post-dates the missing record",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Nile Grain Ltd holds an export licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Nile Grain Ltd's export licence application is pending with UEPB.",
+     "source_date": "2026-09-15",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "UEPB issued export licence EX-551 to Nile Grain Ltd; it is in force.",
+     "source_date": "2026-10-30",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "mp4",
+  "category": "missing_precedence",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "same-date conflict; support does not post-date",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Dar es Salaam"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "TMDA approved the import permit for consignment DSM-44.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "TMDA approved the import permit for consignment DSM-44.",
+     "source_date": "2026-11-03",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "TMDA has not yet issued the import permit for consignment DSM-44.",
+     "source_date": "2026-11-03",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "q01",
+  "category": "qualified",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Kampala Fresh Ltd holds a current food handling licence from KCCA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "KCCA approved the food handling licence for Kampala Fresh Ltd subject to a fire-safety inspection by 30 November 2026.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "q02",
+  "category": "qualified",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "FDA Ghana registered Sunrise Shea Butter.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "FDA Ghana granted provisional registration of Sunrise Shea Butter for six months while stability data is completed.",
+     "source_date": "2026-10-10",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "q03",
+  "category": "qualified",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "RDB approved the cooperative's investment certificate.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "RDB issued in-principle approval of the investment certificate; final approval follows a site visit.",
+     "source_date": "2026-10-22",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Kigali"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "q04",
+  "category": "qualifier_precedence",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "NG",
+    "locality": "Lagos"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Eko Packaging Ltd holds a NAFDAC food-contact packaging licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "qualifies",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "NAFDAC licence FCP-7781 was issued to Eko Packaging Ltd on 4 October 2026 and is in force.",
+     "source_date": "2026-10-04",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Lagos"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The licence covers dry-food packaging only; liquid and frozen food packaging are excluded.",
+     "source_date": "2026-10-04",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Lagos"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "q05",
+  "category": "qualified",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Johannesburg"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The City of Johannesburg granted Lerato Mokoena a trading permit for stall 14.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The trading permit for stall 14 was granted, provided the vendor keeps all goods within the marked boundary.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Johannesburg"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "q06",
+  "category": "qualified_ceiling",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "effect amount above declared ceiling",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The Nairobi buyer approved the purchase budget.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The procurement committee approved the purchase budget for the depot on 6 November 2026.",
+     "source_date": "2026-11-06",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     },
+     "conditions": [
+      {
+       "type": "amount_at_most",
+       "amount_minor": 50000000,
+       "currency": "KES",
+       "description": "Approved up to KES 500,000"
+      }
+     ]
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ],
+     "amount": {
+      "amount_minor": 90000000,
+      "currency": "KES"
+     }
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "q07",
+  "category": "qualifier_precedence",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "qualified record beside unqualified support, both declared direct_support",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Dar es Salaam"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "TMDA approved the import permit for consignment DSM-44.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Import permit TMDA/IP/2026/7781 was approved on 30 October 2026 for consignment DSM-44.",
+     "source_date": "2026-10-30",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "TMDA letter: the permit for DSM-44 is valid only for entry through Dar es Salaam port and only if cold-chain records are produced on arrival.",
+     "source_date": "2026-10-31",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "a01",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Kampala Fresh Ltd holds a current food handling licence from KCCA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "KCCA suspended licence FH/2026/0412 held by Kampala Fresh Ltd on 8 November 2026 after a failed hygiene inspection.",
+     "source_date": "2026-11-08",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "a02",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Savanna Dairies has a distribution agreement with Mwangi Traders.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Mwangi Traders terminated the distribution agreement with Savanna Dairies with effect from 31 October 2026.",
+     "source_date": "2026-10-31",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "a03",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cooperative delivered 300 bags of maize to the Kigali warehouse.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "contradicts",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "The warehouse count on 10 November 2026 found 120 bags from the cooperative, not 300.",
+     "source_date": "2026-11-10",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Kigali"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "a04",
+  "category": "adverse",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "FDA Ghana registered Sunrise Shea Butter.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "FDA Ghana refused the registration application for Sunrise Shea Butter on 2 November 2026.",
+     "source_date": "2026-11-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "c01",
+  "category": "contested",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "support plus contradiction = contested",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The cooperative delivered 300 bags of maize to the Kigali warehouse.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "contradicts",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Goods received note GRN-5530: 300 bags of maize received at the Kigali warehouse on 9 November 2026.",
+     "source_date": "2026-11-09",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Kigali"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "A recount by the auditor on 12 November 2026 found 180 bags from that delivery.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Kigali"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "p01",
+  "category": "prohibition",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "FDA Ghana registered Sunrise Shea Butter.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "FDA Ghana registration number FDA/CS/26-0981 granted for Sunrise Shea Butter on 21 July 2026.",
+     "source_date": "2026-07-21",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "FDA Ghana directive: no offers of Sunrise Shea Butter may be made to retailers until a labelling review closes.",
+     "source_date": "2026-11-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     },
+     "authority_effect": "prohibition",
+     "applies_to_effect_types": [
+      "external_offer"
+     ]
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "p02",
+  "category": "prohibition_scope_sibling",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "prohibition declared for a different country",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "FDA Ghana registered Sunrise Shea Butter.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "FDA Ghana registration number FDA/CS/26-0981 granted for Sunrise Shea Butter on 21 July 2026.",
+     "source_date": "2026-07-21",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Kenya directive: no offers of imported shea products may be made in Kenya until a labelling review closes.",
+     "source_date": "2026-11-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     },
+     "authority_effect": "prohibition",
+     "applies_to_effect_types": [
+      "external_offer"
+     ]
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "r01",
+  "category": "revocation",
+  "grade": "authority",
+  "expected": "revoked_authority",
+  "note": "graded on authority=revoked, execution not authorized",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Savanna Dairies signed the distribution agreement with Mwangi Traders.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Executed copy of the Distribution Agreement between Savanna Dairies and Mwangi Traders, signed by both directors on 14 October 2026.",
+     "source_date": "2026-10-14",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The Savanna Dairies board revoked the team's authority to send distribution offers on 12 November 2026.",
+     "source_date": "2026-11-12",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     },
+     "authority_effect": "revocation",
+     "applies_to_effect_types": [
+      "external_offer"
+     ]
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "s01",
+  "category": "stale",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "older than 365-day window, no declared validity",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Kampala Fresh Ltd holds a current food handling licence from KCCA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "KCCA licence FH/2025/0101 was issued to Kampala Fresh Ltd on 3 June 2025.",
+     "source_date": "2025-06-03",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "s02",
+  "category": "stale_sibling",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "old record with declared validity covering analysis date",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Kampala Fresh Ltd holds a current food handling licence from KCCA.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "KCCA licence FH/2025/0101 was issued to Kampala Fresh Ltd on 3 June 2025 for a three-year term.",
+     "source_date": "2025-06-03",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     },
+     "source_scope": {
+      "effective_from": "2025-06-03",
+      "effective_to": "2028-06-02"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "s03",
+  "category": "future_dated",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "source date after analysis date",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "NG",
+    "locality": "Lagos"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Eko Packaging Ltd holds a NAFDAC food-contact packaging licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "NAFDAC licence FCP-7781 was issued to Eko Packaging Ltd and is in force.",
+     "source_date": "2026-11-25",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Lagos"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "g01",
+  "category": "geography",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "locality mismatch",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Nairobi County issued the depot's single business permit.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Single business permit SBP-44102 was issued for the depot on 2 October 2026.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Mombasa"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "g02",
+  "category": "geography",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "undeclared record geography",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Dar es Salaam"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "TMDA approved the import permit for consignment DSM-44.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Import permit TMDA/IP/2026/7781 was approved on 30 October 2026 for consignment DSM-44.",
+     "source_date": "2026-10-30"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "g03",
+  "category": "geography_sibling",
+  "grade": "exact",
+  "expected": "favorable",
+  "note": "country matches, record locality undeclared",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Nile Grain Ltd holds an export licence.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "UEPB issued export licence EX-551 to Nile Grain Ltd on 30 October 2026; it is in force.",
+     "source_date": "2026-10-30",
+     "evidence_geography": {
+      "country": "UG"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "g04",
+  "category": "geography",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "country mismatch",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Johannesburg"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The City of Johannesburg granted Lerato Mokoena a trading permit for stall 14.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Trading permit granted to Lerato Mokoena for stall 14, effective 1 November 2026.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "BW",
+      "locality": "Gaborone"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "qt1",
+  "category": "quantity",
+  "grade": "safety",
+  "expected": "not_favorable",
+  "note": "10x quantity gap",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "The supplier can deliver 5,000 units of packaging per month.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Signed capacity statement from the supplier: maximum output is 500 units of packaging per month.",
+     "source_date": "2026-11-03",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Kigali"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "qt2",
+  "category": "quantity",
+  "grade": "safety",
+  "expected": "not_favorable",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Mwangi Traders holds 2,000 litres of cold storage capacity.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "Inspection report: Mwangi Traders' cold room holds 200 litres.",
+     "source_date": "2026-11-07",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "amb1",
+  "category": "ambiguous",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "GH",
+    "locality": "Accra"
+   },
+   "claims": [
+    {
+     "claim_id": "C",
+     "claim": "Tema Supplies holds a GRA tax clearance certificate.",
+     "support_links": [
+      {
+       "evidence_id": "E",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E",
+     "claim": "GRA issued a tax clearance certificate to Tema Supplies on 2 October 2026. Correction: the certificate was not issued; the 2 October entry referred to a different taxpayer.",
+     "source_date": "2026-10-05",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Accra"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "mc1",
+  "category": "multi_claim",
+  "grade": "exact",
+  "expected": "insufficient",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nairobi"
+   },
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Savanna Dairies signed the distribution agreement with Mwangi Traders.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    },
+    {
+     "claim_id": "C2",
+     "claim": "Mwangi Traders holds a KEBS permit for dairy handling.",
+     "support_links": [
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "claim": "Executed copy of the Distribution Agreement between Savanna Dairies and Mwangi Traders, signed by both directors on 14 October 2026.",
+     "source_date": "2026-10-14",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "Mwangi Traders applied to KEBS for a dairy handling permit on 1 November 2026.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nairobi"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C1",
+      "C2"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "mc2",
+  "category": "multi_claim",
+  "grade": "exact",
+  "expected": "conditional",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Kampala Fresh Ltd holds a current food handling licence from KCCA.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    },
+    {
+     "claim_id": "C2",
+     "claim": "Kampala Fresh Ltd has a cold-chain contract with Lake Logistics.",
+     "support_links": [
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "claim": "KCCA licence FH/2026/0412 was issued to Kampala Fresh Ltd on 2 September 2026 and remains in force until 1 September 2027.",
+     "source_date": "2026-09-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "The cold-chain contract with Lake Logistics was signed on 4 November 2026, but it applies only to deliveries inside Kampala district.",
+     "source_date": "2026-11-04",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C1",
+      "C2"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ },
+ {
+  "id": "mc3",
+  "category": "multi_claim",
+  "grade": "exact",
+  "expected": "adverse",
+  "note": "",
+  "request": {
+   "analysis_date": "2026-11-17",
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Dar es Salaam"
+   },
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "TMDA approved the import permit for consignment DSM-44.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    },
+    {
+     "claim_id": "C2",
+     "claim": "The Dar es Salaam importer is a registered TRA taxpayer.",
+     "support_links": [
+      {
+       "evidence_id": "E2",
+       "relationship": "direct_support",
+       "locator": "claim"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "claim": "Import permit TMDA/IP/2026/7781 was approved on 30 October 2026 for consignment DSM-44.",
+     "source_date": "2026-10-30",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "claim": "TRA deregistered the importer as a taxpayer on 1 November 2026.",
+     "source_date": "2026-11-01",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Dar es Salaam"
+     }
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "X",
+     "effect_type": "external_offer",
+     "depends_on_claims": [
+      "C1",
+      "C2"
+     ]
+    },
+    {
+     "effect_id": "P",
+     "effect_type": "internal_planning"
+    }
+   ]
+  }
+ }
+]
