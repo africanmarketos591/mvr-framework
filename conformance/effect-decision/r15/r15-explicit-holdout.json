@@ -1,0 +1,3818 @@
+[
+ {
+  "class": "positive",
+  "domain": "fish-ug",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-fish-ug-positive",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 14 named landing-site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to UGX 60,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "landing permit DF-2026-71",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lake Basket Ltd"
+   }
+  },
+  "variant": "positive"
+ },
+ {
+  "class": "missing",
+  "domain": "fish-ug",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient",
+    "rule": "R3_REQUIRED_DEPENDENCY_ABSENT"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-fish-ug-missing",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 14 named landing-site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to UGX 60,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "landing permit DF-2026-71",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lake Basket Ltd"
+   }
+  },
+  "variant": "missing"
+ },
+ {
+  "class": "contradictory",
+  "domain": "fish-ug",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical_in": [
+     "insufficient",
+     "adverse"
+    ]
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-fish-ug-contradictory",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-CONTRA",
+       "locator": "claim",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    },
+    {
+     "claim": "The Directorate of Fisheries states that it has no record of issuing landing permit DF-2026-71.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-CONTRA",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01"
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 14 named landing-site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to UGX 60,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "landing permit DF-2026-71",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lake Basket Ltd"
+   }
+  },
+  "variant": "contradictory"
+ },
+ {
+  "class": "stale",
+  "domain": "fish-ug",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-fish-ug-stale",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2023-01-15"
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 14 named landing-site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to UGX 60,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "landing permit DF-2026-71",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lake Basket Ltd"
+   }
+  },
+  "variant": "stale"
+ },
+ {
+  "class": "wrong-place",
+  "domain": "fish-ug",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-fish-ug-wrong-place",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "BW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 14 named landing-site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to UGX 60,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "landing permit DF-2026-71",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lake Basket Ltd"
+   }
+  },
+  "variant": "wrong-place"
+ },
+ {
+  "class": "later-completion",
+  "domain": "fish-ug",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-fish-ug-later-completion",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-OPEN",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The application for landing permit DF-2026-71 was still pending on 1 September 2026.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-OPEN",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-09-01"
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 14 named landing-site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to UGX 60,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "landing permit DF-2026-71",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lake Basket Ltd"
+   }
+  },
+  "variant": "later-completion"
+ },
+ {
+  "class": "declared-none-signal-only",
+  "domain": "fish-ug",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-fish-ug-declared-none-signal-only",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 14 named landing-site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to UGX 60,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Lake Basket Ltd"
+   }
+  },
+  "variant": "declared-none-signal-only"
+ },
+ {
+  "class": "declared-none-with-link",
+  "domain": "fish-ug",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-fish-ug-declared-none-with-link",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' council supports a 90-day cold-box pilot with exactly 14 named landing sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot with exactly 14 named landing sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Directorate of Fisheries issued landing permit DF-2026-71 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 14 named landing-site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to UGX 60,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day cold-box pilot with exactly 14 named landing sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Lake Basket Ltd"
+   }
+  },
+  "variant": "declared-none-with-link"
+ },
+ {
+  "class": "positive",
+  "domain": "seed-tz",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-seed-tz-positive",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The agro-dealer order book records sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 12 named agro-dealers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to TZS 420,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "seed certificate TOSCI-4471",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Highland Seed Co"
+   }
+  },
+  "variant": "positive"
+ },
+ {
+  "class": "missing",
+  "domain": "seed-tz",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient",
+    "rule": "R3_REQUIRED_DEPENDENCY_ABSENT"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-seed-tz-missing",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The agro-dealer order book records sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 12 named agro-dealers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to TZS 420,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "seed certificate TOSCI-4471",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Highland Seed Co"
+   }
+  },
+  "variant": "missing"
+ },
+ {
+  "class": "contradictory",
+  "domain": "seed-tz",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical_in": [
+     "insufficient",
+     "adverse"
+    ]
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-seed-tz-contradictory",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-CONTRA",
+       "locator": "claim",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The agro-dealer order book records sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute states that it has no record of issuing seed certificate TOSCI-4471.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-CONTRA",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 12 named agro-dealers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to TZS 420,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "seed certificate TOSCI-4471",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Highland Seed Co"
+   }
+  },
+  "variant": "contradictory"
+ },
+ {
+  "class": "stale",
+  "domain": "seed-tz",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-seed-tz-stale",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The agro-dealer order book records sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2023-01-15"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 12 named agro-dealers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to TZS 420,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "seed certificate TOSCI-4471",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Highland Seed Co"
+   }
+  },
+  "variant": "stale"
+ },
+ {
+  "class": "wrong-place",
+  "domain": "seed-tz",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-seed-tz-wrong-place",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The agro-dealer order book records sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "BW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 12 named agro-dealers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to TZS 420,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "seed certificate TOSCI-4471",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Highland Seed Co"
+   }
+  },
+  "variant": "wrong-place"
+ },
+ {
+  "class": "later-completion",
+  "domain": "seed-tz",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-seed-tz-later-completion",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-OPEN",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The agro-dealer order book records sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The application for seed certificate TOSCI-4471 was still pending on 1 September 2026.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-OPEN",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-09-01"
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 12 named agro-dealers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to TZS 420,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "seed certificate TOSCI-4471",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Highland Seed Co"
+   }
+  },
+  "variant": "later-completion"
+ },
+ {
+  "class": "declared-none-signal-only",
+  "domain": "seed-tz",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-seed-tz-declared-none-signal-only",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The agro-dealer order book records sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 12 named agro-dealers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to TZS 420,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Highland Seed Co"
+   }
+  },
+  "variant": "declared-none-signal-only"
+ },
+ {
+  "class": "declared-none-with-link",
+  "domain": "seed-tz",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-seed-tz-declared-none-with-link",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' association supports a one-season sale of exactly 900 bags through 12 named agro-dealers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The agro-dealer order book records sufficient demand for a one-season sale of exactly 900 bags through 12 named agro-dealers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Tanzania Official Seed Certification Institute issued seed certificate TOSCI-4471 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 12 named agro-dealers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to TZS 420,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a one-season sale of exactly 900 bags through 12 named agro-dealers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Highland Seed Co"
+   }
+  },
+  "variant": "declared-none-with-link"
+ },
+ {
+  "class": "positive",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-pay-gh-positive",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 80 named shop owners",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to GHS 950,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "no-objection letter BOG-NOL-338",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ashanti Pay Ltd"
+   }
+  },
+  "variant": "positive"
+ },
+ {
+  "class": "missing",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient",
+    "rule": "R3_REQUIRED_DEPENDENCY_ABSENT"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-pay-gh-missing",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 80 named shop owners",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to GHS 950,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "no-objection letter BOG-NOL-338",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ashanti Pay Ltd"
+   }
+  },
+  "variant": "missing"
+ },
+ {
+  "class": "contradictory",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical_in": [
+     "insufficient",
+     "adverse"
+    ]
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-pay-gh-contradictory",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-CONTRA",
+       "locator": "claim",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    },
+    {
+     "claim": "The Bank of Ghana states that it has no record of issuing no-objection letter BOG-NOL-338.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-CONTRA",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 80 named shop owners",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to GHS 950,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "no-objection letter BOG-NOL-338",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ashanti Pay Ltd"
+   }
+  },
+  "variant": "contradictory"
+ },
+ {
+  "class": "stale",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-pay-gh-stale",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2023-01-15"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 80 named shop owners",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to GHS 950,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "no-objection letter BOG-NOL-338",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ashanti Pay Ltd"
+   }
+  },
+  "variant": "stale"
+ },
+ {
+  "class": "wrong-place",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-pay-gh-wrong-place",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "BW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 80 named shop owners",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to GHS 950,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "no-objection letter BOG-NOL-338",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ashanti Pay Ltd"
+   }
+  },
+  "variant": "wrong-place"
+ },
+ {
+  "class": "later-completion",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-pay-gh-later-completion",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-OPEN",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The application for no-objection letter BOG-NOL-338 was still pending on 1 September 2026.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-OPEN",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-09-01"
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 80 named shop owners",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to GHS 950,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "no-objection letter BOG-NOL-338",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ashanti Pay Ltd"
+   }
+  },
+  "variant": "later-completion"
+ },
+ {
+  "class": "declared-none-signal-only",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-pay-gh-declared-none-signal-only",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 80 named shop owners",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to GHS 950,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Ashanti Pay Ltd"
+   }
+  },
+  "variant": "declared-none-signal-only"
+ },
+ {
+  "class": "declared-none-with-link",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-pay-gh-declared-none-with-link",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market queens' council supports a 60-day merchant wallet trial with exactly 80 named shops and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 60-day merchant wallet trial with exactly 80 named shops under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Bank of Ghana issued no-objection letter BOG-NOL-338 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 80 named shop owners",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to GHS 950,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 60-day merchant wallet trial with exactly 80 named shops",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Ashanti Pay Ltd"
+   }
+  },
+  "variant": "declared-none-with-link"
+ },
+ {
+  "class": "positive",
+  "domain": "solar-ke",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-solar-ke-positive",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The household interest log records sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 5 named ward administrators",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to KES 18,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "installer licence EPRA-9102",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nyanza Solar Ltd"
+   }
+  },
+  "variant": "positive"
+ },
+ {
+  "class": "missing",
+  "domain": "solar-ke",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient",
+    "rule": "R3_REQUIRED_DEPENDENCY_ABSENT"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-solar-ke-missing",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The household interest log records sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 5 named ward administrators",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to KES 18,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "installer licence EPRA-9102",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nyanza Solar Ltd"
+   }
+  },
+  "variant": "missing"
+ },
+ {
+  "class": "contradictory",
+  "domain": "solar-ke",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical_in": [
+     "insufficient",
+     "adverse"
+    ]
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-solar-ke-contradictory",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-CONTRA",
+       "locator": "claim",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The household interest log records sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority states that it has no record of issuing installer licence EPRA-9102.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-CONTRA",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01"
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 5 named ward administrators",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to KES 18,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "installer licence EPRA-9102",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nyanza Solar Ltd"
+   }
+  },
+  "variant": "contradictory"
+ },
+ {
+  "class": "stale",
+  "domain": "solar-ke",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-solar-ke-stale",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The household interest log records sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2023-01-15"
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 5 named ward administrators",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to KES 18,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "installer licence EPRA-9102",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nyanza Solar Ltd"
+   }
+  },
+  "variant": "stale"
+ },
+ {
+  "class": "wrong-place",
+  "domain": "solar-ke",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-solar-ke-wrong-place",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The household interest log records sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "BW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 5 named ward administrators",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to KES 18,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "installer licence EPRA-9102",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nyanza Solar Ltd"
+   }
+  },
+  "variant": "wrong-place"
+ },
+ {
+  "class": "later-completion",
+  "domain": "solar-ke",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-solar-ke-later-completion",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-OPEN",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The household interest log records sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The application for installer licence EPRA-9102 was still pending on 1 September 2026.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-OPEN",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-09-01"
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 5 named ward administrators",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to KES 18,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "installer licence EPRA-9102",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nyanza Solar Ltd"
+   }
+  },
+  "variant": "later-completion"
+ },
+ {
+  "class": "declared-none-signal-only",
+  "domain": "solar-ke",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-solar-ke-declared-none-signal-only",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The household interest log records sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 5 named ward administrators",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to KES 18,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Nyanza Solar Ltd"
+   }
+  },
+  "variant": "declared-none-signal-only"
+ },
+ {
+  "class": "declared-none-with-link",
+  "domain": "solar-ke",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "h-solar-ke-declared-none-with-link",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward development committee supports a 120-day rollout of exactly 300 home systems in 5 named wards and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The household interest log records sufficient demand for a 120-day rollout of exactly 300 home systems in 5 named wards under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Energy and Petroleum Regulatory Authority issued installer licence EPRA-9102 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 5 named ward administrators",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to KES 18,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 120-day rollout of exactly 300 home systems in 5 named wards",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Nyanza Solar Ltd"
+   }
+  },
+  "variant": "declared-none-with-link"
+ }
+]

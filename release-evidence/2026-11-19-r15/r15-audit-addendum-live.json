@@ -1,0 +1,90 @@
+{
+ "summary": {
+  "set": "r15-audit-addendum",
+  "sha256": "98a64662e5f3dec25d431c031f5b09ae83f3a9d274579674cbdb5c4d5a7b3a9c",
+  "deployment_revision": "2026-11-18.exact-reducer.11",
+  "manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25",
+  "rows": 4,
+  "passed": 4,
+  "by_class": {
+   "clean": "4/4"
+  },
+  "strict_calibrated": {
+   "passed": 2,
+   "rows": 2,
+   "recall": "0/0",
+   "controlling": "0/0",
+   "bounded_remediation": "0/0",
+   "critical_false_permits": 0,
+   "clean_false_positives": 0,
+   "internal_false_triggers": 0,
+   "http_refusals": 0
+  },
+  "full_advisory": {
+   "passed": 2,
+   "rows": 2,
+   "recall": "0/0",
+   "controlling": "0/0",
+   "bounded_remediation": "0/0",
+   "critical_false_permits": 0,
+   "clean_false_positives": 0,
+   "internal_false_triggers": 0,
+   "http_refusals": 0
+  },
+  "misses": []
+ },
+ "rows": [
+  {
+   "id": "h5-clean-corrected",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "unsupported_claims_detected",
+   "result_class": "route_permit",
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h5-clean-corrected",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "unsupported_claims_detected",
+   "result_class": "route_permit",
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "k5-clean-corrected",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "unsupported_claims_detected",
+   "result_class": "route_permit",
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "k5-clean-corrected",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "unsupported_claims_detected",
+   "result_class": "route_permit",
+   "kind": "clean",
+   "pass": true
+  }
+ ]
+}

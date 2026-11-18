@@ -1,0 +1,2344 @@
+{
+ "contract_version": "mvr.observer-packet/1",
+ "classification": "proprietary lab fixtures; AMOS-operated or evaluator-operated receiver, not buyer-owned production",
+ "production_authority": false,
+ "started_at": "2026-11-18T21:20:55.062Z",
+ "feed_log": [
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "active",
+     "last_sequence": 7,
+     "head_sha256": "0877402a8d856184da3faacac8bf60266f71f5c09f25058eb8037263b5f35627",
+     "observed_at": "2026-11-18T21:21:09.858Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "9507cc3849df04436ecbf65a98dd56c2c306858533de690155043d361927e00f",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+      "signature_b64": "JupRd+1UvKdJu9sAhZB31nd1NMXk6s6OOt1rGlFpHkqL2r4w9E+XMk7NnWkFUmXdYu+UwPpoJCP0Q2ByzsEvDg=="
+     }
+    },
+    "entries": [
+     {
+      "sequence": 1,
+      "prev_entry_sha256": null,
+      "at": "2026-11-18T21:20:59.282Z",
+      "action": "register_anchor",
+      "kind": "anchor",
+      "id": "lab-institution",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "736e31f31e5e97fb8b0e494c00741592b4097351860e9376150274070ad16981"
+     },
+     {
+      "sequence": 2,
+      "prev_entry_sha256": "736e31f31e5e97fb8b0e494c00741592b4097351860e9376150274070ad16981",
+      "at": "2026-11-18T21:21:00.169Z",
+      "action": "register_anchor",
+      "kind": "anchor",
+      "id": "lab-standing",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "3e76cf49ea342629a82ca938df095c7b3cf05466f62625db12035c14cf6bd299"
+     },
+     {
+      "sequence": 3,
+      "prev_entry_sha256": "3e76cf49ea342629a82ca938df095c7b3cf05466f62625db12035c14cf6bd299",
+      "at": "2026-11-18T21:21:01.034Z",
+      "action": "register_anchor",
+      "kind": "anchor",
+      "id": "lab-source",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "4f17fc59d99f697edabe5dae56fe73646a476a5f89887f516e43869f1e8ac491"
+     },
+     {
+      "sequence": 4,
+      "prev_entry_sha256": "4f17fc59d99f697edabe5dae56fe73646a476a5f89887f516e43869f1e8ac491",
+      "at": "2026-11-18T21:21:02.053Z",
+      "action": "register_credential",
+      "kind": "credential",
+      "id": "lab-receiver-credential",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "70206ffd900d697e3cad73c50d4939be83c37138bf212c7dc68cefd969965d7b"
+     },
+     {
+      "sequence": 5,
+      "prev_entry_sha256": "70206ffd900d697e3cad73c50d4939be83c37138bf212c7dc68cefd969965d7b",
+      "at": "2026-11-18T21:21:03.091Z",
+      "action": "register_source_record",
+      "kind": null,
+      "id": null,
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "ba13e12411311f4ea63a3d23335f5cee736d179350e604185082870e8eae0932"
+     },
+     {
+      "sequence": 6,
+      "prev_entry_sha256": "ba13e12411311f4ea63a3d23335f5cee736d179350e604185082870e8eae0932",
+      "at": "2026-11-18T21:21:05.222Z",
+      "action": "close_residual",
+      "kind": "closure",
+      "id": "CL-7213450e6026e1af8964fef71529f4a9d2617f328f523ee7",
+      "event": "closed",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "b60d9bde8a0098cf4aa51887c2345d1ed927063f22e443c0c1c1728ea1308a46"
+     },
+     {
+      "sequence": 7,
+      "prev_entry_sha256": "b60d9bde8a0098cf4aa51887c2345d1ed927063f22e443c0c1c1728ea1308a46",
+      "at": "2026-11-18T21:21:09.285Z",
+      "action": "register_capability",
+      "kind": "capability",
+      "id": "lab-receiver-capability-1",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "0877402a8d856184da3faacac8bf60266f71f5c09f25058eb8037263b5f35627"
+     }
+    ],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  },
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "active",
+     "last_sequence": 7,
+     "head_sha256": "0877402a8d856184da3faacac8bf60266f71f5c09f25058eb8037263b5f35627",
+     "observed_at": "2026-11-18T21:21:30.567Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "819c6a17d9c562ae1f9b02a8da111936a9165d886dcaf33c1a40e13eeaafd7b6",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+      "signature_b64": "+xd0xf/O/ZrxYJuEF2dpkGKrCo2aoT1n51DWn2i1Pvod4hf0fjI3xBZH82nSOMxo3gPnrDJ156QX3moEqlExCg=="
+     }
+    },
+    "entries": [],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  },
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "active",
+     "last_sequence": 7,
+     "head_sha256": "0877402a8d856184da3faacac8bf60266f71f5c09f25058eb8037263b5f35627",
+     "observed_at": "2026-11-18T21:21:38.676Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "7e94e233c20c83d8236c2a64db36e8074c5aa942f7d3c9645b6291480f06fab7",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+      "signature_b64": "bzHzDdfwxcEhr2wnRcR1M0JFrJWCwXEZ1W5+TTtEDD2MXU3KxkDaElwWQkmJ7100O7wdjriN8ewVVSjo+UzPDQ=="
+     }
+    },
+    "entries": [],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  },
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "active",
+     "last_sequence": 8,
+     "head_sha256": "9bfb609300611cf65d839943b892f0810a5c39b7c70bbbb0ff28ba4dc7d4670a",
+     "observed_at": "2026-11-18T21:21:43.127Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "89299a9e004f173902289d58c130bf1837c6ec64d810bd682299d618c09e75bf",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+      "signature_b64": "KnUpBO07f8Pr5LlYyF6i3WbPNTkVjRunDqLPydxMqAvlkBp86WpYYAuztwPzQxMzhWSxIgyv9brM4yoqJwyaDQ=="
+     }
+    },
+    "entries": [
+     {
+      "sequence": 8,
+      "prev_entry_sha256": "0877402a8d856184da3faacac8bf60266f71f5c09f25058eb8037263b5f35627",
+      "at": "2026-11-18T21:21:42.206Z",
+      "action": "revoke_capability",
+      "kind": "capability",
+      "id": "lab-receiver-capability-1",
+      "event": "revoked",
+      "receipt_sha256": "20a3b11ba643dbc10278c9a6d21a0b42c5378cc7eec4954fa8221fcd18c1ee44",
+      "receivers_must_reverify": true,
+      "entry_sha256": "9bfb609300611cf65d839943b892f0810a5c39b7c70bbbb0ff28ba4dc7d4670a"
+     }
+    ],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  },
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "active",
+     "last_sequence": 9,
+     "head_sha256": "39b8a4b745364a9297652b5fdfe7c8a1b9b7a9e2e5d2478b766ee3e6286fff94",
+     "observed_at": "2026-11-18T21:22:08.229Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "e5e94d074c4f708935537eb50caa9cefb9d7cf1a855108216c684d7dddc0e0d5",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+      "signature_b64": "5XlPNeGGhjWH6hh6mcBYru60C1E3Zyp8LvmvMegwutP/7yatceYCOmoccwq1E5y91GNYYp95Eo4SEm460gECAw=="
+     }
+    },
+    "entries": [
+     {
+      "sequence": 9,
+      "prev_entry_sha256": "9bfb609300611cf65d839943b892f0810a5c39b7c70bbbb0ff28ba4dc7d4670a",
+      "at": "2026-11-18T21:21:47.066Z",
+      "action": "register_capability",
+      "kind": "capability",
+      "id": "lab-receiver-capability-2",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "39b8a4b745364a9297652b5fdfe7c8a1b9b7a9e2e5d2478b766ee3e6286fff94"
+     }
+    ],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  },
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "active",
+     "last_sequence": 9,
+     "head_sha256": "39b8a4b745364a9297652b5fdfe7c8a1b9b7a9e2e5d2478b766ee3e6286fff94",
+     "observed_at": "2026-11-18T21:22:11.037Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "f2a1bc924a7f949acba3afa8ed810fac527fb2990e1a7d35a45b0379b63cd24c",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+      "signature_b64": "hJnm1vJG0LPA9CSPCfmnIS0h+pivJyWOmry0WFEWU6Ch73wxhnx5YkyUHPIIayrToF/B0WpgJLRSLf+AV4GSDA=="
+     }
+    },
+    "entries": [
+     {
+      "sequence": 1,
+      "prev_entry_sha256": null,
+      "at": "2026-11-18T21:20:59.282Z",
+      "action": "register_anchor",
+      "kind": "anchor",
+      "id": "lab-institution",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "736e31f31e5e97fb8b0e494c00741592b4097351860e9376150274070ad16981"
+     },
+     {
+      "sequence": 2,
+      "prev_entry_sha256": "736e31f31e5e97fb8b0e494c00741592b4097351860e9376150274070ad16981",
+      "at": "2026-11-18T21:21:00.169Z",
+      "action": "register_anchor",
+      "kind": "anchor",
+      "id": "lab-standing",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "3e76cf49ea342629a82ca938df095c7b3cf05466f62625db12035c14cf6bd299"
+     },
+     {
+      "sequence": 3,
+      "prev_entry_sha256": "3e76cf49ea342629a82ca938df095c7b3cf05466f62625db12035c14cf6bd299",
+      "at": "2026-11-18T21:21:01.034Z",
+      "action": "register_anchor",
+      "kind": "anchor",
+      "id": "lab-source",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "4f17fc59d99f697edabe5dae56fe73646a476a5f89887f516e43869f1e8ac491"
+     },
+     {
+      "sequence": 4,
+      "prev_entry_sha256": "4f17fc59d99f697edabe5dae56fe73646a476a5f89887f516e43869f1e8ac491",
+      "at": "2026-11-18T21:21:02.053Z",
+      "action": "register_credential",
+      "kind": "credential",
+      "id": "lab-receiver-credential",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "70206ffd900d697e3cad73c50d4939be83c37138bf212c7dc68cefd969965d7b"
+     },
+     {
+      "sequence": 5,
+      "prev_entry_sha256": "70206ffd900d697e3cad73c50d4939be83c37138bf212c7dc68cefd969965d7b",
+      "at": "2026-11-18T21:21:03.091Z",
+      "action": "register_source_record",
+      "kind": null,
+      "id": null,
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "ba13e12411311f4ea63a3d23335f5cee736d179350e604185082870e8eae0932"
+     },
+     {
+      "sequence": 6,
+      "prev_entry_sha256": "ba13e12411311f4ea63a3d23335f5cee736d179350e604185082870e8eae0932",
+      "at": "2026-11-18T21:21:05.222Z",
+      "action": "close_residual",
+      "kind": "closure",
+      "id": "CL-7213450e6026e1af8964fef71529f4a9d2617f328f523ee7",
+      "event": "closed",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "b60d9bde8a0098cf4aa51887c2345d1ed927063f22e443c0c1c1728ea1308a46"
+     },
+     {
+      "sequence": 7,
+      "prev_entry_sha256": "b60d9bde8a0098cf4aa51887c2345d1ed927063f22e443c0c1c1728ea1308a46",
+      "at": "2026-11-18T21:21:09.285Z",
+      "action": "register_capability",
+      "kind": "capability",
+      "id": "lab-receiver-capability-1",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "0877402a8d856184da3faacac8bf60266f71f5c09f25058eb8037263b5f35627"
+     },
+     {
+      "sequence": 8,
+      "prev_entry_sha256": "0877402a8d856184da3faacac8bf60266f71f5c09f25058eb8037263b5f35627",
+      "at": "2026-11-18T21:21:42.206Z",
+      "action": "revoke_capability",
+      "kind": "capability",
+      "id": "lab-receiver-capability-1",
+      "event": "revoked",
+      "receipt_sha256": "20a3b11ba643dbc10278c9a6d21a0b42c5378cc7eec4954fa8221fcd18c1ee44",
+      "receivers_must_reverify": true,
+      "entry_sha256": "9bfb609300611cf65d839943b892f0810a5c39b7c70bbbb0ff28ba4dc7d4670a"
+     },
+     {
+      "sequence": 9,
+      "prev_entry_sha256": "9bfb609300611cf65d839943b892f0810a5c39b7c70bbbb0ff28ba4dc7d4670a",
+      "at": "2026-11-18T21:21:47.066Z",
+      "action": "register_capability",
+      "kind": "capability",
+      "id": "lab-receiver-capability-2",
+      "event": "registered",
+      "receipt_sha256": null,
+      "receivers_must_reverify": false,
+      "entry_sha256": "39b8a4b745364a9297652b5fdfe7c8a1b9b7a9e2e5d2478b766ee3e6286fff94"
+     }
+    ],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  },
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "active",
+     "last_sequence": 9,
+     "head_sha256": "39b8a4b745364a9297652b5fdfe7c8a1b9b7a9e2e5d2478b766ee3e6286fff94",
+     "observed_at": "2026-11-18T21:23:20.363Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "1e7e42f792319f3dd57a848603d420076359462a0889e8eb9447c1dccf98b346",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+      "signature_b64": "S4sZvbidH1pOOvPX9yT6Q4KID14PsVb8JRFMPtkm8Guk8sp+/s5AgOz1wKVqILquzWjL3r205Pnr7YQ2a38aDA=="
+     }
+    },
+    "entries": [],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  },
+  {
+   "rotate": {
+    "previous": {
+     "contract_version": "mvr.authority-registry-statement/1",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_version": 1,
+     "realm": "amos-enterprise-conformance",
+     "organization_ref": "tenant:ac75fd8cc94f8fd2",
+     "assurance_level": "tenant_conformance",
+     "recognized_standing": "none",
+     "tenant_id": "authority-conformance",
+     "workspace_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "licensed_tenant_ref": "ac75fd8cc94f8fd2ccad6c339db165024e4217fbff6fc621a90042bb137de3ec",
+     "issuer": {
+      "service": "AMOS authority-conformance lab",
+      "root_key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7"
+     },
+     "delegation": null,
+     "keys": [
+      {
+       "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+       "status": "active",
+       "lab_fixture": true,
+       "public_key_spki_b64": "MCowBQYDK2VwAyEAWKjzaaz8PpQGV9WvKsO4Gqk5jl70OLlPbnXKSR3wMRU=",
+       "not_before": "2026-11-18T21:20:55.941Z",
+       "not_after": "2026-11-18T22:20:55.941Z"
+      }
+     ],
+     "issued_at": "2026-11-18T21:23:21.104Z",
+     "expires_at": "2026-11-18T22:20:55.941Z",
+     "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25",
+     "endpoints": {
+      "keys": "/v1/authority-conformance/keys?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+      "current_state": "POST /v1/authority-conformance {action:\"call\",target:\"current_state\"}",
+      "feed": "/v1/authority-conformance/feed?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+      "trust_root": "/.well-known/mvr-conformance-trust-root.json"
+     },
+     "offline_policy_version": "mvr.offline-policy/1",
+     "supersedes": null,
+     "production_authority": false,
+     "sha256": "bc329a9133b116caf16de0ab129dff4192deeb8f7c84e7e08cd52833752a39a4",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7",
+      "signature_b64": "vTXtelu3sw+UPHemQflrPck0/UxzodkLoXlVIBNnT5fxuIkHnD7tWxzi26L8KrZHwe8NxUNFWJugXicA/+KUAQ=="
+     }
+    },
+    "next": {
+     "contract_version": "mvr.authority-registry-statement/1",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_version": 2,
+     "realm": "amos-enterprise-conformance",
+     "organization_ref": "tenant:ac75fd8cc94f8fd2",
+     "assurance_level": "tenant_conformance",
+     "recognized_standing": "none",
+     "tenant_id": "authority-conformance",
+     "workspace_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "licensed_tenant_ref": "ac75fd8cc94f8fd2ccad6c339db165024e4217fbff6fc621a90042bb137de3ec",
+     "issuer": {
+      "service": "AMOS authority-conformance lab",
+      "root_key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7"
+     },
+     "delegation": null,
+     "keys": [
+      {
+       "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+       "status": "active",
+       "lab_fixture": true,
+       "public_key_spki_b64": "MCowBQYDK2VwAyEAUwQpm9n2Dhobz6FoCMoEU/1gUMe0cAivEmDA9Hn2A6A=",
+       "not_before": "2026-11-18T21:20:55.941Z",
+       "not_after": "2026-11-18T22:20:55.941Z"
+      }
+     ],
+     "issued_at": "2026-11-18T21:23:21.104Z",
+     "expires_at": "2026-11-18T22:20:55.941Z",
+     "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25",
+     "endpoints": {
+      "keys": "/v1/authority-conformance/keys?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+      "current_state": "POST /v1/authority-conformance {action:\"call\",target:\"current_state\"}",
+      "feed": "/v1/authority-conformance/feed?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+      "trust_root": "/.well-known/mvr-conformance-trust-root.json"
+     },
+     "offline_policy_version": "mvr.offline-policy/1",
+     "supersedes": {
+      "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+      "registry_version": 1,
+      "sha256": "bc329a9133b116caf16de0ab129dff4192deeb8f7c84e7e08cd52833752a39a4"
+     },
+     "production_authority": false,
+     "sha256": "9658ca51c35d6b77bf1ffb812c7530f951ed6dbc0c6fa444b12c4bdf1a0d54aa",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7",
+      "signature_b64": "Jbw9u+cRzjyY0x+cv8qvJ7pClaIP6MXC8N5IK/gm7o6Tav4/OWeFtrN7/3bpgfkujDJ83b2FAPDYY09afMRiDQ=="
+     }
+    }
+   }
+  },
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "active",
+     "last_sequence": 10,
+     "head_sha256": "5e9107f0a0b9d91ec39c376f5c913d6bbe2c25f643ee02a3aef1d74e2e66ce9d",
+     "observed_at": "2026-11-18T21:23:21.834Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "43690ea61f260579ea9d1a906e40a71e3dbccff9b3b0a4a4dca0b65364b5297a",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+      "signature_b64": "o6OVvZdY1vC+OgskHXsaJaB1xeUyDano9eETHHRf6Vu9gLqzy2CN+oG5VyTLK+ryM9qpZfLZujrQL46/8/mGBw=="
+     }
+    },
+    "entries": [
+     {
+      "sequence": 10,
+      "prev_entry_sha256": "39b8a4b745364a9297652b5fdfe7c8a1b9b7a9e2e5d2478b766ee3e6286fff94",
+      "at": "2026-11-18T21:23:21.261Z",
+      "action": "rotate_registry",
+      "kind": "registry",
+      "id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+      "event": "rotated",
+      "receipt_sha256": "9658ca51c35d6b77bf1ffb812c7530f951ed6dbc0c6fa444b12c4bdf1a0d54aa",
+      "receivers_must_reverify": false,
+      "entry_sha256": "5e9107f0a0b9d91ec39c376f5c913d6bbe2c25f643ee02a3aef1d74e2e66ce9d"
+     }
+    ],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  },
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "active",
+     "last_sequence": 10,
+     "head_sha256": "5e9107f0a0b9d91ec39c376f5c913d6bbe2c25f643ee02a3aef1d74e2e66ce9d",
+     "observed_at": "2026-11-18T21:23:27.654Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "58cf96090abd912a682ffa041f81825adbe458a88571bc324b286bc7b03717f9",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+      "signature_b64": "a0oYZ7KDBjCXJPVP8tcK4IpR29M6AjQHYLkBuAsfN9EMout4qvBn8RoI5vVMdXVb5j65Rv98TjaM1UDGN9j9BA=="
+     }
+    },
+    "entries": [],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  },
+  {
+   "batch": {
+    "status": "ok",
+    "http_status": 200,
+    "head": {
+     "contract_version": "mvr.current-state-feed/1",
+     "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+     "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "realm": "amos-enterprise-conformance",
+     "session_status": "revoked",
+     "last_sequence": 11,
+     "head_sha256": "78904ad45fc7bb86cf0000f46ed9e280cc4d719d992acc88a3017aa4395ccfbe",
+     "observed_at": "2026-11-18T21:23:31.145Z",
+     "offline_policy": {
+      "version": "mvr.offline-policy/1",
+      "risk_classes": {
+       "low": {
+        "max_offline_age_seconds": 300,
+        "applies_to": "read-only or reversible internal effects with no counterparty"
+       },
+       "standard": {
+        "max_offline_age_seconds": 60,
+        "applies_to": "non-monetary effects, including drafts and records"
+       },
+       "high": {
+        "max_offline_age_seconds": 5,
+        "applies_to": "monetary effects or external contact: re-read current state online immediately before the effect (at most 5 seconds old)"
+       }
+      },
+      "rule": "A receiver acts only on a current-state proof and a feed head both younger than the max_offline_age_seconds of the effect risk class, with a feed sequence at or after the proof sequence. Older than that, or a sequence regression: apply zero effects until it re-reads state."
+     },
+     "rule": "Verify this head with the registry key; verify each entry hash and prev_entry_sha256 back to the last entry you hold. A revoke_* or close_session entry means re-verify before any effect.",
+     "sha256": "b247d4da7ca3450688f089c4d4caf5f657eebdc7e3a7fd516e5824f596c12423",
+     "signature": {
+      "standard": "MVR-TRUST-SIG-V1",
+      "algorithm": "Ed25519",
+      "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+      "signature_b64": "fkqS5HRUz+H46+Bm1sjAhaDz1oJJlt05JP9PFVCKKdQPJsb45OQl2X7tBSyYB99lC212m8c2kLBeMkG1Xb2oAg=="
+     }
+    },
+    "entries": [
+     {
+      "sequence": 11,
+      "prev_entry_sha256": "5e9107f0a0b9d91ec39c376f5c913d6bbe2c25f643ee02a3aef1d74e2e66ce9d",
+      "at": "2026-11-18T21:23:30.576Z",
+      "action": "close_session",
+      "kind": "session",
+      "id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+      "event": "closed",
+      "receipt_sha256": null,
+      "receivers_must_reverify": true,
+      "entry_sha256": "78904ad45fc7bb86cf0000f46ed9e280cc4d719d992acc88a3017aa4395ccfbe"
+     }
+    ],
+    "complete_from_sequence": 1,
+    "contract_version": "mvr.authority-conformance/1",
+    "realm": "amos-enterprise-conformance",
+    "lab_fixture": false,
+    "conformance_only": true,
+    "recognized_standing": "none",
+    "evaluation_only": true,
+    "synthetic": true,
+    "identity_verified": false,
+    "human_presence_verified": false,
+    "legal_identity_verified": false,
+    "professional_licence_verified": false,
+    "issuer_standing_verified": false,
+    "delegation_verified": false,
+    "reviewer_independence_verified": false,
+    "source_authenticity_verified": false,
+    "production_authority": false,
+    "execution_authorized": false,
+    "deployment_revision": "2026-11-18.exact-reducer.11",
+    "response_meta": {
+     "deployment_revision": "2026-11-18.exact-reducer.11"
+    },
+    "response_contract_version": "2026-05-01.v1"
+   }
+  }
+ ],
+ "operations": [
+  {
+   "action": "register_capability",
+   "capability_id": null,
+   "effect_id": null,
+   "verification_id": null,
+   "decision": null,
+   "receipt": null
+  },
+  {
+   "action": "verify_capability",
+   "capability_id": "lab-receiver-capability-1",
+   "effect_id": "receiver-9-447079",
+   "verification_id": "VR-3038cb8de35398e49f1b464d2f51af03220d4f5c93dedc55",
+   "decision": "allow",
+   "receipt": {
+    "kind": "capability_verification",
+    "verification_id": "VR-3038cb8de35398e49f1b464d2f51af03220d4f5c93dedc55",
+    "capability_id": "lab-receiver-capability-1",
+    "case_id": "RC-18e81b16572ce901612650a641955dea0b5c1e3298b0feb319d45e893bb6c282",
+    "decision": "allow",
+    "deny_reasons": [],
+    "effect_id": "receiver-9-447079",
+    "requested_effect_sha256": "598bcc38098954f67d5159d711155831a4377ef6a0559898565069cd8781e2d2",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "reliance": "lab_fixture_only",
+    "valid_until": "2026-11-18T21:22:24.981Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 1,
+    "prev_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "recorded_at": "2026-11-18T21:21:26.967Z",
+    "sha256": "55b64488c354e91ec96e4effd63e0cf6116f106c6866eed47b0b136fd37fddc1",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "11FEP91C3YEyvfimGRSyXiRJA+peVvW4GERY6hpzsPZxLEOntFZmwgHi0jXOU5bIeO2KukRtjenkNbz2VEqrDw=="
+    }
+   }
+  },
+  {
+   "action": "commit_effect",
+   "capability_id": null,
+   "effect_id": "receiver-9-447079",
+   "verification_id": "VR-3038cb8de35398e49f1b464d2f51af03220d4f5c93dedc55",
+   "decision": "commit",
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-27de425cb3db3073951feec2027a3e612d6187f033f269ba",
+    "verification_id": "VR-3038cb8de35398e49f1b464d2f51af03220d4f5c93dedc55",
+    "capability_id": "lab-receiver-capability-1",
+    "effect_id": "receiver-9-447079",
+    "requested_effect_sha256": "598bcc38098954f67d5159d711155831a4377ef6a0559898565069cd8781e2d2",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:21:42.691Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 2,
+    "prev_sha256": "55b64488c354e91ec96e4effd63e0cf6116f106c6866eed47b0b136fd37fddc1",
+    "recorded_at": "2026-11-18T21:21:30.004Z",
+    "sha256": "13b6c88f5186f73fbd7342fdcd33824da6c736ff52eca5c4c38893f89364d486",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "7eZ+4jPzQuEKRRWYoGs1Bgbj68f5DOeLC+EyUg73jVVqT0gWxaiuWbRVW/j2Vws/envkB+9ZkolDtUyx7KhlDA=="
+    }
+   }
+  },
+  {
+   "action": "verify_capability",
+   "capability_id": "lab-receiver-capability-1",
+   "effect_id": "receiver-13-faf695",
+   "verification_id": "VR-38f91a80ec84d7d03032ae70e1bd9d2413ade416844e9fcd",
+   "decision": "allow",
+   "receipt": {
+    "kind": "capability_verification",
+    "verification_id": "VR-38f91a80ec84d7d03032ae70e1bd9d2413ade416844e9fcd",
+    "capability_id": "lab-receiver-capability-1",
+    "case_id": "RC-18e81b16572ce901612650a641955dea0b5c1e3298b0feb319d45e893bb6c282",
+    "decision": "allow",
+    "deny_reasons": [],
+    "effect_id": "receiver-13-faf695",
+    "requested_effect_sha256": "9ae12057beaff74841de3395ee21a1db35375033287fa8376842ee7683a84cda",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "reliance": "lab_fixture_only",
+    "valid_until": "2026-11-18T21:22:33.093Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 3,
+    "prev_sha256": "13b6c88f5186f73fbd7342fdcd33824da6c736ff52eca5c4c38893f89364d486",
+    "recorded_at": "2026-11-18T21:21:35.088Z",
+    "sha256": "b353769d70187b73579d400d2f80625d793d58c501b9975d32a2a443bb409e5b",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "0J5ItENn0Dj8js28nUhhRkFqpMfFQMuOK2fQFc9mMbafZk3gA1xPVUwbGDYuIoIqPzgeVKMWQLKSbdC9h3UKAA=="
+    }
+   }
+  },
+  {
+   "action": "commit_effect",
+   "capability_id": null,
+   "effect_id": "receiver-13-faf695",
+   "verification_id": "VR-38f91a80ec84d7d03032ae70e1bd9d2413ade416844e9fcd",
+   "decision": "commit",
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-9671f417a0befadd9747d55d3c590fb18e7f7c2fc0c0eeeb",
+    "verification_id": "VR-38f91a80ec84d7d03032ae70e1bd9d2413ade416844e9fcd",
+    "capability_id": "lab-receiver-capability-1",
+    "effect_id": "receiver-13-faf695",
+    "requested_effect_sha256": "9ae12057beaff74841de3395ee21a1db35375033287fa8376842ee7683a84cda",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:21:50.807Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 4,
+    "prev_sha256": "b353769d70187b73579d400d2f80625d793d58c501b9975d32a2a443bb409e5b",
+    "recorded_at": "2026-11-18T21:21:38.104Z",
+    "sha256": "c10634dd1364701b8050010041837be6b18123a0829fe578df723051b583f7df",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "xf+YuJxBSHLdRS4U17tESEoznVM1jEFjSPs4STB/eOslR9nshV6ovHwiC8dXK7KOtMSqAZmAwf/Qc3D6CupbCA=="
+    }
+   }
+  },
+  {
+   "action": "revoke_capability",
+   "capability_id": "lab-receiver-capability-1",
+   "effect_id": null,
+   "verification_id": null,
+   "decision": null,
+   "receipt": {
+    "kind": "revocation",
+    "target_kind": "capability",
+    "target_id": "lab-receiver-capability-1",
+    "revoked_by_principal_sha256": "394ec8060431607721a1bff0a0da153c6efa9c86f839780ba91ee6e8480df9d8",
+    "operation_id": "revoke_capability-16-7fa4ef",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 5,
+    "prev_sha256": "c10634dd1364701b8050010041837be6b18123a0829fe578df723051b583f7df",
+    "recorded_at": "2026-11-18T21:21:41.742Z",
+    "sha256": "20a3b11ba643dbc10278c9a6d21a0b42c5378cc7eec4954fa8221fcd18c1ee44",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "WAnwAwgRyr/k6zHu1toFeQWOnbIsq9+RaxKz/4fGFZ1zF9UHqm/3d39aedg+sUcvYlIi+BEb0fSenvB7LJUSAg=="
+    }
+   }
+  },
+  {
+   "action": "register_capability",
+   "capability_id": null,
+   "effect_id": null,
+   "verification_id": null,
+   "decision": null,
+   "receipt": null
+  },
+  {
+   "action": "verify_capability",
+   "capability_id": "lab-receiver-capability-2",
+   "effect_id": "receiver-18-d9fda2",
+   "verification_id": "VR-50c66c59e0e1d02631e875f35169ca12b474d9ad9ccd0c9b",
+   "decision": "allow",
+   "receipt": {
+    "kind": "capability_verification",
+    "verification_id": "VR-50c66c59e0e1d02631e875f35169ca12b474d9ad9ccd0c9b",
+    "capability_id": "lab-receiver-capability-2",
+    "case_id": "RC-18e81b16572ce901612650a641955dea0b5c1e3298b0feb319d45e893bb6c282",
+    "decision": "allow",
+    "deny_reasons": [],
+    "effect_id": "receiver-18-d9fda2",
+    "requested_effect_sha256": "56bb7a678a65a0759de9fcf377e5c083a3eb5aef750002adc62aa0ea18c02962",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "reliance": "lab_fixture_only",
+    "valid_until": "2026-11-18T21:22:47.486Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 6,
+    "prev_sha256": "20a3b11ba643dbc10278c9a6d21a0b42c5378cc7eec4954fa8221fcd18c1ee44",
+    "recorded_at": "2026-11-18T21:21:49.476Z",
+    "sha256": "790f6be16b8ed183dda7e74a8ad7d6a54cb3eab18d0bbb55f8676a68ad24a81e",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "szNI1rhR1LnhpfBcm+7miQp04L7NfZioqlmtDMLE3yZLtJRmaO96yDl3RF+wjP9y7KbMuGhByB+TNP57LNgfCg=="
+    }
+   }
+  },
+  {
+   "action": "commit_effect",
+   "capability_id": null,
+   "effect_id": "receiver-18-d9fda2",
+   "verification_id": "VR-50c66c59e0e1d02631e875f35169ca12b474d9ad9ccd0c9b",
+   "decision": "commit",
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-3edbea63f6a52ae848b86874b543df0f0d401e7c6583317a",
+    "verification_id": "VR-50c66c59e0e1d02631e875f35169ca12b474d9ad9ccd0c9b",
+    "capability_id": "lab-receiver-capability-2",
+    "effect_id": "receiver-18-d9fda2",
+    "requested_effect_sha256": "56bb7a678a65a0759de9fcf377e5c083a3eb5aef750002adc62aa0ea18c02962",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:22:05.195Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 7,
+    "prev_sha256": "790f6be16b8ed183dda7e74a8ad7d6a54cb3eab18d0bbb55f8676a68ad24a81e",
+    "recorded_at": "2026-11-18T21:21:52.496Z",
+    "sha256": "915d38e3b370d7787c6fffa69df1f78ce4242dbd58cb2f699ce6a15d8fb9b46e",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "ms+4KmnSie8sVYLZg5i5CtzU3oaZ8/kDCwDmtTyBdPjQNJqicLjpQWA2gnShQDnIAaLmeeMWVOFLFkDw/7R3Cg=="
+    }
+   }
+  },
+  {
+   "action": "verify_capability",
+   "capability_id": "lab-receiver-capability-2",
+   "effect_id": "receiver-21-8a8f10",
+   "verification_id": "VR-781b3121ca3988d53d48976097c4712972be6407f05b3ac5",
+   "decision": "allow",
+   "receipt": {
+    "kind": "capability_verification",
+    "verification_id": "VR-781b3121ca3988d53d48976097c4712972be6407f05b3ac5",
+    "capability_id": "lab-receiver-capability-2",
+    "case_id": "RC-18e81b16572ce901612650a641955dea0b5c1e3298b0feb319d45e893bb6c282",
+    "decision": "allow",
+    "deny_reasons": [],
+    "effect_id": "receiver-21-8a8f10",
+    "requested_effect_sha256": "3e1399da2950ec6779dd2a69583f13b96bddf98660672331ed1e72c6193b1249",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "reliance": "lab_fixture_only",
+    "valid_until": "2026-11-18T21:24:12.513Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 8,
+    "prev_sha256": "915d38e3b370d7787c6fffa69df1f78ce4242dbd58cb2f699ce6a15d8fb9b46e",
+    "recorded_at": "2026-11-18T21:23:14.508Z",
+    "sha256": "dba50ec0f55b6583271c85e2a29c42203d8affc818fed1843670fce6f1691265",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "PzAbALU/4joEqosiGL73+IFzB9jMvTTY0aEukoTG43GD1zQJVxofdFYZd7Aau+cCBZA8dA3yr/Koarwd5prUDg=="
+    }
+   }
+  },
+  {
+   "action": "commit_effect",
+   "capability_id": null,
+   "effect_id": "receiver-21-8a8f10",
+   "verification_id": "VR-781b3121ca3988d53d48976097c4712972be6407f05b3ac5",
+   "decision": "commit",
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-07be8d539a69d448c07cb823774a518437036619b591e193",
+    "verification_id": "VR-781b3121ca3988d53d48976097c4712972be6407f05b3ac5",
+    "capability_id": "lab-receiver-capability-2",
+    "effect_id": "receiver-21-8a8f10",
+    "requested_effect_sha256": "3e1399da2950ec6779dd2a69583f13b96bddf98660672331ed1e72c6193b1249",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:23:30.238Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 9,
+    "prev_sha256": "dba50ec0f55b6583271c85e2a29c42203d8affc818fed1843670fce6f1691265",
+    "recorded_at": "2026-11-18T21:23:17.534Z",
+    "sha256": "f2cb0bc9fb8863a0fec582d89f5678d03aa1f78b85050cc5239f2308d0e7c63f",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "MwqsVtL0jmUg9wX+nKFeL9okPpYhbBgD16JBraEQzOalN3aYnXsJyJtmM7i7zkx85rZ1ioq4PkTCHO666trTAQ=="
+    }
+   }
+  },
+  {
+   "action": "verify_capability",
+   "capability_id": "lab-receiver-capability-2",
+   "effect_id": "receiver-24-19d68f",
+   "verification_id": "VR-b761279d04c7d59e4565d33c5a8e5533f0570e657c02025a",
+   "decision": "allow",
+   "receipt": {
+    "kind": "capability_verification",
+    "verification_id": "VR-b761279d04c7d59e4565d33c5a8e5533f0570e657c02025a",
+    "capability_id": "lab-receiver-capability-2",
+    "case_id": "RC-18e81b16572ce901612650a641955dea0b5c1e3298b0feb319d45e893bb6c282",
+    "decision": "allow",
+    "deny_reasons": [],
+    "effect_id": "receiver-24-19d68f",
+    "requested_effect_sha256": "d0ee1d88722f784787519d932f975b97880b41cf272e4539160ef82820f4bb01",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "reliance": "lab_fixture_only",
+    "valid_until": "2026-11-18T21:24:22.059Z",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 10,
+    "prev_sha256": "f2cb0bc9fb8863a0fec582d89f5678d03aa1f78b85050cc5239f2308d0e7c63f",
+    "recorded_at": "2026-11-18T21:23:24.051Z",
+    "sha256": "5b1c1012ec0dca05571314787ce5e6d42b5b7a3ce41d86675d95f7e514ec23a4",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+     "signature_b64": "9WPou+TGjk9T0VVjhr3eVwcWonhnu4b1taWDsz7jSp6b+kR2KZApaD+ZixOicdLX6PhtOGjTwD7cQ4Fu42Z4Bg=="
+    }
+   }
+  },
+  {
+   "action": "commit_effect",
+   "capability_id": null,
+   "effect_id": "receiver-24-19d68f",
+   "verification_id": "VR-b761279d04c7d59e4565d33c5a8e5533f0570e657c02025a",
+   "decision": "commit",
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-cd9328c28746c8790553c28a006af29593211df4b51d4b49",
+    "verification_id": "VR-b761279d04c7d59e4565d33c5a8e5533f0570e657c02025a",
+    "capability_id": "lab-receiver-capability-2",
+    "effect_id": "receiver-24-19d68f",
+    "requested_effect_sha256": "d0ee1d88722f784787519d932f975b97880b41cf272e4539160ef82820f4bb01",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:23:39.780Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 11,
+    "prev_sha256": "5b1c1012ec0dca05571314787ce5e6d42b5b7a3ce41d86675d95f7e514ec23a4",
+    "recorded_at": "2026-11-18T21:23:27.077Z",
+    "sha256": "0846066a9343748fa66e8acbfc8ed9aaf63fdc3ced7519666d3291a0811ead3e",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+     "signature_b64": "BG0GqxlJAQAckgD24e+LMA5onBPDHtS3jlucNhGRWTlHAtsOMOifM3xuRrpX9MSvvLYNlk10PKOOeoB2GdxABA=="
+    }
+   }
+  }
+ ],
+ "scenarios": {
+  "valid": {
+   "rule": "every check passes",
+   "expected": "performed",
+   "performed": true,
+   "observed_code": null,
+   "draft_count": 1,
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-27de425cb3db3073951feec2027a3e612d6187f033f269ba",
+    "verification_id": "VR-3038cb8de35398e49f1b464d2f51af03220d4f5c93dedc55",
+    "capability_id": "lab-receiver-capability-1",
+    "effect_id": "receiver-9-447079",
+    "requested_effect_sha256": "598bcc38098954f67d5159d711155831a4377ef6a0559898565069cd8781e2d2",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:21:42.691Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 2,
+    "prev_sha256": "55b64488c354e91ec96e4effd63e0cf6116f106c6866eed47b0b136fd37fddc1",
+    "recorded_at": "2026-11-18T21:21:30.004Z",
+    "sha256": "13b6c88f5186f73fbd7342fdcd33824da6c736ff52eca5c4c38893f89364d486",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "7eZ+4jPzQuEKRRWYoGs1Bgbj68f5DOeLC+EyUg73jVVqT0gWxaiuWbRVW/j2Vws/envkB+9ZkolDtUyx7KhlDA=="
+    }
+   },
+   "requested_effect": {
+    "effect_id": "receiver-9-447079",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   },
+   "current_state": {
+    "contract_version": "mvr.current-state-proof/1",
+    "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_version": 1,
+    "capability_id": "lab-receiver-capability-1",
+    "realm": "amos-enterprise-conformance",
+    "risk_class": "standard",
+    "feed_sequence": 7,
+    "feed_head_sha256": "0877402a8d856184da3faacac8bf60266f71f5c09f25058eb8037263b5f35627",
+    "observed_at": "2026-11-18T21:21:32.655Z",
+    "sequence": 13,
+    "max_offline_age_seconds": 60,
+    "states": {
+     "session": "active",
+     "key": "active",
+     "capability": "active",
+     "currently_valid": true
+    },
+    "heads": {
+     "capability_document_sha256": "b2ad2a00028c4fbb88f03402d15dffde0dc4361423fb5f60875f9a3bcc2625a2",
+     "not_after": "2026-11-18T22:20:45.941Z"
+    },
+    "policy": {
+     "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25"
+    },
+    "permitted": true,
+    "blocking_reasons": [],
+    "rule": "Commit only if permitted is true, the proof is younger than max_offline_age_seconds and its heads match the verification you hold. Otherwise apply zero effects.",
+    "sha256": "3850e6bf47a41f04d76d125e9585f4617fb974d6d2da210f6c2edf52ed03f906",
+    "signature": {
+     "standard": "MVR-TRUST-SIG-V1",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "OmB6rvxiAVHf8bZhGSZODEisHhFZ1+nl5bYz9MNBBDb192Do1VKLK3sKF3GUWlCsh5Z6spNAifx5VFcxQo6/CA=="
+    }
+   },
+   "registry_version": 1
+  },
+  "revoked": {
+   "rule": "a signed revocation in the feed",
+   "expected": "BUYER_CAPABILITY_REVOKED_IN_FEED",
+   "performed": false,
+   "observed_code": "BUYER_CAPABILITY_REVOKED_IN_FEED",
+   "draft_count": 0,
+   "revocation_observed_ms": 2219,
+   "commit_still_open": true,
+   "feed_fresh": true,
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-9671f417a0befadd9747d55d3c590fb18e7f7c2fc0c0eeeb",
+    "verification_id": "VR-38f91a80ec84d7d03032ae70e1bd9d2413ade416844e9fcd",
+    "capability_id": "lab-receiver-capability-1",
+    "effect_id": "receiver-13-faf695",
+    "requested_effect_sha256": "9ae12057beaff74841de3395ee21a1db35375033287fa8376842ee7683a84cda",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:21:50.807Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 4,
+    "prev_sha256": "b353769d70187b73579d400d2f80625d793d58c501b9975d32a2a443bb409e5b",
+    "recorded_at": "2026-11-18T21:21:38.104Z",
+    "sha256": "c10634dd1364701b8050010041837be6b18123a0829fe578df723051b583f7df",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "xf+YuJxBSHLdRS4U17tESEoznVM1jEFjSPs4STB/eOslR9nshV6ovHwiC8dXK7KOtMSqAZmAwf/Qc3D6CupbCA=="
+    }
+   },
+   "requested_effect": {
+    "effect_id": "receiver-13-faf695",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   },
+   "current_state": {
+    "contract_version": "mvr.current-state-proof/1",
+    "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_version": 1,
+    "capability_id": "lab-receiver-capability-1",
+    "realm": "amos-enterprise-conformance",
+    "risk_class": "standard",
+    "feed_sequence": 7,
+    "feed_head_sha256": "0877402a8d856184da3faacac8bf60266f71f5c09f25058eb8037263b5f35627",
+    "observed_at": "2026-11-18T21:21:40.736Z",
+    "sequence": 16,
+    "max_offline_age_seconds": 60,
+    "states": {
+     "session": "active",
+     "key": "active",
+     "capability": "active",
+     "currently_valid": true
+    },
+    "heads": {
+     "capability_document_sha256": "b2ad2a00028c4fbb88f03402d15dffde0dc4361423fb5f60875f9a3bcc2625a2",
+     "not_after": "2026-11-18T22:20:45.941Z"
+    },
+    "policy": {
+     "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25"
+    },
+    "permitted": true,
+    "blocking_reasons": [],
+    "rule": "Commit only if permitted is true, the proof is younger than max_offline_age_seconds and its heads match the verification you hold. Otherwise apply zero effects.",
+    "sha256": "73d8e3a69ab30da4551ed39da1d5a8b7e11fdba4c67596d221e628037ed540ec",
+    "signature": {
+     "standard": "MVR-TRUST-SIG-V1",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "LyjIvSCLaJfYq2ksoT/Xr8XQ8zWGZntH4YuoxeqDbWN09HEwGsnkEypTGds1Oc8+En5PE6pjpicZMLwfxYTgAg=="
+    }
+   },
+   "registry_version": 1
+  },
+  "expired": {
+   "rule": "the commit window has closed while feed and capability are current",
+   "expected": "BUYER_COMMIT_EXPIRED",
+   "performed": false,
+   "observed_code": "BUYER_COMMIT_EXPIRED",
+   "draft_count": 0,
+   "feed_fresh": true,
+   "capability_permitted": true,
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-3edbea63f6a52ae848b86874b543df0f0d401e7c6583317a",
+    "verification_id": "VR-50c66c59e0e1d02631e875f35169ca12b474d9ad9ccd0c9b",
+    "capability_id": "lab-receiver-capability-2",
+    "effect_id": "receiver-18-d9fda2",
+    "requested_effect_sha256": "56bb7a678a65a0759de9fcf377e5c083a3eb5aef750002adc62aa0ea18c02962",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:22:05.195Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 7,
+    "prev_sha256": "790f6be16b8ed183dda7e74a8ad7d6a54cb3eab18d0bbb55f8676a68ad24a81e",
+    "recorded_at": "2026-11-18T21:21:52.496Z",
+    "sha256": "915d38e3b370d7787c6fffa69df1f78ce4242dbd58cb2f699ce6a15d8fb9b46e",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "ms+4KmnSie8sVYLZg5i5CtzU3oaZ8/kDCwDmtTyBdPjQNJqicLjpQWA2gnShQDnIAaLmeeMWVOFLFkDw/7R3Cg=="
+    }
+   },
+   "requested_effect": {
+    "effect_id": "receiver-18-d9fda2",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   },
+   "current_state": {
+    "contract_version": "mvr.current-state-proof/1",
+    "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_version": 1,
+    "capability_id": "lab-receiver-capability-2",
+    "realm": "amos-enterprise-conformance",
+    "risk_class": "standard",
+    "feed_sequence": 9,
+    "feed_head_sha256": "39b8a4b745364a9297652b5fdfe7c8a1b9b7a9e2e5d2478b766ee3e6286fff94",
+    "observed_at": "2026-11-18T21:22:10.460Z",
+    "sequence": 22,
+    "max_offline_age_seconds": 60,
+    "states": {
+     "session": "active",
+     "key": "active",
+     "capability": "active",
+     "currently_valid": true
+    },
+    "heads": {
+     "capability_document_sha256": "cb92e3630dd86d681a44534920e06703d15008164968c0b850fabc571a99ddcb",
+     "not_after": "2026-11-18T22:20:45.941Z"
+    },
+    "policy": {
+     "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25"
+    },
+    "permitted": true,
+    "blocking_reasons": [],
+    "rule": "Commit only if permitted is true, the proof is younger than max_offline_age_seconds and its heads match the verification you hold. Otherwise apply zero effects.",
+    "sha256": "01ce5a8a4785022e48c70c8833ee712fe501bd4650e9b303c11dcc2cf15cfb60",
+    "signature": {
+     "standard": "MVR-TRUST-SIG-V1",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "kYCmZtpQJd7MtX+jWj8jMugHj9RIO5SEQ4dIiJ6Aewq/NJEjyrfcjWCL1N7hE0utFXpZoiveEdWkwILNHbTVBA=="
+    }
+   },
+   "registry_version": 1
+  },
+  "lease_recovered": {
+   "rule": "only the offline lease has lapsed",
+   "expected": "BUYER_FEED_NOT_FRESH then performed once after catch-up",
+   "performed": true,
+   "observed_code": "BUYER_FEED_NOT_FRESH",
+   "at_refusal": {
+    "commit_open": true,
+    "capability_permitted": true,
+    "no_feed_advance": true,
+    "feed_reason": "FEED_OLDER_THAN_OFFLINE_POLICY",
+    "feed_age_seconds": 68.933,
+    "draft_count": 0
+   },
+   "replay_already_performed": true,
+   "draft_count": 1,
+   "lease_seconds": 60,
+   "lease_time": "real_elapsed",
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-07be8d539a69d448c07cb823774a518437036619b591e193",
+    "verification_id": "VR-781b3121ca3988d53d48976097c4712972be6407f05b3ac5",
+    "capability_id": "lab-receiver-capability-2",
+    "effect_id": "receiver-21-8a8f10",
+    "requested_effect_sha256": "3e1399da2950ec6779dd2a69583f13b96bddf98660672331ed1e72c6193b1249",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:23:30.238Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 9,
+    "prev_sha256": "dba50ec0f55b6583271c85e2a29c42203d8affc818fed1843670fce6f1691265",
+    "recorded_at": "2026-11-18T21:23:17.534Z",
+    "sha256": "f2cb0bc9fb8863a0fec582d89f5678d03aa1f78b85050cc5239f2308d0e7c63f",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "MwqsVtL0jmUg9wX+nKFeL9okPpYhbBgD16JBraEQzOalN3aYnXsJyJtmM7i7zkx85rZ1ioq4PkTCHO666trTAQ=="
+    }
+   },
+   "requested_effect": {
+    "effect_id": "receiver-21-8a8f10",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   },
+   "current_state": {
+    "contract_version": "mvr.current-state-proof/1",
+    "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_version": 1,
+    "capability_id": "lab-receiver-capability-2",
+    "realm": "amos-enterprise-conformance",
+    "risk_class": "standard",
+    "feed_sequence": 9,
+    "feed_head_sha256": "39b8a4b745364a9297652b5fdfe7c8a1b9b7a9e2e5d2478b766ee3e6286fff94",
+    "observed_at": "2026-11-18T21:23:19.793Z",
+    "sequence": 25,
+    "max_offline_age_seconds": 60,
+    "states": {
+     "session": "active",
+     "key": "active",
+     "capability": "active",
+     "currently_valid": true
+    },
+    "heads": {
+     "capability_document_sha256": "cb92e3630dd86d681a44534920e06703d15008164968c0b850fabc571a99ddcb",
+     "not_after": "2026-11-18T22:20:45.941Z"
+    },
+    "policy": {
+     "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25"
+    },
+    "permitted": true,
+    "blocking_reasons": [],
+    "rule": "Commit only if permitted is true, the proof is younger than max_offline_age_seconds and its heads match the verification you hold. Otherwise apply zero effects.",
+    "sha256": "7b58830754f04ca2585722db0fa09599d6b1a6544949fa210c5a26470d33f3cd",
+    "signature": {
+     "standard": "MVR-TRUST-SIG-V1",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "signature_b64": "37rcee2zSjdM13xV2yMQDfRcU7TGg3QcYHJJvdOV7CU/mB8awbzUpbGv0+gLumDtgUQhY0n+VDOmrLdxNCHsDg=="
+    }
+   },
+   "registry_version": 1
+  },
+  "rotated": {
+   "rule": "signed registry succession on a provisioned conformance issuer",
+   "expected": "performed under the new key; the old registry refuses",
+   "performed": true,
+   "observed_code": null,
+   "old_registry_code": "BUYER_CHAIN_INVALID",
+   "old_registry_draft_count": 0,
+   "draft_count": 1,
+   "registry_version": 2,
+   "new_key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+   "receipt": {
+    "kind": "effect_commit",
+    "commit_id": "CM-cd9328c28746c8790553c28a006af29593211df4b51d4b49",
+    "verification_id": "VR-b761279d04c7d59e4565d33c5a8e5533f0570e657c02025a",
+    "capability_id": "lab-receiver-capability-2",
+    "effect_id": "receiver-24-19d68f",
+    "requested_effect_sha256": "d0ee1d88722f784787519d932f975b97880b41cf272e4539160ef82820f4bb01",
+    "decision": "commit",
+    "deny_reasons": [],
+    "commit_valid_until": "2026-11-18T21:23:39.780Z",
+    "executor_principal_sha256": "f0e651cad21df8c220664f50f80a2dee65f2a85f523a39cb4e6521349a92b642",
+    "lab_fixture": true,
+    "production_authority": false,
+    "sequence": 11,
+    "prev_sha256": "5b1c1012ec0dca05571314787ce5e6d42b5b7a3ce41d86675d95f7e514ec23a4",
+    "recorded_at": "2026-11-18T21:23:27.077Z",
+    "sha256": "0846066a9343748fa66e8acbfc8ed9aaf63fdc3ced7519666d3291a0811ead3e",
+    "signature": {
+     "standard": "MVR-RECEIPT-SIG-V1",
+     "status": "signed",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+     "signature_b64": "BG0GqxlJAQAckgD24e+LMA5onBPDHtS3jlucNhGRWTlHAtsOMOifM3xuRrpX9MSvvLYNlk10PKOOeoB2GdxABA=="
+    }
+   },
+   "requested_effect": {
+    "effect_id": "receiver-24-19d68f",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   },
+   "current_state": {
+    "contract_version": "mvr.current-state-proof/1",
+    "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_version": 2,
+    "capability_id": "lab-receiver-capability-2",
+    "realm": "amos-enterprise-conformance",
+    "risk_class": "standard",
+    "feed_sequence": 10,
+    "feed_head_sha256": "5e9107f0a0b9d91ec39c376f5c913d6bbe2c25f643ee02a3aef1d74e2e66ce9d",
+    "observed_at": "2026-11-18T21:23:29.735Z",
+    "sequence": 29,
+    "max_offline_age_seconds": 60,
+    "states": {
+     "session": "active",
+     "key": "active",
+     "capability": "active",
+     "currently_valid": true
+    },
+    "heads": {
+     "capability_document_sha256": "cb92e3630dd86d681a44534920e06703d15008164968c0b850fabc571a99ddcb",
+     "not_after": "2026-11-18T22:20:45.941Z"
+    },
+    "policy": {
+     "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25"
+    },
+    "permitted": true,
+    "blocking_reasons": [],
+    "rule": "Commit only if permitted is true, the proof is younger than max_offline_age_seconds and its heads match the verification you hold. Otherwise apply zero effects.",
+    "sha256": "f6b5ac956e32dfc1aca55d8385f54e6c56b54f006dc6a861ddcbc61ff6647245",
+    "signature": {
+     "standard": "MVR-TRUST-SIG-V1",
+     "algorithm": "Ed25519",
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+     "signature_b64": "9jpDP4CtDybAUhGnVP6eLyLLLxdVzIG+TWIi3s6u6LVW3GC+ZDrG+EnnbSguI2aGj1Wr9crg8E8NdA39T7n1BQ=="
+    }
+   }
+  }
+ },
+ "pinned_root": {
+  "contract_version": "mvr.trust-root/1",
+  "realm": "amos-enterprise-conformance",
+  "key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7",
+  "public_key_spki_b64": "MCowBQYDK2VwAyEAiBDLiZIcGiXWM7a595TfCJp9JEYohKW76acaYocVdwA=",
+  "created_at": "2026-11-02T20:24:13.975Z",
+  "organization_ref": "amos-enterprise-conformance",
+  "assurance": "tenant_conformance",
+  "production_authority": "requires_activated_registry",
+  "standing": "not_asserted_by_signature",
+  "boundary": "This root signs AMOS registry statements for its realm. It proves key possession, not institutional standing.",
+  "sha256": "57691171f55b3c6c42b43d8c364605c588724eb9d1842f6a7a5b1ac574ac5423",
+  "signature": {
+   "standard": "MVR-TRUST-SIG-V1",
+   "algorithm": "Ed25519",
+   "key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7",
+   "signature_b64": "GRM1pl2MeGSsYBivEBY9Jomc9kAb+8KeqS9lkOQiPjxGxtx6yx65wP7BMZxOIQTrwbsO5VpVjl5ySbp+THMLBg=="
+  }
+ },
+ "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+ "registry_statements": [
+  {
+   "contract_version": "mvr.authority-registry-statement/1",
+   "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+   "registry_version": 1,
+   "realm": "amos-enterprise-conformance",
+   "organization_ref": "tenant:ac75fd8cc94f8fd2",
+   "assurance_level": "tenant_conformance",
+   "recognized_standing": "none",
+   "tenant_id": "authority-conformance",
+   "workspace_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+   "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+   "licensed_tenant_ref": "ac75fd8cc94f8fd2ccad6c339db165024e4217fbff6fc621a90042bb137de3ec",
+   "issuer": {
+    "service": "AMOS authority-conformance lab",
+    "root_key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7"
+   },
+   "delegation": null,
+   "keys": [
+    {
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "status": "active",
+     "lab_fixture": true,
+     "public_key_spki_b64": "MCowBQYDK2VwAyEAWKjzaaz8PpQGV9WvKsO4Gqk5jl70OLlPbnXKSR3wMRU=",
+     "not_before": "2026-11-18T21:20:55.941Z",
+     "not_after": "2026-11-18T22:20:55.941Z"
+    }
+   ],
+   "issued_at": "2026-11-18T21:20:57.372Z",
+   "expires_at": "2026-11-18T22:20:55.941Z",
+   "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25",
+   "endpoints": {
+    "keys": "/v1/authority-conformance/keys?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+    "current_state": "POST /v1/authority-conformance {action:\"call\",target:\"current_state\"}",
+    "feed": "/v1/authority-conformance/feed?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+    "trust_root": "/.well-known/mvr-conformance-trust-root.json"
+   },
+   "offline_policy_version": "mvr.offline-policy/1",
+   "supersedes": null,
+   "production_authority": false,
+   "sha256": "ab76a5591d2a0644321250d1ab8ce0b7117b1e25cfdcfb033579e97015846635",
+   "signature": {
+    "standard": "MVR-TRUST-SIG-V1",
+    "algorithm": "Ed25519",
+    "key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7",
+    "signature_b64": "tni5M71me2cIHiM1InQ87vHnibM2yLE5qyy2GPxyLxgHFEtp36y6KsVOGm2GJnoh3R0Ger8w6VigczIjFugNAA=="
+   }
+  },
+  {
+   "contract_version": "mvr.authority-registry-statement/1",
+   "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+   "registry_version": 1,
+   "realm": "amos-enterprise-conformance",
+   "organization_ref": "tenant:ac75fd8cc94f8fd2",
+   "assurance_level": "tenant_conformance",
+   "recognized_standing": "none",
+   "tenant_id": "authority-conformance",
+   "workspace_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+   "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+   "licensed_tenant_ref": "ac75fd8cc94f8fd2ccad6c339db165024e4217fbff6fc621a90042bb137de3ec",
+   "issuer": {
+    "service": "AMOS authority-conformance lab",
+    "root_key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7"
+   },
+   "delegation": null,
+   "keys": [
+    {
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926",
+     "status": "active",
+     "lab_fixture": true,
+     "public_key_spki_b64": "MCowBQYDK2VwAyEAWKjzaaz8PpQGV9WvKsO4Gqk5jl70OLlPbnXKSR3wMRU=",
+     "not_before": "2026-11-18T21:20:55.941Z",
+     "not_after": "2026-11-18T22:20:55.941Z"
+    }
+   ],
+   "issued_at": "2026-11-18T21:23:21.104Z",
+   "expires_at": "2026-11-18T22:20:55.941Z",
+   "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25",
+   "endpoints": {
+    "keys": "/v1/authority-conformance/keys?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+    "current_state": "POST /v1/authority-conformance {action:\"call\",target:\"current_state\"}",
+    "feed": "/v1/authority-conformance/feed?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+    "trust_root": "/.well-known/mvr-conformance-trust-root.json"
+   },
+   "offline_policy_version": "mvr.offline-policy/1",
+   "supersedes": null,
+   "production_authority": false,
+   "sha256": "bc329a9133b116caf16de0ab129dff4192deeb8f7c84e7e08cd52833752a39a4",
+   "signature": {
+    "standard": "MVR-TRUST-SIG-V1",
+    "algorithm": "Ed25519",
+    "key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7",
+    "signature_b64": "vTXtelu3sw+UPHemQflrPck0/UxzodkLoXlVIBNnT5fxuIkHnD7tWxzi26L8KrZHwe8NxUNFWJugXicA/+KUAQ=="
+   }
+  },
+  {
+   "contract_version": "mvr.authority-registry-statement/1",
+   "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+   "registry_version": 2,
+   "realm": "amos-enterprise-conformance",
+   "organization_ref": "tenant:ac75fd8cc94f8fd2",
+   "assurance_level": "tenant_conformance",
+   "recognized_standing": "none",
+   "tenant_id": "authority-conformance",
+   "workspace_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+   "session_id": "AC-d93a17b13c072cf5bf1782bbea61a926",
+   "licensed_tenant_ref": "ac75fd8cc94f8fd2ccad6c339db165024e4217fbff6fc621a90042bb137de3ec",
+   "issuer": {
+    "service": "AMOS authority-conformance lab",
+    "root_key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7"
+   },
+   "delegation": null,
+   "keys": [
+    {
+     "key_id": "LAB-AC-d93a17b13c072cf5bf1782bbea61a926-R2",
+     "status": "active",
+     "lab_fixture": true,
+     "public_key_spki_b64": "MCowBQYDK2VwAyEAUwQpm9n2Dhobz6FoCMoEU/1gUMe0cAivEmDA9Hn2A6A=",
+     "not_before": "2026-11-18T21:20:55.941Z",
+     "not_after": "2026-11-18T22:20:55.941Z"
+    }
+   ],
+   "issued_at": "2026-11-18T21:23:21.104Z",
+   "expires_at": "2026-11-18T22:20:55.941Z",
+   "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25",
+   "endpoints": {
+    "keys": "/v1/authority-conformance/keys?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+    "current_state": "POST /v1/authority-conformance {action:\"call\",target:\"current_state\"}",
+    "feed": "/v1/authority-conformance/feed?session_id=AC-d93a17b13c072cf5bf1782bbea61a926",
+    "trust_root": "/.well-known/mvr-conformance-trust-root.json"
+   },
+   "offline_policy_version": "mvr.offline-policy/1",
+   "supersedes": {
+    "registry_id": "REG-AC-d93a17b13c072cf5bf1782bbea61a926",
+    "registry_version": 1,
+    "sha256": "bc329a9133b116caf16de0ab129dff4192deeb8f7c84e7e08cd52833752a39a4"
+   },
+   "production_authority": false,
+   "sha256": "9658ca51c35d6b77bf1ffb812c7530f951ed6dbc0c6fa444b12c4bdf1a0d54aa",
+   "signature": {
+    "standard": "MVR-TRUST-SIG-V1",
+    "algorithm": "Ed25519",
+    "key_id": "AMOSCONFROOT-1c22b6a7cd9c830889ece8d7",
+    "signature_b64": "Jbw9u+cRzjyY0x+cv8qvJ7pClaIP6MXC8N5IK/gm7o6Tav4/OWeFtrN7/3bpgfkujDJ83b2FAPDYY09afMRiDQ=="
+   }
+  }
+ ],
+ "release_manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25",
+ "evidence_basis": {
+  "claim_id": "C1",
+  "claim_sha256": "86d4ab054f64371e8bf84207e0d603c3c0c575f99c5ee629a50864154471ce67",
+  "claim": "The lab draft record request is in scope for the conformance case.",
+  "records": [
+   {
+    "evidence_id": "E1",
+    "record_sha256": "7daa5c8c30e90261232f56b5a21eebfd47b604d11f5558f4fb3fc2ee3f8aa79a",
+    "record": {
+     "evidence_id": "E1",
+     "claim": "The conformance case was opened on 2026-11-18 to create one harmless lab draft record.",
+     "source_doc_id": "LAB-DOC-1",
+     "source_hash": "2be4550e303447c691737cfffa7e09ed3064a3811c9db72816513e0e954d13ba",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-11-18"
+    }
+   }
+  ],
+  "source_sha256": "2be4550e303447c691737cfffa7e09ed3064a3811c9db72816513e0e954d13ba"
+ },
+ "disposition": {
+  "disposition_id": "IDP-73b82c6f321a25c686faa27dc755cbf9",
+  "disposition_sha256": "73b82c6f321a25c686faa27dc755cbf9c79b532d42bbe96a8b91c7c9d1a0f91a",
+  "submission_id": "ISB-b89d037fde6fdac8d8720d84c23d3017",
+  "task_id": "PT-6b78eafe5d0186d4db17a76ce29c4fb51cdddd46563074c9",
+  "claim_sha256": "86d4ab054f64371e8bf84207e0d603c3c0c575f99c5ee629a50864154471ce67",
+  "passage_sha256": "2be4550e303447c691737cfffa7e09ed3064a3811c9db72816513e0e954d13ba",
+  "disposition": "accept",
+  "receipt": {
+   "disposition_id": "IDP-73b82c6f321a25c686faa27dc755cbf9",
+   "disposition_sha256": "73b82c6f321a25c686faa27dc755cbf9c79b532d42bbe96a8b91c7c9d1a0f91a",
+   "reviewer": {
+    "reviewer_id": "conformance-reviewer-1",
+    "role_title": "Conformance reviewer",
+    "independence": "declared_independent",
+    "identity_assurance": "declared_unverified"
+   },
+   "assurance": "tenant_declared_same_principal_as_issuer",
+   "reading_receipt_ids": [
+    "ISR-963ee16530fa6216e64a2deb131422ac"
+   ],
+   "readings": [
+    {
+     "receipt_id": "ISR-963ee16530fa6216e64a2deb131422ac",
+     "model": {
+      "provider": "lab",
+      "model": "receiver-isolation",
+      "model_version": "1"
+     },
+     "label": "supports"
+    }
+   ],
+   "supersedes": [],
+   "at": "2026-11-18T21:21:21.966Z",
+   "claim_sha256": "86d4ab054f64371e8bf84207e0d603c3c0c575f99c5ee629a50864154471ce67",
+   "passage_sha256": "2be4550e303447c691737cfffa7e09ed3064a3811c9db72816513e0e954d13ba"
+  }
+ },
+ "effect": {
+  "requested_effect": {
+   "effect_id": "receiver-9-447079",
+   "effect_type": "create_draft_record",
+   "resource": {
+    "system": "amos-lab",
+    "resource_type": "draft",
+    "resource_id": "LAB-RECEIVER"
+   },
+   "amount_minor": 0,
+   "currency": "UGX",
+   "external_contact": false,
+   "counterparty_ref": "lab-only"
+  },
+  "requested_effect_sha256": "598bcc38098954f67d5159d711155831a4377ef6a0559898565069cd8781e2d2",
+  "effect_id": "receiver-9-447079",
+  "effect_sha256": "ede4872c45dd0509b2a1da5ea9070ecfe321143b3f500f12195caa744e0fcaba",
+  "normative_sha256": "83fdc2aa795067df294ec841c1c99d53abd36619bdcbb50d2b797d629e176df8",
+  "authority_binding_sha256": "9a9e767b72b0121cbe13f86b9a4bbd358ce791e8bbe0f34d3fd9eb2944c7eae9",
+  "disposition_ids": [
+   "IDP-73b82c6f321a25c686faa27dc755cbf9"
+  ],
+  "applied_dispositions": [
+   {
+    "disposition_id": "IDP-73b82c6f321a25c686faa27dc755cbf9",
+    "task_id": "PT-6b78eafe5d0186d4db17a76ce29c4fb51cdddd46563074c9",
+    "disposition": "accept",
+    "bound_to": [
+     {
+      "claim_id": "C1",
+      "evidence_id": "E1"
+     }
+    ],
+    "reviewer_id": "conformance-reviewer-1",
+    "assurance": "tenant_declared_same_principal_as_issuer",
+    "reading_receipt_ids": [
+     "ISR-963ee16530fa6216e64a2deb131422ac"
+    ],
+    "binding": "claim_and_passage_sha256"
+   }
+  ],
+  "verification_ledger": {
+   "contract_version": "mvr.verification-ledger/1",
+   "assurance_ladder": [
+    "none",
+    "declared_metadata_checked",
+    "accountable_disposition_recorded",
+    "integrity_recomputed",
+    "issuer_signature_verified",
+    "registry_confirmed"
+   ],
+   "record_count": 1,
+   "records": [
+    {
+     "record_id": "E1",
+     "artifact": {
+      "representation": "declared_structured_record",
+      "media_type": "application/json",
+      "canonical_sha256": "7daa5c8c30e90261232f56b5a21eebfd47b604d11f5558f4fb3fc2ee3f8aa79a",
+      "original_bytes_supplied": false,
+      "declared_source_doc_id": "LAB-DOC-1",
+      "declared_source_hash": "2be4550e303447c691737cfffa7e09ed3064a3811c9db72816513e0e954d13ba",
+      "declared_source_hash_status": "declared_not_recomputed",
+      "locators": [
+       {
+        "claim_id": "C1",
+        "locator": "claim"
+       }
+      ]
+     },
+     "extraction": {
+      "method": "caller_declared_fields",
+      "fields_read": [
+       "claim",
+       "source_date",
+       "evidence_geography"
+      ],
+      "anchors": [
+       {
+        "claim_id": "C1",
+        "field": "claim",
+        "passage_sha256": "2be4550e303447c691737cfffa7e09ed3064a3811c9db72816513e0e954d13ba",
+        "claim_sha256": "86d4ab054f64371e8bf84207e0d603c3c0c575f99c5ee629a50864154471ce67"
+       }
+      ],
+      "support_state": [
+       {
+        "claim_id": "C1",
+        "state": "established",
+        "lead": null
+       }
+      ],
+      "model_readings": [
+       {
+        "claim_id": "C1",
+        "task_id": "PT-6b78eafe5d0186d4db17a76ce29c4fb51cdddd46563074c9",
+        "label": "supports",
+        "model": {
+         "provider": "lab",
+         "model": "receiver-isolation",
+         "model_version": "1"
+        },
+        "receipt_id": "ISR-963ee16530fa6216e64a2deb131422ac",
+        "accountable": false
+       }
+      ],
+      "model_readings_rule": "Attributed readings route review; they never change state. Confidence is not reported because no calibrated confidence exists."
+     },
+     "source": {
+      "declared_class": "administrative_record",
+      "declared_type": null,
+      "identity_status": "declared_unverified"
+     },
+     "issuer_check": {
+      "signature": "absent",
+      "registry": "absent",
+      "declared_registry_ref": null,
+      "rule": "No issuer signature or registry was checked for this declared record. A signed or registered source is not thereby true."
+     },
+     "retrieval": {
+      "declared_retrieved_at": null,
+      "declared_custodian": null,
+      "status": "undeclared"
+     },
+     "checks_performed": [
+      {
+       "check": "canonical_record_hash",
+       "result": "computed"
+      },
+      {
+       "check": "passage_anchor_hash",
+       "result": "computed",
+       "anchors": [
+        {
+         "claim_id": "C1",
+         "field": "claim",
+         "passage_sha256": "2be4550e303447c691737cfffa7e09ed3064a3811c9db72816513e0e954d13ba"
+        }
+       ]
+      },
+      {
+       "check": "currentness_against_analysis_date",
+       "result": "current",
+       "basis": "source_date_window"
+      },
+      {
+       "check": "declared_geography",
+       "result": "declared",
+       "country": "UG"
+      },
+      {
+       "check": "adverse_content_rules",
+       "result": "none_detected"
+      },
+      {
+       "check": "support_state_rules",
+       "result": "established",
+       "version": "mvr.support-state/2",
+       "per_claim": [
+        {
+         "claim_id": "C1",
+         "state": "established",
+         "lead": null
+        }
+       ]
+      },
+      {
+       "check": "declared_claim_links",
+       "result": "linked",
+       "links": [
+        {
+         "claim_id": "C1",
+         "relationship": "direct_support",
+         "locator": "claim"
+        }
+       ]
+      }
+     ],
+     "checks_not_performed": [
+      "byte_level_integrity",
+      "issuer_signature_verification",
+      "registry_or_primary_source_retrieval",
+      "credential_or_revocation_lookup_at_issuer",
+      "source_custody_verification"
+     ],
+     "corroboration": {
+      "claims": [
+       "C1"
+      ],
+      "shared_lineage_with": [],
+      "independent_corroborating_records": []
+     },
+     "contradicted_by": [],
+     "dispositions": [
+      {
+       "claim_id": "C1",
+       "disposition_id": "IDP-73b82c6f321a25c686faa27dc755cbf9",
+       "disposition": "accept",
+       "reviewer": {
+        "reviewer_id": "conformance-reviewer-1",
+        "role_title": "Conformance reviewer",
+        "independence": "declared_independent",
+        "identity_assurance": "declared_unverified"
+       },
+       "principal_ref_sha256": "a73419d4fb8b966b7ac615d9d6cb8434dc022422e37d956779b0ff10cda03302",
+       "assurance": "tenant_declared_same_principal_as_issuer",
+       "at": "2026-11-18T21:21:21.966Z",
+       "reading_receipt_ids": [
+        "ISR-963ee16530fa6216e64a2deb131422ac"
+       ],
+       "binding": "claim_and_passage_sha256"
+      }
+     ],
+     "assurance": "accountable_disposition_recorded",
+     "assurance_rule": "Highest rung whose check was performed here; uploaded, parsed, signed, reviewed or model-supported never raises it by itself.",
+     "withdrawal": {
+      "superseded_by": [],
+      "states_withdrawal": null,
+      "structured_authority_effect": null
+     },
+     "unresolved": [
+      "source authenticity not verified",
+      "issuer standing not verified"
+     ],
+     "dependents": {
+      "claims": [
+       "C1"
+      ],
+      "effects": [
+       "receiver-9-447079"
+      ]
+     },
+     "means_true": false,
+     "means_authoritative": false,
+     "means_permitted": false
+    }
+   ],
+   "authority_bindings": [
+    {
+     "effect_id": "receiver-9-447079",
+     "outer_effect_sha256": "ede4872c45dd0509b2a1da5ea9070ecfe321143b3f500f12195caa744e0fcaba",
+     "binding_sha256": "9a9e767b72b0121cbe13f86b9a4bbd358ce791e8bbe0f34d3fd9eb2944c7eae9",
+     "normative_sha256": "83fdc2aa795067df294ec841c1c99d53abd36619bdcbb50d2b797d629e176df8"
+    }
+   ],
+   "dispositions": {
+    "applied": [
+     {
+      "disposition_id": "IDP-73b82c6f321a25c686faa27dc755cbf9",
+      "task_id": "PT-6b78eafe5d0186d4db17a76ce29c4fb51cdddd46563074c9",
+      "disposition": "accept",
+      "bound_to": [
+       {
+        "claim_id": "C1",
+        "evidence_id": "E1"
+       }
+      ],
+      "reviewer_id": "conformance-reviewer-1",
+      "assurance": "tenant_declared_same_principal_as_issuer",
+      "reading_receipt_ids": [
+       "ISR-963ee16530fa6216e64a2deb131422ac"
+      ],
+      "binding": "claim_and_passage_sha256"
+     }
+    ],
+    "unmatched": []
+   },
+   "withdrawal_rule": "A change to a record withdraws every and only the outputs listed in its dependents (see dependency_index)."
+  },
+  "analytical_evidence_status": "favorable",
+  "execution_authorization_status": "authorized"
+ },
+ "store_rows": [
+  {
+   "scenario": "valid",
+   "commit_id": "CM-27de425cb3db3073951feec2027a3e612d6187f033f269ba",
+   "effect_id": "receiver-9-447079",
+   "applied_at": "2026-11-18T21:21:32.855Z"
+  },
+  {
+   "scenario": "lease_recovered",
+   "commit_id": "CM-07be8d539a69d448c07cb823774a518437036619b591e193",
+   "effect_id": "receiver-21-8a8f10",
+   "applied_at": "2026-11-18T21:23:20.363Z"
+  },
+  {
+   "scenario": "rotated",
+   "commit_id": "CM-cd9328c28746c8790553c28a006af29593211df4b51d4b49",
+   "effect_id": "receiver-24-19d68f",
+   "applied_at": "2026-11-18T21:23:30.180Z"
+  }
+ ],
+ "finished_at": "2026-11-18T21:23:31.136Z"
+}

@@ -42278,12 +42278,18 @@
                     "maxItems": 32,
                     "items": {
                       "type": "object",
+                      "required": [
+                        "effect_id"
+                      ],
                       "properties": {
                         "effect_id": {
-                          "type": "string"
+                          "type": "string",
+                          "minLength": 1,
+                          "description": "Required and unique within the request. An item without it is refused with an item pointer."
                         },
                         "effect_type": {
-                          "type": "string"
+                          "type": "string",
+                          "description": "A taxonomy type or action identifier. An unknown type is classified from the description; if it stays unclassified the effect is reported as held."
                         },
                         "description": {
                           "type": "string"
@@ -92764,6 +92770,32 @@
                         "writeOnly": true
                       }
                     }
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "action",
+                      "session_id",
+                      "session_token"
+                    ],
+                    "properties": {
+                      "action": {
+                        "type": "string",
+                        "enum": [
+                          "rotate_registry"
+                        ]
+                      },
+                      "session_id": {
+                        "type": "string",
+                        "pattern": "^AC-[a-f0-9]{32}$"
+                      },
+                      "session_token": {
+                        "type": "string",
+                        "pattern": "^acb_[a-f0-9]{64}$",
+                        "writeOnly": true
+                      }
+                    }
                   }
                 ]
               }
@@ -126953,7 +126985,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-11-18.exact-reducer.9"
+    "deployment_revision": "2026-11-18.exact-reducer.11"
   },
   "response_contract_version": "2026-05-01.v1"
 }

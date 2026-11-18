@@ -1,0 +1,708 @@
+[
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Should the programme proceed to the next phase?",
+   "decision_result": {
+    "allowed_actions": [
+     "external_contact",
+     "commit_funds",
+     "launch"
+    ],
+    "confidence": 0.93,
+    "execution_authorized": true,
+    "recommendation": "GO"
+   },
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "An earlier ward minute welcomed the kiosk planning work.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-03-02",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-03-02",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "guardian",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    },
+    {
+     "claim": "The elders' council now opposes the public kiosk launch.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E2",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-02",
+     "id": "E2",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-11-02",
+     "source_doc_id": "LAB-E2",
+     "source_grade": "B",
+     "stakeholder_class": "guardian",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Elgon Kiosks"
+   }
+  },
+  "case_id": "h1-opposition",
+  "expected_defect_code": "EXPLICIT_CONTRADICTION",
+  "expected_route_decision": "block",
+  "route": "/v1/red-team"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "An earlier ward minute welcomed the kiosk planning work.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-03-02",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-03-02",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "guardian",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    },
+    {
+     "claim": "The elders' council confirmed on 2 November 2026 that it supports the public kiosk launch.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E2",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-02",
+     "id": "E2",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-11-02",
+     "source_doc_id": "LAB-E2",
+     "source_grade": "B",
+     "stakeholder_class": "guardian",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Elgon Kiosks"
+   }
+  },
+  "case_id": "h1-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/red-team"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "privacy_envelope": {
+    "contains_pii": false,
+    "contains_sensitive_personal_data": false,
+    "redaction_status": "aggregated",
+    "safe_for_modeling": true
+   },
+   "text": "This export row holds [CLIENT_NAME_11], [MOBILE_11] and [HIV_STATUS_11] and is going to an outside AI service."
+  },
+  "case_id": "h2-token-identifiers",
+  "expected_defect_code": "PRIVACY_ENVELOPE_CONFLICT",
+  "expected_route_decision": "block",
+  "route": "/v1/privacy-risk-review"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "privacy_envelope": {
+    "contains_pii": false,
+    "contains_sensitive_personal_data": false,
+    "redaction_status": "aggregated",
+    "safe_for_modeling": true
+   },
+   "text": "This export holds ward-level totals only, with no row for any individual."
+  },
+  "case_id": "h2-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/privacy-risk-review"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG"
+   },
+   "narrative": "Household sheet keeps unredacted [HEAD_NAME_3], [PHONE_3] and [ID_NUMBER_3] for case routing. No consent is on file and it is flagged not safe for model use.",
+   "privacy_envelope": {
+    "contains_pii": true,
+    "contains_sensitive_personal_data": true,
+    "redaction_status": "raw",
+    "retention_class": "7y",
+    "safe_for_modeling": false
+   }
+  },
+  "case_id": "h3-unsafe-state",
+  "expected_defect_code": "PRIVACY_UNSAFE_STATE",
+  "expected_route_decision": "block",
+  "route": "/v1/privacy-risk-review"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG"
+   },
+   "narrative": "Names and phone numbers were removed before this summary was prepared. Only parish totals remain.",
+   "privacy_envelope": {
+    "contains_pii": false,
+    "contains_sensitive_personal_data": false,
+    "redaction_status": "redacted",
+    "retention_class": "1y",
+    "safe_for_modeling": true
+   }
+  },
+  "case_id": "h3-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/privacy-risk-review"
+ },
+ {
+  "also_expected": [
+   "UNSUPPORTED_QUANTITY"
+  ],
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The central bank has approved agent onboarding and a KES 40 million float.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "table 2",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Agents say they would welcome a larger float.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Pwani Float"
+   }
+  },
+  "case_id": "h4-demand-as-regulator",
+  "expected_defect_code": "SOURCE_UNSUITABLE_FOR_USE",
+  "expected_route_decision": "block",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The central bank has approved agent onboarding and a KES 40 million float.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 3",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The Central Bank of Kenya approved agent onboarding and a KES 40 million float for Pwani Float on 10 October 2026, reference CBK-AG-771.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "registry_ref": "CBK-AG-771",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Pwani Float"
+   }
+  },
+  "case_id": "h4-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "This licence copy is genuine and confers current operating permission.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "An applicant-submitted note says the regulator granted the operating permission.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-12",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "entity_reported",
+     "source_date": "2026-10-12",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "internal_operator",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     },
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Volta Agro"
+   }
+  },
+  "case_id": "h5-caller-record",
+  "expected_defect_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+  "expected_route_decision": "block",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The regulator granted Volta Agro its operating permit.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 1, line 4",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The Environmental Protection Agency granted Volta Agro operating permit EPA-GH-771 on 12 October 2026.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-12",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "registry_ref": "EPA-GH-771",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     },
+     "verification_status": "registry_verified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Volta Agro"
+   }
+  },
+  "case_id": "h5-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A Kisumu panel is offered as direct proof for the Nairobi-only rollout.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Nyanza"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "city": "Nairobi",
+    "country": "KE",
+    "geo_match_tolerance": "strict",
+    "region": "Nairobi"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Lake Foods"
+   }
+  },
+  "case_id": "h6-wrong-city",
+  "expected_defect_code": "GEOGRAPHY_MISMATCH",
+  "expected_route_decision": "block",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A Nairobi retail panel reported steady weekly sales in October.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "city": "Nairobi",
+      "country": "KE",
+      "region": "Nairobi"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "city": "Nairobi",
+    "country": "KE",
+    "geo_match_tolerance": "strict",
+    "region": "Nairobi"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Lake Foods"
+   }
+  },
+  "case_id": "h6-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The trading licence allows the regional rollout.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "locator": "see the licence somewhere",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Meru Foods"
+   }
+  },
+  "case_id": "h7-vague-permit-locator",
+  "expected_defect_code": "LOCATOR_IMPRECISE",
+  "expected_route_decision": "block",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The Arusha City Council issued trading licence AR-2026-44 allowing the regional rollout.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "licence_number": "AR-2026-44",
+     "locator": "clause 4.2, page 3",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Meru Foods"
+   }
+  },
+  "case_id": "h7-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "action_boundary": {
+    "allowed_actions": [
+     "local_internal_formatting"
+    ],
+    "forbidden_actions": [
+     "deployment",
+     "external_contact",
+     "spend"
+    ]
+   },
+   "decision_question": "May the internal handbook be re-paginated with no release or outside effect?",
+   "market_scope": {
+    "country": "UG"
+   }
+  },
+  "case_id": "h8-internal",
+  "expected_outcome": "not_applicable",
+  "expected_route_decision": "not_applicable",
+  "route": "/v1/red-team"
+ }
+]

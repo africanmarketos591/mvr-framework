@@ -1,0 +1,611 @@
+{
+ "note": "AMOS-authored sets, frozen before the R15 engine changes. Baselines ran on exact-reducer.9 before any change. Holdouts were first scored on exact-reducer.10, closing sets on exact-reducer.11. Not the evaluator cohort. Audit baselines predate the controlling-output field, so their pass counts are not comparable; compare recall and controlling state.",
+ "holdout_direct": {
+  "baseline_exact_reducer_9": {
+   "deployment_revision": "2026-11-18.exact-reducer.9",
+   "rows": 800,
+   "passed": 676,
+   "by_class": {
+    "C": "144/160",
+    "I": "42/80",
+    "L": "80/80",
+    "M": "128/160",
+    "P": "122/160",
+    "R": "80/80",
+    "X": "80/80"
+   },
+   "false_favorable": 24,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 338,
+    "rows": 400,
+    "false_favorable": 12
+   },
+   "full_advisory": {
+    "passed": 338,
+    "rows": 400,
+    "false_favorable": 12
+   },
+   "misses": [
+    "h-clinic-zm-I",
+    "h-clinic-zm-P",
+    "h-dairy-sn-C",
+    "h-dairy-sn-I",
+    "h-dairy-sn-P",
+    "h-fish-ug-I",
+    "h-fish-ug-M",
+    "h-fish-ug-P",
+    "h-school-rw-I",
+    "h-school-rw-M",
+    "h-school-rw-P",
+    "h-seed-tz-I",
+    "h-seed-tz-M",
+    "h-seed-tz-P",
+    "h-solar-ke-C",
+    "h-solar-ke-I",
+    "h-solar-ke-P",
+    "h-transport-ng-I",
+    "h-transport-ng-M",
+    "h-transport-ng-P"
+   ]
+  },
+  "first_exposure_exact_reducer_10": {
+   "deployment_revision": "2026-11-18.exact-reducer.10",
+   "rows": 800,
+   "passed": 784,
+   "by_class": {
+    "C": "160/160",
+    "I": "72/80",
+    "L": "80/80",
+    "M": "160/160",
+    "P": "152/160",
+    "R": "80/80",
+    "X": "80/80"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 392,
+    "rows": 400,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 392,
+    "rows": 400,
+    "false_favorable": 0
+   },
+   "misses": [
+    "h-school-rw-I",
+    "h-school-rw-P"
+   ]
+  },
+  "shipped_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 800,
+   "passed": 800,
+   "by_class": {
+    "C": "160/160",
+    "I": "80/80",
+    "L": "80/80",
+    "M": "160/160",
+    "P": "160/160",
+    "R": "80/80",
+    "X": "80/80"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 400,
+    "rows": 400,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 400,
+    "rows": 400,
+    "false_favorable": 0
+   },
+   "misses": []
+  }
+ },
+ "closing_direct": {
+  "baseline_exact_reducer_9": {
+   "deployment_revision": "2026-11-18.exact-reducer.9",
+   "rows": 400,
+   "passed": 298,
+   "by_class": {
+    "C": "62/80",
+    "I": "19/40",
+    "L": "35/40",
+    "M": "58/80",
+    "P": "54/80",
+    "R": "35/40",
+    "X": "35/40"
+   },
+   "false_favorable": 12,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 128,
+    "rows": 200,
+    "false_favorable": 4
+   },
+   "full_advisory": {
+    "passed": 170,
+    "rows": 200,
+    "false_favorable": 8
+   },
+   "misses": [
+    "k-insure-et-I",
+    "k-insure-et-P",
+    "k-market-za-C",
+    "k-market-za-I",
+    "k-market-za-P",
+    "k-rice-ci-I",
+    "k-rice-ci-M",
+    "k-rice-ci-P",
+    "k-water-mw-AC",
+    "k-water-mw-AM",
+    "k-water-mw-AP",
+    "k-water-mw-C",
+    "k-water-mw-I",
+    "k-water-mw-L",
+    "k-water-mw-M",
+    "k-water-mw-P",
+    "k-water-mw-R",
+    "k-water-mw-X"
+   ]
+  },
+  "first_exposure_shipped_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 400,
+   "passed": 350,
+   "by_class": {
+    "C": "70/80",
+    "I": "35/40",
+    "L": "35/40",
+    "M": "70/80",
+    "P": "70/80",
+    "R": "35/40",
+    "X": "35/40"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 150,
+    "rows": 200,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 200,
+    "rows": 200,
+    "false_favorable": 0
+   },
+   "misses": [
+    "k-water-mw-AC",
+    "k-water-mw-AM",
+    "k-water-mw-AP",
+    "k-water-mw-C",
+    "k-water-mw-I",
+    "k-water-mw-L",
+    "k-water-mw-M",
+    "k-water-mw-P",
+    "k-water-mw-R",
+    "k-water-mw-X"
+   ]
+  }
+ },
+ "holdout_explicit": {
+  "baseline_exact_reducer_9": {
+   "deployment_revision": "2026-11-18.exact-reducer.9",
+   "rows": 128,
+   "passed": 120,
+   "by_class": {
+    "contradictory": "16/16",
+    "declared-none-signal-only": "8/16",
+    "declared-none-with-link": "16/16",
+    "later-completion": "16/16",
+    "missing": "16/16",
+    "positive": "16/16",
+    "stale": "16/16",
+    "wrong-place": "16/16"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 60,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 60,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "misses": [
+    "h-fish-ug-declared-none-signal-only",
+    "h-pay-gh-declared-none-signal-only",
+    "h-seed-tz-declared-none-signal-only",
+    "h-solar-ke-declared-none-signal-only"
+   ]
+  },
+  "first_exposure_exact_reducer_10": {
+   "deployment_revision": "2026-11-18.exact-reducer.10",
+   "rows": 128,
+   "passed": 128,
+   "by_class": {
+    "contradictory": "16/16",
+    "declared-none-signal-only": "16/16",
+    "declared-none-with-link": "16/16",
+    "later-completion": "16/16",
+    "missing": "16/16",
+    "positive": "16/16",
+    "stale": "16/16",
+    "wrong-place": "16/16"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 64,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 64,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "misses": []
+  },
+  "shipped_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 128,
+   "passed": 128,
+   "by_class": {
+    "contradictory": "16/16",
+    "declared-none-signal-only": "16/16",
+    "declared-none-with-link": "16/16",
+    "later-completion": "16/16",
+    "missing": "16/16",
+    "positive": "16/16",
+    "stale": "16/16",
+    "wrong-place": "16/16"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 64,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 64,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "misses": []
+  }
+ },
+ "closing_explicit": {
+  "baseline_exact_reducer_9": {
+   "deployment_revision": "2026-11-18.exact-reducer.9",
+   "rows": 128,
+   "passed": 105,
+   "by_class": {
+    "contradictory": "14/16",
+    "declared-none-signal-only": "7/16",
+    "declared-none-with-link": "14/16",
+    "later-completion": "14/16",
+    "missing": "14/16",
+    "positive": "14/16",
+    "stale": "14/16",
+    "wrong-place": "14/16"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 45,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 60,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "misses": [
+    "k-insure-et-declared-none-signal-only",
+    "k-market-za-declared-none-signal-only",
+    "k-rice-ci-declared-none-signal-only",
+    "k-water-mw-contradictory",
+    "k-water-mw-declared-none-signal-only",
+    "k-water-mw-declared-none-with-link",
+    "k-water-mw-later-completion",
+    "k-water-mw-missing",
+    "k-water-mw-positive",
+    "k-water-mw-stale",
+    "k-water-mw-wrong-place"
+   ]
+  },
+  "first_exposure_shipped_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 128,
+   "passed": 112,
+   "by_class": {
+    "contradictory": "14/16",
+    "declared-none-signal-only": "14/16",
+    "declared-none-with-link": "14/16",
+    "later-completion": "14/16",
+    "missing": "14/16",
+    "positive": "14/16",
+    "stale": "14/16",
+    "wrong-place": "14/16"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 48,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 64,
+    "rows": 64,
+    "false_favorable": 0
+   },
+   "misses": [
+    "k-water-mw-contradictory",
+    "k-water-mw-declared-none-signal-only",
+    "k-water-mw-declared-none-with-link",
+    "k-water-mw-later-completion",
+    "k-water-mw-missing",
+    "k-water-mw-positive",
+    "k-water-mw-stale",
+    "k-water-mw-wrong-place"
+   ]
+  }
+ },
+ "holdout_audit": {
+  "baseline_exact_reducer_9": {
+   "deployment_revision": "2026-11-18.exact-reducer.9",
+   "rows": 30,
+   "passed": 0,
+   "by_class": {
+    "clean": "0/14",
+    "defect": "0/14",
+    "internal": "0/2"
+   },
+   "strict_calibrated": {
+    "passed": 0,
+    "rows": 15,
+    "recall": "1/7",
+    "controlling": "1/7",
+    "bounded_remediation": "2/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 7,
+    "internal_false_triggers": 1,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 0,
+    "rows": 15,
+    "recall": "1/7",
+    "controlling": "1/7",
+    "bounded_remediation": "2/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 7,
+    "internal_false_triggers": 1,
+    "http_refusals": 1
+   },
+   "misses": [
+    "h1-clean",
+    "h1-opposition",
+    "h2-clean",
+    "h2-token-identifiers",
+    "h3-clean",
+    "h3-unsafe-state",
+    "h4-clean",
+    "h4-demand-as-regulator",
+    "h5-caller-record",
+    "h5-clean",
+    "h6-clean",
+    "h6-wrong-city",
+    "h7-clean",
+    "h7-vague-permit-locator",
+    "h8-internal"
+   ]
+  },
+  "first_exposure_exact_reducer_10": {
+   "deployment_revision": "2026-11-18.exact-reducer.10",
+   "rows": 30,
+   "passed": 28,
+   "by_class": {
+    "clean": "12/14",
+    "defect": "14/14",
+    "internal": "2/2"
+   },
+   "strict_calibrated": {
+    "passed": 14,
+    "rows": 15,
+    "recall": "7/7",
+    "controlling": "7/7",
+    "bounded_remediation": "7/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 14,
+    "rows": 15,
+    "recall": "7/7",
+    "controlling": "7/7",
+    "bounded_remediation": "7/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 1
+   },
+   "misses": [
+    "h5-clean"
+   ]
+  },
+  "shipped_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 30,
+   "passed": 28,
+   "by_class": {
+    "clean": "12/14",
+    "defect": "14/14",
+    "internal": "2/2"
+   },
+   "strict_calibrated": {
+    "passed": 14,
+    "rows": 15,
+    "recall": "7/7",
+    "controlling": "7/7",
+    "bounded_remediation": "7/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 14,
+    "rows": 15,
+    "recall": "7/7",
+    "controlling": "7/7",
+    "bounded_remediation": "7/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 1
+   },
+   "misses": [
+    "h5-clean"
+   ]
+  }
+ },
+ "closing_audit": {
+  "baseline_exact_reducer_9": {
+   "deployment_revision": "2026-11-18.exact-reducer.9",
+   "rows": 30,
+   "passed": 0,
+   "by_class": {
+    "clean": "0/14",
+    "defect": "0/14",
+    "internal": "0/2"
+   },
+   "strict_calibrated": {
+    "passed": 0,
+    "rows": 15,
+    "recall": "2/7",
+    "controlling": "2/7",
+    "bounded_remediation": "2/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 7,
+    "internal_false_triggers": 1,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 0,
+    "rows": 15,
+    "recall": "2/7",
+    "controlling": "2/7",
+    "bounded_remediation": "2/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 7,
+    "internal_false_triggers": 1,
+    "http_refusals": 1
+   },
+   "misses": [
+    "k1-clean",
+    "k1-opposition",
+    "k2-clean",
+    "k2-token-identifiers",
+    "k3-clean",
+    "k3-unsafe-state",
+    "k4-clean",
+    "k4-demand-as-regulator",
+    "k5-caller-record",
+    "k5-clean",
+    "k6-clean",
+    "k6-wrong-city",
+    "k7-clean",
+    "k7-vague-permit-locator",
+    "k8-internal"
+   ]
+  },
+  "first_exposure_shipped_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 30,
+   "passed": 28,
+   "by_class": {
+    "clean": "12/14",
+    "defect": "14/14",
+    "internal": "2/2"
+   },
+   "strict_calibrated": {
+    "passed": 14,
+    "rows": 15,
+    "recall": "7/7",
+    "controlling": "7/7",
+    "bounded_remediation": "7/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 14,
+    "rows": 15,
+    "recall": "7/7",
+    "controlling": "7/7",
+    "bounded_remediation": "7/7",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 1
+   },
+   "misses": [
+    "k5-clean"
+   ]
+  }
+ },
+ "audit_addendum_first_exposure_exact_reducer_11": {
+  "deployment_revision": "2026-11-18.exact-reducer.11",
+  "rows": 4,
+  "passed": 4,
+  "by_class": {
+   "clean": "4/4"
+  },
+  "strict_calibrated": {
+   "passed": 2,
+   "rows": 2,
+   "recall": "0/0",
+   "controlling": "0/0",
+   "bounded_remediation": "0/0",
+   "critical_false_permits": 0,
+   "clean_false_positives": 0,
+   "internal_false_triggers": 0,
+   "http_refusals": 0
+  },
+  "full_advisory": {
+   "passed": 2,
+   "rows": 2,
+   "recall": "0/0",
+   "controlling": "0/0",
+   "bounded_remediation": "0/0",
+   "critical_false_permits": 0,
+   "clean_false_positives": 0,
+   "internal_false_triggers": 0,
+   "http_refusals": 0
+  },
+  "misses": []
+ },
+ "regression_found_on_exact_reducer_10": {
+  "set": "r14-direct-holdout",
+  "result": "472/480",
+  "false_favorable_rows": 8,
+  "case": "hold-dairy-tz-M",
+  "fixed_in": "2026-11-18.exact-reducer.11"
+ }
+}

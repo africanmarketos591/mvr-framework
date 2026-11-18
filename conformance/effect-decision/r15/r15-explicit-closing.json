@@ -1,0 +1,3818 @@
+[
+ {
+  "class": "positive",
+  "domain": "water-mw",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-water-mw-positive",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kiosk queue log records sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "MW"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 10 named kiosk attendants",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to MWK 30,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "abstraction licence WRA-1180",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Shire Water Ltd"
+   }
+  },
+  "variant": "positive"
+ },
+ {
+  "class": "missing",
+  "domain": "water-mw",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient",
+    "rule": "R3_REQUIRED_DEPENDENCY_ABSENT"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-water-mw-missing",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kiosk queue log records sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "MW"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 10 named kiosk attendants",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to MWK 30,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "abstraction licence WRA-1180",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Shire Water Ltd"
+   }
+  },
+  "variant": "missing"
+ },
+ {
+  "class": "contradictory",
+  "domain": "water-mw",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical_in": [
+     "insufficient",
+     "adverse"
+    ]
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-water-mw-contradictory",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-CONTRA",
+       "locator": "claim",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kiosk queue log records sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    },
+    {
+     "claim": "The Water Resources Authority states that it has no record of issuing abstraction licence WRA-1180.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-CONTRA",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01"
+    }
+   ],
+   "market_scope": {
+    "country": "MW"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 10 named kiosk attendants",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to MWK 30,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "abstraction licence WRA-1180",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Shire Water Ltd"
+   }
+  },
+  "variant": "contradictory"
+ },
+ {
+  "class": "stale",
+  "domain": "water-mw",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-water-mw-stale",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kiosk queue log records sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2023-01-15"
+    }
+   ],
+   "market_scope": {
+    "country": "MW"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 10 named kiosk attendants",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to MWK 30,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "abstraction licence WRA-1180",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Shire Water Ltd"
+   }
+  },
+  "variant": "stale"
+ },
+ {
+  "class": "wrong-place",
+  "domain": "water-mw",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-water-mw-wrong-place",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kiosk queue log records sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "BW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "MW"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 10 named kiosk attendants",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to MWK 30,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "abstraction licence WRA-1180",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Shire Water Ltd"
+   }
+  },
+  "variant": "wrong-place"
+ },
+ {
+  "class": "later-completion",
+  "domain": "water-mw",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-water-mw-later-completion",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-OPEN",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kiosk queue log records sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The application for abstraction licence WRA-1180 was still pending on 1 September 2026.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-OPEN",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-09-01"
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "MW"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 10 named kiosk attendants",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to MWK 30,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "abstraction licence WRA-1180",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Shire Water Ltd"
+   }
+  },
+  "variant": "later-completion"
+ },
+ {
+  "class": "declared-none-signal-only",
+  "domain": "water-mw",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-water-mw-declared-none-signal-only",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kiosk queue log records sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "MW"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 10 named kiosk attendants",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to MWK 30,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Shire Water Ltd"
+   }
+  },
+  "variant": "declared-none-signal-only"
+ },
+ {
+  "class": "declared-none-with-link",
+  "domain": "water-mw",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-water-mw-declared-none-with-link",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The water users' association supports a 90-day kiosk tariff trial at exactly 10 named water points and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kiosk queue log records sufficient demand for a 90-day kiosk tariff trial at exactly 10 named water points under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Water Resources Authority issued abstraction licence WRA-1180 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "MW"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 10 named kiosk attendants",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to MWK 30,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 90-day kiosk tariff trial at exactly 10 named water points",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Shire Water Ltd"
+   }
+  },
+  "variant": "declared-none-with-link"
+ },
+ {
+  "class": "positive",
+  "domain": "rice-ci",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-rice-ci-positive",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The wholesaler pre-order file records sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "CI"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 15 named wholesalers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to XOF 90,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "conformity certificate CODINORM-73",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Riz Centre SA"
+   }
+  },
+  "variant": "positive"
+ },
+ {
+  "class": "missing",
+  "domain": "rice-ci",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient",
+    "rule": "R3_REQUIRED_DEPENDENCY_ABSENT"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-rice-ci-missing",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The wholesaler pre-order file records sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "CI"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 15 named wholesalers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to XOF 90,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "conformity certificate CODINORM-73",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Riz Centre SA"
+   }
+  },
+  "variant": "missing"
+ },
+ {
+  "class": "contradictory",
+  "domain": "rice-ci",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical_in": [
+     "insufficient",
+     "adverse"
+    ]
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-rice-ci-contradictory",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-CONTRA",
+       "locator": "claim",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The wholesaler pre-order file records sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    },
+    {
+     "claim": "The national quality agency states that it has no record of issuing conformity certificate CODINORM-73.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-CONTRA",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01"
+    }
+   ],
+   "market_scope": {
+    "country": "CI"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 15 named wholesalers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to XOF 90,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "conformity certificate CODINORM-73",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Riz Centre SA"
+   }
+  },
+  "variant": "contradictory"
+ },
+ {
+  "class": "stale",
+  "domain": "rice-ci",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-rice-ci-stale",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The wholesaler pre-order file records sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2023-01-15"
+    }
+   ],
+   "market_scope": {
+    "country": "CI"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 15 named wholesalers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to XOF 90,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "conformity certificate CODINORM-73",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Riz Centre SA"
+   }
+  },
+  "variant": "stale"
+ },
+ {
+  "class": "wrong-place",
+  "domain": "rice-ci",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-rice-ci-wrong-place",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The wholesaler pre-order file records sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "BW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "CI"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 15 named wholesalers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to XOF 90,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "conformity certificate CODINORM-73",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Riz Centre SA"
+   }
+  },
+  "variant": "wrong-place"
+ },
+ {
+  "class": "later-completion",
+  "domain": "rice-ci",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-rice-ci-later-completion",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-OPEN",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The wholesaler pre-order file records sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The application for conformity certificate CODINORM-73 was still pending on 1 September 2026.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-OPEN",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-09-01"
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "CI"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 15 named wholesalers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to XOF 90,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "conformity certificate CODINORM-73",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Riz Centre SA"
+   }
+  },
+  "variant": "later-completion"
+ },
+ {
+  "class": "declared-none-signal-only",
+  "domain": "rice-ci",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-rice-ci-declared-none-signal-only",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The wholesaler pre-order file records sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "CI"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 15 named wholesalers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to XOF 90,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Riz Centre SA"
+   }
+  },
+  "variant": "declared-none-signal-only"
+ },
+ {
+  "class": "declared-none-with-link",
+  "domain": "rice-ci",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-rice-ci-declared-none-with-link",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The rice wholesalers' syndicate supports a two-month supply of exactly 500 sacks to 15 named wholesalers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The wholesaler pre-order file records sufficient demand for a two-month supply of exactly 500 sacks to 15 named wholesalers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The national quality agency issued conformity certificate CODINORM-73 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "CI"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "CI"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 15 named wholesalers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to XOF 90,000,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a two-month supply of exactly 500 sacks to 15 named wholesalers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Riz Centre SA"
+   }
+  },
+  "variant": "declared-none-with-link"
+ },
+ {
+  "class": "positive",
+  "domain": "insure-et",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-insure-et-positive",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kebele sign-up list records sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "ET"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 400 named farmers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ETB 5,500,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "product approval NBE-INS-29",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Sidama Cover Share Co"
+   }
+  },
+  "variant": "positive"
+ },
+ {
+  "class": "missing",
+  "domain": "insure-et",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient",
+    "rule": "R3_REQUIRED_DEPENDENCY_ABSENT"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-insure-et-missing",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kebele sign-up list records sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "ET"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 400 named farmers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ETB 5,500,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "product approval NBE-INS-29",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Sidama Cover Share Co"
+   }
+  },
+  "variant": "missing"
+ },
+ {
+  "class": "contradictory",
+  "domain": "insure-et",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical_in": [
+     "insufficient",
+     "adverse"
+    ]
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-insure-et-contradictory",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-CONTRA",
+       "locator": "claim",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kebele sign-up list records sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    },
+    {
+     "claim": "The National Bank of Ethiopia states that it has no record of issuing product approval NBE-INS-29.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-CONTRA",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01"
+    }
+   ],
+   "market_scope": {
+    "country": "ET"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 400 named farmers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ETB 5,500,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "product approval NBE-INS-29",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Sidama Cover Share Co"
+   }
+  },
+  "variant": "contradictory"
+ },
+ {
+  "class": "stale",
+  "domain": "insure-et",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-insure-et-stale",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kebele sign-up list records sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2023-01-15"
+    }
+   ],
+   "market_scope": {
+    "country": "ET"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 400 named farmers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ETB 5,500,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "product approval NBE-INS-29",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Sidama Cover Share Co"
+   }
+  },
+  "variant": "stale"
+ },
+ {
+  "class": "wrong-place",
+  "domain": "insure-et",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-insure-et-wrong-place",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kebele sign-up list records sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "BW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "ET"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 400 named farmers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ETB 5,500,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "product approval NBE-INS-29",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Sidama Cover Share Co"
+   }
+  },
+  "variant": "wrong-place"
+ },
+ {
+  "class": "later-completion",
+  "domain": "insure-et",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-insure-et-later-completion",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-OPEN",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kebele sign-up list records sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The application for product approval NBE-INS-29 was still pending on 1 September 2026.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-OPEN",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-09-01"
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "ET"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 400 named farmers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ETB 5,500,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "product approval NBE-INS-29",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Sidama Cover Share Co"
+   }
+  },
+  "variant": "later-completion"
+ },
+ {
+  "class": "declared-none-signal-only",
+  "domain": "insure-et",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-insure-et-declared-none-signal-only",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kebele sign-up list records sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "ET"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 400 named farmers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ETB 5,500,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Sidama Cover Share Co"
+   }
+  },
+  "variant": "declared-none-signal-only"
+ },
+ {
+  "class": "declared-none-with-link",
+  "domain": "insure-et",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-insure-et-declared-none-with-link",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmers' union board supports a 30-day crop-cover enrolment for exactly 400 named farmers and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The kebele sign-up list records sufficient demand for a 30-day crop-cover enrolment for exactly 400 named farmers under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The National Bank of Ethiopia issued product approval NBE-INS-29 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ET"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "ET"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 400 named farmers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ETB 5,500,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 30-day crop-cover enrolment for exactly 400 named farmers",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Sidama Cover Share Co"
+   }
+  },
+  "variant": "declared-none-with-link"
+ },
+ {
+  "class": "positive",
+  "domain": "market-za",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-market-za-positive",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The stall application book records sufficient demand for a 6-week night market on exactly 2 named sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "ZA"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 2 named site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ZAR 850,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 6-week night market on exactly 2 named sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "events permit PLK-EV-904",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Limpopo Stalls Pty Ltd"
+   }
+  },
+  "variant": "positive"
+ },
+ {
+  "class": "missing",
+  "domain": "market-za",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient",
+    "rule": "R3_REQUIRED_DEPENDENCY_ABSENT"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-market-za-missing",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The stall application book records sufficient demand for a 6-week night market on exactly 2 named sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "ZA"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 2 named site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ZAR 850,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 6-week night market on exactly 2 named sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "events permit PLK-EV-904",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Limpopo Stalls Pty Ltd"
+   }
+  },
+  "variant": "missing"
+ },
+ {
+  "class": "contradictory",
+  "domain": "market-za",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical_in": [
+     "insufficient",
+     "adverse"
+    ]
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-market-za-contradictory",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-CONTRA",
+       "locator": "claim",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The stall application book records sufficient demand for a 6-week night market on exactly 2 named sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    },
+    {
+     "claim": "The Polokwane municipality states that it has no record of issuing events permit PLK-EV-904.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-CONTRA",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01"
+    }
+   ],
+   "market_scope": {
+    "country": "ZA"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 2 named site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ZAR 850,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 6-week night market on exactly 2 named sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "events permit PLK-EV-904",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Limpopo Stalls Pty Ltd"
+   }
+  },
+  "variant": "contradictory"
+ },
+ {
+  "class": "stale",
+  "domain": "market-za",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-market-za-stale",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The stall application book records sufficient demand for a 6-week night market on exactly 2 named sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2023-01-15"
+    }
+   ],
+   "market_scope": {
+    "country": "ZA"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 2 named site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ZAR 850,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 6-week night market on exactly 2 named sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "events permit PLK-EV-904",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Limpopo Stalls Pty Ltd"
+   }
+  },
+  "variant": "stale"
+ },
+ {
+  "class": "wrong-place",
+  "domain": "market-za",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-market-za-wrong-place",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The stall application book records sufficient demand for a 6-week night market on exactly 2 named sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "BW"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "ZA"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 2 named site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ZAR 850,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 6-week night market on exactly 2 named sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "events permit PLK-EV-904",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Limpopo Stalls Pty Ltd"
+   }
+  },
+  "variant": "wrong-place"
+ },
+ {
+  "class": "later-completion",
+  "domain": "market-za",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-market-za-later-completion",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-OPEN",
+       "locator": "claim",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The stall application book records sufficient demand for a 6-week night market on exactly 2 named sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The application for events permit PLK-EV-904 was still pending on 1 September 2026.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-OPEN",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-09-01"
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "ZA"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 2 named site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ZAR 850,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 6-week night market on exactly 2 named sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      {
+       "dependency_id": "DEP-PERMIT",
+       "description": "events permit PLK-EV-904",
+       "kind": "permission"
+      }
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Limpopo Stalls Pty Ltd"
+   }
+  },
+  "variant": "later-completion"
+ },
+ {
+  "class": "declared-none-signal-only",
+  "domain": "market-za",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-market-za-declared-none-signal-only",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The stall application book records sufficient demand for a 6-week night market on exactly 2 named sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    }
+   ],
+   "market_scope": {
+    "country": "ZA"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 2 named site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ZAR 850,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 6-week night market on exactly 2 named sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Limpopo Stalls Pty Ltd"
+   }
+  },
+  "variant": "declared-none-signal-only"
+ },
+ {
+  "class": "declared-none-with-link",
+  "domain": "market-za",
+  "expected": {
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   }
+  },
+  "id": "k-market-za-declared-none-with-link",
+  "request": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-SUPPORT",
+     "support_links": [
+      {
+       "evidence_id": "R-SUPPORT",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "There is sufficient demand for a 6-week night market on exactly 2 named sites.",
+     "claim_id": "C-DEMAND",
+     "support_links": [
+      {
+       "evidence_id": "R-DEMAND",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 for this design.",
+     "claim_id": "C-DEP",
+     "dependency_id": "DEP-PERMIT",
+     "support_links": [
+      {
+       "evidence_id": "R-LINK",
+       "locator": "claim",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The ward traders' committee supports a 6-week night market on exactly 2 named sites and the agreed contact, complaints and escalation plan.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-SUPPORT",
+     "source_date": "2026-10-02"
+    },
+    {
+     "claim": "The stall application book records sufficient demand for a 6-week night market on exactly 2 named sites under the stated ceilings and safeguards.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-DEMAND",
+     "source_date": "2026-10-09"
+    },
+    {
+     "claim": "The Polokwane municipality issued events permit PLK-EV-904 on 12 October 2026.",
+     "evidence_geography": {
+      "country": "ZA"
+     },
+     "evidence_id": "R-LINK",
+     "evidence_type": "administrative_record",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12"
+    }
+   ],
+   "market_scope": {
+    "country": "ZA"
+   },
+   "requested_effects": [
+    {
+     "description": "Save an internal evidence plan for a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue a bounded analytical recommendation about a 6-week night market on exactly 2 named sites",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "contact the 2 named site managers",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact"
+    },
+    {
+     "description": "commit up to ZAR 850,000 to the bounded design",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment"
+    },
+    {
+     "description": "activate a 6-week night market on exactly 2 named sites",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": []
+    }
+   ],
+   "subject": {
+    "entity_name": "Limpopo Stalls Pty Ltd"
+   }
+  },
+  "variant": "declared-none-with-link"
+ }
+]
