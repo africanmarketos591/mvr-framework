@@ -1,0 +1,222 @@
+{
+  "revision": "2026-11-18.exact-reducer.11",
+  "manifest_id": "MVRRM-3b6f5c0f62f364aaf6881a943de10e25",
+  "results": [
+    {
+      "profile": "full_advisory",
+      "file": "effect-decision/r10-heldout/cohort.json",
+      "cases": 480,
+      "unavailable": [],
+      "score": {
+        "sets": {
+          "C": {
+            "rows": 240,
+            "exact": 240,
+            "false_favorable": 0,
+            "too_severe": 0,
+            "complete": {
+              "n": 80,
+              "exact": 80
+            },
+            "missing": {
+              "n": 80,
+              "exact": 80
+            },
+            "conditional": {
+              "n": 80,
+              "exact": 80
+            },
+            "planning_rows": 120,
+            "planning_favorable": 120,
+            "external_authorized": 0
+          },
+          "D": {
+            "rows": 240,
+            "exact": 240,
+            "false_favorable": 0,
+            "too_severe": 0,
+            "complete": {
+              "n": 80,
+              "exact": 80
+            },
+            "missing": {
+              "n": 80,
+              "exact": 80
+            },
+            "conditional": {
+              "n": 80,
+              "exact": 80
+            },
+            "planning_rows": 120,
+            "planning_favorable": 120,
+            "external_authorized": 0
+          },
+          "E": {
+            "rows": 240,
+            "exact": 240,
+            "false_favorable": 0,
+            "too_severe": 0,
+            "complete": {
+              "n": 80,
+              "exact": 80
+            },
+            "missing": {
+              "n": 80,
+              "exact": 80
+            },
+            "conditional": {
+              "n": 80,
+              "exact": 80
+            },
+            "planning_rows": 120,
+            "planning_favorable": 120,
+            "external_authorized": 0
+          },
+          "F": {
+            "rows": 240,
+            "exact": 240,
+            "false_favorable": 0,
+            "too_severe": 0,
+            "complete": {
+              "n": 80,
+              "exact": 80
+            },
+            "missing": {
+              "n": 80,
+              "exact": 80
+            },
+            "conditional": {
+              "n": 80,
+              "exact": 80
+            },
+            "planning_rows": 120,
+            "planning_favorable": 120,
+            "external_authorized": 0
+          }
+        },
+        "mismatches": []
+      },
+      "passed": true
+    },
+    {
+      "profile": "full_advisory",
+      "file": "effect-decision/r10-heldout/structure.json",
+      "cases": 32,
+      "unavailable": [],
+      "score": {
+        "cases": 32,
+        "exact": 32,
+        "mismatches": []
+      },
+      "passed": true
+    },
+    {
+      "profile": "strict_calibrated",
+      "file": "effect-decision/r10-heldout/cohort.json",
+      "cases": 480,
+      "unavailable": [],
+      "score": {
+        "sets": {
+          "C": {
+            "rows": 240,
+            "exact": 240,
+            "false_favorable": 0,
+            "too_severe": 0,
+            "complete": {
+              "n": 80,
+              "exact": 80
+            },
+            "missing": {
+              "n": 80,
+              "exact": 80
+            },
+            "conditional": {
+              "n": 80,
+              "exact": 80
+            },
+            "planning_rows": 120,
+            "planning_favorable": 120,
+            "external_authorized": 0
+          },
+          "D": {
+            "rows": 240,
+            "exact": 240,
+            "false_favorable": 0,
+            "too_severe": 0,
+            "complete": {
+              "n": 80,
+              "exact": 80
+            },
+            "missing": {
+              "n": 80,
+              "exact": 80
+            },
+            "conditional": {
+              "n": 80,
+              "exact": 80
+            },
+            "planning_rows": 120,
+            "planning_favorable": 120,
+            "external_authorized": 0
+          },
+          "E": {
+            "rows": 240,
+            "exact": 240,
+            "false_favorable": 0,
+            "too_severe": 0,
+            "complete": {
+              "n": 80,
+              "exact": 80
+            },
+            "missing": {
+              "n": 80,
+              "exact": 80
+            },
+            "conditional": {
+              "n": 80,
+              "exact": 80
+            },
+            "planning_rows": 120,
+            "planning_favorable": 120,
+            "external_authorized": 0
+          },
+          "F": {
+            "rows": 240,
+            "exact": 240,
+            "false_favorable": 0,
+            "too_severe": 0,
+            "complete": {
+              "n": 80,
+              "exact": 80
+            },
+            "missing": {
+              "n": 80,
+              "exact": 80
+            },
+            "conditional": {
+              "n": 80,
+              "exact": 80
+            },
+            "planning_rows": 120,
+            "planning_favorable": 120,
+            "external_authorized": 0
+          }
+        },
+        "mismatches": []
+      },
+      "passed": true
+    },
+    {
+      "profile": "strict_calibrated",
+      "file": "effect-decision/r10-heldout/structure.json",
+      "cases": 32,
+      "unavailable": [],
+      "score": {
+        "cases": 32,
+        "exact": 32,
+        "mismatches": []
+      },
+      "passed": true
+    }
+  ]
+}
