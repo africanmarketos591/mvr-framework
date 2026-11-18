@@ -1,0 +1,55 @@
+{
+ "checked_at": "2026-11-18T14:50:49.044Z",
+ "rows": [
+  {
+   "case_id": "h2-id-under-safe-envelope",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "code": null,
+   "status": null,
+   "error": "Utility validation failed",
+   "message": null,
+   "details": "[\"[P1]: strict_calibrated evidence requires privacy_envelope.consent_basis, retention_class, redaction_status, and safe_for_modeling=true.\"]",
+   "audit_outcome": null,
+   "defect_codes": []
+  },
+  {
+   "case_id": "h2-id-under-safe-envelope",
+   "profile": "full_advisory",
+   "http": 200,
+   "code": null,
+   "status": "ok",
+   "error": null,
+   "message": null,
+   "details": "null",
+   "audit_outcome": "defects_found",
+   "defect_codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ]
+  },
+  {
+   "case_id": "h2-clean",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "code": null,
+   "status": null,
+   "error": "Utility validation failed",
+   "message": null,
+   "details": "[\"[P1]: strict_calibrated evidence requires privacy_envelope.consent_basis, retention_class, redaction_status, and safe_for_modeling=true.\"]",
+   "audit_outcome": null,
+   "defect_codes": []
+  },
+  {
+   "case_id": "h2-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "code": null,
+   "status": "ok",
+   "error": null,
+   "message": null,
+   "details": "null",
+   "audit_outcome": "no_defects_found",
+   "defect_codes": []
+  }
+ ]
+}

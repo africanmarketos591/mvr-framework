@@ -9,6 +9,8 @@ The explanation and limits are in [`docs/r14-response-2026-11-18.md`](../../docs
 | `first-exposure.json` | The first score of each frozen set, with its earlier baseline |
 | `r14-direct-*-live.json`, `r14-audit-*-live.json` | Every row of the R14 sets on the shipped build |
 | `r14-contract-live.json` | Effect-digest chain, fail-closed handoff, validation parity, signed statement, disposition write |
+| `handoff-codes-live.json` | Refusal codes for direct digest mismatches and invalid first calls |
+| `h2-refusal-live.json` | Both profiles' responses for the audit fixture pair the holdout scores as missed |
 | `first-call-parity-live.json` | REST and licensed MCP routing comparison |
 | `transport-summary.json` | Three no-retry runs of the 112-cell comparison |
 | `blind-*-live.json` | R13 blind sets on this build |

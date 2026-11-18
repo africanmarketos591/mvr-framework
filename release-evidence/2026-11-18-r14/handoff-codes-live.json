@@ -1,0 +1,46 @@
+{
+ "target": "https://africanmarketos.com",
+ "checked_at": "2026-11-18T14:50:20.568Z",
+ "direct_call_outside_a_tracked_continuation": {
+  "digest_does_not_match_effects": {
+   "error": true,
+   "code": "EFFECT_BINDING_MISMATCH",
+   "status": "invalid_input"
+  },
+  "digest_without_effects": {
+   "error": true,
+   "code": "EFFECT_BINDING_LOST",
+   "status": "invalid_input"
+  }
+ },
+ "first_call_rest": {
+  "licensed_without_evidence_pack": {
+   "http": 200,
+   "code": null,
+   "status": "awaiting_required_context",
+   "item_errors": null,
+   "recovery": null,
+   "workflow_started": false,
+   "disposition": "await_input"
+  },
+  "requested_effects_not_an_array": {
+   "http": 422,
+   "code": "FIRST_CALL_VALIDATION_FAILED",
+   "status": "rejected_input",
+   "item_errors": 1,
+   "recovery": null,
+   "workflow_started": false,
+   "disposition": "await_input"
+  },
+  "duplicate_effect_ids": {
+   "http": 422,
+   "code": "FIRST_CALL_VALIDATION_FAILED",
+   "status": "rejected_input",
+   "item_errors": 1,
+   "recovery": null,
+   "workflow_started": false,
+   "disposition": "await_input"
+  }
+ },
+ "manifest_id": "MVRRM-68338d26188152a58c113f4e087ccaf0"
+}
