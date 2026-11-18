@@ -1,13 +1,15 @@
 # R14 dependency and audit sets
 
-These four sets were written on 18 November 2026 from the independent evaluator's R14 letter and the public contract. Each file was frozen, with its SHA-256 in the matching `.sha256` file, before any R14 code changed. AMOS wrote them. They are not the evaluator's private cases, and passing them does not stand in for an independent rerun.
+These six sets were written on 18 November 2026 from the independent evaluator's R14 letter and the public contract. Each file was frozen, with its SHA-256 in the matching `.sha256` file, before the code it tests. The two `final` sets were frozen after `exact-reducer.7` was live and before the last fix. AMOS wrote them. They are not the evaluator's private cases, and passing them does not stand in for an independent rerun.
 
 | Set | Contents | Use |
 |---|---|---|
 | `r14-direct-dev` | 4 domains x 6 evidence variants x 5 effects x 2 profiles (240 rows) | Guided the repairs |
-| `r14-direct-holdout` | 8 other domains, same design (480 rows) | Scored only on the deployed build |
+| `r14-direct-holdout` | 8 other domains, same design (480 rows) | First scored on `exact-reducer.7`. One domain exposed a gap that was then fixed. |
 | `r14-audit-dev` | The eight audit classes in the letter, with clean siblings, 2 profiles | Guided the repairs |
-| `r14-audit-holdout` | The same classes in different wording and field shapes | Scored only on the deployed build |
+| `r14-audit-holdout` | The same classes in different wording and field shapes | First scored on `exact-reducer.7`. In the strict profile, two cases are refused because their privacy envelope is incomplete; that refusal is correct. |
+| `r14-direct-final` | 4 further domains, same design (240 rows) | Frozen before the last fix; scored for the final result on `exact-reducer.8` |
+| `r14-audit-final` | The eight classes in new wording, with clean controls | Frozen before the last fix; scored for the final result on `exact-reducer.8` |
 
 The evidence variants are: complete, irrelevant addition, missing dependency, conditional, revoked and prohibited. In the missing variant, stakeholder-support and demand records are present and the completion or permission claim is absent. The expected state there is `insufficient` for the recommendation and every external effect, and `favorable` with `planning_only` for internal planning.
 
