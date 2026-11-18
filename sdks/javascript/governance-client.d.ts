@@ -1,5 +1,5 @@
 // Generated from the AMOS OpenAPI contract by scripts/generate-governance-client.mjs (https://github.com/africanmarketos591/mvr-framework).
-// Contract version v6.32.0; operation subset SHA-256: 1df214525d6958c08e1e90d0279fe014da6c7acd6fc9d82d6cc1e83c7ef9098f. Do not edit by hand; regenerate instead.
+// Contract version v6.32.0; operation subset SHA-256: 68b8cb82bf4cee616cf29224792de6654a19a7aef444546f5e3ea7906d7d651c. Do not edit by hand; regenerate instead.
 /** Request body for POST /v1/review-cases. */
 export type ReviewCasesRequest = {
   workplan_id?: string;
@@ -646,6 +646,7 @@ export type EffectDecisionRequest = {
   request_id?: string;
   claims?: Array<{
       claim_id: string;
+      dependency_id?: string;
       claim?: string;
       load_bearing?: boolean;
       support_links?: Array<{
@@ -692,6 +693,11 @@ export type EffectDecisionRequest = {
       effect_type?: string;
       description?: string;
       depends_on_claims?: Array<string>;
+      required_dependencies?: Array<(string | {
+            dependency_id: string;
+            kind?: "completion" | "permission" | "completion_or_permission" | "other";
+            description?: string;
+          })>;
       resource?: {
         system: string;
         resource_type: string;
@@ -2735,6 +2741,8 @@ export type InterpretationSubmissionResponse = {
       rejected_count?: number;
       [key: string]: unknown;
     }>;
+  disposition_id?: string;
+  disposition_sha256?: string;
   task_id?: string;
   disposition?: "accept" | "qualify" | "reject_support" | "adverse";
   assurance?: "tenant_declared_reviewer" | "tenant_declared_same_principal_as_issuer" | "tenant_declared";

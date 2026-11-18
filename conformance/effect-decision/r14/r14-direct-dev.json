@@ -1,0 +1,3258 @@
+[
+ {
+  "id": "dev-water-ug-P",
+  "variant": "P",
+  "domain": "water-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Elgon Water Kiosks Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Mbale"
+   },
+   "decision_question": "Should Elgon Water Kiosks open paid water points in Mbale, which needs the water authority's operating permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Mbale ward leaders support paid water kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Households in Mbale want kiosk water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Elgon Water Kiosks holds the water authority's operating permit for Mbale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Eleven of the 14 ward leaders interviewed said they support paid kiosks in their wards.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "72% of the 400 households surveyed said they would buy kiosk water at the proposed price.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Directorate of Water Resources issued operating permit DWR/OP/2026/118 to Elgon Water Kiosks Ltd on 18 October 2026 for Mbale.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the Mbale rollout workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the Mbale kiosk rollout to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward leaders about kiosk sites"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the first kiosk construction budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch paid water kiosks in Mbale"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-water-ug-I",
+  "variant": "I",
+  "domain": "water-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Elgon Water Kiosks Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Mbale"
+   },
+   "decision_question": "Should Elgon Water Kiosks open paid water points in Mbale, which needs the water authority's operating permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Mbale ward leaders support paid water kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Households in Mbale want kiosk water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Elgon Water Kiosks holds the water authority's operating permit for Mbale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Eleven of the 14 ward leaders interviewed said they support paid kiosks in their wards.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "72% of the 400 households surveyed said they would buy kiosk water at the proposed price.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Directorate of Water Resources issued operating permit DWR/OP/2026/118 to Elgon Water Kiosks Ltd on 18 October 2026 for Mbale.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Mbale municipal offices repainted their reception area in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the Mbale rollout workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the Mbale kiosk rollout to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward leaders about kiosk sites"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the first kiosk construction budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch paid water kiosks in Mbale"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-water-ug-M",
+  "variant": "M",
+  "domain": "water-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Elgon Water Kiosks Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Mbale"
+   },
+   "decision_question": "Should Elgon Water Kiosks open paid water points in Mbale, which needs the water authority's operating permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Mbale ward leaders support paid water kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Households in Mbale want kiosk water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Eleven of the 14 ward leaders interviewed said they support paid kiosks in their wards.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "72% of the 400 households surveyed said they would buy kiosk water at the proposed price.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the Mbale rollout workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the Mbale kiosk rollout to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward leaders about kiosk sites"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the first kiosk construction budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch paid water kiosks in Mbale"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-water-ug-C",
+  "variant": "C",
+  "domain": "water-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Elgon Water Kiosks Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Mbale"
+   },
+   "decision_question": "Should Elgon Water Kiosks open paid water points in Mbale, which needs the water authority's operating permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Mbale ward leaders support paid water kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Households in Mbale want kiosk water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Elgon Water Kiosks holds the water authority's operating permit for Mbale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Eleven of the 14 ward leaders interviewed said they support paid kiosks in their wards.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "72% of the 400 households surveyed said they would buy kiosk water at the proposed price.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Directorate of Water Resources granted Elgon Water Kiosks Ltd an operating permit for Mbale on 18 October 2026, subject to quarterly water-quality testing being in place.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the Mbale rollout workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the Mbale kiosk rollout to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward leaders about kiosk sites"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the first kiosk construction budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch paid water kiosks in Mbale"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-water-ug-R",
+  "variant": "R",
+  "domain": "water-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Elgon Water Kiosks Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Mbale"
+   },
+   "decision_question": "Should Elgon Water Kiosks open paid water points in Mbale, which needs the water authority's operating permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Mbale ward leaders support paid water kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Households in Mbale want kiosk water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Elgon Water Kiosks holds the water authority's operating permit for Mbale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Eleven of the 14 ward leaders interviewed said they support paid kiosks in their wards.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "72% of the 400 households surveyed said they would buy kiosk water at the proposed price.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Directorate of Water Resources issued operating permit DWR/OP/2026/118 to Elgon Water Kiosks Ltd on 18 October 2026 for Mbale.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Directorate of Water Resources revoked operating permit DWR/OP/2026/118 on 4 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the Mbale rollout workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the Mbale kiosk rollout to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward leaders about kiosk sites"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the first kiosk construction budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch paid water kiosks in Mbale"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-water-ug-X",
+  "variant": "X",
+  "domain": "water-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Elgon Water Kiosks Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Mbale"
+   },
+   "decision_question": "Should Elgon Water Kiosks open paid water points in Mbale, which needs the water authority's operating permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Mbale ward leaders support paid water kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Households in Mbale want kiosk water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Elgon Water Kiosks holds the water authority's operating permit for Mbale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Eleven of the 14 ward leaders interviewed said they support paid kiosks in their wards.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "72% of the 400 households surveyed said they would buy kiosk water at the proposed price.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Directorate of Water Resources issued operating permit DWR/OP/2026/118 to Elgon Water Kiosks Ltd on 18 October 2026 for Mbale.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Directorate of Water Resources prohibits any new paid water kiosk in Mbale until the catchment review closes.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Mbale"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the Mbale rollout workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the Mbale kiosk rollout to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward leaders about kiosk sites"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the first kiosk construction budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch paid water kiosks in Mbale"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-seed-ke-P",
+  "variant": "P",
+  "domain": "seed-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Rift Seed Co Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "decision_question": "Should Rift Seed Co start selling certified maize seed in Nakuru?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Nakuru farmer groups back the new seed variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Agrovets in Nakuru want to stock the variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "KEPHIS certified the seed variety for sale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Farmer group chairs in Nakuru told the field team they back the new seed variety.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "At least 60 of the 85 agrovets surveyed in Nakuru want to stock the variety next season.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "KEPHIS issued seed certificate KE-SC-44120 for the variety on 11 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the seed launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the seed launch to management"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact agrovets about first orders"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit seed purchase funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch seed sales in Nakuru"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-seed-ke-I",
+  "variant": "I",
+  "domain": "seed-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Rift Seed Co Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "decision_question": "Should Rift Seed Co start selling certified maize seed in Nakuru?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Nakuru farmer groups back the new seed variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Agrovets in Nakuru want to stock the variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "KEPHIS certified the seed variety for sale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Farmer group chairs in Nakuru told the field team they back the new seed variety.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "At least 60 of the 85 agrovets surveyed in Nakuru want to stock the variety next season.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "KEPHIS issued seed certificate KE-SC-44120 for the variety on 11 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "A Nakuru radio station moved to a new studio in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the seed launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the seed launch to management"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact agrovets about first orders"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit seed purchase funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch seed sales in Nakuru"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-seed-ke-M",
+  "variant": "M",
+  "domain": "seed-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Rift Seed Co Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "decision_question": "Should Rift Seed Co start selling maize seed in Nakuru?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Nakuru farmer groups back the new seed variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Agrovets in Nakuru want to stock the variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Farmer group chairs in Nakuru told the field team they back the new seed variety.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "At least 60 of the 85 agrovets surveyed in Nakuru want to stock the variety next season.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the seed launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the seed launch to management"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact agrovets about first orders"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit seed purchase funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch seed sales in Nakuru"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-seed-ke-C",
+  "variant": "C",
+  "domain": "seed-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Rift Seed Co Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "decision_question": "Should Rift Seed Co start selling certified maize seed in Nakuru?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Nakuru farmer groups back the new seed variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Agrovets in Nakuru want to stock the variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "KEPHIS certified the seed variety for sale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Farmer group chairs in Nakuru told the field team they back the new seed variety.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "At least 60 of the 85 agrovets surveyed in Nakuru want to stock the variety next season.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "KEPHIS issued a seed certificate for the variety on 11 October 2026, valid only for the long-rains season.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the seed launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the seed launch to management"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact agrovets about first orders"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit seed purchase funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch seed sales in Nakuru"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-seed-ke-R",
+  "variant": "R",
+  "domain": "seed-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Rift Seed Co Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "decision_question": "Should Rift Seed Co start selling certified maize seed in Nakuru?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Nakuru farmer groups back the new seed variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Agrovets in Nakuru want to stock the variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "KEPHIS certified the seed variety for sale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Farmer group chairs in Nakuru told the field team they back the new seed variety.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "At least 60 of the 85 agrovets surveyed in Nakuru want to stock the variety next season.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "KEPHIS issued seed certificate KE-SC-44120 for the variety on 11 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "KEPHIS withdrew seed certificate KE-SC-44120 on 2 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the seed launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the seed launch to management"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact agrovets about first orders"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit seed purchase funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch seed sales in Nakuru"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-seed-ke-X",
+  "variant": "X",
+  "domain": "seed-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Rift Seed Co Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "decision_question": "Should Rift Seed Co start selling certified maize seed in Nakuru?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Nakuru farmer groups back the new seed variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Agrovets in Nakuru want to stock the variety.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "KEPHIS certified the seed variety for sale.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Farmer group chairs in Nakuru told the field team they back the new seed variety.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "At least 60 of the 85 agrovets surveyed in Nakuru want to stock the variety next season.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "KEPHIS issued seed certificate KE-SC-44120 for the variety on 11 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "KEPHIS directive: the variety may not be offered for sale in Nakuru County until further notice.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Nakuru"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the seed launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the seed launch to management"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact agrovets about first orders"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit seed purchase funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch seed sales in Nakuru"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-clinic-gh-P",
+  "variant": "P",
+  "domain": "clinic-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Northern Care Clinics Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "decision_question": "Should Northern Care open a private clinic in Tamale, given it needs facility licensing?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tamale health workers support the new clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tamale residents would use the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Health Facilities Regulatory Agency licensed the Tamale clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Most of the 30 health workers consulted support a private clinic in Tamale.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than 500 of the 800 residents surveyed said they would use the clinic within a year.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Health Facilities Regulatory Agency issued licence HeFRA-2026-7781 for the Tamale clinic on 15 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic to the investment committee"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact landlords about clinic premises"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the clinic fit-out budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the Tamale clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-clinic-gh-I",
+  "variant": "I",
+  "domain": "clinic-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Northern Care Clinics Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "decision_question": "Should Northern Care open a private clinic in Tamale, given it needs facility licensing?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tamale health workers support the new clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tamale residents would use the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Health Facilities Regulatory Agency licensed the Tamale clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Most of the 30 health workers consulted support a private clinic in Tamale.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than 500 of the 800 residents surveyed said they would use the clinic within a year.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Health Facilities Regulatory Agency issued licence HeFRA-2026-7781 for the Tamale clinic on 15 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Tamale hosted a regional football final in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic to the investment committee"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact landlords about clinic premises"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the clinic fit-out budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the Tamale clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-clinic-gh-M",
+  "variant": "M",
+  "domain": "clinic-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Northern Care Clinics Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "decision_question": "Should Northern Care open a private clinic in Tamale, given it needs facility licensing?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tamale health workers support the new clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tamale residents would use the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Most of the 30 health workers consulted support a private clinic in Tamale.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than 500 of the 800 residents surveyed said they would use the clinic within a year.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic to the investment committee"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact landlords about clinic premises"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the clinic fit-out budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the Tamale clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-clinic-gh-C",
+  "variant": "C",
+  "domain": "clinic-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Northern Care Clinics Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "decision_question": "Should Northern Care open a private clinic in Tamale, given it needs facility licensing?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tamale health workers support the new clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tamale residents would use the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Health Facilities Regulatory Agency licensed the Tamale clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Most of the 30 health workers consulted support a private clinic in Tamale.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than 500 of the 800 residents surveyed said they would use the clinic within a year.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Health Facilities Regulatory Agency granted a provisional licence for the Tamale clinic on 15 October 2026 pending a fire-safety inspection.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic to the investment committee"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact landlords about clinic premises"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the clinic fit-out budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the Tamale clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-clinic-gh-R",
+  "variant": "R",
+  "domain": "clinic-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Northern Care Clinics Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "decision_question": "Should Northern Care open a private clinic in Tamale, given it needs facility licensing?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tamale health workers support the new clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tamale residents would use the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Health Facilities Regulatory Agency licensed the Tamale clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Most of the 30 health workers consulted support a private clinic in Tamale.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than 500 of the 800 residents surveyed said they would use the clinic within a year.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Health Facilities Regulatory Agency issued licence HeFRA-2026-7781 for the Tamale clinic on 15 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Health Facilities Regulatory Agency cancelled licence HeFRA-2026-7781 on 3 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic to the investment committee"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact landlords about clinic premises"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the clinic fit-out budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the Tamale clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-clinic-gh-X",
+  "variant": "X",
+  "domain": "clinic-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Northern Care Clinics Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "decision_question": "Should Northern Care open a private clinic in Tamale, given it needs facility licensing?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tamale health workers support the new clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tamale residents would use the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Health Facilities Regulatory Agency licensed the Tamale clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Most of the 30 health workers consulted support a private clinic in Tamale.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than 500 of the 800 residents surveyed said they would use the clinic within a year.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Health Facilities Regulatory Agency issued licence HeFRA-2026-7781 for the Tamale clinic on 15 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Health Facilities Regulatory Agency has barred new private clinics in the Tamale metropolis until the zoning review ends.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Tamale"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic to the investment committee"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact landlords about clinic premises"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit the clinic fit-out budget"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the Tamale clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-solar-rw-P",
+  "variant": "P",
+  "domain": "solar-rw",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Akagera Solar Ltd"
+   },
+   "market_scope": {
+    "country": "RW",
+    "locality": "Huye"
+   },
+   "decision_question": "Should Akagera Solar begin pay-as-you-go sales in Huye under a signed distribution agreement?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Huye cooperative leaders welcome pay-as-you-go solar.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Huye households are willing to pay for solar kits.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Akagera Solar signed a distribution agreement with Huye Energy Cooperative.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cooperative leaders in Huye welcomed pay-as-you-go solar at the October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "cooperative_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 300 households in Huye are willing to pay the proposed weekly fee.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Akagera Solar and Huye Energy Cooperative executed distribution agreement DA-2026-31 on 19 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the sales workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact cooperative members about kits"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit stock financing"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch pay-as-you-go sales in Huye"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-solar-rw-I",
+  "variant": "I",
+  "domain": "solar-rw",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Akagera Solar Ltd"
+   },
+   "market_scope": {
+    "country": "RW",
+    "locality": "Huye"
+   },
+   "decision_question": "Should Akagera Solar begin pay-as-you-go sales in Huye under a signed distribution agreement?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Huye cooperative leaders welcome pay-as-you-go solar.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Huye households are willing to pay for solar kits.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Akagera Solar signed a distribution agreement with Huye Energy Cooperative.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cooperative leaders in Huye welcomed pay-as-you-go solar at the October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "cooperative_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 300 households in Huye are willing to pay the proposed weekly fee.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Akagera Solar and Huye Energy Cooperative executed distribution agreement DA-2026-31 on 19 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Huye's university held its graduation in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the sales workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact cooperative members about kits"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit stock financing"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch pay-as-you-go sales in Huye"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-solar-rw-M",
+  "variant": "M",
+  "domain": "solar-rw",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Akagera Solar Ltd"
+   },
+   "market_scope": {
+    "country": "RW",
+    "locality": "Huye"
+   },
+   "decision_question": "Should Akagera Solar begin pay-as-you-go sales in Huye?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Huye cooperative leaders welcome pay-as-you-go solar.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Huye households are willing to pay for solar kits.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cooperative leaders in Huye welcomed pay-as-you-go solar at the October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "cooperative_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 300 households in Huye are willing to pay the proposed weekly fee.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the sales workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact cooperative members about kits"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit stock financing"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch pay-as-you-go sales in Huye"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-solar-rw-C",
+  "variant": "C",
+  "domain": "solar-rw",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Akagera Solar Ltd"
+   },
+   "market_scope": {
+    "country": "RW",
+    "locality": "Huye"
+   },
+   "decision_question": "Should Akagera Solar begin pay-as-you-go sales in Huye under a signed distribution agreement?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Huye cooperative leaders welcome pay-as-you-go solar.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Huye households are willing to pay for solar kits.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Akagera Solar signed a distribution agreement with Huye Energy Cooperative.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cooperative leaders in Huye welcomed pay-as-you-go solar at the October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "cooperative_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 300 households in Huye are willing to pay the proposed weekly fee.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Akagera Solar and Huye Energy Cooperative signed distribution agreement DA-2026-31 on 19 October 2026, conditional on the cooperative opening a service point.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the sales workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact cooperative members about kits"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit stock financing"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch pay-as-you-go sales in Huye"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-solar-rw-R",
+  "variant": "R",
+  "domain": "solar-rw",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Akagera Solar Ltd"
+   },
+   "market_scope": {
+    "country": "RW",
+    "locality": "Huye"
+   },
+   "decision_question": "Should Akagera Solar begin pay-as-you-go sales in Huye under a signed distribution agreement?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Huye cooperative leaders welcome pay-as-you-go solar.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Huye households are willing to pay for solar kits.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Akagera Solar signed a distribution agreement with Huye Energy Cooperative.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cooperative leaders in Huye welcomed pay-as-you-go solar at the October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "cooperative_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 300 households in Huye are willing to pay the proposed weekly fee.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Akagera Solar and Huye Energy Cooperative executed distribution agreement DA-2026-31 on 19 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "Huye Energy Cooperative's mandate to distribute was revoked by RURA on 1 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the sales workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact cooperative members about kits"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit stock financing"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch pay-as-you-go sales in Huye"
+    }
+   ]
+  }
+ },
+ {
+  "id": "dev-solar-rw-X",
+  "variant": "X",
+  "domain": "solar-rw",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Akagera Solar Ltd"
+   },
+   "market_scope": {
+    "country": "RW",
+    "locality": "Huye"
+   },
+   "decision_question": "Should Akagera Solar begin pay-as-you-go sales in Huye under a signed distribution agreement?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Huye cooperative leaders welcome pay-as-you-go solar.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Huye households are willing to pay for solar kits.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Akagera Solar signed a distribution agreement with Huye Energy Cooperative.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cooperative leaders in Huye welcomed pay-as-you-go solar at the October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "cooperative_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 300 households in Huye are willing to pay the proposed weekly fee.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Akagera Solar and Huye Energy Cooperative executed distribution agreement DA-2026-31 on 19 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "RURA order: no new pay-as-you-go solar sales may start in Huye until tariffs are reviewed.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "RW",
+      "locality": "Huye"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the sales workstream"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch to the board"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact cooperative members about kits"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit stock financing"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch pay-as-you-go sales in Huye"
+    }
+   ]
+  }
+ }
+]

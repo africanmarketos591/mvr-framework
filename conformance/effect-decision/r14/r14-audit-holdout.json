@@ -1,0 +1,783 @@
+[
+ {
+  "case_id": "h1-elders-object",
+  "route": "/v1/release-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_name": "Turkana Wells",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Clan elders back the borehole site.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "Site committee note from January: elders backed the borehole site.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-01-22",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-01-22",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "id": "E2",
+     "claim": "On 5 November 2026 the clan elders rejected the borehole site and objected in writing to the county.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-11-05",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E2",
+     "freshness_date": "2026-11-05",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "EXPLICIT_CONTRADICTION",
+  "expected_locus": {
+   "evidence_id": "E2"
+  }
+ },
+ {
+  "case_id": "h1-clean",
+  "route": "/v1/release-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_name": "Turkana Wells",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Clan elders back the borehole site.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "On 5 November 2026 the clan elders confirmed that they back the borehole site.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-11-05",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-11-05",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "h2-id-under-safe-envelope",
+  "route": "/v1/board-safety-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "NG"
+   },
+   "subject": {
+    "entity_name": "Kano Health",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "evidence_pack": [
+    {
+     "evidence_id": "P1",
+     "id": "P1",
+     "claim": "Patient name: Amina Bello, date of birth 1988-04-02, attended the clinic.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "NG"
+     },
+     "source_date": "2026-10-22",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "beneficiary",
+     "source_grade": "B",
+     "source_doc_id": "LAB-P1",
+     "freshness_date": "2026-10-22",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "redaction_status": "aggregated",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "PRIVACY_ENVELOPE_CONFLICT",
+  "expected_locus": {
+   "evidence_id": "P1"
+  }
+ },
+ {
+  "case_id": "h2-clean",
+  "route": "/v1/board-safety-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "NG"
+   },
+   "subject": {
+    "entity_name": "Kano Health",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "evidence_pack": [
+    {
+     "evidence_id": "P1",
+     "id": "P1",
+     "claim": "The clinic recorded 230 attendances in October, reported in aggregate.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "NG"
+     },
+     "source_date": "2026-10-22",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "beneficiary",
+     "source_grade": "B",
+     "source_doc_id": "LAB-P1",
+     "freshness_date": "2026-10-22",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "redaction_status": "aggregated",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "h3-consumer-poll-as-licence",
+  "route": "/v1/release-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "RW"
+   },
+   "subject": {
+    "entity_name": "Kigali Pay",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Kigali Pay is licensed by the National Bank of Rwanda.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "A consumer poll found that shoppers like the Kigali Pay app and want to use it.",
+     "source_class": "nonprobability_survey",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "source_date": "2026-10-19",
+     "evidence_type": "survey",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "consumer",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-19",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "SOURCE_UNSUITABLE_FOR_USE",
+  "expected_locus": {
+   "evidence_id": "E1"
+  }
+ },
+ {
+  "case_id": "h3-clean",
+  "route": "/v1/release-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "RW"
+   },
+   "subject": {
+    "entity_name": "Kigali Pay",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Kigali Pay is licensed by the National Bank of Rwanda.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "The National Bank of Rwanda issued payment licence BNR-PSP-2026-12 to Kigali Pay on 19 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "source_date": "2026-10-19",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-19",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "licence_number": "BNR-PSP-2026-12"
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "h4-we-certify-ourselves",
+  "route": "/v1/evidence-suitability-scan",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "ZM"
+   },
+   "subject": {
+    "entity_name": "Lusaka Grain",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "evidence_pack": [
+    {
+     "evidence_id": "S1",
+     "id": "S1",
+     "claim": "We certify that this document is genuine and that Lusaka Grain is authorised to export maize.",
+     "source_class": "entity_reported",
+     "evidence_geography": {
+      "country": "ZM"
+     },
+     "source_date": "2026-10-21",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "internal_operator",
+     "source_grade": "B",
+     "source_doc_id": "LAB-S1",
+     "freshness_date": "2026-10-21",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "verification_status": "self_reported"
+    }
+   ]
+  },
+  "expected_defect_code": "PERMISSION_DECLARED_NOT_AUTHENTICATED",
+  "expected_locus": {
+   "evidence_id": "S1"
+  }
+ },
+ {
+  "case_id": "h4-clean",
+  "route": "/v1/evidence-suitability-scan",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "ZM"
+   },
+   "subject": {
+    "entity_name": "Lusaka Grain",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "evidence_pack": [
+    {
+     "evidence_id": "S1",
+     "id": "S1",
+     "claim": "The Ministry of Agriculture issued export permit MA-EX-2026-5 to Lusaka Grain on 21 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "ZM"
+     },
+     "source_date": "2026-10-21",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-S1",
+     "freshness_date": "2026-10-21",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "registry_ref": "MA-EX-2026-5"
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "h5-town-zone",
+  "route": "/v1/evidence-completeness",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "TZ",
+    "town_or_zone": "Mwanza"
+   },
+   "subject": {
+    "entity_name": "Mwanza Fish",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "evidence_pack": [
+    {
+     "evidence_id": "V1",
+     "id": "V1",
+     "claim": "The municipal council issued business licence BL-2026-9 to Mwanza Fish on 12 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "TZ",
+      "town_or_zone": "Dodoma"
+     },
+     "source_date": "2026-10-12",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-V1",
+     "freshness_date": "2026-10-12",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "GEOGRAPHY_MISMATCH",
+  "expected_locus": {
+   "evidence_id": "V1"
+  }
+ },
+ {
+  "case_id": "h5-clean",
+  "route": "/v1/evidence-completeness",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "TZ",
+    "town_or_zone": "Mwanza"
+   },
+   "subject": {
+    "entity_name": "Mwanza Fish",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "evidence_pack": [
+    {
+     "evidence_id": "V1",
+     "id": "V1",
+     "claim": "The municipal council issued business licence BL-2026-9 to Mwanza Fish on 12 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "TZ",
+      "town_or_zone": "Mwanza"
+     },
+     "source_date": "2026-10-12",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-V1",
+     "freshness_date": "2026-10-12",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "h6-see-the-licence",
+  "route": "/v1/release-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_name": "Accra Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Accra Foods holds an FDA licence.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "see the licence"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "FDA Ghana issued licence FDA-2026-61 to Accra Foods on 6 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "source_date": "2026-10-06",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-06",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "licence_number": "FDA-2026-61"
+    }
+   ]
+  },
+  "expected_defect_code": "LOCATOR_IMPRECISE",
+  "expected_locus": {
+   "claim_id": "C1",
+   "evidence_id": "E1"
+  }
+ },
+ {
+  "case_id": "h6-clean",
+  "route": "/v1/release-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_name": "Accra Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Accra Foods holds an FDA licence.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "licence p.1, field 'licence number'"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "FDA Ghana issued licence FDA-2026-61 to Accra Foods on 6 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "source_date": "2026-10-06",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-06",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "licence_number": "FDA-2026-61"
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "h7-raw-list",
+  "route": "/v1/privacy-risk-review",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "SN"
+   },
+   "subject": {
+    "entity_name": "Dakar Relief",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "evidence_pack": [],
+   "text": "Liste brute / raw list of recipients: Fatou Diop, +221 77 123 45 67, home address 14 Rue Carnot."
+  },
+  "expected_defect_code": "PERSONAL_DATA_UNDECLARED",
+  "expected_locus": {
+   "input_path": "/text"
+  }
+ },
+ {
+  "case_id": "h7-clean",
+  "route": "/v1/privacy-risk-review",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "SN"
+   },
+   "subject": {
+    "entity_name": "Dakar Relief",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Is the partner ready for the next disbursement?",
+   "evidence_pack": [],
+   "text": "Recipients are reported only as counts per commune. The office switchboard is +221 33 800 10 10."
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "h8-layout-task",
+  "route": "/v1/evidence-completeness",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_name": "Coast Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Tidy the layout of the staff handbook and renumber its pages",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Coast Foods holds a permit.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "Mombasa County issued a permit to Coast Foods on 2 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-10-02",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-02",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "not_applicable"
+ }
+]
