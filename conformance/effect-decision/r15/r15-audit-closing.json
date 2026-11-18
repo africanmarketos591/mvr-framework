@@ -1,0 +1,702 @@
+[
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "decision_result": {
+    "allowed_actions": [
+     "external_contact",
+     "commit_funds",
+     "launch"
+    ],
+    "confidence": 0.93,
+    "execution_authorized": true,
+    "recommendation": "GO"
+   },
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The fishing committee backed the early planning of the depot in January.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-01-20",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-01-20",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "guardian",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    },
+    {
+     "claim": "The fishing committee currently rejects the depot opening.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "E2",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-01",
+     "id": "E2",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01",
+     "source_doc_id": "LAB-E2",
+     "source_grade": "B",
+     "stakeholder_class": "guardian",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Bahari Nets"
+   }
+  },
+  "case_id": "k1-opposition",
+  "expected_defect_code": "EXPLICIT_CONTRADICTION",
+  "expected_route_decision": "block",
+  "route": "/v1/red-team"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The fishing committee backed the early planning of the depot in January.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-01-20",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-01-20",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "guardian",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    },
+    {
+     "claim": "The fishing committee still backs the depot opening.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "E2",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-01",
+     "id": "E2",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-11-01",
+     "source_doc_id": "LAB-E2",
+     "source_grade": "B",
+     "stakeholder_class": "guardian",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Bahari Nets"
+   }
+  },
+  "case_id": "k1-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/red-team"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "content": "Row 18 includes [BENEFICIARY_NAME_18], [DOB_18] and [PASSPORT_18]; it will be pasted into a public chatbot.",
+   "market_scope": {
+    "country": "NG"
+   },
+   "metadata": {
+    "contains_pii": false,
+    "redaction_status": "redacted",
+    "safe_for_modeling": true
+   }
+  },
+  "case_id": "k2-token-identifiers",
+  "expected_defect_code": "PRIVACY_ENVELOPE_CONFLICT",
+  "expected_route_decision": "block",
+  "route": "/v1/privacy-risk-review"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "content": "Row 18 shows the state total. [REDACTED] marks where a name was removed.",
+   "market_scope": {
+    "country": "NG"
+   },
+   "metadata": {
+    "contains_pii": false,
+    "redaction_status": "redacted",
+    "safe_for_modeling": true
+   }
+  },
+  "case_id": "k2-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/privacy-risk-review"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "RW"
+   },
+   "privacy_envelope": {
+    "contains_pii": true,
+    "redaction_status": "none",
+    "safe_for_modeling": false
+   },
+   "text": "Raw patient list with [PATIENT_NAME_9] and [PHONE_9]. There is no consent basis and modelling is not permitted."
+  },
+  "case_id": "k3-unsafe-state",
+  "expected_defect_code": "PRIVACY_UNSAFE_STATE",
+  "expected_route_decision": "block",
+  "route": "/v1/privacy-risk-review"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "RW"
+   },
+   "privacy_envelope": {
+    "contains_pii": false,
+    "redaction_status": "aggregated",
+    "safe_for_modeling": true
+   },
+   "text": "District clinic totals for October, prepared for the board."
+  },
+  "case_id": "k3-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/privacy-risk-review"
+ },
+ {
+  "also_expected": [
+   "UNSUPPORTED_QUANTITY"
+  ],
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ministry has licensed immediate supplier outreach and a UGX 900 million purchase.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "row 8",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Shop owners are keen to hear more about the range.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "survey",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Nile Credit Agents"
+   }
+  },
+  "case_id": "k4-demand-as-regulator",
+  "expected_defect_code": "SOURCE_UNSUITABLE_FOR_USE",
+  "expected_route_decision": "block",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The ministry has licensed supplier outreach.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "section 2",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The Ministry of Trade issued outreach licence MT-2026-9 to Nile Credit Agents on 10 October 2026.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "licence_number": "MT-2026-9",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Nile Credit Agents"
+   }
+  },
+  "case_id": "k4-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The source is authentic and gives present authority to execute.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A customer-provided file states that the authority gave execution approval.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "ZM"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-12",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "entity_reported",
+     "source_date": "2026-10-12",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "internal_operator",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     },
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Kafue Traders"
+   }
+  },
+  "case_id": "k5-caller-record",
+  "expected_defect_code": "SOURCE_AUTHENTICITY_UNVERIFIED",
+  "expected_route_decision": "block",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The authority licensed Kafue Traders.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, table 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The Zambia Competition Commission licensed Kafue Traders under reference ZCC-55 on 12 October 2026.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "ZM"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-12",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "registry_ref": "ZCC-55",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     },
+     "verification_status": "registry_verified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Kafue Traders"
+   }
+  },
+  "case_id": "k5-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A Tamale sample is put forward as exact evidence for a launch in Accra alone.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "city": "Accra",
+    "country": "GH",
+    "geo_match_tolerance": "strict",
+    "region": "Greater Accra"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Coast Mills"
+   }
+  },
+  "case_id": "k6-wrong-city",
+  "expected_defect_code": "GEOGRAPHY_MISMATCH",
+  "expected_route_decision": "block",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "An Accra shop survey found steady sales in October.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "city": "Accra",
+      "country": "GH",
+      "region": "Greater Accra"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "city": "Accra",
+    "country": "GH",
+    "geo_match_tolerance": "strict",
+    "region": "Greater Accra"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Coast Mills"
+   }
+  },
+  "case_id": "k6-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The export permit authorises this shipment.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "source_locator": "in the permit",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "RW"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Kivu Tea"
+   }
+  },
+  "case_id": "k7-vague-permit-locator",
+  "expected_defect_code": "LOCATOR_IMPRECISE",
+  "expected_route_decision": "block",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The National Agricultural Export Board issued export permit NAEB-33 for this shipment.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "licence_number": "NAEB-33",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "source_locator": "page 1, field 7",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "RW"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Kivu Tea"
+   }
+  },
+  "case_id": "k7-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "action_boundary": {
+    "allowed_actions": [
+     "local_internal_formatting"
+    ],
+    "forbidden_actions": [
+     "deployment",
+     "external_contact",
+     "spend"
+    ]
+   },
+   "decision_question": "Can the internal slide template be tidied, with nothing deployed and nothing sent outside?",
+   "market_scope": {
+    "country": "KE"
+   }
+  },
+  "case_id": "k8-internal",
+  "expected_outcome": "not_applicable",
+  "expected_route_decision": "not_applicable",
+  "route": "/v1/red-team"
+ }
+]
