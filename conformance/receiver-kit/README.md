@@ -118,3 +118,25 @@ With `--faults` and the test hooks on, it also covers two failures:
 - `fresh({riskClass})` says whether the receiver may still act without re-reading state, under `mvr.offline-policy/1` (low 300 s, standard 60 s, high 5 s).
 
 Every head is verified with the registry key and every entry against the hash chain. A gap, a broken link, a sequence regression or a foreign signature stops the subscriber, and a receiver that cannot read the feed applies zero effects. `sdks/javascript/buyer-executor-verifier.mjs` combines the subscriber with the commit receiver above for a buyer's own adapter; see `conformance/buyer-executor/` and `conformance/enterprise-conformance/`.
+
+## Isolated refusal scenarios and observer packet
+
+`isolation.mjs` runs one Enterprise conformance session against a local SQLite store, with one scenario per rule:
+
+| Scenario | What is under test | Expected result |
+|---|---|---|
+| `valid` | Every check passes | One draft |
+| `revoked` | A signed revocation in the feed, while the commit is open and the feed is fresh | `BUYER_CAPABILITY_REVOKED_IN_FEED`, no draft |
+| `expired` | The commit window has closed, while the feed and capability are current | `BUYER_COMMIT_EXPIRED`, no draft |
+| `lease_recovered` | Only the offline lease has lapsed: the commit is open, the capability is permitted and the feed has not advanced | `BUYER_FEED_NOT_FRESH`, then one draft after catch-up, and a replay performs nothing |
+| `rotated` | Signed registry succession on the conformance issuer | One draft under the new key; the superseded registry refuses with `BUYER_CHAIN_INVALID` |
+
+```bash
+MVR_API_KEY=... node conformance/receiver-kit/isolation.mjs --out receiver-isolation
+```
+
+```bash
+node conformance/receiver-kit/observer-verify.mjs receiver-isolation/observer-packet.json --pinned trust/amos-conformance-trust-root.json
+```
+
+The packet binds the evidence commitments, the disposition ID and digest, the exact effect, the capability check, the signed verification and commit records, the current-state proofs, the feed chain and each receiver outcome. `observer-verify.mjs` reconstructs it without the operator's database. It stays inside the conformance realm: it does not establish source truth, institutional standing, buyer operation or production authority.

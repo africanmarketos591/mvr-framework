@@ -1,5 +1,5 @@
 // Generated from the AMOS OpenAPI contract by scripts/generate-governance-client.mjs (https://github.com/africanmarketos591/mvr-framework).
-// Contract version v6.32.0; operation subset SHA-256: 68b8cb82bf4cee616cf29224792de6654a19a7aef444546f5e3ea7906d7d651c. Do not edit by hand; regenerate instead.
+// Contract version v6.32.0; operation subset SHA-256: d978661161de88ccf39baa0f70e95f34e5e7e2ca6776cef5a0599ce3652e77f7. Do not edit by hand; regenerate instead.
 // Every method returns {status, body, deployment_revision} and never throws on a coded refusal. Network failures and
 // timeouts throw. expectedRevision pins the deployment: the server refuses a mismatch with 409 DEPLOYMENT_REVISION_MISMATCH.
 export const GOVERNANCE_CLIENT_VERSION = "2026-11-01";
