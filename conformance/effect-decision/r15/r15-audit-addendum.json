@@ -1,0 +1,126 @@
+[
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The regulator granted Volta Agro its operating permit.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 1, line 4",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Should the programme proceed to the next phase?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The Environmental Protection Agency granted Volta Agro operating permit EPA-GH-771 on 12 October 2026.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-12",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "registry_ref": "EPA-GH-771",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     },
+     "verification_status": "verified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Volta Agro"
+   }
+  },
+  "case_id": "h5-clean-corrected",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-18",
+   "claims": [
+    {
+     "claim": "The authority licensed Kafue Traders.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, table 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the partner ready for the next release of funds?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The Zambia Competition Commission licensed Kafue Traders under reference ZCC-55 on 12 October 2026.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "ZM"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-12",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "registry_ref": "ZCC-55",
+     "source_class": "administrative_record",
+     "source_date": "2026-10-12",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     },
+     "verification_status": "verified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Kafue Traders"
+   }
+  },
+  "case_id": "k5-clean-corrected",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/claim-audit"
+ }
+]

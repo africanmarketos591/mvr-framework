@@ -23,3 +23,7 @@ node conformance/effect-decision/r15/throttle-recovery.mjs --out throttle-recove
 `run-live.mjs` makes no retries. Audit rows keep HTTP refusals, unresolved results and route-level clearances separate. `handoff-matrix.mjs` follows each emitted continuation as written from each entry point, in both profiles. `throttle-recovery.mjs` stops at the first real 429 and follows its recovery metadata once. It cannot produce a server failure, so a transient 5xx stays unobserved unless one occurs.
 
 The receiver scenarios are in `conformance/receiver-kit/isolation.mjs`, and `observer-verify.mjs` checks their packet offline.
+
+## Fixture correction
+
+The clean controls `h5-clean` and `k5-clean` use `verification_status: "registry_verified"`, which is not an accepted value. The API refuses them with HTTP 422, and that refusal is correct. Their frozen files are unchanged and those rows stay counted as misses. `r15-audit-addendum` holds corrected copies that use `verified`. It was frozen after the first holdout run and before the build that first scored it.
