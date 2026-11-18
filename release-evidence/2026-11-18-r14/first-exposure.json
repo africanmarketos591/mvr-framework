@@ -1,0 +1,163 @@
+{
+ "note": "Each row is the first time that frozen set was scored on a build containing the code it was held out from. Baselines show the same frozen set on the previous live build. AMOS-authored cases, not the evaluator cohort.",
+ "direct_holdout": {
+  "r13_baseline": {
+   "deployment_revision": "exact-reducer.6 (R13 baseline)",
+   "rows": 480,
+   "passed": 352,
+   "by_class": {
+    "P": "48/80",
+    "I": "48/80",
+    "M": "32/80",
+    "C": "64/80",
+    "R": "80/80",
+    "X": "80/80"
+   },
+   "false_favorable": 32,
+   "execution_authorized": 0
+  },
+  "first_exposure_on_exact_reducer_7": {
+   "deployment_revision": "2026-11-18.exact-reducer.7",
+   "rows": 480,
+   "passed": 456,
+   "by_class": {
+    "P": "72/80",
+    "I": "72/80",
+    "M": "80/80",
+    "C": "72/80",
+    "R": "80/80",
+    "X": "80/80"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "misses": [
+    "hold-tea-rw-P",
+    "hold-tea-rw-I",
+    "hold-tea-rw-C"
+   ]
+  }
+ },
+ "audit_holdout": {
+  "r13_baseline": {
+   "deployment_revision": "exact-reducer.6 (R13 baseline)",
+   "rows": 30,
+   "passed": 15,
+   "by_class": {
+    "defect": "0/14",
+    "clean": "13/14",
+    "internal": "2/2"
+   },
+   "detected": "0/14",
+   "false_permits": 11,
+   "clean_false_positives": 0
+  },
+  "first_exposure_on_exact_reducer_7": {
+   "deployment_revision": "2026-11-18.exact-reducer.7",
+   "rows": 30,
+   "passed": 28,
+   "by_class": {
+    "defect": "13/14",
+    "clean": "13/14",
+    "internal": "2/2"
+   },
+   "detected": 13,
+   "false_permits": 1,
+   "misses": [
+    "h2-id-under-safe-envelope",
+    "h2-clean"
+   ]
+  },
+  "note": "The two misses are strict-profile refusals of one fixture pair whose privacy envelope is incomplete. They pass in full_advisory."
+ },
+ "direct_final": {
+  "exact_reducer_7_baseline": {
+   "deployment_revision": "2026-11-18.exact-reducer.7",
+   "rows": 240,
+   "passed": 192,
+   "by_class": {
+    "P": "24/40",
+    "I": "24/40",
+    "M": "40/40",
+    "C": "24/40",
+    "R": "40/40",
+    "X": "40/40"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "misses": [
+    "final-poultry-gh-P",
+    "final-poultry-gh-I",
+    "final-poultry-gh-C",
+    "final-clinic-za-P",
+    "final-clinic-za-I",
+    "final-clinic-za-C"
+   ]
+  },
+  "first_exposure_on_exact_reducer_8": {
+   "deployment_revision": "2026-11-18.exact-reducer.8",
+   "rows": 240,
+   "passed": 216,
+   "by_class": {
+    "P": "32/40",
+    "I": "32/40",
+    "M": "40/40",
+    "C": "32/40",
+    "R": "40/40",
+    "X": "40/40"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "misses": [
+    "final-clinic-za-P",
+    "final-clinic-za-I",
+    "final-clinic-za-C"
+   ]
+  }
+ },
+ "audit_final": {
+  "first_exposure_on_exact_reducer_7": {
+   "deployment_revision": "2026-11-18.exact-reducer.7",
+   "rows": 24,
+   "passed": 24,
+   "by_class": {
+    "defect": "14/14",
+    "internal": "2/2",
+    "clean": "8/8"
+   },
+   "detected": 14,
+   "false_permits": 0,
+   "misses": []
+  },
+  "exact_reducer_8": {
+   "deployment_revision": "2026-11-18.exact-reducer.8",
+   "rows": 24,
+   "passed": 24,
+   "by_class": {
+    "defect": "14/14",
+    "internal": "2/2",
+    "clean": "8/8"
+   },
+   "detected": 14,
+   "false_permits": 0,
+   "misses": []
+  }
+ },
+ "direct_closing": {
+  "first_exposure_on_shipped_exact_reducer_9": {
+   "deployment_revision": "2026-11-18.exact-reducer.9",
+   "rows": 240,
+   "passed": 240,
+   "by_class": {
+    "P": "40/40",
+    "I": "40/40",
+    "M": "40/40",
+    "C": "40/40",
+    "R": "40/40",
+    "X": "40/40"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "misses": []
+  }
+ }
+}

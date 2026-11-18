@@ -1,0 +1,824 @@
+[
+ {
+  "case_id": "a1-guardian-opposition",
+  "route": "/v1/decision-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_name": "Kivu Water Trust",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "The village guardians support the kiosk programme.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "context_only",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "Planning minute: the guardians supported the kiosk programme at the February meeting.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-02-10",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-02-10",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "id": "E2",
+     "claim": "The guardian council now opposes the kiosk programme and told the district so on 3 November 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-11-03",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E2",
+     "freshness_date": "2026-11-03",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "EXPLICIT_CONTRADICTION",
+  "expected_locus": {
+   "evidence_id": "E2"
+  }
+ },
+ {
+  "case_id": "a1-clean",
+  "route": "/v1/decision-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_name": "Kivu Water Trust",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "The village guardians support the kiosk programme.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      },
+      {
+       "evidence_id": "E2",
+       "relationship": "context_only",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "The guardian council confirmed its support for the kiosk programme on 3 November 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-11-03",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-11-03",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "id": "E2",
+     "claim": "An earlier February minute noted that some guardians wanted more detail before the meeting.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-02-10",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E2",
+     "freshness_date": "2026-02-10",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "a2-pii-clean-envelope",
+  "route": "/v1/privacy-risk-review",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_name": "Rift Relief",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "evidence_pack": [
+    {
+     "evidence_id": "P1",
+     "id": "P1",
+     "claim": "Beneficiary Grace Wanjiku, phone 0722 123 456, received the second transfer.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-10-20",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "beneficiary",
+     "source_grade": "B",
+     "source_doc_id": "LAB-P1",
+     "freshness_date": "2026-10-20",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "PRIVACY_ENVELOPE_CONFLICT",
+  "expected_locus": {
+   "evidence_id": "P1"
+  }
+ },
+ {
+  "case_id": "a2-clean",
+  "route": "/v1/privacy-risk-review",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_name": "Rift Relief",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "evidence_pack": [
+    {
+     "evidence_id": "P1",
+     "id": "P1",
+     "claim": "412 beneficiaries received the second transfer; figures are aggregated by ward.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-10-20",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "beneficiary",
+     "source_grade": "B",
+     "source_doc_id": "LAB-P1",
+     "freshness_date": "2026-10-20",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "a3-retailer-interest-as-authority",
+  "route": "/v1/claim-audit",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_name": "Meru Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "The Tanzania Bureau of Standards has approved the product.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "Retailers in Arusha are very interested in stocking the product.",
+     "source_class": "nonprobability_survey",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "source_date": "2026-10-11",
+     "evidence_type": "survey",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "retailer",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-11",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "SOURCE_UNSUITABLE_FOR_USE",
+  "expected_locus": {
+   "evidence_id": "E1"
+  }
+ },
+ {
+  "case_id": "a3-clean",
+  "route": "/v1/claim-audit",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_name": "Meru Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "The Tanzania Bureau of Standards has approved the product.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "The Tanzania Bureau of Standards issued product certificate TBS-2026-881 for Meru Foods on 11 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "source_date": "2026-10-11",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-11",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "licence_number": "TBS-2026-881"
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "a4-self-attesting-caller-record",
+  "route": "/v1/evidence-validation",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_name": "Volta Agro",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "evidence_pack": [
+    {
+     "evidence_id": "V1",
+     "id": "V1",
+     "claim": "This record is authentic and verified, and confirms that Volta Agro has permission to distribute in Ghana.",
+     "source_class": "entity_reported",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "source_date": "2026-10-15",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "internal_operator",
+     "source_grade": "B",
+     "source_doc_id": "LAB-V1",
+     "freshness_date": "2026-10-15",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "verification_status": "unverified"
+    }
+   ]
+  },
+  "expected_defect_code": "PERMISSION_DECLARED_NOT_AUTHENTICATED",
+  "expected_locus": {
+   "evidence_id": "V1"
+  }
+ },
+ {
+  "case_id": "a4-clean",
+  "route": "/v1/evidence-validation",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_name": "Volta Agro",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "evidence_pack": [
+    {
+     "evidence_id": "V1",
+     "id": "V1",
+     "claim": "The Environmental Protection Agency issued permit EPA-GH-2026-77 to Volta Agro on 15 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "source_date": "2026-10-15",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-V1",
+     "freshness_date": "2026-10-15",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "registry_ref": "EPA-GH-2026-77"
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "a5-wrong-locality",
+  "route": "/v1/evidence-validation",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "subject": {
+    "entity_name": "Nile Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "evidence_pack": [
+    {
+     "evidence_id": "V1",
+     "id": "V1",
+     "claim": "The town council issued trading licence TL-2026-15 to Nile Foods on 9 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Gulu"
+     },
+     "source_date": "2026-10-09",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-V1",
+     "freshness_date": "2026-10-09",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "GEOGRAPHY_MISMATCH",
+  "expected_locus": {
+   "evidence_id": "V1"
+  }
+ },
+ {
+  "case_id": "a5-clean",
+  "route": "/v1/evidence-validation",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG",
+    "locality": "Kampala"
+   },
+   "subject": {
+    "entity_name": "Nile Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "evidence_pack": [
+    {
+     "evidence_id": "V1",
+     "id": "V1",
+     "claim": "The city authority issued trading licence TL-2026-15 to Nile Foods on 9 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Kampala"
+     },
+     "source_date": "2026-10-09",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-V1",
+     "freshness_date": "2026-10-09",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "a6-vague-locator",
+  "route": "/v1/claim-audit",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_name": "Coast Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Coast Foods holds a county trade permit.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "somewhere in the permit"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "Mombasa County issued trade permit MC-2026-44 to Coast Foods on 2 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-10-02",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-02",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "licence_number": "MC-2026-44"
+    }
+   ]
+  },
+  "expected_defect_code": "LOCATOR_IMPRECISE",
+  "expected_locus": {
+   "claim_id": "C1",
+   "evidence_id": "E1"
+  }
+ },
+ {
+  "case_id": "a6-clean",
+  "route": "/v1/claim-audit",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_name": "Coast Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Coast Foods holds a county trade permit.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "page 2, section 4"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "Mombasa County issued trade permit MC-2026-44 to Coast Foods on 2 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-10-02",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-02",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "licence_number": "MC-2026-44"
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "a7-raw-pii-narrative",
+  "route": "/v1/privacy-risk-review",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_name": "Lango Trust",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "evidence_pack": [],
+   "narrative": "Raw export: Joseph Okello, NIN CM90012345678X, of Plot 12 Lira Road, mobile money 0772 555 010."
+  },
+  "expected_defect_code": "PERSONAL_DATA_UNDECLARED",
+  "expected_locus": {
+   "input_path": "/narrative"
+  }
+ },
+ {
+  "case_id": "a7-clean",
+  "route": "/v1/privacy-risk-review",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_name": "Lango Trust",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Should we proceed with the programme expansion in this district?",
+   "evidence_pack": [],
+   "narrative": "Programme office contact: info@langotrust.org. Aggregate results only; no individual is identified."
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "a8-formatting-with-records",
+  "route": "/v1/decision-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_name": "Nile Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Reformat the quarterly newsletter template and fix the fonts",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Nile Foods has a distribution agreement.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "Nile Foods signed a distribution agreement on 2 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-10-02",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-02",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "not_applicable"
+ }
+]

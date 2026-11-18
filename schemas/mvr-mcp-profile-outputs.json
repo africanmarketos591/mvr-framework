@@ -1,6 +1,6 @@
 {
   "contract": "mvr.mcp-profile-outputs/1",
-  "deployment_revision": "2026-11-17.exact-reducer.6",
+  "deployment_revision": "2026-11-18.exact-reducer.9",
   "default_field_contract": "authority-fields/2",
   "legacy_sunset": "2027-01-21T00:00:00Z",
   "unconstrained_legacy_tools": [
@@ -35052,6 +35052,9 @@
               "adverse"
             ]
           },
+          "disposition_id": {
+            "type": "string"
+          },
           "disposition_receipt": {
             "properties": {
               "assurance": {
@@ -35089,6 +35092,9 @@
               }
             },
             "type": "object"
+          },
+          "disposition_sha256": {
+            "type": "string"
           },
           "expired": {
             "type": "boolean"

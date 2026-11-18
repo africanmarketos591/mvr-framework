@@ -1,0 +1,3258 @@
+[
+ {
+  "id": "final-poultry-gh-P",
+  "variant": "P",
+  "domain": "poultry-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Bono Poultry Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Sunyani"
+   },
+   "decision_question": "Should Bono Poultry supply day-old chicks in Sunyani under a veterinary permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Sunyani poultry farmers are eager to work with Bono Poultry.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Sunyani farms are looking for reliable chick supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Veterinary Services Directorate licensed the Bono Poultry hatchery.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Poultry farmer groups in Sunyani told the team they are eager to work with Bono Poultry.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Around 70% of the 150 farms visited are looking for a reliable chick supplier.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Veterinary Services Directorate issued hatchery licence VSD-2026-301 to Bono Poultry Ltd on 9 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the supply plan"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact farm groups"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit hatchery stock funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch chick supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-poultry-gh-I",
+  "variant": "I",
+  "domain": "poultry-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Bono Poultry Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Sunyani"
+   },
+   "decision_question": "Should Bono Poultry supply day-old chicks in Sunyani under a veterinary permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Sunyani poultry farmers are eager to work with Bono Poultry.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Sunyani farms are looking for reliable chick supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Veterinary Services Directorate licensed the Bono Poultry hatchery.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Poultry farmer groups in Sunyani told the team they are eager to work with Bono Poultry.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Around 70% of the 150 farms visited are looking for a reliable chick supplier.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Veterinary Services Directorate issued hatchery licence VSD-2026-301 to Bono Poultry Ltd on 9 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Sunyani's stadium replaced its floodlights in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the supply plan"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact farm groups"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit hatchery stock funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch chick supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-poultry-gh-M",
+  "variant": "M",
+  "domain": "poultry-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Bono Poultry Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Sunyani"
+   },
+   "decision_question": "Should Bono Poultry supply day-old chicks in Sunyani under a veterinary permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Sunyani poultry farmers are eager to work with Bono Poultry.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Sunyani farms are looking for reliable chick supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Poultry farmer groups in Sunyani told the team they are eager to work with Bono Poultry.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Around 70% of the 150 farms visited are looking for a reliable chick supplier.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the supply plan"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact farm groups"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit hatchery stock funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch chick supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-poultry-gh-C",
+  "variant": "C",
+  "domain": "poultry-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Bono Poultry Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Sunyani"
+   },
+   "decision_question": "Should Bono Poultry supply day-old chicks in Sunyani under a veterinary permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Sunyani poultry farmers are eager to work with Bono Poultry.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Sunyani farms are looking for reliable chick supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Veterinary Services Directorate licensed the Bono Poultry hatchery.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Poultry farmer groups in Sunyani told the team they are eager to work with Bono Poultry.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Around 70% of the 150 farms visited are looking for a reliable chick supplier.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Veterinary Services Directorate issued hatchery licence VSD-2026-301 on 9 October 2026 on condition that biosecurity fencing is finished.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the supply plan"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact farm groups"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit hatchery stock funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch chick supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-poultry-gh-R",
+  "variant": "R",
+  "domain": "poultry-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Bono Poultry Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Sunyani"
+   },
+   "decision_question": "Should Bono Poultry supply day-old chicks in Sunyani under a veterinary permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Sunyani poultry farmers are eager to work with Bono Poultry.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Sunyani farms are looking for reliable chick supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Veterinary Services Directorate licensed the Bono Poultry hatchery.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Poultry farmer groups in Sunyani told the team they are eager to work with Bono Poultry.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Around 70% of the 150 farms visited are looking for a reliable chick supplier.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Veterinary Services Directorate issued hatchery licence VSD-2026-301 to Bono Poultry Ltd on 9 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Veterinary Services Directorate revoked hatchery licence VSD-2026-301 on 6 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the supply plan"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact farm groups"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit hatchery stock funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch chick supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-poultry-gh-X",
+  "variant": "X",
+  "domain": "poultry-gh",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Bono Poultry Ltd"
+   },
+   "market_scope": {
+    "country": "GH",
+    "locality": "Sunyani"
+   },
+   "decision_question": "Should Bono Poultry supply day-old chicks in Sunyani under a veterinary permit?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Sunyani poultry farmers are eager to work with Bono Poultry.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Sunyani farms are looking for reliable chick supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Veterinary Services Directorate licensed the Bono Poultry hatchery.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Poultry farmer groups in Sunyani told the team they are eager to work with Bono Poultry.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Around 70% of the 150 farms visited are looking for a reliable chick supplier.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Veterinary Services Directorate issued hatchery licence VSD-2026-301 to Bono Poultry Ltd on 9 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Veterinary Services Directorate has banned chick movements into Sunyani during the outbreak.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "GH",
+      "locality": "Sunyani"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the supply plan"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact farm groups"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit hatchery stock funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch chick supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-bus-ke-P",
+  "variant": "P",
+  "domain": "bus-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "North Rift Shuttle Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Eldoret"
+   },
+   "decision_question": "Should North Rift Shuttle start the Eldoret commuter route?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Eldoret residents' associations are in favour of the route.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Eldoret commuters are ready to pay for the service.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NTSA licensed the Eldoret route.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Residents' associations in Eldoret said they are in favour of the commuter route.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Six in ten of 500 commuters surveyed are ready to pay the proposed fare.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NTSA granted road service licence RSL-2026-845 for the Eldoret route on 12 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the route"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the route"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact residents' associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit vehicle deposits"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start the route"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-bus-ke-I",
+  "variant": "I",
+  "domain": "bus-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "North Rift Shuttle Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Eldoret"
+   },
+   "decision_question": "Should North Rift Shuttle start the Eldoret commuter route?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Eldoret residents' associations are in favour of the route.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Eldoret commuters are ready to pay for the service.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NTSA licensed the Eldoret route.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Residents' associations in Eldoret said they are in favour of the commuter route.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Six in ten of 500 commuters surveyed are ready to pay the proposed fare.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NTSA granted road service licence RSL-2026-845 for the Eldoret route on 12 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Eldoret's market repainted its stalls in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the route"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the route"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact residents' associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit vehicle deposits"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start the route"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-bus-ke-M",
+  "variant": "M",
+  "domain": "bus-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "North Rift Shuttle Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Eldoret"
+   },
+   "decision_question": "Should North Rift Shuttle start the route?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Eldoret residents' associations are in favour of the route.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Eldoret commuters are ready to pay for the service.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Residents' associations in Eldoret said they are in favour of the commuter route.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Six in ten of 500 commuters surveyed are ready to pay the proposed fare.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the route"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the route"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact residents' associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit vehicle deposits"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start the route"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-bus-ke-C",
+  "variant": "C",
+  "domain": "bus-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "North Rift Shuttle Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Eldoret"
+   },
+   "decision_question": "Should North Rift Shuttle start the Eldoret commuter route?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Eldoret residents' associations are in favour of the route.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Eldoret commuters are ready to pay for the service.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NTSA licensed the Eldoret route.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Residents' associations in Eldoret said they are in favour of the commuter route.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Six in ten of 500 commuters surveyed are ready to pay the proposed fare.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NTSA granted road service licence RSL-2026-845 on 12 October 2026, restricted to daytime services.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the route"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the route"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact residents' associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit vehicle deposits"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start the route"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-bus-ke-R",
+  "variant": "R",
+  "domain": "bus-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "North Rift Shuttle Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Eldoret"
+   },
+   "decision_question": "Should North Rift Shuttle start the Eldoret commuter route?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Eldoret residents' associations are in favour of the route.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Eldoret commuters are ready to pay for the service.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NTSA licensed the Eldoret route.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Residents' associations in Eldoret said they are in favour of the commuter route.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Six in ten of 500 commuters surveyed are ready to pay the proposed fare.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NTSA granted road service licence RSL-2026-845 for the Eldoret route on 12 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "NTSA cancelled road service licence RSL-2026-845 on 7 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the route"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the route"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact residents' associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit vehicle deposits"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start the route"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-bus-ke-X",
+  "variant": "X",
+  "domain": "bus-ke",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "North Rift Shuttle Ltd"
+   },
+   "market_scope": {
+    "country": "KE",
+    "locality": "Eldoret"
+   },
+   "decision_question": "Should North Rift Shuttle start the Eldoret commuter route?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Eldoret residents' associations are in favour of the route.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Eldoret commuters are ready to pay for the service.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NTSA licensed the Eldoret route.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Residents' associations in Eldoret said they are in favour of the commuter route.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Six in ten of 500 commuters surveyed are ready to pay the proposed fare.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NTSA granted road service licence RSL-2026-845 for the Eldoret route on 12 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "NTSA has prohibited new commuter services on the Eldoret corridor until roadworks end.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "KE",
+      "locality": "Eldoret"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the route"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the route"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact residents' associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit vehicle deposits"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start the route"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-salt-tz-P",
+  "variant": "P",
+  "domain": "salt-tz",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Pwani Salt Ltd"
+   },
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Tanga"
+   },
+   "decision_question": "Should Pwani Salt sell iodised salt in Tanga?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tanga wholesalers would like to carry Pwani salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tanga shops report strong demand for iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Tanzania Bureau of Standards certified Pwani iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Wholesalers in Tanga said they would like to carry Pwani salt.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than half of the 120 shops report strong demand for iodised salt.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Tanzania Bureau of Standards issued product certificate TBS-5521 for Pwani iodised salt on 8 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact wholesalers"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit packaging spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch salt sales"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-salt-tz-I",
+  "variant": "I",
+  "domain": "salt-tz",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Pwani Salt Ltd"
+   },
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Tanga"
+   },
+   "decision_question": "Should Pwani Salt sell iodised salt in Tanga?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tanga wholesalers would like to carry Pwani salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tanga shops report strong demand for iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Tanzania Bureau of Standards certified Pwani iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Wholesalers in Tanga said they would like to carry Pwani salt.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than half of the 120 shops report strong demand for iodised salt.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Tanzania Bureau of Standards issued product certificate TBS-5521 for Pwani iodised salt on 8 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Tanga port painted a new berth line in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact wholesalers"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit packaging spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch salt sales"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-salt-tz-M",
+  "variant": "M",
+  "domain": "salt-tz",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Pwani Salt Ltd"
+   },
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Tanga"
+   },
+   "decision_question": "Should Pwani Salt sell iodised salt in Tanga?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tanga wholesalers would like to carry Pwani salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tanga shops report strong demand for iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Wholesalers in Tanga said they would like to carry Pwani salt.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than half of the 120 shops report strong demand for iodised salt.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact wholesalers"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit packaging spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch salt sales"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-salt-tz-C",
+  "variant": "C",
+  "domain": "salt-tz",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Pwani Salt Ltd"
+   },
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Tanga"
+   },
+   "decision_question": "Should Pwani Salt sell iodised salt in Tanga?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tanga wholesalers would like to carry Pwani salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tanga shops report strong demand for iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Tanzania Bureau of Standards certified Pwani iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Wholesalers in Tanga said they would like to carry Pwani salt.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than half of the 120 shops report strong demand for iodised salt.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Tanzania Bureau of Standards issued product certificate TBS-5521 on 8 October 2026, subject to quarterly iodine testing.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact wholesalers"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit packaging spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch salt sales"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-salt-tz-R",
+  "variant": "R",
+  "domain": "salt-tz",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Pwani Salt Ltd"
+   },
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Tanga"
+   },
+   "decision_question": "Should Pwani Salt sell iodised salt in Tanga?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tanga wholesalers would like to carry Pwani salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tanga shops report strong demand for iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Tanzania Bureau of Standards certified Pwani iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Wholesalers in Tanga said they would like to carry Pwani salt.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than half of the 120 shops report strong demand for iodised salt.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Tanzania Bureau of Standards issued product certificate TBS-5521 for Pwani iodised salt on 8 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Tanzania Bureau of Standards withdrew certificate TBS-5521 on 4 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact wholesalers"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit packaging spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch salt sales"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-salt-tz-X",
+  "variant": "X",
+  "domain": "salt-tz",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Pwani Salt Ltd"
+   },
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Tanga"
+   },
+   "decision_question": "Should Pwani Salt sell iodised salt in Tanga?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Tanga wholesalers would like to carry Pwani salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Tanga shops report strong demand for iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Tanzania Bureau of Standards certified Pwani iodised salt.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Wholesalers in Tanga said they would like to carry Pwani salt.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "More than half of the 120 shops report strong demand for iodised salt.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Tanzania Bureau of Standards issued product certificate TBS-5521 for Pwani iodised salt on 8 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Tanzania Bureau of Standards has stopped sales of Pwani salt in Tanga pending recall checks.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "TZ",
+      "locality": "Tanga"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the launch"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the launch"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact wholesalers"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit packaging spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Launch salt sales"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-clinic-za-P",
+  "variant": "P",
+  "domain": "clinic-za",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Ethekwini Care Pty"
+   },
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Durban"
+   },
+   "decision_question": "Should Ethekwini Care open a community clinic in Durban?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Durban ward committees are supportive of the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Durban households are interested in the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The provincial health department approved the Durban clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward committees in Durban said they are supportive of the clinic.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 600 households are interested in using the clinic.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The KwaZulu-Natal health department approved clinic registration KZN-CL-2026-90 on 15 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward committees"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fit-out funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-clinic-za-I",
+  "variant": "I",
+  "domain": "clinic-za",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Ethekwini Care Pty"
+   },
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Durban"
+   },
+   "decision_question": "Should Ethekwini Care open a community clinic in Durban?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Durban ward committees are supportive of the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Durban households are interested in the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The provincial health department approved the Durban clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward committees in Durban said they are supportive of the clinic.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 600 households are interested in using the clinic.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The KwaZulu-Natal health department approved clinic registration KZN-CL-2026-90 on 15 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Durban's beachfront opened a new cycle lane in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward committees"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fit-out funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-clinic-za-M",
+  "variant": "M",
+  "domain": "clinic-za",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Ethekwini Care Pty"
+   },
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Durban"
+   },
+   "decision_question": "Should Ethekwini Care open a clinic?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Durban ward committees are supportive of the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Durban households are interested in the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward committees in Durban said they are supportive of the clinic.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 600 households are interested in using the clinic.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward committees"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fit-out funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-clinic-za-C",
+  "variant": "C",
+  "domain": "clinic-za",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Ethekwini Care Pty"
+   },
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Durban"
+   },
+   "decision_question": "Should Ethekwini Care open a community clinic in Durban?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Durban ward committees are supportive of the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Durban households are interested in the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The provincial health department approved the Durban clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward committees in Durban said they are supportive of the clinic.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 600 households are interested in using the clinic.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The KwaZulu-Natal health department approved clinic registration KZN-CL-2026-90 on 15 October 2026, provided that a pharmacist is appointed.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward committees"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fit-out funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-clinic-za-R",
+  "variant": "R",
+  "domain": "clinic-za",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Ethekwini Care Pty"
+   },
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Durban"
+   },
+   "decision_question": "Should Ethekwini Care open a community clinic in Durban?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Durban ward committees are supportive of the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Durban households are interested in the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The provincial health department approved the Durban clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward committees in Durban said they are supportive of the clinic.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 600 households are interested in using the clinic.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The KwaZulu-Natal health department approved clinic registration KZN-CL-2026-90 on 15 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The KwaZulu-Natal health department revoked registration KZN-CL-2026-90 on 8 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward committees"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fit-out funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the clinic"
+    }
+   ]
+  }
+ },
+ {
+  "id": "final-clinic-za-X",
+  "variant": "X",
+  "domain": "clinic-za",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Ethekwini Care Pty"
+   },
+   "market_scope": {
+    "country": "ZA",
+    "locality": "Durban"
+   },
+   "decision_question": "Should Ethekwini Care open a community clinic in Durban?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Durban ward committees are supportive of the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Durban households are interested in the clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The provincial health department approved the Durban clinic.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward committees in Durban said they are supportive of the clinic.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "health_worker",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Two thirds of 600 households are interested in using the clinic.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The KwaZulu-Natal health department approved clinic registration KZN-CL-2026-90 on 15 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The KwaZulu-Natal health department forbids new private clinics in this Durban ward.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "ZA",
+      "locality": "Durban"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the clinic"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the clinic"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward committees"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fit-out funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the clinic"
+    }
+   ]
+  }
+ }
+]

@@ -90748,6 +90748,11 @@
                           "type": "string",
                           "maxLength": 64
                         },
+                        "dependency_id": {
+                          "type": "string",
+                          "maxLength": 64,
+                          "description": "Optional identifier an effect can name in required_dependencies."
+                        },
                         "claim": {
                           "type": "string",
                           "maxLength": 600
@@ -90964,6 +90969,42 @@
                             "type": "string"
                           },
                           "description": "Default: every load-bearing claim."
+                        },
+                        "required_dependencies": {
+                          "type": "array",
+                          "maxItems": 60,
+                          "description": "Dependencies this effect cannot proceed without, named by claim_id or claim dependency_id. An absent one holds the effect, whatever other support exists.",
+                          "items": {
+                            "oneOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "required": [
+                                  "dependency_id"
+                                ],
+                                "properties": {
+                                  "dependency_id": {
+                                    "type": "string"
+                                  },
+                                  "kind": {
+                                    "enum": [
+                                      "completion",
+                                      "permission",
+                                      "completion_or_permission",
+                                      "other"
+                                    ]
+                                  },
+                                  "description": {
+                                    "type": "string",
+                                    "maxLength": 200
+                                  }
+                                }
+                              }
+                            ]
+                          }
                         },
                         "resource": {
                           "type": "object",
@@ -121618,6 +121659,12 @@
               }
             }
           },
+          "disposition_id": {
+            "type": "string"
+          },
+          "disposition_sha256": {
+            "type": "string"
+          },
           "task_id": {
             "type": "string"
           },
@@ -126906,7 +126953,7 @@
     }
   },
   "response_meta": {
-    "deployment_revision": "2026-11-17.exact-reducer.6"
+    "deployment_revision": "2026-11-18.exact-reducer.9"
   },
   "response_contract_version": "2026-05-01.v1"
 }

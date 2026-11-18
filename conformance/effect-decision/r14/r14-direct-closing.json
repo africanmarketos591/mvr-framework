@@ -1,0 +1,3258 @@
+[
+ {
+  "id": "closing-cassava-ng-P",
+  "variant": "P",
+  "domain": "cassava-ng",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Oyo Starch Ltd"
+   },
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "decision_question": "Should Oyo Starch start buying cassava around Ibadan?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Ibadan cassava growers approve of the buying scheme.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Food processors in Ibadan need more starch.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NAFDAC registered the Oyo Starch product.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cassava grower associations near Ibadan spoke warmly of the buying scheme at their October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Nineteen of 25 food processors say they need more starch each month.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NAFDAC registered Oyo Starch product A1-7782 on 10 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the scheme"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the scheme"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact grower associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit factory intake funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Begin cassava buying"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-cassava-ng-I",
+  "variant": "I",
+  "domain": "cassava-ng",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Oyo Starch Ltd"
+   },
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "decision_question": "Should Oyo Starch start buying cassava around Ibadan?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Ibadan cassava growers approve of the buying scheme.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Food processors in Ibadan need more starch.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NAFDAC registered the Oyo Starch product.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cassava grower associations near Ibadan spoke warmly of the buying scheme at their October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Nineteen of 25 food processors say they need more starch each month.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NAFDAC registered Oyo Starch product A1-7782 on 10 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Ibadan's ring road received new lighting in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the scheme"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the scheme"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact grower associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit factory intake funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Begin cassava buying"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-cassava-ng-M",
+  "variant": "M",
+  "domain": "cassava-ng",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Oyo Starch Ltd"
+   },
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "decision_question": "Should Oyo Starch start buying cassava around Ibadan?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Ibadan cassava growers approve of the buying scheme.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Food processors in Ibadan need more starch.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cassava grower associations near Ibadan spoke warmly of the buying scheme at their October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Nineteen of 25 food processors say they need more starch each month.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the scheme"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the scheme"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact grower associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit factory intake funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Begin cassava buying"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-cassava-ng-C",
+  "variant": "C",
+  "domain": "cassava-ng",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Oyo Starch Ltd"
+   },
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "decision_question": "Should Oyo Starch start buying cassava around Ibadan?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Ibadan cassava growers approve of the buying scheme.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Food processors in Ibadan need more starch.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NAFDAC registered the Oyo Starch product.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cassava grower associations near Ibadan spoke warmly of the buying scheme at their October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Nineteen of 25 food processors say they need more starch each month.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NAFDAC registered Oyo Starch product A1-7782 on 10 October 2026, limited to industrial buyers.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the scheme"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the scheme"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact grower associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit factory intake funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Begin cassava buying"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-cassava-ng-R",
+  "variant": "R",
+  "domain": "cassava-ng",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Oyo Starch Ltd"
+   },
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "decision_question": "Should Oyo Starch start buying cassava around Ibadan?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Ibadan cassava growers approve of the buying scheme.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Food processors in Ibadan need more starch.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NAFDAC registered the Oyo Starch product.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cassava grower associations near Ibadan spoke warmly of the buying scheme at their October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Nineteen of 25 food processors say they need more starch each month.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NAFDAC registered Oyo Starch product A1-7782 on 10 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "NAFDAC revoked registration A1-7782 on 4 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the scheme"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the scheme"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact grower associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit factory intake funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Begin cassava buying"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-cassava-ng-X",
+  "variant": "X",
+  "domain": "cassava-ng",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Oyo Starch Ltd"
+   },
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "decision_question": "Should Oyo Starch start buying cassava around Ibadan?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Ibadan cassava growers approve of the buying scheme.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Food processors in Ibadan need more starch.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NAFDAC registered the Oyo Starch product.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Cassava grower associations near Ibadan spoke warmly of the buying scheme at their October meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "farmer_group",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Nineteen of 25 food processors say they need more starch each month.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NAFDAC registered Oyo Starch product A1-7782 on 10 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "NAFDAC prohibits sale of the starch in Oyo State until testing ends.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "NG",
+      "locality": "Ibadan"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the scheme"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the scheme"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact grower associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit factory intake funds"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Begin cassava buying"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-water-zm-P",
+  "variant": "P",
+  "domain": "water-zm",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Falls Water Ltd"
+   },
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Livingstone"
+   },
+   "decision_question": "Should Falls Water install metered kiosks in Livingstone?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Livingstone ward councillors favour metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Livingstone residents would use metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NWASCO licensed Falls Water to supply water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward councillors in Livingstone voted in favour of metered kiosks at a public meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "About 800 of 1,100 residents said they would use a metered kiosk.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NWASCO issued water supply licence NW-2026-14 to Falls Water Ltd on 18 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the kiosks"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the kiosks"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward councillors"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit kiosk spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Install the kiosks"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-water-zm-I",
+  "variant": "I",
+  "domain": "water-zm",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Falls Water Ltd"
+   },
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Livingstone"
+   },
+   "decision_question": "Should Falls Water install metered kiosks in Livingstone?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Livingstone ward councillors favour metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Livingstone residents would use metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NWASCO licensed Falls Water to supply water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward councillors in Livingstone voted in favour of metered kiosks at a public meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "About 800 of 1,100 residents said they would use a metered kiosk.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NWASCO issued water supply licence NW-2026-14 to Falls Water Ltd on 18 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Livingstone museum changed its opening hours in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the kiosks"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the kiosks"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward councillors"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit kiosk spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Install the kiosks"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-water-zm-M",
+  "variant": "M",
+  "domain": "water-zm",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Falls Water Ltd"
+   },
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Livingstone"
+   },
+   "decision_question": "Should Falls Water install kiosks?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Livingstone ward councillors favour metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Livingstone residents would use metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward councillors in Livingstone voted in favour of metered kiosks at a public meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "About 800 of 1,100 residents said they would use a metered kiosk.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the kiosks"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the kiosks"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward councillors"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit kiosk spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Install the kiosks"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-water-zm-C",
+  "variant": "C",
+  "domain": "water-zm",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Falls Water Ltd"
+   },
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Livingstone"
+   },
+   "decision_question": "Should Falls Water install metered kiosks in Livingstone?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Livingstone ward councillors favour metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Livingstone residents would use metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NWASCO licensed Falls Water to supply water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward councillors in Livingstone voted in favour of metered kiosks at a public meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "About 800 of 1,100 residents said they would use a metered kiosk.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NWASCO issued water supply licence NW-2026-14 on 18 October 2026, subject to monthly quality reports.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the kiosks"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the kiosks"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward councillors"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit kiosk spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Install the kiosks"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-water-zm-R",
+  "variant": "R",
+  "domain": "water-zm",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Falls Water Ltd"
+   },
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Livingstone"
+   },
+   "decision_question": "Should Falls Water install metered kiosks in Livingstone?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Livingstone ward councillors favour metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Livingstone residents would use metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NWASCO licensed Falls Water to supply water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward councillors in Livingstone voted in favour of metered kiosks at a public meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "About 800 of 1,100 residents said they would use a metered kiosk.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NWASCO issued water supply licence NW-2026-14 to Falls Water Ltd on 18 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "NWASCO cancelled licence NW-2026-14 on 9 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the kiosks"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the kiosks"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward councillors"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit kiosk spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Install the kiosks"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-water-zm-X",
+  "variant": "X",
+  "domain": "water-zm",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Falls Water Ltd"
+   },
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Livingstone"
+   },
+   "decision_question": "Should Falls Water install metered kiosks in Livingstone?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Livingstone ward councillors favour metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Livingstone residents would use metered kiosks.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "NWASCO licensed Falls Water to supply water.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Ward councillors in Livingstone voted in favour of metered kiosks at a public meeting.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "community_leader",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "About 800 of 1,100 residents said they would use a metered kiosk.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "NWASCO issued water supply licence NW-2026-14 to Falls Water Ltd on 18 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "NWASCO has barred new water kiosks in Livingstone until tariffs are set.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "ZM",
+      "locality": "Livingstone"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the kiosks"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the kiosks"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact ward councillors"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit kiosk spend"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Install the kiosks"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-garment-et-P",
+  "variant": "P",
+  "domain": "garment-et",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Sidama Garments PLC"
+   },
+   "market_scope": {
+    "country": "ET",
+    "locality": "Hawassa"
+   },
+   "decision_question": "Should Sidama Garments supply school uniforms in Hawassa?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Hawassa school boards welcome local uniform supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Hawassa parents prefer locally made uniforms.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Sidama Garments signed the uniform supply contract.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "School boards in Hawassa wrote that they welcome local uniform supply.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Most of the 300 parents polled prefer locally made uniforms.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Sidama Garments PLC signed uniform supply contract HW-U-2026-3 with the education bureau on 20 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend supply"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact school boards"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fabric purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start uniform supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-garment-et-I",
+  "variant": "I",
+  "domain": "garment-et",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Sidama Garments PLC"
+   },
+   "market_scope": {
+    "country": "ET",
+    "locality": "Hawassa"
+   },
+   "decision_question": "Should Sidama Garments supply school uniforms in Hawassa?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Hawassa school boards welcome local uniform supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Hawassa parents prefer locally made uniforms.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Sidama Garments signed the uniform supply contract.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "School boards in Hawassa wrote that they welcome local uniform supply.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Most of the 300 parents polled prefer locally made uniforms.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Sidama Garments PLC signed uniform supply contract HW-U-2026-3 with the education bureau on 20 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Hawassa's lakeside park added benches in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend supply"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact school boards"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fabric purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start uniform supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-garment-et-M",
+  "variant": "M",
+  "domain": "garment-et",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Sidama Garments PLC"
+   },
+   "market_scope": {
+    "country": "ET",
+    "locality": "Hawassa"
+   },
+   "decision_question": "Should Sidama Garments supply school uniforms in Hawassa?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Hawassa school boards welcome local uniform supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Hawassa parents prefer locally made uniforms.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "School boards in Hawassa wrote that they welcome local uniform supply.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Most of the 300 parents polled prefer locally made uniforms.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend supply"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact school boards"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fabric purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start uniform supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-garment-et-C",
+  "variant": "C",
+  "domain": "garment-et",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Sidama Garments PLC"
+   },
+   "market_scope": {
+    "country": "ET",
+    "locality": "Hawassa"
+   },
+   "decision_question": "Should Sidama Garments supply school uniforms in Hawassa?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Hawassa school boards welcome local uniform supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Hawassa parents prefer locally made uniforms.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Sidama Garments signed the uniform supply contract.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "School boards in Hawassa wrote that they welcome local uniform supply.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Most of the 300 parents polled prefer locally made uniforms.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Sidama Garments PLC signed uniform supply contract HW-U-2026-3 on 20 October 2026, for the first term only.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend supply"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact school boards"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fabric purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start uniform supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-garment-et-R",
+  "variant": "R",
+  "domain": "garment-et",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Sidama Garments PLC"
+   },
+   "market_scope": {
+    "country": "ET",
+    "locality": "Hawassa"
+   },
+   "decision_question": "Should Sidama Garments supply school uniforms in Hawassa?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Hawassa school boards welcome local uniform supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Hawassa parents prefer locally made uniforms.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Sidama Garments signed the uniform supply contract.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "School boards in Hawassa wrote that they welcome local uniform supply.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Most of the 300 parents polled prefer locally made uniforms.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Sidama Garments PLC signed uniform supply contract HW-U-2026-3 with the education bureau on 20 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The education bureau terminated contract HW-U-2026-3 on 10 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend supply"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact school boards"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fabric purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start uniform supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-garment-et-X",
+  "variant": "X",
+  "domain": "garment-et",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Sidama Garments PLC"
+   },
+   "market_scope": {
+    "country": "ET",
+    "locality": "Hawassa"
+   },
+   "decision_question": "Should Sidama Garments supply school uniforms in Hawassa?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Hawassa school boards welcome local uniform supply.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Hawassa parents prefer locally made uniforms.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "Sidama Garments signed the uniform supply contract.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "School boards in Hawassa wrote that they welcome local uniform supply.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Most of the 300 parents polled prefer locally made uniforms.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "Sidama Garments PLC signed uniform supply contract HW-U-2026-3 with the education bureau on 20 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The education bureau has forbidden new uniform suppliers for this school year.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "ET",
+      "locality": "Hawassa"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan supply"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend supply"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact school boards"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit fabric purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Start uniform supply"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-fuel-ug-P",
+  "variant": "P",
+  "domain": "fuel-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Buddu Fuels Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Masaka"
+   },
+   "decision_question": "Should Buddu Fuels open a station in Masaka?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Masaka transport associations are behind the new station.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Masaka drivers expect to buy fuel there.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Petroleum Authority licensed the Masaka station.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Masaka boda and taxi associations said they are behind the new station.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Roughly 450 of 700 drivers surveyed expect to buy fuel at the site.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Petroleum Authority of Uganda issued retail licence PAU-R-2026-61 for the Masaka station on 16 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the station"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the station"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact transport associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit tank purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the station"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-fuel-ug-I",
+  "variant": "I",
+  "domain": "fuel-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Buddu Fuels Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Masaka"
+   },
+   "decision_question": "Should Buddu Fuels open a station in Masaka?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Masaka transport associations are behind the new station.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Masaka drivers expect to buy fuel there.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Petroleum Authority licensed the Masaka station.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Masaka boda and taxi associations said they are behind the new station.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Roughly 450 of 700 drivers surveyed expect to buy fuel at the site.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Petroleum Authority of Uganda issued retail licence PAU-R-2026-61 for the Masaka station on 16 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-NOISE",
+     "claim": "Masaka's cathedral repainted its gate in October.",
+     "source_date": "2026-10-25",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "source_class": "news_report",
+     "evidence_type": "news"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the station"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the station"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact transport associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit tank purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the station"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-fuel-ug-M",
+  "variant": "M",
+  "domain": "fuel-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Buddu Fuels Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Masaka"
+   },
+   "decision_question": "Should Buddu Fuels open in Masaka?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Masaka transport associations are behind the new station.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Masaka drivers expect to buy fuel there.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Masaka boda and taxi associations said they are behind the new station.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Roughly 450 of 700 drivers surveyed expect to buy fuel at the site.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the station"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the station"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact transport associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit tank purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the station"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-fuel-ug-C",
+  "variant": "C",
+  "domain": "fuel-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {
+    "analytical": "conditional"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional"
+   },
+   "EXT-COMMIT": {
+    "analytical": "conditional"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Buddu Fuels Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Masaka"
+   },
+   "decision_question": "Should Buddu Fuels open a station in Masaka?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Masaka transport associations are behind the new station.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Masaka drivers expect to buy fuel there.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Petroleum Authority licensed the Masaka station.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Masaka boda and taxi associations said they are behind the new station.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Roughly 450 of 700 drivers surveyed expect to buy fuel at the site.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Petroleum Authority of Uganda issued retail licence PAU-R-2026-61 on 16 October 2026 on condition that the tanks pass testing.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the station"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the station"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact transport associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit tank purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the station"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-fuel-ug-R",
+  "variant": "R",
+  "domain": "fuel-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "authority": "revoked"
+   },
+   "EXT-COMMIT": {
+    "authority": "revoked"
+   },
+   "EXT-LAUNCH": {
+    "authority": "revoked"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Buddu Fuels Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Masaka"
+   },
+   "decision_question": "Should Buddu Fuels open a station in Masaka?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Masaka transport associations are behind the new station.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Masaka drivers expect to buy fuel there.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Petroleum Authority licensed the Masaka station.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Masaka boda and taxi associations said they are behind the new station.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Roughly 450 of 700 drivers surveyed expect to buy fuel at the site.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Petroleum Authority of Uganda issued retail licence PAU-R-2026-61 for the Masaka station on 16 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Petroleum Authority of Uganda revoked licence PAU-R-2026-61 on 8 November 2026.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "authority_effect": "revocation",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the station"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the station"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact transport associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit tank purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the station"
+    }
+   ]
+  }
+ },
+ {
+  "id": "closing-fuel-ug-X",
+  "variant": "X",
+  "domain": "fuel-ug",
+  "expected": {
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-REC": {},
+   "EXT-CONTACT": {
+    "analytical": "adverse"
+   },
+   "EXT-COMMIT": {
+    "analytical": "adverse"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "adverse"
+   }
+  },
+  "request": {
+   "analysis_date": "2026-11-18",
+   "subject": {
+    "entity_name": "Buddu Fuels Ltd"
+   },
+   "market_scope": {
+    "country": "UG",
+    "locality": "Masaka"
+   },
+   "decision_question": "Should Buddu Fuels open a station in Masaka?",
+   "claims": [
+    {
+     "claim_id": "C-SUPPORT",
+     "claim": "Masaka transport associations are behind the new station.",
+     "support_links": [
+      {
+       "evidence_id": "E-SUPPORT",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEMAND",
+     "claim": "Masaka drivers expect to buy fuel there.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEMAND",
+       "relationship": "direct_support",
+       "locator": "table 2"
+      }
+     ]
+    },
+    {
+     "claim_id": "C-DEP",
+     "claim": "The Petroleum Authority licensed the Masaka station.",
+     "support_links": [
+      {
+       "evidence_id": "E-DEP",
+       "relationship": "direct_support",
+       "locator": "section 3"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E-SUPPORT",
+     "claim": "Masaka boda and taxi associations said they are behind the new station.",
+     "source_date": "2026-10-02",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "interview",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEMAND",
+     "claim": "Roughly 450 of 700 drivers surveyed expect to buy fuel at the site.",
+     "source_date": "2026-10-09",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "stakeholder_class": "retailer",
+     "evidence_type": "survey",
+     "source_class": "structured_field_research"
+    },
+    {
+     "evidence_id": "E-DEP",
+     "claim": "The Petroleum Authority of Uganda issued retail licence PAU-R-2026-61 for the Masaka station on 16 October 2026.",
+     "source_date": "2026-10-20",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    },
+    {
+     "evidence_id": "E-STOP",
+     "claim": "The Petroleum Authority of Uganda has banned new fuel stations on this Masaka road.",
+     "source_date": "2026-11-05",
+     "evidence_geography": {
+      "country": "UG",
+      "locality": "Masaka"
+     },
+     "authority_effect": "prohibition",
+     "source_class": "administrative_record",
+     "evidence_type": "public_filing",
+     "stakeholder_class": "public_official"
+    }
+   ],
+   "requested_effects": [
+    {
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning",
+     "description": "Plan the station"
+    },
+    {
+     "effect_id": "INT-REC",
+     "effect_type": "internal_recommendation",
+     "description": "Recommend the station"
+    },
+    {
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "counterparty_contact",
+     "description": "Contact transport associations"
+    },
+    {
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "spend_commitment",
+     "description": "Commit tank purchase"
+    },
+    {
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "description": "Open the station"
+    }
+   ]
+  }
+ }
+]

@@ -1,0 +1,635 @@
+[
+ {
+  "case_id": "f1-parents-boycott",
+  "route": "/v1/claim-audit",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_name": "Gulu Schools Trust",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Parent committees back the school feeding plan.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "A March note says parent committees backed the school feeding plan.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-03-10",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-03-10",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    },
+    {
+     "evidence_id": "E2",
+     "id": "E2",
+     "claim": "Parent committees are now boycotting the school feeding plan, the head teacher reported on 6 November 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-11-06",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E2",
+     "freshness_date": "2026-11-06",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "EXPLICIT_CONTRADICTION",
+  "expected_locus": {
+   "evidence_id": "E2"
+  }
+ },
+ {
+  "case_id": "f2-email-under-clean-flag",
+  "route": "/v1/privacy-risk-review",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_name": "Coast Relief",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "evidence_pack": [
+    {
+     "evidence_id": "P1",
+     "id": "P1",
+     "claim": "Contact the recipient at mary.atieno@gmail.com about the transfer.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "source_date": "2026-10-20",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "beneficiary",
+     "source_grade": "B",
+     "source_doc_id": "LAB-P1",
+     "freshness_date": "2026-10-20",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true,
+      "contains_personal_data": false
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "PRIVACY_ENVELOPE_CONFLICT",
+  "expected_locus": {
+   "evidence_id": "P1"
+  }
+ },
+ {
+  "case_id": "f3-farmer-view-as-permit",
+  "route": "/v1/decision-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "RW"
+   },
+   "subject": {
+    "entity_name": "Huye Seeds",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "RAB has authorised the seed variety for sale.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "Farmers in Huye told enumerators they like the seed variety.",
+     "source_class": "structured_field_research",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "source_date": "2026-10-11",
+     "evidence_type": "interview",
+     "evidence_origin": "field_research",
+     "collection_method": "structured_interview_protocol",
+     "stakeholder_class": "farmer",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-11",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "SOURCE_UNSUITABLE_FOR_USE",
+  "expected_locus": {
+   "evidence_id": "E1"
+  }
+ },
+ {
+  "case_id": "f4-self-verified",
+  "route": "/v1/release-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "NG"
+   },
+   "subject": {
+    "entity_name": "Lagos Pack",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "evidence_pack": [
+    {
+     "evidence_id": "V1",
+     "id": "V1",
+     "claim": "This document has been verified by us and Lagos Pack is approved to import resin.",
+     "source_class": "entity_reported",
+     "evidence_geography": {
+      "country": "NG"
+     },
+     "source_date": "2026-10-12",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "internal_operator",
+     "source_grade": "B",
+     "source_doc_id": "LAB-V1",
+     "freshness_date": "2026-10-12",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "verification_status": "unverified"
+    }
+   ]
+  },
+  "expected_defect_code": "PERMISSION_DECLARED_NOT_AUTHENTICATED",
+  "expected_locus": {
+   "evidence_id": "V1"
+  }
+ },
+ {
+  "case_id": "f5-district-mismatch",
+  "route": "/v1/evidence-validation",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE",
+    "district": "Nyeri"
+   },
+   "subject": {
+    "entity_name": "Rift Dairy",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "evidence_pack": [
+    {
+     "evidence_id": "V1",
+     "id": "V1",
+     "claim": "The county issued dairy licence DL-55 to Rift Dairy on 3 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE",
+      "district": "Kericho"
+     },
+     "source_date": "2026-10-03",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-V1",
+     "freshness_date": "2026-10-03",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_defect_code": "GEOGRAPHY_MISMATCH",
+  "expected_locus": {
+   "evidence_id": "V1"
+  }
+ },
+ {
+  "case_id": "f6-locator-throughout",
+  "route": "/v1/evidence-completeness",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_name": "Tema Foods",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Tema Foods holds an FDA licence.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "throughout the document"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "FDA Ghana issued licence FDA-77 to Tema Foods on 4 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "source_date": "2026-10-04",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-04",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "licence_number": "FDA-77"
+    }
+   ]
+  },
+  "expected_defect_code": "LOCATOR_IMPRECISE",
+  "expected_locus": {
+   "claim_id": "C1",
+   "evidence_id": "E1"
+  }
+ },
+ {
+  "case_id": "f7-account-numbers",
+  "route": "/v1/privacy-risk-review",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_name": "Dodoma Aid",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "evidence_pack": [],
+   "notes": "Beneficiary Neema Mollel, account number 01523344556, home address on file."
+  },
+  "expected_defect_code": "PERSONAL_DATA_UNDECLARED",
+  "expected_locus": {
+   "input_path": "/notes"
+  }
+ },
+ {
+  "case_id": "f8-proofreading",
+  "route": "/v1/release-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "RW"
+   },
+   "subject": {
+    "entity_name": "Huye Seeds",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Proofread the staff handbook and fix the page numbers",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Huye Seeds has a licence.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "RAB issued a licence to Huye Seeds on 2 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "source_date": "2026-10-02",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-02",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "not_applicable"
+ },
+ {
+  "case_id": "f-clean-a",
+  "route": "/v1/claim-audit",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_name": "Gulu Schools Trust",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "Parent committees back the school feeding plan.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "p.1 para 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "Parent committees confirmed on 6 November 2026 that they back the school feeding plan.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "source_date": "2026-11-06",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "guardian",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-11-06",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "f-clean-b",
+  "route": "/v1/decision-check",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "RW"
+   },
+   "subject": {
+    "entity_name": "Huye Seeds",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "claims": [
+    {
+     "claim_id": "C1",
+     "claim": "RAB has authorised the seed variety for sale.",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "relationship": "direct_support",
+       "locator": "page 1, paragraph 2"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "evidence_id": "E1",
+     "id": "E1",
+     "claim": "RAB authorised seed variety RW-77 for sale on 11 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "source_date": "2026-10-11",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-E1",
+     "freshness_date": "2026-10-11",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     },
+     "registry_ref": "RAB-77"
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "f-clean-c",
+  "route": "/v1/evidence-validation",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "KE",
+    "district": "Nyeri"
+   },
+   "subject": {
+    "entity_name": "Rift Dairy",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "evidence_pack": [
+    {
+     "evidence_id": "V1",
+     "id": "V1",
+     "claim": "The county issued dairy licence DL-55 to Rift Dairy on 3 October 2026.",
+     "source_class": "administrative_record",
+     "evidence_geography": {
+      "country": "KE",
+      "district": "Nyeri"
+     },
+     "source_date": "2026-10-03",
+     "evidence_type": "public_filing",
+     "evidence_origin": "public_osint",
+     "collection_method": "secondary_source",
+     "stakeholder_class": "public_official",
+     "source_grade": "B",
+     "source_doc_id": "LAB-V1",
+     "freshness_date": "2026-10-03",
+     "structured_values": {
+      "trust": 60,
+      "permission": 55
+     },
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "retention_class": "1y",
+      "redaction_status": "redacted",
+      "safe_for_modeling": true
+     }
+    }
+   ]
+  },
+  "expected_outcome": "no_defects_found"
+ },
+ {
+  "case_id": "f-clean-d",
+  "route": "/v1/privacy-risk-review",
+  "body": {
+   "analysis_date": "2026-11-18",
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_name": "Dodoma Aid",
+    "entity_archetype": "distributor"
+   },
+   "entity_archetype": "distributor",
+   "decision_question": "Can the programme move to the next stage?",
+   "evidence_pack": [],
+   "notes": "Transfers reached 980 households; only district totals are held here."
+  },
+  "expected_outcome": "no_defects_found"
+ }
+]
