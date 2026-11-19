@@ -1,0 +1,220 @@
+{
+ "contract_version": "mvr.observer-verification/1",
+ "passed": true,
+ "evidence_summary": {
+  "signed_conformance_chain": {
+   "passed": 11,
+   "total": 11
+  },
+  "receiver_run_signature": {
+   "passed": 2,
+   "total": 2
+  },
+  "unsigned_export": {
+   "passed": 21,
+   "total": 21
+  }
+ },
+ "checks": [
+  {
+   "name": "the packet states its contract and claims no production authority",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "every registry statement is signed by the pinned root for this session",
+   "passed": true,
+   "evidence": "signed_conformance_chain"
+  },
+  {
+   "name": "the successor registry names its predecessor digest and a new key",
+   "passed": true,
+   "evidence": "signed_conformance_chain"
+  },
+  {
+   "name": "the evidence basis matches its commitments",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "the disposition has an id and digest and was applied to the decision",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "the decision binds the exact effect to the capability check",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "valid: receipt and current-state proof verify under the registry in force",
+   "passed": true,
+   "evidence": "signed_conformance_chain",
+   "detail": {
+    "receipt": "verified",
+    "proof": "verified"
+   }
+  },
+  {
+   "name": "valid: the commit is for the exact delivered effect, after a recorded verification",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "valid: the receiver outcome is the one this rule produces",
+   "passed": true,
+   "evidence": "unsigned_export",
+   "detail": "performed"
+  },
+  {
+   "name": "valid: the store holds the expected rows for this commit only",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "revoked: receipt and current-state proof verify under the registry in force",
+   "passed": true,
+   "evidence": "signed_conformance_chain",
+   "detail": {
+    "receipt": "verified",
+    "proof": "verified"
+   }
+  },
+  {
+   "name": "revoked: the commit is for the exact delivered effect, after a recorded verification",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "revoked: the receiver outcome is the one this rule produces",
+   "passed": true,
+   "evidence": "unsigned_export",
+   "detail": "BUYER_CAPABILITY_REVOKED_IN_FEED"
+  },
+  {
+   "name": "revoked: the store holds the expected rows for this commit only",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "expired: receipt and current-state proof verify under the registry in force",
+   "passed": true,
+   "evidence": "signed_conformance_chain",
+   "detail": {
+    "receipt": "verified",
+    "proof": "verified"
+   }
+  },
+  {
+   "name": "expired: the commit is for the exact delivered effect, after a recorded verification",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "expired: the receiver outcome is the one this rule produces",
+   "passed": true,
+   "evidence": "unsigned_export",
+   "detail": "BUYER_COMMIT_EXPIRED"
+  },
+  {
+   "name": "expired: the store holds the expected rows for this commit only",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "lease_recovered: receipt and current-state proof verify under the registry in force",
+   "passed": true,
+   "evidence": "signed_conformance_chain",
+   "detail": {
+    "receipt": "verified",
+    "proof": "verified"
+   }
+  },
+  {
+   "name": "lease_recovered: the commit is for the exact delivered effect, after a recorded verification",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "lease_recovered: the receiver outcome is the one this rule produces",
+   "passed": true,
+   "evidence": "unsigned_export",
+   "detail": "BUYER_FEED_NOT_FRESH"
+  },
+  {
+   "name": "lease_recovered: the store holds the expected rows for this commit only",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "rotated: receipt and current-state proof verify under the registry in force",
+   "passed": true,
+   "evidence": "signed_conformance_chain",
+   "detail": {
+    "receipt": "verified",
+    "proof": "verified"
+   }
+  },
+  {
+   "name": "rotated: the commit is for the exact delivered effect, after a recorded verification",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "rotated: the receiver outcome is the one this rule produces",
+   "passed": true,
+   "evidence": "unsigned_export",
+   "detail": "performed"
+  },
+  {
+   "name": "rotated: the store holds the expected rows for this commit only",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "the lease refusal is attributable to the lease alone",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "the expired refusal is attributable to the commit window alone",
+   "passed": true,
+   "evidence": "unsigned_export"
+  },
+  {
+   "name": "the revoked refusal is attributable to the signed feed entry",
+   "passed": true,
+   "evidence": "signed_conformance_chain"
+  },
+  {
+   "name": "a superseded registry refuses a commit signed by the new key",
+   "passed": true,
+   "evidence": "signed_conformance_chain"
+  },
+  {
+   "name": "the feed replays to the closed session",
+   "passed": true,
+   "evidence": "signed_conformance_chain",
+   "detail": {
+    "last_sequence": 11
+   }
+  },
+  {
+   "name": "the replayed feed contains the signed revocation",
+   "passed": true,
+   "evidence": "signed_conformance_chain",
+   "detail": null
+  },
+  {
+   "name": "every receiver journal entry is signed by the run key",
+   "passed": true,
+   "evidence": "receiver_run_signature"
+  },
+  {
+   "name": "the receiver journal agrees with the scenarios and the store",
+   "passed": true,
+   "evidence": "receiver_run_signature"
+  }
+ ],
+ "boundary": "Offline reconstruction inside the Enterprise conformance realm. It does not establish source truth, institutional standing, buyer operation or production authority."
+}

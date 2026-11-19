@@ -1,0 +1,2113 @@
+{
+ "classification": "reconstructed from the evaluator public-safe attachments; not the evaluator score",
+ "summary": {
+  "direct": "180/180",
+  "false_favorable": 0,
+  "audit": "20/20",
+  "misses": []
+ },
+ "direct": [
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-0A8BD642BB491B605B8C",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-8AA3182F337FADF0CE89",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-9A8BD1F964465C4DCF3B",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-A187689C45760C216638",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-AEDB3CC18CE63B4179CE",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "bare",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "admin",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "analytical": "favorable",
+   "rule": "R0_INTERNAL_PLANNING",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "analytical": "conditional",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "execution": "planning_only",
+   "label_corrected_from": "insufficient",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case_id": "CASE-B9EDCEF4FEB1F8D740D0",
+   "shape": "field",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "analytical": "insufficient",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "execution": "not_authorized",
+   "pass": true
+  }
+ ],
+ "audit": [
+  {
+   "name": "guardian",
+   "route": "/v1/red-team",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "ok",
+   "codes": [
+    "EXPLICIT_CONTRADICTION",
+    "OUTPUT_OVERSTATES_EVIDENCE"
+   ],
+   "pass": true
+  },
+  {
+   "name": "guardian",
+   "route": "/v1/red-team",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "ok",
+   "codes": [
+    "EXPLICIT_CONTRADICTION",
+    "OUTPUT_OVERSTATES_EVIDENCE"
+   ],
+   "pass": true
+  },
+  {
+   "name": "false-clean",
+   "route": "/v1/privacy-risk-review",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "review_required",
+   "codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "false-clean",
+   "route": "/v1/privacy-risk-review",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "review_required",
+   "codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "false-clean-flat",
+   "route": "/v1/privacy-risk-review",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "review_required",
+   "codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "false-clean-flat",
+   "route": "/v1/privacy-risk-review",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "review_required",
+   "codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "retailer",
+   "route": "/v1/claim-audit",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "weak_support_detected",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE",
+    "UNSUPPORTED_QUANTITY",
+    "CLAIM_SCOPE_NOT_IN_SUPPORT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "retailer",
+   "route": "/v1/claim-audit",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "weak_support_detected",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE",
+    "UNSUPPORTED_QUANTITY",
+    "CLAIM_SCOPE_NOT_IN_SUPPORT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "caller",
+   "route": "/v1/claim-audit",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "weak_support_detected",
+   "codes": [
+    "SOURCE_AUTHENTICITY_UNVERIFIED"
+   ],
+   "pass": true
+  },
+  {
+   "name": "caller",
+   "route": "/v1/claim-audit",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "weak_support_detected",
+   "codes": [
+    "SOURCE_AUTHENTICITY_UNVERIFIED"
+   ],
+   "pass": true
+  },
+  {
+   "name": "gulu",
+   "route": "/v1/evidence-validation",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "validation_failed",
+   "codes": [
+    "GEOGRAPHY_MISMATCH"
+   ],
+   "pass": true
+  },
+  {
+   "name": "gulu",
+   "route": "/v1/evidence-validation",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "validation_failed",
+   "codes": [
+    "GEOGRAPHY_MISMATCH"
+   ],
+   "pass": true
+  },
+  {
+   "name": "locator",
+   "route": "/v1/evidence-validation",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "validation_failed",
+   "codes": [
+    "LOCATOR_IMPRECISE"
+   ],
+   "pass": true
+  },
+  {
+   "name": "locator",
+   "route": "/v1/evidence-validation",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "validation_failed",
+   "codes": [
+    "LOCATOR_IMPRECISE"
+   ],
+   "pass": true
+  },
+  {
+   "name": "locator-link",
+   "route": "/v1/evidence-validation",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "validation_failed",
+   "codes": [
+    "LOCATOR_IMPRECISE",
+    "LOAD_BEARING_CLAIM_UNSUPPORTED"
+   ],
+   "pass": true
+  },
+  {
+   "name": "locator-link",
+   "route": "/v1/evidence-validation",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "validation_failed",
+   "codes": [
+    "LOCATOR_IMPRECISE",
+    "LOAD_BEARING_CLAIM_UNSUPPORTED"
+   ],
+   "pass": true
+  },
+  {
+   "name": "raw-pii",
+   "route": "/v1/privacy-risk-review",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "review_required",
+   "codes": [
+    "PRIVACY_UNSAFE_STATE"
+   ],
+   "pass": true
+  },
+  {
+   "name": "raw-pii",
+   "route": "/v1/privacy-risk-review",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "defects_found",
+   "route_decision": "block",
+   "native_status": "review_required",
+   "codes": [
+    "PRIVACY_UNSAFE_STATE"
+   ],
+   "pass": true
+  },
+  {
+   "name": "internal",
+   "route": "/v1/red-team",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "outcome": "not_applicable",
+   "route_decision": "not_applicable",
+   "native_status": "not_relevant",
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "internal",
+   "route": "/v1/red-team",
+   "profile": "full_advisory",
+   "http": 200,
+   "outcome": "not_applicable",
+   "route_decision": "not_applicable",
+   "native_status": "not_relevant",
+   "codes": [],
+   "pass": true
+  }
+ ]
+}

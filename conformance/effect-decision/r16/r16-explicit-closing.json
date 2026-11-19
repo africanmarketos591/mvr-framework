@@ -1,0 +1,2018 @@
+[
+ {
+  "class": "launch-only-grant",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "k-pay-gh-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional payments supervision office granted current permission for the exact launch.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market traders' council supports a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The regional payments supervision office grants current permission for the exact launch of a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Pay Ltd"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "k-pay-gh-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional payments supervision office granted current permission for the exact launch.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market traders' council supports a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The regional payments supervision office grants current permission for the exact launch of a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Pay Ltd"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "k-pay-gh-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional payments supervision office approved the whole bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market traders' council supports a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "The regional payments supervision office has approved a 75-day merchant wallet trial with exactly 50 named shops, with authority to contact up to 50 named shop owners, commit no more than GHS 600,000 to the bounded programme, and start merchant wallet trial with exactly 50 named shops within the stated limits and validity period. The approval is valid until 31 March 2027 and spending is capped as stated.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Pay Ltd"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "k-pay-gh-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market traders' council supports a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Pay Ltd"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "pay-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "k-pay-gh-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional payments supervision office granted current permission for the exact launch.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional payments supervision office approved the whole bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market traders' council supports a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The merchant waiting list records sufficient demand for a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The regional payments supervision office grants current permission for the exact launch of a 75-day merchant wallet trial with exactly 50 named shops.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "The regional payments supervision office has approved a 75-day merchant wallet trial with exactly 50 named shops, with authority to contact up to 50 named shop owners, commit no more than GHS 600,000 to the bounded programme, and start merchant wallet trial with exactly 50 named shops within the stated limits and validity period. The approval is valid until 31 March 2027 and spending is capped as stated.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Pay Ltd"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ },
+ {
+  "class": "launch-only-grant",
+  "domain": "school-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "k-school-ke-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county education board granted current permission for the exact launch.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parents' association supports a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The head teachers' request sheet records sufficient demand for a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The county education board grants current permission for the exact launch of a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Darasa Learning Ltd"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "school-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "k-school-ke-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county education board granted current permission for the exact launch.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parents' association supports a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The head teachers' request sheet records sufficient demand for a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The county education board grants current permission for the exact launch of a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Darasa Learning Ltd"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "school-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "k-school-ke-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county education board approved the whole bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parents' association supports a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The head teachers' request sheet records sufficient demand for a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "The county education board has approved a one-term tablet loan for exactly 8 named schools, with authority to contact up to 8 named head teachers, commit no more than KES 9,500,000 to the bounded programme, and start tablet loan for exactly 8 named schools within the stated limits and validity period. The approval is valid until 31 March 2027 and spending is capped as stated.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Darasa Learning Ltd"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "school-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "k-school-ke-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parents' association supports a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The head teachers' request sheet records sufficient demand for a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Darasa Learning Ltd"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "school-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "k-school-ke-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county education board granted current permission for the exact launch.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county education board approved the whole bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parents' association supports a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The head teachers' request sheet records sufficient demand for a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The county education board grants current permission for the exact launch of a one-term tablet loan for exactly 8 named schools.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "The county education board has approved a one-term tablet loan for exactly 8 named schools, with authority to contact up to 8 named head teachers, commit no more than KES 9,500,000 to the bounded programme, and start tablet loan for exactly 8 named schools within the stated limits and validity period. The approval is valid until 31 March 2027 and spending is capped as stated.",
+     "evidence_geography": {
+      "city": "Nakuru",
+      "country": "KE",
+      "region": "Rift Valley"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Nakuru"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Darasa Learning Ltd"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ },
+ {
+  "class": "launch-only-grant",
+  "domain": "fish-tz",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "k-fish-tz-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The fisheries licensing directorate granted current permission for the exact launch.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' group supports a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The fisheries licensing directorate grants current permission for the exact launch of a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Mwanza"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ziwa Fish Ltd"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "fish-tz",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "k-fish-tz-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The fisheries licensing directorate granted current permission for the exact launch.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' group supports a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The fisheries licensing directorate grants current permission for the exact launch of a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Mwanza"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ziwa Fish Ltd"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "fish-tz",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "k-fish-tz-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The fisheries licensing directorate approved the whole bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' group supports a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "The fisheries licensing directorate has approved a 90-day cold-box pilot at exactly 12 named landing sites, with authority to contact up to 12 named landing-site managers, commit no more than TZS 160,000,000 to the bounded programme, and start cold-box pilot at exactly 12 named landing sites within the stated limits and validity period. The approval is valid until 31 March 2027 and spending is capped as stated.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Mwanza"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ziwa Fish Ltd"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "fish-tz",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "k-fish-tz-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' group supports a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Mwanza"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ziwa Fish Ltd"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "fish-tz",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "k-fish-tz-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "On the supplied record, state the narrowest justified analytical state for the bounded proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The fisheries licensing directorate granted current permission for the exact launch.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The fisheries licensing directorate approved the whole bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The landing-site traders' group supports a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The fish buyers' register records sufficient demand for a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The fisheries licensing directorate grants current permission for the exact launch of a 90-day cold-box pilot at exactly 12 named landing sites.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "The fisheries licensing directorate has approved a 90-day cold-box pilot at exactly 12 named landing sites, with authority to contact up to 12 named landing-site managers, commit no more than TZS 160,000,000 to the bounded programme, and start cold-box pilot at exactly 12 named landing sites within the stated limits and validity period. The approval is valid until 31 March 2027 and spending is capped as stated.",
+     "evidence_geography": {
+      "city": "Mwanza",
+      "country": "TZ",
+      "region": "Mwanza Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "TZ",
+    "locality": "Mwanza"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare a bounded internal plan for the named decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Issue the internal recommendation for the named decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Contact an outside party about the named decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Make a binding external commitment for the named decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Launch the named programme or market action.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Ziwa Fish Ltd"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ }
+]

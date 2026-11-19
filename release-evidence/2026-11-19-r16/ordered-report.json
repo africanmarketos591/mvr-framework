@@ -1,0 +1,65 @@
+{
+  "revision": "2026-11-18.exact-reducer.13",
+  "manifest": "MVRRM-6cdcce04115ef3d6b0d6761702eed431",
+  "started_at": "2026-11-19T11:43:38.336Z",
+  "buyer_operated": false,
+  "decisions": [
+    {
+      "surface": "REST",
+      "profile": "strict_calibrated",
+      "effect_id": "receiver-9-20c072",
+      "outer_effect_sha256": "6879179b5f7754ea915006337e4677f4dd76d9771484d13d25e1d2142cbbe3bb",
+      "binding_sha256": "aa4180dc08bfa3efad43fd7a32bcc14890297532358cde6c529c647f552f6390",
+      "normative_sha256": "2480016292038deed9035f99416139b05854939258b61f282b2e9e12ba7ea89a"
+    },
+    {
+      "surface": "MCP",
+      "profile": "strict_calibrated",
+      "effect_id": "receiver-9-20c072",
+      "outer_effect_sha256": "6879179b5f7754ea915006337e4677f4dd76d9771484d13d25e1d2142cbbe3bb",
+      "binding_sha256": "aa4180dc08bfa3efad43fd7a32bcc14890297532358cde6c529c647f552f6390",
+      "normative_sha256": "2480016292038deed9035f99416139b05854939258b61f282b2e9e12ba7ea89a"
+    },
+    {
+      "surface": "REST",
+      "profile": "full_advisory",
+      "effect_id": "receiver-9-20c072",
+      "outer_effect_sha256": "6879179b5f7754ea915006337e4677f4dd76d9771484d13d25e1d2142cbbe3bb",
+      "binding_sha256": "aa4180dc08bfa3efad43fd7a32bcc14890297532358cde6c529c647f552f6390",
+      "normative_sha256": "2480016292038deed9035f99416139b05854939258b61f282b2e9e12ba7ea89a"
+    },
+    {
+      "surface": "MCP",
+      "profile": "full_advisory",
+      "effect_id": "receiver-9-20c072",
+      "outer_effect_sha256": "6879179b5f7754ea915006337e4677f4dd76d9771484d13d25e1d2142cbbe3bb",
+      "binding_sha256": "aa4180dc08bfa3efad43fd7a32bcc14890297532358cde6c529c647f552f6390",
+      "normative_sha256": "2480016292038deed9035f99416139b05854939258b61f282b2e9e12ba7ea89a"
+    }
+  ],
+  "handoff": {
+    "effect_id": "receiver-9-20c072",
+    "requested_effect_sha256": "fd2536a58dab8f306d58aff978234082b24eb354cbb1c228104a60bcb7ecf3f1",
+    "commit_id": "CM-9fa833828d27bf16021bedc12a814be858af25fd984b179c",
+    "positive_markers": 1,
+    "decision_before_commit": true
+  },
+  "connected": {
+    "revocation_observed_ms": 2482,
+    "receiver_code": "BUYER_CAPABILITY_REVOKED_IN_FEED",
+    "revoked_markers": 0,
+    "within_commit_window": true
+  },
+  "disconnected": {
+    "lease_s": 60,
+    "actual_elapsed_s": 72.214,
+    "expired_feed": "FEED_OLDER_THAN_OFFLINE_POLICY",
+    "offline_code": "BUYER_CHAIN_INVALID",
+    "reconnected_code": "BUYER_CHAIN_INVALID",
+    "caught_up_on_revocation": true,
+    "revoked_markers": 0
+  },
+  "closed": true,
+  "passed": true,
+  "finished_at": "2026-11-19T11:45:54.432Z"
+}

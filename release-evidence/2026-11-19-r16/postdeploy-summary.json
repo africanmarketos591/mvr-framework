@@ -1,0 +1,76 @@
+{
+ "deployment_revision": "2026-11-18.exact-reducer.13",
+ "provider_version_id": "491daeb5-9af6-4f89-87e5-e344bcb8b51e",
+ "results": {
+  "r16b-direct-holdout": 0,
+  "r16b-explicit-holdout": 0,
+  "r16-direct-holdout": 1,
+  "r16-direct-closing": 0,
+  "r16-explicit-holdout": 1,
+  "r16-explicit-closing": 0,
+  "r15-direct-holdout": 0,
+  "r15-explicit-holdout": 0,
+  "r15-audit-holdout": 1,
+  "r15-direct-closing": 1,
+  "r15-explicit-closing": 1,
+  "r15-audit-closing": 1,
+  "r15-audit-addendum": 0,
+  "r14-direct-closing": 0,
+  "r14-direct-final": 0,
+  "r14-audit-final": 0,
+  "r14-direct-holdout": 0,
+  "r14-audit-holdout": 0,
+  "r14-direct-dev": 0,
+  "r14-audit-dev": 0,
+  "blind-a": 0,
+  "blind-b": 0,
+  "blind-c": 0,
+  "evaluator-exact-r14": 0,
+  "handoff-matrix-r15": 0,
+  "r14-contract": 0,
+  "first-call-parity": 0,
+  "fresh-live": 0,
+  "prose-live": 0,
+  "route-live": 0,
+  "live-audit": 0,
+  "live-effects": 0,
+  "live-comparable": 0,
+  "receiver-isolation": 0,
+  "receiver-reconnect": 0,
+  "receiver-store": 0,
+  "receiver-rotation": 0,
+  "throttle-recovery": 0
+ },
+ "harness_reruns": {
+  "receiver-isolation": {
+   "first_exit": 1,
+   "cause": "the output folder from the .12 run was reused, so its SQLite store already existed",
+   "rerun_exit": 0
+  },
+  "throttle-recovery": {
+   "first_exit": 1,
+   "cause": "no 429 was reached within the 45-request probe",
+   "rerun_exit": 0
+  }
+ },
+ "transport_runs": [
+  {
+   "run": 1,
+   "exit": 0,
+   "primary": 112,
+   "effect": 112
+  },
+  {
+   "run": 2,
+   "exit": 0,
+   "primary": 112,
+   "effect": 112
+  },
+  {
+   "run": 3,
+   "exit": 0,
+   "primary": 112,
+   "effect": 112
+  }
+ ]
+}

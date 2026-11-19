@@ -2,7 +2,7 @@
 // read the operator's database or call any service. It proves the chain inside the conformance realm, not institutional standing.
 //   node conformance/receiver-kit/observer-verify.mjs receiver-isolation/observer-packet.json [--pinned trust/amos-conformance-trust-root.json]
 import fs from 'node:fs';
-import {createHash} from 'node:crypto';
+import {createHash, createPublicKey, verify as verifyBytes} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 import {createFeedSubscriber} from './feed-subscriber.mjs';
 import {canonicalJson, verifyAuthorityReceipt} from '../../sdks/javascript/authority-receipts.mjs';
@@ -12,7 +12,10 @@ const REGISTRY = 'mvr.authority-registry-statement/1', CURRENT = 'mvr.current-st
 const EXPECT = {valid: ['performed', 1], revoked: ['BUYER_CAPABILITY_REVOKED_IN_FEED', 0], expired: ['BUYER_COMMIT_EXPIRED', 0], lease_recovered: ['BUYER_FEED_NOT_FRESH', 1], rotated: ['performed', 1]};
 
 export async function verifyObserverPacket(p, {pinnedRoot = p?.pinned_root} = {}) {
-  const checks = [], check = (name, passed, detail) => { checks.push({name, passed: !!passed, ...(detail === undefined ? {} : {detail})}); return !!passed; };
+  // Each check says what kind of evidence it rests on: a signature from the conformance chain, the receiver's own run signature, or an
+  // unsigned export that is only internally consistent.
+  const checks = [], SIGNED = /registry|receipt and current-state|feed|revocation|superseded registry/i, RUN = /receiver journal/i;
+  const check = (name, passed, detail) => { checks.push({name, passed: !!passed, evidence: SIGNED.test(name) ? 'signed_conformance_chain' : RUN.test(name) ? 'receiver_run_signature' : 'unsigned_export', ...(detail === undefined ? {} : {detail})}); return !!passed; };
   const root = {key_id: pinnedRoot?.key_id, public_key_spki_b64: pinnedRoot?.public_key_spki_b64};
   check('the packet states its contract and claims no production authority', p?.contract_version === 'mvr.observer-packet/1' && p.production_authority === false);
   const statements = new Map(); let chained = true;
@@ -59,7 +62,15 @@ export async function verifyObserverPacket(p, {pinnedRoot = p?.pinned_root} = {}
     check('the feed replays to the closed session', sub.state.session_closed === true, {last_sequence: sub.state.last_sequence});
   } catch (error) { detail = error.code || error.message; check('the feed replays to the closed session', false, detail); }
   check('the replayed feed contains the signed revocation', replayed && revokedSeen, detail);
-  return {contract_version: 'mvr.observer-verification/1', passed: checks.every(c => c.passed), checks, boundary: 'Offline reconstruction inside the Enterprise conformance realm. It does not establish source truth, institutional standing, buyer operation or production authority.'};
+  const journal = p.receiver_journal;
+  if (journal) {
+    let key = null; try { key = createPublicKey({key: Buffer.from(journal.public_key_spki_b64, 'base64'), format: 'der', type: 'spki'}); } catch {}
+    const signed = !!key && journal.entries.length >= 5 && journal.entries.every(({signature_b64, ...body}) => verifyBytes(null, Buffer.from(canonicalJson(body)), key, Buffer.from(signature_b64, 'base64')));
+    check('every receiver journal entry is signed by the run key', signed);
+    check('the receiver journal agrees with the scenarios and the store', journal.entries.every(e => { const s = p.scenarios?.[e.scenario]; return s && e.commit_id === (s.receipt?.commit_id ?? null) && e.draft_count === (p.store_rows ?? []).filter(r => r.scenario === e.scenario).length; }));
+  }
+  const group = kind => ({passed: checks.filter(c => c.evidence === kind && c.passed).length, total: checks.filter(c => c.evidence === kind).length});
+  return {contract_version: 'mvr.observer-verification/1', passed: checks.every(c => c.passed), evidence_summary: {signed_conformance_chain: group('signed_conformance_chain'), receiver_run_signature: group('receiver_run_signature'), unsigned_export: group('unsigned_export')}, checks, boundary: 'Offline reconstruction inside the Enterprise conformance realm. It does not establish source truth, institutional standing, buyer operation or production authority.'};
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

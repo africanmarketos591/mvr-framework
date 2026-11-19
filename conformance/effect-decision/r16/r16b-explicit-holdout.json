@@ -1,0 +1,4826 @@
+[
+ {
+  "class": "launch-only-grant",
+  "domain": "poultry-ng",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-poultry-ng-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The state veterinary licensing office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The poultry farmers' association backs a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The feed order register shows enough demand for a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The state veterinary licensing office has issued a current permit to launch a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Oyo Poultry Ltd"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "poultry-ng",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-poultry-ng-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The state veterinary licensing office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The poultry farmers' association backs a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The feed order register shows enough demand for a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The state veterinary licensing office has issued a current permit to launch a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Oyo Poultry Ltd"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "contact-only-grant",
+  "domain": "poultry-ng",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-poultry-ng-contact-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The state veterinary licensing office has given current permission for the outreach.",
+     "claim_id": "C-CONTACT",
+     "dependency_id": "DEP-CONTACT",
+     "support_links": [
+      {
+       "evidence_id": "R-CONTACT",
+       "locator": "R-CONTACT paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The poultry farmers' association backs a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The feed order register shows enough demand for a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-CONTACT"
+     ],
+     "claim": "The state veterinary licensing office has given current permission to contact up to 40 named farm owners about a 90-day feed supply to exactly 40 named poultry farms. This permission covers contact only.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-CONTACT",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-CONTACT"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Oyo Poultry Ltd"
+   }
+  },
+  "variant": "contact-only-grant"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "poultry-ng",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-poultry-ng-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The state veterinary licensing office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The poultry farmers' association backs a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The feed order register shows enough demand for a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "The state veterinary licensing office approved a 90-day feed supply to exactly 40 named poultry farms on 14 October 2026. Under this approval the company may reach out to at most 40 named farm owners, spend not exceeding NGN 52,000,000 on the approved programme, and roll out the service as approved. The approval runs until 30 April 2027.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Oyo Poultry Ltd"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "poultry-ng",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-poultry-ng-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The poultry farmers' association backs a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The feed order register shows enough demand for a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Oyo Poultry Ltd"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "poultry-ng",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-poultry-ng-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The state veterinary licensing office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The state veterinary licensing office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The poultry farmers' association backs a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The feed order register shows enough demand for a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The state veterinary licensing office has issued a current permit to launch a 90-day feed supply to exactly 40 named poultry farms.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "The state veterinary licensing office approved a 90-day feed supply to exactly 40 named poultry farms on 14 October 2026. Under this approval the company may reach out to at most 40 named farm owners, spend not exceeding NGN 52,000,000 on the approved programme, and roll out the service as approved. The approval runs until 30 April 2027.",
+     "evidence_geography": {
+      "city": "Ibadan",
+      "country": "NG",
+      "region": "Oyo State"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "NG",
+    "locality": "Ibadan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Oyo Poultry Ltd"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ },
+ {
+  "class": "launch-only-grant",
+  "domain": "laundry-ci",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-laundry-ci-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The municipal licensing service has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The residents' committee backs a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The household booking list shows enough demand for a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The municipal licensing service has issued a current permit to launch a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lagune Services SARL"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "laundry-ci",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-laundry-ci-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The municipal licensing service has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The residents' committee backs a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The household booking list shows enough demand for a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The municipal licensing service has issued a current permit to launch a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lagune Services SARL"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "contact-only-grant",
+  "domain": "laundry-ci",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-laundry-ci-contact-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The municipal licensing service has given current permission for the outreach.",
+     "claim_id": "C-CONTACT",
+     "dependency_id": "DEP-CONTACT",
+     "support_links": [
+      {
+       "evidence_id": "R-CONTACT",
+       "locator": "R-CONTACT paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The residents' committee backs a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The household booking list shows enough demand for a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-CONTACT"
+     ],
+     "claim": "The municipal licensing service has given current permission to contact up to 12 named block managers about a six-month mobile laundry service at exactly 12 named housing blocks. This permission covers contact only.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-CONTACT",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-CONTACT"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Lagune Services SARL"
+   }
+  },
+  "variant": "contact-only-grant"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "laundry-ci",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-laundry-ci-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The municipal licensing service approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The residents' committee backs a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The household booking list shows enough demand for a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "The municipal licensing service issued its approval for a six-month mobile laundry service at exactly 12 named housing blocks, covering contact with up to 12 named block managers, a commitment capped at XOF 18,000,000 and the launch, within the approved ceilings and a validity period ending 28 February 2027.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lagune Services SARL"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "laundry-ci",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-laundry-ci-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The residents' committee backs a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The household booking list shows enough demand for a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lagune Services SARL"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "laundry-ci",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-laundry-ci-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The municipal licensing service has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The municipal licensing service approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The residents' committee backs a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The household booking list shows enough demand for a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The municipal licensing service has issued a current permit to launch a six-month mobile laundry service at exactly 12 named housing blocks.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "The municipal licensing service issued its approval for a six-month mobile laundry service at exactly 12 named housing blocks, covering contact with up to 12 named block managers, a commitment capped at XOF 18,000,000 and the launch, within the approved ceilings and a validity period ending 28 February 2027.",
+     "evidence_geography": {
+      "city": "Abidjan",
+      "country": "CI",
+      "region": "Abidjan District"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "CI",
+    "locality": "Abidjan"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lagune Services SARL"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ },
+ {
+  "class": "launch-only-grant",
+  "domain": "honey-et",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-honey-et-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional agriculture bureau has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The beekeepers' union backs a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The buyer commitment log shows enough demand for a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The regional agriculture bureau has issued a current permit to launch a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ET",
+    "locality": "Bahir Dar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Abay Honey plc"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "honey-et",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-honey-et-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional agriculture bureau has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The beekeepers' union backs a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The buyer commitment log shows enough demand for a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The regional agriculture bureau has issued a current permit to launch a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ET",
+    "locality": "Bahir Dar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Abay Honey plc"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "contact-only-grant",
+  "domain": "honey-et",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-honey-et-contact-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional agriculture bureau has given current permission for the outreach.",
+     "claim_id": "C-CONTACT",
+     "dependency_id": "DEP-CONTACT",
+     "support_links": [
+      {
+       "evidence_id": "R-CONTACT",
+       "locator": "R-CONTACT paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The beekeepers' union backs a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The buyer commitment log shows enough demand for a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-CONTACT"
+     ],
+     "claim": "The regional agriculture bureau has given current permission to contact up to 20 named group leaders about a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups. This permission covers contact only.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-CONTACT",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ET",
+    "locality": "Bahir Dar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-CONTACT"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Abay Honey plc"
+   }
+  },
+  "variant": "contact-only-grant"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "honey-et",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-honey-et-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional agriculture bureau approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The beekeepers' union backs a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The buyer commitment log shows enough demand for a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "On 20 October 2026 The regional agriculture bureau authorized a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups: outreach to a maximum of 20 named group leaders, commitments of up to ETB 9,600,000 and commencement of the service, all valid through 31 May 2027.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ET",
+    "locality": "Bahir Dar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Abay Honey plc"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "honey-et",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-honey-et-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The beekeepers' union backs a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The buyer commitment log shows enough demand for a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "ET",
+    "locality": "Bahir Dar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Abay Honey plc"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "honey-et",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-honey-et-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional agriculture bureau has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The regional agriculture bureau approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The beekeepers' union backs a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The buyer commitment log shows enough demand for a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The regional agriculture bureau has issued a current permit to launch a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "On 20 October 2026 The regional agriculture bureau authorized a one-season purchase of exactly 8 tonnes of honey from 20 named beekeeper groups: outreach to a maximum of 20 named group leaders, commitments of up to ETB 9,600,000 and commencement of the service, all valid through 31 May 2027.",
+     "evidence_geography": {
+      "city": "Bahir Dar",
+      "country": "ET",
+      "region": "Amhara Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ET",
+    "locality": "Bahir Dar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Abay Honey plc"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ },
+ {
+  "class": "launch-only-grant",
+  "domain": "bus-sn",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-bus-sn-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The urban transport council has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The night workers' union backs a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The rider petition register shows enough demand for a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The urban transport council has issued a current permit to launch a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nuit Mobilite SA"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "bus-sn",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-bus-sn-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The urban transport council has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The night workers' union backs a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The rider petition register shows enough demand for a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The urban transport council has issued a current permit to launch a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nuit Mobilite SA"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "contact-only-grant",
+  "domain": "bus-sn",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-bus-sn-contact-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The urban transport council has given current permission for the outreach.",
+     "claim_id": "C-CONTACT",
+     "dependency_id": "DEP-CONTACT",
+     "support_links": [
+      {
+       "evidence_id": "R-CONTACT",
+       "locator": "R-CONTACT paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The night workers' union backs a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The rider petition register shows enough demand for a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-CONTACT"
+     ],
+     "claim": "The urban transport council has given current permission to contact up to 3 named depot supervisors about a 30-day night bus service on exactly 3 named routes. This permission covers contact only.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-CONTACT",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-CONTACT"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Nuit Mobilite SA"
+   }
+  },
+  "variant": "contact-only-grant"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "bus-sn",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-bus-sn-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The urban transport council approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The night workers' union backs a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The rider petition register shows enough demand for a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "The urban transport council approved a 30-day night bus service on exactly 3 named routes on 14 October 2026. Under this approval the company may reach out to at most 3 named depot supervisors, spend not exceeding XOF 25,000,000 on the approved programme, and roll out the service as approved. The approval runs until 30 April 2027.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nuit Mobilite SA"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "bus-sn",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-bus-sn-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The night workers' union backs a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The rider petition register shows enough demand for a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nuit Mobilite SA"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "bus-sn",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-bus-sn-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The urban transport council has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The urban transport council approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The night workers' union backs a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The rider petition register shows enough demand for a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The urban transport council has issued a current permit to launch a 30-day night bus service on exactly 3 named routes.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "The urban transport council approved a 30-day night bus service on exactly 3 named routes on 14 October 2026. Under this approval the company may reach out to at most 3 named depot supervisors, spend not exceeding XOF 25,000,000 on the approved programme, and roll out the service as approved. The approval runs until 30 April 2027.",
+     "evidence_geography": {
+      "city": "Dakar",
+      "country": "SN",
+      "region": "Dakar Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "SN",
+    "locality": "Dakar"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Nuit Mobilite SA"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ },
+ {
+  "class": "launch-only-grant",
+  "domain": "pharmacy-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-pharmacy-ke-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county pharmacy and poisons office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The community health workers' network backs a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The pharmacy order book shows enough demand for a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The county pharmacy and poisons office has issued a current permit to launch a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lakeside Pharma Ltd"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "pharmacy-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-pharmacy-ke-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county pharmacy and poisons office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The community health workers' network backs a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The pharmacy order book shows enough demand for a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The county pharmacy and poisons office has issued a current permit to launch a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lakeside Pharma Ltd"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "contact-only-grant",
+  "domain": "pharmacy-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-pharmacy-ke-contact-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county pharmacy and poisons office has given current permission for the outreach.",
+     "claim_id": "C-CONTACT",
+     "dependency_id": "DEP-CONTACT",
+     "support_links": [
+      {
+       "evidence_id": "R-CONTACT",
+       "locator": "R-CONTACT paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The community health workers' network backs a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The pharmacy order book shows enough demand for a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-CONTACT"
+     ],
+     "claim": "The county pharmacy and poisons office has given current permission to contact up to 25 named pharmacists about a 120-day medicine delivery to exactly 25 named pharmacies. This permission covers contact only.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-CONTACT",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-CONTACT"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Lakeside Pharma Ltd"
+   }
+  },
+  "variant": "contact-only-grant"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "pharmacy-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-pharmacy-ke-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county pharmacy and poisons office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The community health workers' network backs a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The pharmacy order book shows enough demand for a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "The county pharmacy and poisons office issued its approval for a 120-day medicine delivery to exactly 25 named pharmacies, covering contact with up to 25 named pharmacists, a commitment capped at KES 6,300,000 and the launch, within the approved ceilings and a validity period ending 28 February 2027.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lakeside Pharma Ltd"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "pharmacy-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-pharmacy-ke-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The community health workers' network backs a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The pharmacy order book shows enough demand for a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lakeside Pharma Ltd"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "pharmacy-ke",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-pharmacy-ke-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county pharmacy and poisons office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The county pharmacy and poisons office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The community health workers' network backs a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The pharmacy order book shows enough demand for a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The county pharmacy and poisons office has issued a current permit to launch a 120-day medicine delivery to exactly 25 named pharmacies.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "The county pharmacy and poisons office issued its approval for a 120-day medicine delivery to exactly 25 named pharmacies, covering contact with up to 25 named pharmacists, a commitment capped at KES 6,300,000 and the launch, within the approved ceilings and a validity period ending 28 February 2027.",
+     "evidence_geography": {
+      "city": "Kisumu",
+      "country": "KE",
+      "region": "Kisumu County"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "KE",
+    "locality": "Kisumu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Lakeside Pharma Ltd"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ },
+ {
+  "class": "launch-only-grant",
+  "domain": "cookstove-ug",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-cookstove-ug-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The district environment office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The women's savings groups forum backs a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The stove pre-order sheet shows enough demand for a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The district environment office has issued a current permit to launch a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Acholi Stoves Ltd"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "cookstove-ug",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-cookstove-ug-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The district environment office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The women's savings groups forum backs a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The stove pre-order sheet shows enough demand for a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The district environment office has issued a current permit to launch a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Acholi Stoves Ltd"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "contact-only-grant",
+  "domain": "cookstove-ug",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-cookstove-ug-contact-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The district environment office has given current permission for the outreach.",
+     "claim_id": "C-CONTACT",
+     "dependency_id": "DEP-CONTACT",
+     "support_links": [
+      {
+       "evidence_id": "R-CONTACT",
+       "locator": "R-CONTACT paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The women's savings groups forum backs a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The stove pre-order sheet shows enough demand for a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-CONTACT"
+     ],
+     "claim": "The district environment office has given current permission to contact up to 15 named shopkeepers about a six-month sale of exactly 900 clean cookstoves through 15 named shops. This permission covers contact only.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-CONTACT",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-CONTACT"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Acholi Stoves Ltd"
+   }
+  },
+  "variant": "contact-only-grant"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "cookstove-ug",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-cookstove-ug-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The district environment office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The women's savings groups forum backs a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The stove pre-order sheet shows enough demand for a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "On 20 October 2026 The district environment office authorized a six-month sale of exactly 900 clean cookstoves through 15 named shops: outreach to a maximum of 15 named shopkeepers, commitments of up to UGX 130,000,000 and commencement of the service, all valid through 31 May 2027.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Acholi Stoves Ltd"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "cookstove-ug",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "b-cookstove-ug-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The women's savings groups forum backs a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The stove pre-order sheet shows enough demand for a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Acholi Stoves Ltd"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "cookstove-ug",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "b-cookstove-ug-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The district environment office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The district environment office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The women's savings groups forum backs a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The stove pre-order sheet shows enough demand for a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The district environment office has issued a current permit to launch a six-month sale of exactly 900 clean cookstoves through 15 named shops.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "On 20 October 2026 The district environment office authorized a six-month sale of exactly 900 clean cookstoves through 15 named shops: outreach to a maximum of 15 named shopkeepers, commitments of up to UGX 130,000,000 and commencement of the service, all valid through 31 May 2027.",
+     "evidence_geography": {
+      "city": "Gulu",
+      "country": "UG",
+      "region": "Northern Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "UG",
+    "locality": "Gulu"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Acholi Stoves Ltd"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ }
+]

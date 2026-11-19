@@ -1,0 +1,63 @@
+{
+ "contract_version": "mvr.label-corrections/1",
+ "decided": "2026-11-19",
+ "reason": "AMOS labelled the internal recommendation insufficient when the only gap is a missing permission or completion record. The independent evaluator's labels treat that recommendation as conditional: the recommendation can be made, subject to the prerequisite. Its exposed exemplar CASE-0A8BD642BB491B605B8C (R16) lists insufficient as a miss for INT-RECOMMEND, and its R14 letter listed favourable as a false favourable, which leaves conditional. Frozen set files are unchanged; runners apply this mapping and report it.",
+ "corrections": [
+  {
+   "sets": [
+    "r14-direct-dev",
+    "r14-direct-holdout",
+    "r14-direct-final",
+    "r14-direct-closing"
+   ],
+   "variants": [
+    "M"
+   ],
+   "effect_id": "INT-REC",
+   "field": "analytical",
+   "from": "insufficient",
+   "to": "conditional"
+  },
+  {
+   "sets": [
+    "r15-direct-holdout",
+    "r15-direct-closing"
+   ],
+   "variants": [
+    "M",
+    "L",
+    "AM"
+   ],
+   "effect_id": "INT-RECOMMEND",
+   "field": "analytical",
+   "from": "insufficient",
+   "to": "conditional"
+  }
+ ],
+ "audit_corrections": [
+  {
+   "sets": [
+    "r15-audit-holdout"
+   ],
+   "case_ids": [
+    "h1-clean"
+   ],
+   "field": "expected_route_decision",
+   "from": "clear",
+   "to": "hold",
+   "reason": "The red-team route returns a high native strict-mode blocker (DECISION_SCOPE_REQUIRED: the request declares no decision scope). The R16 review asked that the controlling output never say clear beside such a blocker (exemplar AUD-D5AA15D52A8C84F86F6C), so the controlling decision is hold. No defect finding is raised and audit_outcome stays no_defects_found."
+  },
+  {
+   "sets": [
+    "r15-audit-closing"
+   ],
+   "case_ids": [
+    "k1-clean"
+   ],
+   "field": "expected_route_decision",
+   "from": "clear",
+   "to": "hold",
+   "reason": "Same as h1-clean."
+  }
+ ]
+}

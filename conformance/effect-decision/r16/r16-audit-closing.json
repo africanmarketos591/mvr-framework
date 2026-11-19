@@ -1,0 +1,624 @@
+[
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A permit is described as allowing the expansion.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "provenance": {
+      "source_locator": "see the permit"
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Rift Agro"
+   }
+  },
+  "case_id": "k1-nested-locator",
+  "expected_defect_code": "LOCATOR_IMPRECISE",
+  "expected_route_decision": "block",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Permit RP-2026-4 allows the expansion.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "licence_number": "RP-2026-4",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "provenance": {
+      "source_locator": "clause 2.1, page 1"
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Rift Agro"
+   }
+  },
+  "case_id": "k1-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "The rollout is authorized as of today.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "E2",
+       "locator": "page 2, paragraph 1",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A prior memo backed a limited rollout.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-09-20",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-09-20",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    },
+    {
+     "claim": "The authority now forbids the rollout and has withdrawn the prior memo.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "E2",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-09-20",
+     "id": "E2",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-09-20",
+     "source_doc_id": "LAB-E2",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Coast Mills"
+   }
+  },
+  "case_id": "k2-current-prohibition",
+  "expected_defect_code": "PROHIBITION_PRESENT",
+  "expected_route_decision": "block",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "The rollout is authorized as of today.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The authority issued rollout approval GA-2026-12 on 20 September 2026.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-09-20",
+     "id": "E1",
+     "licence_number": "GA-2026-12",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-09-20",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Coast Mills"
+   }
+  },
+  "case_id": "k2-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A current Dodoma survey supports a bounded advisory review.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-11-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    },
+    {
+     "claim": "An outdated Kenyan record about a different product is background only.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E2",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2023-06-01",
+     "id": "E2",
+     "load_bearing": false,
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2023-06-01",
+     "source_doc_id": "LAB-E2",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Dodoma Foods"
+   }
+  },
+  "case_id": "k3-non-load-bearing",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/evidence-suitability-scan"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "An outdated Kenyan record about a different product is the main evidence.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2023-06-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2023-06-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Dodoma Foods"
+   }
+  },
+  "case_id": "k3-defect",
+  "expected_defect_code": "GEOGRAPHY_MISMATCH",
+  "expected_route_decision": "block",
+  "route": "/v1/evidence-suitability-scan"
+ },
+ {
+  "body": {
+   "action_boundary": {
+    "allowed_actions": [
+     "local_internal_analysis"
+    ],
+    "forbidden_actions": [
+     "external_contact",
+     "commit_funds",
+     "launch"
+    ]
+   },
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "The record allows internal analysis only, not execution.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The board allows internal analysis of the proposal and does not allow execution.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "RW"
+   },
+   "proposed_outcome": "advisory_only",
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Kivu Tea"
+   }
+  },
+  "case_id": "k4-advisory-scope",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/board-safety-check"
+ },
+ {
+  "acceptance_must_mention": [
+   "complaints procedure"
+  ],
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "All conditions are satisfied and launch may proceed.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "qualifies"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Internal planning may continue; contact and launch remain on hold until the complaints procedure is approved.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Elgon Care"
+   }
+  },
+  "case_id": "k5-held-protocol",
+  "expected_defect_code": "QUALIFIER_IN_SUPPORT",
+  "expected_route_decision": "block",
+  "route": "/v1/board-safety-check"
+ },
+ {
+  "acceptance_must_mention": [
+   "contact",
+   "commitment",
+   "launch"
+  ],
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "The strong analytical score alone authorizes contact, commitment and launch.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Survey results support further internal analysis and include no authority record.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "MW"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "MW"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Shire Traders"
+   }
+  },
+  "case_id": "k6-score-as-authority",
+  "expected_defect_code": "SOURCE_UNSUITABLE_FOR_USE",
+  "expected_route_decision": "block",
+  "route": "/v1/release-check"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A bounded shop survey supports advisory demand analysis.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-11-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 50,
+      "trust": 63
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Nakuru Retail"
+   }
+  },
+  "case_id": "k7-calibration-refusal",
+  "expected_outcome": "any",
+  "expected_route_decision": "profile_dependent",
+  "route": "/v1/evidence-audit"
+ }
+]

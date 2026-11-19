@@ -8,7 +8,8 @@ const BASE = opt('base') || 'https://africanmarketos.com', KEY = process.env.MVR
 if (!KEY || !name) throw new Error('Set MVR_API_KEY and name a set');
 const dir = new URL('./', import.meta.url), bytes = fs.readFileSync(new URL(name + '.json', dir)), sha = createHash('sha256').update(bytes).digest('hex');
 if (sha !== fs.readFileSync(new URL(name + '.sha256', dir), 'utf8').split(/\s+/)[0]) throw new Error(name + '.json changed after freezing');
-const cases = JSON.parse(bytes), audit = name.includes('audit'), manifest = await (await fetch(BASE + '/.well-known/mvr-release-manifest.json')).json();
+const labelFile = JSON.parse(fs.readFileSync(new URL('../label-corrections-r16.json', import.meta.url), 'utf8')), corrections = labelFile.corrections.filter(c => c.sets.includes(name)), auditCorrections = (labelFile.audit_corrections ?? []).filter(c => c.sets.includes(name));
+const cases = JSON.parse(bytes).map(c => { for (const k of corrections) if (k.variants.includes(c.variant) && c.expected?.[k.effect_id]?.[k.field] === k.from) c.expected[k.effect_id] = {...c.expected[k.effect_id], [k.field]: k.to, label_corrected_from: k.from}; for (const k of auditCorrections) if (k.case_ids.includes(c.case_id) && c[k.field] === k.from) { c[k.field] = k.to; c.label_corrected_from = k.from; } return c; }), audit = name.includes('audit'), manifest = await (await fetch(BASE + '/.well-known/mvr-release-manifest.json')).json();
 const jobs = cases.flatMap(c => ['strict_calibrated', 'full_advisory'].map(profile => ({c, profile}))), rows = [];
 let pos = 0;
 const FIELD = {analytical: 'analytical_evidence_status', authority: 'institutional_authority_status', execution: 'execution_authorization_status', rule: 'precedence_rule'};
@@ -20,7 +21,7 @@ async function work() {
       const b = await r.json(), bound = r.headers.get('X-MVR-Release-Manifest') === manifest.manifest_id;
       if (audit) {
         const f = b.audit_findings, codes = (f?.findings ?? []).map(x => x.defect_code), decision = b.route_audit_result?.controlling?.decision ?? null;
-        const row = {id: c.case_id, profile, http: r.status, bound, outcome: f?.audit_outcome ?? null, codes, route_decision: decision, native_status: b.status ?? null, result_class: r.status >= 400 ? 'http_refusal' : !f ? 'unresolved' : decision === 'clear' ? 'route_permit' : decision === 'not_applicable' ? 'not_applicable' : 'route_hold_or_block'};
+        const row = {id: c.case_id, ...(c.label_corrected_from ? {label_corrected_from: c.label_corrected_from} : {}), profile, http: r.status, bound, outcome: f?.audit_outcome ?? null, codes, route_decision: decision, native_status: b.status ?? null, result_class: r.status >= 400 ? 'http_refusal' : !f ? 'unresolved' : decision === 'clear' ? 'route_permit' : decision === 'not_applicable' ? 'not_applicable' : 'route_hold_or_block'};
         const remediation = f?.findings?.[0]?.smallest_remediation?.action ?? null, acceptance = f?.findings?.[0]?.acceptance_condition ?? null;
         if (c.expected_defect_code) Object.assign(row, {kind: 'defect', detected: codes.includes(c.expected_defect_code), controlling: codes[0] === c.expected_defect_code, also: (c.also_expected ?? []).every(x => codes.includes(x)), bounded_remediation: !!remediation && !!acceptance, critical_false_permit: r.status < 400 && decision === 'clear'});
         else row.kind = c.expected_outcome === 'not_applicable' ? 'internal' : 'clean';
@@ -29,7 +30,7 @@ async function work() {
       } else for (const [effect, want] of Object.entries(c.expected)) {
         const e = b.effects?.find(x => x.effect_id === effect), row = {id: c.id, representation: c.representation ?? 'explicit', variant: c.variant, class: c.class, profile, effect, http: r.status, bound, analytical: e?.analytical_evidence_status, authority: e?.institutional_authority_status, execution: e?.execution_authorization_status, rule: e?.precedence_rule};
         row.false_favorable = row.analytical === 'favorable' && !['favorable', undefined].includes(want.analytical) || (want.analytical_in && row.analytical === 'favorable') || false;
-        row.pass = bound && r.status === 200 && !!e && Object.entries(want).every(([k, v]) => k === 'analytical_in' ? v.includes(row.analytical) : e[FIELD[k]] === v) && row.execution !== 'authorized';
+        row.pass = bound && r.status === 200 && !!e && Object.entries(want).filter(([k]) => k !== 'label_corrected_from').every(([k, v]) => k === 'analytical_in' ? v.includes(row.analytical) : e[FIELD[k]] === v) && row.execution !== 'authorized';
         rows.push(row);
       }
     } catch (e) { rows.push({id: c.id ?? c.case_id, profile, error: e.name, pass: false}); }
