@@ -14,8 +14,10 @@ const EXPECT = {valid: ['performed', 1], revoked: ['BUYER_CAPABILITY_REVOKED_IN_
 export async function verifyObserverPacket(p, {pinnedRoot = p?.pinned_root} = {}) {
   // Each check says what kind of evidence it rests on: a signature from the conformance chain, the receiver's own run signature, or an
   // unsigned export that is only internally consistent.
-  const checks = [], SIGNED = /registry|receipt and current-state|feed|revocation|superseded registry/i, RUN = /receiver journal/i;
-  const check = (name, passed, detail) => { checks.push({name, passed: !!passed, evidence: SIGNED.test(name) ? 'signed_conformance_chain' : RUN.test(name) ? 'receiver_run_signature' : 'unsigned_export', ...(detail === undefined ? {} : {detail})}); return !!passed; };
+  // An assertion that reads run fields (codes, counts, timing, freshness) rests on the unsigned export, even when the event it concerns is
+  // signed; the signed part is its own assertion. Labels are explicit where the name alone would overstate what is signed.
+  const checks = [], SIGNED = /registry|receipt and current-state|feed|revocation/i, RUN = /receiver journal/i;
+  const check = (name, passed, detail, evidence) => { checks.push({name, passed: !!passed, evidence: evidence ?? (SIGNED.test(name) ? 'signed_conformance_chain' : RUN.test(name) ? 'receiver_run_signature' : 'unsigned_export'), ...(detail === undefined ? {} : {detail})}); return !!passed; };
   const root = {key_id: pinnedRoot?.key_id, public_key_spki_b64: pinnedRoot?.public_key_spki_b64};
   check('the packet states its contract and claims no production authority', p?.contract_version === 'mvr.observer-packet/1' && p.production_authority === false);
   const statements = new Map(); let chained = true;
@@ -45,8 +47,8 @@ export async function verifyObserverPacket(p, {pinnedRoot = p?.pinned_root} = {}
   check('the lease refusal is attributable to the lease alone', lease?.commit_open === true && lease.capability_permitted === true && lease.no_feed_advance === true && lease.feed_reason === 'FEED_OLDER_THAN_OFFLINE_POLICY' && lease.draft_count === 0 && p.scenarios.lease_recovered.replay_already_performed === true);
   const late = p.scenarios?.expired, gone = p.scenarios?.revoked;
   check('the expired refusal is attributable to the commit window alone', late?.feed_fresh === true && late.capability_permitted === true);
-  check('the revoked refusal is attributable to the signed feed entry', gone?.commit_still_open === true && gone.feed_fresh === true);
-  check('a superseded registry refuses a commit signed by the new key', p.scenarios?.rotated?.old_registry_code === 'BUYER_CHAIN_INVALID' && p.scenarios.rotated.old_registry_draft_count === 0);
+  check('revoked: the commit was still open and the receiver state current at refusal (run fields; the signed revocation is checked in the replay)', gone?.commit_still_open === true && gone.feed_fresh === true, undefined, 'unsigned_export');
+  check('superseded registry: the receiver refused the new-key commit and wrote no draft (run fields; the successor statement is checked above)', p.scenarios?.rotated?.old_registry_code === 'BUYER_CHAIN_INVALID' && p.scenarios.rotated.old_registry_draft_count === 0, undefined, 'unsigned_export');
   // Replays the longest connected feed history through the reference subscriber, including the key succession.
   let replayed = false, revokedSeen = false, detail = null;
   try {
