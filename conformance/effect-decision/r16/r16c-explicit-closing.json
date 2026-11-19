@@ -1,0 +1,2414 @@
+[
+ {
+  "class": "launch-only-grant",
+  "domain": "fertiliser-zm",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-fertiliser-zm-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The provincial agriculture coordinating office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmer groups' forum backs a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The input request book shows enough demand for a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The provincial agriculture coordinating office has granted current authorization to launch a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Chipata"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Luangwa Agro Ltd"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "fertiliser-zm",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-fertiliser-zm-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The provincial agriculture coordinating office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmer groups' forum backs a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The input request book shows enough demand for a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The provincial agriculture coordinating office has granted current authorization to launch a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Chipata"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Luangwa Agro Ltd"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "contact-only-grant",
+  "domain": "fertiliser-zm",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-fertiliser-zm-contact-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The provincial agriculture coordinating office has given current permission for the outreach.",
+     "claim_id": "C-CONTACT",
+     "dependency_id": "DEP-CONTACT",
+     "support_links": [
+      {
+       "evidence_id": "R-CONTACT",
+       "locator": "R-CONTACT paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmer groups' forum backs a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The input request book shows enough demand for a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-CONTACT"
+     ],
+     "claim": "The provincial agriculture coordinating office has authorized contact with up to 35 named group chairpersons regarding a 60-day fertiliser distribution to exactly 35 named farmer groups. The authorization is limited to contact.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-CONTACT",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Chipata"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-CONTACT"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Luangwa Agro Ltd"
+   }
+  },
+  "variant": "contact-only-grant"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "fertiliser-zm",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "c-fertiliser-zm-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The provincial agriculture coordinating office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmer groups' forum backs a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The input request book shows enough demand for a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "The provincial agriculture coordinating office has approved a 60-day fertiliser distribution to exactly 35 named farmer groups. The approval authorizes engagement with no more than 35 named group chairpersons, expenditure of up to ZMW 2,900,000 and the launch of the service, and it remains in force until 31 January 2027.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Chipata"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Luangwa Agro Ltd"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "fertiliser-zm",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-fertiliser-zm-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmer groups' forum backs a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The input request book shows enough demand for a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Chipata"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Luangwa Agro Ltd"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "fertiliser-zm",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "c-fertiliser-zm-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The provincial agriculture coordinating office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The provincial agriculture coordinating office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The farmer groups' forum backs a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The input request book shows enough demand for a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The provincial agriculture coordinating office has granted current authorization to launch a 60-day fertiliser distribution to exactly 35 named farmer groups.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "The provincial agriculture coordinating office has approved a 60-day fertiliser distribution to exactly 35 named farmer groups. The approval authorizes engagement with no more than 35 named group chairpersons, expenditure of up to ZMW 2,900,000 and the launch of the service, and it remains in force until 31 January 2027.",
+     "evidence_geography": {
+      "city": "Chipata",
+      "country": "ZM",
+      "region": "Eastern Province"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Chipata"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Luangwa Agro Ltd"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ },
+ {
+  "class": "launch-only-grant",
+  "domain": "water-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-water-gh-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The metropolitan health directorate has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parent-teacher association council backs a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The school order ledger shows enough demand for a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The metropolitan health directorate has granted current authorization to launch a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Kumasi"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kumasi Clean Water Ltd"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "water-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-water-gh-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The metropolitan health directorate has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parent-teacher association council backs a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The school order ledger shows enough demand for a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The metropolitan health directorate has granted current authorization to launch a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Kumasi"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kumasi Clean Water Ltd"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "contact-only-grant",
+  "domain": "water-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-water-gh-contact-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The metropolitan health directorate has given current permission for the outreach.",
+     "claim_id": "C-CONTACT",
+     "dependency_id": "DEP-CONTACT",
+     "support_links": [
+      {
+       "evidence_id": "R-CONTACT",
+       "locator": "R-CONTACT paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parent-teacher association council backs a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The school order ledger shows enough demand for a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-CONTACT"
+     ],
+     "claim": "The metropolitan health directorate has authorized contact with up to 18 named head teachers regarding a 90-day sachet water delivery to exactly 18 named schools. The authorization is limited to contact.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-CONTACT",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Kumasi"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-CONTACT"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Kumasi Clean Water Ltd"
+   }
+  },
+  "variant": "contact-only-grant"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "water-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "c-water-gh-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The metropolitan health directorate approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parent-teacher association council backs a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The school order ledger shows enough demand for a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "The metropolitan health directorate gave written approval on 9 October 2026 for a 90-day sachet water delivery to exactly 18 named schools. It allows the company to contact up to 18 named head teachers, to sign commitments within a ceiling of GHS 480,000, and to launch, for a period ending 30 June 2027.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Kumasi"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kumasi Clean Water Ltd"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "water-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-water-gh-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parent-teacher association council backs a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The school order ledger shows enough demand for a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Kumasi"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kumasi Clean Water Ltd"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "water-gh",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "c-water-gh-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The metropolitan health directorate has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The metropolitan health directorate approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The parent-teacher association council backs a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The school order ledger shows enough demand for a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The metropolitan health directorate has granted current authorization to launch a 90-day sachet water delivery to exactly 18 named schools.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "The metropolitan health directorate gave written approval on 9 October 2026 for a 90-day sachet water delivery to exactly 18 named schools. It allows the company to contact up to 18 named head teachers, to sign commitments within a ceiling of GHS 480,000, and to launch, for a period ending 30 June 2027.",
+     "evidence_geography": {
+      "city": "Kumasi",
+      "country": "GH",
+      "region": "Ashanti Region"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Kumasi"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kumasi Clean Water Ltd"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ },
+ {
+  "class": "launch-only-grant",
+  "domain": "repair-rw",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-repair-rw-launch-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The city trade licensing office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market vendors' cooperative backs a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The repair booking register shows enough demand for a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The city trade licensing office has granted current authorization to launch a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kigali Fix Ltd"
+   }
+  },
+  "variant": "launch-only-grant"
+ },
+ {
+  "class": "launch-only-grant-siblings-mapped",
+  "domain": "repair-rw",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-repair-rw-launch-only-grant-siblings-mapped",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The city trade licensing office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market vendors' cooperative backs a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The repair booking register shows enough demand for a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The city trade licensing office has granted current authorization to launch a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "depends_on_claims": [
+      "U-1"
+     ],
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kigali Fix Ltd"
+   }
+  },
+  "variant": "launch-only-grant-siblings-mapped"
+ },
+ {
+  "class": "contact-only-grant",
+  "domain": "repair-rw",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-repair-rw-contact-only-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The city trade licensing office has given current permission for the outreach.",
+     "claim_id": "C-CONTACT",
+     "dependency_id": "DEP-CONTACT",
+     "support_links": [
+      {
+       "evidence_id": "R-CONTACT",
+       "locator": "R-CONTACT paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market vendors' cooperative backs a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The repair booking register shows enough demand for a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-CONTACT"
+     ],
+     "claim": "The city trade licensing office has authorized contact with up to 7 named market managers regarding a four-month phone repair service at exactly 7 named markets. The authorization is limited to contact.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-CONTACT",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-CONTACT"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Kigali Fix Ltd"
+   }
+  },
+  "variant": "contact-only-grant"
+ },
+ {
+  "class": "whole-programme-grant",
+  "domain": "repair-rw",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "c-repair-rw-whole-programme-grant",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The city trade licensing office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market vendors' cooperative backs a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The repair booking register shows enough demand for a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "claim": "Approval granted: The city trade licensing office approves a four-month phone repair service at exactly 7 named markets, including outreach to 7 named market managers, financial commitments not above RWF 35,000,000, and rollout of the service. Valid until 15 April 2027.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kigali Fix Ltd"
+   }
+  },
+  "variant": "whole-programme-grant"
+ },
+ {
+  "class": "launch-grant-missing",
+  "domain": "repair-rw",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "insufficient"
+   },
+   "EXT-CONTACT": {
+    "analytical": "insufficient"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "insufficient"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional"
+   }
+  },
+  "id": "c-repair-rw-launch-grant-missing",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market vendors' cooperative backs a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The repair booking register shows enough demand for a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    }
+   ],
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kigali Fix Ltd"
+   }
+  },
+  "variant": "launch-grant-missing"
+ },
+ {
+  "class": "sibling-named-own-dependency",
+  "domain": "repair-rw",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable"
+   }
+  },
+  "id": "c-repair-rw-sibling-named-own-dependency",
+  "request": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Using only the records supplied, give the narrowest justified state for the proposal and for each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The city trade licensing office has issued a current launch permit.",
+     "claim_id": "C-LAUNCH",
+     "dependency_id": "DEP-LAUNCH",
+     "support_links": [
+      {
+       "evidence_id": "R-LAUNCH",
+       "locator": "R-LAUNCH paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    },
+    {
+     "claim": "The city trade licensing office approved the complete bounded programme.",
+     "claim_id": "C-FULL",
+     "dependency_id": "DEP-FULL",
+     "support_links": [
+      {
+       "evidence_id": "R-FULL",
+       "locator": "R-FULL paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "evidence_pack": [
+    {
+     "claim": "The market vendors' cooperative backs a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "community_guardian"
+    },
+    {
+     "claim": "The repair booking register shows enough demand for a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "retailer"
+    },
+    {
+     "applies_to_effect_ids": [
+      "EXT-LAUNCH"
+     ],
+     "claim": "The city trade licensing office has granted current authorization to launch a four-month phone repair service at exactly 7 named markets.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-LAUNCH",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    },
+    {
+     "claim": "Approval granted: The city trade licensing office approves a four-month phone repair service at exactly 7 named markets, including outreach to 7 named market managers, financial commitments not above RWF 35,000,000, and rollout of the service. Valid until 15 April 2027.",
+     "evidence_geography": {
+      "city": "Kigali",
+      "country": "RW",
+      "region": "Kigali City"
+     },
+     "evidence_id": "R-FULL",
+     "source_date": "2026-10-24",
+     "stakeholder_class": "regulator"
+    }
+   ],
+   "market_scope": {
+    "country": "RW",
+    "locality": "Kigali"
+   },
+   "requested_effects": [
+    {
+     "description": "Draft the internal plan for this decision.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation on this decision.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Approach the named outside parties about this decision.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Enter the binding external commitment for this decision.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature",
+     "required_dependencies": [
+      "DEP-FULL"
+     ]
+    },
+    {
+     "description": "Start the named programme in the market.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch",
+     "required_dependencies": [
+      "DEP-LAUNCH"
+     ]
+    }
+   ],
+   "subject": {
+    "entity_name": "Kigali Fix Ltd"
+   }
+  },
+  "variant": "sibling-named-own-dependency"
+ }
+]
