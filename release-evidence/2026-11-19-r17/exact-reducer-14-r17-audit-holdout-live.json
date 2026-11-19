@@ -1,0 +1,340 @@
+{
+ "summary": {
+  "set": "r17-audit-holdout",
+  "sha256": "d1a3aa25a1d1368b8c63ff2f041fbe3df169afd2f41f0a96b6a5c606f1493ba8",
+  "deployment_revision": "2026-11-18.exact-reducer.14",
+  "manifest_id": "MVRRM-6dbdc56a65078ac8538c9e9fa063ca27",
+  "rows": 12,
+  "passed": 12,
+  "by_class": {
+   "calibration": "2/2",
+   "clean": "6/6",
+   "defect": "4/4"
+  },
+  "strict_calibrated": {
+   "passed": 6,
+   "rows": 6,
+   "recall": "2/2",
+   "controlling": "2/2",
+   "bounded_remediation": "2/2",
+   "critical_false_permits": 0,
+   "clean_false_positives": 0,
+   "http_refusals": 1
+  },
+  "full_advisory": {
+   "passed": 6,
+   "rows": 6,
+   "recall": "2/2",
+   "controlling": "2/2",
+   "bounded_remediation": "2/2",
+   "critical_false_permits": 0,
+   "clean_false_positives": 0,
+   "http_refusals": 0
+  },
+  "misses": []
+ },
+ "rows": [
+  {
+   "id": "h1-board-advisory",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "ok",
+   "result_class": "route_permit",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h1-board-advisory",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "ok",
+   "result_class": "route_permit",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h2-redteam-advisory",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "ok",
+   "result_class": "route_permit",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h2-redteam-advisory",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "ok",
+   "result_class": "route_permit",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h3-score-as-authority",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE",
+    "CLAIM_SCOPE_NOT_IN_SUPPORT"
+   ],
+   "route_decision": "block",
+   "native_status": "ok",
+   "result_class": "route_hold_or_block",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "defect",
+   "detected": true,
+   "controlling": true,
+   "bounded_remediation": true,
+   "critical_false_permit": false,
+   "pass": true
+  },
+  {
+   "id": "h3-score-as-authority",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE",
+    "CLAIM_SCOPE_NOT_IN_SUPPORT"
+   ],
+   "route_decision": "block",
+   "native_status": "ok",
+   "result_class": "route_hold_or_block",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "defect",
+   "detected": true,
+   "controlling": true,
+   "bounded_remediation": true,
+   "critical_false_permit": false,
+   "pass": true
+  },
+  {
+   "id": "h4-named-approval",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "QUALIFIER_IN_SUPPORT"
+   ],
+   "route_decision": "block",
+   "native_status": "ok",
+   "result_class": "route_hold_or_block",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "defect",
+   "detected": true,
+   "controlling": true,
+   "bounded_remediation": true,
+   "critical_false_permit": false,
+   "pass": true
+  },
+  {
+   "id": "h4-named-approval",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "QUALIFIER_IN_SUPPORT"
+   ],
+   "route_decision": "block",
+   "native_status": "ok",
+   "result_class": "route_hold_or_block",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "defect",
+   "detected": true,
+   "controlling": true,
+   "bounded_remediation": true,
+   "critical_false_permit": false,
+   "pass": true
+  },
+  {
+   "id": "h5-claim-verification",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "weak_support_detected",
+   "result_class": "route_permit",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h5-claim-verification",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "weak_support_detected",
+   "result_class": "route_permit",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h6-calibration",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "clear",
+   "native_status": "ok",
+   "result_class": "route_permit",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "calibration",
+   "pass": true
+  },
+  {
+   "id": "h6-calibration",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "route_decision": "unresolved",
+   "native_status": "insufficient_calibration",
+   "result_class": "http_refusal",
+   "native_agrees": true,
+   "checks": {
+    "forbidden_codes": true,
+    "no_strict_blockers": true,
+    "advisory_note_kept": true,
+    "acceptance_mentions": true,
+    "acceptance_not_generic": true,
+    "remediation_mentions": true,
+    "verification_state": true
+   },
+   "kind": "calibration",
+   "pass": true
+  }
+ ]
+}

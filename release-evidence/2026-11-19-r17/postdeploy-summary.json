@@ -1,0 +1,108 @@
+{
+ "deployment_revision": "2026-11-18.exact-reducer.15",
+ "provider_version_id": "2e706a45-9119-43aa-857d-dde45fa4bc63",
+ "results": {
+  "r16-audit-holdout": 1,
+  "r16-audit-closing": 1,
+  "r16c-direct-closing": 1,
+  "r16c-explicit-closing": 0,
+  "r16b-direct-holdout": 0,
+  "r16b-explicit-holdout": 0,
+  "r16-direct-holdout": 1,
+  "r16-direct-closing": 0,
+  "r16-explicit-holdout": 1,
+  "r16-explicit-closing": 0,
+  "r15-direct-holdout": 0,
+  "r15-explicit-holdout": 0,
+  "r15-audit-holdout": 1,
+  "r15-direct-closing": 1,
+  "r15-explicit-closing": 1,
+  "r15-audit-closing": 1,
+  "r15-audit-addendum": 0,
+  "r14-direct-closing": 0,
+  "r14-direct-final": 0,
+  "r14-audit-final": 0,
+  "r14-direct-holdout": 0,
+  "r14-audit-holdout": 0,
+  "r14-direct-dev": 0,
+  "r14-audit-dev": 0,
+  "blind-a": 0,
+  "blind-b": 0,
+  "blind-c": 0,
+  "evaluator-exact-r14": 0,
+  "handoff-matrix-r15": 0,
+  "handoff-matrix-r16": 0,
+  "r14-contract": 0,
+  "first-call-parity": 0,
+  "fresh-live": 0,
+  "prose-live": 0,
+  "route-live": 0,
+  "live-audit": 0,
+  "live-effects": 0,
+  "live-comparable": 0,
+  "receiver-isolation": 0,
+  "receiver-reconnect": 0,
+  "receiver-store": 0,
+  "receiver-rotation": 0,
+  "throttle-recovery": 0
+ },
+ "reruns": {
+  "blind-a": {
+   "first_exit": 0,
+   "cause": "a local network outage: DNS lookups for africanmarketos.com failed (getaddrinfo ENOTFOUND) on two MCP rows",
+   "rerun_exit": 0
+  },
+  "live-effects": {
+   "first_exit": 1,
+   "cause": "a local network outage: DNS lookups for africanmarketos.com failed (getaddrinfo ENOTFOUND)",
+   "rerun_exit": 0
+  },
+  "live-comparable": {
+   "first_exit": 1,
+   "cause": "a local network outage: DNS lookups for africanmarketos.com failed (getaddrinfo ENOTFOUND)",
+   "rerun_exit": 0
+  },
+  "throttle-recovery": {
+   "first_exit": 1,
+   "cause": "a local network outage: DNS lookups for africanmarketos.com failed (getaddrinfo ENOTFOUND)",
+   "rerun_exit": 0
+  },
+  "receiver-isolation": {
+   "first_exit": 1,
+   "cause": "a local network outage: DNS lookups for africanmarketos.com failed (getaddrinfo ENOTFOUND); a second run refused feed observations dated after the local clock, which ran 12h44m behind real time",
+   "rerun_exit": 0,
+   "rerun_clock": "Node clock set to the API server time from its HTTP Date header (clock-correct.mjs); no system setting changed"
+  },
+  "receiver-reconnect": {
+   "first_exit": 1,
+   "cause": "as receiver-isolation",
+   "rerun_exit": 0,
+   "rerun_clock": "as receiver-isolation"
+  },
+  "receiver-store": {
+   "first_exit": 1,
+   "cause": "depends on receiver-reconnect",
+   "rerun_exit": 0
+  }
+ },
+ "transport_runs": [
+  {
+   "run": 1,
+   "exit": 0,
+   "primary": 112,
+   "effect": 112
+  },
+  {
+   "run": 2,
+   "exit": 0,
+   "primary": 112,
+   "effect": 112
+  },
+  {
+   "run": 3,
+   "exit": 0,
+   "primary": 112,
+   "effect": 112
+  }
+ ]
+}

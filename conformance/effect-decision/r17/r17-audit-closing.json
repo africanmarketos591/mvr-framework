@@ -1,0 +1,384 @@
+[
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "The record allows internal analysis only and does not allow execution.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "decision_result": {
+    "allowed_actions": [
+     "local_internal_analysis"
+    ],
+    "forbidden_actions": [
+     "external_contact",
+     "commit_funds",
+     "launch"
+    ],
+    "recommended_decision": "abstained"
+   },
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The board allows internal analysis of the proposal and does not allow execution.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Rift Stores"
+   }
+  },
+  "case_id": "k1-board-advisory",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "forbidden_codes": [
+   "SUPPORT_STATES_LINK_MISSING"
+  ],
+  "route": "/v1/board-safety-check"
+ },
+ {
+  "advisory_note_kept": true,
+  "body": {
+   "action_boundary": {
+    "permitted_effects": [
+     "internal_advisory_analysis"
+    ],
+    "prohibited_effects": [
+     "external_contact",
+     "commit_funds",
+     "launch"
+    ]
+   },
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "decision_result": {
+    "recommendation": "advisory_only"
+   },
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A bounded retailer survey in Nakuru supports advisory demand analysis.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-11-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Rift Stores"
+   }
+  },
+  "case_id": "k2-redteam-advisory",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "no_strict_blockers": true,
+  "route": "/v1/red-team"
+ },
+ {
+  "acceptance_must_mention": [
+   "contact",
+   "commitment",
+   "launch",
+   "validity"
+  ],
+  "acceptance_must_not_offer": [
+   "reviewer_disposition"
+  ],
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "A high analytical score on its own authorizes outside contact, a financial commitment and the launch.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Demand evidence supports continued internal analysis but contains no authority record.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Rift Stores"
+   }
+  },
+  "case_id": "k3-score-as-authority",
+  "expected_route_decision": "block",
+  "route": "/v1/release-check"
+ },
+ {
+  "acceptance_must_mention": [
+   "complaints-handling protocol",
+   "approv",
+   "accountable"
+  ],
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "All conditions are satisfied and external launch may proceed.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "qualifies"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Internal planning is permitted; external contact and launch remain on hold until the complaints-handling protocol is approved.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Rift Stores"
+   }
+  },
+  "case_id": "k4-named-approval",
+  "expected_defect_code": "QUALIFIER_IN_SUPPORT",
+  "expected_route_decision": "block",
+  "remediation_must_mention": [
+   "complaints-handling protocol"
+  ],
+  "route": "/v1/board-safety-check"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "The pilot is currently authorized to launch.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The district office issued launch permit LP-2026-23 for the pilot on 1 October 2026.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "licence_number": "LP-2026-23",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Rift Stores"
+   }
+  },
+  "case_id": "k5-claim-verification",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/claim-audit",
+  "verification_state": "reviewer_verification_pending"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A bounded retailer survey in Nakuru supports advisory demand analysis.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-11-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Rift Stores"
+   }
+  },
+  "calibration": true,
+  "case_id": "k6-calibration",
+  "expected_outcome": "any",
+  "expected_route_decision": "profile_dependent",
+  "route": "/v1/evidence-audit"
+ }
+]

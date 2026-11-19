@@ -1,0 +1,493 @@
+{
+ "note": "AMOS-authored sets, not the evaluator cohort. No retries. The R17 sets were frozen before any R17 engine change, baselined on production exact-reducer.13, and first scored on the deployed exact-reducer.14: holdouts first, then closing sets, with no engine change between. None was run in process before deployment. exact-reducer.15 fixed two causes found on .14; its scores on these sets are after-fix results, not first exposure.",
+ "r17-closure-holdout": {
+  "baseline_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 480,
+   "passed": 192,
+   "by_class": {
+    "G": "60/60",
+    "M": "60/60",
+    "named_step": "72/360"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 96,
+    "rows": 240,
+    "state": "216/240",
+    "named_step": "0/144",
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 96,
+    "rows": 240,
+    "state": "216/240",
+    "named_step": "0/144",
+    "false_favorable": 0
+   },
+   "misses": [
+    "h-cocoa-ci-W1",
+    "h-cocoa-ci-W2",
+    "h-cocoa-ci-W3",
+    "h-cocoa-ci-W4",
+    "h-cocoa-ci-W5",
+    "h-cocoa-ci-W6",
+    "h-grain-ug-W1",
+    "h-grain-ug-W2",
+    "h-grain-ug-W3",
+    "h-grain-ug-W4",
+    "h-grain-ug-W5",
+    "h-grain-ug-W6",
+    "h-pharma-ng-W1",
+    "h-pharma-ng-W2",
+    "h-pharma-ng-W3",
+    "h-pharma-ng-W4",
+    "h-pharma-ng-W5",
+    "h-pharma-ng-W6",
+    "h-solar-ke-W1",
+    "h-solar-ke-W2",
+    "h-solar-ke-W3",
+    "h-solar-ke-W4",
+    "h-solar-ke-W5",
+    "h-solar-ke-W6",
+    "h-textile-et-W1",
+    "h-textile-et-W2",
+    "h-textile-et-W3",
+    "h-textile-et-W4",
+    "h-textile-et-W5",
+    "h-textile-et-W6",
+    "h-transport-sn-W1",
+    "h-transport-sn-W2",
+    "h-transport-sn-W3",
+    "h-transport-sn-W4",
+    "h-transport-sn-W5",
+    "h-transport-sn-W6"
+   ]
+  },
+  "first_exposure_exact_reducer_14": {
+   "deployment_revision": "2026-11-18.exact-reducer.14",
+   "rows": 480,
+   "passed": 468,
+   "by_class": {
+    "G": "60/60",
+    "M": "60/60",
+    "named_step": "348/360"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 234,
+    "rows": 240,
+    "state": "236/240",
+    "named_step": "138/144",
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 234,
+    "rows": 240,
+    "state": "236/240",
+    "named_step": "138/144",
+    "false_favorable": 0
+   },
+   "misses": [
+    "h-cocoa-ci-W4",
+    "h-grain-ug-W4"
+   ]
+  },
+  "after_fixes_exact_reducer_15": {
+   "deployment_revision": "2026-11-18.exact-reducer.15",
+   "rows": 480,
+   "passed": 480,
+   "by_class": {
+    "G": "60/60",
+    "M": "60/60",
+    "named_step": "360/360"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 240,
+    "rows": 240,
+    "state": "240/240",
+    "named_step": "144/144",
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 240,
+    "rows": 240,
+    "state": "240/240",
+    "named_step": "144/144",
+    "false_favorable": 0
+   },
+   "misses": []
+  }
+ },
+ "r17-audit-holdout": {
+  "baseline_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 12,
+   "passed": 6,
+   "by_class": {
+    "calibration": "2/2",
+    "clean": "2/6",
+    "defect": "2/4"
+   },
+   "strict_calibrated": {
+    "passed": 3,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "1/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 2,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 3,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "1/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 2,
+    "http_refusals": 0
+   },
+   "misses": [
+    "h2-redteam-advisory",
+    "h4-named-approval",
+    "h5-claim-verification"
+   ]
+  },
+  "first_exposure_exact_reducer_14": {
+   "deployment_revision": "2026-11-18.exact-reducer.14",
+   "rows": 12,
+   "passed": 12,
+   "by_class": {
+    "calibration": "2/2",
+    "clean": "6/6",
+    "defect": "4/4"
+   },
+   "strict_calibrated": {
+    "passed": 6,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "2/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 6,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "2/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 0,
+    "http_refusals": 0
+   },
+   "misses": []
+  },
+  "after_fixes_exact_reducer_15": {
+   "deployment_revision": "2026-11-18.exact-reducer.15",
+   "rows": 12,
+   "passed": 12,
+   "by_class": {
+    "calibration": "2/2",
+    "clean": "6/6",
+    "defect": "4/4"
+   },
+   "strict_calibrated": {
+    "passed": 6,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "2/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 6,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "2/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 0,
+    "http_refusals": 0
+   },
+   "misses": []
+  }
+ },
+ "r17-closure-closing": {
+  "baseline_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 240,
+   "passed": 96,
+   "by_class": {
+    "G": "30/30",
+    "M": "30/30",
+    "named_step": "36/180"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 48,
+    "rows": 120,
+    "state": "108/120",
+    "named_step": "0/72",
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 48,
+    "rows": 120,
+    "state": "108/120",
+    "named_step": "0/72",
+    "false_favorable": 0
+   },
+   "misses": [
+    "k-repair-rw-W1",
+    "k-repair-rw-W2",
+    "k-repair-rw-W3",
+    "k-repair-rw-W4",
+    "k-repair-rw-W5",
+    "k-repair-rw-W6",
+    "k-wallet-gh-W1",
+    "k-wallet-gh-W2",
+    "k-wallet-gh-W3",
+    "k-wallet-gh-W4",
+    "k-wallet-gh-W5",
+    "k-wallet-gh-W6",
+    "k-water-zm-W1",
+    "k-water-zm-W2",
+    "k-water-zm-W3",
+    "k-water-zm-W4",
+    "k-water-zm-W5",
+    "k-water-zm-W6"
+   ]
+  },
+  "first_exposure_exact_reducer_14": {
+   "deployment_revision": "2026-11-18.exact-reducer.14",
+   "rows": 240,
+   "passed": 240,
+   "by_class": {
+    "G": "30/30",
+    "M": "30/30",
+    "named_step": "180/180"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 120,
+    "rows": 120,
+    "state": "120/120",
+    "named_step": "72/72",
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 120,
+    "rows": 120,
+    "state": "120/120",
+    "named_step": "72/72",
+    "false_favorable": 0
+   },
+   "misses": []
+  },
+  "after_fixes_exact_reducer_15": {
+   "deployment_revision": "2026-11-18.exact-reducer.15",
+   "rows": 240,
+   "passed": 240,
+   "by_class": {
+    "G": "30/30",
+    "M": "30/30",
+    "named_step": "180/180"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 120,
+    "rows": 120,
+    "state": "120/120",
+    "named_step": "72/72",
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 120,
+    "rows": 120,
+    "state": "120/120",
+    "named_step": "72/72",
+    "false_favorable": 0
+   },
+   "misses": []
+  }
+ },
+ "r17-audit-closing": {
+  "baseline_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 12,
+   "passed": 6,
+   "by_class": {
+    "calibration": "2/2",
+    "clean": "2/6",
+    "defect": "2/4"
+   },
+   "strict_calibrated": {
+    "passed": 3,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "1/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 2,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 3,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "1/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 2,
+    "http_refusals": 0
+   },
+   "misses": [
+    "k1-board-advisory",
+    "k4-named-approval",
+    "k5-claim-verification"
+   ]
+  },
+  "first_exposure_exact_reducer_14": {
+   "deployment_revision": "2026-11-18.exact-reducer.14",
+   "rows": 12,
+   "passed": 12,
+   "by_class": {
+    "calibration": "2/2",
+    "clean": "6/6",
+    "defect": "4/4"
+   },
+   "strict_calibrated": {
+    "passed": 6,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "2/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 6,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "2/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 0,
+    "http_refusals": 0
+   },
+   "misses": []
+  },
+  "after_fixes_exact_reducer_15": {
+   "deployment_revision": "2026-11-18.exact-reducer.15",
+   "rows": 12,
+   "passed": 12,
+   "by_class": {
+    "calibration": "2/2",
+    "clean": "6/6",
+    "defect": "4/4"
+   },
+   "strict_calibrated": {
+    "passed": 6,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "2/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 6,
+    "rows": 6,
+    "recall": "2/2",
+    "controlling": "2/2",
+    "bounded_remediation": "2/2",
+    "critical_false_permits": 0,
+    "clean_false_positives": 0,
+    "http_refusals": 0
+   },
+   "misses": []
+  }
+ },
+ "evaluator_exposed_r16": {
+  "exact_reducer_14": {
+   "direct": "72/72",
+   "false_favorable": 0,
+   "audit": "18/18",
+   "misses": []
+  },
+  "exact_reducer_15": {
+   "direct": "72/72",
+   "false_favorable": 0,
+   "audit": "18/18",
+   "misses": []
+  }
+ },
+ "handoff_matrix_r17": {
+  "exact_reducer_14": {
+   "target": "https://africanmarketos.com",
+   "deployment_revision": "2026-11-18.exact-reducer.14",
+   "rows": 20,
+   "passed": 16,
+   "failed": [
+    {
+     "entry": "rest",
+     "continuation": "rest",
+     "profile": "strict_calibrated",
+     "effects": "typed",
+     "failures": [
+      "/v1/decision-check: HTTP 422 "
+     ]
+    },
+    {
+     "entry": "mcp",
+     "continuation": "rest",
+     "profile": "strict_calibrated",
+     "effects": "typed",
+     "failures": [
+      "/v1/decision-check: HTTP 422 "
+     ]
+    },
+    {
+     "entry": "rest",
+     "continuation": "rest",
+     "profile": "strict_calibrated",
+     "effects": "unknown_type",
+     "failures": [
+      "/v1/decision-check: HTTP 422 "
+     ]
+    },
+    {
+     "entry": "mcp",
+     "continuation": "rest",
+     "profile": "strict_calibrated",
+     "effects": "unknown_type",
+     "failures": [
+      "/v1/decision-check: HTTP 422 "
+     ]
+    }
+   ]
+  },
+  "exact_reducer_15": {
+   "target": "https://africanmarketos.com",
+   "deployment_revision": "2026-11-18.exact-reducer.15",
+   "rows": 20,
+   "passed": 20,
+   "failed": []
+  }
+ }
+}
