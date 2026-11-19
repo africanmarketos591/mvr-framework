@@ -1,0 +1,8 @@
+{
+ "note": "Cloudflare's own deployment records for mvr-api-v1. During the R17 build the local machine clock ran 12 hours 44 minutes behind real time, so verified_at in deployment-verification*.json for .14 and .15 shows local time. These provider times are authoritative.",
+ "deployments": [
+  {"deployment_revision": "2026-11-18.exact-reducer.15", "provider_version_id": "2e706a45-9119-43aa-857d-dde45fa4bc63", "provider_deployment_id": "a3a5d2b7-a70b-46cd-b4f6-ee7ed91079d1", "created_on": "2026-11-19T18:44:33.232876Z"},
+  {"deployment_revision": "2026-11-18.exact-reducer.14", "provider_version_id": "dd92a952-74f6-472c-8752-842173402f50", "provider_deployment_id": "aae22926-0e8c-43d7-815e-4baf75f67554", "created_on": "2026-11-19T18:06:25.038423Z"},
+  {"deployment_revision": "2026-11-18.exact-reducer.13", "provider_version_id": "491daeb5-9af6-4f89-87e5-e344bcb8b51e", "provider_deployment_id": "4a8a3a10-c9cc-4a69-9fba-55ee4128f805", "created_on": "2026-11-19T11:21:27.232225Z"}
+ ]
+}

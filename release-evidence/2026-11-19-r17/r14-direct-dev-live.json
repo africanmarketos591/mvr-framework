@@ -1,0 +1,4127 @@
+{
+ "summary": {
+  "set": "r14-direct-dev",
+  "sha256": "c3ac68253e3cf0145d4e9698f201a79bf51c43f7882a497a74b61fd89d4afb99",
+  "deployment_revision": "2026-11-18.exact-reducer.15",
+  "manifest_id": "MVRRM-0b8a175f3497359319dabd1b6321acde",
+  "rows": 240,
+  "passed": 240,
+  "by_class": {
+   "P": "40/40",
+   "I": "40/40",
+   "M": "40/40",
+   "C": "40/40",
+   "R": "40/40",
+   "X": "40/40"
+  },
+  "false_favorable": 0,
+  "execution_authorized": 0,
+  "misses": []
+ },
+ "rows": [
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-water-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-seed-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-clinic-gh-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "dev-solar-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  }
+ ]
+}
