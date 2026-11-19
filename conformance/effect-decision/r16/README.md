@@ -35,3 +35,9 @@ They now run in CI as regression fixtures. The `r16b-*` holdouts were written an
 ## Label correction
 
 `../label-corrections-r16.json` changes one expected label in the earlier R14 and R15 direct sets. Where the only gap is a missing permission or completion record, the internal recommendation is now expected to be `conditional`, not `insufficient`. The frozen files are unchanged; the R14 and R15 runners apply the mapping and mark each corrected row with `label_corrected_from`. The evaluator's R16 exemplar `CASE-0A8BD642BB491B605B8C` scores `insufficient` there as a miss, and its R14 letter scored `favorable` there as a false favourable, which leaves `conditional`.
+
+The same file corrects one audit label. The R15 red-team clean controls `h1-clean` and `k1-clean` expected the route's controlling decision to be `clear`. Their response carries a high native strict-mode blocker, `DECISION_SCOPE_REQUIRED`, because the request declares no decision scope. The R16 review asked that the controlling output never say `clear` beside such a blocker, so the expected decision is now `hold`. No defect finding is raised and `audit_outcome` stays `no_defects_found`. The R15 runner applies this correction and marks the rows.
+
+## R16c closing sets
+
+`r16c-direct-closing` and `r16c-explicit-closing` were frozen after the R16b holdouts were first scored on `2026-11-18.exact-reducer.12`, and before any of their misses were read. They use three more domains and three new wordings per variant, and are first scored on the next deployed build.
