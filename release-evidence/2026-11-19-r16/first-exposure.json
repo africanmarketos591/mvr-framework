@@ -1,0 +1,1135 @@
+{
+ "note": "AMOS-authored sets, not the evaluator cohort. No retries. Baselines ran on the production build of the time. The r16b holdouts were frozen after the first engine changes and before any engine run on them; their first exposure was the deployed exact-reducer.12. The r16c closing sets were frozen after that, before any r16b miss was read; their first exposure was the deployed exact-reducer.13. The r16 audit holdout was first scored on .12 and the r16 audit closing set on .13. The r16 direct and explicit sets were scored in process before deployment during regression triage, so they are development sets without first-exposure status. The evaluator exposed rows are regression cases, reported separately.",
+ "fresh_holdout_direct": {
+  "baseline_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 516,
+   "passed": 292,
+   "by_class": {
+    "D": "12/60",
+    "F": "44/60",
+    "G": "12/60",
+    "GI": "12/60",
+    "H": "44/60",
+    "M": "48/60",
+    "R": "48/48",
+    "S": "24/60",
+    "X": "48/48"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 146,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 146,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "misses": [
+    "b-bus-sn-D",
+    "b-bus-sn-G",
+    "b-bus-sn-GI",
+    "b-bus-sn-H",
+    "b-bus-sn-M",
+    "b-bus-sn-S",
+    "b-cookstove-ug-D",
+    "b-cookstove-ug-F",
+    "b-cookstove-ug-G",
+    "b-cookstove-ug-GI",
+    "b-cookstove-ug-M",
+    "b-cookstove-ug-S",
+    "b-honey-et-D",
+    "b-honey-et-F",
+    "b-honey-et-G",
+    "b-honey-et-GI",
+    "b-honey-et-M",
+    "b-honey-et-S",
+    "b-laundry-ci-D",
+    "b-laundry-ci-G",
+    "b-laundry-ci-GI",
+    "b-laundry-ci-M",
+    "b-laundry-ci-S",
+    "b-pharmacy-ke-D",
+    "b-pharmacy-ke-G",
+    "b-pharmacy-ke-GI",
+    "b-pharmacy-ke-M",
+    "b-pharmacy-ke-S",
+    "b-poultry-ng-D",
+    "b-poultry-ng-G",
+    "b-poultry-ng-GI",
+    "b-poultry-ng-H",
+    "b-poultry-ng-M",
+    "b-poultry-ng-S"
+   ]
+  },
+  "first_exposure_exact_reducer_12": {
+   "deployment_revision": "2026-11-18.exact-reducer.12",
+   "rows": 516,
+   "passed": 336,
+   "by_class": {
+    "D": "12/60",
+    "F": "60/60",
+    "G": "12/60",
+    "GI": "12/60",
+    "H": "44/60",
+    "M": "60/60",
+    "R": "48/48",
+    "S": "40/60",
+    "X": "48/48"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 168,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 168,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "misses": [
+    "b-bus-sn-D",
+    "b-bus-sn-G",
+    "b-bus-sn-GI",
+    "b-bus-sn-H",
+    "b-bus-sn-S",
+    "b-cookstove-ug-D",
+    "b-cookstove-ug-G",
+    "b-cookstove-ug-GI",
+    "b-cookstove-ug-S",
+    "b-honey-et-D",
+    "b-honey-et-G",
+    "b-honey-et-GI",
+    "b-honey-et-S",
+    "b-laundry-ci-D",
+    "b-laundry-ci-G",
+    "b-laundry-ci-GI",
+    "b-laundry-ci-S",
+    "b-pharmacy-ke-D",
+    "b-pharmacy-ke-G",
+    "b-pharmacy-ke-GI",
+    "b-pharmacy-ke-S",
+    "b-poultry-ng-D",
+    "b-poultry-ng-G",
+    "b-poultry-ng-GI",
+    "b-poultry-ng-H",
+    "b-poultry-ng-S"
+   ]
+  },
+  "after_fixes_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 516,
+   "passed": 516,
+   "by_class": {
+    "D": "60/60",
+    "F": "60/60",
+    "G": "60/60",
+    "GI": "60/60",
+    "H": "60/60",
+    "M": "60/60",
+    "R": "48/48",
+    "S": "60/60",
+    "X": "48/48"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 258,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 258,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "misses": []
+  }
+ },
+ "fresh_holdout_explicit": {
+  "baseline_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 360,
+   "passed": 144,
+   "by_class": {
+    "contact-only-grant": "24/60",
+    "launch-grant-missing": "48/60",
+    "launch-only-grant": "24/60",
+    "launch-only-grant-siblings-mapped": "24/60",
+    "sibling-named-own-dependency": "12/60",
+    "whole-programme-grant": "12/60"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 72,
+    "rows": 180,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 72,
+    "rows": 180,
+    "false_favorable": 0
+   },
+   "misses": [
+    "b-bus-sn-contact-only-grant",
+    "b-bus-sn-launch-grant-missing",
+    "b-bus-sn-launch-only-grant",
+    "b-bus-sn-launch-only-grant-siblings-mapped",
+    "b-bus-sn-sibling-named-own-dependency",
+    "b-bus-sn-whole-programme-grant",
+    "b-cookstove-ug-contact-only-grant",
+    "b-cookstove-ug-launch-grant-missing",
+    "b-cookstove-ug-launch-only-grant",
+    "b-cookstove-ug-launch-only-grant-siblings-mapped",
+    "b-cookstove-ug-sibling-named-own-dependency",
+    "b-cookstove-ug-whole-programme-grant",
+    "b-honey-et-contact-only-grant",
+    "b-honey-et-launch-grant-missing",
+    "b-honey-et-launch-only-grant",
+    "b-honey-et-launch-only-grant-siblings-mapped",
+    "b-honey-et-sibling-named-own-dependency",
+    "b-honey-et-whole-programme-grant",
+    "b-laundry-ci-contact-only-grant",
+    "b-laundry-ci-launch-grant-missing",
+    "b-laundry-ci-launch-only-grant",
+    "b-laundry-ci-launch-only-grant-siblings-mapped",
+    "b-laundry-ci-sibling-named-own-dependency",
+    "b-laundry-ci-whole-programme-grant",
+    "b-pharmacy-ke-contact-only-grant",
+    "b-pharmacy-ke-launch-grant-missing",
+    "b-pharmacy-ke-launch-only-grant",
+    "b-pharmacy-ke-launch-only-grant-siblings-mapped",
+    "b-pharmacy-ke-sibling-named-own-dependency",
+    "b-pharmacy-ke-whole-programme-grant",
+    "b-poultry-ng-contact-only-grant",
+    "b-poultry-ng-launch-grant-missing",
+    "b-poultry-ng-launch-only-grant",
+    "b-poultry-ng-launch-only-grant-siblings-mapped",
+    "b-poultry-ng-sibling-named-own-dependency",
+    "b-poultry-ng-whole-programme-grant"
+   ]
+  },
+  "first_exposure_exact_reducer_12": {
+   "deployment_revision": "2026-11-18.exact-reducer.12",
+   "rows": 360,
+   "passed": 228,
+   "by_class": {
+    "contact-only-grant": "48/60",
+    "launch-grant-missing": "60/60",
+    "launch-only-grant": "48/60",
+    "launch-only-grant-siblings-mapped": "48/60",
+    "sibling-named-own-dependency": "12/60",
+    "whole-programme-grant": "12/60"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 114,
+    "rows": 180,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 114,
+    "rows": 180,
+    "false_favorable": 0
+   },
+   "misses": [
+    "b-bus-sn-contact-only-grant",
+    "b-bus-sn-launch-only-grant",
+    "b-bus-sn-launch-only-grant-siblings-mapped",
+    "b-bus-sn-sibling-named-own-dependency",
+    "b-bus-sn-whole-programme-grant",
+    "b-cookstove-ug-contact-only-grant",
+    "b-cookstove-ug-launch-only-grant",
+    "b-cookstove-ug-launch-only-grant-siblings-mapped",
+    "b-cookstove-ug-sibling-named-own-dependency",
+    "b-cookstove-ug-whole-programme-grant",
+    "b-honey-et-contact-only-grant",
+    "b-honey-et-launch-only-grant",
+    "b-honey-et-launch-only-grant-siblings-mapped",
+    "b-honey-et-sibling-named-own-dependency",
+    "b-honey-et-whole-programme-grant",
+    "b-laundry-ci-contact-only-grant",
+    "b-laundry-ci-launch-only-grant",
+    "b-laundry-ci-launch-only-grant-siblings-mapped",
+    "b-laundry-ci-sibling-named-own-dependency",
+    "b-laundry-ci-whole-programme-grant",
+    "b-pharmacy-ke-contact-only-grant",
+    "b-pharmacy-ke-launch-only-grant",
+    "b-pharmacy-ke-launch-only-grant-siblings-mapped",
+    "b-pharmacy-ke-sibling-named-own-dependency",
+    "b-pharmacy-ke-whole-programme-grant",
+    "b-poultry-ng-contact-only-grant",
+    "b-poultry-ng-launch-only-grant",
+    "b-poultry-ng-launch-only-grant-siblings-mapped",
+    "b-poultry-ng-sibling-named-own-dependency",
+    "b-poultry-ng-whole-programme-grant"
+   ]
+  },
+  "after_fixes_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 360,
+   "passed": 360,
+   "by_class": {
+    "contact-only-grant": "60/60",
+    "launch-grant-missing": "60/60",
+    "launch-only-grant": "60/60",
+    "launch-only-grant-siblings-mapped": "60/60",
+    "sibling-named-own-dependency": "60/60",
+    "whole-programme-grant": "60/60"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 180,
+    "rows": 180,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 180,
+    "rows": 180,
+    "false_favorable": 0
+   },
+   "misses": []
+  }
+ },
+ "closing_direct": {
+  "baseline_exact_reducer_12": {
+   "deployment_revision": "2026-11-18.exact-reducer.12",
+   "rows": 258,
+   "passed": 162,
+   "by_class": {
+    "D": "6/30",
+    "F": "26/30",
+    "G": "6/30",
+    "GI": "6/30",
+    "H": "22/30",
+    "M": "30/30",
+    "R": "24/24",
+    "S": "18/30",
+    "X": "24/24"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 81,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 81,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "misses": [
+    "c-fertiliser-zm-D",
+    "c-fertiliser-zm-G",
+    "c-fertiliser-zm-GI",
+    "c-fertiliser-zm-S",
+    "c-repair-rw-D",
+    "c-repair-rw-F",
+    "c-repair-rw-G",
+    "c-repair-rw-GI",
+    "c-repair-rw-S",
+    "c-water-gh-D",
+    "c-water-gh-G",
+    "c-water-gh-GI",
+    "c-water-gh-H",
+    "c-water-gh-S"
+   ]
+  },
+  "first_exposure_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 258,
+   "passed": 224,
+   "by_class": {
+    "D": "22/30",
+    "F": "26/30",
+    "G": "22/30",
+    "GI": "22/30",
+    "H": "30/30",
+    "M": "30/30",
+    "R": "24/24",
+    "S": "24/30",
+    "X": "24/24"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 112,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 112,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "misses": [
+    "c-fertiliser-zm-S",
+    "c-repair-rw-D",
+    "c-repair-rw-F",
+    "c-water-gh-G",
+    "c-water-gh-GI",
+    "c-water-gh-S"
+   ]
+  }
+ },
+ "closing_explicit": {
+  "baseline_exact_reducer_12": {
+   "deployment_revision": "2026-11-18.exact-reducer.12",
+   "rows": 180,
+   "passed": 114,
+   "by_class": {
+    "contact-only-grant": "24/30",
+    "launch-grant-missing": "30/30",
+    "launch-only-grant": "24/30",
+    "launch-only-grant-siblings-mapped": "24/30",
+    "sibling-named-own-dependency": "6/30",
+    "whole-programme-grant": "6/30"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 57,
+    "rows": 90,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 57,
+    "rows": 90,
+    "false_favorable": 0
+   },
+   "misses": [
+    "c-fertiliser-zm-contact-only-grant",
+    "c-fertiliser-zm-launch-only-grant",
+    "c-fertiliser-zm-launch-only-grant-siblings-mapped",
+    "c-fertiliser-zm-sibling-named-own-dependency",
+    "c-fertiliser-zm-whole-programme-grant",
+    "c-repair-rw-contact-only-grant",
+    "c-repair-rw-launch-only-grant",
+    "c-repair-rw-launch-only-grant-siblings-mapped",
+    "c-repair-rw-sibling-named-own-dependency",
+    "c-repair-rw-whole-programme-grant",
+    "c-water-gh-contact-only-grant",
+    "c-water-gh-launch-only-grant",
+    "c-water-gh-launch-only-grant-siblings-mapped",
+    "c-water-gh-sibling-named-own-dependency",
+    "c-water-gh-whole-programme-grant"
+   ]
+  },
+  "first_exposure_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 180,
+   "passed": 158,
+   "by_class": {
+    "contact-only-grant": "30/30",
+    "launch-grant-missing": "30/30",
+    "launch-only-grant": "30/30",
+    "launch-only-grant-siblings-mapped": "30/30",
+    "sibling-named-own-dependency": "22/30",
+    "whole-programme-grant": "16/30"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 79,
+    "rows": 90,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 79,
+    "rows": 90,
+    "false_favorable": 0
+   },
+   "misses": [
+    "c-fertiliser-zm-whole-programme-grant",
+    "c-water-gh-sibling-named-own-dependency",
+    "c-water-gh-whole-programme-grant"
+   ]
+  }
+ },
+ "holdout_audit": {
+  "baseline_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 20,
+   "passed": 3,
+   "by_class": {
+    "calibration": "1/2",
+    "clean": "2/8",
+    "defect": "0/10"
+   },
+   "strict_calibrated": {
+    "passed": 1,
+    "rows": 10,
+    "recall": "1/5",
+    "controlling": "0/5",
+    "bounded_remediation": "3/5",
+    "critical_false_permits": 0,
+    "clean_false_positives": 3,
+    "internal_false_triggers": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 2,
+    "rows": 10,
+    "recall": "1/5",
+    "controlling": "0/5",
+    "bounded_remediation": "3/5",
+    "critical_false_permits": 0,
+    "clean_false_positives": 3,
+    "internal_false_triggers": 0,
+    "http_refusals": 0
+   },
+   "misses": [
+    "h1-nested-locator",
+    "h2-clean",
+    "h2-current-prohibition",
+    "h3-defect",
+    "h3-non-load-bearing",
+    "h4-advisory-scope",
+    "h5-held-protocol",
+    "h6-score-as-authority",
+    "h7-calibration-refusal"
+   ]
+  },
+  "first_exposure_exact_reducer_12": {
+   "deployment_revision": "2026-11-18.exact-reducer.12",
+   "rows": 20,
+   "passed": 14,
+   "by_class": {
+    "calibration": "2/2",
+    "clean": "6/8",
+    "defect": "6/10"
+   },
+   "strict_calibrated": {
+    "passed": 7,
+    "rows": 10,
+    "recall": "4/5",
+    "controlling": "3/5",
+    "bounded_remediation": "5/5",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 7,
+    "rows": 10,
+    "recall": "4/5",
+    "controlling": "3/5",
+    "bounded_remediation": "5/5",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 0
+   },
+   "misses": [
+    "h2-clean",
+    "h2-current-prohibition",
+    "h3-defect"
+   ]
+  },
+  "after_fixes_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 20,
+   "passed": 18,
+   "by_class": {
+    "calibration": "2/2",
+    "clean": "6/8",
+    "defect": "10/10"
+   },
+   "strict_calibrated": {
+    "passed": 9,
+    "rows": 10,
+    "recall": "5/5",
+    "controlling": "5/5",
+    "bounded_remediation": "5/5",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 1
+   },
+   "full_advisory": {
+    "passed": 9,
+    "rows": 10,
+    "recall": "5/5",
+    "controlling": "5/5",
+    "bounded_remediation": "5/5",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 0
+   },
+   "misses": [
+    "h2-clean"
+   ]
+  }
+ },
+ "closing_audit": {
+  "baseline_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 20,
+   "passed": 3,
+   "by_class": {
+    "calibration": "1/2",
+    "clean": "2/8",
+    "defect": "0/10"
+   },
+   "strict_calibrated": {
+    "passed": 1,
+    "rows": 10,
+    "recall": "1/5",
+    "controlling": "0/5",
+    "bounded_remediation": "2/5",
+    "critical_false_permits": 1,
+    "clean_false_positives": 3,
+    "internal_false_triggers": 0,
+    "http_refusals": 2
+   },
+   "full_advisory": {
+    "passed": 2,
+    "rows": 10,
+    "recall": "1/5",
+    "controlling": "0/5",
+    "bounded_remediation": "2/5",
+    "critical_false_permits": 1,
+    "clean_false_positives": 3,
+    "internal_false_triggers": 0,
+    "http_refusals": 0
+   },
+   "misses": [
+    "k1-nested-locator",
+    "k2-clean",
+    "k2-current-prohibition",
+    "k3-defect",
+    "k3-non-load-bearing",
+    "k4-advisory-scope",
+    "k5-held-protocol",
+    "k6-score-as-authority",
+    "k7-calibration-refusal"
+   ]
+  },
+  "first_exposure_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 20,
+   "passed": 15,
+   "by_class": {
+    "calibration": "2/2",
+    "clean": "6/8",
+    "defect": "7/10"
+   },
+   "strict_calibrated": {
+    "passed": 7,
+    "rows": 10,
+    "recall": "3/5",
+    "controlling": "3/5",
+    "bounded_remediation": "4/5",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 2
+   },
+   "full_advisory": {
+    "passed": 8,
+    "rows": 10,
+    "recall": "4/5",
+    "controlling": "4/5",
+    "bounded_remediation": "5/5",
+    "critical_false_permits": 0,
+    "clean_false_positives": 1,
+    "internal_false_triggers": 0,
+    "http_refusals": 0
+   },
+   "misses": [
+    "k2-clean",
+    "k2-current-prohibition",
+    "k6-score-as-authority"
+   ]
+  }
+ },
+ "development_direct_holdout": {
+  "status": "exposed before deployment",
+  "baseline_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 516,
+   "passed": 253,
+   "by_class": {
+    "D": "11/60",
+    "F": "55/60",
+    "G": "11/60",
+    "GI": "11/60",
+    "H": "11/60",
+    "M": "44/60",
+    "R": "44/48",
+    "S": "22/60",
+    "X": "44/48"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 115,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 138,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "misses": [
+    "h-clinic-ug-D",
+    "h-clinic-ug-G",
+    "h-clinic-ug-GI",
+    "h-clinic-ug-H",
+    "h-clinic-ug-M",
+    "h-clinic-ug-S",
+    "h-dairy-rw-D",
+    "h-dairy-rw-G",
+    "h-dairy-rw-GI",
+    "h-dairy-rw-H",
+    "h-dairy-rw-M",
+    "h-dairy-rw-S",
+    "h-seed-mw-D",
+    "h-seed-mw-F",
+    "h-seed-mw-G",
+    "h-seed-mw-GI",
+    "h-seed-mw-H",
+    "h-seed-mw-M",
+    "h-seed-mw-R",
+    "h-seed-mw-S",
+    "h-seed-mw-X",
+    "h-solar-zm-D",
+    "h-solar-zm-G",
+    "h-solar-zm-GI",
+    "h-solar-zm-H",
+    "h-solar-zm-M",
+    "h-solar-zm-S",
+    "h-transport-ke-D",
+    "h-transport-ke-G",
+    "h-transport-ke-GI",
+    "h-transport-ke-H",
+    "h-transport-ke-M",
+    "h-transport-ke-S",
+    "h-water-tz-D",
+    "h-water-tz-G",
+    "h-water-tz-GI",
+    "h-water-tz-H",
+    "h-water-tz-M",
+    "h-water-tz-S"
+   ]
+  },
+  "deployed_exact_reducer_12": {
+   "deployment_revision": "2026-11-18.exact-reducer.12",
+   "rows": 516,
+   "passed": 473,
+   "by_class": {
+    "D": "55/60",
+    "F": "55/60",
+    "G": "55/60",
+    "GI": "55/60",
+    "H": "55/60",
+    "M": "55/60",
+    "R": "44/48",
+    "S": "55/60",
+    "X": "44/48"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 215,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 258,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "misses": [
+    "h-seed-mw-D",
+    "h-seed-mw-F",
+    "h-seed-mw-G",
+    "h-seed-mw-GI",
+    "h-seed-mw-H",
+    "h-seed-mw-M",
+    "h-seed-mw-R",
+    "h-seed-mw-S",
+    "h-seed-mw-X"
+   ]
+  },
+  "deployed_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 516,
+   "passed": 473,
+   "by_class": {
+    "D": "55/60",
+    "F": "55/60",
+    "G": "55/60",
+    "GI": "55/60",
+    "H": "55/60",
+    "M": "55/60",
+    "R": "44/48",
+    "S": "55/60",
+    "X": "44/48"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 215,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 258,
+    "rows": 258,
+    "false_favorable": 0
+   },
+   "misses": [
+    "h-seed-mw-D",
+    "h-seed-mw-F",
+    "h-seed-mw-G",
+    "h-seed-mw-GI",
+    "h-seed-mw-H",
+    "h-seed-mw-M",
+    "h-seed-mw-R",
+    "h-seed-mw-S",
+    "h-seed-mw-X"
+   ]
+  }
+ },
+ "development_direct_closing": {
+  "status": "exposed before deployment",
+  "baseline_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 258,
+   "passed": 138,
+   "by_class": {
+    "D": "6/30",
+    "F": "30/30",
+    "G": "6/30",
+    "GI": "6/30",
+    "H": "6/30",
+    "M": "24/30",
+    "R": "24/24",
+    "S": "12/30",
+    "X": "24/24"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 69,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 69,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "misses": [
+    "k-fish-tz-D",
+    "k-fish-tz-G",
+    "k-fish-tz-GI",
+    "k-fish-tz-H",
+    "k-fish-tz-M",
+    "k-fish-tz-S",
+    "k-pay-gh-D",
+    "k-pay-gh-G",
+    "k-pay-gh-GI",
+    "k-pay-gh-H",
+    "k-pay-gh-M",
+    "k-pay-gh-S",
+    "k-school-ke-D",
+    "k-school-ke-G",
+    "k-school-ke-GI",
+    "k-school-ke-H",
+    "k-school-ke-M",
+    "k-school-ke-S"
+   ]
+  },
+  "deployed_exact_reducer_12": {
+   "deployment_revision": "2026-11-18.exact-reducer.12",
+   "rows": 258,
+   "passed": 258,
+   "by_class": {
+    "D": "30/30",
+    "F": "30/30",
+    "G": "30/30",
+    "GI": "30/30",
+    "H": "30/30",
+    "M": "30/30",
+    "R": "24/24",
+    "S": "30/30",
+    "X": "24/24"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 129,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 129,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "misses": []
+  },
+  "deployed_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 258,
+   "passed": 258,
+   "by_class": {
+    "D": "30/30",
+    "F": "30/30",
+    "G": "30/30",
+    "GI": "30/30",
+    "H": "30/30",
+    "M": "30/30",
+    "R": "24/24",
+    "S": "30/30",
+    "X": "24/24"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 129,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 129,
+    "rows": 129,
+    "false_favorable": 0
+   },
+   "misses": []
+  }
+ },
+ "development_explicit_holdout": {
+  "status": "exposed before deployment",
+  "baseline_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 200,
+   "passed": 70,
+   "by_class": {
+    "launch-grant-missing": "28/40",
+    "launch-only-grant": "14/40",
+    "launch-only-grant-siblings-mapped": "14/40",
+    "sibling-named-own-dependency": "7/40",
+    "whole-programme-grant": "7/40"
+   },
+   "false_favorable": 42,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 30,
+    "rows": 100,
+    "false_favorable": 18
+   },
+   "full_advisory": {
+    "passed": 40,
+    "rows": 100,
+    "false_favorable": 24
+   },
+   "misses": [
+    "h-clinic-ug-launch-grant-missing",
+    "h-clinic-ug-launch-only-grant",
+    "h-clinic-ug-launch-only-grant-siblings-mapped",
+    "h-clinic-ug-sibling-named-own-dependency",
+    "h-clinic-ug-whole-programme-grant",
+    "h-seed-mw-launch-grant-missing",
+    "h-seed-mw-launch-only-grant",
+    "h-seed-mw-launch-only-grant-siblings-mapped",
+    "h-seed-mw-sibling-named-own-dependency",
+    "h-seed-mw-whole-programme-grant",
+    "h-transport-ke-launch-grant-missing",
+    "h-transport-ke-launch-only-grant",
+    "h-transport-ke-launch-only-grant-siblings-mapped",
+    "h-transport-ke-sibling-named-own-dependency",
+    "h-transport-ke-whole-programme-grant",
+    "h-water-tz-launch-grant-missing",
+    "h-water-tz-launch-only-grant",
+    "h-water-tz-launch-only-grant-siblings-mapped",
+    "h-water-tz-sibling-named-own-dependency",
+    "h-water-tz-whole-programme-grant"
+   ]
+  },
+  "deployed_exact_reducer_12": {
+   "deployment_revision": "2026-11-18.exact-reducer.12",
+   "rows": 200,
+   "passed": 175,
+   "by_class": {
+    "launch-grant-missing": "35/40",
+    "launch-only-grant": "35/40",
+    "launch-only-grant-siblings-mapped": "35/40",
+    "sibling-named-own-dependency": "35/40",
+    "whole-programme-grant": "35/40"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 75,
+    "rows": 100,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 100,
+    "rows": 100,
+    "false_favorable": 0
+   },
+   "misses": [
+    "h-seed-mw-launch-grant-missing",
+    "h-seed-mw-launch-only-grant",
+    "h-seed-mw-launch-only-grant-siblings-mapped",
+    "h-seed-mw-sibling-named-own-dependency",
+    "h-seed-mw-whole-programme-grant"
+   ]
+  },
+  "deployed_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 200,
+   "passed": 175,
+   "by_class": {
+    "launch-grant-missing": "35/40",
+    "launch-only-grant": "35/40",
+    "launch-only-grant-siblings-mapped": "35/40",
+    "sibling-named-own-dependency": "35/40",
+    "whole-programme-grant": "35/40"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 75,
+    "rows": 100,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 100,
+    "rows": 100,
+    "false_favorable": 0
+   },
+   "misses": [
+    "h-seed-mw-launch-grant-missing",
+    "h-seed-mw-launch-only-grant",
+    "h-seed-mw-launch-only-grant-siblings-mapped",
+    "h-seed-mw-sibling-named-own-dependency",
+    "h-seed-mw-whole-programme-grant"
+   ]
+  }
+ },
+ "development_explicit_closing": {
+  "status": "exposed before deployment",
+  "baseline_exact_reducer_11": {
+   "deployment_revision": "2026-11-18.exact-reducer.11",
+   "rows": 150,
+   "passed": 60,
+   "by_class": {
+    "launch-grant-missing": "24/30",
+    "launch-only-grant": "12/30",
+    "launch-only-grant-siblings-mapped": "12/30",
+    "sibling-named-own-dependency": "6/30",
+    "whole-programme-grant": "6/30"
+   },
+   "false_favorable": 36,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 30,
+    "rows": 75,
+    "false_favorable": 18
+   },
+   "full_advisory": {
+    "passed": 30,
+    "rows": 75,
+    "false_favorable": 18
+   },
+   "misses": [
+    "k-fish-tz-launch-grant-missing",
+    "k-fish-tz-launch-only-grant",
+    "k-fish-tz-launch-only-grant-siblings-mapped",
+    "k-fish-tz-sibling-named-own-dependency",
+    "k-fish-tz-whole-programme-grant",
+    "k-pay-gh-launch-grant-missing",
+    "k-pay-gh-launch-only-grant",
+    "k-pay-gh-launch-only-grant-siblings-mapped",
+    "k-pay-gh-sibling-named-own-dependency",
+    "k-pay-gh-whole-programme-grant",
+    "k-school-ke-launch-grant-missing",
+    "k-school-ke-launch-only-grant",
+    "k-school-ke-launch-only-grant-siblings-mapped",
+    "k-school-ke-sibling-named-own-dependency",
+    "k-school-ke-whole-programme-grant"
+   ]
+  },
+  "deployed_exact_reducer_12": {
+   "deployment_revision": "2026-11-18.exact-reducer.12",
+   "rows": 150,
+   "passed": 150,
+   "by_class": {
+    "launch-grant-missing": "30/30",
+    "launch-only-grant": "30/30",
+    "launch-only-grant-siblings-mapped": "30/30",
+    "sibling-named-own-dependency": "30/30",
+    "whole-programme-grant": "30/30"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 75,
+    "rows": 75,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 75,
+    "rows": 75,
+    "false_favorable": 0
+   },
+   "misses": []
+  },
+  "deployed_exact_reducer_13": {
+   "deployment_revision": "2026-11-18.exact-reducer.13",
+   "rows": 150,
+   "passed": 150,
+   "by_class": {
+    "launch-grant-missing": "30/30",
+    "launch-only-grant": "30/30",
+    "launch-only-grant-siblings-mapped": "30/30",
+    "sibling-named-own-dependency": "30/30",
+    "whole-programme-grant": "30/30"
+   },
+   "false_favorable": 0,
+   "execution_authorized": 0,
+   "strict_calibrated": {
+    "passed": 75,
+    "rows": 75,
+    "false_favorable": 0
+   },
+   "full_advisory": {
+    "passed": 75,
+    "rows": 75,
+    "false_favorable": 0
+   },
+   "misses": []
+  }
+ },
+ "evaluator_exposed_r16": {
+  "exact_reducer_12": {
+   "direct": "72/72",
+   "false_favorable": 0,
+   "audit": "18/18",
+   "misses": []
+  },
+  "exact_reducer_13": {
+   "direct": "72/72",
+   "false_favorable": 0,
+   "audit": "18/18",
+   "misses": []
+  }
+ }
+}

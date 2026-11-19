@@ -1,0 +1,346 @@
+{
+ "summary": {
+  "set": "r14-audit-final",
+  "sha256": "e81255f3c004c9b0548de6b85889199eaa64311257acfdf232ad94bc728e2905",
+  "deployment_revision": "2026-11-18.exact-reducer.13",
+  "manifest_id": "MVRRM-6cdcce04115ef3d6b0d6761702eed431",
+  "rows": 24,
+  "passed": 24,
+  "by_class": {
+   "defect": "14/14",
+   "internal": "2/2",
+   "clean": "8/8"
+  },
+  "detected": 14,
+  "false_permits": 0,
+  "misses": []
+ },
+ "rows": [
+  {
+   "id": "f1-parents-boycott",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "EXPLICIT_CONTRADICTION"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f1-parents-boycott",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "EXPLICIT_CONTRADICTION"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f2-email-under-clean-flag",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f2-email-under-clean-flag",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f3-farmer-view-as-permit",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f4-self-verified",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERMISSION_DECLARED_NOT_AUTHENTICATED",
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f4-self-verified",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERMISSION_DECLARED_NOT_AUTHENTICATED",
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f3-farmer-view-as-permit",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f5-district-mismatch",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "GEOGRAPHY_MISMATCH"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f5-district-mismatch",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "GEOGRAPHY_MISMATCH"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f6-locator-throughout",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "LOCATOR_IMPRECISE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f6-locator-throughout",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "LOCATOR_IMPRECISE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f7-account-numbers",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERSONAL_DATA_UNDECLARED"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f7-account-numbers",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERSONAL_DATA_UNDECLARED"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "f8-proofreading",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "not_applicable",
+   "codes": [],
+   "kind": "internal",
+   "pass": true
+  },
+  {
+   "id": "f8-proofreading",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "not_applicable",
+   "codes": [],
+   "kind": "internal",
+   "pass": true
+  },
+  {
+   "id": "f-clean-a",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "f-clean-a",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "f-clean-b",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "f-clean-c",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "f-clean-b",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "f-clean-c",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "f-clean-d",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "f-clean-d",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  }
+ ]
+}

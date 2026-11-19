@@ -1,0 +1,915 @@
+{
+ "classification": "evaluator exposed R16 wording, rebuilt from its public-safe excerpts; regression cases, not the evaluator score",
+ "summary": {
+  "direct": "72/72",
+  "false_favorable": 0,
+  "audit": "18/18",
+  "misses": []
+ },
+ "direct": [
+  {
+   "case": "complete",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "complete",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "complete",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "complete",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "complete",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "complete",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "complete",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "complete",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "irrelevant_addition",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "irrelevant_addition",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "irrelevant_addition",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "irrelevant_addition",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "irrelevant_addition",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "irrelevant_addition",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "irrelevant_addition",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "irrelevant_addition",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "conditional",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "conditional",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "conditional",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "conditional",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "conditional",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "conditional",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "conditional",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "conditional",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "01B646",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "01B646",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "01B646",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "01B646",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "01B646",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "01B646",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "01B646",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "01B646",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "0A8BD6",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "0A8BD6",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "insufficient",
+   "analytical": "insufficient",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "0A8BD6",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "insufficient",
+   "analytical": "insufficient",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "0A8BD6",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "insufficient",
+   "analytical": "insufficient",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "0A8BD6",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "0A8BD6",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "insufficient",
+   "analytical": "insufficient",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "0A8BD6",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "insufficient",
+   "analytical": "insufficient",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "0A8BD6",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "insufficient",
+   "analytical": "insufficient",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "11045B",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "11045B",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "11045B",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "11045B",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "11045B",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "11045B",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "11045B",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "11045B",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "24223F",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "24223F",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "24223F",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "24223F",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "24223F",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "24223F",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "24223F",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "24223F",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "conditional",
+   "analytical": "conditional",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "5E140A",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "5E140A",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "5E140A",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "5E140A",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "5E140A",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "5E140A",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "5E140A",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "5E140A",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "B4C199",
+   "profile": "strict_calibrated",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "B4C199",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "B4C199",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "B4C199",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "B4C199",
+   "profile": "full_advisory",
+   "effect": "INT-RECOMMEND",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "planning_only",
+   "pass": true
+  },
+  {
+   "case": "B4C199",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "B4C199",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  },
+  {
+   "case": "B4C199",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "want": "favorable",
+   "analytical": "favorable",
+   "execution": "not_authorized",
+   "pass": true
+  }
+ ],
+ "audit": [
+  {
+   "name": "locator",
+   "route": "/v1/evidence-validation",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "route_decision": "block",
+   "codes": [
+    "LOCATOR_IMPRECISE",
+    "LOAD_BEARING_CLAIM_UNSUPPORTED"
+   ],
+   "pass": true
+  },
+  {
+   "name": "locator",
+   "route": "/v1/evidence-validation",
+   "profile": "full_advisory",
+   "http": 200,
+   "route_decision": "block",
+   "codes": [
+    "LOCATOR_IMPRECISE",
+    "LOAD_BEARING_CLAIM_UNSUPPORTED"
+   ],
+   "pass": true
+  },
+  {
+   "name": "supersession",
+   "route": "/v1/claim-audit",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "route_decision": "block",
+   "codes": [
+    "PROHIBITION_PRESENT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "supersession",
+   "route": "/v1/claim-audit",
+   "profile": "full_advisory",
+   "http": 200,
+   "route_decision": "block",
+   "codes": [
+    "PROHIBITION_PRESENT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "non-load-bearing",
+   "route": "/v1/evidence-suitability-scan",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "route_decision": "clear",
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "non-load-bearing",
+   "route": "/v1/evidence-suitability-scan",
+   "profile": "full_advisory",
+   "http": 200,
+   "route_decision": "clear",
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "advisory-scope",
+   "route": "/v1/board-safety-check",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "route_decision": "clear",
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "advisory-scope",
+   "route": "/v1/board-safety-check",
+   "profile": "full_advisory",
+   "http": 200,
+   "route_decision": "clear",
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "red-team-agree",
+   "route": "/v1/red-team",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "route_decision": "clear",
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "red-team-agree",
+   "route": "/v1/red-team",
+   "profile": "full_advisory",
+   "http": 200,
+   "route_decision": "clear",
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "held-protocol",
+   "route": "/v1/board-safety-check",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "route_decision": "block",
+   "codes": [
+    "QUALIFIER_IN_SUPPORT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "held-protocol",
+   "route": "/v1/board-safety-check",
+   "profile": "full_advisory",
+   "http": 200,
+   "route_decision": "block",
+   "codes": [
+    "QUALIFIER_IN_SUPPORT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "score-authority",
+   "route": "/v1/release-check",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "route_decision": "block",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE",
+    "CLAIM_SCOPE_NOT_IN_SUPPORT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "score-authority",
+   "route": "/v1/release-check",
+   "profile": "full_advisory",
+   "http": 200,
+   "route_decision": "block",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE",
+    "CLAIM_SCOPE_NOT_IN_SUPPORT"
+   ],
+   "pass": true
+  },
+  {
+   "name": "explain",
+   "route": "/v1/explain",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "route_decision": null,
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "explain",
+   "route": "/v1/explain",
+   "profile": "full_advisory",
+   "http": 200,
+   "route_decision": null,
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "calibration",
+   "route": "/v1/evidence-audit",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "route_decision": "unresolved",
+   "codes": [],
+   "pass": true
+  },
+  {
+   "name": "calibration",
+   "route": "/v1/evidence-audit",
+   "profile": "full_advisory",
+   "http": 200,
+   "route_decision": "clear",
+   "codes": [],
+   "pass": true
+  }
+ ]
+}

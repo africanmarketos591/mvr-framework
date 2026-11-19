@@ -1,0 +1,406 @@
+{
+ "summary": {
+  "set": "r14-audit-dev",
+  "sha256": "fb7f202016a5015a8b5565895eef5a73347fb019fa52d7eda2a9c0bf4a8b8861",
+  "deployment_revision": "2026-11-18.exact-reducer.13",
+  "manifest_id": "MVRRM-6cdcce04115ef3d6b0d6761702eed431",
+  "rows": 30,
+  "passed": 30,
+  "by_class": {
+   "defect": "14/14",
+   "clean": "14/14",
+   "internal": "2/2"
+  },
+  "detected": 14,
+  "false_permits": 0,
+  "misses": []
+ },
+ "rows": [
+  {
+   "id": "a1-guardian-opposition",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "EXPLICIT_CONTRADICTION"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a1-guardian-opposition",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "EXPLICIT_CONTRADICTION"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a1-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a2-pii-clean-envelope",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a2-pii-clean-envelope",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a2-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a1-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a2-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a3-retailer-interest-as-authority",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a3-retailer-interest-as-authority",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a3-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a3-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a4-self-attesting-caller-record",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERMISSION_DECLARED_NOT_AUTHENTICATED",
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a4-self-attesting-caller-record",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERMISSION_DECLARED_NOT_AUTHENTICATED",
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a4-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a4-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a5-wrong-locality",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "GEOGRAPHY_MISMATCH"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a5-wrong-locality",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "GEOGRAPHY_MISMATCH"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a5-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a5-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a6-vague-locator",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "LOCATOR_IMPRECISE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a6-vague-locator",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "LOCATOR_IMPRECISE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a6-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a6-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a7-raw-pii-narrative",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERSONAL_DATA_UNDECLARED"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a7-raw-pii-narrative",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERSONAL_DATA_UNDECLARED"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "a7-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a7-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "a8-formatting-with-records",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "not_applicable",
+   "codes": [],
+   "kind": "internal",
+   "pass": true
+  },
+  {
+   "id": "a8-formatting-with-records",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "not_applicable",
+   "codes": [],
+   "kind": "internal",
+   "pass": true
+  }
+ ]
+}
