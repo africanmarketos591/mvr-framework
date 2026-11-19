@@ -1,0 +1,9 @@
+{
+ "contract_version": "mvr.label-corrections/1",
+ "decided": "2026-11-19",
+ "reason": "AMOS labelled the internal recommendation insufficient when the only gap is a missing permission or completion record. The independent evaluator's labels treat that recommendation as conditional: the recommendation can be made, subject to the prerequisite. Its exposed exemplar CASE-0A8BD642BB491B605B8C (R16) lists insufficient as a miss for INT-RECOMMEND, and its R14 letter listed favourable as a false favourable, which leaves conditional. Frozen set files are unchanged; runners apply this mapping and report it.",
+ "corrections": [
+  {"sets": ["r14-direct-dev", "r14-direct-holdout", "r14-direct-final", "r14-direct-closing"], "variants": ["M"], "effect_id": "INT-REC", "field": "analytical", "from": "insufficient", "to": "conditional"},
+  {"sets": ["r15-direct-holdout", "r15-direct-closing"], "variants": ["M", "L", "AM"], "effect_id": "INT-RECOMMEND", "field": "analytical", "from": "insufficient", "to": "conditional"}
+ ]
+}

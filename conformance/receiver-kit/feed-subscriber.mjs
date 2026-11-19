@@ -94,8 +94,11 @@ export function createFeedSubscriber({base = 'https://africanmarketos.com', sess
   }
   return {
     version: FEED_SUBSCRIBER_VERSION, state, poll, apply: verifyAndApply,
-    async rotateRegistry(previousStatement,nextStatement) {
-      const previous=structuredClone(previousStatement),next=structuredClone(nextStatement),oldKey=registryKey;
+    // A successor that verifies but activates a moment after the local clock is deferred, not refused: the call returns
+    // {state:'deferred_until_activation', activates_at, retry_after_ms} and changes nothing. Beyond maxDeferMs it is refused as
+    // FEED_KEY_NOT_YET_ACTIVE. Signature, continuity and key faults keep their own codes.
+    async rotateRegistry(previousStatement,nextStatement,{maxDeferMs=120000}={}) {
+      const previous=structuredClone(previousStatement),next=structuredClone(nextStatement),oldKey=registryKey,wasFailed=verificationFailed;
       verificationFailed=true;
       if(!root || state.session_closed)throw fault('FEED_ROTATION_UNAVAILABLE');
       for (const statement of [previous,next]) {
@@ -116,10 +119,17 @@ export function createFeedSubscriber({base = 'https://africanmarketos.com', sess
       const deadline=Math.min(Date.parse(next.expires_at),Date.parse(key?.not_after));
       if(active(previous).length!==1 || old?.key_id!==oldKey.key_id || old?.public_key_spki_b64!==oldKey.public_key_spki_b64 ||
          newKeys.length!==1 || !key.key_id || !key.public_key_spki_b64 || key.key_id===oldKey.key_id || key.public_key_spki_b64===oldKey.public_key_spki_b64 ||
-         !(Date.parse(next.issued_at)<=now() && Date.parse(key.not_before)<=now() && now()<deadline) ||
+         !(now()<deadline) ||
          registryKey!==oldKey || state.session_closed)throw fault('FEED_KEY_TRANSITION_INVALID');
+      const activatesAt=Math.max(Date.parse(next.issued_at),Date.parse(key.not_before));
+      if(!Number.isFinite(activatesAt))throw fault('FEED_KEY_TRANSITION_INVALID');
+      if(activatesAt>now()){
+        verificationFailed=wasFailed;
+        if(activatesAt-now()<=maxDeferMs)return {state:'deferred_until_activation',activates_at:new Date(activatesAt).toISOString(),retry_after_ms:Math.ceil(activatesAt-now())};
+        throw fault('FEED_KEY_NOT_YET_ACTIVE');
+      }
       feedRealm=next.realm;feedRegistry=next.registry_id;registryKey=key;registryDigest=next.sha256;keyDeadline=deadline;verificationFailed=true;
-      return {registry_version:next.registry_version,key_id:key.key_id,verified_cursor:state.last_sequence};
+      return {state:'applied',registry_version:next.registry_version,key_id:key.key_id,verified_cursor:state.last_sequence};
     },
     // Long-poll until stop() returns true or the deadline passes; onRevocation runs for each new revoke_* or close entry.
     async follow({deadlineMs, stop = () => false, onRevocation = () => {}, wait = 20} = {}) {

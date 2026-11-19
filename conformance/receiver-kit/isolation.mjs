@@ -6,7 +6,7 @@
 // Proprietary lab fixtures. One harmless draft row per performed scenario, in a local SQLite file. No external effect.
 import fs from 'node:fs';
 import path from 'node:path';
-import {createHash, randomUUID} from 'node:crypto';
+import {createHash, randomUUID, generateKeyPairSync, sign as signBytes} from 'node:crypto';
 import {DatabaseSync} from 'node:sqlite';
 import {setTimeout as pause} from 'node:timers/promises';
 import {fileURLToPath, pathToFileURL} from 'node:url';
@@ -73,7 +73,9 @@ export async function runReceiverIsolation({base = 'https://africanmarketos.com'
     const live = createFeedSubscriber({...feedOpts, fetchImpl: recordFeed});
     const receiver = (scenario, feed) => createBuyerExecutor({pinnedRoot, expect: {realm: 'amos-enterprise-conformance'}, action: 'amos.document.draft.create@1', store: memoryClaimStore(), feed, reconcile: async () => ({exists: false}), performEffect: async (e, {commit_id}) => { db.prepare('INSERT INTO draft VALUES(?,?,?,?)').run(scenario, commit_id, e.effect_id, new Date().toISOString()); return {draft_id: 'draft-' + commit_id.slice(-12)}; }});
     const deliver = (c, proof) => ({...c, registry_statement: statement, current_state: proof});
-    const record = (name, row) => { packet.scenarios[name] = row; report.scenarios[name] = {...row, receipt: undefined, current_state: undefined}; log(name, row.observed_code ?? 'performed'); };
+    // The receiver signs each outcome with a key it creates for this run, so an observer can tell the export was not altered afterwards.
+    const receiverKey = generateKeyPairSync('ed25519'); packet.receiver_journal = {signed_by: 'this receiver run key; shows the export is unaltered, not who operated the receiver', public_key_spki_b64: receiverKey.publicKey.export({type: 'spki', format: 'der'}).toString('base64'), entries: []};
+    const record = (name, row) => { packet.scenarios[name] = row; report.scenarios[name] = {...row, receipt: undefined, current_state: undefined}; const body = {scenario: name, commit_id: row.receipt?.commit_id ?? null, performed: row.performed === true, observed_code: row.observed_code ?? null, draft_count: row.draft_count, at: new Date().toISOString()}; packet.receiver_journal.entries.push({...body, signature_b64: signBytes(null, Buffer.from(canonicalJson(body)), receiverKey.privateKey).toString('base64')}); log(name, row.observed_code ?? 'performed'); };
 
     await live.poll(); watchVerification = true;
     const valid = await source.commitFresh(); must(valid.requested_effect.effect_id === packet.effect.effect_id, 'decision and commit differ'); await live.poll();
@@ -106,7 +108,10 @@ export async function runReceiverIsolation({base = 'https://africanmarketos.com'
 
     const rotated = await transport({action: 'rotate_registry', session_id: sessionId, session_token: institutionToken});
     must(rotated.status === 'rotated', 'rotation refused ' + (rotated.code ?? rotated.status));
-    const oldStatement = statement; await live.rotateRegistry(rotated.previous_registry_statement, rotated.registry_statement); packet.feed_log.push({rotate: {previous: rotated.previous_registry_statement, next: rotated.registry_statement}}); packet.registry_statements.push(rotated.previous_registry_statement, rotated.registry_statement); statement = rotated.registry_statement;
+    const oldStatement = statement; let rotation = await live.rotateRegistry(rotated.previous_registry_statement, rotated.registry_statement), deferredMs = 0;
+    // The successor's signed activation can be a moment ahead of this clock: wait for it, then apply.
+    if (rotation.state === 'deferred_until_activation') { deferredMs = rotation.retry_after_ms; await pause(rotation.retry_after_ms + 25); rotation = await live.rotateRegistry(rotated.previous_registry_statement, rotated.registry_statement); }
+    must(rotation.state === 'applied', 'rotation not applied: ' + rotation.state); packet.rotation = {deferred_until_activation_ms: deferredMs, applied: true}; packet.feed_log.push({rotate: {previous: rotated.previous_registry_statement, next: rotated.registry_statement}}); packet.registry_statements.push(rotated.previous_registry_statement, rotated.registry_statement); statement = rotated.registry_statement;
     await live.poll(); const after = await source.commitFresh(); await live.poll(); const afterProof = await source.current_state();
     const wrongRegistry = await receiver('rotated_old_registry', live).commit({...after, registry_statement: oldStatement, current_state: afterProof}), successor = await receiver('rotated', live).commit(deliver(after, afterProof));
     record('rotated', {rule: 'signed registry succession on a provisioned conformance issuer', expected: 'performed under the new key; the old registry refuses', performed: successor.performed === true, observed_code: successor.code ?? null, old_registry_code: wrongRegistry.code ?? null, old_registry_draft_count: count('rotated_old_registry'), draft_count: count('rotated'), registry_version: statement.registry_version, new_key_id: statement.keys[0].key_id, receipt: after.receipt, requested_effect: after.requested_effect, current_state: afterProof});
