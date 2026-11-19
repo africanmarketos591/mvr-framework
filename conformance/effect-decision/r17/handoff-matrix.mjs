@@ -1,6 +1,7 @@
 // First-call handoff matrix (R17): every supported entry point and continuation, both profiles. REST steps follow rest_next_call exactly
 // as emitted; where a step pauses for operator input, its rest_resume names each item and the exact resume request, which is followed as
-// written. Every REST and MCP path must reach a terminal decision-check with the digest unchanged. No retries.
+// written. Where a pause names /analysis_date, the matrix supplies it as the operator would; it changes nothing else. Every REST and MCP
+// path must reach a terminal decision-check with the digest unchanged. No retries.
 //   MVR_API_KEY=... node conformance/effect-decision/r17/handoff-matrix.mjs --out handoff-matrix.json
 import fs from 'node:fs';
 const opt = k => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : null; };
@@ -23,7 +24,8 @@ async function followRest(call, digest, profile, f) {
     if (r.body.effect_binding?.requested_effects_sha256 !== digest) f.push(last + ': binding not returned');
     const resume = r.body.rest_resume;
     if (resume) { pauses++; if (resume.contract_version !== 'mvr.rest-resume/1' || !resume.operator_must_supply?.length || !resume.operator_must_supply.every(x => x.requirement && x.supply_in)) f.push(last + ': pause does not name what to supply'); if (resume.resume_call?.body?.requested_effects_sha256 !== digest) f.push(last + ': resume request lacks the digest'); }
-    call = r.body.rest_next_call ?? resume?.resume_call ?? null;
+    // The matrix acts as the operator for the one item it owns: the analysis date. Every other item is left as sent.
+    call = r.body.rest_next_call ?? (resume?.resume_call ? (resume.operator_must_supply.some(x => x.supply_in === '/analysis_date') ? {...resume.resume_call, body: {...resume.resume_call.body, analysis_date: today}} : resume.resume_call) : null);
     if (!call && last !== '/v1/decision-check') f.push(last + ': chain ended without a next or resume request');
   }
   f.terminal = last; f.pauses = pauses;

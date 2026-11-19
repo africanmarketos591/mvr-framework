@@ -19,7 +19,7 @@ A step may need something only the operator can supply. Examples are a claim lin
 | `how_to_resume` | Add each item where `supply_in` says, then send `resume_call` with those fields replaced by your updated values. |
 | `if_sent_unchanged` | The next route re-validates and holds the decision while the items remain open. It never authorizes an effect. |
 
-The licensed MCP continuation sends the same next step, and the same items stay open there. A REST chain that follows `rest_next_call` and `resume_call` as written reaches `/v1/decision-check` with the effect digest unchanged. `conformance/effect-decision/r17/handoff-matrix.mjs` checks this on every entry path.
+In `strict_calibrated`, decision check requires an analysis date. If your request has none, the step before decision check names `/analysis_date` among the items (from `2026-11-18.exact-reducer.15`). The licensed MCP continuation sends the same next step, and the same items stay open there. A REST chain that follows `rest_next_call` and `resume_call` as written reaches `/v1/decision-check` with the effect digest unchanged. `conformance/effect-decision/r17/handoff-matrix.mjs` checks this on every entry path.
 
 ## When explain returns per-action requirements
 
