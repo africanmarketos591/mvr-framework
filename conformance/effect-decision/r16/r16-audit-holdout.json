@@ -1,0 +1,624 @@
+[
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A licence reportedly allows the regional rollout.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "provenance_ledger": {
+      "source_locator": "somewhere in the licence"
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Nile Agro"
+   }
+  },
+  "case_id": "h1-nested-locator",
+  "expected_defect_code": "LOCATOR_IMPRECISE",
+  "expected_route_decision": "block",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Licence UL-2026-31 allows the regional rollout.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-10",
+     "id": "E1",
+     "licence_number": "UL-2026-31",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "provenance_ledger": {
+      "source_locator": "section 3, page 2"
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-10-10",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Nile Agro"
+   }
+  },
+  "case_id": "h1-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/evidence-validation"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "The pilot is currently authorized to launch.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "E2",
+       "locator": "page 2, paragraph 1",
+       "relationship": "contradicts"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "An earlier letter supported a small pilot.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-10-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    },
+    {
+     "claim": "A current directive bars the launch and replaces the earlier letter.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E2",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-01",
+     "id": "E2",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-10-01",
+     "source_doc_id": "LAB-E2",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Pwani Foods"
+   }
+  },
+  "case_id": "h2-current-prohibition",
+  "expected_defect_code": "PROHIBITION_PRESENT",
+  "expected_route_decision": "block",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "The pilot is currently authorized to launch.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The county issued launch permit KP-2026-8 for the pilot on 1 October 2026.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "KE"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-01",
+     "id": "E1",
+     "licence_number": "KP-2026-8",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "regulator_published",
+     "source_date": "2026-10-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "KE"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Pwani Foods"
+   }
+  },
+  "case_id": "h2-clean",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/claim-audit"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A current Kampala survey supports bounded advisory demand analysis.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-11-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    },
+    {
+     "claim": "An expired Rwandan record concerns another product and is not load-bearing.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "evidence_id": "E2",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2024-01-01",
+     "id": "E2",
+     "load_bearing": false,
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2024-01-01",
+     "source_doc_id": "LAB-E2",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Kampala Snacks"
+   }
+  },
+  "case_id": "h3-non-load-bearing",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/evidence-suitability-scan"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "An expired Rwandan record about another product is offered as the main evidence.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "RW"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2024-01-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2024-01-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Kampala Snacks"
+   }
+  },
+  "case_id": "h3-defect",
+  "expected_defect_code": "GEOGRAPHY_MISMATCH",
+  "expected_route_decision": "block",
+  "route": "/v1/evidence-suitability-scan"
+ },
+ {
+  "body": {
+   "action_boundary": {
+    "allowed_actions": [
+     "local_internal_analysis"
+    ],
+    "forbidden_actions": [
+     "external_contact",
+     "commit_funds",
+     "launch"
+    ]
+   },
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "The record permits internal analysis but not execution.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "The district office permits internal analysis of the plan but not execution.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "TZ"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "TZ"
+   },
+   "proposed_outcome": "advisory_only",
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Arusha Mills"
+   }
+  },
+  "case_id": "h4-advisory-scope",
+  "expected_outcome": "no_defects_found",
+  "expected_route_decision": "clear",
+  "route": "/v1/board-safety-check"
+ },
+ {
+  "acceptance_must_mention": [
+   "safeguarding protocol"
+  ],
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "Every condition is met and the external launch can go ahead.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "qualifies"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Internal planning is permitted; outside contact and the launch stay on hold until a safeguarding protocol is approved.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "GH"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "GH"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Volta Care"
+   }
+  },
+  "case_id": "h5-held-protocol",
+  "expected_defect_code": "QUALIFIER_IN_SUPPORT",
+  "expected_route_decision": "block",
+  "route": "/v1/board-safety-check"
+ },
+ {
+  "acceptance_must_mention": [
+   "contact",
+   "commitment",
+   "launch"
+  ],
+  "body": {
+   "analysis_date": "2026-11-19",
+   "claims": [
+    {
+     "claim": "A high analytical score on its own authorizes outside contact, a financial commitment and the launch.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Demand evidence supports more internal analysis but holds no authority record.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "ZM"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "ZM"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Kafue Traders"
+   }
+  },
+  "case_id": "h6-score-as-authority",
+  "expected_defect_code": "SOURCE_UNSUITABLE_FOR_USE",
+  "expected_route_decision": "block",
+  "route": "/v1/release-check"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-19",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A bounded retailer survey supports advisory demand analysis.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "redacted",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-11-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 52,
+      "trust": 61
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Lake Retail"
+   }
+  },
+  "case_id": "h7-calibration-refusal",
+  "expected_outcome": "any",
+  "expected_route_decision": "profile_dependent",
+  "route": "/v1/evidence-audit"
+ }
+]
