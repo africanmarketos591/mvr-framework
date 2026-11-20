@@ -40,3 +40,69 @@ Sometimes a current approval still waits for a step that its source names, such 
 ## Reviewer verification on audit routes
 
 When a route returns claims with `support_status`, `route_audit_result.verification` reports reviewer verification separately from `route_audit_result.controlling`. Its contract is `mvr.claim-verification-state/1`, and its `status` is one of `reviewer_verified`, `reviewer_verification_pending`, `unsupported_claims_present` or `contradicted`. Read `controlling` for the requested use. Board release and execution also need `verification.status` to be `reviewer_verified`.
+
+## Closing a named step
+
+Applies from `2026-11-18.exact-reducer.16`. A named step is closed by one check, whether the step is named in a record's text or given as a typed `conditions[]` entry with `type: "prerequisite"`. A record completes the step only when all of the following hold:
+
+1. It names that exact step.
+2. It states the step as done, not promised, pending, refused or withdrawn.
+3. It is dated on or after the record that set the condition, or after the date the condition states.
+4. It is not dated after the analysis date.
+5. It comes from the required issuer. That is the body the condition names after "by", or otherwise the body that set the condition.
+6. No later record withdraws it.
+
+A typed `satisfied_by_evidence_id` is unverified until its record passes this check. Until then the condition stays `unmet`, with `satisfied_by_unverified` and `completion_check.reason`. The reason is one of:
+
+- `COMPLETION_RECORD_NOT_SUPPLIED`
+- `COMPLETION_STEP_MISMATCH`
+- `COMPLETION_NOT_STATED_AS_DONE`
+- `COMPLETION_BEFORE_CONDITION`
+- `COMPLETION_ISSUER_MISMATCH`
+- `COMPLETION_WITHDRAWN`
+- `COMPLETION_DATE_MISSING`
+- `COMPLETION_AFTER_ANALYSIS_DATE`
+- `COMPLETION_AFTER_DEADLINE`
+
+Each effect's `open_conditions[]` gives one entry per step, with `status` set to `open` or `completed` and the `completion_check`. Entries come from every non-adverse load-bearing claim, so a step stays visible when a missing record controls the headline. Closing a step changes the analytical state only. It never authorizes execution.
+
+## Strict calibration refusal
+
+In `strict_calibrated`, `/v1/evidence-audit` refuses a numeric audit it cannot calibrate, with HTTP 422. The body carries `capability_outcome` (`mvr.capability-outcome/1`):
+
+- `status`: `calibrated_assessment_unavailable`
+- `reason`
+- `completed_checks` and `not_completed`
+- `supported_alternative`, which is the same route under `full_advisory`
+
+It is neither a finding nor a pass.
+
+## When explain has no effect map
+
+When `decision_result` carries neither `effects` nor an effect binding, nor a forbidden-action list, `/v1/explain` returns `permission_requirements_status`, with `status: "not_derivable_from_input"` and `reason: "DECISION_RESULT_HAS_NO_EFFECT_MAP"`. Its `handoff` points to `/v1/effect-decision`: send the same requested effects, claims and evidence there, then pass that response to explain.
+
+## First calls that state they are internal
+
+Applies from `.16`. A first call ends with `status: "not_relevant"` and `continuation_disposition: "terminal"` when all of these hold:
+
+- its own text says there is no market action, market decision or permission question, or that the work is internal only;
+- no market act appears in the rest of the text;
+- the relevance router finds only internal effects.
+
+Attached claims and evidence are not assessed.
+
+## Signed statements and clock skew
+
+Signed applicability statements carry their issuance time. A client whose clock runs behind the server can see a statement as not yet valid for a few hundred milliseconds. Fail closed: wait until the stated issuance time and verify again. Never accept a statement before its validity window opens.
+
+## Observer acceptance levels
+
+`conformance/receiver-kit/observer-verify.mjs` returns `acceptance_level`:
+
+| Level | When |
+|---|---|
+| `journal_attested` | The receiver journal is present, every entry is signed by the run key, and each signed outcome, reason, commit and count matches exactly one scenario row and the store |
+| `unsigned_reconstruction` | No journal; the records reconstruct consistently but no run signature attests them. A signed-attestation gate must not accept this. |
+| `rejected` | Any check failed |
+
+`--require-journal` turns a missing journal into a failure.

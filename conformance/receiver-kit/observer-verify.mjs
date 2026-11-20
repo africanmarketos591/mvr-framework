@@ -11,7 +11,10 @@ const sha = v => createHash('sha256').update(typeof v === 'string' ? v : canonic
 const REGISTRY = 'mvr.authority-registry-statement/1', CURRENT = 'mvr.current-state-proof/1';
 const EXPECT = {valid: ['performed', 1], revoked: ['BUYER_CAPABILITY_REVOKED_IN_FEED', 0], expired: ['BUYER_COMMIT_EXPIRED', 0], lease_recovered: ['BUYER_FEED_NOT_FRESH', 1], rotated: ['performed', 1]};
 
-export async function verifyObserverPacket(p, {pinnedRoot = p?.pinned_root} = {}) {
+// Acceptance levels: "journal_attested" needs the receiver journal, every entry signed by the run key, and each signed outcome, reason, commit
+// and count matching exactly one scenario row. Without a journal the same checks give "unsigned_reconstruction", a distinct outcome a
+// signed-attestation gate must not accept. requireJournal makes a missing journal a failure.
+export async function verifyObserverPacket(p, {pinnedRoot = p?.pinned_root, requireJournal = false} = {}) {
   // Each check says what kind of evidence it rests on: a signature from the conformance chain, the receiver's own run signature, or an
   // unsigned export that is only internally consistent.
   // An assertion that reads run fields (codes, counts, timing, freshness) rests on the unsigned export, even when the event it concerns is
@@ -69,13 +72,19 @@ export async function verifyObserverPacket(p, {pinnedRoot = p?.pinned_root} = {}
     let key = null; try { key = createPublicKey({key: Buffer.from(journal.public_key_spki_b64, 'base64'), format: 'der', type: 'spki'}); } catch {}
     const signed = !!key && journal.entries.length >= 5 && journal.entries.every(({signature_b64, ...body}) => verifyBytes(null, Buffer.from(canonicalJson(body)), key, Buffer.from(signature_b64, 'base64')));
     check('every receiver journal entry is signed by the run key', signed);
-    check('the receiver journal agrees with the scenarios and the store', journal.entries.every(e => { const s = p.scenarios?.[e.scenario]; return s && e.commit_id === (s.receipt?.commit_id ?? null) && e.draft_count === (p.store_rows ?? []).filter(r => r.scenario === e.scenario).length; }));
-  }
+    // Each signed entry must match exactly one scenario row on every field it signs: outcome, reason, commit and count.
+    const names = journal.entries.map(e => e.scenario), scenarioNames = Object.keys(p.scenarios ?? {});
+    check('the receiver journal names each scenario exactly once', names.length === scenarioNames.length && new Set(names).size === names.length && scenarioNames.every(n => names.includes(n)));
+    check('every signed journal outcome, reason, commit and count matches its scenario row and the store', journal.entries.every(e => { const s = p.scenarios?.[e.scenario]; return s && (s.performed === true) === e.performed && (s.observed_code ?? null) === e.observed_code && e.commit_id === (s.receipt?.commit_id ?? null) && e.draft_count === s.draft_count && e.draft_count === (p.store_rows ?? []).filter(r => r.scenario === e.scenario).length; }), undefined, 'receiver_run_signature');
+  } else if (requireJournal) check('the receiver journal is present', false, 'a journal-attested verdict needs the signed receiver journal');
   const group = kind => ({passed: checks.filter(c => c.evidence === kind && c.passed).length, total: checks.filter(c => c.evidence === kind).length});
-  return {contract_version: 'mvr.observer-verification/1', passed: checks.every(c => c.passed), evidence_summary: {signed_conformance_chain: group('signed_conformance_chain'), receiver_run_signature: group('receiver_run_signature'), unsigned_export: group('unsigned_export')}, checks, boundary: 'Offline reconstruction inside the Enterprise conformance realm. It does not establish source truth, institutional standing, buyer operation or production authority.'};
+  const allPassed = checks.every(c => c.passed);
+  return {contract_version: 'mvr.observer-verification/1', passed: allPassed, acceptance_level: !allPassed ? 'rejected' : journal ? 'journal_attested' : 'unsigned_reconstruction',
+    acceptance_note: journal ? 'Signed conformance chain plus a receiver journal whose signed entries match each scenario row.' : 'No receiver journal: the records reconstruct consistently but no run signature attests them. A signed-attestation gate must not accept this level.', evidence_summary: {signed_conformance_chain: group('signed_conformance_chain'), receiver_run_signature: group('receiver_run_signature'), unsigned_export: group('unsigned_export')}, checks, boundary: 'Offline reconstruction inside the Enterprise conformance realm. It does not establish source truth, institutional standing, buyer operation or production authority.'};
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const i = process.argv.indexOf('--pinned'), packet = JSON.parse(fs.readFileSync(process.argv[2], 'utf8')), pinnedRoot = i > 0 ? JSON.parse(fs.readFileSync(process.argv[i + 1], 'utf8')).trust_root : undefined;
-  const verdict = await verifyObserverPacket(packet, pinnedRoot ? {pinnedRoot} : {}); console.log(JSON.stringify(verdict, null, 1)); process.exitCode = verdict.passed ? 0 : 1;
+  const requireJournal = process.argv.includes('--require-journal');
+  const verdict = await verifyObserverPacket(packet, {...(pinnedRoot ? {pinnedRoot} : {}), requireJournal}); console.log(JSON.stringify(verdict, null, 1)); process.exitCode = verdict.passed ? 0 : 1;
 }
