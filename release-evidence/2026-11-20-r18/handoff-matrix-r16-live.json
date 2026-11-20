@@ -1,0 +1,243 @@
+{
+ "summary": {
+  "target": "https://africanmarketos.com",
+  "deployment_revision": "2026-11-18.exact-reducer.16",
+  "rows": 20,
+  "passed": 20,
+  "failed": []
+ },
+ "rows": [
+  {
+   "entry": "rest",
+   "continuation": "mcp",
+   "profile": "strict_calibrated",
+   "effects": "typed",
+   "steps": 2,
+   "type_resolution": [
+    "declared",
+    "declared"
+   ],
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "rest",
+   "continuation": "rest",
+   "profile": "strict_calibrated",
+   "effects": "typed",
+   "steps": 2,
+   "type_resolution": [
+    "declared",
+    "declared"
+   ],
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "mcp",
+   "continuation": "mcp",
+   "profile": "strict_calibrated",
+   "effects": "typed",
+   "steps": 2,
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "mcp",
+   "continuation": "rest",
+   "profile": "strict_calibrated",
+   "effects": "typed",
+   "steps": 2,
+   "terminal": "/v1/evidence-completeness",
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "rest",
+   "continuation": "mcp",
+   "profile": "strict_calibrated",
+   "effects": "unknown_type",
+   "steps": 2,
+   "type_resolution": [
+    "classified_from_alias_or_description",
+    "declared"
+   ],
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "rest",
+   "continuation": "rest",
+   "profile": "strict_calibrated",
+   "effects": "unknown_type",
+   "steps": 2,
+   "type_resolution": [
+    "classified_from_alias_or_description",
+    "declared"
+   ],
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "mcp",
+   "continuation": "mcp",
+   "profile": "strict_calibrated",
+   "effects": "unknown_type",
+   "steps": 2,
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "mcp",
+   "continuation": "rest",
+   "profile": "strict_calibrated",
+   "effects": "unknown_type",
+   "steps": 2,
+   "terminal": "/v1/evidence-completeness",
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "rest",
+   "continuation": "mcp",
+   "profile": "full_advisory",
+   "effects": "typed",
+   "steps": 2,
+   "type_resolution": [
+    "declared",
+    "declared"
+   ],
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "rest",
+   "continuation": "rest",
+   "profile": "full_advisory",
+   "effects": "typed",
+   "steps": 2,
+   "type_resolution": [
+    "declared",
+    "declared"
+   ],
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "mcp",
+   "continuation": "mcp",
+   "profile": "full_advisory",
+   "effects": "typed",
+   "steps": 2,
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "mcp",
+   "continuation": "rest",
+   "profile": "full_advisory",
+   "effects": "typed",
+   "steps": 2,
+   "terminal": "/v1/evidence-completeness",
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "rest",
+   "continuation": "mcp",
+   "profile": "full_advisory",
+   "effects": "unknown_type",
+   "steps": 2,
+   "type_resolution": [
+    "classified_from_alias_or_description",
+    "declared"
+   ],
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "rest",
+   "continuation": "rest",
+   "profile": "full_advisory",
+   "effects": "unknown_type",
+   "steps": 2,
+   "type_resolution": [
+    "classified_from_alias_or_description",
+    "declared"
+   ],
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "mcp",
+   "continuation": "mcp",
+   "profile": "full_advisory",
+   "effects": "unknown_type",
+   "steps": 2,
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "mcp",
+   "continuation": "rest",
+   "profile": "full_advisory",
+   "effects": "unknown_type",
+   "steps": 2,
+   "terminal": "/v1/evidence-completeness",
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "both",
+   "continuation": "none",
+   "profile": "strict_calibrated",
+   "effects": "missing_effect_id",
+   "item_error": {
+    "code": "REQUESTED_EFFECT_INVALID",
+    "path": "/requested_effects/0",
+    "message": "requested_effects[0]: effect_id is required."
+   },
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "both",
+   "continuation": "none",
+   "profile": "strict_calibrated",
+   "effects": "duplicate_effect_id",
+   "item_error": {
+    "code": "REQUESTED_EFFECT_INVALID",
+    "path": "/requested_effects/1",
+    "message": "requested_effects[1]: duplicate effect_id A."
+   },
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "both",
+   "continuation": "none",
+   "profile": "full_advisory",
+   "effects": "missing_effect_id",
+   "item_error": {
+    "code": "REQUESTED_EFFECT_INVALID",
+    "path": "/requested_effects/0",
+    "message": "requested_effects[0]: effect_id is required."
+   },
+   "failures": [],
+   "pass": true
+  },
+  {
+   "entry": "both",
+   "continuation": "none",
+   "profile": "full_advisory",
+   "effects": "duplicate_effect_id",
+   "item_error": {
+    "code": "REQUESTED_EFFECT_INVALID",
+    "path": "/requested_effects/1",
+    "message": "requested_effects[1]: duplicate effect_id A."
+   },
+   "failures": [],
+   "pass": true
+  }
+ ]
+}

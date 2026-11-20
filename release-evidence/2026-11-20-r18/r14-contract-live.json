@@ -1,0 +1,50 @@
+{
+ "deployment_revision": "2026-11-18.exact-reducer.16",
+ "manifest_id": "MVRRM-7e6d6036c2315bc2a1d1c90279bffbf6",
+ "passed": 6,
+ "total": 6,
+ "results": [
+  {
+   "name": "every response is bound to the released manifest",
+   "ok": true
+  },
+  {
+   "name": "licensed MCP chain preserves the exact effect digest at every step",
+   "ok": true,
+   "detail": {
+    "digest": "2c96f361d0a399588cb88dcf7ba8168222717a94113606308fb7345fe36a7988",
+    "steps": [
+     "mvr_entity_resolve",
+     "mvr_evidence_completeness"
+    ]
+   }
+  },
+  {
+   "name": "a changed or missing effect set fails closed",
+   "ok": true,
+   "detail": {
+    "changed": "WORKFLOW_CONTINUATION_MISMATCH",
+    "missing": "WORKFLOW_CONTINUATION_MISMATCH"
+   }
+  },
+  {
+   "name": "malformed first-call input has one coded envelope on REST and MCP",
+   "ok": true
+  },
+  {
+   "name": "signed applicability statement verifies offline against the pinned root",
+   "ok": true,
+   "detail": {
+    "statement_id": "AS-7938f8e6c1840ba35b27a4f3abedf783",
+    "expires_at": "2026-11-20T20:58:43.798Z"
+   }
+  },
+  {
+   "name": "a disposition write returns its id and complete receipt",
+   "ok": true,
+   "detail": {
+    "disposition_id": "IDP-1ebd19c93b14d9f15ca3d01a04e6c811"
+   }
+  }
+ ]
+}

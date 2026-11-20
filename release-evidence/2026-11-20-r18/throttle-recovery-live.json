@@ -1,0 +1,37 @@
+{
+ "class": "throttling",
+ "requests_before_limit": 30,
+ "observed": true,
+ "transient_server_failure_observed": false,
+ "transient_server_failure_note": "Not induced. A real 5xx was not available to observe.",
+ "http_status": 429,
+ "retry_after_header": "32",
+ "retryable_header": "true",
+ "request_consumed_header": "not_consumed",
+ "recovery": {
+  "contract_version": "mvr.request-recovery/1",
+  "retryable": true,
+  "retry_after_seconds": 32,
+  "request_consumed": "not_consumed",
+  "idempotency": {
+   "key_supplied": false,
+   "reuse_same_key_on_retry": false
+  },
+  "safe_resume": {
+   "action": "repeat_the_same_request",
+   "max_attempts": 3,
+   "backoff": "exponential from retry_after_seconds"
+  },
+  "release_gate_note": "Recovery guidance does not change a no-retry qualification result."
+ },
+ "waited_seconds": 33,
+ "retry_http_status": 200,
+ "checks": {
+  "contract": true,
+  "retryable": true,
+  "not_consumed": true,
+  "retry_after_matches_header": true,
+  "retry_after_wait_succeeded": true
+ },
+ "passed": true
+}
