@@ -1,0 +1,92 @@
+{
+ "deployment_revision": "2026-11-18.exact-reducer.16",
+ "provider_version_id": "d22ee80d-dea9-4d77-9075-f384e035a99f",
+ "results": {
+  "r17-closure-holdout": 0,
+  "r17-closure-closing": 0,
+  "r17-audit-holdout": 0,
+  "r17-audit-closing": 0,
+  "r16-audit-holdout": 1,
+  "r16-audit-closing": 1,
+  "r16c-direct-closing": 1,
+  "r16c-explicit-closing": 0,
+  "r16b-direct-holdout": 0,
+  "r16b-explicit-holdout": 0,
+  "r16-direct-holdout": 1,
+  "r16-direct-closing": 0,
+  "r16-explicit-holdout": 1,
+  "r16-explicit-closing": 0,
+  "r15-direct-holdout": 0,
+  "r15-explicit-holdout": 0,
+  "r15-audit-holdout": 1,
+  "r15-direct-closing": 1,
+  "r15-explicit-closing": 1,
+  "r15-audit-closing": 1,
+  "r15-audit-addendum": 0,
+  "r14-direct-closing": 0,
+  "r14-direct-final": 0,
+  "r14-audit-final": 0,
+  "r14-direct-holdout": 0,
+  "r14-audit-holdout": 0,
+  "r14-direct-dev": 0,
+  "r14-audit-dev": 0,
+  "blind-a": 0,
+  "blind-b": 0,
+  "blind-c": 0,
+  "evaluator-exact-r14": 0,
+  "handoff-matrix-r15": 0,
+  "handoff-matrix-r16": 0,
+  "handoff-matrix-r17": 0,
+  "r14-contract": 0,
+  "first-call-parity": 0,
+  "fresh-live": 0,
+  "prose-live": 0,
+  "route-live": 0,
+  "live-audit": 0,
+  "live-effects": 0,
+  "live-comparable": 0,
+  "receiver-isolation": 0,
+  "receiver-reconnect": 0,
+  "receiver-store": 0,
+  "receiver-rotation": 0,
+  "throttle-recovery": 0
+ },
+ "reruns": {
+  "receiver-reconnect": {
+   "first_exit": 1,
+   "cause": "a local network outage: DNS lookups for africanmarketos.com failed (getaddrinfo ENOTFOUND)",
+   "rerun_exit": 0
+  },
+  "receiver-store": {
+   "first_exit": 1,
+   "cause": "depends on receiver-reconnect",
+   "rerun_exit": 0
+  },
+  "throttle-recovery": {
+   "first_exit": 1,
+   "cause": "a local network outage: DNS lookups for africanmarketos.com failed (getaddrinfo ENOTFOUND)",
+   "rerun_exit": 0
+  }
+ },
+ "transport_runs": [
+  {
+   "run": 1,
+   "exit": 0,
+   "primary": 112,
+   "effect": 112
+  },
+  {
+   "run": 2,
+   "exit": 0,
+   "primary": 112,
+   "effect": 112
+  },
+  {
+   "run": 3,
+   "exit": 1,
+   "primary": 111,
+   "effect": 112
+  }
+ ],
+ "transport_note": "Run 3 missed one primary workflow on a client-side ECONNRESET after 108 ms, with no HTTP response. A first set of attempts was cut short by a local DNS outage (transport-summary-attempt-1.json)."
+}

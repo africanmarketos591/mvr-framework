@@ -1,0 +1,222 @@
+{
+ "summary": {
+  "set": "r18-audit-closing",
+  "sha256": "2c263fc709c65fcbab6a1eff06b129055c36e438b9be7e778e77f2a95d1d4ee1",
+  "deployment_revision": "2026-11-18.exact-reducer.16",
+  "manifest_id": "MVRRM-7e6d6036c2315bc2a1d1c90279bffbf6",
+  "rows": 16,
+  "passed": 8,
+  "by_class": {
+   "capability": "2/2",
+   "defect": "6/6",
+   "internal_prose": "0/6",
+   "market_control": "0/2"
+  },
+  "strict_calibrated": {
+   "passed": 4,
+   "rows": 8
+  },
+  "full_advisory": {
+   "passed": 4,
+   "rows": 8
+  },
+  "misses": [
+   "k5-internal-prose-1",
+   "k5-internal-prose-2",
+   "k5-internal-prose-3",
+   "k5-market-control"
+  ]
+ },
+ "rows": [
+  {
+   "id": "k1-score-authority-for",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "defect",
+   "codes": [
+    "SUPPORT_STATES_LINK_MISSING"
+   ],
+   "decision": "block",
+   "acceptance_mentions": true,
+   "acceptance_not_generic": true,
+   "remediation_mentions": true,
+   "pass": true
+  },
+  {
+   "id": "k1-score-authority-for",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "defect",
+   "codes": [
+    "SUPPORT_STATES_LINK_MISSING"
+   ],
+   "decision": "block",
+   "acceptance_mentions": true,
+   "acceptance_not_generic": true,
+   "remediation_mentions": true,
+   "pass": true
+  },
+  {
+   "id": "k2-held-direct-link",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "defect",
+   "codes": [
+    "QUALIFIER_IN_SUPPORT"
+   ],
+   "decision": "block",
+   "acceptance_mentions": true,
+   "acceptance_not_generic": true,
+   "remediation_mentions": true,
+   "pass": true
+  },
+  {
+   "id": "k2-held-direct-link",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "defect",
+   "codes": [
+    "QUALIFIER_IN_SUPPORT"
+   ],
+   "decision": "block",
+   "acceptance_mentions": true,
+   "acceptance_not_generic": true,
+   "remediation_mentions": true,
+   "pass": true
+  },
+  {
+   "id": "k3-claim-states-qualifier",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "defect",
+   "codes": [
+    "QUALIFIER_IN_SUPPORT"
+   ],
+   "decision": "block",
+   "acceptance_mentions": true,
+   "acceptance_not_generic": true,
+   "remediation_mentions": true,
+   "pass": true
+  },
+  {
+   "id": "k3-claim-states-qualifier",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "defect",
+   "codes": [
+    "QUALIFIER_IN_SUPPORT"
+   ],
+   "decision": "block",
+   "acceptance_mentions": true,
+   "acceptance_not_generic": true,
+   "remediation_mentions": true,
+   "pass": true
+  },
+  {
+   "id": "k4-strict-capability",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "capability",
+   "decision": "clear",
+   "capability": null,
+   "pass": true
+  },
+  {
+   "id": "k4-strict-capability",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "bound": true,
+   "kind": "capability",
+   "decision": "unresolved",
+   "capability": "calibrated_assessment_unavailable",
+   "pass": true
+  },
+  {
+   "id": "k5-internal-prose-1",
+   "profile": "full_advisory",
+   "http": 422,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "rejected_input",
+   "disposition": "await_input",
+   "pass": false
+  },
+  {
+   "id": "k5-internal-prose-1",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "rejected_input",
+   "disposition": "await_input",
+   "pass": false
+  },
+  {
+   "id": "k5-internal-prose-2",
+   "profile": "full_advisory",
+   "http": 422,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "rejected_input",
+   "disposition": "await_input",
+   "pass": false
+  },
+  {
+   "id": "k5-internal-prose-2",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "rejected_input",
+   "disposition": "await_input",
+   "pass": false
+  },
+  {
+   "id": "k5-internal-prose-3",
+   "profile": "full_advisory",
+   "http": 422,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "rejected_input",
+   "disposition": "await_input",
+   "pass": false
+  },
+  {
+   "id": "k5-internal-prose-3",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "rejected_input",
+   "disposition": "await_input",
+   "pass": false
+  },
+  {
+   "id": "k5-market-control",
+   "profile": "full_advisory",
+   "http": 422,
+   "bound": true,
+   "kind": "market_control",
+   "status": "rejected_input",
+   "disposition": "await_input",
+   "pass": false
+  },
+  {
+   "id": "k5-market-control",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "bound": true,
+   "kind": "market_control",
+   "status": "rejected_input",
+   "disposition": "await_input",
+   "pass": false
+  }
+ ]
+}

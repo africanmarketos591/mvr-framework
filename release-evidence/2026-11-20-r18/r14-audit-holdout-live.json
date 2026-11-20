@@ -1,0 +1,409 @@
+{
+ "summary": {
+  "set": "r14-audit-holdout",
+  "sha256": "2a97eb35b5db91a651d4f330fad04781d1947f36888a94c9d404ed8fc4f2fe43",
+  "deployment_revision": "2026-11-18.exact-reducer.16",
+  "manifest_id": "MVRRM-7e6d6036c2315bc2a1d1c90279bffbf6",
+  "rows": 30,
+  "passed": 28,
+  "by_class": {
+   "defect": "13/14",
+   "clean": "13/14",
+   "internal": "2/2"
+  },
+  "detected": 13,
+  "false_permits": 1,
+  "misses": [
+   "h2-id-under-safe-envelope",
+   "h2-clean"
+  ]
+ },
+ "rows": [
+  {
+   "id": "h1-elders-object",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "EXPLICIT_CONTRADICTION",
+    "EXPLICIT_CONTRADICTION"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h1-elders-object",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "EXPLICIT_CONTRADICTION",
+    "EXPLICIT_CONTRADICTION"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h1-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h1-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h2-id-under-safe-envelope",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PRIVACY_ENVELOPE_CONFLICT"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h2-id-under-safe-envelope",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "bound": true,
+   "outcome": null,
+   "codes": [],
+   "kind": "defect",
+   "detected": false,
+   "false_permit": true,
+   "controlling": false,
+   "targeted": false,
+   "pass": false
+  },
+  {
+   "id": "h2-clean",
+   "profile": "strict_calibrated",
+   "http": 422,
+   "bound": true,
+   "outcome": null,
+   "codes": [],
+   "kind": "clean",
+   "pass": false
+  },
+  {
+   "id": "h2-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h3-consumer-poll-as-licence",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h3-consumer-poll-as-licence",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h3-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h3-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h4-we-certify-ourselves",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERMISSION_DECLARED_NOT_AUTHENTICATED",
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h4-we-certify-ourselves",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERMISSION_DECLARED_NOT_AUTHENTICATED",
+    "SOURCE_UNSUITABLE_FOR_USE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h4-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h4-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h5-town-zone",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "GEOGRAPHY_MISMATCH"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h5-town-zone",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "GEOGRAPHY_MISMATCH"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h5-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h5-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h6-see-the-licence",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "LOCATOR_IMPRECISE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h6-see-the-licence",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "LOCATOR_IMPRECISE"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h6-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h6-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h7-raw-list",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERSONAL_DATA_UNDECLARED"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h7-raw-list",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "defects_found",
+   "codes": [
+    "PERSONAL_DATA_UNDECLARED"
+   ],
+   "kind": "defect",
+   "detected": true,
+   "false_permit": false,
+   "controlling": true,
+   "targeted": true,
+   "pass": true
+  },
+  {
+   "id": "h7-clean",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h7-clean",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "no_defects_found",
+   "codes": [],
+   "kind": "clean",
+   "pass": true
+  },
+  {
+   "id": "h8-layout-task",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "outcome": "not_applicable",
+   "codes": [],
+   "kind": "internal",
+   "pass": true
+  },
+  {
+   "id": "h8-layout-task",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "outcome": "not_applicable",
+   "codes": [],
+   "kind": "internal",
+   "pass": true
+  }
+ ]
+}

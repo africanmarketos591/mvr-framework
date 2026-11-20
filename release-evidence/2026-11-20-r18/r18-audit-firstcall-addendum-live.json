@@ -1,0 +1,228 @@
+{
+ "summary": {
+  "set": "r18-audit-firstcall-addendum",
+  "sha256": "2339b0dd931fcf6c64c0408250d9973e2235fcad25e065735c0b4f63f6e56207",
+  "deployment_revision": "2026-11-18.exact-reducer.16",
+  "manifest_id": "MVRRM-7e6d6036c2315bc2a1d1c90279bffbf6",
+  "rows": 20,
+  "passed": 16,
+  "by_class": {
+   "internal_prose": "8/12",
+   "market_control": "8/8"
+  },
+  "strict_calibrated": {
+   "passed": 8,
+   "rows": 10
+  },
+  "full_advisory": {
+   "passed": 8,
+   "rows": 10
+  },
+  "misses": [
+   "ha-internal-prose-1",
+   "ka-internal-prose-1"
+  ]
+ },
+ "rows": [
+  {
+   "id": "ha-internal-prose-1",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": false
+  },
+  {
+   "id": "ha-internal-prose-1",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": false
+  },
+  {
+   "id": "ha-internal-prose-2",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "not_relevant",
+   "disposition": "terminal",
+   "pass": true
+  },
+  {
+   "id": "ha-internal-prose-2",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "not_relevant",
+   "disposition": "terminal",
+   "pass": true
+  },
+  {
+   "id": "ha-internal-prose-3",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "not_relevant",
+   "disposition": "terminal",
+   "pass": true
+  },
+  {
+   "id": "ha-internal-prose-3",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "not_relevant",
+   "disposition": "terminal",
+   "pass": true
+  },
+  {
+   "id": "ha-label-with-market-act",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "market_control",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": true
+  },
+  {
+   "id": "ha-label-with-market-act",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "market_control",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": true
+  },
+  {
+   "id": "ha-market-control",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "market_control",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": true
+  },
+  {
+   "id": "ha-market-control",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "market_control",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": true
+  },
+  {
+   "id": "ka-internal-prose-1",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": false
+  },
+  {
+   "id": "ka-internal-prose-1",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": false
+  },
+  {
+   "id": "ka-internal-prose-2",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "not_relevant",
+   "disposition": "terminal",
+   "pass": true
+  },
+  {
+   "id": "ka-internal-prose-2",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "not_relevant",
+   "disposition": "terminal",
+   "pass": true
+  },
+  {
+   "id": "ka-internal-prose-3",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "not_relevant",
+   "disposition": "terminal",
+   "pass": true
+  },
+  {
+   "id": "ka-internal-prose-3",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "internal_prose",
+   "status": "not_relevant",
+   "disposition": "terminal",
+   "pass": true
+  },
+  {
+   "id": "ka-label-with-market-act",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "market_control",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": true
+  },
+  {
+   "id": "ka-label-with-market-act",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "market_control",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": true
+  },
+  {
+   "id": "ka-market-control",
+   "profile": "full_advisory",
+   "http": 200,
+   "bound": true,
+   "kind": "market_control",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": true
+  },
+  {
+   "id": "ka-market-control",
+   "profile": "strict_calibrated",
+   "http": 200,
+   "bound": true,
+   "kind": "market_control",
+   "status": "activation_ready",
+   "disposition": "call_now",
+   "pass": true
+  }
+ ]
+}

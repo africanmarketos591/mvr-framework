@@ -1,0 +1,8231 @@
+{
+ "summary": {
+  "set": "r14-direct-holdout",
+  "sha256": "e3f4efeb24d5d544c228406cbc531a509706e344b2caa3732e997300e7b5fe7c",
+  "deployment_revision": "2026-11-18.exact-reducer.16",
+  "manifest_id": "MVRRM-7e6d6036c2315bc2a1d1c90279bffbf6",
+  "rows": 480,
+  "passed": 480,
+  "by_class": {
+   "P": "80/80",
+   "I": "80/80",
+   "M": "80/80",
+   "C": "80/80",
+   "R": "80/80",
+   "X": "80/80"
+  },
+  "false_favorable": 0,
+  "execution_authorized": 0,
+  "misses": []
+ },
+ "rows": [
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-dairy-tz-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-pharma-ng-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-school-zm-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-agent-sn-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cement-et-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-fish-ke-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-cash-ug-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-P",
+   "variant": "P",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-I",
+   "variant": "I",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "analytical": "favorable"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_RECOMMENDATION_PENDING_PREREQUISITE",
+   "want": {
+    "analytical": "conditional",
+    "label_corrected_from": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-M",
+   "variant": "M",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "insufficient",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R3_REQUIRED_DEPENDENCY_ABSENT",
+   "want": {
+    "analytical": "insufficient"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-C",
+   "variant": "C",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "conditional",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R4_LOAD_BEARING_CLAIM_CONDITIONAL",
+   "want": {
+    "analytical": "conditional"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-R",
+   "variant": "R",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "revoked",
+   "execution": "revoked",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {
+    "authority": "revoked"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "strict_calibrated",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-PLAN",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R0_INTERNAL_PLANNING",
+   "want": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "INT-REC",
+   "http": 200,
+   "bound": true,
+   "analytical": "favorable",
+   "authority": "planning_only",
+   "execution": "planning_only",
+   "rule": "R5_ALL_LOAD_BEARING_CLAIMS_SUPPORTED",
+   "want": {},
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-CONTACT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-COMMIT",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  },
+  {
+   "id": "hold-tea-rw-X",
+   "variant": "X",
+   "profile": "full_advisory",
+   "effect": "EXT-LAUNCH",
+   "http": 200,
+   "bound": true,
+   "analytical": "adverse",
+   "authority": "not_authorized",
+   "execution": "not_authorized",
+   "rule": "R1_ISSUER_PROHIBITION",
+   "want": {
+    "analytical": "adverse"
+   },
+   "false_favorable": false,
+   "pass": true
+  }
+ ]
+}

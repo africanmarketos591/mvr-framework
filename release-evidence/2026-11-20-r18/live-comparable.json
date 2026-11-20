@@ -1,0 +1,279 @@
+{
+  "revision": "2026-11-18.exact-reducer.16",
+  "manifest": "MVRRM-7e6d6036c2315bc2a1d1c90279bffbf6",
+  "source": "AMOS r9-heldout",
+  "profiles": [
+    {
+      "profile": "strict_calibrated",
+      "missing": [],
+      "score": {
+        "market_rows": 240,
+        "market_agree": 240,
+        "false_favorable": 0,
+        "false_adverse": 0,
+        "missing_rows": 32,
+        "missing_precedence": 32,
+        "qualifier_rows": 32,
+        "qualifier_precedence": 32,
+        "external_rows": 144,
+        "external_authorized": 0,
+        "irrelevant_pairs": 8,
+        "irrelevant_identical": 8,
+        "internal": 8,
+        "internal_not_relevant": 8,
+        "mismatches": [],
+        "passes": true
+      },
+      "routes": [
+        {
+          "id": "dairy-ke:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "solar-ug:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "pharma-tz:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "cash-transfer-ke:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "agro-rw:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "agent-gh:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "school-meals-ng:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "cement-zm:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "internal:1",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:2",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:3",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:4",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:5",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:6",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:7",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:8",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        }
+      ]
+    },
+    {
+      "profile": "full_advisory",
+      "missing": [],
+      "score": {
+        "market_rows": 240,
+        "market_agree": 240,
+        "false_favorable": 0,
+        "false_adverse": 0,
+        "missing_rows": 32,
+        "missing_precedence": 32,
+        "qualifier_rows": 32,
+        "qualifier_precedence": 32,
+        "external_rows": 144,
+        "external_authorized": 0,
+        "irrelevant_pairs": 8,
+        "irrelevant_identical": 8,
+        "internal": 8,
+        "internal_not_relevant": 8,
+        "mismatches": [],
+        "passes": true
+      },
+      "routes": [
+        {
+          "id": "dairy-ke:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "solar-ug:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "pharma-tz:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "cash-transfer-ke:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "agro-rw:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "agent-gh:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "school-meals-ng:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "cement-zm:complete",
+          "variant": "complete",
+          "matched": true,
+          "status": "awaiting_required_context",
+          "handoff": null
+        },
+        {
+          "id": "internal:1",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:2",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:3",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:4",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:5",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:6",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:7",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        },
+        {
+          "id": "internal:8",
+          "variant": "internal_control",
+          "matched": true,
+          "status": "not_relevant",
+          "handoff": null
+        }
+      ]
+    }
+  ]
+}

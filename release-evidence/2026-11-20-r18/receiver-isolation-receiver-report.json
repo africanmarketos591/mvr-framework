@@ -1,0 +1,132 @@
+{
+ "contract_version": "mvr.receiver-isolation/1",
+ "scenarios": {
+  "valid": {
+   "rule": "every check passes",
+   "expected": "performed",
+   "performed": true,
+   "observed_code": null,
+   "draft_count": 1,
+   "requested_effect": {
+    "effect_id": "receiver-9-21dc5b",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   },
+   "registry_version": 1
+  },
+  "revoked": {
+   "rule": "a signed revocation in the feed",
+   "expected": "BUYER_CAPABILITY_REVOKED_IN_FEED",
+   "performed": false,
+   "observed_code": "BUYER_CAPABILITY_REVOKED_IN_FEED",
+   "draft_count": 0,
+   "revocation_observed_ms": 2205,
+   "commit_still_open": true,
+   "feed_fresh": true,
+   "requested_effect": {
+    "effect_id": "receiver-13-388bbe",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   },
+   "registry_version": 1
+  },
+  "expired": {
+   "rule": "the commit window has closed while feed and capability are current",
+   "expected": "BUYER_COMMIT_EXPIRED",
+   "performed": false,
+   "observed_code": "BUYER_COMMIT_EXPIRED",
+   "draft_count": 0,
+   "feed_fresh": true,
+   "capability_permitted": true,
+   "requested_effect": {
+    "effect_id": "receiver-18-2161a2",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   },
+   "registry_version": 1
+  },
+  "lease_recovered": {
+   "rule": "only the offline lease has lapsed",
+   "expected": "BUYER_FEED_NOT_FRESH then performed once after catch-up",
+   "performed": true,
+   "observed_code": "BUYER_FEED_NOT_FRESH",
+   "at_refusal": {
+    "commit_open": true,
+    "capability_permitted": true,
+    "no_feed_advance": true,
+    "feed_reason": "FEED_OLDER_THAN_OFFLINE_POLICY",
+    "feed_age_seconds": 69.008,
+    "draft_count": 0
+   },
+   "replay_already_performed": true,
+   "draft_count": 1,
+   "lease_seconds": 60,
+   "lease_time": "real_elapsed",
+   "requested_effect": {
+    "effect_id": "receiver-21-f8f095",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   },
+   "registry_version": 1
+  },
+  "rotated": {
+   "rule": "signed registry succession on a provisioned conformance issuer",
+   "expected": "performed under the new key; the old registry refuses",
+   "performed": true,
+   "observed_code": null,
+   "old_registry_code": "BUYER_CHAIN_INVALID",
+   "old_registry_draft_count": 0,
+   "draft_count": 1,
+   "registry_version": 2,
+   "new_key_id": "LAB-AC-943cf3361a912fe449b75e2c60f67372-R2",
+   "requested_effect": {
+    "effect_id": "receiver-24-de960c",
+    "effect_type": "create_draft_record",
+    "resource": {
+     "system": "amos-lab",
+     "resource_type": "draft",
+     "resource_id": "LAB-RECEIVER"
+    },
+    "amount_minor": 0,
+    "currency": "UGX",
+    "external_contact": false,
+    "counterparty_ref": "lab-only"
+   }
+  }
+ },
+ "buyer_operated": false,
+ "session_closed": true,
+ "store_rows": 3
+}
