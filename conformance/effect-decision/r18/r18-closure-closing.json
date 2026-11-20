@@ -1,0 +1,4166 @@
+[
+ {
+  "class": "P:none",
+  "domain": "water-gh",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-P-none",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme, but contact, commitment and launch remain on hold until the water-quality testing protocol is approved.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "none"
+ },
+ {
+  "class": "P:completed",
+  "domain": "water-gh",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable",
+    "step_closed": "water-quality testing protocol"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable",
+    "step_closed": "water-quality testing protocol"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable",
+    "step_closed": "water-quality testing protocol"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable",
+    "step_closed": "water-quality testing protocol"
+   }
+  },
+  "id": "water-gh-P-completed",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme, but contact, commitment and launch remain on hold until the water-quality testing protocol is approved.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the regional water directorate approved the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "completed"
+ },
+ {
+  "class": "P:before",
+  "domain": "water-gh",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-P-before",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme, but contact, commitment and launch remain on hold until the water-quality testing protocol is approved.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-10-12, the regional water directorate approved the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-10-12",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "before"
+ },
+ {
+  "class": "P:future",
+  "domain": "water-gh",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-P-future",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme, but contact, commitment and launch remain on hold until the water-quality testing protocol is approved.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the regional water directorate stated that it will approve the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages later this month.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "future"
+ },
+ {
+  "class": "P:wrong_step",
+  "domain": "water-gh",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-P-wrong_step",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme, but contact, commitment and launch remain on hold until the water-quality testing protocol is approved.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the regional water directorate approved the vehicle fuel log for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "wrong_step"
+ },
+ {
+  "class": "P:wrong_issuer",
+  "domain": "water-gh",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-P-wrong_issuer",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme, but contact, commitment and launch remain on hold until the water-quality testing protocol is approved.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the chiefs' council approved the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "wrong_issuer"
+ },
+ {
+  "class": "P:withdrawn",
+  "domain": "water-gh",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-P-withdrawn",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme, but contact, commitment and launch remain on hold until the water-quality testing protocol is approved.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the regional water directorate approved the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-10, the regional water directorate withdrew its approval of the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-WITHDRAWN",
+     "source_date": "2026-11-10",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "withdrawn"
+ },
+ {
+  "class": "T:none",
+  "domain": "water-gh",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-T-none",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-WATER-GH-STEP",
+       "description": "the water-quality testing protocol",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "none"
+ },
+ {
+  "class": "T:completed",
+  "domain": "water-gh",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable",
+    "step_closed": "water-quality testing protocol"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable",
+    "step_closed": "water-quality testing protocol"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable",
+    "step_closed": "water-quality testing protocol"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable",
+    "step_closed": "water-quality testing protocol"
+   }
+  },
+  "id": "water-gh-T-completed",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-WATER-GH-STEP",
+       "description": "the water-quality testing protocol",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the regional water directorate approved the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "completed"
+ },
+ {
+  "class": "T:before",
+  "domain": "water-gh",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-T-before",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-WATER-GH-STEP",
+       "description": "the water-quality testing protocol",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-10-12, the regional water directorate approved the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-10-12",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "before"
+ },
+ {
+  "class": "T:future",
+  "domain": "water-gh",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-T-future",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-WATER-GH-STEP",
+       "description": "the water-quality testing protocol",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the regional water directorate stated that it will approve the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages later this month.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "future"
+ },
+ {
+  "class": "T:wrong_step",
+  "domain": "water-gh",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-T-wrong_step",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-WATER-GH-STEP",
+       "description": "the water-quality testing protocol",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the regional water directorate approved the vehicle fuel log for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "wrong_step"
+ },
+ {
+  "class": "T:wrong_issuer",
+  "domain": "water-gh",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-T-wrong_issuer",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-WATER-GH-STEP",
+       "description": "the water-quality testing protocol",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the chiefs' council approved the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "wrong_issuer"
+ },
+ {
+  "class": "T:withdrawn",
+  "domain": "water-gh",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "water-quality testing protocol",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "water-gh-T-withdrawn",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 90-day borehole water service at exactly 10 named villages, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the regional water directorate approved a 90-day borehole water service at exactly 10 named villages, with authority to contact up to 10 named village heads, commit no more than GHS 410,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-WATER-GH-STEP",
+       "description": "the water-quality testing protocol",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the regional water directorate approved the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-10, the regional water directorate withdrew its approval of the water-quality testing protocol for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-WITHDRAWN",
+     "source_date": "2026-11-10",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The chiefs' council supports a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 90-day borehole water service at exactly 10 named villages.",
+     "evidence_geography": {
+      "city": "Tamale",
+      "country": "GH"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "GH",
+    "locality": "Tamale"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Savanna Water Ltd"
+   }
+  },
+  "variant": "withdrawn"
+ },
+ {
+  "class": "P:none",
+  "domain": "solar-zm",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-P-none",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme, but contact, commitment and launch remain on hold until the installer accreditation scheme is approved.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "none"
+ },
+ {
+  "class": "P:completed",
+  "domain": "solar-zm",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable",
+    "step_closed": "installer accreditation scheme"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable",
+    "step_closed": "installer accreditation scheme"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable",
+    "step_closed": "installer accreditation scheme"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable",
+    "step_closed": "installer accreditation scheme"
+   }
+  },
+  "id": "solar-zm-P-completed",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme, but contact, commitment and launch remain on hold until the installer accreditation scheme is approved.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the provincial energy office approved the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "completed"
+ },
+ {
+  "class": "P:before",
+  "domain": "solar-zm",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-P-before",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme, but contact, commitment and launch remain on hold until the installer accreditation scheme is approved.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-10-12, the provincial energy office approved the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-10-12",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "before"
+ },
+ {
+  "class": "P:future",
+  "domain": "solar-zm",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-P-future",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme, but contact, commitment and launch remain on hold until the installer accreditation scheme is approved.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the provincial energy office stated that it will approve the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops later this month.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "future"
+ },
+ {
+  "class": "P:wrong_step",
+  "domain": "solar-zm",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-P-wrong_step",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme, but contact, commitment and launch remain on hold until the installer accreditation scheme is approved.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the provincial energy office approved the office parking plan for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "wrong_step"
+ },
+ {
+  "class": "P:wrong_issuer",
+  "domain": "solar-zm",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-P-wrong_issuer",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme, but contact, commitment and launch remain on hold until the installer accreditation scheme is approved.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the market vendors' association approved the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "wrong_issuer"
+ },
+ {
+  "class": "P:withdrawn",
+  "domain": "solar-zm",
+  "encoding": "P",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-P-withdrawn",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "qualifies"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme, but contact, commitment and launch remain on hold until the installer accreditation scheme is approved.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the provincial energy office approved the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-10, the provincial energy office withdrew its approval of the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-WITHDRAWN",
+     "source_date": "2026-11-10",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "withdrawn"
+ },
+ {
+  "class": "T:none",
+  "domain": "solar-zm",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-T-none",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-SOLAR-ZM-STEP",
+       "description": "the installer accreditation scheme",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "none"
+ },
+ {
+  "class": "T:completed",
+  "domain": "solar-zm",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "favorable",
+    "step_closed": "installer accreditation scheme"
+   },
+   "EXT-CONTACT": {
+    "analytical": "favorable",
+    "step_closed": "installer accreditation scheme"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "favorable",
+    "step_closed": "installer accreditation scheme"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "favorable",
+    "step_closed": "installer accreditation scheme"
+   }
+  },
+  "id": "solar-zm-T-completed",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-SOLAR-ZM-STEP",
+       "description": "the installer accreditation scheme",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the provincial energy office approved the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "completed"
+ },
+ {
+  "class": "T:before",
+  "domain": "solar-zm",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-T-before",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-SOLAR-ZM-STEP",
+       "description": "the installer accreditation scheme",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-10-12, the provincial energy office approved the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-10-12",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "before"
+ },
+ {
+  "class": "T:future",
+  "domain": "solar-zm",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-T-future",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-SOLAR-ZM-STEP",
+       "description": "the installer accreditation scheme",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the provincial energy office stated that it will approve the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops later this month.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "future"
+ },
+ {
+  "class": "T:wrong_step",
+  "domain": "solar-zm",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-T-wrong_step",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-SOLAR-ZM-STEP",
+       "description": "the installer accreditation scheme",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the provincial energy office approved the office parking plan for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "wrong_step"
+ },
+ {
+  "class": "T:wrong_issuer",
+  "domain": "solar-zm",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-T-wrong_issuer",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-SOLAR-ZM-STEP",
+       "description": "the installer accreditation scheme",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the market vendors' association approved the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "wrong_issuer"
+ },
+ {
+  "class": "T:withdrawn",
+  "domain": "solar-zm",
+  "encoding": "T",
+  "expected": {
+   "EXT-COMMIT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-CONTACT": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "EXT-LAUNCH": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   },
+   "INT-PLAN": {
+    "analytical": "favorable",
+    "execution": "planning_only"
+   },
+   "INT-RECOMMEND": {
+    "analytical": "conditional",
+    "names_step": "installer accreditation scheme",
+    "step_record": "R-COND"
+   }
+  },
+  "id": "solar-zm-T-withdrawn",
+  "request": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "On the records supplied, state the narrowest justified state for the proposal and each requested effect.",
+     "claim_id": "U-1",
+     "support_links": [
+      {
+       "evidence_id": "R-COND",
+       "locator": "R-COND paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DONE",
+       "locator": "R-DONE paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-SUP",
+       "locator": "R-SUP paragraph 1",
+       "relationship": "direct_support"
+      },
+      {
+       "evidence_id": "R-DEM",
+       "locator": "R-DEM paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "context_freshness_window_days": 60,
+   "decision_question": "For a 100-day solar kit rental to exactly 25 named shops, what is the narrowest justified state of each requested effect?",
+   "evidence_pack": [
+    {
+     "claim": "On 2026-10-20, the provincial energy office approved a 100-day solar kit rental to exactly 25 named shops, with authority to contact up to 25 named shopkeepers, commit no more than ZMW 1,600,000 and start the programme within the stated limits.",
+     "conditions": [
+      {
+       "condition_id": "R18-SOLAR-ZM-STEP",
+       "description": "the installer accreditation scheme",
+       "satisfied_by_evidence_id": "R-DONE",
+       "type": "prerequisite"
+      }
+     ],
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-COND",
+     "source_date": "2026-10-20",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-02, the provincial energy office approved the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DONE",
+     "source_date": "2026-11-02",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "On 2026-11-10, the provincial energy office withdrew its approval of the installer accreditation scheme for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-WITHDRAWN",
+     "source_date": "2026-11-10",
+     "stakeholder_class": "regulator",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The market vendors' association supports a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-SUP",
+     "source_date": "2026-10-26",
+     "stakeholder_class": "community_guardian",
+     "verification_status": "unverified"
+    },
+    {
+     "claim": "The order register records sufficient demand for a 100-day solar kit rental to exactly 25 named shops.",
+     "evidence_geography": {
+      "city": "Kabwe",
+      "country": "ZM"
+     },
+     "evidence_id": "R-DEM",
+     "source_date": "2026-10-27",
+     "stakeholder_class": "retailer",
+     "verification_status": "unverified"
+    }
+   ],
+   "market_scope": {
+    "country": "ZM",
+    "locality": "Kabwe"
+   },
+   "requested_effects": [
+    {
+     "description": "Prepare the internal plan.",
+     "effect_id": "INT-PLAN",
+     "effect_type": "internal_planning"
+    },
+    {
+     "description": "Give the internal recommendation.",
+     "effect_id": "INT-RECOMMEND",
+     "effect_type": "internal_recommendation"
+    },
+    {
+     "description": "Contact the named outside parties.",
+     "effect_id": "EXT-CONTACT",
+     "effect_type": "external_communication"
+    },
+    {
+     "description": "Make the binding external commitment.",
+     "effect_id": "EXT-COMMIT",
+     "effect_type": "contract_signature"
+    },
+    {
+     "description": "Launch the named programme.",
+     "effect_id": "EXT-LAUNCH",
+     "effect_type": "market_launch"
+    }
+   ],
+   "subject": {
+    "entity_name": "Central Sun Ltd"
+   }
+  },
+  "variant": "withdrawn"
+ }
+]

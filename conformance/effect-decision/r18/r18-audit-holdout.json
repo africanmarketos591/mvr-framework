@@ -1,0 +1,387 @@
+[
+ {
+  "acceptance_must_mention": [
+   "contact",
+   "commitment",
+   "launch",
+   "validity"
+  ],
+  "acceptance_must_not_offer": [
+   "reviewer_disposition"
+  ],
+  "body": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "The analytical score is the authority for outside contact, a financial commitment and the launch.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Demand evidence supports continued internal analysis but contains no authority record.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Lake Kiosks"
+   }
+  },
+  "case_id": "h1-score-authority-for",
+  "expected_route_decision": "block",
+  "route": "/v1/release-check"
+ },
+ {
+  "acceptance_must_mention": [
+   "safeguarding protocol",
+   "approv",
+   "accountable"
+  ],
+  "body": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "All conditions are satisfied and the external launch may proceed.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Internal planning is permitted; outside contact and launch remain on hold until the safeguarding protocol is approved.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Lake Kiosks"
+   }
+  },
+  "case_id": "h2-held-direct-link",
+  "expected_route_decision": "block",
+  "remediation_must_mention": [
+   "safeguarding protocol"
+  ],
+  "route": "/v1/board-safety-check"
+ },
+ {
+  "acceptance_must_mention": [
+   "safeguarding protocol",
+   "approv",
+   "accountable"
+  ],
+  "body": {
+   "analysis_date": "2026-11-20",
+   "claims": [
+    {
+     "claim": "The launch may go ahead once the safeguarding protocol is approved, and every condition is met.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "page 2, paragraph 1",
+       "relationship": "qualifies"
+      }
+     ]
+    }
+   ],
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "Internal planning is permitted; external contact and launch stay on hold until the safeguarding protocol is approved.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-10-15",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "administrative_record",
+     "source_date": "2026-10-15",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "public_official",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Lake Kiosks"
+   }
+  },
+  "case_id": "h3-claim-states-qualifier",
+  "expected_route_decision": "block",
+  "remediation_must_mention": [
+   "safeguarding protocol"
+  ],
+  "route": "/v1/board-safety-check"
+ },
+ {
+  "body": {
+   "analysis_date": "2026-11-20",
+   "decision_question": "Is the programme ready for its next step?",
+   "entity_archetype": "distributor",
+   "evidence_pack": [
+    {
+     "claim": "A bounded retailer survey supports advisory demand analysis.",
+     "collection_method": "secondary_source",
+     "evidence_geography": {
+      "country": "UG"
+     },
+     "evidence_id": "E1",
+     "evidence_origin": "public_osint",
+     "evidence_type": "public_filing",
+     "freshness_date": "2026-11-01",
+     "id": "E1",
+     "privacy_envelope": {
+      "consent_basis": "legitimate_interest",
+      "redaction_status": "aggregated",
+      "retention_class": "1y",
+      "safe_for_modeling": true
+     },
+     "source_class": "structured_field_research",
+     "source_date": "2026-11-01",
+     "source_doc_id": "LAB-E1",
+     "source_grade": "B",
+     "stakeholder_class": "retailer",
+     "structured_values": {
+      "permission": 55,
+      "trust": 60
+     }
+    }
+   ],
+   "market_scope": {
+    "country": "UG"
+   },
+   "subject": {
+    "entity_archetype": "distributor",
+    "entity_name": "Lake Kiosks"
+   }
+  },
+  "capability_outcome": true,
+  "case_id": "h4-strict-capability",
+  "expected_route_decision": "profile_dependent",
+  "route": "/v1/evidence-audit"
+ },
+ {
+  "body": {
+   "claims": [
+    {
+     "claim": "Borrowers repay on time.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "row 3",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "country": "UG",
+   "entity_archetype": "fmcg_brand",
+   "entity_name": "Lake Lenders Ltd",
+   "evidence_pack": [
+    {
+     "claim": "The loan book shows steady repayments.",
+     "evidence_id": "E1",
+     "id": "E1",
+     "source_date": "2026-10-15",
+     "stakeholder_class": "lender"
+    }
+   ],
+   "question": "Reformat the attached internal repayment table into two columns. There is no market action and no permission question.",
+   "sector": "fmcg_brand"
+  },
+  "case_id": "h5-internal-prose-1",
+  "expected_first_call": "terminal_not_relevant",
+  "route": "/v1/first-call"
+ },
+ {
+  "body": {
+   "claims": [
+    {
+     "claim": "Borrowers repay on time.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "row 3",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "country": "UG",
+   "entity_archetype": "fmcg_brand",
+   "entity_name": "Lake Lenders Ltd",
+   "evidence_pack": [
+    {
+     "claim": "The loan book shows steady repayments.",
+     "evidence_id": "E1",
+     "id": "E1",
+     "source_date": "2026-10-15",
+     "stakeholder_class": "lender"
+    }
+   ],
+   "question": "Summarise the attached board minutes for the internal archive only; no market decision, counterparty or permission is involved.",
+   "sector": "fmcg_brand"
+  },
+  "case_id": "h5-internal-prose-2",
+  "expected_first_call": "terminal_not_relevant",
+  "route": "/v1/first-call"
+ },
+ {
+  "body": {
+   "claims": [
+    {
+     "claim": "Borrowers repay on time.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "row 3",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "country": "UG",
+   "entity_archetype": "fmcg_brand",
+   "entity_name": "Lake Lenders Ltd",
+   "evidence_pack": [
+    {
+     "claim": "The loan book shows steady repayments.",
+     "evidence_id": "E1",
+     "id": "E1",
+     "source_date": "2026-10-15",
+     "stakeholder_class": "lender"
+    }
+   ],
+   "question": "Check the spelling in our internal staff handbook. This is internal only, with no external action or permission question.",
+   "sector": "fmcg_brand"
+  },
+  "case_id": "h5-internal-prose-3",
+  "expected_first_call": "terminal_not_relevant",
+  "route": "/v1/first-call"
+ },
+ {
+  "body": {
+   "claims": [
+    {
+     "claim": "Borrowers repay on time.",
+     "claim_id": "C1",
+     "support_links": [
+      {
+       "evidence_id": "E1",
+       "locator": "row 3",
+       "relationship": "direct_support"
+      }
+     ]
+    }
+   ],
+   "country": "UG",
+   "entity_archetype": "fmcg_brand",
+   "entity_name": "Lake Lenders Ltd",
+   "evidence_pack": [
+    {
+     "claim": "The loan book shows steady repayments.",
+     "evidence_id": "E1",
+     "id": "E1",
+     "source_date": "2026-10-15",
+     "stakeholder_class": "lender"
+    }
+   ],
+   "question": "Should we launch the repayment product to new borrowers in Mbarara next month?",
+   "sector": "fmcg_brand"
+  },
+  "case_id": "h5-market-control",
+  "expected_first_call": "not_terminal_not_relevant",
+  "route": "/v1/first-call"
+ }
+]
